@@ -1,0 +1,124 @@
+title:            openBVE
+description:      The openBVE Project Homepage
+# put your disqus here
+disqus_shortname: 
+reading_time:     false # if true, shows the estimated reading time for a post
+words_per_minute: 200
+logo:             images/logo.png # logo visible in the topbar
+
+url: http://openbve-project.net
+
+# draw your top menu here
+# each item must have a title and a url.
+#   To list post categories. use type: 'categories'
+#   To create sub categories. add a submenu item
+# See the example
+menu:
+  - title: 'Download'
+    url: '/download/'
+    submenu:
+      - title: 'Download openBVE'
+        url: '/download/'
+      - title: 'Source Code'
+        url: '/source/'
+  - title: 'Install'
+    url: '#'
+    submenu:
+      - title: 'Installing openBVE'
+        url: '/install/'
+      - title: 'Installing Addons'
+        url: '/install-addons/'
+  - title: 'Play'
+    url: '#'
+    submenu:
+      - title: 'Basic Controls'
+        url: '/play/'
+      - title: 'Japanese Signals and Signs'
+        url: '/play-japanese/'
+      - title: 'British Signals and Signs'
+        url: '/play-british/'
+  - title: 'Developing Addons'
+    url: '/creating-addons/'
+    submenu:
+      - title: 'Basic Setup'
+        url: '/creating-addons/'
+      - title: 'Developer Documentation'
+        url: '/documentation/'
+  - title: 'Roadmap'
+    url: '/roadmap/'
+  - title: 'Discussion Board'
+    url: 'http://bveworldwide.unlimitedboard.com/f14-the-sim-in-time-general-discussion'
+
+# Owner/author information
+owner:
+  name:           The openBVE Project
+  site:           http://aronbordin.com
+  avatar:         images/avatar.jpg
+  bio:            "Your bio goes here. It shouldn't be super long but a good two sentences or two should suffice."
+  email:          you@email.com
+  # GitHub nick for use in follow button in author block.
+  github: leezer3
+
+# Twitter account associated with the site if different from owner/author twitter account.
+# Used in Twitter cards.
+twitter: 
+
+# Social networking links used in author block underneath posts. Update and remove as you like.
+social:
+  - title: "github"
+    url: "https://github.com/leezer3/OpenBVE"
+# Background image to be tiled on all pages
+background:
+
+# Analytics and webmaster tools stuff goes here
+google_analytics:
+google_verify:
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    Europe/London
+locale:      en_GB
+future:      true
+highlighter: rouge
+markdown:    kramdown
+gems:
+  - jekyll-sitemap
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title/
+
+# Amount of post to show on home page
+paginate: 5
+
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: true
+
+  coderay:
+    coderay_line_numbers: nil
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+
+# Octopress
+# Default extensions
+post_ext: md
+page_ext: md
+# Found in _templates/
+post_layout: post
+page_layout: page
+# Format titles with titlecase?
+titlecase: true
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+gems: [jekyll-paginate]
