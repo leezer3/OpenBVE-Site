@@ -44,6 +44,8 @@ menu:
         url: '/creating-addons/'
       - title: 'Developer Documentation'
         url: '/documentation/'
+      - title: 'openBVE Packages'
+        url: '/packages/'
   - title: 'Roadmap'
     url: '/roadmap/'
   - title: 'Discussion Board'
