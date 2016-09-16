@@ -21,6 +21,8 @@ menu:
         url: '/download/'
       - title: 'Source Code'
         url: '/source/'
+      - title: 'Extra Files'
+        url: '/download-extras/'
   - title: 'Install'
     url: '#'
     submenu:
