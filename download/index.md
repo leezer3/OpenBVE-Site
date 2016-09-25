@@ -15,7 +15,7 @@ openBVE is provided as a standard Windows Installer.
 
 The most recent stable version of openBVE is:
 
-<a href="http://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.5.0.6-setup.exe" class="btn btn-info">1.5.0 (RC6) (2016-08-25)</a>
+<a href="http://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.5.0.7-setup.exe" class="btn btn-info">1.5.0 (RC7) (2016-09-25)</a>
 
 ---
 
@@ -28,7 +28,7 @@ openBVE is provided as a standard compressed archive.
 
 The most recent stable version of openBVE is:
 
-<a href="http://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.5.0.6.tar.gz" class="btn btn-info">1.5.0 (RC6) (2016-08-25)</a>
+<a href="http://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.5.0.7.tar.gz" class="btn btn-info">1.5.0 (RC7) (2016-09-25)</a>
 
 ### Nightly Builds:
 
@@ -48,7 +48,7 @@ openBVE is provided as an installable .DMG file.
 
 The most recent stable version of openBVE is:
 
-<a href="http://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.5.0.6.dmg" class="btn btn-info">1.5.0 (RC6) (2016-08-25)</a>
+<a href="http://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.5.0.7.dmg" class="btn btn-info">1.5.0 (RC7) (2016-09-25)</a>
 
 ### Nightly Builds:
 
