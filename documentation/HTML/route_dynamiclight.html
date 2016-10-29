@@ -105,14 +105,23 @@ The <i>LightDirection</i> attribute should be used to set the direction the ligh
 
 </font></td></tr></table>
 
+The LightDirection attribute sets the direction from which the directional light shines, by default in cartesian co-ordinates. There are three possible overloads for this as follows:<br><br>
+<b><i>LightDirection</b></i> : Sets the light direction in cartesian co-ordinates.
 <table border="0">
 <tr style="height:16"><td></td></tr>
-<tr><td bgcolor="#F0F0F0" style="font-family: monospace;border:1px dotted;color:#808080"><font color="#C00000"><b>&lt;LightDirection&gt;</b> <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em> <b>&lt;&#47;LightDirection&gt;</b></font></td></tr>
-</table><br>
-The LightDirection attribute sets the direction from which the directional light shines, by default in cartesian co-ordinates. There are three possible overloads for this as follows:<br><br>
-<b><i>LightDirection</b></i> : Sets the light direction in cartesian co-ordinates.<br>
-<b><i>CartesianLightDirection</b></i> : Sets the light direction in cartesian co-ordinates.<br>
-<b><i>SphericalLightDirection</b></i> : Sets the light direction in spherical co-ordinates.<br>
+<tr><td bgcolor="#F0F0F0" style="font-family: monospace;border:1px dotted;color:#808080"><font color="#C00000"><b>&lt;LightDirection&gt;</b> <em>DirectionX</em>; <em>DirectionY</em>; <em>DirectionZ</em> <b>&lt;&#47;LightDirection&gt;</b></font></td></tr>
+</table><br><br>
+<b><i>CartesianLightDirection</b></i> : Sets the light direction in cartesian co-ordinates.
+<table border="0">
+<tr style="height:16"><td></td></tr>
+<tr><td bgcolor="#F0F0F0" style="font-family: monospace;border:1px dotted;color:#808080"><font color="#C00000"><b>&lt;CartesianLightDirection&gt;</b> <em>DirectionX</em>; <em>DirectionY</em>; <em>DirectionZ</em> <b>&lt;&#47;CartesianLightDirection&gt;</b></font></td></tr>
+</table><br><br>
+<b><i>SphericalLightDirection</b></i> : Sets the light direction in spherical co-ordinates.
+<table border="0">
+<tr style="height:16"><td></td></tr>
+<tr><td bgcolor="#F0F0F0" style="font-family: monospace;border:1px dotted;color:#808080"><font color="#C00000"><b>&lt;SphericalLightDirection&gt;</b> <em>Theta</em>; <em>Phi</em> <b>&lt;&#47;SphericalLightDirection&gt;</b></font></td></tr>
+</table><br><br>
+
 <br>
 
 <table><tr style="height: 4px;"><td /></tr></table>
