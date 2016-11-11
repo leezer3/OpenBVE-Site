@@ -5,7 +5,7 @@
 <!-- Mirrored from www.trainsimframework.org/develop/route_csv.html by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 05 May 2012 22:30:47 GMT -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="SHORTCUT ICON" href="../../Images//favicon.png" />
+<link rel="SHORTCUT ICON" href="../../images/favicon.png" />
 <meta name="keywords" content="openBVE,homepage" />
 <title>The .csv route format</title>
 </head>
@@ -665,7 +665,7 @@ This command defines the directional light to be used. The polygons in the scene
 <b><em>Theta</em></b>: A floating-point number representing the angle in <b>degrees</b> which controls the pitch of the light direction. The default value is 60.<br />
 <b><em>Phi</em></b>: A floating-point number representing the angle in <b>degrees</b> which controls the planar rotation of the light direction. The default value is about -26.57.
 </font></td></tr></table>
-This command defines the initial light direction for track position 0. This is the direction the light shines at, meaning the opposite direction the sun is located at. First, <em>Theta</em> determines the pitch. A value of 90 represents a downward direction, while a value of -90 represents an upward direction. With those extremes, the value of <em>Phi</em> is irrelevant. A value of 0 for <em>Theta</em> represents a forward direction originating at the horizon behind. Once the pitch is defined by <em>Theta</em>, <em>Phi</em> determines the rotation in the plane. A value of 0 does not rotate, a value of 90 rotates the direction to the right and a value of -90 rotates to the left. A backward direction can be both obtained by setting <em>Theta</em> and <em>Phi</em> to 180 and 0 or to 0 and 180, respectively. Values in-between allow for more precise control of the exact light direction.<br /><img src="../../Images//illustration_light_direction.png" alt="" /><br /><table>
+This command defines the initial light direction for track position 0. This is the direction the light shines at, meaning the opposite direction the sun is located at. First, <em>Theta</em> determines the pitch. A value of 90 represents a downward direction, while a value of -90 represents an upward direction. With those extremes, the value of <em>Phi</em> is irrelevant. A value of 0 for <em>Theta</em> represents a forward direction originating at the horizon behind. Once the pitch is defined by <em>Theta</em>, <em>Phi</em> determines the rotation in the plane. A value of 0 does not rotate, a value of 90 rotates the direction to the right and a value of -90 rotates to the left. A backward direction can be both obtained by setting <em>Theta</em> and <em>Phi</em> to 180 and 0 or to 0 and 180, respectively. Values in-between allow for more precise control of the exact light direction.<br /><img src="../../images/illustration_light_direction.png" alt="" /><br /><table>
 <tr>
 <td width="16" valign="top" /><td>
 <font size="-1"><em>Converting a spherical direction (theta,phi) into a cartesian direction (x,y,z):</em></font>
@@ -856,8 +856,11 @@ Generally, supported objects are B3D, CSV, X and ANIMATED. However, the FormCL, 
 <tr><td><font size="-1" color="#808080">
 
 </font></td></tr></table>
-Commands from this namespace define which background images to use and how they are aligned.<br /><br /><img src="../../Images//illustration_background.png" alt="" />
-<br />The background image is displayed as a cylindric wall around the camera whose start (viewed from above) is 60 degrees to the left of the initial forward direction (at the 10 o'clock position). From there, the background image wraps clock-wise around the cylinder with a repetition count specified via Texture.Background(<em>BackgroundTextureIndex</em>).X, which by default creats 6 repetitions in a full circle.<br /><br />The upper 3/4 of the image is displayed above the horizon, while the lower 1/4 is displayed below the horizon. Via Texture.Background(<em>BackgroundTextureIndex</em>).Aspect, you can choose whether to have a fixed cylinder height or to preserve the aspect ratio of the texture. If the image should have a fixed height, the cylinder has a height of 1/2 its radius, which corresponds to about 20 degree inclination to the top of the image, and about -7 degrees to the bottom of the image. If the aspect ratio of the image is preserved, this takes not only the width and height of the image into account, but also the repetition count.<br /><br />Regardless of the repetition count you chose, you should make sure that the left and right edges of the textures fit seamlessly together. Please also take into account that top and bottom caps are created which sample from the top and bottom 10% of the image. You should avoid mountain peaks and similar extremes in the top 10% of the image in order for such extremes to not leak into the top cap.<br /><br />The image loaded into Texture.Background(0) is displayed at the beginning of the route, unless a Track.Back command at the beginning of the route requests a different image.<br /><br /><hr />
+Commands from this namespace define which background images to use and how they are aligned.<br /><br /><img src="../../images/illustration_background.png" alt="" />
+<br />The background image is displayed as a cylindric wall around the camera whose start (viewed from above) is 60 degrees to the left of the initial forward direction (at the 10 o'clock position). From there, the background image wraps clock-wise around the cylinder with a repetition count specified via Texture.Background(<em>BackgroundTextureIndex</em>).X, which by default creats 6 repetitions in a full circle.<br /><br />The upper 3/4 of the image is displayed above the horizon, while the lower 1/4 is displayed below the horizon. Via Texture.Background(<em>BackgroundTextureIndex</em>).Aspect, you can choose whether to have a fixed cylinder height or to preserve the aspect ratio of the texture. If the image should have a fixed height, the cylinder has a height of 1/2 its radius, which corresponds to about 20 degree inclination to the top of the image, and about -7 degrees to the bottom of the image. If the aspect ratio of the image is preserved, this takes not only the width and height of the image into account, but also the repetition count.<br /><br />Regardless of the repetition count you chose, you should make sure that the left and right edges of the textures fit seamlessly together. Please also take into account that top and bottom caps are created which sample from the top and bottom 10% of the image. You should avoid mountain peaks and similar extremes in the top 10% of the image in order for such extremes to not leak into the top cap.<br /><br />The image loaded into Texture.Background(0) is displayed at the beginning of the route, unless a Track.Back command at the beginning of the route requests a different image.<br /><br />
+As an alternative <b><em>Dynamic or Object</em></b> based backgrounds may be used. The implementation of these is described upon this page:<br>
+<a href="route_dynamicbackground.html" target="main">Dynamic & Object Based Backgrounds</a></p><hr />
+
 <table border="0">
 <tr style="height:16"><td></td></tr>
 <tr><td bgcolor="#F0F0F0" style="font-family: monospace;border:1px dotted;color:#808080"><font color="#C00000"><b>Texture.Background(<em>BackgroundTextureIndex</em>)</b><font color="gray">.Load</font> <em>FileName</em></font></td></tr>
@@ -866,7 +869,9 @@ Commands from this namespace define which background images to use and how they 
 <tr><td><font color="#808080">
 <b><em>FileName</em></b>: The texture file to load, relative to the <b>Object</b> folder.
 </font></td></tr></table>
-This command loads a background image to be later used by Track.Back.<br /><br /><hr />
+This command loads a background image to be later used by Track.Back.<br />
+<br><b>NOTE:</b> If a dynamic or object based background is to be used, this must instead point to the appropriate XML file.<br><br />
+<hr />
 <table border="0">
 <tr style="height:16"><td></td></tr>
 <tr><td bgcolor="#F0F0F0" style="font-family: monospace;border:1px dotted;color:#808080"><font color="#C00000"><b>Texture.Background(<em>BackgroundTextureIndex</em>).X</b> <em>RepetitionCount</em></font></td></tr>
@@ -875,6 +880,7 @@ This command loads a background image to be later used by Track.Back.<br /><br /
 <tr><td><font color="#808080">
 <b><em>RepetitionCount</em></b>: The number of times the background image is repeated in a full circle. The default value is 6.
 </font></td></tr></table>
+<br><b>NOTE:</b> Ignored if using a dynamic or object based background.<br>
 <hr />
 <br /><table border="0">
 <tr style="height:16"><td></td></tr>
@@ -891,6 +897,7 @@ This command loads a background image to be later used by Track.Back.<br /><br /
 <b>0</b>: Use a fixed height for the cylinder.<br />
 <b>1</b>: Preserve the aspect ratio of the image.
 </font></td></tr></table>
+<br><b>NOTE:</b> Ignored if using a dynamic or object based background.<br>
 <br /><a name="cycle" />
 <br /><table><tr style="height: 4px;"><td /></tr></table>
 <font size="+1" color="#0080FF">■ 9. The Cycle namespace</font><hr />
@@ -989,7 +996,7 @@ Use this command to load signals directly from animated objects. The <em>SignalI
 Use this command to load signals from a series of individual textures applied onto a common object. openBVE looks for X, CSV and B3D objects in this exact order. Textures are required to have the same name as the signal or glow, plus a non-negative aspect index, plus a file extension for textures. The <em>SignalIndex</em> can be later referenced in Track.SigF commands to place the signal.<br /><br />For the <em>SignalFileWithoutExtension</em>, there should be the following files present (example):<br /><br /><em>SignalFileWithoutExtension</em><b>.x</b><br /><em>SignalFileWithoutExtension</em><b><font color="red">0</font>.bmp</b><br /><em>SignalFileWithoutExtension</em><b><font color="red">1</font>.bmp</b><br /><em>SignalFileWithoutExtension</em><b><font color="red">2</font>.bmp</b><br /><em>SignalFileWithoutExtension</em><b><font color="red"><em>n</em></font>.bmp</b><br /><br />The aspect indices from 0 through <em>n</em> represent successively more permissive aspects, where 0 is red. The built-in signals, for example, use the indices 0 (<font color="#C00000">●</font>), 1 (<font color="#FFC000">●●</font>), 2 (<font color="#FFC000">●</font>), 3 (<font color="#00C000">●</font><font color="#FFC000">●</font>), 4 (<font color="#00C000">●</font>) and 5 (<font color="#00C000">●●</font>). You can use as many as required.<br /><br />All faces in the object will be applied the currently active aspect texture. This means that you cannot use any other texture in the object, but still have to assign texture coordinates appropriately. For the glow object, the above rules also apply. The glow object is usually a rectangle placed clearly in front of the signal, although you can also use different shapes.<br /><br />The glow textures deserve special attention. All glow textures are pre-processed in the following way:<br /><br />
 <table style="border-collapse: collapse;">
 <tr><th bgcolor="#D0D0D0" style=" border: 2px; border-style: ridge; padding: 4px;">A</th><th bgcolor="#D0D0D0" style=" border: 2px; border-style: ridge; padding: 4px;">B</th><th bgcolor="#D0D0D0" style=" border: 2px; border-style: ridge; padding: 4px;">C</th><th bgcolor="#D0D0D0" style=" border: 2px; border-style: ridge; padding: 4px;">D</th><th bgcolor="#D0D0D0" style=" border: 2px; border-style: ridge; padding: 4px;">E</th><th bgcolor="#D0D0D0" style=" border: 2px; border-style: ridge; padding: 4px;">F</th></tr>
-<tr><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;"><img src="../../Images//illustration_glow_1.png" alt="" /></td><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;"><img src="../../Images//illustration_glow_2.png" alt="" /></td><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;"><img src="../../Images//illustration_glow_3.png" alt="" /></td><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;"><img src="../../Images//illustration_glow_4.png" alt="" /></td><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;"><img src="../../Images//illustration_glow_5.png" alt="" /></td><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;"><img src="../../Images//illustration_glow_6.png" alt="" /></td></tr>
+<tr><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;"><img src="../../images/illustration_glow_1.png" alt="" /></td><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;"><img src="../../images/illustration_glow_2.png" alt="" /></td><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;"><img src="../../images/illustration_glow_3.png" alt="" /></td><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;"><img src="../../images/illustration_glow_4.png" alt="" /></td><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;"><img src="../../images/illustration_glow_5.png" alt="" /></td><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;"><img src="../../images/illustration_glow_6.png" alt="" /></td></tr>
 </table><br />
 The texture you start with should have a sharp shape, usually oval. The shape should be fully saturated in the core and blend into pure white at its outer rim. The surroundings of the shape can be either pure black (A) or pure white (B).<br /><br />When openBVE loads the glow texture, it will replace all purely black pixels with purely white pixels, thus arriving at (B). From there, the image is inverted (C), then hue-shifted by 180 degrees (D). Compared to (B), this has the overall effect of inverting the lightness of the image, i.e. fully saturated pixels will be left unchanged (e.g. the core), while bright pixels (such as the outer rim of the shape) will become dark, and vice versa. Then, the image is gamma-corrected to further darken the dark parts (E), and finally, the image is blurred slightly (F).<br /><br />The resulting texture is always additively blended. This means that instead of directly drawing the texture onto the screen, the pixels of the texture are added to the screen pixels. Here, adding black (0) does not change the screen pixels, while adding a fully satured color channel (1) will result in a fully satured color channel, e.g. adding white produces white. Keep in mind that when designing the textures, you will have to follow the inverse rules, e.g. design the image as depicted in (A) or (B), while having in mind how it will be processed afterward.<br /><br /><a name="track" />
 <br /><table><tr style="height: 4px;"><td /></tr></table>
@@ -1395,7 +1402,7 @@ This ends an existing pole that was previously started via Track.Pole on a speci
 <tr><td bgcolor="#F0F0F0" style="font-family: monospace;border:1px dotted;color:#808080"><font color="#606060"><b>Track.Crack</b> <em>RailIndex<sub>1</sub></em>; <em>RailIndex<sub>2</sub></em>; <em>CrackStructureIndex</em></font></td></tr></table>
 <table style="border:0px none;margin-left:10pt;margin-right:10pt;">
 <tr><td><font color="#808080">
-<img src="../../Images//construction_16.png" alt="" /> Description not available yet.
+<img src="../../images/construction_16.png" alt="" /> Description not available yet.
 </font></td></tr></table>
 <hr />
 <br /><table border="0">
@@ -1606,7 +1613,7 @@ This command places a stop point for the last created station. If there is more 
 <tr><td bgcolor="#F0F0F0" style="font-family: monospace;border:1px dotted;color:#808080"><font color="#606060"><b>Track.Form</b> <em>RailIndex<sub>1</sub></em>; <em>RailIndex<sub>2</sub></em>; <em>RoofStructureIndex</em>; <em>FormStructureIndex</em></font></td></tr></table>
 <table style="border:0px none;margin-left:10pt;margin-right:10pt;">
 <tr><td><font color="#808080">
-<img src="../../Images//construction_16.png" alt="" /> Description not available yet.
+<img src="../../images/construction_16.png" alt="" /> Description not available yet.
 </font></td></tr></table>
 <br /><a name="track_signalling" />
 <br /><table><tr style="height: 4px;"><td /></tr></table>
@@ -1627,7 +1634,7 @@ This command places a stop point for the last created station. If there is more 
 <b><em>Post</em></b>: The side on which to place a default Japanese-style speed limit post. The default value is 0.<br />
 <b><em>Cource</em></b>: The directional indication. The default value is 0.
 </font></td></tr></table>
-<img src="../../Images//illustration_limit.png" alt="" />
+<img src="../../images/illustration_limit.png" alt="" />
 <br /><table style="border:0px none;margin-left:40pt;margin-right:10pt;">
 <tr><td>▸ Options for <em>Post</em>:</td></tr></table>
 <table style="border:0px none;margin-left:50pt;margin-right:10pt;">
@@ -1721,7 +1728,7 @@ This command creates a non-function signal, that is, a visual representation of 
 <tr><td>▸ Options for <em>Type</em>:</td></tr></table>
 <table style="border:0px none;margin-left:50pt;margin-right:10pt;">
 <tr><td><font color="#808080">
-<a href="../../Images//illustration_signals_large.png"><img src="../../Images//illustration_signals_small.png" alt="" /></a><br />
+<a href="../../images/illustration_signals_large.png"><img src="../../images/illustration_signals_small.png" alt="" /></a><br />
 <b>2</b>: A two-aspect (type A) signal having aspects <font color="#C00000">●</font>red and <font color="#FFC000">●</font>yellow.<br />
 <b>-2</b>: A two-aspect (type B) signal having aspects <font color="#C00000">●</font>red and <font color="#00C000">●</font>green.<br />
 <b>3</b>: A three-aspect signal having aspects <font color="#C00000">●</font>red, <font color="#FFC000">●</font>yellow and <font color="#00C000">●</font>green.<br />
@@ -1805,7 +1812,7 @@ This command places a beacon (transponder). The object must have been loaded via
 <tr><td>▸ Options for <em>Type</em>:</td></tr></table>
 <table style="border:0px none;margin-left:50pt;margin-right:10pt;">
 <tr><td><font color="#808080">
-<img src="../../Images//illustration_transponders.png" alt="" /><br />
+<img src="../../images/illustration_transponders.png" alt="" /><br />
 <b>0</b>: An S-type transponder used by ATS-S. Usually placed 600m in front of a signal.<br />
 <b>1</b>: An SN-type transponder used by ATS-SN. Usually placed 20m in front of a signal.<br />
 <b>2</b>: An accidental departure transponder. Usually placed shortly behind a station stop.<br />

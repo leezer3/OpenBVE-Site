@@ -5,7 +5,7 @@
 <!-- Mirrored from www.trainsimframework.org/develop/object_csv.html by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 05 May 2012 22:30:46 GMT -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="SHORTCUT ICON" href="../../Images//favicon.png" />
+<link rel="SHORTCUT ICON" href="../../images/favicon.png" />
 <meta name="keywords" content="openBVE,homepage" />
 <title>The .csv object format</title>
 </head>
@@ -207,7 +207,7 @@ The <b>Rotate</b> command rotates all vertices that have been created so far in 
 <b><em>sZ</em></b>: The z-coordinate of the vector S. The default value is 0.<br />
 <b><em>r</em></b>: The ratio that indicates how much to displace vectors. The default value is 0.
 </font></td></tr></table>
-The <b>Shear</b> command performs a <a href="http://en.wikipedia.org/wiki/Shear_mapping">shear mapping</a> for all vertices that have been created so far in the current CreateMeshBuilder section. The <b>ShearAll</b> command not only affects the vertices generated in the current CreateMeshBuilder section, but also those created in previous CreateMeshBuilder sections. This is useful to insert at the end of the file in order to shear the whole object.<br /><br /><img src="../../Images//illustration_shear.png" alt="" />
+The <b>Shear</b> command performs a <a href="http://en.wikipedia.org/wiki/Shear_mapping">shear mapping</a> for all vertices that have been created so far in the current CreateMeshBuilder section. The <b>ShearAll</b> command not only affects the vertices generated in the current CreateMeshBuilder section, but also those created in previous CreateMeshBuilder sections. This is useful to insert at the end of the file in order to shear the whole object.<br /><br /><img src="../../images/illustration_shear.png" alt="" />
 <br /><br />The shear mapping is performed around the origin. Loosely speaking, the object is sliced into planes along the direction D and then displaced along the direction S. Typically, D and S are perpendicular. D and S are always normalized. If <em>Ratio</em> is 0, no transformation is performed. If D and S are perpendicular, a <em>Ratio</em> of 1 corresponds to a slope of 45 degrees.<br /><br /><hr />
 <br /><br /><a name="setcolor" />
 <br /><table border="0">

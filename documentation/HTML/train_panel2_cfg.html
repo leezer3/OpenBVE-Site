@@ -5,7 +5,7 @@
 <!-- Mirrored from www.trainsimframework.org/develop/train_panel2_cfg.html by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 05 May 2012 22:31:14 GMT -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="SHORTCUT ICON" href="../../Images//favicon.png" />
+<link rel="SHORTCUT ICON" href="../../images/favicon.png" />
 <meta name="keywords" content="openBVE,homepage" />
 <title>The panel2.cfg file format</title>
 </head>
@@ -183,7 +183,7 @@ Defines which pixel in the background image corresponds to the center of the scr
 <b><em>X</em></b>: A floating-point number representing the x-coordinate of the panel background image that corresponds to the vanishing point.<br />
 <b><em>Y</em></b>: A floating-point number  representing the y-coordinate of the panel background image that corresponds to the vanishing point.
 </font></td></tr></table>
-Defines which pixel in the background image corresponds to the vanishing point for the default camera position. This is the point to which the two rails converge at the horizon on a straight piece of track. The relation between <em>Center</em> and <em>Origin</em> influences the yaw and pitch of the cab alignment.<br /><br /><img src="../../Images//illustration_center_origin.png" alt="" />
+Defines which pixel in the background image corresponds to the vanishing point for the default camera position. This is the point to which the two rails converge at the horizon on a straight piece of track. The relation between <em>Center</em> and <em>Origin</em> influences the yaw and pitch of the cab alignment.<br /><br /><img src="../../images/illustration_center_origin.png" alt="" />
 <br /><br /><table><tr style="height: 4px;"><td /></tr></table>
 <table style="border:1px dashed;margin-left:20pt;margin-right:20pt;">
 <tr><td bgcolor="#FFE080" style="border:2px; border-style:ridge;"><font color="#404040">
@@ -473,7 +473,7 @@ This starts the section.<br /><br /><table border="0">
 <tr><td><font size="-1" color="#808080">
 
 </font></td></tr></table>
-The DigitalGauge section creates a solid-color square of which only a radial section is shown at a time. You can use as many of these sections as required.<br /><br />There are three important angles to consider. The <em>InitialAngle</em> defines which angle corresponds to the <em>Minimum</em> value, while <em>LastAngle</em> defines which angle corresponds to the <em>Maximum</em> value. The current value at a given time corresponds to the current angle. The solid-color square will only show the part that is between the current angle and the <em>LastAngle</em>. If <em>InitialAngle</em> is less than <em>LastAngle</em>, the solid-color square will wind clockwise. If <em>InitialAngle</em> is greater than <em>LastAngle</em>, the solid-color square will wind counter-clockwise.<br /><br />The subject needs to return a value that meaningfully works together with the <em>Minimum</em> and <em>Maximum</em> settings.<br /><br /><img src="../../Images//illustration_digitalgauge_1.png" alt="" /><br /><br /><img src="../../Images//illustration_digitalgauge_2.png" alt="" /><br /><br /><table border="0">
+The DigitalGauge section creates a solid-color square of which only a radial section is shown at a time. You can use as many of these sections as required.<br /><br />There are three important angles to consider. The <em>InitialAngle</em> defines which angle corresponds to the <em>Minimum</em> value, while <em>LastAngle</em> defines which angle corresponds to the <em>Maximum</em> value. The current value at a given time corresponds to the current angle. The solid-color square will only show the part that is between the current angle and the <em>LastAngle</em>. If <em>InitialAngle</em> is less than <em>LastAngle</em>, the solid-color square will wind clockwise. If <em>InitialAngle</em> is greater than <em>LastAngle</em>, the solid-color square will wind counter-clockwise.<br /><br />The subject needs to return a value that meaningfully works together with the <em>Minimum</em> and <em>Maximum</em> settings.<br /><br /><img src="../../images/illustration_digitalgauge_1.png" alt="" /><br /><br /><img src="../../images/illustration_digitalgauge_2.png" alt="" /><br /><br /><table border="0">
 <tr style="height:16"><td></td></tr>
 <tr><td bgcolor="#F0F0F0" style="font-family: monospace;border:1px dotted;color:#808080"><font color="#C00000">[DigitalGauge]</font></td></tr>
 </table>
