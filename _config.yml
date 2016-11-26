@@ -48,6 +48,8 @@ menu:
         url: '/documentation/'
       - title: 'openBVE Packages'
         url: '/packages/'
+      - title: 'Other Resources'
+        url: '/other-resources/'
   - title: 'Roadmap'
     url: '/roadmap/'
   - title: 'Discussion Board'
