@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openBVE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<version>1.5.0.8</version>
-<url>http://openbve-project.net/intro/V1.5.0.1-RC8/</url>
-<date>2016.08.25</date>
+<version>1.5.0.9</version>
+<url>http://openbve-project.net/intro/V1.5.0.1-RC9/</url>
+<date>2016.12.15</date>
 </openBVE>
