@@ -15,6 +15,7 @@ Version 1.5 is currently under development.
 * Extend a range of variables available via the plugin interface & animated files.
 * Port backend libraries to openTK.
 * In-game menu and information displays re-written.
+* Animated objects may now follow the path of Track 0.
 
 ### Work In Progress Features:
 
