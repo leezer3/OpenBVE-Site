@@ -73,6 +73,11 @@ The most recent stable version of openBVE is:
 
 Nightly builds are available from this address:
 
+These provide a daily snapshot, which is automatically built from the current source whenever a change is made.
+Whilst they are generally stable, it's important to remember that sometimes things may not work quite right. 
+
+If this is the case, please let us know by posting on the forum or opening an issue on GitHub, and we'll try and get to the bottom of it.
+
 <http://vps.bvecornwall.co.uk/OpenBVE/Builds>
 
 ---
