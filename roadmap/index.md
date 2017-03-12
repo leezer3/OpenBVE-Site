@@ -19,7 +19,7 @@ Version 1.5 is currently under development.
 
 ### Work In Progress Features:
 
-* Package management: Allow developers to create a managed package format, providing an easy installation and metadata for routes and trains.
+* Package management: Allow developers to create a managed package format, providing an easy installation and metadata for routes and trains. (Largely complete!)
 
 ---
 
@@ -30,6 +30,11 @@ Version 1.5 is currently under development.
 * Deprecate the train.dat and extensions.cfg files, in favour of an XML based system allowing much greater flexibility.
 * Multiple views (Cab, passenger etc.) available per train.
 * Backport the openBVE 2 demo object parser plugin interface. 
+
+### Work In Progress Features:
+
+* Improve the simulation options available to train developers.
+* Re-write the main simulation renderer to move away from using openGL intermediate mode.
 
 ---
 
