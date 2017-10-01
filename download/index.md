@@ -15,7 +15,7 @@ openBVE is provided as a standard Windows Installer.
 
 The most recent stable version of openBVE is:
 
-<a href="http://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.5.2.0-setup.exe" class="btn btn-info">1.5.2.0 (2017-09-08)</a>
+<a href="http://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.5.2.1-setup.exe" class="btn btn-info">1.5.2.1 (2017-10-01)</a>
 
 ---
 
@@ -28,7 +28,7 @@ openBVE is provided as a .deb package.
 
 The most recent stable version of openBVE is:
 
-<a href="http://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.5.2.0.deb" class="btn btn-info">1.5.2.0 (2017-09-08)</a>
+<a href="http://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.5.2.1.deb" class="btn btn-info">1.5.2.1 (2017-10-01)</a>
 
 ---
 
@@ -41,7 +41,7 @@ openBVE is provided as a standard compressed archive.
 
 The most recent stable version of openBVE is:
 
-<a href="http://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.5.2.0.zip" class="btn btn-info">1.5.2.0 (2017-09-08)</a>
+<a href="http://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.5.2.1.zip" class="btn btn-info">1.5.2.1 (2017-10-01)</a>
 
 ---
 
@@ -55,7 +55,7 @@ openBVE is provided as an installable .DMG file.
 
 The most recent stable version of openBVE is:
 
-<a href="http://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.5.2.0.dmg" class="btn btn-info">1.5.2.0 (2017-09-08)</a>
+<a href="http://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.5.2.1.dmg" class="btn btn-info">1.5.2.1 (2017-10-01)</a>
 
 ---
 
@@ -74,6 +74,6 @@ If this is the case, please let us know by posting on the forum or opening an is
 
 # Previous Stable Versions
 
-The previous stable version of openBVE is:
+Previous stable versions of openBVE may be found here:
 
-<a href="http://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE_1.4.3.0.7z" class="btn btn-info">1.4.3 Stable (2013-10-04)</a>
+<a href="http://vps.bvecornwall.co.uk/OpenBVE/Stable/" class="btn btn-info">Previous Stable Versions</a>
