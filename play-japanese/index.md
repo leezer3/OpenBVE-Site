@@ -24,7 +24,7 @@ A basic Japanese signal may contain up to six signal aspects. These aspects incl
 |<font color="yellow">Yellow- Yellow</font>								| Speed Restriction (25km/h)	|
 |<font color="yellow">Yellow</font>										| Caution (45- 55km/h)			|
 |<font color="yellow">Yellow</font> <font color="green">Green</font>	| Reduced Speed (65- 85km/h)    |
-|<font color="green">Green</font>										| Proceed (45- 55km/h)			|
+|<font color="green">Green</font>										| Proceed (130km/h- Unlimited)	|
 |<font color="green">Green Green</font>									| High-Speed Proceed (Unlimited)|
 |-----------------------------------------------------------------------|-------------------------------|
 
