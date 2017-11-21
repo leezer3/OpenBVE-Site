@@ -41,8 +41,8 @@ Assorted British rolling stock, buildings and cars.
 
 <http://www.bvecornwall.co.uk/wordpress/objects/>
 
-### Celtic Trainsim 'Freebies'
+### Freebies'
 
 Assorted road traffic
 
-<http://celtictrainsim.com/freebies.html>
+<http://www.bve-terminus.org/freebies/>
