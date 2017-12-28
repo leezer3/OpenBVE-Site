@@ -307,7 +307,7 @@ From highest precedence to lowest. Operators of same precedence are evaluated le
 <table style="border-collapse: collapse;">
 <tr><th bgcolor="#D0D0D0" style=" border: 2px; border-style: ridge; padding: 4px;">Function</th><th bgcolor="#D0D0D0" style=" border: 2px; border-style: ridge; padding: 4px;">Description</th></tr>
 <tr><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;"><tt>Reciprocal[<em>x</em>]</tt></td><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;">Returns the reciprocal, equal to 1&#47;<em>x</em></td></tr>
-<tr><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;"><tt>Power[<em>a</em>,<em>b</em>,...]</tt></td><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;">Returns <em>a</em> raised to the <em>b</em><sup>th</sup> power. <em>b</em> must be a non-negative number. For consistency, Power[0,<em>b</em>] always returns 1, even in the degenerate case Power[0,0], and <em>a</em> being negative always returns 0.</td></tr>
+<tr><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;"><tt>Power[<em>a</em>,<em>b</em>,...]</tt></td><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;">Returns <em>a</em> raised to the <em>b</em><sup>th</sup> power. <em>b</em> must be a non-negative number. For consistency, Power[0,<em>b</em>] always returns 1, even in the degenerate case Power[0,0], and <em>a</em> being negative always returns 0. Adding more arguments will create a chain. Power[a,b,c] will return <em>a</em><sup><em>b</em><sup><em>c</em></sup></sup>.</td></tr>
 </table><br />
 <table><tr style="height: 4px;"><td /></tr></table>
 <font color="#0080FF">● Numeric functions</font>
