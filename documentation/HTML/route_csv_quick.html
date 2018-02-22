@@ -148,7 +148,11 @@
 <br/>
 <b>Train.Folder</b> <em>FolderName</em>
 <br/>
+<b>Train.File</b> <em>FolderName</em>
+<br/>
 <b>Train.Run(</b><em>RailTypeIndex</em><b>)</b><font color="gray">.Set</font> <em>RunSoundIndex</em>
+<br/>
+<b>Train.Rail(</b><em>RailTypeIndex</em><b>)</b><font color="gray">.Set</font> <em>RunSoundIndex</em>
 <br/>
 <b>Train.Flange(</b><em>RailTypeIndex</em><b>)</b><font color="gray">.Set</font> <em>FlangeSoundIndex</em>
 <br/>
@@ -168,10 +172,6 @@
 
 <br/>
 <b>Structure.Rail(</b><em>RailStructureIndex</em><b>)</b><font color="gray">.Load</font> <em>FileName</em>
-<br/>
-<b>Structure.Beacon(</b><em>BeaconStructureIndex</em><b>)</b><font color="gray">.Load</font> <em>FileName</em>
-<br/>
-<b>Structure.Pole(</b><em>AdditionalRailsCovered</em><b>; </b><em>PoleStructureIndex</em><b>)</b><font color="gray">.Load</font> <em>FileName</em>
 <br/>
 <b>Structure.Ground(</b><em>GroundStructureIndex</em><b>)</b><font color="gray">.Load</font> <em>FileName</em>
 <br/>
@@ -205,6 +205,10 @@
 <br/>
 <b>Structure.FreeObj(</b><em>FreeObjStructureIndex</em><b>)</b><font color="gray">.Load</font> <em>FileName</em>
 <br/>
+<b>Structure.Beacon(</b><em>BeaconStrctureIndex</em><b>)</b><font color="gray">.Load</font> <em>FileName</em>
+<br/>
+<b>Structure.Pole(</b><em>NumberOfAdditionalRails</em><b>; </b><em>PoleStructureIndex</em><b>)</b><font color="gray">.Load</font> <em>FileName</em>
+<br/>
 
 <br/>
 <font color="red">Texture namespace</font>
@@ -222,6 +226,8 @@
 
 <br/>
 <b>Cycle.Ground(</b><em>GroundStructureIndex</em><b>)</b><font color="gray">.Params</font> <em>GroundStructureIndex<sub>1</sub></em>; <em>GroundStructureIndex<sub>2</sub></em>; <em>...</em>; <em>GroundStructureIndex<sub>n</sub></em>
+<br/>
+<b>Cycle.Rail(</b><em>RailStructureIndex</em><b>)</b><font color="gray">.Params</font> <em>RailStructureIndex<sub>1</sub></em>; <em>RailStructureIndex<sub>2</sub></em>; <em>...</em>; <em>RailStructureIndex<sub>n</sub></em>
 <br/>
 
 <br/>
@@ -308,6 +314,8 @@
 <b>Track.Section</b> <em>Aspect<sub>0</sub></em>; <em>Aspect<sub>1</sub></em>; <em>...</em>; <em>Aspect<sub>n</sub></em>
 <br/>
 <b>Track.SigF</b> <em>SignalIndex</em>; <em>Section</em>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>
+<br/>
+<b>Track.Sig</b> <em>Aspects</em>; <font color="gray"><em><strike>Unused</strike></em></font>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>
 <br/>
 <b>Track.Signal</b> <em>Aspects</em>; <font color="gray"><em><strike>Unused</strike></em></font>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>
 <br/>
