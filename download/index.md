@@ -15,7 +15,7 @@ openBVE is provided as a standard Windows Installer.
 
 The most recent stable version of openBVE is:
 
-<a href="http://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.5.3.1-setup.exe" class="btn btn-info">1.5.3.1 (2018-02-09)</a>
+<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.5.3.1-setup.exe" class="btn btn-info">1.5.3.1 (2018-02-09)</a>
 
 ---
 
@@ -28,7 +28,7 @@ openBVE is provided as a .deb package.
 
 The most recent stable version of openBVE is:
 
-<a href="http://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.5.3.1.deb" class="btn btn-info">1.5.3.1 (2018-02-09)</a>
+<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.5.3.1.deb" class="btn btn-info">1.5.3.1 (2018-02-09)</a>
 
 ---
 
@@ -41,7 +41,7 @@ openBVE is provided as a standard compressed archive.
 
 The most recent stable version of openBVE is:
 
-<a href="http://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.5.3.1.zip" class="btn btn-info">1.5.3.1 (2018-02-09)</a>
+<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.5.3.1.zip" class="btn btn-info">1.5.3.1 (2018-02-09)</a>
 
 ---
 
@@ -55,7 +55,7 @@ openBVE is provided as an installable .DMG file.
 
 The most recent stable version of openBVE is:
 
-<a href="http://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.5.3.1.dmg" class="btn btn-info">1.5.3.1 (2018-02-09)</a>
+<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.5.3.1.dmg" class="btn btn-info">1.5.3.1 (2018-02-09)</a>
 
 ---
 
@@ -68,7 +68,7 @@ Whilst they are generally stable, it's important to remember that sometimes thin
 
 If this is the case, please let us know by posting on the forum or opening an issue on GitHub, and we'll try and get to the bottom of it.
 
-<http://vps.bvecornwall.co.uk/OpenBVE/Builds>
+<https://vps.bvecornwall.co.uk/OpenBVE/Builds>
 
 ---
 
@@ -76,4 +76,4 @@ If this is the case, please let us know by posting on the forum or opening an is
 
 Previous stable versions of openBVE may be found here:
 
-<a href="http://vps.bvecornwall.co.uk/OpenBVE/Stable/" class="btn btn-info">Previous Stable Versions</a>
+<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/" class="btn btn-info">Previous Stable Versions</a>
