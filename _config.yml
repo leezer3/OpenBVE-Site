@@ -39,6 +39,8 @@ menu:
         url: '/play-japanese/'
       - title: 'British Signals and Signs'
         url: '/play-british/'
+      - title: 'Desktop Cab Controllers'
+        url: '/play-cabcontrollers/'
   - title: 'Developing Addons'
     url: '/creating-addons/'
     submenu:
