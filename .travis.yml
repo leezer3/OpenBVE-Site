@@ -1,0 +1,24 @@
+language: go
+
+install:
+    - wget https://github.com/gohugoio/hugo/releases/download/v0.31.1/hugo_0.31.1_Linux-64bit.deb
+    - sudo dpkg -i hugo*.deb
+
+addons:
+  apt:
+    packages:
+      - python-pygments
+
+script:
+    - hugo
+
+after_success: |
+    if [ -n "$GITHUB_API_KEY" ]; then
+    git checkout gh-pages
+    git rm -rf ./documentation_hugo
+    mv public/* ./documentation_hugo
+    rm -rf public hugo_*
+    git add -f --ignore-errors --all
+    git -c user.name='travis' -c user.email='travis' commit -m init
+    git push -f -q https://$GITHUB_USER:$GITHUB_API_KEY@github.com/$TRAVIS_REPO_SLUG gh-pages
+    fi
