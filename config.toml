@@ -3,8 +3,7 @@ theme = "openbve_documentation"
 DefaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 removePathAccents = true
-baseurl = "https://openbve-project.net/documentation_hugo"
-canonifyURLs = "true"
+
 relativeURLs = true
 uglyURLs = true
 
