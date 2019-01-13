@@ -2,13 +2,11 @@
 <html lang="en">
   <head>
     <title>openBVE Documentation</title>
-    <link rel="stylesheet" href="https://openbve-project.net/documentation_hugo/css/theme.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css">
-    <link rel="icon" href="https://openbve-project.net/documentation_hugo/favicon.png">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="../../css/bulma.custom.css">
+    <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-    <script type="text/javascript" src="https://openbve-project.net/documentation_hugo/script/script.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <meta name="generator" content="Hugo 0.53" />
 
   </head>
@@ -18,7 +16,7 @@
 
       
       <div id="site-logo">
-          <img alt="Site logo" src="https://openbve-project.net/documentation_hugo/images/logo.png">
+          <img alt="Site logo" src="../../images/logo.png">
       </div>
       
 
@@ -301,10 +299,24 @@
     </div>
 
     <div id="language-menu">
-  <select class="language-selector" name="state" style="width:100px;">
-     <option value="https://openbve-project.net/documentation_hugo/en/tools/objectviewer.html">English</option>
-  
-  </select>
+<div class="dropdown is-hoverable">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+      <span>Language</span>
+      <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu" role="menu">
+    <div class="dropdown-content">
+      <a href="../../en/tools/objectviewer.html" class="dropdown-item">
+        English
+      </a>
+      
+    </div>
+  </div>
+</div>
 </div>
 
 
