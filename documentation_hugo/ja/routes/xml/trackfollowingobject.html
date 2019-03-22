@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>openBVE Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css">
+    <link rel="stylesheet" href="../../../css/bulma.custom.css">
+    <link rel="icon" href="../../../favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta name="generator" content="Hugo 0.53" />
+
+  </head>
+  <body>
+
+    <div id="sidebar">
+
+      
+      <div id="site-logo">
+          <img alt="Site logo" src="../../../images/logo.png">
+      </div>
+      
+
+      <nav>
+<input type="checkbox" id="burger-toggle" class="burger-toggle" hidden>
+
+<div id="menu-entries">
+  <ul class="first">
+    
+    
+    
+    <li>Objects
+      
+      <ul class="second">
+        
+        <li>Native formats
+          
+          <ul class="third">
+            
+            <li><a href="../../../ja/objects/native/b3d.html">The B3D object</a>
+              
+            </li>
+            
+            <li><a href="../../../ja/objects/native/csv.html">The CSV object</a>
+              
+            </li>
+            
+            <li><a href="../../../ja/objects/native/animated.html">The ANIMATED object</a>
+              
+            </li>
+            
+            
+              
+            </li>
+            
+            
+              
+            </li>
+            
+            
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>Other formats
+          
+          <ul class="third">
+            
+            <li><a href="../../../ja/objects/other/loksim.html">Loksim3D (.l3dobj)</a>
+              
+            </li>
+            
+            <li><a href="../../../ja/objects/other/x.html">Microsoft DirectX (.x)</a>
+              
+            </li>
+            
+            <li><a href="../../../ja/objects/other/msts.html">Microsoft Train Simulator (.s)</a>
+              
+            </li>
+            
+            <li><a href="../../../ja/objects/other/obj.html">Wavefront (.obj)</a>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li><a href="../../../ja/objects/information.html">Information and tips</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Routes
+      
+      <ul class="second">
+        
+        <li><a href="../../../ja/routes/csv.html">The CSV route</a>
+          
+        </li>
+        
+        
+          
+          <ul class="third">
+            
+            <li><a href="../../../ja/routes/xml/dynamiclight.html">Adding Dynamic Lighting</a>
+              
+            </li>
+            
+            <li><a href="../../../ja/routes/xml/dynamicbackground.html">Dynamic and Object Based Backgrounds</a>
+              
+            </li>
+            
+            <li><a href="../../../ja/routes/xml/route_marker.html">Scripted Markers</a>
+              
+            </li>
+            
+            <li><a href="../../../ja/routes/xml/stationxml.html">XML Stations &amp; Request Stops</a>
+              
+            </li>
+            
+            <li><a href="../../../ja/routes/xml/trackfollowingobject.html">Track Following Object</a>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li><a href="../../../ja/routes/micsounds.html">Playing Sounds from a Microphone Input</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/routes/rw.html">The RW route</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/routes/tutorial_ats.html">Tutorial: Using ATS</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/routes/tutorial_atc.html">Tutorial: Using ATC</a>
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Trains
+      
+      <ul class="second">
+        
+        <li><a href="../../../ja/trains/overview.html">Overview</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/trains/train_dat.html">The train.dat file</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/trains/train_xml.html">The train.xml file</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/trains/extensions_cfg.html">The extensions.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/trains/panel_cfg.html">The panel.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/trains/panel2_cfg.html">The panel2.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/trains/panel_animated.html">The panel.animated file</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/trains/default_sounds.html">Default sounds</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/trains/sound_cfg.html">The sound.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/trains/openbveats.html">The OpenBveAts Plugin</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/trains/ats_cfg.html">The ats.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/trains/plugins.html">Train plugins</a>
+          
+          <ul class="third">
+            
+            
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li><a href="../../../ja/trains/information.html">Information and tips</a>
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Plugins
+      
+      <ul class="second">
+        
+        <li><a href="../../../ja/plugins/overview.html">Overview</a>
+          
+        </li>
+        
+        
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Information
+      
+      <ul class="second">
+        
+        <li><a href="../../../ja/information/encodings.html">Character encodings</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/information/numberformats.html">Number formats</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/information/whitespaces.html">White Spaces</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/information/textureformats.html">Texture formats</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/information/soundformats.html">Sound formats</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/information/standards.html">Standards</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/information/distribution.html">Distributing add-ons</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/information/forking.html">Forking guidelines</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/information/bve.html">Vs. BVE Trainsim</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Tools
+      
+      <ul class="second">
+        
+        <li><a href="../../../ja/tools/objectviewer.html">Object Viewer</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/tools/objectbender.html">Object Bender</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/tools/routeviewer.html">Route Viewer</a>
+          
+        </li>
+        
+        <li><a href="../../../ja/tools/traineditor.html">Train Editor</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+  </ul>
+</div>
+</nav>
+
+    </div>
+
+    <div id="language-menu">
+<div class="dropdown is-hoverable">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+      <span>Language</span>
+      <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu" role="menu">
+    <div class="dropdown-content">
+      <a href="../../../ja/routes/xml/trackfollowingobject.html" class="dropdown-item">
+        日本語
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../../en/routes/xml/trackfollowingobject.html" class="dropdown-item">
+        English
+      </a>
+      
+    </div>
+  </div>
+</div>
+</div>
+
+
+    <div id="container">
+
+        <div id="page-title">
+          <h1>Track Following Object</h1>
+        </div>
+
+        
+
+
+
+
+<div id="content">
+  
+
+<p>This page explains the principle and implementation of the XML-based Track Following Object, which is supported in openBVE v1.6.0 or later.</p>
+
+<h2 id="basic-principles">■ Basic Principles</h2>
+
+<p>openBVE can freely run a Track Following Object on other tracks.</p>
+
+<p>In order to do this, it is necessary to setup each object that you want to run using Track Following Object XML files. An example is shown below.</p>
+
+<p>In this example the object runs as follows.</p>
+
+<ol>
+<li>It is displayed when the in-game time 00:01:00 has elapsed and the object exists within 50 m to 100 m of the player&rsquo;s camera position in game. It becomes invisible after 5 minutes have elapsed since being displayed. The appearance is defined in extensions.cfg in 7-car formation.</li>
+<li>The in-game distance is 200 m and the right door is opened for 20 seconds and then the object accelerates to 30 km/h at an acceleration of 1.71km/h/s on <strong>Rail2</strong>.</li>
+<li>It travels at 60 km/h on <strong>Rail2</strong> for 400 m.</li>
+<li>The object decelerates to 30km/h at 1.71 km/h/s on <strong>Rail2</strong>, when it reaches a distance of 1000 m within the game, it stops and opens the doors on both sides. After stopping for 10 seconds, it accelerates in reverse to 30 km/h with an acceleration of 1.71 km/h/s on Rail1.</li>
+<li>The object decelerates to 30 km/h at 1.71 km/h/s on <strong>Rail1</strong>, stops and opens the right door at an in-game distance of 200 m.</li>
+</ol>
+
+<textarea rows="17" cols="110" style="border:2;">
+    
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
+&lt;openBVE xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xsd=&#34;http://www.w3.org/2001/XMLSchema&#34;&gt;
+  &lt;TrackFollowingObject&gt;
+    &lt;Definition&gt;
+      &lt;!--Time when the object appears[hh.mmss]--&gt;
+      &lt;AppearanceTime&gt;00.0100&lt;/AppearanceTime&gt;
+      &lt;!--In-game distance of the starting point at which the object appears[m]--&gt;
+      &lt;AppearanceStartPosition&gt;50&lt;/AppearanceStartPosition&gt;
+      &lt;!--In-game distance of the end point at which the object appears[m]--&gt;
+      &lt;AppearanceEndPosition&gt;100&lt;/AppearanceEndPosition&gt;
+      &lt;!--The duration for which the object appears[hh.mmss]--&gt;
+      &lt;LeaveTime&gt;00.0500&lt;/LeaveTime&gt;
+    &lt;/Definition&gt;
+    &lt;Train&gt;
+      &lt;!--Relative path of Train folder--&gt;
+      &lt;Directory&gt;TrainDirectory&lt;/Directory&gt;
+    &lt;/Train&gt;
+    &lt;Stops&gt;
+      &lt;!--Start--&gt;
+      &lt;Stop&gt;
+        &lt;!--Deceleration[km/h/s]--&gt;
+        &lt;Decelerate&gt;0.0&lt;/Decelerate&gt;
+        &lt;!--In-game distance of stop position[m]--&gt;
+        &lt;StopPosition&gt;200&lt;/StopPosition&gt;
+        &lt;!--Door that open at this point--&gt;
+        &lt;Doors&gt;1&lt;/Doors&gt;
+        &lt;!--Time to keep stopping[hh.mmss]--&gt;
+        &lt;StopTime&gt;00.0020&lt;/StopTime&gt;
+        &lt;!--Acceleration[km/h/s]--&gt;
+        &lt;Accelerate&gt;1.71&lt;/Accelerate&gt;
+        &lt;!--Speed after acceleration[km/h]--&gt;
+        &lt;TargetSpeed&gt;30&lt;/TargetSpeed&gt;
+        &lt;!--Progress direction [1: forward, -1: backward]--&gt;
+        &lt;Direction&gt;1&lt;/Direction&gt;
+        &lt;!--Traveling track--&gt;
+        &lt;Rail&gt;2&lt;/Rail&gt;
+      &lt;/Stop&gt;
+      &lt;!--Maximum speed change--&gt;
+      &lt;Stop&gt;
+        &lt;Decelerate&gt;0&lt;/Decelerate&gt;
+        &lt;StopPosition&gt;400&lt;/StopPosition&gt;
+        &lt;StopTime&gt;00.0000&lt;/StopTime&gt;
+        &lt;Accelerate&gt;0&lt;/Accelerate&gt;
+        &lt;TargetSpeed&gt;60&lt;/TargetSpeed&gt;
+        &lt;Direction&gt;1&lt;/Direction&gt;
+        &lt;Rail&gt;2&lt;/Rail&gt;
+      &lt;/Stop&gt;
+      &lt;!--Return--&gt;
+      &lt;Stop&gt;
+        &lt;Decelerate&gt;1.71&lt;/Decelerate&gt;
+        &lt;StopPosition&gt;1000&lt;/StopPosition&gt;
+        &lt;Doors&gt;B&lt;/Doors&gt;
+        &lt;StopTime&gt;00.0010&lt;/StopTime&gt;
+        &lt;Accelerate&gt;1.71&lt;/Accelerate&gt;
+        &lt;TargetSpeed&gt;30&lt;/TargetSpeed&gt;
+        &lt;Direction&gt;-1&lt;/Direction&gt;
+        &lt;Rail&gt;1&lt;/Rail&gt;
+      &lt;/Stop&gt;
+      &lt;!--Goal--&gt;
+      &lt;Stop&gt;
+        &lt;Decelerate&gt;1.71&lt;/Decelerate&gt;
+        &lt;StopPosition&gt;200&lt;/StopPosition&gt;
+        &lt;Doors&gt;R&lt;/Doors&gt;
+        &lt;StopTime&gt;00.0030&lt;/StopTime&gt;
+        &lt;Accelerate&gt;0&lt;/Accelerate&gt;
+        &lt;TargetSpeed&gt;0&lt;/TargetSpeed&gt;
+        &lt;Direction&gt;1&lt;/Direction&gt;
+        &lt;Rail&gt;1&lt;/Rail&gt;
+      &lt;/Stop&gt;
+    &lt;/Stops&gt;
+  &lt;/TrackFollowingObject&gt;
+&lt;/openBVE&gt;
+
+</textarea>
+
+<p>As you can see, the file consists of one <strong>&lt;Definition&gt;</strong> section, one <strong>&lt;Car&gt;</strong> section and one <strong>&lt;Stops&gt;</strong> section. The <strong>&lt;Stops&gt;</strong> section consists of two or more <strong>&lt;Stop&gt;</strong> sections.</p>
+
+<h2 id="definition-attribute">■ Definition attribute</h2>
+
+<div id="command">
+<p><strong>&lt;AppearanceTime&gt;</strong> <em>Time</em> <strong>&lt;/AppearanceTime&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Time</strong> sets the time when the object appears in the game.</p>
+
+<p><em>Note:</em> If this parameter is omitted, the object will emerge from the start of the game.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;AppearanceStartPosition&gt;</strong> <em>Position</em> <strong>&lt;/AppearanceStartPosition&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Position</strong> sets the in-game distance at which the object starts appearing. The object will appear when the player&rsquo;s camera position passes this point. The unit is <strong>meter</strong>.</p>
+
+<p><em>Note:</em> If this parameter is omitted, the object will emerge from the start of the game.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;AppearanceEndPosition&gt;</strong> <em>Position</em> <strong>&lt;/AppearanceEndPosition&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Position</strong> sets the in-game distance at the end point where the object appears. The object will be hidden when the player&rsquo;s camera position passes this point. It must also be greater than the value specified for <strong>&lt;AppearanceStartPosition&gt;</strong>. The unit is <strong>meter</strong>.</p>
+
+<p><em>Note:</em> If this parameter is omitted, the object will emerge from the start of the game.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;LeaveTime&gt;</strong> <em>Time</em> <strong>&lt;/LeaveTime&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Time</strong> sets the duration from when the object appears in the game until it disappears. The object will not be visible after this time. This value is not an in-game time.</p>
+
+<p><em>Note:</em> If this parameter is omitted, the object will remain visible until the end of the game, or until it is hidden by <strong>&lt;AppearanceEndPosition&gt;</strong></p>
+
+<h2 id="train-attribute">■ Train attribute</h2>
+
+<div id="command">
+<p><strong>&lt;Directory&gt;</strong> <em>Path</em> <strong>&lt;/Directory&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Path</strong> sets the relative path to the directory containing the object&rsquo;s train.dat, sound.cfg and extensions.cfg.</p>
+
+<h2 id="stop-attribute">■ Stop attribute</h2>
+
+<div id="command">
+<p><strong>&lt;Decelerate&gt;</strong> <em>Value</em> <strong>&lt;/Decelerate&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Value</strong> sets the deceleration of the object. The unit is <strong>km/h/s</strong>.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;StopPosition&gt;</strong> <em>Position</em> <strong>&lt;/StopPosition&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Position</strong> sets the in-game distance where the object stops. The unit is <strong>meter</strong>.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;Doors&gt;</strong> <em>Value</em> <strong>&lt;/Doors&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Value</strong> sets the open door of the object. The valid values are:</p>
+
+<ul>
+<li><strong>L</strong> or <strong>-1</strong>: The left door opens.</li>
+<li><strong>N</strong> or <strong>0</strong>: Neither door opens.</li>
+<li><strong>R</strong> or <strong>1</strong>: The right door opens.</li>
+<li><strong>B</strong>: Both doors open.</li>
+</ul>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;StopTime&gt;</strong> <em>Time</em> <strong>&lt;/StopTime&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Time</strong> sets the duration of the stop of the object. This value is not an in-game time.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;Accelerate&gt;</strong> <em>Value</em> <strong>&lt;/Accelerate&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Value</strong> sets the acceleration of the object. The unit is <strong>km/h/s</strong>.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;TargetSpeed&gt;</strong> <em>Value</em> <strong>&lt;/TargetSpeed&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Value</strong> sets the speed after the acceleration of the object. The unit is <strong>km/h</strong>.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;Direction&gt;</strong> <em>Value</em> <strong>&lt;/Direction&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Value</strong> sets the direction of travel of the object. Valid values are as follows.</p>
+
+<ul>
+<li><strong>F</strong> or <strong>1</strong> : The object will move forward.</li>
+<li><strong>R</strong> or <strong>-1</strong> : The object goes backward.</li>
+</ul>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;Rail&gt;</strong> <em>RailIndex</em> <strong>&lt;/Rail&gt;</strong></p>
+
+</div>
+
+
+<p><strong>RailIndex</strong> sets the trajectory on which the object will run. It is necessary to define the trajectory by the <strong>Track.Rail</strong> command of the route file.</p>
+
+</div>
+
+      <div id="footer">
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
+

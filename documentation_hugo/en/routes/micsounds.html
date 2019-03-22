@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="utf-8"/>
     <title>openBVE Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css">
     <link rel="stylesheet" href="../../css/bulma.custom.css">
@@ -124,6 +125,10 @@
               
             </li>
             
+            <li><a href="../../en/routes/xml/trackfollowingobject.html">Track Following Object</a>
+              
+            </li>
+            
           </ul>
           
         </li>
@@ -141,6 +146,10 @@
         </li>
         
         <li><a href="../../en/routes/tutorial_atc.html">Tutorial: Using ATC</a>
+          
+        </li>
+        
+        
           
         </li>
         
@@ -196,6 +205,10 @@
           
         </li>
         
+        <li><a href="../../en/trains/openbveats.html">The OpenBveAts Plugin</a>
+          
+        </li>
+        
         <li><a href="../../en/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
@@ -216,6 +229,22 @@
           
         </li>
         
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
       </ul>
       
     </li>
@@ -225,6 +254,10 @@
       <ul class="second">
         
         <li><a href="../../en/plugins/overview.html">Overview</a>
+          
+        </li>
+        
+        
           
         </li>
         
@@ -322,6 +355,11 @@
         English
       </a>
       
+      <hr class="dropdown-divider">
+      <a href="../../ja/routes/micsounds.html" class="dropdown-item">
+        日本語
+      </a>
+      
     </div>
   </div>
 </div>
@@ -351,18 +389,21 @@
 
 
 <div id="command-arguments">
-<p><strong><em>X</em></strong>: The X position of the sound.
-<strong><em>Y</em></strong>: The Y position of the sound.
-<strong><em>ForwardsTolerance</em></strong>: The distance in meters at which the sound becomes audible as the train approaches it&rsquo;s position.
+<p><strong><em>X</em></strong>: The X position of the sound.<br />
+<strong><em>Y</em></strong>: The Y position of the sound.<br />
+<strong><em>ForwardsTolerance</em></strong>: The distance in meters at which the sound becomes audible as the train approaches it&rsquo;s position.<br />
 <strong><em>BackwardsTolerance</em></strong>: The distance in meters at which the sound is inaudible after the train passes it&rsquo;s position.</p>
 
 </div>
 
 
-<p><strong><strong>Implementation Notes</strong></strong>:
-* Microphone input must be activated using the <strong>PLAY_MIC_SOUNDS</strong> key, which is assigned to <strong>W</strong> by default.
-* The microphone input will be routed to all <strong>Track.MicSound</strong> sound sources within the camera range.
-* Only the first available openAL microphone input is supported at present.</p>
+<p><strong><strong>Implementation Notes</strong></strong>:</p>
+
+<ul>
+<li>Microphone input must be activated using the <strong>PLAY_MIC_SOUNDS</strong> key, which is assigned to <strong>W</strong> by default.</li>
+<li>The microphone input will be routed to all <strong>Track.MicSound</strong> sound sources within the camera range.</li>
+<li>Only the first available openAL microphone input is supported at present.</li>
+</ul>
 
 </div>
 

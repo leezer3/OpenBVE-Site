@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="utf-8"/>
     <title>openBVE Documentation</title>
     <link rel="stylesheet" href="../../../css/theme.css">
     <link rel="stylesheet" href="../../../css/bulma.custom.css">
@@ -124,6 +125,10 @@
               
             </li>
             
+            <li><a href="../../../en/routes/xml/trackfollowingobject.html">Track Following Object</a>
+              
+            </li>
+            
           </ul>
           
         </li>
@@ -141,6 +146,10 @@
         </li>
         
         <li><a href="../../../en/routes/tutorial_atc.html">Tutorial: Using ATC</a>
+          
+        </li>
+        
+        
           
         </li>
         
@@ -196,6 +205,10 @@
           
         </li>
         
+        <li><a href="../../../en/trains/openbveats.html">The OpenBveAts Plugin</a>
+          
+        </li>
+        
         <li><a href="../../../en/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
@@ -216,6 +229,22 @@
           
         </li>
         
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
       </ul>
       
     </li>
@@ -225,6 +254,10 @@
       <ul class="second">
         
         <li><a href="../../../en/plugins/overview.html">Overview</a>
+          
+        </li>
+        
+        
           
         </li>
         
@@ -322,6 +355,11 @@
         English
       </a>
       
+      <hr class="dropdown-divider">
+      <a href="../../../ja/trains/plugins/legacy.html" class="dropdown-item">
+        日本語
+      </a>
+      
     </div>
   </div>
 </div>
@@ -340,7 +378,9 @@
 
 
 <div id="content">
-  <hr />
+  
+
+<hr />
 
 <p><font size="+2">Win32 train plugins are not available on operating systems other than Microsoft Windows. Therefore, these plugins are officially deprecated. Please use <a href="../../../en/plugins/overview.html" target="_blank">.NET assemblies</a> from now on.</font></p>
 
@@ -392,6 +432,8 @@
 </tr>
 </tbody>
 </table>
+
+
 
 <h2 id="overview">■ Overview</h2>
 
@@ -449,6 +491,7 @@
 
 <p><em>Return value:</em></p>
 
+
 <table class='type1'>
 <thead>
 <tr>
@@ -467,6 +510,8 @@
 </tbody>
 </table>
 
+
+
 <hr />
 
 <p><strong>ATS_API void WINAPI SetVehicleSpec (ATS_VEHICLESPEC vehicleSpec)</strong></p>
@@ -474,6 +519,7 @@
 <p>This function is called after GetPluginVersion() is called and informs the plugin about the specifications of the train.</p>
 
 <p><em>struct ATS_VEHICLESPEC:</em></p>
+
 
 <table class='type1'>
 <thead>
@@ -506,6 +552,8 @@
 </tbody>
 </table>
 
+
+
 <hr />
 
 <p><strong>ATS_API void WINAPI Initialize(int brake)</strong></p>
@@ -513,6 +561,7 @@
 <p>This function is called after SetVehicleSpec() is called and informs the plugin about the mode the safety system should start in. If the safety system in your plugin can be activated or deactivated, you should initialize the state of the plugin accordingly. When the user selects a <em>Jump to station target</em>, this function is also called prior to moving the train to its new location.</p>
 
 <p><em>brake:</em></p>
+
 
 <table class='type1'>
 <thead>
@@ -538,6 +587,8 @@
 </tbody>
 </table>
 
+
+
 <hr />
 
 <p><strong>ATS_API ATS_HANDLES WINAPI Elapse(ATS_VEHICLESTATE vehicleState, int[] panel, int[] sound)</strong></p>
@@ -545,6 +596,7 @@
 <p>This function is called every frame, informs the plugin about the current state of the train, and expects the handles as overwritten by the safety system in return. The state of plugin-specific panel elements can also be set, as well as instructions to play plugin-specific sounds.</p>
 
 <p><em>struct ATS_VEHICLESTATE:</em></p>
+
 
 <table class='type1'>
 <thead>
@@ -597,11 +649,14 @@
 </tbody>
 </table>
 
+
+
 <p><em>int[] panel:</em><br />
 An array with 256 elements (0 through 255) which can be set to any value. The values in the array are preserved between successive Elapse() calls. At the beginning of the simulation, all elements are initialized to 0. Panel developers can query values of this array via the ats<em>i</em> subject, while developers of animated objects can query values via the pluginstate[<em>i</em>] variable. You should coordinate your efforts with panel/object developers and release a specification that tells which element in the array has what purpose.</p>
 
 <p><em>int[] sound:</em><br />
 An array with 256 elements (0 through 255) which can be set to any sound instruction. The values in the array are preserved between successive Elapse() calls. At the beginning of the simulation, all elements are initialized to ATS_SOUND_PLAYLOOPING (0). Train developers can reference sounds in the sound.cfg file. You should coordinate your efforts with train developers and release a specification that tells which sound index plays what kind of sound. The sound instructions that can be used are:</p>
+
 
 <table class='type1'>
 <thead>
@@ -639,7 +694,10 @@ An array with 256 elements (0 through 255) which can be set to any sound instruc
 </tbody>
 </table>
 
+
+
 <p><em>Return value struct ATS_HANDLES:</em></p>
+
 
 <table class='type1'>
 <thead>
@@ -667,6 +725,8 @@ An array with 256 elements (0 through 255) which can be set to any sound instruc
 </tbody>
 </table>
 
+
+
 <p><br/></p>
 
 <div id="warning">
@@ -674,6 +734,7 @@ An array with 256 elements (0 through 255) which can be set to any sound instruc
 <p>Please note that if you want the driver&rsquo;s settings to take effect, you need to respond to the SetPower(), SetBrake() and SetReverse() calls, save the values that are passed in this those calls, and reapply them here.</p>
 
 </div>
+
 
 <hr />
 
@@ -719,6 +780,7 @@ An array with 256 elements (0 through 255) which can be set to any sound instruc
 
 <p><em>hornType:</em></p>
 
+
 <table class='type1'>
 <thead>
 <tr>
@@ -742,6 +804,8 @@ An array with 256 elements (0 through 255) which can be set to any sound instruc
 </tr>
 </tbody>
 </table>
+
+
 
 <hr />
 
@@ -767,6 +831,7 @@ An array with 256 elements (0 through 255) which can be set to any sound instruc
 
 </div>
 
+
 <hr />
 
 <p><strong>ATS_API void WINAPI SetBeaconData(ATS_BEACONDATA beaconData)</strong></p>
@@ -774,6 +839,7 @@ An array with 256 elements (0 through 255) which can be set to any sound instruc
 <p>This function is called when a beacon is passed.</p>
 
 <p><em>struct ATS_BEACONDATA:</em></p>
+
 
 <table class='type1'>
 <thead>
@@ -801,9 +867,9 @@ An array with 256 elements (0 through 255) which can be set to any sound instruc
 </tbody>
 </table>
 
-<p><em>Type</em> can be in the range from 0 to 2147483647, while <em>Data</em> can be in the range from 2147483648 to 2147483647. Please see the page about <a href="../../../en/information/standards.html">standards</a> to learn more about assigning beacon types.</p>
 
 
+<p><em>Type</em> can be in the range from 0 to 2147483647, while <em>Data</em> can be in the range from 2147483648 to 2147483647. Please see the page about <a href="../../../en/information/standards.html" target="_blank">standards</a> to learn more about assigning beacon types.</p>
 
 </div>
 

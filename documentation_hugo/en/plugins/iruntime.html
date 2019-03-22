@@ -1,0 +1,1979 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>openBVE Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="../../css/bulma.custom.css">
+    <link rel="icon" href="../../favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta name="generator" content="Hugo 0.53" />
+
+  </head>
+  <body>
+
+    <div id="sidebar">
+
+      
+      <div id="site-logo">
+          <img alt="Site logo" src="../../images/logo.png">
+      </div>
+      
+
+      <nav>
+<input type="checkbox" id="burger-toggle" class="burger-toggle" hidden>
+
+<div id="menu-entries">
+  <ul class="first">
+    
+    
+    
+    <li>Objects
+      
+      <ul class="second">
+        
+        <li>Native formats
+          
+          <ul class="third">
+            
+            <li><a href="../../en/objects/native/b3d.html">The B3D object</a>
+              
+            </li>
+            
+            <li><a href="../../en/objects/native/csv.html">The CSV object</a>
+              
+            </li>
+            
+            <li><a href="../../en/objects/native/animated.html">The ANIMATED object</a>
+              
+            </li>
+            
+            
+              
+            </li>
+            
+            
+              
+            </li>
+            
+            
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>Other formats
+          
+          <ul class="third">
+            
+            <li><a href="../../en/objects/other/loksim.html">Loksim3D (.l3dobj)</a>
+              
+            </li>
+            
+            <li><a href="../../en/objects/other/x.html">Microsoft DirectX (.x)</a>
+              
+            </li>
+            
+            <li><a href="../../en/objects/other/msts.html">Microsoft Train Simulator (.s)</a>
+              
+            </li>
+            
+            <li><a href="../../en/objects/other/obj.html">Wavefront (.obj)</a>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li><a href="../../en/objects/information.html">Information and tips</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Routes
+      
+      <ul class="second">
+        
+        <li><a href="../../en/routes/csv.html">The CSV route</a>
+          
+        </li>
+        
+        
+          
+          <ul class="third">
+            
+            <li><a href="../../en/routes/xml/dynamiclight.html">Adding Dynamic Lighting</a>
+              
+            </li>
+            
+            <li><a href="../../en/routes/xml/dynamicbackground.html">Dynamic and Object Based Backgrounds</a>
+              
+            </li>
+            
+            <li><a href="../../en/routes/xml/route_marker.html">Scripted Markers</a>
+              
+            </li>
+            
+            <li><a href="../../en/routes/xml/stationxml.html">XML Stations &amp; Request Stops</a>
+              
+            </li>
+            
+            <li><a href="../../en/routes/xml/trackfollowingobject.html">Track Following Object</a>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li><a href="../../en/routes/micsounds.html">Playing Sounds from a Microphone Input</a>
+          
+        </li>
+        
+        <li><a href="../../en/routes/rw.html">The RW route</a>
+          
+        </li>
+        
+        <li><a href="../../en/routes/tutorial_ats.html">Tutorial: Using ATS</a>
+          
+        </li>
+        
+        <li><a href="../../en/routes/tutorial_atc.html">Tutorial: Using ATC</a>
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Trains
+      
+      <ul class="second">
+        
+        <li><a href="../../en/trains/overview.html">Overview</a>
+          
+        </li>
+        
+        <li><a href="../../en/trains/train_dat.html">The train.dat file</a>
+          
+        </li>
+        
+        <li><a href="../../en/trains/train_xml.html">The train.xml file</a>
+          
+        </li>
+        
+        <li><a href="../../en/trains/extensions_cfg.html">The extensions.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../en/trains/panel_cfg.html">The panel.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../en/trains/panel2_cfg.html">The panel2.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../en/trains/panel_animated.html">The panel.animated file</a>
+          
+        </li>
+        
+        <li><a href="../../en/trains/default_sounds.html">Default sounds</a>
+          
+        </li>
+        
+        <li><a href="../../en/trains/sound_cfg.html">The sound.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../en/trains/openbveats.html">The OpenBveAts Plugin</a>
+          
+        </li>
+        
+        <li><a href="../../en/trains/ats_cfg.html">The ats.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../en/trains/plugins.html">Train plugins</a>
+          
+          <ul class="third">
+            
+            
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li><a href="../../en/trains/information.html">Information and tips</a>
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Plugins
+      
+      <ul class="second">
+        
+        <li><a href="../../en/plugins/overview.html">Overview</a>
+          
+        </li>
+        
+        
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Information
+      
+      <ul class="second">
+        
+        <li><a href="../../en/information/encodings.html">Character encodings</a>
+          
+        </li>
+        
+        <li><a href="../../en/information/numberformats.html">Number formats</a>
+          
+        </li>
+        
+        <li><a href="../../en/information/whitespaces.html">White Spaces</a>
+          
+        </li>
+        
+        <li><a href="../../en/information/textureformats.html">Texture formats</a>
+          
+        </li>
+        
+        <li><a href="../../en/information/soundformats.html">Sound formats</a>
+          
+        </li>
+        
+        <li><a href="../../en/information/standards.html">Standards</a>
+          
+        </li>
+        
+        <li><a href="../../en/information/distribution.html">Distributing add-ons</a>
+          
+        </li>
+        
+        <li><a href="../../en/information/forking.html">Forking guidelines</a>
+          
+        </li>
+        
+        <li><a href="../../en/information/bve.html">Vs. BVE Trainsim</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Tools
+      
+      <ul class="second">
+        
+        <li><a href="../../en/tools/objectviewer.html">Object Viewer</a>
+          
+        </li>
+        
+        <li><a href="../../en/tools/objectbender.html">Object Bender</a>
+          
+        </li>
+        
+        <li><a href="../../en/tools/routeviewer.html">Route Viewer</a>
+          
+        </li>
+        
+        <li><a href="../../en/tools/traineditor.html">Train Editor</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+  </ul>
+</div>
+</nav>
+
+    </div>
+
+    <div id="language-menu">
+<div class="dropdown is-hoverable">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+      <span>Language</span>
+      <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu" role="menu">
+    <div class="dropdown-content">
+      <a href="../../en/plugins/iruntime.html" class="dropdown-item">
+        English
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../ja/plugins/iruntime.html" class="dropdown-item">
+        日本語
+      </a>
+      
+    </div>
+  </div>
+</div>
+</div>
+
+
+    <div id="container">
+
+        <div id="page-title">
+          <h1>Train plugin API (IRuntime)</h1>
+        </div>
+
+        
+
+
+
+
+<div id="content">
+  
+
+<p>This is the documentation for train plugins. In order to create a train plugin, implement the IRuntime interface from the OpenBveApi.Runtime namespace. In the following, you will find a description of how this interface works.</p>
+
+<h2 id="contents">■ Contents</h2>
+
+<ul class='contents'>
+<li><a href="#overview">1. Overview</a></li>
+<li><a href="#functions">2. Function calls</a></li>
+<li><a href="#sound">3. Playing sounds</a></li>
+<li><a href="#ai">4. Supporting the AI</a></li>
+</ul>
+
+
+
+<h2 id="a-name-overview-a-overview"><a name="overview"></a>■ Overview</h2>
+
+<p>The following functions are called in this order when the plugin is loaded:</p>
+
+<ul>
+<li>Load</li>
+<li>SetVehicleSpecs</li>
+<li>Initialize</li>
+<li>SetPower</li>
+<li>SetBrake</li>
+<li>SetReverser</li>
+<li>SetSignal</li>
+</ul>
+
+<p>The following functions can be called at any time:</p>
+
+<ul>
+<li>SetPower</li>
+<li>SetBrake</li>
+<li>SetReverser</li>
+<li>KeyDown</li>
+<li>KeyUp</li>
+<li>HornBlow</li>
+<li>DoorChange</li>
+<li>SetSignal</li>
+<li>SetBeacon</li>
+<li>PerformAI</li>
+</ul>
+
+<p>The following function is called when the plugin is unloaded:</p>
+
+<ul>
+<li>Unload</li>
+</ul>
+
+<h5 id="a-name-functions-a-function-calls"><a name="functions"></a>● Function calls</h5>
+
+<p>The following is a list of all function calls along with explanations on their behavior.</p>
+
+<hr />
+
+<p><strong>bool Load(LoadProperties properties)</strong></p>
+
+<p>This function is the first to be called after the plugin has been loaded. When this function triggers inside the plugin, a matching call to <em>Unload</em> will be made when the plugin is unloaded.</p>
+
+<p>Arguments:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>LoadProperties</th>
+<th>properties</th>
+<th>The properties supplied to the plugin on loading.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+
+
+
+</tr>
+</tbody>
+</table>
+
+
+
+<p>LoadProperties (class):</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>string</th>
+<th>PluginFolder</th>
+<th>Gets the absolute path to the plugin folder.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>string</td>
+<td>TrainFolder</td>
+<td>Gets the absolute path to the train folder.</td>
+</tr>
+
+<tr>
+<td>int[]</td>
+<td>Panel</td>
+<td>Gets or sets the array of panel variables.</td>
+</tr>
+
+<tr>
+<td>PlaySoundDelegate</td>
+<td>PlaySound</td>
+<td>Gets the callback function for playing sounds.</td>
+</tr>
+
+<tr>
+<td>AISupport</td>
+<td>AISupport</td>
+<td>The extent to which the plugin supports the AI.</td>
+</tr>
+
+<tr>
+<td>string</td>
+<td>FailureReason</td>
+<td>Gets or sets the reason why the plugin failed loading.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>PlaySound (function):<br />
+See the section on <a href="#sound">playing sounds</a>.</p>
+
+<p>AISupport (enumeration):</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>AISupport.None</th>
+<th>0</th>
+<th>The plugin does not support the AI. Calls to PerformAI will not be made. Non-player trains will not use the plugin.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>AISupport.Basic</td>
+<td>1</td>
+<td>The plugin complements the built-in AI by performing only functions specific to the plugin.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>Return value:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>bool</th>
+<th>Whether the plugin was loaded successfully.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+
+
+</tr>
+</tbody>
+</table>
+
+
+
+<p>If your plugin uses external configuration files, open files relative to the <em>properties.PluginFolder</em> or <em>properties.TrainFolder</em>. The difference between the two can be best visualized when the plugin is in a shared folder: Files relative to the plugin folder are common for all trains that use the plugin, while files relative to the train folder are specific to each train. The plugin folder is simply the folder in which the plugin is stored.</p>
+
+<p>Initialize the <em>properties.Panel</em> array to any size and with any startup values you need. The array is processed after every call to <em>Elapse</em> by the host application in order to update custom panel indicators. Developers of the panel2.cfg file can query these values with the *ats*i variable, while developers of the panel.animated file can query these values with the *pluginState[<em>i</em>]* variable.</p>
+
+<p>The <em>properties.PlaySound</em> function can be used at any time to play sounds. This callback function returns a handle that you can use to track if the sound is still playing, to change its volume and pitch, or to stop it. Please also see the section on <a href="#sound">playing sounds</a>.</p>
+
+<p>Set <em>properties.AISupport</em> to a value other than <em>AISupport.None</em> if you want your plugin to support the AI. Please also see the section on <a href="#ai">supporting the AI</a>.</p>
+
+<p>You should return <strong>true</strong> as the return value when loading succeeded. If, on the other hand, you want to abort loading the plugin, for example because an external configuration file could not be found, return <strong>false</strong> and set <em>properties.FailureReason</em> to a human-readible string that explains why loading failed.</p>
+
+<hr />
+
+<p><strong>void Unload()</strong></p>
+
+<p>This function is the last to be called before the plugin is unloaded.</p>
+
+<hr />
+
+<p><strong>void SetVehicleSpecs(VehicleSpecs specs)</strong></p>
+
+<p>This function is called after <em>Load</em> to inform the plugin about the specifications of the train.</p>
+
+<p>Arguments:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>VehicleSpecs</th>
+<th>specs</th>
+<th>The specifications of the train.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+
+
+
+</tr>
+</tbody>
+</table>
+
+
+
+<p>VehicleSpecs (class):</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>int</th>
+<th>PowerNotches</th>
+<th>Gets the number of power notches the train has.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>BrakeTypes</td>
+<td>BrakeType</td>
+<td>Gets the type of brake the train uses.</td>
+</tr>
+
+<tr>
+<td>int</td>
+<td>BrakeNotches</td>
+<td>Gets the number of brake notches the train has, including the hold brake, but excluding the emergency brake.</td>
+</tr>
+
+<tr>
+<td>bool</td>
+<td>HasHoldBrake</td>
+<td>Gets whether the train has a hold brake.</td>
+</tr>
+
+<tr>
+<td>int</td>
+<td>AtsNotch</td>
+<td>Gets the index of the brake notch that corresponds to B1 or LAP.</td>
+</tr>
+
+<tr>
+<td>int</td>
+<td>B67Notch</td>
+<td>Gets the index of the brake notch that corresponds to 70% of the available brake notches.</td>
+</tr>
+
+<tr>
+<td>int</td>
+<td>Cars</td>
+<td>Gets the number of cars the train has.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>BrakeTypes (enumeration):</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>BrakeTypes.ElectromagneticStraightAirBrake</th>
+<th>0</th>
+<th>The train uses the electromagnetic straight air brake.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>BrakeTypes.ElectricCommandBrake</td>
+<td>1</td>
+<td>The train uses the analog/digital electro-pneumatic air brake without a brake pipe (electric command brake).</td>
+</tr>
+
+<tr>
+<td>BrakeTypes.AutomaticAirBrake</td>
+<td>2</td>
+<td>The train uses the automatic air brake with partial release.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>For more information about the meanings of the notches, see the sections on SetReverser, SetPower and SetBrake.</p>
+
+<hr />
+
+<p><strong>void Initialize(InitializationModes mode)</strong></p>
+
+<p>This function is called after <em>SetVehicleSpecs</em> and informs the plugin about the mode the safety system should start in. If the safety system in your plugin can be activated or deactivated, you should initialize the state of the plugin accordingly. When the user selects a <em>Jump to station</em> target, this function is also called prior to moving the train to its new location.</p>
+
+<p>Arguments:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>InitializationModes</th>
+<th>mode</th>
+<th>The mode of initialization.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+
+
+
+</tr>
+</tbody>
+</table>
+
+
+
+<p>InitializationModes (enumeration):</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>InitializationModes.OnService</th>
+<th>-1</th>
+<th>The safety system should be enabled. The train has its service brakes applied.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>InitializationModes.OnEmergency</td>
+<td>0</td>
+<td>The safety system should be enabled. The train has its emergency brakes applied.</td>
+</tr>
+
+<tr>
+<td>InitializationModes.OffEmergency</td>
+<td>1</td>
+<td>The safety system should be disabled. The train has its emergency brakes applied.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>The initialization mode is set in CSV/RW routes via the Route.Change command. Please note that any value between -2147483648 and 2147483647 can be conveyed to the plugin - the enumeration members are simply meant to standardize the meanings of the initialization modes.</p>
+
+<hr />
+
+<p><strong>void Elapse(ElapseData data)</strong></p>
+
+<p>This function is called every frame. It informs the plugin about the current state of the train and allows to set the virtual handles.</p>
+
+<p>Arguments:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>ElapseData</th>
+<th>data</th>
+<th>The data passed to the plugin.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+
+
+
+</tr>
+</tbody>
+</table>
+
+
+
+<p>ElapseData (class):</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>VehicleState</th>
+<th>Vehicle</th>
+<th>Gets the state of the train.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>PrecedingVehicleState</td>
+<td>PrecedingVehicle</td>
+<td>Gets the state of the preceding train, or a null reference if there is no preceding train.</td>
+</tr>
+
+<tr>
+<td>Handles</td>
+<td>Handles</td>
+<td>Gets or sets the virtual handles.</td>
+</tr>
+
+<tr>
+<td>Time</td>
+<td>TotalTime</td>
+<td>Gets the absolute in-game time.</td>
+</tr>
+
+<tr>
+<td>Time</td>
+<td>ElapsedTime</td>
+<td>Gets the time that elapsed since the last call to Elapse.</td>
+</tr>
+
+<tr>
+<td>string</td>
+<td>DebugMessage</td>
+<td>Gets or sets the debug message the plugin wants the host application to display.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>VehicleState (class):</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>double</th>
+<th>Location</th>
+<th>Gets the location of the front of the train, in meters.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Speed</td>
+<td>Speed</td>
+<td>Gets the speed of the train.</td>
+</tr>
+
+<tr>
+<td>double</td>
+<td>BcPressure</td>
+<td>Gets the pressure in the brake cylinder, in pascal.</td>
+</tr>
+
+<tr>
+<td>double</td>
+<td>MrPressure</td>
+<td>Gets the pressure in the main reservoir, in pascal.</td>
+</tr>
+
+<tr>
+<td>double</td>
+<td>ErPressure</td>
+<td>Gets the pressure in the equilizing reservoir, in pascal.</td>
+</tr>
+
+<tr>
+<td>double</td>
+<td>BpPressure</td>
+<td>Gets the pressure in the brake pipe, in pascal.</td>
+</tr>
+
+<tr>
+<td>double</td>
+<td>SapPressure</td>
+<td>Gets the pressure in the straight air pipe, in pascal.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>PrecedingVehicleState (class):</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>double</th>
+<th>Location</th>
+<th>Gets the location of the back of the preceding train, in meters.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>double</td>
+<td>Distance</td>
+<td>Gets the distance from the front of the current train to the back of the preceding train, in meters.</td>
+</tr>
+
+<tr>
+<td>Speed</td>
+<td>Speed</td>
+<td>Gets the speed of the preceding train.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>Speed (structure):</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>double</th>
+<th>MetersPerSecond</th>
+<th>Gets the speed in meters per second.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>double</td>
+<td>KilometersPerHour</td>
+<td>Gets the speed in kilometers per hour.</td>
+</tr>
+
+<tr>
+<td>double</td>
+<td>MilesPerHour</td>
+<td>Gets the speed in miles per hour.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>Time (structure):</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>double</th>
+<th>Seconds</th>
+<th>Gets the time in seconds.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>double</td>
+<td>Milliseconds</td>
+<td>Gets the time in milliseconds.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>Handles (class):</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>int</th>
+<th>Reverser</th>
+<th>Gets or sets the reverser position.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>int</td>
+<td>PowerNotch</td>
+<td>Gets or sets the power notch.</td>
+</tr>
+
+<tr>
+<td>int</td>
+<td>BrakeNotch</td>
+<td>Gets or sets the brake notch.</td>
+</tr>
+
+<tr>
+<td>bool</td>
+<td>ConstSpeed</td>
+<td>Gets or sets whether the const speed system is enabled.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>The meanings of the notches are explained in the sections on SetReverser, SetPower and SetBrake.</p>
+
+<hr />
+
+<p><strong>void SetReverser(int reverser)</strong></p>
+
+<p>This function is called when the driver changes the reverser position.</p>
+
+<p>Arguments:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>int</th>
+<th>reverser</th>
+<th>The new reverser position.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+
+
+
+</tr>
+</tbody>
+</table>
+
+
+
+<p>For <em>reverser</em>, the value of -1 corresponds to backward, 0 to neutral and 1 to forward.</p>
+
+<hr />
+
+<p><strong>void SetPower(int powerNotch)</strong></p>
+
+<p>This function is called when the driver changes the power notch.</p>
+
+<p>Arguments:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>int</th>
+<th>powerNotch</th>
+<th>The new power notch.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+
+
+
+</tr>
+</tbody>
+</table>
+
+
+
+<p>For <em>powerNotch</em>, the value passed can range from 0 to <em>specs.PowerNotches</em>.</p>
+
+<hr />
+
+<p><strong>void SetBrake(int brakeNotch)</strong></p>
+
+<p>This function is called when the driver changes the brake notch.</p>
+
+<p>Arguments:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>int</th>
+<th>brakeNotch</th>
+<th>The new brake notch.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+
+
+
+</tr>
+</tbody>
+</table>
+
+
+
+<p>For trains with the <strong>automatic air brake</strong>, 0 is RELEASE, 1 is LAP, 2 is SERVICE and 3 is EMERGENCY.</p>
+
+<p>For all other trains <strong>without a hold brake</strong>, 0 is released brakes, 1 is brake notch B1, 2 is brake notch B2, etc., <em>specs.BrakeNotches</em> is the maximum brake notch, and <em>specs.BrakeNotches</em>+1 is the emergency brake.</p>
+
+<p>For all other trains <strong>with a hold brake</strong>, 0 is released brakes, 1 is the hold brake, 2 is brake notch B1, 3 is brake notch B2, etc., <em>specs.BrakeNotches</em> is the maximum brake notch, and <em>specs.BrakeNotches</em>+1 is the emergency brake.</p>
+
+<p>Generally speaking, for trains without the automatic air brake, <em>specs.AtsNotch</em> is brake notch B1 and <em>specs.BrakeNotches</em> is the maximum service brake notch. For all types of trains, <em>specs.BrakeNotches</em>+1 is the emergency brake.</p>
+
+<hr />
+
+<p><strong>void KeyDown(VirtualKeys key)</strong></p>
+
+<p>This function is called when a plugin-specific key is pressed.</p>
+
+<p>Arguments:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>VirtualKeys</th>
+<th>key</th>
+<th>The virtual key that was pressed.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+
+
+
+</tr>
+</tbody>
+</table>
+
+
+
+<p>VirtualKeys (enumeration):</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>VirtualKeys.S</th>
+<th>0</th>
+<th>The virtual S key. The default assignment is Space.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>VirtualKeys.A1</td>
+<td>1</td>
+<td>The virtual A1 key. The default assignment is Insert.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.A2</td>
+<td>2</td>
+<td>The virtual A2 key. The default assignment is Delete.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.B1</td>
+<td>3</td>
+<td>The virtual B1 key. The default assignment is Home.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.B2</td>
+<td>4</td>
+<td>The virtual B2 key. The default assignment is End.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.C1</td>
+<td>5</td>
+<td>The virtual C1 key. The default assignment is Page Up.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.C2</td>
+<td>6</td>
+<td>The virtual C2 key. The default assignment is Page Down.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.D</td>
+<td>7</td>
+<td>The virtual D key. The default assignment is 2.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.E</td>
+<td>8</td>
+<td>The virtual E key. The default assignment is 3.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.F</td>
+<td>9</td>
+<td>The virtual F key. The default assignment is 4.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.G</td>
+<td>10</td>
+<td>The virtual G key. The default assignment is 5.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.H</td>
+<td>11</td>
+<td>The virtual H key. The default assignment is 6.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.I</td>
+<td>12</td>
+<td>The virtual I key. The default assignment is 7.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.J</td>
+<td>13</td>
+<td>The virtual J key. The default assignment is 8.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.K</td>
+<td>14</td>
+<td>The virtual K key. The default assignment is 9.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.L</td>
+<td>15</td>
+<td>The virtual L key. The default assignment is 0.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>When making use of plugin-specific keys in your plugin, be sure to release a documentation that includes the virtual names of the keys along with their plugin-specific meanings.</p>
+
+<hr />
+
+<p><strong>void KeyUp(VirtualKeys key)</strong></p>
+
+<p>This function is called when a plugin-specific key is released.</p>
+
+<p>Arguments:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>VirtualKeys</th>
+<th>key</th>
+<th>The virtual key that was released.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+
+
+
+</tr>
+</tbody>
+</table>
+
+
+
+<p>VirtualKeys (enumeration):</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>VirtualKeys.S</th>
+<th>0</th>
+<th>The virtual S key. The default assignment is Space.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>VirtualKeys.A1</td>
+<td>1</td>
+<td>The virtual A1 key. The default assignment is Insert.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.A2</td>
+<td>2</td>
+<td>The virtual A2 key. The default assignment is Delete.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.B1</td>
+<td>3</td>
+<td>The virtual B1 key. The default assignment is Home.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.B2</td>
+<td>4</td>
+<td>The virtual B2 key. The default assignment is End.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.C1</td>
+<td>5</td>
+<td>The virtual C1 key. The default assignment is Page Up.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.C2</td>
+<td>6</td>
+<td>The virtual C2 key. The default assignment is Page Down.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.D</td>
+<td>7</td>
+<td>The virtual D key. The default assignment is 2.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.E</td>
+<td>8</td>
+<td>The virtual E key. The default assignment is 3.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.F</td>
+<td>9</td>
+<td>The virtual F key. The default assignment is 4.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.G</td>
+<td>10</td>
+<td>The virtual G key. The default assignment is 5.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.H</td>
+<td>11</td>
+<td>The virtual H key. The default assignment is 6.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.I</td>
+<td>12</td>
+<td>The virtual I key. The default assignment is 7.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.J</td>
+<td>13</td>
+<td>The virtual J key. The default assignment is 8.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.K</td>
+<td>14</td>
+<td>The virtual K key. The default assignment is 9.</td>
+</tr>
+
+<tr>
+<td>VirtualKeys.L</td>
+<td>15</td>
+<td>The virtual L key. The default assignment is 0.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>When making use of plugin-specific keys in your plugin, be sure to release a documentation that includes the virtual names of the keys along with their plugin-specific meanings.</p>
+
+<hr />
+
+<p><strong>void HornBlow(HornTypes type)</strong></p>
+
+<p>This function is called when a horn starts playing. In case of the musical horn, this function is also called when the horn stops playing.</p>
+
+<p>Arguments:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>HornTypes</th>
+<th>type</th>
+<th>The type of horn.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+
+
+
+</tr>
+</tbody>
+</table>
+
+
+
+<p>HornTypes (enumeration):</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>HornTypes.Primary</th>
+<th>0</th>
+<th>The primary horn.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>HornTypes.Secondary</td>
+<td>1</td>
+<td>The secondary horn.</td>
+</tr>
+
+<tr>
+<td>HornTypes.Music</td>
+<td>2</td>
+<td>The musical horn.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<hr />
+
+<p><strong>void DoorChange(DoorStates oldState, DoorStates newState)</strong></p>
+
+<p>This function is called when the state of the doors change.</p>
+
+<p>Arguments:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>DoorStates</th>
+<th>oldState</th>
+<th>The old state of the doors.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>DoorStates</td>
+<td>newState</td>
+<td>The new state of the doors.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>DoorStates (enumeration):</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>DoorStates.None</th>
+<th>0</th>
+<th>No door is open.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>DoorStates.Left</td>
+<td>1</td>
+<td>The left doors are open.</td>
+</tr>
+
+<tr>
+<td>DoorStates.Right</td>
+<td>2</td>
+<td>The right doors are open.</td>
+</tr>
+
+<tr>
+<td>DoorStates.Both</td>
+<td>3</td>
+<td>All doors are open.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<hr />
+
+<p><strong>void SetSignal(SignalData[] data)</strong></p>
+
+<p>This function is called when the aspect in the current or in any of the upcoming section changes, or when passing section boundaries. For the current section, it is assumed that no train is currently inside. Only sections until the first red section are reported.</p>
+
+<p>Arguments:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>SignalData[]</th>
+<th>data</th>
+<th>The signal data per section.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+
+
+
+</tr>
+</tbody>
+</table>
+
+
+
+<p>SignalData (class):</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>int</th>
+<th>Aspect</th>
+<th>Gets the aspect of the section.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>double</td>
+<td>Distance</td>
+<td>Gets the distance to the section.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>The <em>data</em> array contains one entry per section, where <em>data[0]</em> is the current section, <em>data[1]</em> the upcoming section, and so on. You can inspect the aspect and the distance to each section reported.</p>
+
+<p>Please note that the length of the <em>data</em> array is dynamic. Only sections until the first red section are reported. This means that you need to check the size of the array before querying a particular section.</p>
+
+<p>Please also note that the last section in the <em>data</em> array does not have to be red necessarily. For example at the end of the track, the last section might be green.</p>
+
+<p>In CSV/RW routes, the Track.Section (CSV) or @Section (RW) command is used to create signalling sections. The <em>data.Aspect</em> member corresponds to any of the aspects defined by this command.</p>
+
+<hr />
+
+<p><strong>void SetBeacon(BeaconData data)</strong></p>
+
+<p>This function is called when a beacon is passed by the front of the train.</p>
+
+<p>Arguments:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>BeaconData</th>
+<th>data</th>
+<th>The beacon data.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+
+
+
+</tr>
+</tbody>
+</table>
+
+
+
+<p>BeaconData (class):</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>int</th>
+<th>Type</th>
+<th>Gets the type of beacon.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>int</td>
+<td>Optional</td>
+<td>Gets optional data the beacon transmits.</td>
+</tr>
+
+<tr>
+<td>SignalData</td>
+<td>Signal</td>
+<td>Gets the section the beacon is attached to.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>SignalData (class):</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>int</th>
+<th>Aspect</th>
+<th>Gets the aspect of the section.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>double</td>
+<td>Distance</td>
+<td>Gets the distance to the section.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>In CSV/RW routes, the Track.Beacon (CSV) or @Beacon (RW) command is used to install beacons on the route. Both the beacon type and the optional data set by this command is transmitted to the train plugin along with the distance to the attached section.</p>
+
+<p>Please note that plugins may receive beacon types less than 0. These beacon types are reserved for future use and must be ignored by current plugins.</p>
+
+<hr />
+
+<p><strong>void PerformAI(AIData data)</strong></p>
+
+<p>This function is called when the AI is performed.</p>
+
+<p>Arguments:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>AIData</th>
+<th>data</th>
+<th>The AI data.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+
+
+
+</tr>
+</tbody>
+</table>
+
+
+
+<p>AIData (class):</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>Handles</th>
+<th>Handles</th>
+<th>Gets or sets the driver handles.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>AIResponse</td>
+<td>Response</td>
+<td>Gets or sets the AI response.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>Whenever you let the AI perform something, set <em>data.Response</em> to a value other than <em>AIResponse.None</em>. Please also see the section on <a href="#ai">supporting the AI</a>.</p>
+
+<h2 id="a-name-sound-a-playing-sounds"><a name="sound"></a>■ Playing sounds</h2>
+
+<p>You can play custom sounds from within your plugin. Custom sounds need to be configured inside the <em>sound.cfg</em> file before they can be used by the plugin. In order to play such sounds, keep a reference to the <em>PlaySound</em> function that is passed in the Load call. You can then start playing sounds at any time by calling this function:</p>
+
+<p><strong>SoundHandle PlaySound(int index, double volume, double pitch, bool looped)</strong></p>
+
+<p>Arguments:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>int</th>
+<th>index</th>
+<th>The index to the sound to be played.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>double</td>
+<td>volume</td>
+<td>The initial volume of the sound. A value of 1.0 represents nominal volume.</td>
+</tr>
+
+<tr>
+<td>double</td>
+<td>pitch</td>
+<td>The initial pitch of the sound. A value of 1.0 represents nominal pitch.</td>
+</tr>
+
+<tr>
+<td>bool</td>
+<td>looped</td>
+<td>Whether the sound should be played in an indefinate loop.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>Return value:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>SoundHandle</th>
+<th>The handle to the sound, or a null reference if the sound could not be played.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+
+
+</tr>
+</tbody>
+</table>
+
+
+
+<p>When you call the PlaySound function, a handle will be returned that you can use to later check if the sound is still playing, in order to change the volume or pitch, or to stop playing the sound. If you play a sound in a loop, you <strong>must</strong> keep the handle in order to subsequently stop the sound - otherwise it would play indefinately. The handle returned by PlaySound is of the following form:</p>
+
+<p>SoundHandle (class):</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>bool</th>
+<th>Playing</th>
+<th>Gets whether the sound is still playing. Once this returns false, the sound handle is invalid.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>bool</td>
+<td>Stopped</td>
+<td>Gets whether the sound has stopped. Once this returns true, the sound handle is invalid.</td>
+</tr>
+
+<tr>
+<td>double</td>
+<td>Volume</td>
+<td>Gets or sets the volume. A value of 1.0 represents nominal volume.</td>
+</tr>
+
+<tr>
+<td>double</td>
+<td>Pitch</td>
+<td>Gets or sets the pitch. A value of 1.0 represents nominal pitch.</td>
+</tr>
+
+<tr>
+<td>void</td>
+<td>Stop()</td>
+<td>Stops the sound and invalidates the handle.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>Please note that depending on the implementation by the host application, sounds that are not in audible range may not be played at all.</p>
+
+<p>Please also note that the handle returned might be a null reference in the case the host application could not play the sound, for example because the file could not be found.</p>
+
+<h2 id="a-name-ai-a-supporting-the-ai"><a name="ai"></a>■ Supporting the AI</h2>
+
+<p>Usually, the host application performs the AI. However, your plugin might require special operation precedures which the built-in AI cannot know of. For this reason, you can complement the built-in AI by performing operation procedures specific to your plugin. Before considering to support the AI, however, you should understand what the AI is intended to represent: a human being standing or sitting in the cab, operating levers and pressing buttons, just like the player. This means that the AI must not operate 6 levers and 12 buttons simultaneously, but only do one thing at a time.</p>
+
+<p>If you want to support the AI, first set <em>data.AISupport</em> inside the Load call to <em>AISupport.Basic</em>. Whenever the host application performs an AI round, a call to PerformAI will then be made inside the plugin. The plugin can then decide to let the AI perform an action, or to pass and let the host application perform an action. Different kinds of actions can take different amounts of time, so whenever the plugin lets the AI perform an action, it will also set the time it takes before the next action can be performed.</p>
+
+<p>It is important to understand that unless your plugin also simulates a full ATO with automatic stopping at stations, you must let the host application perform the AI for most of the time and only intervene if absolutely necessary, for example in order to start the engine, to acknowledge a vigilance device, etc. Whenever this is the case, react to the PerformAI call appropriately:</p>
+
+<p><strong>void PerformAI(AIData data)</strong></p>
+
+<p>Arguments:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>AIData</th>
+<th>data</th>
+<th>The AI data.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+
+
+
+</tr>
+</tbody>
+</table>
+
+
+
+<p>AIData (class):</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>Handles</th>
+<th>Handles</th>
+<th>Gets or sets the driver handles.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>AIResponse</td>
+<td>Response</td>
+<td>Gets or sets the AI response.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>Handles (class):</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>int</th>
+<th>Reverser</th>
+<th>Gets or sets the reverser position.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>int</td>
+<td>PowerNotch</td>
+<td>Gets or sets the power notch.</td>
+</tr>
+
+<tr>
+<td>int</td>
+<td>BrakeNotch</td>
+<td>Gets or sets the brake notch.</td>
+</tr>
+
+<tr>
+<td>bool</td>
+<td>ConstSpeed</td>
+<td>Gets or sets whether the const speed system is enabled.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>The meanings of the notches are explained in the sections on SetReverser, SetPower and SetBrake.</p>
+
+<p>AIResponse (enumeration):</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th>AIResponse.None</th>
+<th>No action was performed by the plugin.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>AIResponse.Short</td>
+<td>The action performed took a short time.</td>
+</tr>
+
+<tr>
+<td>AIResponse.Medium</td>
+<td>The action performed took an average amount of time.</td>
+</tr>
+
+<tr>
+<td>AIResponse.Long</td>
+<td>The action performed took a long time.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>You can directly control the driver handles with the <em>data.Handles</em> member, for example if you want to cut power or apply a certain brake notch. For plugin-specific actions, you should only simulate key presses, for example by calling KeyDown or KeyUp. This will prevent you from letting the AI cheat in any way. If you let the AI operate the handles, you should only change by one notch at a time with a short response time.</p>
+
+<p>If you decide to let the AI do something, you must set the <em>data.Response</em> member to a meaningful value. For operating the handles, best use a short response time, while for other actions like turning a switch not directly accessible, use a long response time. Note that the actual timings are at the whim of the host application.</p>
+
+<p>Example:</p>
+
+<table style="border: none;">
+  <tbody>
+  
+    <tr>
+       <td width="16" valign="top">▶</td>
+       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
+         <font style="font-family: monospace">
+         <pre><code>if (AtsAlarm) {  
+  /* The driver needs to cut power and apply the brakes,  
+  * then press the virtual S key.*/  
+  if (data.Handles.PowerNotch &gt; 0) {  
+    /* We change only by one notch at a time. */  
+    data.Handles.PowerNotch -= 1;  
+    data.Response = AIResponse.Short;  
+  } else if (data.Handles.BrakeNotch &lt; 2) {  
+    /* We change only by one notch at a time. */  
+    data.Handles.BrakeNotch += 1;  
+    data.Response = AIResponse.Short;  
+} else {  
+    /* We simulate a key press here. */  
+    KeyDown(VirtualKeys.S);  
+    data.Response = AIResponse.Medium;  
+  }  
+} else if (AtoActive) {  
+  /* Our ATO does not require driver interaction, so  
+  * let's prevent the built-in AI from doing anything. */  
+  data.Response = AIResponse.Long;  
+} else {  
+  /* Let the host application perform a default action  
+  * such as braking for signals or stations. */  
+  data.Response = AIResponse.None;  
+}
+</code></pre>
+
+         </font>
+       </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+      <div id="footer">
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
+

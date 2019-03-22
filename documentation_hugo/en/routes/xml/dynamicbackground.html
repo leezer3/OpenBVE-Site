@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="utf-8"/>
     <title>openBVE Documentation</title>
     <link rel="stylesheet" href="../../../css/theme.css">
     <link rel="stylesheet" href="../../../css/bulma.custom.css">
@@ -124,6 +125,10 @@
               
             </li>
             
+            <li><a href="../../../en/routes/xml/trackfollowingobject.html">Track Following Object</a>
+              
+            </li>
+            
           </ul>
           
         </li>
@@ -141,6 +146,10 @@
         </li>
         
         <li><a href="../../../en/routes/tutorial_atc.html">Tutorial: Using ATC</a>
+          
+        </li>
+        
+        
           
         </li>
         
@@ -196,6 +205,10 @@
           
         </li>
         
+        <li><a href="../../../en/trains/openbveats.html">The OpenBveAts Plugin</a>
+          
+        </li>
+        
         <li><a href="../../../en/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
@@ -216,6 +229,22 @@
           
         </li>
         
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
       </ul>
       
     </li>
@@ -225,6 +254,10 @@
       <ul class="second">
         
         <li><a href="../../../en/plugins/overview.html">Overview</a>
+          
+        </li>
+        
+        
           
         </li>
         
@@ -322,6 +355,11 @@
         English
       </a>
       
+      <hr class="dropdown-divider">
+      <a href="../../../ja/routes/xml/dynamicbackground.html" class="dropdown-item">
+        日本語
+      </a>
+      
     </div>
   </div>
 </div>
@@ -340,7 +378,127 @@
 
 
 <div id="content">
-  <p>Under construction</p>
+  
+
+<p>This page describes the principles and implementation of the XML based background system.</p>
+
+<h2 id="dynamic-backgrounds-basic-principles">■ Dynamic Backgrounds: Basic Principles</h2>
+
+<p>openBVE supports several distinct types of backgrounds:</p>
+
+<ol>
+<li>The original &lsquo;texture&rsquo; based background. This wraps the specified texture around the viewing frustum a specified number of times.</li>
+<li>&lsquo;Dynamic&rsquo; backgrounds. These are made up of a series of texture based backgrounds, and which are changed at the appropriate time.</li>
+<li>&lsquo;Object&rsquo; backgrounds. A static object (<strong>.b3d , .csv or .x</strong>) may be used instead of the standard viewing frustum.</li>
+</ol>
+
+<p><strong>NOTE:</strong> No transition effects are supported for object based backgrounds.</p>
+
+<p>Each individual background which you wish to use must be setup using a background XML file an example of which is shown below:</p>
+
+<textarea rows="17" cols="110" style="border:2;">
+    
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
+&lt;openBVE xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xsd=&#34;http://www.w3.org/2001/XMLSchema&#34;&gt;
+  &lt;Background&gt;
+        &lt;Time&gt;00.00&lt;/Time&gt;
+        &lt;Mode&gt;FadeIn&lt;/Mode&gt;
+        &lt;Repetitions&gt;6&lt;/Repetitions&gt;
+        &lt;Texture&gt;Cloudy.png&lt;/Texture&gt;
+  &lt;/Background&gt;
+  &lt;Background&gt;
+        &lt;Time&gt;10.00&lt;/Time&gt;
+        &lt;Mode&gt;FadeIn&lt;/Mode&gt;
+        &lt;Repetitions&gt;6&lt;/Repetitions&gt;
+        &lt;Texture&gt;Sunny.png&lt;/Texture&gt;
+        &lt;TransitionTime&gt;10&lt;/TransitionTime&gt;
+  &lt;/Background&gt;
+&lt;/openBVE&gt;  
+
+</textarea>
+
+<p>As you can see, the file is made up of one or more <strong>&lt;Background&gt;</strong> sections, each of which defines the background to be displayed at the point in time specified by <em>Time</em>.</p>
+
+<h2 id="texture-backgrounds">■ Texture Backgrounds</h2>
+
+<p>A texture based background supports the following attributes:</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;Texture&gt;</strong> <em>FileName</em> <strong>&lt;/Texture&gt;</strong></p>
+
+</div>
+
+
+<p><strong>FileName</strong> must point to the image which you wish to display as the background texture.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;Repetitions&gt;</strong> <em>NumberOfRepetitions</em> <strong>&lt;/Repetitions&gt;</strong></p>
+
+</div>
+
+
+<p><strong>NumberOfRepetitions</strong> is the number of times the texture is to be wrapped horizontally around the viewing frustum.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;Mode&gt;</strong> <em>TransitionMode</em> <strong>&lt;/Mode&gt;</strong></p>
+
+</div>
+
+
+<p><strong>TransitionMode</strong> controls the transition effect to be used when this background is shown. Valid values are:</p>
+
+<ul>
+<li><strong>FadeIn</strong> : The new background fades in.</li>
+<li><strong>FadeOut</strong> : The old background fades out.</li>
+<li><strong>None</strong> : No transition effect is performed. ( Negates <strong>TransitionTime</strong> )</li>
+</ul>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;TransitionTime&gt;</strong> <em>Time</em> <strong>&lt;/TransitionTime&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Time</strong> is the time in seconds which the transition effect takes to complete.</p>
+
+<h2 id="dynamic-backgrounds">■ Dynamic Backgrounds</h2>
+
+<p>A dynamic background should simply be made up of multiple <strong>Background</strong> elements, and takes one further attribute:</p>
+
+<div id="command">
+<p><strong>&lt;Time&gt;</strong> <em>GameTime</em> <strong>&lt;/Time&gt;</strong></p>
+
+</div>
+
+
+<p><strong>GameTime</strong> is the 24-hour based time at which the transition to this background will begin.</p>
+
+<h2 id="object-backgrounds">■ Object Backgrounds</h2>
+
+<p>An object based background may also be used. With these, the specified object is rendered with it&rsquo;s <strong>0,0,0</strong> co-ordinate centered upon the camera center.</p>
+
+<p>Only <strong>.b3d , .csv and .x</strong> files with no animation are supported. No transition effects or other attributes are supported.</p>
+
+<p>A sample XML is shown below:</p>
+
+<textarea rows="17" cols="110" style="border:2;">
+    
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
+&lt;openBVE xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xsd=&#34;http://www.w3.org/2001/XMLSchema&#34;&gt;
+  &lt;Background&gt;
+        &lt;Object&gt;Background.csv&lt;/Object&gt;
+  &lt;/Background&gt;
+&lt;/openBVE&gt;  
+
+</textarea>
 
 </div>
 

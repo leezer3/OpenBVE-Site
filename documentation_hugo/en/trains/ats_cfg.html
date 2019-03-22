@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="utf-8"/>
     <title>openBVE Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css">
     <link rel="stylesheet" href="../../css/bulma.custom.css">
@@ -124,6 +125,10 @@
               
             </li>
             
+            <li><a href="../../en/routes/xml/trackfollowingobject.html">Track Following Object</a>
+              
+            </li>
+            
           </ul>
           
         </li>
@@ -141,6 +146,10 @@
         </li>
         
         <li><a href="../../en/routes/tutorial_atc.html">Tutorial: Using ATC</a>
+          
+        </li>
+        
+        
           
         </li>
         
@@ -196,6 +205,10 @@
           
         </li>
         
+        <li><a href="../../en/trains/openbveats.html">The OpenBveAts Plugin</a>
+          
+        </li>
+        
         <li><a href="../../en/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
@@ -216,6 +229,22 @@
           
         </li>
         
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
       </ul>
       
     </li>
@@ -225,6 +254,10 @@
       <ul class="second">
         
         <li><a href="../../en/plugins/overview.html">Overview</a>
+          
+        </li>
+        
+        
           
         </li>
         
@@ -322,6 +355,11 @@
         English
       </a>
       
+      <hr class="dropdown-divider">
+      <a href="../../ja/trains/ats_cfg.html" class="dropdown-item">
+        日本語
+      </a>
+      
     </div>
   </div>
 </div>
@@ -340,7 +378,30 @@
 
 
 <div id="content">
-  <p>Under construction, test bot 1</p>
+  <p>The ats.cfg file is a plain text file consisting of a single line: the relative path to the plugin that is to be used.</p>
+
+<table style="border: none;">
+  <tbody>
+  
+    <tr>
+      <td width="16" valign="top"></td>
+      <td>
+      <em>Example of an ats.cfg file:</em>
+      </td>
+    </tr>
+  
+    <tr>
+       <td width="16" valign="top">▶</td>
+       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
+         <font style="font-family: monospace">
+         <p style='display:inline;'><code>myplugin.dll</code>
+         </font>
+       </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>If you don&rsquo;t include the ats.cfg file, the default plugin for trains is used which provides basic implementations of ATS and ATC. Please find more information about the default safety systems <a href="https://openbve-project.net/play-japanese/" target="_blank">here</a>, in the tutorials on the left, and <a href="../../en/trains/openbveats.html" target="_blank">here</a>.</p>
 
 </div>
 

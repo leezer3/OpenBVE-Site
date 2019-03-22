@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="utf-8"/>
     <title>openBVE Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css">
     <link rel="stylesheet" href="../../css/bulma.custom.css">
@@ -124,6 +125,10 @@
               
             </li>
             
+            <li><a href="../../en/routes/xml/trackfollowingobject.html">Track Following Object</a>
+              
+            </li>
+            
           </ul>
           
         </li>
@@ -141,6 +146,10 @@
         </li>
         
         <li><a href="../../en/routes/tutorial_atc.html">Tutorial: Using ATC</a>
+          
+        </li>
+        
+        
           
         </li>
         
@@ -196,6 +205,10 @@
           
         </li>
         
+        <li><a href="../../en/trains/openbveats.html">The OpenBveAts Plugin</a>
+          
+        </li>
+        
         <li><a href="../../en/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
@@ -216,6 +229,22 @@
           
         </li>
         
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
       </ul>
       
     </li>
@@ -225,6 +254,10 @@
       <ul class="second">
         
         <li><a href="../../en/plugins/overview.html">Overview</a>
+          
+        </li>
+        
+        
           
         </li>
         
@@ -322,6 +355,11 @@
         English
       </a>
       
+      <hr class="dropdown-divider">
+      <a href="../../ja/trains/overview.html" class="dropdown-item">
+        日本語
+      </a>
+      
     </div>
   </div>
 </div>
@@ -340,7 +378,46 @@
 
 
 <div id="content">
-  <p>Under construction</p>
+  
+
+<p>Trains consist of a series of individual configuration files accompanied by bitmaps and sounds. The following is an overview on which files are required and what they represent.</p>
+
+<h2 id="characteristics">■ Characteristics</h2>
+
+<p><a href="../../en/trains/train_dat.html" target="_blank"><strong>train.dat:</strong></a><br />
+This is the core configuration file for the train&rsquo;s characteristics, and is mandatory.</p>
+
+<h2 id="panels">■ Panels</h2>
+
+<p><a href="../../en/trains/panel_animated.html" target="_blank"><strong>panel.animated:</strong></a><br />
+This file allows to create a fully 3D cab. If present in the train folder, this file has precedence over the panel2.cfg and panel.cfg files.</p>
+
+<p><a href="../../en/trains/panel2_cfg.html" target="_blank"><strong>panel2.cfg:</strong></a><br />
+This file allows to create a limited 2D cab. If present in the train folder, this file has precedence over the panel.cfg. The panel2.cfg has fully superseded the panel.cfg as it offers greater functionality.</p>
+
+<p><a href="../../en/trains/panel_cfg.html" target="_blank"><strong>panel.cfg:</strong></a><br />
+This file is outdated, and allows to create a limited 2D cab. It has been fully superseded by the panel2.cfg file, which should be used instead.</p>
+
+<h2 id="sounds">■ Sounds</h2>
+
+<p><a href="../../en/trains/default_sounds.html" target="_blank"><strong>Default sounds:</strong></a><br />
+If no <em>sound.cfg</em> is present, these are the default sound files that are being looked for in the train folder.</p>
+
+<p><a href="../../en/trains/sound_cfg.html" target="_blank"><strong>sound.cfg:</strong></a><br />
+This defines the names of the sound files to use. The file is required if plugin-specific sounds are to be made available.</p>
+
+<h2 id="safety-systems">■ Safety systems</h2>
+
+<p><a href="../../en/trains/openbveats.html" target="_blank"><strong>Built-in systems:</strong></a><br />
+The built-in safety systems ATS-SN, ATS-P and ATC are only used if no <em>ats.cfg</em> file is present, and if the <em>train.dat</em> is configured to define which of these systems should be available.</p>
+
+<p><a href="../../en/trains/ats_cfg.html" target="_blank"><strong>ats.cfg:</strong></a><br />
+This file defines which external train plugin to use. For information on how to create plugins, see <a href="../../en/trains/plugins.html" target="_blank">here</a>.</p>
+
+<h2 id="miscellaneous">■ Miscellaneous</h2>
+
+<p><a href="../../en/trains/extensions_cfg.html" target="_blank"><strong>extensions.cfg:</strong></a><br />
+This defines additional characteristics that are not covered by the other files.</p>
 
 </div>
 

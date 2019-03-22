@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="utf-8"/>
     <title>openBVE Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css">
     <link rel="stylesheet" href="../../css/bulma.custom.css">
@@ -124,6 +125,10 @@
               
             </li>
             
+            <li><a href="../../en/routes/xml/trackfollowingobject.html">Track Following Object</a>
+              
+            </li>
+            
           </ul>
           
         </li>
@@ -141,6 +146,10 @@
         </li>
         
         <li><a href="../../en/routes/tutorial_atc.html">Tutorial: Using ATC</a>
+          
+        </li>
+        
+        
           
         </li>
         
@@ -196,6 +205,10 @@
           
         </li>
         
+        <li><a href="../../en/trains/openbveats.html">The OpenBveAts Plugin</a>
+          
+        </li>
+        
         <li><a href="../../en/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
@@ -216,6 +229,22 @@
           
         </li>
         
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
       </ul>
       
     </li>
@@ -225,6 +254,10 @@
       <ul class="second">
         
         <li><a href="../../en/plugins/overview.html">Overview</a>
+          
+        </li>
+        
+        
           
         </li>
         
@@ -320,6 +353,11 @@
     <div class="dropdown-content">
       <a href="../../en/routes/csv.html" class="dropdown-item">
         English
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../ja/routes/csv.html" class="dropdown-item">
+        日本語
       </a>
       
     </div>
@@ -426,7 +464,7 @@ A non-negative <a href="../../en/information/numberformats.html" target="_blank"
 <br />
 This is a more complex way of specifying track positions for use in conjunction with Options.UnitOfLength. Each of the <em>Part<sub>i</sub></em> is a <a href="../../en/information/numberformats.html" target="_blank">strict</a> floating-point number. <em>Part<sub>1</sub></em> will be multiplied with <em>Factor<sub>1</sub></em>, <em>Part<sub>2</sub></em> with <em>Factor<sub>2</sub></em>, and so on, then all products are added together to form the final track position. This track position must be non-negative. The parts are separated by colons (U+003A). Please consult Options.UnitOfLength for further information on how to define the factors.</p>
 
-<p>Wherever arguments in commands represent lengths, they can also be entered using the colon notation. These cases are highlighted in green in the following.</p>
+<p>Wherever arguments in commands represent lengths, they can also be entered using the colon notation. These cases are highlighted in <font color="green">green</font> in the following.</p>
 
 <p>When <em>n</em> units are defined via Options.UnitOfLength, but fewer parameters are given using the colon notation, the parameters are right-associative, meaning, the parameters on the left are those which are skipped. Therefore, each of the following lengths are equivalent: <em>0:0:2</em>, <em>0:2</em>, and <em>2</em>.</p>
 
@@ -445,6 +483,16 @@ This is a more complex way of specifying track positions for use in conjunction 
 <div id="command">
 <p><em>NameOfTheCommand</em> <em>Argument<sub>1</sub></em>;<em>Argument<sub>2</sub></em>;<em>Argument<sub>3</sub></em>;&hellip;;<em>Argument<sub>n</sub></em><br />
 <em>NameOfTheCommand</em>(<em>Argument<sub>1</sub></em>;<em>Argument<sub>2</sub></em>;<em>Argument<sub>3</sub></em>;&hellip;;<em>Argument<sub>n</sub></em>)</p>
+
+</div>
+
+
+<p>Commands with indices and arguments:</p>
+
+<div id="command">
+<p><em>NameOfTheCommand</em>(<em>Index<sub>1</sub></em>;<em>Index<sub>2</sub></em>;&hellip;;<em>Index<sub>m</sub></em>) <em>Argument<sub>1</sub></em>;<em>Argument<sub>2</sub></em>;<em>Argument<sub>3</sub></em>;&hellip;;<em>Argument<sub>n</sub></em><br />
+<em>NameOfTheCommand</em>(<em>Index<sub>1</sub></em>;<em>Index<sub>2</sub></em>;&hellip;;<em>Index<sub>m</sub></em>).<em>Suffix</em> <em>Argument<sub>1</sub></em>;<em>Argument<sub>2</sub></em>;<em>Argument<sub>3</sub></em>;&hellip;;<em>Argument<sub>n</sub></em><br />
+<em>NameOfTheCommand</em>(<em>Index<sub>1</sub></em>;<em>Index<sub>2</sub></em>;&hellip;;<em>Index<sub>m</sub></em>).<em>Suffix</em>(<em>Argument<sub>1</sub></em>;<em>Argument<sub>2</sub></em>;<em>Argument<sub>3</sub></em>;&hellip;;<em>Argument<sub>n</sub></em>)</p>
 
 </div>
 
@@ -1825,7 +1873,7 @@ Train.File <em>FolderName</em></p>
 <p>The general syntax for commands in the Structure namespace is:</p>
 
 <div id="command">
-<p><strong>Structure.Command(StructureIndex)</strong><font color="gray">.Load</font> <em>FileName</em></p>
+<p><strong>Structure.<em>Command</em>(<em>StructureIndex</em>)</strong><font color="gray">.Load</font> <em>FileName</em></p>
 
 </div>
 
@@ -1942,7 +1990,7 @@ Train.File <em>FolderName</em></p>
 <p>Additionally, there is the Structure.Pole command, which has a slightly different syntax:</p>
 
 <div id="command">
-<p><strong>Structure.Pole(NumberOfAdditionalRails; PoleStructureIndex)</strong><font color="gray">.Load</font> <em>FileName</em></p>
+<p><strong>Structure.Pole(<em>NumberOfAdditionalRails</em>; <em>PoleStructureIndex</em>)</strong><font color="gray">.Load</font> <em>FileName</em></p>
 
 </div>
 
@@ -1971,14 +2019,14 @@ Train.File <em>FolderName</em></p>
 
 <p>The image loaded into Texture.Background(0) is displayed at the beginning of the route, unless a Track.Back command at the beginning of the route requests a different image.</p>
 
-<p>As an alternative <strong>Dynamic or Object</strong> based backgrounds may be used. The implementation of these is described upon this page:</p>
+<p>As an alternative <strong><em>Dynamic or Object</em></strong> based backgrounds may be used. The implementation of these is described upon this page:</p>
 
 <p><a href="../../en/routes/xml/dynamicbackground.html" target="_blank">Dynamic &amp; Object Based Backgrounds</a></p>
 
 <hr />
 
 <div id="command">
-<p><strong>Texture.Background(BackgroundTextureIndex)</strong><font color="gray">.Load</font> <em>FileName</em></p>
+<p><strong>Texture.Background(<em>BackgroundTextureIndex</em>)</strong><font color="gray">.Load</font> <em>FileName</em></p>
 
 </div>
 
@@ -2001,7 +2049,7 @@ Train.File <em>FolderName</em></p>
 <hr />
 
 <div id="command">
-<p><strong>Texture.Background(BackgroundTextureIndex).X</strong> <em>RepetitionCount</em></p>
+<p><strong>Texture.Background(<em>BackgroundTextureIndex</em>).X</strong> <em>RepetitionCount</em></p>
 
 </div>
 
@@ -2022,7 +2070,7 @@ Train.File <em>FolderName</em></p>
 <hr />
 
 <div id="command">
-<p><strong>Texture.Background(BackgroundTextureIndex).Aspect</strong> <em>Mode</em></p>
+<p><strong>Texture.Background(<em>BackgroundTextureIndex</em>).Aspect</strong> <em>Mode</em></p>
 
 </div>
 
@@ -2052,7 +2100,7 @@ Train.File <em>FolderName</em></p>
 <h2 id="a-name-cycle-a-9-the-cycle-namespace"><a name="cycle"></a>■ 9. The Cycle namespace</h2>
 
 <div id="command">
-<p><strong>Cycle.Ground(GroundStructureIndex)<font color="gray">.Params</font> GroundStructureIndex<sub>0</sub>; GroundStructureIndex<sub>1</sub>; GroundStructureIndex<sub>2</sub>; &hellip;; GroundStructureIndex<sub>n-1</sub></strong></p>
+<p><strong>Cycle.Ground(<em>GroundStructureIndex</em>)<font color="gray">.Params</font> <em>GroundStructureIndex<sub>0</sub></em>; <em>GroundStructureIndex<sub>1</sub></em>; <em>GroundStructureIndex<sub>2</sub></em>; &hellip;; <em>GroundStructureIndex<sub>n-1</sub></em></strong></p>
 
 </div>
 
@@ -2067,7 +2115,7 @@ Train.File <em>FolderName</em></p>
 <p>When usually using Track.Ground(<em>GroundStructureIndex</em>), the same ground structure object will be repeatedly placed in every block. Via Cycle.Ground, you can override this behavior and automatically cycle through a series of different objects when using Track.Ground(<em>GroundStructureIndex</em>). The cycle repeats indefinitely, where <em>GroundStructureIndex0</em> starts at track position 0. Technically, the <em>i</em> in <em>GroundStructureIndex<sub>i</sub></em> chosen for a particular track position <em>p</em> is <code>Mod[p / BlockLength, n]</code>.</p>
 
 <div id="command">
-<p><strong>Cycle.Rail(RailStructureIndex)<font color="gray">.Params</font> RailStructureIndex<sub>0</sub>; RailStructureIndex<sub>1</sub>; RailStructureIndex<sub>2</sub>; &hellip;; RailStructureIndex<sub>n-1</sub></strong></p>
+<p><strong>Cycle.Rail(<em>RailStructureIndex</em>)<font color="gray">.Params</font> <em>RailStructureIndex<sub>0</sub></em>; <em>RailStructureIndex<sub>1</sub></em>; <em>RailStructureIndex<sub>2</sub></em>; &hellip;; <em>RailStructureIndex<sub>n-1</sub></em></strong></p>
 
 </div>
 
@@ -2226,7 +2274,7 @@ With Track<br />
 
 <p>The texture you start with should have a sharp shape, usually oval. The shape should be fully saturated in the core and blend into pure white at its outer rim. The surroundings of the shape can be either pure black (A) or pure white (B).</p>
 
-<p>When openBVE loads the glow texture, it will replace all purely black pixels with purely white pixels, thus arriving at (B). From there, the image is inverted &copy;, then hue-shifted by 180 degrees (D). Compared to (B), this has the overall effect of inverting the lightness of the image, i.e. fully saturated pixels will be left unchanged (e.g. the core), while bright pixels (such as the outer rim of the shape) will become dark, and vice versa. Then, the image is gamma-corrected to further darken the dark parts (E), and finally, the image is blurred slightly (F).</p>
+<p>When openBVE loads the glow texture, it will replace all purely black pixels with purely white pixels, thus arriving at (B). From there, the image is inverted (C), then hue-shifted by 180 degrees (D). Compared to (B), this has the overall effect of inverting the lightness of the image, i.e. fully saturated pixels will be left unchanged (e.g. the core), while bright pixels (such as the outer rim of the shape) will become dark, and vice versa. Then, the image is gamma-corrected to further darken the dark parts (E), and finally, the image is blurred slightly (F).</p>
 
 <p>The resulting texture is always additively blended. This means that instead of directly drawing the texture onto the screen, the pixels of the texture are added to the screen pixels. Here, adding black (0) does not change the screen pixels, while adding a fully satured color channel (1) will result in a fully satured color channel, e.g. adding white produces white. Keep in mind that when designing the textures, you will have to follow the inverse rules, e.g. design the image as depicted in (A) or (B), while having in mind how it will be processed afterward.</p>
 
@@ -2279,10 +2327,1528 @@ With Track<br />
 
 
 <div id="command-arguments">
-<p><strong><em>RailIndex</em></strong>: A positive integer (<strong>&gt;=1</strong>) indicating which rail index to use.</p>
+<p><strong><em>RailIndex</em></strong>: A positive integer (<strong>&gt;=1</strong>) indicating which rail index to use.<br />
+<strong><em><font color="green">X</font></em></strong>: A floating-point number representing the horizontal distance from the player&rsquo;s rail, <strong>by default</strong> measured in <strong>meters</strong>. Negative values indicate left, positive ones right.<br />
+<strong><em><font color="green">Y</font></em></strong>: A floating-point number representing the vertical distance from the player&rsquo;s rail, <strong>by default</strong> measured in <strong>meters</strong>. Negative values indicate below, positive ones above.<br />
+<strong><em>RailType</em></strong>: A non-negative integer referencing the rail type to use as defined by either a Structure.Rail or a Structure.Cycle command.</p>
 
 </div>
 
+
+<p>This command starts a new rail or updates an existing rail. The rail is represented by the index <em>RailIndex</em>. If a rail of the same <em>RailIndex</em> was already used in the route, the default values of <em>X</em>, <em>Y</em> and <em>RailType</em> are the values last used by that rail, otherwise 0. If the rail is to be ended, use the Track.RailEnd command. You can end a rail of a given <em>RailIndex</em> and start a new rail of the same <em>RailIndex</em> at the same track position provided that the old rail is first ended and the new rail started afterward. In each block, the <em>X</em> and <em>Y</em> values are repeated if a Track.Rail command is not used for that block. As a consequence, updating the <em>X</em> or <em>Y</em> values affects the layout of the rail from the preceding block only. Changing the <em>RailType</em> will affect the rail from the point on where this command is used. If this command is used multiple times on the same track position for the same rail, then the first instance of the command takes effect, while subsequent ones are ignored.</p>
+
+<div id="warning">
+<span>⚠</span>
+<p>This command can only be used at the beginning of a block.</p>
+
+</div>
+
+
+<div id="warning">
+<span>⚠</span>
+<p>Using a RailIndex value of 0 is not valid for this command: <a href="https://github.com/leezer3/OpenBVE/wiki/Errata#rail-and-railend-commands-with-an-index-of-zero" target="_blank">Errata Note</a></p>
+
+</div>
+
+
+<div id="notice">
+<h4 id="track-railstart-vs-track-rail">Track.RailStart vs. Track.Rail</h4>
+
+<p>If you want to start a new rail, you can either use Track.RailStart or Track.Rail. When using Track.RailStart, you provide markup that a new rail is in fact to be started, which is invalid if the rail already exists. Using an explicit Track.RailStart will protect you from using a <em>RailIndex</em> which is already in use, in which case an error message is generated.</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p><strong>Track.RailType</strong> <em>RailIndex</em>; <em>RailType</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>RailIndex</em></strong>: A non-negative integer indicating which rail index to change. The player&rsquo;s rail can be referred to with index <strong>0</strong>. The default value is 0.<br />
+<strong><em>RailType</em></strong>: A non-negative integer referencing the rail type to use as defined by either a Structure.Rail or a Structure.Cycle command. The default value is 0.</p>
+
+</div>
+
+
+<p>This command changes the rail type for an existing rail, represented by <em>RailIndex</em>. The rail must have been started with a Track.RailStart or Track.Rail command and must not have been ended by a Track.RailEnd command. Changing the <em>RailType</em> will affect the rail from the point on where this command is used.</p>
+
+<div id="warning">
+<span>⚠</span>
+<p>This command can only be used at the beginning of a block.</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p><strong>Track.RailEnd</strong> <em>RailIndex</em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>RailIndex</em></strong>: A positive integer (&gt;=1) indicating which rail index to use.<br />
+<strong><em><font color="green">X</font></em></strong>: A floating-point number representing the horizontal distance from the player&rsquo;s rail, <strong>by default</strong> measured in <strong>meters</strong>. Negative values indicate left, positive ones right.<br />
+<strong><em><font color="green">Y</font></em></strong>: A floating-point number representing the vertical distance from the player&rsquo;s rail, <strong>by default</strong> measured in <strong>meters</strong>. Negative values indicate below, positive ones above.</p>
+
+</div>
+
+
+<p>This command ends an existing rail, represented by the index <em>RailIndex</em>. The default values of <em>X</em> and <em>Y</em> are the ones last used by the rail. Once this command is used for a specific <em>RailIndex</em>, the corresponding rail is considered to be non-existing afterward.</p>
+
+<div id="warning">
+<span>⚠</span>
+<p>This command can only be used at the beginning of a block.</p>
+
+</div>
+
+
+<div id="warning">
+<span>⚠</span>
+<p>Using a RailIndex value of 0 is not valid for this command: <a href="https://github.com/leezer3/OpenBVE/wiki/Errata#rail-and-railend-commands-with-an-index-of-zero" target="_blank">Errata Note</a></p>
+
+</div>
+
+
+<table style="border: none;">
+  <tbody>
+  
+    <tr>
+      <td width="16" valign="top"></td>
+      <td>
+      <em>Example of Track.RailStart, Track.Rail, Track.RailType and Track.RailEnd commands</em>
+      </td>
+    </tr>
+  
+    <tr>
+       <td width="16" valign="top">▶</td>
+       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
+         <font style="font-family: monospace">
+         <p style='display:inline;'>With Track<br />
+1000, .RailStart 1; 3.8; 0.0; 0<br />
+1025, .RailType 1; 1<br />
+1050, .Rail 1; 1.9; 0.0; 0<br />
+1075, .RailEnd 1
+         </font>
+       </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In the preceding example, rail 1 starts with an x-value of 3.8 and bears a rail index which corresponds to an object intended to depict a straight rail. The rail keeps the x-value of 3.8 at track position 1025, where the rail type is changed to correspond to an object intended to depict an s-shaped curve. At track position 1050, the rail is redefined to have an x-value of 1.9, after which the rail is straight again until 1075, where it is ended, still having an x-value of 1.9.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Accuracy</strong> <em>Value</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Value</em></strong>: A non-negative floating-point number representing the accuracy of the track. The default value is 2.</p>
+
+</div>
+
+
+<p>This command sets the accuracy of the track from this point on. Values should be in the range from 0 to 4, where 0 means perfect accuracy (no inaccuracy at all), 1 means very good accuracy (high speed lines), 2 means good accuracy, 3 means mediocre accuracy, and 4 means poor accuracy. Intermediate values are also possible. Currently, values below 0 are clamped at 0, and values above 4 are clamped at 4.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Adhesion</strong> <em>Rate</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Rate</em></strong>: A non-negative floating-point number measured in percent representing the adhesion of the track. The default value is 100.</p>
+
+</div>
+
+
+<p>This command sets the adhesion of the track from this point on. As a reference, the value of 135 represents dry conditions, 85 represents frost and 50 represents snowy conditions. With a value of 0, the train will not be able to move at all.</p>
+
+<h5 id="a-name-track-geometry-a-11-2-geometry"><a name="track_geometry"></a>● 11.2. Geometry</h5>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Pitch</strong> <em>Rate</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Rate</em></strong>: A floating-point number measured in per thousands representing the pitch of the track. The default value is 0.</p>
+
+</div>
+
+
+<p>This command defines the pitch of all rails from this point on. Negative values indicate a downward gradient, positive ones an upward gradient. The value of 0 represents a level track. Rate can be calculated from a length difference X and a height difference Y in the following way:</p>
+
+<table style="border: none;">
+  <tbody>
+  
+    <tr>
+      <td width="16" valign="top"></td>
+      <td>
+      <em>Rate expressed through X and Y:</em>
+      </td>
+    </tr>
+  
+    <tr>
+       <td width="16" valign="top">ƒ</td>
+       <td bgcolor="#FFD8C0" style="border: 1px dotted;">
+         <font style="font-family: monospace;">
+         <p style='display:inline;'><em>Rate = 1000 * Y / X</em>
+         </font>
+       </td>
+    </tr>
+  </tbody>
+</table>
+
+<div id="warning">
+<span>⚠</span>
+<p>This command can only be used at the beginning of a block.</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Curve</strong> <em><font color=green>Radius</font></em>; <em>CantInMillimeters</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em><font color=green>Radius</font></em></strong>: A floating-point number representing the radius of the curve, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br />
+<strong><em>CantInMillimeters</em></strong>: A floating-point number which represents the superelevation of a banked curve, <strong>always</strong> measured in <strong>millimeters</strong> (0.001 meters). The default value is 0. See also Options.CantBehavior.</p>
+
+</div>
+
+
+<p>This command defines the radius of the curve for the player&rsquo;s rail from this point on. Negative values for <em>Radius</em> indicate a curve to the left, positive ones to the right. The value of 0 represents straight track. The <em>CantInMillimeters</em> parameter defines the cant (superelevation) in millimeters. If Options.CantBehavior is 0 (default), only the absolute value of <em>CantInMillimeters</em> is considered, and the superelevation is always towards the curve center (inward). Also, cant cannot be applied on straight track. If Options.CantBehavior is 1, <em>CantInMillimeters</em> is signed, i.e. negative values bank outward and positive ones inward on curved track. Also, cant can be applied on straight track, where negative values bank toward the left and positive ones toward the right.</p>
+
+<div id="warning">
+<span>⚠</span>
+<p>This command can only be used at the beginning of a block.</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Turn</strong> <em>Ratio</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Rate</em></strong>: A floating-point number representing a turn. The default value is 0.</p>
+
+</div>
+
+
+<p>This command creates a point-based turn at the point of insertion. <em>Ratio</em> indicates the ratio between the length difference <em>Z</em> and the horizontal offset <em>X</em> in the following way:</p>
+
+<table style="border: none;">
+  <tbody>
+  
+    <tr>
+       <td width="16" valign="top">ƒ</td>
+       <td bgcolor="#FFD8C0" style="border: 1px dotted;">
+         <font style="font-family: monospace;">
+         <p style='display:inline;'><em>Ratio = X / Z</em>
+         </font>
+       </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A negative ratio represents a turn to the left, a positive one to the right. The value of 0 represents a straight track.</p>
+
+<div id="warning">
+<span>⚠</span>
+<p>This command can only be used at the beginning of a block.</p>
+
+</div>
+
+
+<div id="warning">
+<span>⚠</span>
+<p>This command is deprecated - use Track.Curve instead.</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Height</strong> <em><font color=green>Y</font></em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em><font color=green>Y</font></em></strong>: A floating-point number representing the height of the player&rsquo;s rail, <strong>by default</strong> measured in <strong>meters</strong>.</p>
+
+</div>
+
+
+<p>This command defines the height of the player&rsquo;s rail above the ground at the point of insertion. It influences the placement of the ground objects defined via Structure.Ground and changed via Track.Ground. The height is interpolated between adjacent Track.Height commands. For example, the following two codes produce equivalent results:</p>
+
+<table style="border: none;">
+  <tbody>
+  
+    <tr>
+      <td width="16" valign="top"></td>
+      <td>
+      <em>Example of a Track.Height command interpolated at 25m boundaries:</em>
+      </td>
+    </tr>
+  
+    <tr>
+       <td width="16" valign="top">▶</td>
+       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
+         <font style="font-family: monospace">
+         <p style='display:inline;'>1000, Track.Height 1<br />
+1075, Track.Height 4
+         </font>
+       </td>
+    </tr>
+  </tbody>
+</table>
+
+<table style="border: none;">
+  <tbody>
+  
+    <tr>
+      <td width="16" valign="top"></td>
+      <td>
+      <em>Example of Track.Height explicitly set each 25m to produce the same result:</em>
+      </td>
+    </tr>
+  
+    <tr>
+       <td width="16" valign="top">▶</td>
+       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
+         <font style="font-family: monospace">
+         <p style='display:inline;'>1000, Track.Height 1<br />
+1025, Track.Height 2<br />
+1050, Track.Height 3<br />
+1075, Track.Height 4
+         </font>
+       </td>
+    </tr>
+  </tbody>
+</table>
+
+<div id="warning">
+<span>⚠</span>
+<p>This command can only be used at the beginning of a block.</p>
+
+</div>
+
+
+<h5 id="a-name-track-objects-a-11-3-objects"><a name="track_objects"></a>● 11.3. Objects</h5>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.FreeObj</strong> <em>RailIndex</em>; <em>FreeObjStructureIndex</em>; <em>X</em>; <em>Y</em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>RailIndex</em></strong>: A non-negative integer representing the rail on which to place the object. The default value is 0.<br />
+<strong><em>FreeObjStructureIndex</em></strong>: A non-negative integer representing the object to place as defined via Structure.FreeObj. The default value is 0.<br />
+<strong><em><font color="green">X</font></em></strong>: The x-offset from the (straight) rail, <strong>by default</strong> measured in <strong>meters</strong>. Negative values represent the left, positive ones the right. The default value is 0.<br />
+<strong><em><font color="green">Y</font></em></strong>: The y-offset from the (straight) rail, <strong>by default</strong> measured in <strong>meters</strong>. Negative values represent below the top of the rails, positive ones above. The default value is 0.<br />
+<strong><em>Yaw</em></strong>: The angle in degrees by which the object is rotated in the XZ-plane in clock-wise order when viewed from above. The default value is 0.<br />
+<strong><em>Pitch</em></strong>: The angle in degrees by which the object is rotated in the YZ-plane in clock-wise order when viewed from the left. The default value is 0.<br />
+<strong><em>Roll</em></strong>: The angle in degrees by which the object is rotated in the XY-plane in clock-wise order when viewed from behind. The default value is 0.</p>
+
+</div>
+
+
+<p>This places a &ldquo;free&rdquo; object a single time on a specified rail. The object must have been loaded via Structure.FreeObj(<em>FreeObjStructureIndex</em>) prior to using this command.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Wall</strong> <em>RailIndex</em>; <em>Direction</em>; <em>WallStructureIndex</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>RailIndex</em></strong>: A non-negative integer representing the rail on which to start or update the wall. The default value is 0.<br />
+<strong><em>Direction</em></strong>: An integer indicating which wall to use as described below.<br />
+<strong><em>WallStructureIndex</em></strong>: A non-negative integer representing the object to place as defined via Structure.WallL and Structure.WallR. The default value is 0.</p>
+
+</div>
+
+
+<p>▸ Options for <em>Direction</em>:</p>
+
+<div id="command-arguments">
+<p><strong>-1</strong>: The WallL object (left wall) is used.<br />
+<strong>0</strong>: Both the WallL and WallR objects are used.<br />
+<strong>1</strong>: The WallR object (right wall) is used.</p>
+
+</div>
+
+
+<p>This starts or updates a wall on a specified rail. The object must have been loaded via Structure.WallL(<em>WallObjectIndex</em>) or Structure.WallR(<em>WallObjectIndex</em>) prior to using this command. The walls are placed at the beginning of every block until a corresponding Track.WallEnd ends the wall for this rail. Please note that walls are resurrected if a rail is ended via Track.RailEnd and then started again via Track.RailStart or Track.Rail unless the wall was also ended via Track.WallEnd.</p>
+
+<div id="warning">
+<span>⚠</span>
+<p>This command can only be used at the beginning of a block.</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p><strong>Track.WallEnd</strong> <em>RailIndex</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>RailIndex</em></strong>: A non-negative integer representing the rail on which to end an existing wall.</p>
+
+</div>
+
+
+<p>This ends an existing wall that was previously started via Track.Wall on a specified rail. The wall is not placed for the block in which this command is used.</p>
+
+<div id="warning">
+<span>⚠</span>
+<p>This command can only be used at the beginning of a block.</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Dike</strong> <em>RailIndex</em>; <em>Direction</em>; <em>DikeStructureIndex</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>RailIndex</em></strong>: A non-negative integer representing the rail on which to start or update the dike. The default value is 0.<br />
+<strong><em>Direction</em></strong>: An integer indicating which dike to use as described below.<br />
+<strong><em>DikeStructureIndex</em></strong>: A non-negative integer representing the object to place as defined via Structure.DikeL and Structure.DikeR. The default value is 0.</p>
+
+</div>
+
+
+<p>▸ Options for <em>Direction</em>:</p>
+
+<div id="command-arguments">
+<p><strong>-1</strong>: The DikeL object (left dike) is used.<br />
+<strong>0</strong>: Both the DikeL and DikeR objects are used.<br />
+<strong>1</strong>: The DikeR object (right dike) is used.</p>
+
+</div>
+
+
+<p>This starts or updates a dike on a specified rail. The object must have been loaded via Structure.DikeL(<em>DikeObjectIndex</em>) or Structure.DikeR(<em>DikeObjectIndex</em>) prior to using this command. The dikes are placed at the beginning of every block until a corresponding Track.DikeEnd ends the dike for this rail. Please note that dikes are resurrected if a rail is ended via Track.RailEnd and then started again via Track.RailStart or Track.Rail unless the dike was also ended via Track.DikeEnd.</p>
+
+<div id="warning">
+<span>⚠</span>
+<p>This command can only be used at the beginning of a block.</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p><strong>Track.DikeEnd</strong> <em>RailIndex</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>RailIndex</em></strong>: A non-negative integer representing the rail on which to end an existing dike.</p>
+
+</div>
+
+
+<p>This ends an existing dike that was previously started via Track.Dike on a specified rail. The dike is not placed for the block in which this command is used.</p>
+
+<div id="warning">
+<span>⚠</span>
+<p>This command can only be used at the beginning of a block.</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Pole</strong> <em>RailIndex</em>; <em>NumberOfAdditionalRails</em>; <em>Location</em>; <em>Interval</em>; <em>PoleStructureIndex</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>RailIndex</em></strong>: A non-negative integer representing the rail on which to start or update the pole. The default value is 0.<br />
+<strong><em>NumberOfAdditionalRails</em></strong>: A non-negative integer representing the amount of additional rails covered by this pole (i.e. this rail, plus <em>NumberOfAdditionalRails</em> rails). The default value is 0.<br />
+<strong><em>Location</em></strong>: If <em>NumberOfAdditionalRails</em> is 0, the side on which the pole is placed (see below), or the x-offset in multiples of 3.8 meters if <em>NumberOfAdditionalRails</em> is at least 1. The default value is 0.<br />
+<strong><em>Interval</em></strong>: An integer multiple of the block length specifying the interval in which poles are placed.<br />
+<strong><em>PoleStructureIndex</em></strong>: A non-negative integer representing the object to place as defined via Structure.Pole. The default value is 0.</p>
+
+</div>
+
+
+<p>This starts or updates a pole on a specified rail. The object must have been loaded via Structure.Pole(<em>NumberOfAdditionalRails</em>; <em>PoleStructureIndex</em>) prior to using this command. The poles are placed at the beginning of every block whose track positions are an integer multiple of the <em>Interval</em> (that is not necessarily at the same location this command is placed). If <em>NumberOfAdditionalRails</em> is 0, *Location*indicates the side of the rail on which the pole is placed. If <em>Location</em> is less than or equal to 0, the pole is placed as-is (corresponding to the left side). If <em>Location</em> is greater than 0, the object is mirrored on the x-axis and then placed (corresponding to the right side). If <em>NumberOfAdditionalRails</em> is greater than or equal to 1, <em>Location</em> specifies the x-offset in multiples of 3.8 meters. Please note that poles are resurrected if a rail is ended via Track.RailEnd and then started again via Track.RailStart or Track.Rail unless the pole was also ended via Track.PoleEnd.</p>
+
+<div id="warning">
+<span>⚠</span>
+<p>This command can only be used at the beginning of a block.</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p><strong>Track.PoleEnd</strong> <em>RailIndex</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>RailIndex</em></strong>: A non-negative integer representing the rail on which to end an existing pole.</p>
+
+</div>
+
+
+<p>This ends an existing pole that was previously started via Track.Pole on a specified rail. The pole is not placed for the block in which this command is used.</p>
+
+<div id="warning">
+<span>⚠</span>
+<p>This command can only be used at the beginning of a block.</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p><font color="gray"><strong>Track.Crack</strong> <em>RailIndex<sub>1</sub></em>; <em>RailIndex<sub>2</sub></em>; <em>CrackStructureIndex</em></font></p>
+
+</div>
+
+
+<p><img src="../../images/construction_64.png" alt="construction_64" /><font color="gray">Description not available yet.</font></p>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Ground</strong> <em>CycleIndex</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>CycleIndex</em></strong>: A non-negative integer representing the cycle of ground objects to place as defined via Structure.Ground or Cycle.Ground.</p>
+
+</div>
+
+
+<p>This defines which ground objects to place from this point on. Ground objects are always placed at the beginning of a block at a certain height below the player&rsquo;s rail (as defined via Track.Height). If no cycle was defined for <em>CycleIndex</em>, then the object loaded into Structure.Ground(<em>CycleIndex</em>) is placed. Otherwise, the cycle of ground objects as defined via Cycle.Ground(<em>CycleIndex</em>) is used.</p>
+
+<div id="warning">
+<span>⚠</span>
+<p>This command can only be used at the beginning of a block.</p>
+
+</div>
+
+
+<h5 id="a-name-track-stations-a-11-4-stations"><a name="track_stations"></a>● 11.4. Stations</h5>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Sta</strong> <em>Name</em>; <em>ArrivalTime</em>; <em>DepartureTime</em>; <em>PassAlarm</em>; <em>Doors</em>; <em>ForcedRedSignal</em>; <em>System</em>; <em>ArrivalSound</em>; <em>StopDuration</em>; <em>PassengerRatio</em>; <em>DepartureSound</em>; <em>TimetableIndex</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Name</em></strong>: The name of the station. This is displayed in the timetable and in messages, so should not be omitted.<br />
+<strong><em>ArrivalTime</em></strong>: The <a href="../../en/information/numberformats.html#times">time</a> the player&rsquo;s train is expected to arrive at this station. Special values may also appear - see below.<br />
+<strong><em>DepartureTime</em></strong>: The <a href="../../en/information/numberformats.html#times">time</a> the player&rsquo;s train is expected to depart from this station. Special values may also appear - see below.<br />
+<strong><em>PassAlarm</em></strong>: Indicates whether the pass alarm device should remind the driver of stopping at this station. The default value is 0.<br />
+<strong><em>Doors</em></strong>: Indicates which doors should open at this station. The default value is 0.<br />
+<strong><em>ForcedRedSignal</em></strong>: Indicates whether the signal behind the last station stop should be red on a train approach. The default value is 0.<br />
+<strong><em>System</em></strong>: Indicates which built-in safety system should apply until the next station. The default value is 0.<br />
+<strong><em>ArrivalSound</em></strong>: The sound file to be played on arrival, relative to the <strong>Sound</strong> folder.<br />
+<strong><em>StopDuration</em></strong>: A positive floating-point number indicating the minimum stop duration in seconds, including door opening/closing times. The default value is 15.<br />
+<strong><em>PassengerRatio</em></strong>: A non-negative floating-point number indicating the relative amount of passengers in the train from this station on. As a reference, 100 represents a train with normal amount of passengers, while 250 represents an over-crowded train. Values in-between 0 and 250 should be used. The default value is 100.<br />
+<strong><em>DepartureSound</em></strong>: The sound file to be played before departure (departure time minus sound duration minus door closing time), relative to the <strong>Sound</strong> folder.<br />
+<strong><em>TimetableIndex</em></strong>: A non-negative integer representing the timetable to be shown from this station on as defined via Train.Timetable(<em>TimetableIndex</em>).</p>
+
+</div>
+
+
+<p>▸ Available options for <em>ArrivalTime</em>:</p>
+
+<div id="command-arguments">
+<p><em>time</em>: The train is expected to arrive at this particular time.<br />
+<em>omitted</em>: The train may arrive at any time.<br />
+<strong>P</strong> or <strong>L</strong>: All trains are expected to pass this station.<br />
+<strong>B</strong>: The player&rsquo;s train is expected to pass this station, while all other trains are expected to stop.<br />
+<strong>S</strong>: The player&rsquo;s train is expected to stop at this station, while all other trains are expected to pass.<br />
+<strong>S:</strong><em>time</em>: The player&rsquo;s train is expected to arrive at this particular time, while all other trains are expected to pass.</p>
+
+</div>
+
+
+<p>▸ Available options for <em>DepartureTime</em>:</p>
+
+<div id="command-arguments">
+<p><em>time</em>: The train is expected to depart at this particular time.<br />
+<em>omitted</em>: The train may depart at any time.<br />
+<strong>T</strong> or <strong>=</strong>: This is the terminal station. If <em>ForcedRedSignal</em> is set to 1, the departure signal will be held at red indefinately.<br />
+<strong>T:</strong><em>time</em>: This is the terminal station. If <em>ForcedRedSignal</em> is set to 1, the departure signal will still switch to green before the specified time as if this was a regular station.<br />
+<strong>C</strong>: This is a station at which to &ldquo;change ends&rdquo;. See the description below.<br />
+<strong>C:</strong><em>time</em>: This is a station at which to &ldquo;change ends&rdquo;. Changing ends will take place at the specified time unless <em>StopDuration</em> interferes. See the description below.</p>
+
+</div>
+
+
+<p>▸ Available options for <em>PassAlarm</em>:</p>
+
+<div id="command-arguments">
+<p><strong>0</strong>: The pass alarm device does not remind the driver of stopping at this station.<br />
+<strong>1</strong>: The pass alarm device reminds the driver of stopping at this station.</p>
+
+</div>
+
+
+<p>▸ Available options for <em>Doors</em>:</p>
+
+<div id="command-arguments">
+<p><strong>L</strong> or <strong>-1</strong>: The left doors are expected to open at this station.<br />
+<strong>N</strong> or <strong>0</strong>: No doors are expected to open at this station, i.e. the train should simply come to a hold.<br />
+<strong>R</strong> or <strong>1</strong>: The right doors are expected to open at this station.<br />
+<strong>B</strong>: Both the left and right doors are expected to open at this station.</p>
+
+</div>
+
+
+<p>▸ Available options for <em>ForcedRedSignal</em>:</p>
+
+<div id="command-arguments">
+<p><strong>0</strong>: Signals are unaffected by this station.<br />
+<strong>1</strong>: The signal immediately following the last station stop is hold at red until the train reaches the stopping area and the departure time.</p>
+
+</div>
+
+
+<p>▸ Available options for <em>System</em>:</p>
+
+<div id="command-arguments">
+<p><strong>ATS</strong> or <strong>0</strong>: ATS should be used from this station on. The following track is not be equipped with ATC.<br />
+<strong>ATC</strong> or <strong>1</strong>: ATC should be used from this station on. The following track is equipped with ATC.</p>
+
+</div>
+
+
+<p>This command initializes a new station. It should be placed at the beginning of the station platform. In order to finalize the creation of a station, use the Track.Stop command to place stop points following this command. All following Track.Stop commands will be associated to this station. At least one Track.Stop command must follow if trains are expected to stop at this station.</p>
+
+<p>Stations can be marked as &ldquo;changing ends&rdquo; in the departure time. At such stations, when the departure time has been reached, the train will automatically jump to the next station. This feature is intended to fake a reverse of traveling direction without the need to jump to stations manually from the menu.</p>
+
+<div id="warning">
+<span>⚠</span>
+<p>The &ldquo;changing ends&rdquo; feature is only available in the development release 1.2.11 and above.</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Station</strong> <em>Name</em>; <em>ArrivalTime</em>; <em>DepartureTime</em>; <em>ForcedRedSignal</em>; <em>System</em>; <em>DepartureSound</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Name</em></strong>: The name of the station. This is displayed in the timetable and in messages, so should not be omitted.<br />
+<strong><em>ArrivalTime</em></strong>: The <a href="../../en/information/numberformats.html#times">time</a> the player&rsquo;s train is expected to arrive at this station. Special values may also appear - see below.<br />
+<strong><em>DepartureTime</em></strong>: The <a href="../../en/information/numberformats.html#times">time</a> the player&rsquo;s train is expected to depart from this station. Special values may also appear - see below.<br />
+<strong><em>ForcedRedSignal</em></strong>: Indicates whether the signal behind the last station stop should be red on a train approach. The default value is 0.<br />
+<strong><em>System</em></strong>: Indicates which built-in safety system should apply until the next station. The default value is 0.<br />
+<strong><em>DepartureSound</em></strong>: The sound file to be played before departure (departure time minus sound duration minus door closing time), relative to the <strong>Sound</strong> folder.</p>
+
+</div>
+
+
+<p>▸ Available options for <em>ArrivalTime</em>:</p>
+
+<div id="command-arguments">
+<p><em>time</em>: The train is expected to arrive at this particular time.<br />
+<em>omitted</em>: The train may arrive at any time.<br />
+<strong>P</strong> or <strong>L</strong>: All trains are expected to pass this station.<br />
+<strong>B</strong>: The player&rsquo;s train is expected to pass this station, while all other trains are expected to stop.<br />
+<strong>S</strong>: The player&rsquo;s train is expected to stop at this station, while all other trains are expected to pass.<br />
+<strong>S:</strong><em>time</em>: The player&rsquo;s train is expected to arrive at this particular time, while all other trains are expected to pass.</p>
+
+</div>
+
+
+<p>▸ Available options for <em>DepartureTime</em>:</p>
+
+<div id="command-arguments">
+<p><em>time</em>: The train is expected to depart at this particular time.<br />
+<em>omitted</em>: The train may depart at any time.<br />
+<strong>T</strong> or <strong>=</strong>: This is the terminal station. If <em>ForcedRedSignal</em> is set to 1, the departure signal will be held at red indefinately.<br />
+<strong>T:</strong><em>time</em>: This is the terminal station. If <em>ForcedRedSignal</em> is set to 1, the departure signal will still switch to green before the specified time as if this was a regular station.<br />
+<strong>C</strong>: This is a station at which to &ldquo;change ends&rdquo;. See the description below.<br />
+<strong>C:</strong><em>time</em>: This is a station at which to &ldquo;change ends&rdquo;. Changing ends will take place at the specified time unless <em>StopDuration</em> interferes. See the description below.</p>
+
+</div>
+
+
+<p>▸ Available options for <em>ForcedRedSignal</em>:</p>
+
+<div id="command-arguments">
+<p><strong>0</strong>: Signals are unaffected by this station.<br />
+<strong>1</strong>: The signal immediately following the last station stop is hold at red until the train reaches the stopping area and the departure time.</p>
+
+</div>
+
+
+<p>▸ Available options for <em>System</em>:</p>
+
+<div id="command-arguments">
+<p><strong>ATS</strong> or <strong>0</strong>: ATS should be used from this station on. The following track is not be equipped with ATC.<br />
+<strong>ATC</strong> or <strong>1</strong>: ATC should be used from this station on. The following track is equipped with ATC.</p>
+
+</div>
+
+
+<p>This command initializes a new station. Prefer using the Track.Sta command, which includes more options. For the options of Track.Sta which are not offered by Track.Station, the following values apply:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th><em>PassAlarm</em></th>
+<th>0 (not used)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><em>Doors</em></td>
+<td>B (both doors must be opened)</td>
+</tr>
+
+<tr>
+<td><em>ArrivalSound</em></td>
+<td>Not played</td>
+</tr>
+
+<tr>
+<td><em>StopDuration</em></td>
+<td>15</td>
+</tr>
+
+<tr>
+<td><em>PassengerRatio</em></td>
+<td>100</td>
+</tr>
+
+<tr>
+<td><em>TimetableIndex</em></td>
+<td>Not affected</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>The command should be placed at the beginning of the station platform. In order to finalize the creation of a station, use the Track.Stop command to place stop points following this command. All following Track.Stop commands will be associated to this station. At least one Track.Stop command must follow if trains are expected to stop at this station.</p>
+
+<p>Stations can be marked as &ldquo;changing ends&rdquo; in the departure time. At such stations, when the departure time has been reached, the train will automatically jump to the next station. This feature is intended to fake a reverse of traveling direction without the need to jump to stations manually from the menu.</p>
+
+<div id="warning">
+<span>⚠</span>
+<p>The &ldquo;changing ends&rdquo; feature is only available in the development release 1.2.11 and above.</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Stop</strong> <em>Direction</em>; <em><font color="green">BackwardTolerance</font></em>; <em><font color="green">ForwardTolerance</font></em>; <em>Cars</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Direction</em></strong>: On which side to place a default stop post. The default value is 0.<br />
+<strong><em><font color="green">BackwardTolerance</font></em></strong>: A positive floating-point number indicating the allowed tolerance in the backward direction, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 5.<br />
+<strong><em><font color="green">ForwardTolerance</font></em></strong>: A positive floating-point number indicating the allowed tolerance in the forward direction, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 5.<br />
+<strong><em>Cars</em></strong>: A non-negative integer indicating for how many cars this stop point applies, or 0 for all cars. The default value is 0.</p>
+
+</div>
+
+
+<p>▸ Available options for <em>Direction</em>:</p>
+
+<div id="command-arguments">
+<p><strong>-1</strong>: A stop post is created on the left side.<br />
+<strong>0</strong>: No stop post is created.<br />
+<strong>1</strong>: A stop post is created on the right side.</p>
+
+</div>
+
+
+<p>This command places a stop point for the last created station. If there is more than one stop defined for a station, a train is expected to stop at the first Track.Stop command for which <em>Cars</em> is greater than or equal to the number of cars the train has, where a value for <em>Cars</em> of 0 indicates a stop point regardless of the amount of cars to be used as the last stop point for a station.</p>
+
+<table style="border: none;">
+  <tbody>
+  
+    <tr>
+      <td width="16" valign="top"></td>
+      <td>
+      <em>Example of a station with multiple stop points:</em>
+      </td>
+    </tr>
+  
+    <tr>
+       <td width="16" valign="top">▶</td>
+       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
+         <font style="font-family: monospace">
+         <p style='display:inline;'>With Track<br />
+0100, .Sta STATION<br />
+0178, .Stop 1;;;4 ,; for 4 or less cars<br />
+0212, .Stop 1;;;6 ,; for 5 or 6 cars<br />
+0246, .Stop 1;;;8 ,; for 7 or 8 cars<br />
+0280, .Stop 1;;;0 ,; for 9 or more cars
+         </font>
+       </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<div id="command">
+<p><font color="gray"><strong>Track.Form</strong> <em>RailIndex<sub>1</sub></em>; <em>RailIndex<sub>2</sub></em>; <em>RoofStructureIndex</em>; <em>FormStructureIndex</em></font></p>
+
+</div>
+
+
+<p><img src="../../images/construction_64.png" alt="construction_64" /><font color="gray">Description not available yet.</font></p>
+
+<h5 id="a-name-track-signalling-a-11-5-signalling-and-speed-limits"><a name="track_signalling"></a>● 11.5. Signalling and speed limits</h5>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Limit</strong> <em><font color="blue">Speed</font></em>; <em>Post</em>; <em>Cource</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em><font color="blue">Speed</font></em></strong>: A positive floating-point number representing the speed, <strong>by default</strong> measured in <strong>km/h</strong>, or 0 to indicate no speed restriction. The default value is 0.<br />
+<strong><em>Post</em></strong>: The side on which to place a default Japanese-style speed limit post. The default value is 0.<br />
+<strong><em>Cource</em></strong>: The directional indication. The default value is 0.</p>
+
+</div>
+
+
+<p><img src="../../images/illustration_limit.png" alt="illustration_limit" /></p>
+
+<p>▸ Options for <em>Post</em>:</p>
+
+<div id="command-arguments">
+<p><strong>-1</strong>: The post is placed on the left side of the track.<br />
+<strong>0</strong>: No post will be placed.<br />
+<strong>1</strong>: The post is placed on the right side of the track.</p>
+
+</div>
+
+
+<p>▸ Options for <em>Cource</em>:</p>
+
+<div id="command-arguments">
+<p><strong>-1</strong>: The post applies for a left-bound track.<br />
+<strong>0</strong>: The post does not indicate a particular direction.<br />
+<strong>1</strong>: The post applies for a right-bound track.</p>
+
+</div>
+
+
+<p>This command defines the new speed limit from this point on. If the new speed limit is lower than the current speed limit, the new speed limit will take effect immediately. If the speed limit is higher than the current speed limit, the new speed limit will take effect only once the whole train has passed this point. By setting <em>Speed</em> to <code>0</code>, the speed restriction is released. By setting <em>Post</em> to either <code>-1</code> or <code>1</code>, a default Japanese-style speed post is placed at the respective side of the track. Setting <em>Course</em> to either <code>-1</code> or <code>1</code> includes a directional indication, which is usually used at railroad switches to indicate that the speed limit only applies if the respective direction is being taken. If <em>Speed</em> is set to <code>0</code>, the setting of <em>Course</em> has no effect.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Section</strong> <em>a<sub>0</sub></em>; <em>a<sub>1</sub></em>; <em>a<sub>2</sub></em>; &hellip;; <em>a<sub>n</sub></em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>a<sub>i</sub></em></strong>: A non-negative number specifying one of the section&rsquo;s aspects.</p>
+
+</div>
+
+
+<p>This command starts a section, the functional part of signalling, to be used in conjunction with Track.SigF, which creates a visual representation of a section (a signal). The <em>a<sub>i</sub></em> parameters specify the aspects the section can bear. An aspect of 0 corresponds to a red section which must not be passed by a train. The <em>a<sub>0</sub></em> term is mandatory.</p>
+
+<div id="notice">
+<h4 id="default-versus-simplified-section-behavior">Default versus simplified section behavior</h4>
+
+<p>There are two different modes of behavior on how to interpret the <em>a<sub>i</sub></em> parameters. The mode can be set via Options.SectionBehavior. The following are separate descriptions for default and simplified behavior.</p>
+
+</div>
+
+
+<p><strong>Default behavior:</strong><br />
+The <em>a<sub>i</sub></em> terms specify the aspect the section should bear depending on how many sections ahead are clear until a red one is encountered. The order of the terms is relevant. The same aspect may occur multiple times.</p>
+
+<p>▸ Meanings of the <em>a<sub>i</sub></em> terms:</p>
+
+<div id="command-arguments">
+<p><strong>a<sub>0</sub></strong>: The aspect to show when this section is occupied by a train or otherwise hold at red.<br />
+<strong>a<sub>1</sub></strong>: The aspect to show when this section is clear, but the immediately following section is red.<br />
+<strong>a<sub>2</sub></strong>: The aspect to show when this section and the following section are clear, but the one immediately following the latter one is red.<br />
+<strong>a<sub>n</sub></strong>: The aspect to show when <em>n</em> sections are clear before a red one is encountered.</p>
+
+</div>
+
+
+<p>In the case more sections ahead are clear than indicated by the <em>a<sub>i</sub></em> terms, the section will bear the aspect of <em>a<sub>n</sub></em>.</p>
+
+<p><strong>Simplified behavior:</strong><br />
+The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section can have. A section will bear the smallest of the <em>a<sub>i</sub></em> which is greater than the current aspect of the upcoming section. If no such <em>a<sub>i</sub></em> exists, the section will bear the aspect of <em>an</em>. The order of the <em>a<sub>i</sub></em> is irrelevant. If the same aspect occurs multiple times, this has no effect.</p>
+
+<table style="border: none;">
+  <tbody>
+  
+    <tr>
+      <td width="16" valign="top"></td>
+      <td>
+      <em>Example of a Track.Section command in conjunction with a Track.SigF command:</em>
+      </td>
+    </tr>
+  
+    <tr>
+       <td width="16" valign="top">▶</td>
+       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
+         <font style="font-family: monospace">
+         <p style='display:inline;'>With Track<br />
+1000, .Section 0;2;4, .SigF 3;0;-3;-1
+         </font>
+       </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.SigF</strong> <em>SignalIndex</em>; <em>Section</em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>SignalIndex</em></strong>: A non-negative integer representing the signal to be placed as defined via Signal(<em>SignalIndex</em>).Load.<br />
+<strong><em>Section</em></strong>: A non-negative integer representing the section this signal is attached to, with 0 being the current section, 1 the upcoming section, 2 the section after that, and so on.<br />
+<strong><em><font color="green">X</font></em></strong>: The X-coordinate to place the signal object, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br />
+<strong><em><font color="green">Y</font></em></strong>: The Y-coordinate to place the signal object, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br />
+<strong><em>Yaw</em></strong>: The angle in degrees by which the object is rotated in the XZ-plane in clock-wise order when viewed from above. The default value is 0.<br />
+<strong><em>Pitch</em></strong>: The angle in degrees by which the object is rotated in the YZ-plane in clock-wise order when viewed from the left. The default value is 0.<br />
+<strong><em>Roll</em></strong>: The angle in degrees by which the object is rotated in the XY-plane in clock-wise order when viewed from behind. The default value is 0.</p>
+
+</div>
+
+
+<p>This command creates a non-function signal, that is, a visual representation of a section as defined via Track.Section. Setting <em>Y</em> to a negative number resets the y-coordinate to 4.8 meters and attaches a default signal post. Also see Track.Section.</p>
+
+<p>If no object has been defined by Signal(<em>SignalIndex</em>), one of the default Japanese signals is used:</p>
+
+<p>▸ Default signals for <em>SignalIndex</em>:</p>
+
+<div id="command-arguments">
+<p><strong>3</strong>: A three-aspect signal having aspects <font color="#C00000">●</font>red, <font color="#FFC000">●</font>yellow and <font color="#00C000">●</font>green.<br />
+<strong>4</strong>: A four-aspect (type A) signal having aspects <font color="#C00000">●</font>red, <font color="#FFC000">●●</font>yellow-yellow, <font color="#FFC000">●</font>yellow and <font color="#00C000">●</font>green.<br />
+<strong>5</strong>: A five-aspect (type A) signal having aspects <font color="#C00000">●</font>red, <font color="#FFC000">●●</font>yellow-yellow, <font color="#FFC000">●</font>yellow, <font color="#FFC000">●</font><font color="#00C000">●</font>yellow-green and <font color="#00C000">●</font>green.<br />
+<strong>6</strong>: A repeating signal equivalent to that created by Track.Relay.</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Signal</strong> <em>Aspects</em>; <em><font color="gray">Unused</font></em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em><br />
+<strong>Track.Sig</strong> <em>Aspects</em>; <em><font color="gray">Unused</font></em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Type</em></strong>: The number of aspects for this signal. The default value is -2.<br />
+<strong><em>Unused</em></strong>: <em>This argument is not used by openBVE.</em><br />
+<strong><em><font color="green">X</font></em></strong>: The X-coordinate to place the signal object, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br />
+<strong><em><font color="green">Y</font></em></strong>: The Y-coordinate to place the signal object, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br />
+<strong><em>Yaw</em></strong>: The angle in degrees by which the object is rotated in the XZ-plane in clock-wise order when viewed from above. The default value is 0.<br />
+<strong><em>Pitch</em></strong>: The angle in degrees by which the object is rotated in the YZ-plane in clock-wise order when viewed from the left. The default value is 0.<br />
+<strong><em>Roll</em></strong>: The angle in degrees by which the object is rotated in the XY-plane in clock-wise order when viewed from behind. The default value is 0.</p>
+
+</div>
+
+
+<p>▸ Options for <em>Type</em>:</p>
+
+<div id="command-arguments">
+<p><a href="../../images/illustration_signals_large.png"><img src="../../images/illustration_signals_small.png" alt="illustration_signals_small" /></a><br />
+<strong>2</strong>: A two-aspect (type A) signal having aspects <font color="#C00000">●</font>red and <font color="#FFC000">●</font>yellow.<br />
+<strong>-2</strong>: A two-aspect (type B) signal having aspects <font color="#C00000">●</font>red and <font color="#00C000">●</font>green.<br />
+<strong>3</strong>: A three-aspect signal having aspects <font color="#C00000">●</font>red, <font color="#FFC000">●</font>yellow and <font color="#00C000">●</font>green.<br />
+<strong>4</strong>: A four-aspect (type A) signal having aspects <font color="#C00000">●</font>red, <font color="#FFC000">●●</font>yellow-yellow, <font color="#FFC000">●</font>yellow and <font color="#00C000">●</font>green.<br />
+<strong>-4</strong>: A four-aspect (type B) signal having aspects <font color="#C00000">●</font>red, <font color="#FFC000">●</font>yellow, <font color="#FFC000">●●</font>yellow-green and <font color="#00C000">●</font>green.<br />
+<strong>5</strong>: A five-aspect (type A) signal having aspects <font color="#C00000">●</font>red, <font color="#FFC000">●●</font>yellow-yellow, <font color="#FFC000">●</font>yellow, <font color="#FFC000">●</font><font color="#00C000">●</font>yellow-green and <font color="#00C000">●</font>green.<br />
+<strong>-5</strong>: A five-aspect (type B) signal having aspects <font color="#C00000">●</font>red, <font color="#FFC000">●</font>yellow, <font color="#FFC000">●</font><font color="#00C000">●</font>yellow-green, <font color="#00C000">●</font>green and <font color="#00C000">●●</font>green-green.<br />
+<strong>6</strong>: A six-aspect signal having aspects <font color="#C00000">●</font>red, <font color="#FFC000">●●</font>yellow-yellow, <font color="#FFC000">●</font>yellow, <font color="#FFC000">●</font><font color="#00C000">●</font>yellow-green, <font color="#00C000">●</font>green and <font color="#00C000">●●</font>green-green.</p>
+
+</div>
+
+
+<p>This command creates a functional signal. You can choose from the available options for <em>Aspect</em> to create any of the default Japanese signals. Setting <em>X</em> to 0 creates a functional but invisible signal similar to Track.Section. Setting <em>X</em> to a non-zero number and <em>Y</em> to a negative number resets the y-coordinate to 4.8 meters and attaches a default signal post.</p>
+
+<table style="border: none;">
+  <tbody>
+  
+    <tr>
+      <td width="16" valign="top"></td>
+      <td>
+      <em>Example of a four-aspect type B signal without a post at x=-3 and y=5:</em>
+      </td>
+    </tr>
+  
+    <tr>
+       <td width="16" valign="top">▶</td>
+       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
+         <font style="font-family: monospace">
+         <p style='display:inline;'>1000, Track.Signal -4;;-3;5
+         </font>
+       </td>
+    </tr>
+  </tbody>
+</table>
+
+<table style="border: none;">
+  <tbody>
+  
+    <tr>
+      <td width="16" valign="top"></td>
+      <td>
+      <em>Example of a four-aspect type B signal including a post at x=-3 and y=4.8:</em>
+      </td>
+    </tr>
+  
+    <tr>
+       <td width="16" valign="top">▶</td>
+       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
+         <font style="font-family: monospace">
+         <p style='display:inline;'>1000, Track.Signal -4;;-3;-1
+         </font>
+       </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Track.Signal is similar to using Track.Section and Track.SigF in one command.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Relay</strong> <em><font color="green">X</font></em>; <em><font color="green">Y</font></em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em><font color="green">X</font></em></strong>: The X-coordinate at which to place the object, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br />
+<strong><em><font color="green">Y</font></em></strong>: The Y-coordinate at which to place the object, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br />
+<strong><em>Yaw</em></strong>: The angle in degrees by which the object is rotated in the XZ-plane in clock-wise order when viewed from above. The default value is 0.<br />
+<strong><em>Pitch</em></strong>: The angle in degrees by which the object is rotated in the YZ-plane in clock-wise order when viewed from the left. The default value is 0.<br />
+<strong><em>Roll</em></strong>: The angle in degrees by which the object is rotated in the XY-plane in clock-wise order when viewed from behind. The default value is 0.</p>
+
+</div>
+
+
+<p>This commands creates a default Japanese repeating signal. The repeating signal repeats the state of the upcoming signal. Setting <em>X</em> to zero does not create a repeating signal, but forces the command to be ignored. Setting <em>X</em> to a non-zero number and <em>Y</em> to a negative number resets the y-coordinate to 4.8 and attaches a default signal post.</p>
+
+<h5 id="a-name-track-safety-a-11-6-safety-systems"><a name="track_safety"></a>● 11.6. Safety systems</h5>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Beacon</strong> <em>Type</em>; <em>BeaconStructureIndex</em>; <em>Section</em>; <em>Data</em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Type</em></strong>: A non-negative integer representing the type of the beacon to be transmitted to the train.<br />
+<strong><em>BeaconStructureIndex</em></strong>: A non-negative integer representing the object to be placed as defined via Structure.Beacon, or -1 to not place any object.<br />
+<strong><em>Section</em></strong>: An integer representing the section to which the beacon is attached, namely 0 for the current section, 1 for the upcoming section, 2 for the section behind that, etc., or -1 for the next red section.<br />
+<strong><em>Data</em></strong>: An integer representing arbitrary data specific to the beacon type to be transmitted to the train.<br />
+<strong><em><font color="green">X</font></em></strong>: The X-coordinate at which to place the object, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br />
+<strong><em><font color="green">Y</font></em></strong>: The Y-coordinate at which to place the object, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br />
+<strong><em>Yaw</em></strong>: The angle in degrees by which the object is rotated in the XZ-plane in clock-wise order when viewed from above. The default value is 0.<br />
+<strong><em>Pitch</em></strong>: The angle in degrees by which the object is rotated in the YZ-plane in clock-wise order when viewed from the left. The default value is 0.<br />
+<strong><em>Roll</em></strong>: The angle in degrees by which the object is rotated in the XY-plane in clock-wise order when viewed from behind. The default value is 0.</p>
+
+</div>
+
+
+<p>This command places a beacon (transponder). The object must have been loaded via Structure.Beacon(<em>BeaconStructureIndex</em>) prior to using this command. When the train passes the beacon, the type of beacon and various data will be transmitted to the train, including the state of the referenced section.</p>
+
+<p>It should be noted that the built-in safety systems also receive data from these beacons as Track.Beacon(<em>Type</em>) is roughly equivalent to Track.Transponder(<em>Type</em>). Please see <a href="../../en/information/standards.html" target="_blank">the page about beacon standards</a> for more information.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Transponder</strong> <em>Type</em>; <em>Signal</em>; <em>SwitchSystem</em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em><br />
+<strong>Track.Tr</strong> <em>Type</em>; <em>Signal</em>; <em>SwitchSystem</em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Type</em></strong>: The type of the transponder. The default value is 0.<br />
+<strong><em>Signal</em></strong>: The signal this transponder references. The default value is 0.<br />
+<strong><em>SwitchSystem</em></strong>: Whether to automatically switch the safety system. The default value is 0.<br />
+<strong><em><font color="green">X</font></em></strong>: The X-coordinate at which to place the object, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br />
+<strong><em><font color="green">Y</font></em></strong>: The Y-coordinate at which to place the object, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br />
+<strong><em>Yaw</em></strong>: The angle in degrees by which the object is rotated in the XZ-plane in clock-wise order when viewed from above. The default value is 0.<br />
+<strong><em>Pitch</em></strong>: The angle in degrees by which the object is rotated in the YZ-plane in clock-wise order when viewed from the left. The default value is 0.<br />
+<strong><em>Roll</em></strong>: The angle in degrees by which the object is rotated in the XY-plane in clock-wise order when viewed from behind. The default value is 0.</p>
+
+</div>
+
+
+<p>▸ Options for <em>Type</em>:</p>
+
+<div id="command-arguments">
+<p><img src="../../images/illustration_transponders.png" alt="illustration_transponders" /><br />
+<strong>0</strong>: An S-type transponder used by ATS-S. Usually placed 600m in front of a signal.<br />
+<strong>1</strong>: An SN-type transponder used by ATS-SN. Usually placed 20m in front of a signal.<br />
+<strong>2</strong>: An accidental departure transponder. Usually placed shortly behind a station stop.<br />
+<strong>3</strong>: An ATS-P pattern renewal transponder. Usually placed 600m, 280m, 180m, 130m, 85m or 50m in front of a signal, depending on the circumstances.<br />
+<strong>4</strong>: An ATS-P immediate stop transponder. Usually placed either 25m or 30m in front of a signal, depending on the circumstances.</p>
+
+</div>
+
+
+<p>▸ Options for <em>Signal</em>:</p>
+
+<div id="command-arguments">
+<p><strong>0</strong>: The upcoming signal is referenced.<br />
+<strong>1</strong>: The signal immediately behind the upcoming signal is referenced.<br />
+<strong>n</strong>: The <em>n</em>&lsquo;th signal behind the upcoming signal is referenced.</p>
+
+</div>
+
+
+<p>▸ Options for <em>SwitchSystem</em>:</p>
+
+<div id="command-arguments">
+<p><strong>-1</strong>: The transponder does not switch the train between ATS-SN and ATS-P.<br />
+<strong>0</strong>: The transponder automatically switches the train to ATS-SN for transponder types <em>0</em> and <em>1</em>, and to ATS-P for types <em>3</em> and <em>4</em>.</p>
+
+</div>
+
+
+<p>This command places a transponder, usually for the built-in safety systems ATS-SN or ATS-P. For more information about these systems and their transponders, see <a href="http://openbve-project.net/play-japanese/" target="_blank">the user&rsquo;s documentation about ATS</a>.</p>
+
+<p>It should be noted that custom safety system plugins also receive data from these transponders as Track.Transponder(<em>Type</em>) is roughly equivalent to Track.Beacon(<em>Type</em>). Please see <a href="../../en/information/standards.html" target="_blank">the page about beacon standards</a> for more information.</p>
+
+<p>➟ <a href="https://openbve-project.net/play-japanese/#3-ats-sn" target="_blank">Go here to find out more about ATS-SN and ATS-P.</a></p>
+
+<p>➟ <a href="../../en/routes/tutorial_ats.html" target="_blank">There is a tutorial available for the proper use of ATS-SN and ATS-P in route files, including all of the five transponders.</a></p>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.AtsSn</strong></p>
+
+</div>
+
+
+<p>This command places an S-type transponder for the built-in safety system ATS-SN, referencing the upcoming signal, and automatically switching to ATS-SN. The command is equivalent to <strong>Track.Tr 0;0;0</strong>. See there for more information.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.AtsP</strong></p>
+
+</div>
+
+
+<p>This command places a pattern renewal transponder for the built-in safety system ATS-P, referencing the upcoming signal, and automatically switching to ATS-P. The command is equivalent to <strong>Track.Tr 3;0;0</strong>. See there for more information.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Pattern</strong> <em>Type</em>; <em><font color="blue">Speed</font></em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Type</em></strong>: The type of speed restriction.<br />
+<strong><em><font color="blue">Speed</font></em></strong>: A non-negative floating-point number representing the speed restriction, <strong>by default</strong> measured in <strong>km/h</strong>.</p>
+
+</div>
+
+
+<p>▸ Options for <em>Type</em>:</p>
+
+<div id="command-arguments">
+<p><strong>0</strong>: A temporary speed restriction.<br />
+<strong>1</strong>: A permanent speed restriction.</p>
+
+</div>
+
+
+<p>This command defines a speed restriction for the built-in safety system ATS-P.</p>
+
+<p>A temporary speed restriction (<em>Type</em>=0) is to be inserted at the point where the speed restriction should apply. ATS-P will know about this speed restriction in advance and will brake the train so that the train meets the speed restriction at that point. Once the point is passed, the speed restriction no longer applies.</p>
+
+<p>A permanent speed restriction (<em>Type</em>=1) is to be inserted at the point where the speed restriction should apply, however, ATS-P does not know about this limit in advance and will only brake the train from that point on. For a higher degree of realism, insert permanent speed restrictions at the same point as ATS-P transponders. A permanent speed restriction, as the name suggests, is remembered by ATS-P and is only released by a subsequent permanent speed restriction.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.PLimit</strong> <em><font color="blue">Speed</font></em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em><font color="blue">Speed</font></em></strong>: A positive floating-point number representing the permanent speed restriction for ATS-P, <strong>by default</strong> measured in <strong>km/h</strong>.</p>
+
+</div>
+
+
+<p>This command is equivalent to <strong>Track.Pattern 1;<em>Speed</em></strong>. See there for more information.</p>
+
+<h5 id="a-name-track-misc-a-11-7-miscellaneous"><a name="track_misc"></a>● 11.7. Miscellaneous</h5>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Back</strong> <em>BackgroundTextureIndex</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>BackgroundTextureIndex</em></strong>: A non-negative integer representing the background image to be displayed as defined via Texture.Background(<em>BackgroundTextureIndex</em>).</p>
+
+</div>
+
+
+<p>This command defines which background image to show from now on.</p>
+
+<div id="warning">
+<span>⚠</span>
+<p>This command can only be used at the beginning of a block.</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Fog</strong> <em><font color="green">StartingDistance</font></em>; <em><font color="green">EndingDistance</font></em>; <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em><font color="green">StartingDistance</font></em></strong>: A floating-point number indicating the start of fog, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br />
+<strong><em><font color="green">EndingDistance</font></em></strong>: A floating-point number indicating the end of fog, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br />
+<strong><em>RedValue</em></strong>: An integer ranging from 0 to 255 representing the red component of the fog. The default value is 128.<br />
+<strong><em>GreenValue</em></strong>: An integer ranging from 0 to 255 representing the green component of the fog. The default value is 128.<br />
+<strong><em>BlueValue</em></strong>: An integer ranging from 0 to 255 representing the blue component of the fog. The default value is 128.</p>
+
+</div>
+
+
+<p>This command defines the fog from this point on, or deactivates fog. If fog is to be enabled, <em>StartingDistance</em> must be less than <em>EndingDistance</em>. If fog is to be disabled, <em>StartingDistance</em> must be greater than or equal to <em>EndingDistance</em>.</p>
+
+<p>Fog affects the coloring of objects. Objects before the starting distance appear as-is, objects after the ending distance appear in the fog color, and objects in-between blend linearly between those. The background image is affected by fog as well. For the fog calculations, the background image is assumed to be at 600 meters distance from the camera, regardless of the actual viewing distance.</p>
+
+<p>Depending on Options.FogBehavior, there are two options how this command affects fog from this point on. In block-wise mode, the current fog blends from the beginning of this block to the new settings at the end of this block. The new setting is kept for following blocks. This is the default behavior. In interpolation mode, each Track.Fog command defines a control point for fog, where all of the settings (distances and colors) are interpolated linearly between the control points.</p>
+
+<div id="warning">
+<span>⚠</span>
+<p>This command can only be used at the beginning of a block.</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Brightness</strong> <em>Value</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Value</em></strong>: A non-negative integer within the range from 0 to 255. The default value is 255.</p>
+
+</div>
+
+
+<p>This command marks a point which affects the brightness in the cab. <em>Value</em> is measured from 0 (dark) to 255 (light), and is linearly interpolated between successive Track.Brightness commands for any given point on the track. This command should be used for tunnels, bridges, station roofs, or anything else that would affect the brightness as perceived inside the cab.</p>
+
+<table style="border: none;">
+  <tbody>
+  
+    <tr>
+      <td width="16" valign="top"></td>
+      <td>
+      <em>Example:</em>
+      </td>
+    </tr>
+  
+    <tr>
+       <td width="16" valign="top">▶</td>
+       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
+         <font style="font-family: monospace">
+         <p style='display:inline;'>With Track<br />
+1200, .Brightness 255 ,; before the bridge starts<br />
+1205, .Brightness 128 ,; directly under the bridge here<br />
+1210, .Brightness 255 ,; as soon as the bridge ends
+         </font>
+       </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Marker</strong> <em>FileName</em>; <em><font color="green">Distance</font></em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>FileName</em></strong>: The file name for the marker image, relative to the <strong>Object</strong> folder.<br />
+<strong><em><font color="green">Distance</font></em></strong>: A non-zero floating-point number indicating the length for which the marker image is displayed, <strong>by default</strong> measured in <strong>meters</strong>.</p>
+
+</div>
+
+
+<p>▸ Behavior for <em>Distance</em>:</p>
+
+<div id="command-arguments">
+<p><em>negative value</em>: The marker image starts to display at the Track.Marker command, and ends -<em>Distance</em> meters after the Track.Marker command.<br />
+<em>positive value</em>: The marker image starts to display <em>Distance</em> meters before the Track.Marker command, and ends at the Track.Marker command.</p>
+
+</div>
+
+
+<p>This command shows a so-called marker image, which is displayed in the top-right corner of the screen. You can use these images for advisory or informational purposes. The RGB color of 64,64,64 inside the image is made transparent.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Marker</strong> <em>FileName.xml</em></p>
+
+</div>
+
+
+<p>A <em>Track.Marker</em> command, linking to a single XML file is also supported. These allow more control over markers than is available in the routefile commands.</p>
+
+<p>These are fully described on the <a href="../../en/routes/xml/route_marker.html" target="_blank">the XML Markers page&hellip;</a></p>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.TextMarker</strong> <em>Text</em>; <em><font color="green">Distance</font></em>; <em>FontColor</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Text</em></strong>: The marker text to display. (No special characters supported).<br />
+<strong><em><font color="green">Distance</font></em></strong>: A non-zero floating-point number indicating the length for which the text is displayed, <strong>by default</strong> measured in <strong>meters</strong>.<br />
+<strong><em>FontColor</em></strong>: The font color for this marker text</p>
+
+</div>
+
+
+<p>▸ Behavior for <em>Distance</em>:</p>
+
+<div id="command-arguments">
+<p><em>negative value</em>: The marker image starts to display at the Track.Marker command, and ends -<em>Distance</em> meters after the Track.Marker command.<br />
+<em>positive value</em>: The marker image starts to display <em>Distance</em> meters before the Track.Marker command, and ends at the Track.Marker command.</p>
+
+</div>
+
+
+<p>▸ Available options for <em>FontColor</em>:</p>
+
+<div id="command-arguments">
+<p><em>1</em>: Black.<br />
+<em>2</em>: Gray.<br />
+<em>3</em>: White.<br />
+<em>4</em>: Red.<br />
+<em>5</em>: Orange.<br />
+<em>6</em>: Green.<br />
+<em>7</em>: Blue.<br />
+<em>8</em>: Magenta.</p>
+
+</div>
+
+
+<p>This command creates a simple textual marker, which is added to the list of messages in the upper left-hand corner of the screen.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.PointOfInterest</strong> <em>RailIndex</em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>; <em>Text</em><br />
+<strong>Track.POI</strong> <em>RailIndex</em>; <em>X</em>; <em>Y</em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>; <em>Text</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>RailIndex</em></strong>: A non-negative integer representing the rail for the point of interest.<br />
+<strong><em><font color="green">X</font></em></strong>: A floating-point number representing the horizontal offset from the rail, <strong>by default</strong> measured in <strong>meters</strong>. Negative values indicate left, positive ones right.<br />
+<strong><em><font color="green">Y</font></em></strong>: A floating-point number representing the vertical offset from the rail, <strong>by default</strong> measured in <strong>meters</strong>. Negative values indicate below, positive ones above.<br />
+<strong><em>Yaw</em></strong>: The angle in degrees by which the view is rotated in the XZ-plane in clock-wise order when viewed from above. The default value is 0.<br />
+<strong><em>Pitch</em></strong>: The angle in degrees by which the view is rotated in the YZ-plane in clock-wise order when viewed from the left. The default value is 0.<br />
+<strong><em>Roll</em></strong>: The angle in degrees by which the view is rotated in the XY-plane in clock-wise order when viewed from behind. The default value is 0.<br />
+<strong><em>Text</em></strong>: A textual representation of the point of interest.</p>
+
+</div>
+
+
+<p>This command creates a point of interest which the user can jump to by pressing the CAMERA_POI_PREVIOUS (NUM 1) or CAMERA_POI_NEXT (NUM 7) keys. The camera will be placed at the specified location with the specified orientation. If <em>Text</em> is non-empty, a message will appear briefly showing the text.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.PreTrain</strong> <em>Time</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Time</em></strong>: The <a href="../../en/information/numberformats.html#times">time</a> at which the pretrain is at this track position.</p>
+
+</div>
+
+
+<p>This commands creates a position-time-association for an invisible preceding train in order to influence signalling. Contrary to a real preceding train as created by Route.RunInterval, the invisible preceding train created by Track.PreTrain is a way of scripting where the invisible preceding train is at any given time. The position-time-associations must be in increasing order, that is, at a later track position, the associated time must also be later. Before the first scripted time, the invisible preceding train resides at the first scripted position. In-between the first and last scripted time, the invisible preceding train moves (linearly) between the scripted points. After the last scripted time, the invisible preceding train is removed and thus clears signalling.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Announce</strong> <em>FileName</em>; <em><font color="blue">Speed</font></em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>FileName</em></strong>: The file name for the sound to play, relative to the <strong>Sound</strong> folder.<br />
+<strong><em><font color="blue">Speed</font></em></strong>: The reference speed in km/h for speed-dependant sounds, or 0 to play the sound speed-independently. The default value is 0.</p>
+
+</div>
+
+
+<p>This command plays an announcement or other kind of sound in the cab once the player&rsquo;s train crosses the point where this command is used. If <em>Speed</em> is set to 0 (default), the sound is played as-is. If a <em>Speed</em> is given though, the sound plays at is original pitch at the specified speed, and is pitch-modulated proportionally for other speeds, useful for custom flange sounds, pointwork sounds, etc.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Doppler</strong> <em>FileName</em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>FileName</em></strong>: The file name for the sound to play, relative to the <strong>Sound</strong> folder.<br />
+<strong><em><font color="green">X</font></em></strong>: A floating-point number representing the horizontal offset from rail 0, <strong>by default</strong> measured in <strong>meters</strong>. Negative values indicate left, positive ones right.<br />
+<strong><em><font color="green">Y</font></em></strong>: A floating-point number representing the vertical offset from rail 0, <strong>by default</strong> measured in <strong>meters</strong>. Negative values indicate below, positive ones above.</p>
+
+</div>
+
+
+<p>This command places an environmental sound effect at the specified location. The sound will play in a loop for the duration of the simulation and employs the doppler effect. (Note: All sounds in openBVE employ the doppler effect.)</p>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Buffer</strong></p>
+
+</div>
+
+
+<p>This command places a bumper. The train can collide with the bumper in both the forward and backward directions. Place this command at the beginning and the end of the route. An object is not automatically created, so use Track.FreeObj to create a visual representation of the bumper if necessary.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.Destination</strong> <em>Type</em>; <em>BeaconStructureIndex</em>; <em>NextDestination</em>; <em>PreviousDestination</em>; <em>TriggerOnce</em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Type</em></strong>: Defines the types of trains for which this destination setter applies: <em>-1</em> for AI trains only, <em>0</em> for all trains and <em>1</em> for the player train only.<br />
+<strong><em>BeaconStructureIndex</em></strong>: A non-negative integer representing the object to be placed as defined via Structure.Beacon, or -1 to not place any object.<br />
+<strong><em>NextDestination</em></strong>: An integer representing the destination value set when passing over this beacon in a forwards direction, or <em>-1</em> to disable.<br />
+<strong><em>PreviousDestination</em></strong>: An integer representing the destination value set when passing over this beacon in a reverse direction, or <em>-1</em> to disable.<br />
+<strong><em>TriggerOnce</em></strong>: If set to <em>0</em>, this beacon will be triggered by all valid trains which pass over it. If set to <em>1</em>, it will be triggered by the first valid train only.<br />
+<strong><em><font color="green">X</font></em></strong>: The X-coordinate at which to place the object, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br />
+<strong><em><font color="green">Y</font></em></strong>: The Y-coordinate at which to place the object, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br />
+<strong><em>Yaw</em></strong>: The angle in degrees by which the object is rotated in the XZ-plane in clock-wise order when viewed from above. The default value is 0.<br />
+<strong><em>Pitch</em></strong>: The angle in degrees by which the object is rotated in the YZ-plane in clock-wise order when viewed from the left. The default value is 0.<br />
+<strong><em>Roll</em></strong>: The angle in degrees by which the object is rotated in the XY-plane in clock-wise order when viewed from behind. The default value is 0.</p>
+
+</div>
+
+
+<p>This command places a special beacon, which sets the destination variable, available for use by plugins and animated objects. The object must have been loaded via Structure.Beacon(<em>BeaconStructureIndex</em>) prior to using this command.</p>
 
 </div>
 
