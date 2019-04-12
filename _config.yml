@@ -47,7 +47,7 @@ menu:
       - title: 'Basic Setup'
         url: '/creating-addons/'
       - title: 'Developer Documentation'
-        url: '/documentation/'
+        url: '/documentation_hugo/'
       - title: 'openBVE Packages'
         url: '/packages/'
       - title: 'Other Resources'
