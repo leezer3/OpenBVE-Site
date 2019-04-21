@@ -37,7 +37,7 @@
           
           <ul class="third">
             
-            <li><a href="../../ja/objects/native/b3d.html">The B3D object</a>
+            <li><a href="../../ja/objects/native/b3d.html">B3D オブジェクト</a>
               
             </li>
             
@@ -369,7 +369,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>The <strong>.csv</strong> route format</h1>
+          <h1><strong>.csv</strong> ルートデータフォーマット</h1>
         </div>
 
         
@@ -380,15 +380,7 @@
 <div id="content">
   
 
-<p>➟ <a href="../../ja/routes/csv_quick.html" target="_blank">Quick reference&hellip;</a></p>
-
-<div id="warning">
-<h4 id="still-under-construction">Still under construction</h4>
-
-<p>Commands that still require documentation: <strong>2</strong></p>
-
-</div>
-
+<p>➟ <a href="../../ja/routes/csv_quick.html" target="_blank">クイックリファレンス&hellip;</a></p>
 
 <h2 id="contents">■ Contents</h2>
 
@@ -2857,7 +2849,19 @@ With Track<br />
 </div>
 
 
-<p><img src="../../images/construction_64.png" alt="construction_64" /><font color="gray">Description not available yet.</font></p>
+<p>This deforms a specified object to fill the space between two Rails.</p>
+
+<div id="command-arguments">
+<p><strong><em>RailIndex<sub>1</sub></em></strong>: A non-negative integer representing the first RailIndex.<br />
+<strong><em>RailIndex<sub>2</sub></em></strong>: A non-negative integer representing the second RailIndex.<br />
+<strong><em>CrackStructureIndex</em></strong>: A non-negative integer representing the object defined in Structure.Crack</p>
+
+</div>
+
+
+<p><strong>Note:</strong>
+If <em>RailIndex<sub>1</sub></em> is to the <strong>left</strong> of <em>RailIndex<sub>2</sub></em> (e.g. it&rsquo;s X-cordinate is smaller), then the object defined in Structure.CrackL will be used.<br />
+Otherwise, the objects defined in Structure.CrackR will be used.</p>
 
 <hr />
 
@@ -3162,7 +3166,28 @@ With Track<br />
 </div>
 
 
-<p><img src="../../images/construction_64.png" alt="construction_64" /><font color="gray">Description not available yet.</font></p>
+<div id="command-arguments">
+<p><strong><em>RailIndex<sub>1</sub></em></strong>: The RailIndex to which the platform is bound.<br />
+<strong><em>RailIndex<sub>2</sub></em></strong>: The secondary RailIndex to which the platform will deform. Special values may also appear- see below.<br />
+<strong><em>RoofStructureIndex</em></strong>: A non-negative integer representing the object to be placed as defined via Structure.Roof<br />
+<strong><em>FormStructureIndex</em></strong>: A non-negative integer representing the object to be placed as defined via Structure.Form and Structure.FormC</p>
+
+</div>
+
+
+<p>▸ Available options for <em>RailIndex<sub>2</sub></em>:</p>
+
+<div id="command-arguments">
+<p><strong>Any current RailIndex</strong>: The form is deformed to meet the specified RailIndex.<br />
+<strong>L</strong>: The specified FormL, FormCL and RoofL objects are placed without deformation.<br />
+<strong>R</strong>: The specified FormR, FormCR and RoofR objects are placed without deformation.</p>
+
+</div>
+
+
+<p><strong>Note:</strong>
+If <em>RailIndex<sub>1</sub></em> is to the <strong>left</strong> of <em>RailIndex<sub>2</sub></em> (e.g. it&rsquo;s X-cordinate is smaller), then the objects defined in Structure.FormL, Structure.FormCL and Structure.RoofL will be used.<br />
+Otherwise, the objects defined in Structure.FormR, Structure.FormCL and Structure.RoofR will be used.</p>
 
 <h5 id="a-name-track-signalling-a-11-5-signalling-and-speed-limits"><a name="track_signalling"></a>● 11.5. Signalling and speed limits</h5>
 
