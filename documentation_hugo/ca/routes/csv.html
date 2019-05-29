@@ -89,7 +89,7 @@
           
         </li>
         
-        <li><a href="../../ca/objects/information.html">Information and tips</a>
+        <li><a href="../../ca/objects/information.html">Informació i consells</a>
           
         </li>
         
@@ -169,7 +169,7 @@
       
       <ul class="second">
         
-        <li><a href="../../ca/trains/overview.html">Overview</a>
+        <li><a href="../../ca/trains/overview.html">Descripció</a>
           
         </li>
         
@@ -201,7 +201,7 @@
           
         </li>
         
-        <li><a href="../../ca/trains/sound_cfg.html">The sound.cfg file</a>
+        <li><a href="../../ca/trains/sound_cfg.html">El fitxer sound.cfg</a>
           
         </li>
         
@@ -213,7 +213,7 @@
           
         </li>
         
-        <li><a href="../../ca/trains/plugins.html">Train plugins</a>
+        <li><a href="../../ca/trains/plugins.html">Extensions de trens</a>
           
           <ul class="third">
             
@@ -225,7 +225,7 @@
           
         </li>
         
-        <li><a href="../../ca/trains/information.html">Information and tips</a>
+        <li><a href="../../ca/trains/information.html">Informació i consells</a>
           
         </li>
         
@@ -253,7 +253,7 @@
       
       <ul class="second">
         
-        <li><a href="../../ca/plugins/overview.html">Overview</a>
+        <li><a href="../../ca/plugins/overview.html">Descripció</a>
           
         </li>
         
@@ -277,7 +277,7 @@
           
         </li>
         
-        <li><a href="../../ca/information/whitespaces.html">White Spaces</a>
+        <li><a href="../../ca/information/whitespaces.html">Espais en blanc</a>
           
         </li>
         
@@ -301,7 +301,7 @@
           
         </li>
         
-        <li><a href="../../ca/information/bve.html">Vs. BVE Trainsim</a>
+        <li><a href="../../ca/information/bve.html">Diferències amb el BVE Trainsim</a>
           
         </li>
         
@@ -390,9 +390,9 @@
 <h2 id="contents">■ Contents</h2>
 
 <ul class='contents'>
-<li><a href="#overview">1. Overview</a></li>
-<li><a href="#syntax">2. Syntax</a></li>
-<li><a href="#preprocessing">3. Preprocessing</a></li>
+<li><a href="#overview">1. Descripció</a></li>
+<li><a href="#syntax">2. Sintaxi</a></li>
+<li><a href="#preprocessing">3. Preprocessament</a></li>
 <li><a href="#options">4. The Options namespace</a></li>
 <li><a href="#route">5. The Route namespace</a></li>
 <li><a href="#train">6. The Train namespace</a></li>
@@ -403,19 +403,19 @@
 <li><a href="#track">11. The Track namespace</a>
 
 <ul class='contents'>
-<li><a href="#track_rails">11.1. Rails</a></li>
-<li><a href="#track_geometry">11.2. Geometry</a></li>
-<li><a href="#track_objects">11.3. Objects</a></li>
-<li><a href="#track_stations">11.4. Stations</a></li>
-<li><a href="#track_signalling">11.5. Signalling and speed limits</a></li>
-<li><a href="#track_safety">11.6. Safety systems</a></li>
-<li><a href="#track_misc">11.7. Miscellaneous</a></li>
+<li><a href="#track_rails">11.1. Vies</a></li>
+<li><a href="#track_geometry">11.2. Geometria</a></li>
+<li><a href="#track_objects">11.3. Objectes</a></li>
+<li><a href="#track_stations">11.4. Estacions</a></li>
+<li><a href="#track_signalling">11.5. Senyalització i límits de velocitat</a></li>
+<li><a href="#track_safety">11.6. Sistemes de seguretat</a></li>
+<li><a href="#track_misc">11.7. Miscel·lània</a></li>
 </ul></li>
 </ul>
 
 
 
-<h2 id="a-name-overview-a-1-overview"><a name="overview"></a>■ 1. Overview</h2>
+<h2 id="a-name-overview-a-1-descripció"><a name="overview"></a>■ 1. Descripció</h2>
 
 <p>A CSV route allows to create a route in a text file.</p>
 
@@ -429,7 +429,7 @@
 
 <p>➟ <a href="../../ca/routes/csv_quick.html" target="_blank">See also the quick reference for the CSV route&hellip;</a></p>
 
-<h2 id="a-name-syntax-a-2-syntax"><a name="syntax"></a>■ 2. Syntax</h2>
+<h2 id="a-name-syntax-a-2-sintaxi"><a name="syntax"></a>■ 2. Sintaxi</h2>
 
 <p>For each line in the file, <a href="../../ca/information/whitespaces.html" target="_blank">white spaces</a> at the beginning and the end of that line are ignored. Then, lines are split into individual expressions, separated by commas (U+002C). Thus, each line is of the following form:</p>
 
@@ -441,7 +441,7 @@
 
 <p>In turn, each expression can be of any of the following forms:</p>
 
-<h5 id="comments">● Comments</h5>
+<h5 id="comentaris">● Comentaris</h5>
 
 <p>A comment is completely ignored by the parser. To form a comment, the expression must begin with a semicolon (U+003B).</p>
 
@@ -465,26 +465,26 @@ This is a more complex way of specifying track positions for use in conjunction 
 
 <p>When <em>n</em> units are defined via Options.UnitOfLength, but fewer parameters are given using the colon notation, the parameters are right-associative, meaning, the parameters on the left are those which are skipped. Therefore, each of the following lengths are equivalent: <em>0:0:2</em>, <em>0:2</em>, and <em>2</em>.</p>
 
-<h5 id="commands">● Commands</h5>
+<h5 id="ordres">● Ordres</h5>
 
-<p>Commands without arguments:</p>
+<p>Ordres sense arguments:</p>
 
 <div id="command">
-<p><em>NameOfTheCommand</em></p>
+<p><em>Nomdel&rsquo;ordre</em></p>
 
 </div>
 
 
-<p>Commands with arguments:</p>
+<p>Odres amb arguments:</p>
 
 <div id="command">
-<p><em>NameOfTheCommand</em> <em>Argument<sub>1</sub></em>;<em>Argument<sub>2</sub></em>;<em>Argument<sub>3</sub></em>;&hellip;;<em>Argument<sub>n</sub></em><br />
-<em>NameOfTheCommand</em>(<em>Argument<sub>1</sub></em>;<em>Argument<sub>2</sub></em>;<em>Argument<sub>3</sub></em>;&hellip;;<em>Argument<sub>n</sub></em>)</p>
+<p><em>Nomdel&rsquo;ordre</em> <em>Argument<sub>1</sub></em>;<em>Argument<sub>2</sub></em>;<em>Argument<sub>3</sub></em>;&hellip;;<em>Argument<sub>n</sub></em><br />
+<em>Nomdel&rsquo;ordre</em>(<em>Argument<sub>1</sub></em>;<em>Argument<sub>2</sub></em>;<em>Argument<sub>3</sub></em>;&hellip;;<em>Argument<sub>n</sub></em>)</p>
 
 </div>
 
 
-<p>Commands with indices and arguments:</p>
+<p>Ordres amb índexs i arguments:</p>
 
 <div id="command">
 <p><em>NameOfTheCommand</em>(<em>Index<sub>1</sub></em>;<em>Index<sub>2</sub></em>;&hellip;;<em>Index<sub>m</sub></em>) <em>Argument<sub>1</sub></em>;<em>Argument<sub>2</sub></em>;<em>Argument<sub>3</sub></em>;&hellip;;<em>Argument<sub>n</sub></em><br />
@@ -494,7 +494,7 @@ This is a more complex way of specifying track positions for use in conjunction 
 </div>
 
 
-<p>Rules:</p>
+<p>Normes:</p>
 
 <p><em>NameOfTheCommand</em> is case-insensitive. Indices and arguments are separated by semicolons (U+003B). White spaces around <em>NameOfTheCommand</em> and any of the indices and arguments are ignored. White spaces surrounding any of the parentheses are also ignored.</p>
 
@@ -530,7 +530,7 @@ This is a more complex way of specifying track positions for use in conjunction 
   </tbody>
 </table>
 
-<p>Is equivalent to:</p>
+<p>és equivalent a:</p>
 
 <table style="border: none;">
   <tbody>
@@ -547,7 +547,7 @@ Route.Timetable 1157_M
   </tbody>
 </table>
 
-<h2 id="a-name-preprocessing-a-3-preprocessing"><a name="preprocessing"></a>■ 3. Preprocessing</h2>
+<h2 id="a-name-preprocessing-a-3-preprocessament"><a name="preprocessing"></a>■ 3. Preprocessament</h2>
 
 <p>Before any of the commands in the route file are actually interpreted, the expressions are preprocessed. The first thing done is to replace any occurrences of the $-directives within an expression from right to left. The $Chr, $Rnd and $Sub directives may be nested in any way, while $Include, $If, $Else and $EndIf must not appear inside another directive.</p>
 
