@@ -101,7 +101,7 @@
       
       <ul class="second">
         
-        <li><a href="../../ja/routes/csv.html">The CSV route</a>
+        <li><a href="../../ja/routes/csv.html">CSVルート</a>
           
         </li>
         
@@ -173,11 +173,11 @@
           
         </li>
         
-        <li><a href="../../ja/trains/train_dat.html">The train.dat file</a>
+        <li><a href="../../ja/trains/train_xml.html">The train.xml file</a>
           
         </li>
         
-        <li><a href="../../ja/trains/train_xml.html">The train.xml file</a>
+        <li><a href="../../ja/trains/train_dat.html">train.datファイル</a>
           
         </li>
         
@@ -333,6 +333,18 @@
       
     </li>
     
+    <li>Further Examples
+      
+      <ul class="second">
+        
+        <li><a href="../../ja/examples/demoroute.html">Demonstration route</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
   </ul>
 </div>
 </nav>
@@ -374,7 +386,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>The <strong>train.dat</strong> file format</h1>
+          <h1><strong>train.dat</strong> 形式</h1>
         </div>
 
         
@@ -385,48 +397,48 @@
 <div id="content">
   
 
-<h2 id="contents">■ Contents</h2>
+<h2 id="内容">■ 内容</h2>
 
 <ul class='contents'>
-<li><a href="#overview">1. Overview</a></li>
-<li><a href="#identifier">2. The file identifier</a>
+<li><a href="#overview">1. 概観</a></li>
+<li><a href="#identifier">2. ファイル識別子</a>
 
 <ul class='contents'>
-<li><a href="../../ja/trains/train_dat_version.html">2a. Version history</a></li>
+<li><a href="../../ja/trains/train_dat_version.html">2a. バージョン履歴</a></li>
 </ul></li>
-<li><a href="#syntax">3. Syntax</a></li>
-<li><a href="#acceleration">4. The Acceleration section</a></li>
-<li><a href="#performance">5. The Performance section</a></li>
-<li><a href="#delay">6. The Delay section</a></li>
-<li><a href="#move">7. The Move section</a></li>
-<li><a href="#brake">8. The Brake section</a></li>
-<li><a href="#pressure">9. The Pressure section</a></li>
-<li><a href="#handle">10. The Handle section</a></li>
-<li><a href="#cab">11. The Cab section</a></li>
-<li><a href="#car">12. The Car section</a></li>
-<li><a href="#device">13. The Device section</a></li>
-<li><a href="#motor">14. The Motor sections</a></li>
+<li><a href="#syntax">3. 構文</a></li>
+<li><a href="#acceleration">4. Accelerationセクション</a></li>
+<li><a href="#performance">5. Performance セクション</a></li>
+<li><a href="#delay">6. Delay セクション</a></li>
+<li><a href="#move">7. Move セクション</a></li>
+<li><a href="#brake">8. Brake セクション</a></li>
+<li><a href="#pressure">9. Pressure セクション</a></li>
+<li><a href="#handle">10. Handle セクション</a></li>
+<li><a href="#cab">11. Cab セクション</a></li>
+<li><a href="#car">12. Car セクション</a></li>
+<li><a href="#device">13. Device セクション</a></li>
+<li><a href="#motor">14. Motor セクション</a></li>
 </ul>
 
 
 
-<h2 id="a-name-overview-a-1-overview"><a name="overview"></a>■ 1. Overview</h2>
+<h2 id="a-name-overview-a-1-概観"><a name="overview"></a>■ 1. 概観</h2>
 
-<p>The train.dat file describes the characteristics of trains including acceleration, brake behavior, installed equipment, speed-sound associations, and more.</p>
+<p>train.datファイルでは、加速、ブレーキ設定、搭載機器、モータ音など、車両の性能を記述します。</p>
 
 <div id="information">
 <h4 id="tip-train-editor"><strong>☀</strong> Tip: Train Editor</h4>
 
-<p>You can use the <a href="../../ja/tools/traineditor.html">Train Editor</a> to more conveniently edit the train.dat. This page should still be used as a reference. However, you can also edit the train.dat manually if so desired.</p>
+<p><a href="../../ja/tools/traineditor.html">Train Editor</a>を使用することで、より簡単にtrain.datファイルを編集することができます。このページは参考程度のものですが、必要に応じてtrain.datファイルを直接編集することもできます。</p>
 
 </div>
 
 
-<p>The file is a plain text file encoded in any arbitrary <a href="../../ja/information/encodings.html" target="_blank">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../ja/information/numberformats.html" target="_blank">parsing model</a> for numbers is <strong>Loose</strong>, however, you are encouraged to produce <em>Strict</em> output nonetheless. The file is required to be located inside the train folder and is expected to be named <strong>train.dat</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
+<p>ファイルは任意のエンコードで記述されたプレーンテキストですが<a href="../../ja/information/encodings.html" target="_blank">encoding</a>、好ましい選択としてはバイトオーダー付きのUTF-8です。<a href="../../ja/information/numberformats.html" target="_blank">parsing model</a>に用いる数字は <strong>ルーズ</strong>ですが、 それでも出力にあたっては <em>厳密な</em> 出力をすることが望ましいです。 ファイルは車両フォルダ内に格納され、且つ、<strong>tarin.dat</strong>というファイル名でなければなりません。ファイルは基本的に上から下に向かって解釈されていきます。</p>
 
-<h2 id="a-name-identifier-a-2-the-file-identifier"><a name="identifier"></a>■ 2. The file identifier</h2>
+<h2 id="a-name-identifier-a-2-ファイル識別子"><a name="identifier"></a>■ 2. ファイル識別子</h2>
 
-<p>The first line in the train.dat is expected to be an identifier indicating the version of the file format. Allowed values are:</p>
+<p>先頭の行にはファイル形式のバージョンを示すファイル識別子を記述します。使用可能な値は次のとおりです：</p>
 
 <table style="border: none;">
   <tbody>
@@ -442,8 +454,8 @@
        <td width="16" valign="top">▶</td>
        <td bgcolor="#D4D8FF" style="border: 1px dashed;">
          <font style="font-family: monospace">
-         <p style='display:inline;'>BVE1200000<br />
-BVE1210000<br />
+         <p style='display:inline;'>BVE1200000
+BVE1210000
 BVE1220000
          </font>
        </td>
@@ -465,7 +477,7 @@ BVE1220000
        <td width="16" valign="top">▶</td>
        <td bgcolor="#D4D8FF" style="border: 1px dashed;">
          <font style="font-family: monospace">
-         <p style='display:inline;'>BVE2000000<br />
+         <p style='display:inline;'>BVE2000000
 OPENBVE
          </font>
        </td>
@@ -473,7 +485,7 @@ OPENBVE
   </tbody>
 </table>
 
-<p>From Version <strong>1.5.3.3</strong> onwards, the <em>OPENBVE</em> identifier may optionally be followed by the minimum version number of openBVE required, e.g.</p>
+<p>バージョン <strong>1.5.3.3</strong> 以降では、識別子*OPENBVE*のあとに必要に応じてOpenBVEの最低バージョンを記述することができます。例えば、</p>
 
 <table style="border: none;">
   <tbody>
@@ -496,11 +508,11 @@ OPENBVE
   </tbody>
 </table>
 
-<p>Any other value will be reported as being non-supported and version 2.0 will be assumed. The selected version number affects the parsing of the #ACCELERATION section, which is explained later on.</p>
+<p>その他の値はサポートされないものとされ、バージョン2.0として扱われます。選択したバージョンによって#ACCELERATION セクションに影響が出ます。これについては後ほど説明します。</p>
 
-<h2 id="a-name-syntax-a-3-syntax"><a name="syntax"></a>■ 3. Syntax</h2>
+<h2 id="a-name-syntax-a-3-構文"><a name="syntax"></a>■ 3. 構文</h2>
 
-<p>For each line in the file, <a href="../../ja/information/whitespaces.html" target="_blank">white spaces</a> at the beginning and the end of that line are ignored.</p>
+<p>どの行においても、行の先頭と末尾の<a href="../../ja/information/whitespaces.html" target="_blank">空白</a>は無視されます。</p>
 
 <p>Each line in the file after the identifier can mark the beginning of a new section or contain data entries for the last opened section. Empty lines or lines solely consisting of white spaces are <strong>not</strong> ignored.</p>
 
