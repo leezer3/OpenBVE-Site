@@ -28,7 +28,7 @@ openBVE is provided as a .deb package.
 
 The most recent stable version of openBVE is:
 
-<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.6.0.0.deb" class="btn btn-info">1.6.0.0 (2019-04-15)</a>
+<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.6.0.1.deb" class="btn btn-info">1.6.0.1 (2019-08-05)</a>
 
 ---
 
