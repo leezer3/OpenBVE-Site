@@ -1289,6 +1289,11 @@ This defines the minimum amount of time that needs to pass before the functions 
 <td><code>rightDoorsButton</code></td>
 <td>The state of the right doors button. Returns either 0 (released) or 1 (pressed).</td>
 </tr>
+
+<tr>
+<td><code>pilotLamp</code></td>
+<td>The state of the pilot lamp (Doors closed &amp; ready to start). Returns either 0 (unlit) or 1 (lit).</td>
+</tr>
 </tbody>
 </table>
 
@@ -1298,7 +1303,7 @@ This defines the minimum amount of time that needs to pass before the functions 
 <thead>
 <tr>
 <th>Variable</th>
-<th>Descripció</th>
+<th>Description</th>
 </tr>
 </thead>
 
@@ -1436,6 +1441,16 @@ This defines the minimum amount of time that needs to pass before the functions 
 <tr>
 <td><code>MusicKlaxon</code></td>
 <td>Returns 1 if the music horn is currently playing, 0 otherwise.</td>
+</tr>
+
+<tr>
+<td><code>passAlarm</code></td>
+<td>Whether the station pass alarm has been activated. Returns either 0 (inactive) or 1 (active).</td>
+</tr>
+
+<tr>
+<td><code>stationAdjustAlarm</code></td>
+<td>Whether the station adjust alarm has been activated. Returns either 0 (inactive) or 1 (active).</td>
 </tr>
 </tbody>
 </table>
@@ -1626,7 +1641,7 @@ This defines the minimum amount of time that needs to pass before the functions 
 <thead>
 <tr>
 <th>Variable</th>
-<th>Descripció</th>
+<th>Description</th>
 </tr>
 </thead>
 
@@ -1638,7 +1653,7 @@ This defines the minimum amount of time that needs to pass before the functions 
 </tbody>
 </table>
 
-<h2 id="a-name-performance-a-6-rendiment"><a name="performance"></a>■ 6. Rendiment</h2>
+<h2 id="a-name-performance-a-6-performance"><a name="performance"></a>■ 6. Performance</h2>
 
 <p>There are certain kinds of animation which are less expensive, and others which are more. Also, the underlying object plays a significant role. If you want to design your animated objects with as best performance as possible <strong>for future releases of openBVE</strong>, take a look at the following performance table:</p>
 
@@ -1718,7 +1733,7 @@ This defines the minimum amount of time that needs to pass before the functions 
 <li>When working with car objects, bear in mind that some variables have an optional car index. You should use this index if you want to query the state of a particular car (that is, not necessarily the one the object is attached to). If, however, you just want to query the value of the particular car the object is attached to, use the variable without the index. For scenery objects, you should not generally use car indices as you can&rsquo;t be sure how many cars the queried train has.</li>
 </ul>
 
-<h2 id="a-name-examples-a-8-funcions-d-exemple"><a name="examples"></a>■ 8. Funcions d&rsquo;exemple</h2>
+<h2 id="a-name-examples-a-8-example-functions"><a name="examples"></a>■ 8. Example functions</h2>
 
 <h5 id="blinking-light">● Blinking light</h5>
 
