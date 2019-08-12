@@ -54,8 +54,13 @@ menu:
         url: '/other-resources/'
   - title: 'Roadmap'
     url: '/roadmap/'
-  - title: 'Discussion Board'
-    url: 'http://bveworldwide.forumotion.com/f14-the-sim-in-time-general-discussion'
+  - title: 'Links'
+    url: '#'
+    submenu:
+      - title: 'Discussion Board'
+        url: 'http://bveworldwide.forumotion.com/f14-the-sim-in-time-general-discussion'
+      - title: 'Further Links'
+        url: '/links/'
 
 # Owner/author information
 owner:
