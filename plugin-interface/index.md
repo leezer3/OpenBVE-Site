@@ -1,13 +1,13 @@
 ---
 layout: page
-title: The openBVE Plugin Interface
-description: "A description of the functionality available via the openBVE plugin interface"
+title: The OpenBVE Plugin Interface
+description: "A description of the functionality available via the OpenBVE plugin interface"
 share: true
 ---
 
 # Overview
 
-openBVE supports the creation of train plugins in either C# , or as legacy Win32 DLLs.
+OpenBVE supports the creation of train plugins in either C# , or as legacy Win32 DLLs.
 These may be used to add functionality, and in many cases override the default behaviour of the simulation.
 Available uses include:
 * Displaying custom indicators in the cab.
@@ -18,7 +18,7 @@ Available uses include:
 # Initial Creation
 
 In order to create a train plugin, first choose a programming language (for example C# or Visual Basic.NET) and a suitable development tool (for example MonoDevelop or SharpDevelop). 
-Then create a new Class Library and reference OpenBveApi.dll (which comes with openBVE). 
+Then create a new Class Library and reference OpenBveApi.dll (which comes with OpenBVE). 
 Finally, create a public class that inherits the interface you want to implement (see the API documentation below).
 
 # API Documentation

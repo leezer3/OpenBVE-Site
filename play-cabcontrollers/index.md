@@ -1,16 +1,16 @@
 ---
 layout: page
-title: Playing openBVE: Cab Controllers
+title: Playing OpenBVE: Cab Controllers
 description: "Supported desktop cab controllers"
 share: true
 ---
 
-# Playing openBVE: Cab Controllers
+# Playing OpenBVE: Cab Controllers
 
 ---
 
 Several companies produce desktop cab controllers for playing train simulators. 
-Where possible, openBVE will attempt to support these.
+Where possible, OpenBVE will attempt to support these.
 
 A list of the currently supported cab controllers and links may be found below:
 

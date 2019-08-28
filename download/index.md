@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Download
-description: "The openBVE Download Page"
+description: "The OpenBVE Download Page"
 share: true
 ---
 
@@ -9,39 +9,39 @@ share: true
 
 <img src="/images/windows.png" alt="Windows Icon">
 
-openBVE is provided as a standard Windows Installer.
+OpenBVE is provided as a standard Windows Installer.
 
 ### Stable Version:
 
-The most recent stable version of openBVE is:
+The most recent stable version of OpenBVE is:
 
-<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.6.0.0-setup.exe" class="btn btn-info">1.6.0.0 (2019-04-15)</a>
+<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.6.0.0-setup.exe" class="btn btn-info">1.6.0.0 (2019-04-15)</a>
 
 ---
 
 # Ubuntu, Debian and Compatibles (.deb package):
 <img src="/images/ubuntu.png" alt="Ubuntu Icon">
 
-openBVE is provided as a .deb package.
+OpenBVE is provided as a .deb package.
 
 ### Stable Version:
 
-The most recent stable version of openBVE is:
+The most recent stable version of OpenBVE is:
 
-<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.6.0.1.deb" class="btn btn-info">1.6.0.1 (2019-08-05)</a>
+<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.6.0.1.deb" class="btn btn-info">1.6.0.1 (2019-08-05)</a>
 
 ---
 
 # Windows and Linux (Archive):
 <img src="/images/windows-linux.png" alt="Windows and Linux Icon">
 
-openBVE is provided as a standard compressed archive.
+OpenBVE is provided as a standard compressed archive.
 
 ### Stable Version:
 
-The most recent stable version of openBVE is:
+The most recent stable version of OpenBVE is:
 
-<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.6.0.0.zip" class="btn btn-info">1.6.0.0 (2019-04-15)</a>
+<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.6.0.0.zip" class="btn btn-info">1.6.0.0 (2019-04-15)</a>
 
 ---
 
@@ -49,13 +49,13 @@ The most recent stable version of openBVE is:
 
 <img src="/images/apple.png" alt="Apple Icon">
 
-openBVE is provided as an installable .DMG file.
+OpenBVE is provided as an installable .DMG file.
 
 ### Stable Version:
 
-The most recent stable version of openBVE is:
+The most recent stable version of OpenBVE is:
 
-<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/openBVE-1.6.0.0.dmg" class="btn btn-info">1.6.0.0 (2019-04-15)</a>
+<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.6.0.0.dmg" class="btn btn-info">1.6.0.0 (2019-04-15)</a>
 
 ---
 
@@ -74,6 +74,6 @@ If this is the case, please let us know by posting on the forum or opening an is
 
 # Previous Stable Versions
 
-Previous stable versions of openBVE may be found here:
+Previous stable versions of OpenBVE may be found here:
 
 <a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/" class="btn btn-info">Previous Stable Versions</a>

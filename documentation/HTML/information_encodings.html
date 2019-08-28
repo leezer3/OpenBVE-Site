@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="SHORTCUT ICON" href="../../images/favicon.png" />
-<meta name="keywords" content="openBVE,homepage" />
+<meta name="keywords" content="OpenBVE,homepage" />
 <title>Character Encodings</title>
 </head>
 <body style="font-family:sans-serif;font-size:small">
@@ -54,7 +54,7 @@ Usually, one particular encoding only allows to use the writing system for which
 <tr><td><font size="-1" color="#808080">
 
 </font></td></tr></table>
-UTF-16 descends from a character encoding (UTC-2) which always used two bytes to encode one character. As such, the order of those two bytes matters. In order to know in which order the bytes appear, a so-called byte order mark is frequently prepended to the text, usually automatically and transparently by the text editor. The byte order mark provides decoders a means of detecting in which byte order the file was saved in. Additionally, the byte order mark provides a fairly safe way of detecting that the text file is saved in Unicode in the first place.<br /><br />While not technically necessary, the byte order mark is also frequently used for UTF-8. As UTF-8 does not have a byte order issue, the sole purpose of using a byte order mark with UTF-8 is to provide a means to flagging the file as being encoded in UTF-8.<br /><br />As said, while Unicode allows to encode virtually all characters used in all writing systems around the world, it does not necessarily make working with text files easier if the encoding to be used was not agreed on.<br /><br />Using a byte order mark provides openBVE the ability to automatically detect the encoding for each individual file. If you have a good text editor, you will not only be able to select the encoding manually, but also if you want to save with a byte order mark or not. Notepad (Windows) always saves with a byte order mark if UTF-8 is selected as the character encoding upon saving the file, to make an acceptable example.<br /><br />Technically, the byte order mark is the first bytes of a particular text file. The byte order marks which can be automatically detected by openBVE are:<br /><br />
+UTF-16 descends from a character encoding (UTC-2) which always used two bytes to encode one character. As such, the order of those two bytes matters. In order to know in which order the bytes appear, a so-called byte order mark is frequently prepended to the text, usually automatically and transparently by the text editor. The byte order mark provides decoders a means of detecting in which byte order the file was saved in. Additionally, the byte order mark provides a fairly safe way of detecting that the text file is saved in Unicode in the first place.<br /><br />While not technically necessary, the byte order mark is also frequently used for UTF-8. As UTF-8 does not have a byte order issue, the sole purpose of using a byte order mark with UTF-8 is to provide a means to flagging the file as being encoded in UTF-8.<br /><br />As said, while Unicode allows to encode virtually all characters used in all writing systems around the world, it does not necessarily make working with text files easier if the encoding to be used was not agreed on.<br /><br />Using a byte order mark provides OpenBVE the ability to automatically detect the encoding for each individual file. If you have a good text editor, you will not only be able to select the encoding manually, but also if you want to save with a byte order mark or not. Notepad (Windows) always saves with a byte order mark if UTF-8 is selected as the character encoding upon saving the file, to make an acceptable example.<br /><br />Technically, the byte order mark is the first bytes of a particular text file. The byte order marks which can be automatically detected by OpenBVE are:<br /><br />
 <table style="border-collapse: collapse;">
 <tr><th bgcolor="#D0D0D0" style=" border: 2px; border-style: ridge; padding: 4px;"> Encoding</th><th bgcolor="#D0D0D0" style=" border: 2px; border-style: ridge; padding: 4px;"> Hexadecimal representation</th></tr>
 <tr><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;">UTF-8</td><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;">EF BB BF</td></tr>
@@ -63,7 +63,7 @@ UTF-16 descends from a character encoding (UTC-2) which always used two bytes to
 <tr><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;">UTF-32 (big endian)</td><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;">00 00 FE FF</td></tr>
 <tr><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;">UTF-32 (little endian)</td><td bgcolor="#FFFFFF" style=" border: 2px; border-style: ridge; padding: 4px;">FF FE 00 00</td></tr>
 </table><br />
-You are encouraged to always save text files in one of those encodings with a byte order mark in order for openBVE to automatically detect the encoding used.
+You are encouraged to always save text files in one of those encodings with a byte order mark in order for OpenBVE to automatically detect the encoding used.
 </body>
 
 <!-- Mirrored from www.trainsimframework.org/develop/information_encodings.html by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 05 May 2012 22:31:29 GMT -->

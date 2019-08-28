@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="SHORTCUT ICON" href="../../images/favicon.png" />
-<meta name="keywords" content="openBVE,homepage" />
+<meta name="keywords" content="OpenBVE,homepage" />
 <title>.NET assembly plugins</title>
 </head>
 <body style="font-family:sans-serif;font-size:small">
@@ -15,7 +15,7 @@
 <tr><td><font size="-1" color="#808080">
 
 </font></td></tr></table>
-<br />Plugins allow to offer functionality that openBVE does not provide out of the box. At the moment, only train plugins are supported which are mainly intended for the simulation of safety equipment.<br /><br /><table><tr style="height: 4px;"><td /></tr></table>
+<br />Plugins allow to offer functionality that OpenBVE does not provide out of the box. At the moment, only train plugins are supported which are mainly intended for the simulation of safety equipment.<br /><br /><table><tr style="height: 4px;"><td /></tr></table>
 <font color="#0080FF">● Train plugins</font>
 <table style="border:0px none;margin-left:10pt;margin-right:10pt;">
 <tr><td><font size="-1" color="#808080">
@@ -46,14 +46,14 @@
 
 </font></td></tr></table>
 <table><tr style="height: 2px;"><td /></tr></table>
-<br />A whole variety of new .NET Framework versions comes out every so often. In order for plugins to not have stricter requirements on external dependencies than openBVE itself, plugins should target the .NET Framework 2.0, not any later version. This means that users do not have to upgrade their .NET Framework just in order to run your plugin. It also helps ensuring that all plugins run both on Microsoft .NET as well as on Mono, which is used on Linux and Mac OS X primarily.<br /><br />This also means that you must not use CLI-specific features such as Mono.Simd, among other things.<br /><br /><table><tr style="height: 4px;"><td /></tr></table>
+<br />A whole variety of new .NET Framework versions comes out every so often. In order for plugins to not have stricter requirements on external dependencies than OpenBVE itself, plugins should target the .NET Framework 2.0, not any later version. This means that users do not have to upgrade their .NET Framework just in order to run your plugin. It also helps ensuring that all plugins run both on Microsoft .NET as well as on Mono, which is used on Linux and Mac OS X primarily.<br /><br />This also means that you must not use CLI-specific features such as Mono.Simd, among other things.<br /><br /><table><tr style="height: 4px;"><td /></tr></table>
 <font color="#0080FF">● Plugins must be compiled against any CPU</font>
 <table style="border:0px none;margin-left:10pt;margin-right:10pt;">
 <tr><td><font size="-1" color="#808080">
 
 </font></td></tr></table>
 <table><tr style="height: 2px;"><td /></tr></table>
-<br />Even though openBVE itself currently runs in 32-bit mode (on Windows anyway), plugins must not exhibit this behavior - they must run on all CPU architectures. Be sure to set AnyCPU as the target processor in your development tool of choice. In Visual Studio and SharpDevelop, for example, the default target processor is x86, not AnyCPU. Be sure to change that.<br /><br /><table><tr style="height: 4px;"><td /></tr></table>
+<br />Even though OpenBVE itself currently runs in 32-bit mode (on Windows anyway), plugins must not exhibit this behavior - they must run on all CPU architectures. Be sure to set AnyCPU as the target processor in your development tool of choice. In Visual Studio and SharpDevelop, for example, the default target processor is x86, not AnyCPU. Be sure to change that.<br /><br /><table><tr style="height: 4px;"><td /></tr></table>
 <font color="#0080FF">● Plugins must not use P/Invoke</font>
 <table style="border:0px none;margin-left:10pt;margin-right:10pt;">
 <tr><td><font size="-1" color="#808080">
@@ -105,14 +105,14 @@ int number = double.Parse(lines[0]);</td><td bgcolor="#FFFFFF" style=" border: 2
 
 </font></td></tr></table>
 <table><tr style="height: 2px;"><td /></tr></table>
-<br />The classes the plugins export may be instantiated by openBVE multiple times. In case of train plugins, one instance may be created per train. The instances may even be run in different threads. Plugins must be designed with behavior this in mind.<br /><br /><a name="howto" />
+<br />The classes the plugins export may be instantiated by OpenBVE multiple times. In case of train plugins, one instance may be created per train. The instances may even be run in different threads. Plugins must be designed with behavior this in mind.<br /><br /><a name="howto" />
 <br /><table><tr style="height: 4px;"><td /></tr></table>
 <font size="+1" color="#0080FF">■ How to develop a plugin</font><hr />
 <table style="border:0px none;margin-left:10pt;margin-right:10pt;">
 <tr><td><font size="-1" color="#808080">
 
 </font></td></tr></table>
-<br />In order to create a train plugin, first choose a programming language (for example C# or Visual Basic.NET) and a suitable development tool (for example <a href="http://monodevelop.com/">MonoDevelop</a> or <a href="http://www.icsharpcode.net/opensource/sd/">SharpDevelop</a>). Then create a new <b>Class Library</b> and reference <b>OpenBveApi.dll</b> (which comes with openBVE). Now, create a public class that inherits the interface you want to implement (see the API documentation below).<br /><br />Be sure to compile against AnyCPU, to enable CLS-compliance checks and to remove references that are not actually needed. Mind to <b>not</b> ship OpenBveApi.dll with your plugin.<br /><br /><a name="documentation" />
+<br />In order to create a train plugin, first choose a programming language (for example C# or Visual Basic.NET) and a suitable development tool (for example <a href="http://monodevelop.com/">MonoDevelop</a> or <a href="http://www.icsharpcode.net/opensource/sd/">SharpDevelop</a>). Then create a new <b>Class Library</b> and reference <b>OpenBveApi.dll</b> (which comes with OpenBVE). Now, create a public class that inherits the interface you want to implement (see the API documentation below).<br /><br />Be sure to compile against AnyCPU, to enable CLS-compliance checks and to remove references that are not actually needed. Mind to <b>not</b> ship OpenBveApi.dll with your plugin.<br /><br /><a name="documentation" />
 <br /><table><tr style="height: 4px;"><td /></tr></table>
 <font size="+1" color="#0080FF">■ Documentation</font><hr />
 <table style="border:0px none;margin-left:10pt;margin-right:10pt;">
@@ -131,7 +131,7 @@ int number = double.Parse(lines[0]);</td><td bgcolor="#FFFFFF" style=" border: 2
 <tr><td><font size="-1" color="#808080">
 
 </font></td></tr></table>
-<br />In the directory <b>Examples\Sample Plugins</b>, you can find template projects targeting different programming languages. In these templates, almost everything has been prepared for you. The only thing you have to do is to include a reference to OpenBveApi.dll which comes with openBVE.<br /><br />For those who use SharpDevelop, reference OpenBveApi.dll by clicking the <em>Project</em> menu and selecting <em>Add reference</em>, then go to the <em>.NET Assembly Browser</em> tab and click on <em>Browse</em>. Now browse to your openBVE directory and select <em>OpenBveApi.dll</em>. Confirm with <em>OK</em>. Now select <em>OpenBveApi</em> from the <em>Projects</em> window and set <em>Local copy</em> to <b>False</b>. Also be sure that <em>Specific Version</em> is set to <b>False</b>.<br /><br /><table><tr style="height: 4px;"><td /></tr></table>
+<br />In the directory <b>Examples\Sample Plugins</b>, you can find template projects targeting different programming languages. In these templates, almost everything has been prepared for you. The only thing you have to do is to include a reference to OpenBveApi.dll which comes with OpenBVE.<br /><br />For those who use SharpDevelop, reference OpenBveApi.dll by clicking the <em>Project</em> menu and selecting <em>Add reference</em>, then go to the <em>.NET Assembly Browser</em> tab and click on <em>Browse</em>. Now browse to your OpenBVE directory and select <em>OpenBveApi.dll</em>. Confirm with <em>OK</em>. Now select <em>OpenBveApi</em> from the <em>Projects</em> window and set <em>Local copy</em> to <b>False</b>. Also be sure that <em>Specific Version</em> is set to <b>False</b>.<br /><br /><table><tr style="height: 4px;"><td /></tr></table>
 
 </body>
 

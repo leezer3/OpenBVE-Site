@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="SHORTCUT ICON" href="../../Images/favicon.png" />
-<meta name="keywords" content="openBVE,homepage" />
+<meta name="keywords" content="OpenBVE,homepage" />
 <title>Creating XML Based Markers</title>
 </head>
 <body style="font-family:sans-serif;font-size:small">
@@ -21,7 +21,7 @@
 
 </font></td></tr></table>
 
-openBVE supports two distinct types of markers:<br><br>
+OpenBVE supports two distinct types of markers:<br><br>
 <table cellspacing="0"><tr>
 <td valign="top">1.</td>
 <td>&nbsp;</td>
@@ -41,7 +41,7 @@ Each individual marker should be setup using a custom XML file, as per the examp
 <br><b>Image Based Markers:</b><br>
 <textarea rows="18" cols="110" style="border:2;">
 <?xml version="1.0" encoding="utf-8"?>
-<openBVE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<OpenBVE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ImageMarker>
                 <Early>
 			<Time>12:00</Time>
@@ -57,13 +57,13 @@ Each individual marker should be setup using a custom XML file, as per the examp
 		<Distance>200</Distance>
 		<trains>81xx_2DCab</trains>
   </ImageMarker>
-</openBVE>
+</OpenBVE>
 </textarea>
 <br>
 <br><b>Text Based Markers:</b><br>
 <textarea rows="18" cols="110" style="border:2;">
 <?xml version="1.0" encoding="utf-8"?>
-<openBVE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<OpenBVE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <TextMarker>
                 <Early>
 			<Time>12:00</Time>
@@ -79,7 +79,7 @@ Each individual marker should be setup using a custom XML file, as per the examp
 		<Distance>200</Distance>
 		<trains>81xx_2DCab</trains>
   </TextMarker>
-</openBVE>
+</OpenBVE>
 </textarea>
 <br>
 As you can see, the file is made up of either a <b>&lt;ImageMarker&gt;</b> section or a <b>&lt;TextMarker&gt;</b> section, which defines the properties of the marker itself.<br>

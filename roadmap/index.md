@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Roadmap
-description: "The current roadmap for openBVE development"
+description: "The current roadmap for OpenBVE development"
 share: true
 ---
 
@@ -29,7 +29,7 @@ Version 1.5 is currently under development.
 
 * Deprecate the train.dat and extensions.cfg files, in favour of an XML based system allowing much greater flexibility.
 * Multiple views (Cab, passenger etc.) available per train.
-* Backport the openBVE 2 demo object parser plugin interface. 
+* Backport the OpenBVE 2 demo object parser plugin interface. 
 
 ### Work In Progress Features:
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Playing openBVE
+title: Playing OpenBVE
 description: "Instructions on how to install and play new addons"
 share: true
 ---

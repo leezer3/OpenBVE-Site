@@ -19,7 +19,7 @@ BVE Station hosts a large American & NYCTA community OpenBVE community, includin
 
 <a href="https://railsimroutes.net"><img src="banners/RailsimRoutes.png" alt="RailsimRoutes"></a>
 
-Home of the well-known Anthony Bowden's work. Contains highly realistic and detailed stuff for openBVE, formulas for animations and much more. 
+Home of the well-known Anthony Bowden's work. Contains highly realistic and detailed stuff for OpenBVE, formulas for animations and much more. 
 
 <a href="https://celtictrainsim.com"><img src="banners/Celtictrainsim.png" alt="Celtictrainsim"></a>
 

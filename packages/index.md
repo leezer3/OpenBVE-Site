@@ -1,15 +1,15 @@
 ---
 layout: page
 title: Creating Packages
-description: "Instructions on how to create an addon package for use with the openBVE train simulator"
+description: "Instructions on how to create an addon package for use with the OpenBVE train simulator"
 share: true
 ---
 
-The following set of pages describes the process for creating an addon package for use with **openBVE**.
+The following set of pages describes the process for creating an addon package for use with **OpenBVE**.
 
 ## The Package Manager:
 
-Packages may be created and installed from within the main openBVE program, using the **Package Management** tab.
+Packages may be created and installed from within the main OpenBVE program, using the **Package Management** tab.
 
 When opening this tab, you will first be presented with a list of the currently installed packages, switchable between *Routes* , *Trains* and *Other* .
 
@@ -32,7 +32,7 @@ Select the *Package Type* as 'route', and that we are creating a new package. A 
 Next, using the add items button, add the following folders:
 
 {% highlight bash %}
-openBVE Addons Folder
+OpenBVE Addons Folder
 └─── Railway
      ├── Route
      |    └ OS_ATS_Test	# The routefiles are stored in this directory
@@ -64,7 +64,7 @@ A dialog will then popup, allowing you to select the minimum and maximum version
 
 ### The Package Format:
 
-openBVE Packages have been designed as a simple, and easily extensible in future format.
+OpenBVE Packages have been designed as a simple, and easily extensible in future format.
 
 They consist of an archive (Currently only ZIP is supported), containing two metadata files- **package.xml** and **package.png**
 
@@ -72,7 +72,7 @@ A manually created **package.xml** file should conform to the following basic st
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8"?>
-<openBVE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<OpenBVE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Package>
     <Name>Example Package</Name>
     <Author>Example Author</Author>
@@ -83,14 +83,14 @@ A manually created **package.xml** file should conform to the following basic st
     <MinimumVersion />
     <MaximumVersion />
   </Package>
-</openBVE>
+</OpenBVE>
 {% endhighlight %}
 
 Dependancies may be added using the following structure:
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8"?>
-<openBVE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<OpenBVE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Package>
   <Package>
 .....................
@@ -106,7 +106,7 @@ Dependancies may be added using the following structure:
 		</Package>	
 	</Dependancies>
   </Package>
-  </openBVE>
+  </OpenBVE>
 {% endhighlight %}
 
 Reccomendations also follow the same format:
@@ -114,7 +114,7 @@ Reccomendations also follow the same format:
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8"?>
-<openBVE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<OpenBVE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Package>
   <Package>
 .....................
@@ -130,7 +130,7 @@ Reccomendations also follow the same format:
 		</Package>	
 	</Reccomendations>
   </Package>
-  </openBVE>
+  </OpenBVE>
 {% endhighlight %}
 
 It is reccomended that the **package.png** file be a square image of a minimum of 200px X 200px

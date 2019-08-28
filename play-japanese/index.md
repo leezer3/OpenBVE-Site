@@ -1,13 +1,13 @@
 ---
 layout: page
-title: Playing openBVE
+title: Playing OpenBVE
 description: "Instructions on how to install and play new addons"
 share: true
 ---
 
 # Japanese Signals and Signs
 
-Some routes make use of Japanese signals and signs which are provided as part of openBVE. These signals and signs are explained on the following page.
+Some routes make use of Japanese signals and signs which are provided as part of OpenBVE. These signals and signs are explained on the following page.
 
 ---
 
@@ -155,7 +155,7 @@ ATC (automatic train control) is a Japanese safety system which replaces track-s
 
 The system receives the location of the preceding train and can automatically determine the appropriate speed limit that needs to be followed. 
 
-The openBVE implementation is a simplified and joined version of the great variety of ATC systems that exist in the real world.
+The OpenBVE implementation is a simplified and joined version of the great variety of ATC systems that exist in the real world.
 
 The track must be equipped with ATC before it can be used. 
 

@@ -1,5 +1,5 @@
-title:            openBVE
-description:      The openBVE Project Homepage
+title:            OpenBVE
+description:      The OpenBVE Project Homepage
 # put your disqus here
 disqus_shortname: 
 reading_time:     false # if true, shows the estimated reading time for a post
@@ -17,7 +17,7 @@ menu:
   - title: 'Download'
     url: '/download/'
     submenu:
-      - title: 'Download openBVE'
+      - title: 'Download OpenBVE'
         url: '/download/'
       - title: 'Source Code'
         url: '/source/'
@@ -26,7 +26,7 @@ menu:
   - title: 'Install'
     url: '#'
     submenu:
-      - title: 'Installing openBVE'
+      - title: 'Installing OpenBVE'
         url: '/install/'
       - title: 'Installing Addons'
         url: '/install-addons/'
@@ -48,7 +48,7 @@ menu:
         url: '/creating-addons/'
       - title: 'Developer Documentation'
         url: '/documentation_hugo/'
-      - title: 'openBVE Packages'
+      - title: 'OpenBVE Packages'
         url: '/packages/'
       - title: 'Other Resources'
         url: '/other-resources/'
@@ -64,7 +64,7 @@ menu:
 
 # Owner/author information
 owner:
-  name:           The openBVE Project
+  name:           The OpenBVE Project
   site:           http://aronbordin.com
   avatar:         images/avatar.jpg
   bio:            "Your bio goes here. It shouldn't be super long but a good two sentences or two should suffice."

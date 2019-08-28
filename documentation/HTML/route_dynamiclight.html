@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="SHORTCUT ICON" href="../../Images/favicon.png" />
-<meta name="keywords" content="openBVE,homepage" />
+<meta name="keywords" content="OpenBVE,homepage" />
 <title>Applying Dynamic Lighting to Your Route</title>
 </head>
 <body style="font-family:sans-serif;font-size:small">
@@ -24,7 +24,7 @@ First, please consider these fundamental points:<br><br>
 <table cellspacing="0"><tr>
 <td valign="top">●</td>
 <td>&nbsp;</td>
-<td>openBVE currently supports two distinct lights for the scene. These are the <b>Dynamic Light</b> and the <b>Ambient Light</b>. 
+<td>OpenBVE currently supports two distinct lights for the scene. These are the <b>Dynamic Light</b> and the <b>Ambient Light</b>. 
 <br>
 </td>
 </tr></table>
@@ -37,14 +37,14 @@ First, please consider these fundamental points:<br><br>
 <br /><table cellspacing="0"><tr>
 <td valign="top">●</td>
 <td>&nbsp;</td>
-<td>The current implementation of openBVE produces incorrect illumination on the back face of faces created by <i>Face2</i> (B3D) or <i>AddFace2</i> (CSV) commands. <p>
-<b>NOTE:</b> This behavior is subject to change in future versions of openBVE, so that both sides are correctly illuminated.</td>
+<td>The current implementation of OpenBVE produces incorrect illumination on the back face of faces created by <i>Face2</i> (B3D) or <i>AddFace2</i> (CSV) commands. <p>
+<b>NOTE:</b> This behavior is subject to change in future versions of OpenBVE, so that both sides are correctly illuminated.</td>
 </tr></table>
 In order to setup the lighting system, a custom Dynamic Lighting XML file must be used. This file must contain a time-delineated series of light definitions, a basic example of which is shown below:
 <br>
 <textarea rows="17" cols="110" style="border:2;">
 <?xml version="1.0" encoding="utf-8"?>
-<openBVE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<OpenBVE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Brightness>
         <Time>00.00</Time>
         <AmbientLight>0,0,0</AmbientLight>
@@ -59,7 +59,7 @@ In order to setup the lighting system, a custom Dynamic Lighting XML file must b
         <LightDirection>0.223606797749979, 0.86602540378444, -0.447213595499958</LightDirection>
         <CabLighting>255</CabLighting>
   </Brightness>
-</openBVE>
+</OpenBVE>
 </textarea>
 <br>
 As you can see, each <b>&lt;Brightness&gt;</b> section contains a series of parameters, defining the lighting at the point in time specified by <i>Time</i>.<br>

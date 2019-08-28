@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="SHORTCUT ICON" href="../../images/favicon.png" />
-<meta name="keywords" content="openBVE,homepage" />
+<meta name="keywords" content="OpenBVE,homepage" />
 <title>The .csv route format</title>
 </head>
 <body style="font-family:sans-serif;font-size:small">
@@ -1058,7 +1058,7 @@ This command allows the route developer to place the inital camera in one of the
 <tr><td bgcolor="#F0F0F0" style="font-family: monospace;border:1px dotted;color:#808080"><font color="#606060"><b>Route.DeveloperID</b></font></td></tr></table>
 <table style="border:0px none;margin-left:10pt;margin-right:10pt;">
 <tr><td><font color="#808080">
-This command is ignored by openBVE.
+This command is ignored by OpenBVE.
 </font></td></tr></table>
 <br/>
 <a name="train" />
@@ -1181,7 +1181,7 @@ This command defines the maximum speed limit the preceding trains may travel at.
 <tr><td bgcolor="#F0F0F0" style="font-family: monospace;border:1px dotted;color:#808080"><font color="#606060"><b>Train.Acceleration</b></font></td></tr></table>
 <table style="border:0px none;margin-left:10pt;margin-right:10pt;">
 <tr><td><font color="#808080">
-This command is ignored by openBVE.
+This command is ignored by OpenBVE.
 </font></td></tr></table>
 <br/>
 <table border="0">
@@ -1190,7 +1190,7 @@ This command is ignored by openBVE.
 <tr><td bgcolor="#F0F0F0" style="font-family: monospace;border:1px dotted;color:#808080"><font color="#606060"><b>Train.Station</b></font></td></tr></table>
 <table style="border:0px none;margin-left:10pt;margin-right:10pt;">
 <tr><td><font color="#808080">
-This command is ignored by openBVE.
+This command is ignored by OpenBVE.
 </font></td></tr></table>
 <br />
 <br/>
@@ -1467,7 +1467,7 @@ Use this command to load signals directly from animated objects. The <em>SignalI
 <br/>
 <b><em>GlowFileWithoutExtension</em></b>: An optional reference to a B3D/CSV/X object file representing the distance glow, relative to the <b>Object</b> folder, but without the file extension.
 </font></td></tr></table>
-Use this command to load signals from a series of individual textures applied onto a common object. openBVE looks for X, CSV and B3D objects in this exact order. Textures are required to have the same name as the signal or glow, plus a non-negative aspect index, plus a file extension for textures. The <em>SignalIndex</em> can be later referenced in Track.SigF commands to place the signal.
+Use this command to load signals from a series of individual textures applied onto a common object. OpenBVE looks for X, CSV and B3D objects in this exact order. Textures are required to have the same name as the signal or glow, plus a non-negative aspect index, plus a file extension for textures. The <em>SignalIndex</em> can be later referenced in Track.SigF commands to place the signal.
 <br/>
 <br/>
 For the <em>SignalFileWithoutExtension</em>, there should be the following files present (example):
@@ -1501,7 +1501,7 @@ The glow textures deserve special attention. All glow textures are pre-processed
 The texture you start with should have a sharp shape, usually oval. The shape should be fully saturated in the core and blend into pure white at its outer rim. The surroundings of the shape can be either pure black (A) or pure white (B).
 <br/>
 <br/>
-When openBVE loads the glow texture, it will replace all purely black pixels with purely white pixels, thus arriving at (B). From there, the image is inverted (C), then hue-shifted by 180 degrees (D). Compared to (B), this has the overall effect of inverting the lightness of the image, i.e. fully saturated pixels will be left unchanged (e.g. the core), while bright pixels (such as the outer rim of the shape) will become dark, and vice versa. Then, the image is gamma-corrected to further darken the dark parts (E), and finally, the image is blurred slightly (F).
+When OpenBVE loads the glow texture, it will replace all purely black pixels with purely white pixels, thus arriving at (B). From there, the image is inverted (C), then hue-shifted by 180 degrees (D). Compared to (B), this has the overall effect of inverting the lightness of the image, i.e. fully saturated pixels will be left unchanged (e.g. the core), while bright pixels (such as the outer rim of the shape) will become dark, and vice versa. Then, the image is gamma-corrected to further darken the dark parts (E), and finally, the image is blurred slightly (F).
 <br/>
 <br/>
 The resulting texture is always additively blended. This means that instead of directly drawing the texture onto the screen, the pixels of the texture are added to the screen pixels. Here, adding black (0) does not change the screen pixels, while adding a fully satured color channel (1) will result in a fully satured color channel, e.g. adding white produces white. Keep in mind that when designing the textures, you will have to follow the inverse rules, e.g. design the image as depicted in (A) or (B), while having in mind how it will be processed afterward.
@@ -2467,7 +2467,7 @@ If no object has been defined by Signal(<em>SignalIndex</em>), one of the defaul
 <tr><td><font color="#808080">
 <b><em>Type</em></b>: The number of aspects for this signal. The default value is -2.
 <br/>
-<b><em><font color="gray">Unused</font></em></b>: <em>This argument is not used by openBVE.</em>
+<b><em><font color="gray">Unused</font></em></b>: <em>This argument is not used by OpenBVE.</em>
 <br/>
 <b><font color="green"><em>X</em></font></b>: The X-coordinate to place the signal object, <b>by default</b> measured in <b>meters</b>. The default value is 0.
 <br/>
@@ -2949,7 +2949,7 @@ This command plays an announcement or other kind of sound in the cab once the pl
 <br/>
 <b><font color="green"><em>Y</em></font></b>: A floating-point number representing the vertical offset from rail 0, <b>by default</b> measured in <b>meters</b>. Negative values indicate below, positive ones above.
 </font></td></tr></table>
-This command places an environmental sound effect at the specified location. The sound will play in a loop for the duration of the simulation and employs the doppler effect. (Note: All sounds in openBVE employ the doppler effect.)
+This command places an environmental sound effect at the specified location. The sound will play in a loop for the duration of the simulation and employs the doppler effect. (Note: All sounds in OpenBVE employ the doppler effect.)
 <br/>
 <br/>
 <hr />

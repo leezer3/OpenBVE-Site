@@ -1,11 +1,11 @@
 ---
 layout: page
 title: Developing Addons- Other Useful Resources
-description: "Third-party tools for developing openBVE addons"
+description: "Third-party tools for developing OpenBVE addons"
 share: true
 ---
 
-Many third parties have created tools and other resources for developing **openBVE** addons. A brief list of these is below:
+Many third parties have created tools and other resources for developing **OpenBVE** addons. A brief list of these is below:
 
 **Note:** Please see the respective pages for any licence conditions.
 

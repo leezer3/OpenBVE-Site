@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="SHORTCUT ICON" href="../../images/favicon.png" />
-<meta name="keywords" content="openBVE,homepage" />
+<meta name="keywords" content="OpenBVE,homepage" />
 <title>The panel2.cfg file format</title>
 </head>
 <body style="font-family:sans-serif;font-size:small">
@@ -51,7 +51,7 @@ All elements in the panel are associated layers. The layer is described as an in
 <tr><td bgcolor="#FFE080" style="border:2px; border-style:ridge;"><font color="#404040">
 <b>ⓘ</b> Daytime and nighttime images
 </font></td></tr><tr><td bgcolor="#FFFFFF">
-For all elements that take a texture, you can specify distinct daytime and nighttime textures. Depending on the lighting conditions and additional route instructions, openBVE will display any intermediate blend between the daytime and nighttime textures. If no nighttime textures are used, the daytime images will be darkened to simulate corresponding nighttime images.
+For all elements that take a texture, you can specify distinct daytime and nighttime textures. Depending on the lighting conditions and additional route instructions, OpenBVE will display any intermediate blend between the daytime and nighttime textures. If no nighttime textures are used, the daytime images will be darkened to simulate corresponding nighttime images.
 </td></tr></table>
 <table><tr style="height: 4px;"><td /></tr></table>
 <br />➟ <a href="train_panel2_cfg_quick.html">See also the quick reference for the panel2.cfg...</a><br />
@@ -583,7 +583,7 @@ If <em>Radius</em> is negative, it is treated as if it was positive, but the ent
 <tr><td><font size="-1" color="#808080">
 
 </font></td></tr></table>
-The LinearGauge section creates a panel layer, which uses texture shifting to create a sliding linear gauge. You can use as many of these sections as required.<br /><br />Consider a standard openBVE face:<br /><br /><img src="../../Images/texturecoords.png" alt="" /><br /><br />
+The LinearGauge section creates a panel layer, which uses texture shifting to create a sliding linear gauge. You can use as many of these sections as required.<br /><br />Consider a standard OpenBVE face:<br /><br /><img src="../../Images/texturecoords.png" alt="" /><br /><br />
 As you can see, the horizontal texture-coordinates upon this face are 0 at the <b>right</b> and 1 at the <b>left</b>.
 <br />
 Thus, the value given by <em>Minimum</em> represents 0 <em>Maximum</em>, represents 1, and the current value may then be calculated as a simple percentage.<br /><br />

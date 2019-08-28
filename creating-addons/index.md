@@ -1,21 +1,21 @@
 ---
 layout: page
 title: Developing Addons
-description: "Instructions on how to develop addons for the openBVE train simulator"
+description: "Instructions on how to develop addons for the OpenBVE train simulator"
 share: true
 ---
 
-The following set of pages describes the process for developing addons for **openBVE**.
+The following set of pages describes the process for developing addons for **OpenBVE**.
 
 ## Basic Setup for creating a new addon:
 
-In order to create openBVE addons, you should first download the **openBVE Developer's Tools** :
+In order to create OpenBVE addons, you should first download the **OpenBVE Developer's Tools** :
 
 <a href="http://vps.bvecornwall.co.uk/OpenBVE/Stable/developerTools_1.4.4.0.7z" class="btn btn-info">Developer's Tools 1.4.4 (2016-04-01)</a>
 
 This consists of two major tools- *Object Viewer* and *Route Viewer* , and two minor tools *Train Editor* and *Object Bender*
 
-These should be extracted into your route openBVE folder, as they require data from the main download.
+These should be extracted into your route OpenBVE folder, as they require data from the main download.
 
 ---
 
@@ -29,7 +29,7 @@ Route Viewer allows you to render and view a route file. It supports viewing a r
 
 <img src="/images/objectviewer.jpg" alt="Route Viewer Screenshot">
 
-Object Viewer allows you to view the 3D model formats which openBVE supports. It supports viewing multiple objects overlaid, reloading objects, and generates a list of errors in object files. 
+Object Viewer allows you to view the 3D model formats which OpenBVE supports. It supports viewing multiple objects overlaid, reloading objects, and generates a list of errors in object files. 
 
 ---
 
