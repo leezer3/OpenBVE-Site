@@ -377,6 +377,21 @@
         English
       </a>
       
+      <hr class="dropdown-divider">
+      <a href="../../es_mx/routes/csv.html" class="dropdown-item">
+        Mexican Spanish
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../fr/routes/csv.html" class="dropdown-item">
+        French
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../zh/routes/csv.html" class="dropdown-item">
+        Chinese
+      </a>
+      
     </div>
   </div>
 </div>
@@ -433,25 +448,25 @@
 
 <p>ファイルは任意のエンコードで記述されたプレーンテキストですが <a href="../../ja/information/encodings.html" target="_blank">encoding</a>、好ましい選択としてはバイトオーダー付きのUTF-8です。 <a href="../../ja/information/numberformats.html" target="_blank">parsing model</a> に用いる数字は <strong>ルーズ</strong>（特に明記しない限りは）ですが、 それでも出力にあたっては <em>厳密な</em> 出力をすることが望ましいです。  ファイルは任意のフォルダに格納できますが、カレントフォルダもしくは相対パスは <em>Railway</em> と <em>Train</em> フォルダ 以下に存在しなければなりません。 ファイル名は任意ですが、 拡張子は必ず <strong>.csv</strong> を用います。 ファイルは基本的に上から下に向かって解釈されていき、各行は式ごとに分割され、左から右に向かって解釈されていきます。</p>
 
-<p>The route file consists of a series of commands to define the objects which are used throughout the route (Structure namespace). Additional properties for the route, for the default train to be used and for the background images to be used can also be defined. At last, the route file will contain instructions from the Track namespace. Here, track positions (usually in meters) are used to define when the track should curve, when stations are to be placed, when a wall should start and end, and so on. Generally speaking, instructions from the Track namespace should be used after using instructions from any of the other namespaces.</p>
+<p>ルートファイルは、(Structure 名前空間)で定義された一連の命令セットにより、ルートデータ内で一貫して共通で利用されます 。 路線データ向けの追加のプロパティ、路線側が定義した既定の列車、沿線の背景のイメージファイルも同様に定義することができます。 最後に、ルートファイルは Track 名前空間でのコマンドにより指示します。 ここでは、 線路の座標 (殆どの場合、単位はメートル) を指定することにより、線路をカーブさせるタイミングや駅を設置したり、 壁や土手などを開始したり終わらせたりします。一般的には、 Track 名前空間はその他の名前空間を予め記述し、定義した後に記述する必要があります。</p>
 
-<p>The format assumes an implicit rail 0 which cannot be explicitly started or ended. Instead, it is present from the beginning of the route to the end, and it marks the rail the player&rsquo;s train drives on. All other rails in the CSV format are purely visual and have no functional purpose.</p>
+<p>The format assumes an implicit rail 0 which cannot be explicitly started or ended. Instead, it is present from the beginning of the route to the end, and it marks the rail the player&rsquo;s train drives on. rail 0 and the other rails are not only for used for visual, and also use for  <a href="../../ja/routes/xml/trackfollowingobject.html" target="_blank">Track Following Object</a>.</p>
 
-<p>Geometrically, you can curve and pitch the implicit rail 0, while all other rails are defined relative to rail 0 and follow rail 0 into curves and pitch changes. Unless overridden, the file format is built around a fixed block size of 25 meters length, and it is only possible for certain commands to be used on 25 meter block boundaries. The placement of objects always assumes a non-curved coordinate system which connects blocks linearly.</p>
+<p>幾何学的に、カーブや勾配は暗黙の ｒａｉｌ ０ に対して作用しますが、 その他のすべてのレールは rail 0 に相対的に連動して定義され、 rail 0 のカーブや勾配に従って追従します。 オーバーライドされない限りファイルフォーマットではブロック長は25mの固定長で構築され、 特定のコマンドは25mのブロック単位でしか用いることができません。 オブジェクトの配置は、常に直線的に接続する非曲線座標系を想定しています。</p>
 
 <p>➟ <a href="../../ja/routes/csv_quick.html" target="_blank">CSV ルートフォーマットのクイックリファレンスも参照して下さい&hellip;</a></p>
 
 <h2 id="a-name-syntax-a-2-文法"><a name="syntax"></a>■ 2. 文法</h2>
 
-<p>For each line in the file, <a href="../../ja/information/whitespaces.html" target="_blank">white spaces</a> at the beginning and the end of that line are ignored. Then, lines are split into individual expressions, separated by commas (U+002C). Thus, each line is of the following form:</p>
+<p>ファイルの各行の <a href="../../ja/information/whitespaces.html" target="_blank">ホワイトスペース</a> は、各行の行頭と行末では無視されます。 この時、各行はコンマ(U+002C)で区切られた個々の式に分割されます。 従って、各行は次のような形式をとります。</p>
 
 <div id="command">
-<p><em>Expression<sub>1</sub></em>, <em>Expression<sub>2</sub></em>, <em>Expression<sub>3</sub></em>, &hellip;, <em>Expression<sub>n</sub></em></p>
+<p><em>式<sub>1</sub></em>, <em>式<sub>2</sub></em>, <em>式<sub>3</sub></em>, &hellip;, <em>式<sub>n</sub></em></p>
 
 </div>
 
 
-<p>In turn, each expression can be of any of the following forms:</p>
+<p>次に、其々の式は次の形式のいずれかをとります:</p>
 
 <h5 id="コメント">● コメント</h5>
 
@@ -464,67 +479,67 @@
 
 </div>
 <br />
-A non-negative <a href="../../ja/information/numberformats.html" target="_blank">strict</a> floating-point number corresponding to a track position. All subsequent commands from the Track namespace are associated to this track position.</p>
+負の数でない <a href="../../ja/information/numberformats.html" target="_blank">厳密な</a> 浮動小数点数で線路の距離程に対応します。 後続するすべてのコマンドは、Track名前空間からこの線路の距離程に関連付けられます。</p>
 
 <p><div id="command">
-<p><em>Part<sub>1</sub></em>:<em>Part<sub>2</sub></em>:&hellip;:<em>Part<sub>n</sub></em></p>
+<p><em>パート<sub>1</sub></em>:<em>パート<sub>2</sub></em>:&hellip;:<em>パート<sub>n</sub></em></p>
 
 </div>
 <br />
-This is a more complex way of specifying track positions for use in conjunction with Options.UnitOfLength. Each of the <em>Part<sub>i</sub></em> is a <a href="../../ja/information/numberformats.html" target="_blank">strict</a> floating-point number. <em>Part<sub>1</sub></em> will be multiplied with <em>Factor<sub>1</sub></em>, <em>Part<sub>2</sub></em> with <em>Factor<sub>2</sub></em>, and so on, then all products are added together to form the final track position. This track position must be non-negative. The parts are separated by colons (U+003A). Please consult Options.UnitOfLength for further information on how to define the factors.</p>
+これは、Options.UnitOfLengthと組み合わせて距離程の表現を用いるより複雑な方法です。 其々の <em>パート<sub>i</sub></em> は <a href="../../ja/information/numberformats.html" target="_blank">厳密な</a> 浮動小数点数です。 <em>パート<sub>1</sub></em> は *係数<sub>1</sub>*と乗算し, <em>パート<sub>2</sub></em> は *係数<sub>2</sub>*など、  すべての要素に対して行われ、最終的な距離程をなします。 このパートは負でない数でなければなりません。 パートはコロン (U+003A)で分割されます。 要素の定義の詳細については Options.UnitOfLength を参照して下さい。</p>
 
-<p>Wherever arguments in commands represent lengths, they can also be entered using the colon notation. These cases are highlighted in <font color="green">green</font> in the following.</p>
+<p>コマンド内において、長さを表す引数はどこにおいても、コロン表記で同様に記述することができます。 そのような場合は <font color="green">緑</font> でハイライトされます。</p>
 
-<p>When <em>n</em> units are defined via Options.UnitOfLength, but fewer parameters are given using the colon notation, the parameters are right-associative, meaning, the parameters on the left are those which are skipped. Therefore, each of the following lengths are equivalent: <em>0:0:2</em>, <em>0:2</em>, and <em>2</em>.</p>
+<p><em>n</em> ユニットが Options.UnitOfLength を通じて定義されている場合でも、 いくつかのパラメータはコロン表記で記載されていても右側から結合されます。 つまり、左側のパラメータはスキップされます。 従って、 *0:0:2*、 *0:2*、 <em>2</em> の表記は全て同様の意味を示します。</p>
 
-<h5 id="commands">● Commands</h5>
+<h5 id="コマンド">● コマンド</h5>
 
-<p>Commands without arguments:</p>
+<p>引数のないコマンド:</p>
 
 <div id="command">
-<p><em>NameOfTheCommand</em></p>
+<p><em>コマンド名</em></p>
 
 </div>
 
 
-<p>Commands with arguments:</p>
+<p>引数のあるコマンド:</p>
 
 <div id="command">
-<p><em>NameOfTheCommand</em> <em>Argument<sub>1</sub></em>;<em>Argument<sub>2</sub></em>;<em>Argument<sub>3</sub></em>;&hellip;;<em>Argument<sub>n</sub></em><br />
-<em>NameOfTheCommand</em>(<em>Argument<sub>1</sub></em>;<em>Argument<sub>2</sub></em>;<em>Argument<sub>3</sub></em>;&hellip;;<em>Argument<sub>n</sub></em>)</p>
+<p><em>コマンド名</em> <em>引数<sub>1</sub></em>;<em>引数<sub>2</sub></em>;<em>引数<sub>3</sub></em>;&hellip;;<em>引数<sub>n</sub></em><br />
+<em>コマンド名</em>(<em>引数<sub>1</sub></em>;<em>引数<sub>2</sub></em>;<em>引数<sub>3</sub></em>;&hellip;;<em>引数<sub>n</sub></em>)</p>
 
 </div>
 
 
-<p>Commands with indices and arguments:</p>
+<p>インデックスと引数を両方伴うコマンド:</p>
 
 <div id="command">
-<p><em>NameOfTheCommand</em>(<em>Index<sub>1</sub></em>;<em>Index<sub>2</sub></em>;&hellip;;<em>Index<sub>m</sub></em>) <em>Argument<sub>1</sub></em>;<em>Argument<sub>2</sub></em>;<em>Argument<sub>3</sub></em>;&hellip;;<em>Argument<sub>n</sub></em><br />
-<em>NameOfTheCommand</em>(<em>Index<sub>1</sub></em>;<em>Index<sub>2</sub></em>;&hellip;;<em>Index<sub>m</sub></em>).<em>Suffix</em> <em>Argument<sub>1</sub></em>;<em>Argument<sub>2</sub></em>;<em>Argument<sub>3</sub></em>;&hellip;;<em>Argument<sub>n</sub></em><br />
-<em>NameOfTheCommand</em>(<em>Index<sub>1</sub></em>;<em>Index<sub>2</sub></em>;&hellip;;<em>Index<sub>m</sub></em>).<em>Suffix</em>(<em>Argument<sub>1</sub></em>;<em>Argument<sub>2</sub></em>;<em>Argument<sub>3</sub></em>;&hellip;;<em>Argument<sub>n</sub></em>)</p>
+<p><em>コマンド名</em>(<em>インデックス<sub>1</sub></em>;<em>インデックス<sub>2</sub></em>;&hellip;;<em>インデックス<sub>m</sub></em>) <em>引数<sub>1</sub></em>;<em>引数<sub>2</sub></em>;<em>引数<sub>3</sub></em>;&hellip;;<em>引数<sub>n</sub></em><br />
+<em>コマンド名</em>(<em>インデックス<sub>1</sub></em>;<em>インデックス<sub>2</sub></em>;&hellip;;<em>インデックス<sub>m</sub></em>).<em>サフックス</em> <em>引数<sub>1</sub></em>;<em>引数<sub>2</sub></em>;<em>引数<sub>3</sub></em>;&hellip;;<em>引数<sub>n</sub></em><br />
+<em>コマンド名</em>(<em>インデックス<sub>1</sub></em>;<em>インデックス<sub>2</sub></em>;&hellip;;<em>インデックス<sub>m</sub></em>).<em>サフィックス</em>(<em>引数<sub>1</sub></em>;<em>引数<sub>2</sub></em>;<em>引数<sub>3</sub></em>;&hellip;;<em>引数<sub>n</sub></em>)</p>
 
 </div>
 
 
-<p>Rules:</p>
+<p>ルール:</p>
 
-<p><em>NameOfTheCommand</em> is case-insensitive. Indices and arguments are separated by semicolons (U+003B). White spaces around <em>NameOfTheCommand</em> and any of the indices and arguments are ignored. White spaces surrounding any of the parentheses are also ignored.</p>
+<p><em>コマンド名</em> は大文字と小文字を区別しません。 インデックスと引数はセミコロン (U+003B)で分割されます。 <em>コマンド名</em> とインデックス、引数の周囲にあるホワイトスペースは無視されます。 カッコに囲まれているホワイトスペースも同様に無視されます。</p>
 
-<p>If indices are used, these are enclosed by opening parentheses (U+0028) and closing parentheses (U+0029). At least one argument, or a <em>Suffix</em> is mandatory when using indices.</p>
+<p>インデックスを用いた場合、 開きカッコ (U+0028) と閉じカッコ (U+0029)で囲まれている必要があります。 最低一つの引数、もしくは <em>サフィックス</em> がインデックスを用いる場合必須となります。</p>
 
-<p>There are two variations on how to encode arguments. Except for the $-directives ($Chr, $Rnd, $Sub, &hellip;), you can freely choose which variant to use. Variant 1: The first argument is separated from the command, indices or <em>Suffix</em> by at least one space (U+0020). Variant two: The arguments are enclosed by opening parentheses (U+0028) and closing parentheses (U+0029). In the latter case, <em>Suffix</em> is mandatory when used in conjunction with indices. White spaces surrounding any of the parentheses are ignored.</p>
+<p>引数のエンコード方法は2種類のバリエーションがあります。 $-ディレクティブ ($Chr, $Rnd, $Sub, &hellip;)を除き、 自由にバリアントを選択できます。 バリアント 1: 最初の引数は、少なくともコマンドから一つのスペース (U+0020) で、コマンド、インデックスもしくは <em>サフィックス</em> で区切られます。  バリアント 2: 引数は、開き括弧 (U+0028) と閉じ括弧 (U+0029) に囲まれます。 後者の場合、 <em>サフィックス</em> は インデックスと接続して用いる場合には必須です。 括弧に囲まれる其々のホワイトスペースは無視されます。</p>
 
-<p>Please note that in some commands, <em>Suffix</em> is mandatory regardless of the style you use to encode arguments. In the following, <em>Suffix</em> will be <strong>bolded</strong> when it is mandatory, and <font color="gray">grayed</font> when it is optional.</p>
+<p>一部のコマンドにおいて、 <em>サフィックス</em> は、引数のエンコードに用いるスタイルに関係なく必須であることに注意して下さい。 その場合 <em>サフィックス</em> は <strong>太字</strong> で記述され、 オプションの場合は <font color="gray">灰色</font> になります。</p>
 
-<h5 id="the-with-statement">● The <strong>With</strong> statement</h5>
+<h5 id="with-ステートメント">●  <strong>With</strong> ステートメント</h5>
 
 <div id="command">
-<p>With <em>Prefix</em></p>
+<p>With <em>プレフィックス</em></p>
 
 </div>
 
 
-<p>All subsequent commands that start with a period (U+002E) are prepended by <em>Prefix</em>. For example:</p>
+<p>このステートメントの後、ピリオド (U+002E) で始まるすべてのコマンドは、 *プレフィックス*が付加されます。 例:</p>
 
 <table style="border: none;">
   <tbody>
@@ -542,7 +557,7 @@ This is a more complex way of specifying track positions for use in conjunction 
   </tbody>
 </table>
 
-<p>Is equivalent to:</p>
+<p>上記の例は以下と同じ意味をなします:</p>
 
 <table style="border: none;">
   <tbody>
@@ -559,13 +574,13 @@ Route.Timetable 1157_M
   </tbody>
 </table>
 
-<h2 id="a-name-preprocessing-a-3-preprocessing"><a name="preprocessing"></a>■ 3. Preprocessing</h2>
+<h2 id="a-name-preprocessing-a-3-前処理"><a name="preprocessing"></a>■ 3. 前処理</h2>
 
-<p>Before any of the commands in the route file are actually interpreted, the expressions are preprocessed. The first thing done is to replace any occurrences of the $-directives within an expression from right to left. The $Chr, $Rnd and $Sub directives may be nested in any way, while $Include, $If, $Else and $EndIf must not appear inside another directive.</p>
+<p>ルートファイルのコマンドが実際に解釈される前には、 式は事前に処理されます。 最初に行われる処理は、 $-ディレクティブに対応する表現に置き換えます。 $Chr 、 $Rnd 、 $Sub ディレクティブは入れ子にすることができますが、 他方で $Include 、 $If 、 $Else 、 $EndIf は別のディレクティブにさらに入れ子にすることはできません。</p>
 
 <div id="warning">
 <span>⚠</span>
-<p>The syntax for the $-directives cannot be freely chosen, but must adhere to the forms presented below.</p>
+<p>$-ディレクティブの文法は自由には選べず、以下に示す形で従わなければなりません。</p>
 
 </div>
 
@@ -573,29 +588,29 @@ Route.Timetable 1157_M
 <hr />
 
 <div id="command">
-<p>$Include(<em>File</em>)<br />
-$Include(<em>File</em>:<em>TrackPositionOffset</em>)<br />
-$Include(<em>File<sub>1</sub></em>; <em>Weight<sub>1</sub></em>; <em>File<sub>2</sub></em>; <em>Weight<sub>2</sub></em>; &hellip;)</p>
+<p>$Include(<em>ファイルパス</em>)<br />
+$Include(<em>ファイルパス</em>:<em>距離程のオフセット</em>)<br />
+$Include(<em>ファイルパス<sub>1</sub></em>; <em>確率<sub>1</sub></em>; <em>ファイルパス<sub>2</sub></em>; <em>確率<sub>2</sub></em>; &hellip;)</p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>File<sub>i</sub></em></strong>: A file to include of the same format (CSV/RW) as the main file.<br />
-<strong><em>Weight<sub>i</sub></em></strong>: A positive floating-point number giving a probability weight for the corresponding file.</p>
+<p><strong><em>ファイルパス<sub>i</sub></em></strong>: メインとなるルートファイル (CSV/RW) と同一のルートファイル形式を持つ、単一のファイルのパス付きファイル名。
+<strong><em>確率<sub>i</sub></em></strong>: 正の浮動小数点数で、対応するファイルがインクルードされる確率を示します。</p>
 
 </div>
 
 
-<p>This directive chooses randomly from the specified files based on their associated probabilities and includes the content from one selected file into the main file. The content is copied into the place of the $Include directive, meaning that you need to take care of track positions and the last used With statement, for example. If the last weight in the argument sequence is omitted, it is treated as 1.</p>
+<p>このディレクティブは、対応する確率に基づいて指定されたファイルからランダムに選択して、そのファイルの中身を指定されたメインファイルに含めます。 選ばれたファイルの中身は $Include ディレクティブの位置に差し替えられますので、それはすなわち例えば距離程と直前に使われたWithステートメントに注意を払わなければならないことを意味します。 引数処理において一番最後の確率が省略された場合、1として扱われます。</p>
 
-<p>The $Include directive is useful for splitting up a large file into smaller files, for sharing common sections of code between multiple routes, and for choosing randomly from a larger block of code. Please note that the included files may themselves include other files, but you need to make sure that there are no circular dependencies, e.g. file A including file B, and file B including file A, etc. You should use a file extension different from .csv for included files so that users cannot accidentally select them in the main menu (except where this is desired).</p>
+<p>$Include ディレクティブは、大きなファイルを小さなファイルに分割したり、 共通のセクションのコードを複数のルートで共有したり、 大きなコードブロックからランダムに選択させたりするのに役立ちます。  インクルードされたファイルの中に更にファイルがインクルードされる場合がありますが、 それらが循環依存関係になっていないかどうかを確認し、注意する必要があります。  例えばファイル A が ファイル B をインクルードしている場合、 ファイル B がファイル A をインクルードしてしまっている場合などです。 (必要な場合を除き)インクルードファイルには.csvとは異なる拡張子を用いてユーザーが誤ってメインメニューから選択できないように考慮しておく必要があります。</p>
 
-<p>If any of the <em>File<sub>i</sub></em> is followed by :<em>TrackPositionOffset</em>, then all expressions in the included file are offset by the specified track position <strong>in meters</strong>. For example, $Include(stations.include:2000) shifts all track positions in the part.include file by 2000 meters before including them. It is important to understand that &ldquo;track positions&rdquo; are not actually understood until after the $-directives have been processed, so all expressions in the included file are simply flagged to be offset later should they form track positions then. This means that if the included file contains expressions such as 1$Rnd(2;8)00, these are offset, too, even though at this stage, they do not form track positions yet.</p>
+<p><em>ファイル<sub>i</sub></em> の後に :<em>TrackPositionOffset</em> が続く場合、 インクルードされるファイル内のすべての式は指定された距離程が  <strong>メートル単位</strong> でオフセットされます。 例えば、 $Include(stations.include:2000) は、part.includeがインクルードされる前に、ファイルに含まれるすべての距離程が2000メートル前方にシフトされます。 重要で理解しておかなければならないポイントとして、 &ldquo;距離程&rdquo; は$-ディレクティブが処理されるまでは実際に理解されないため、インクルードされるファイル内のすべての式は インクルードされた後実際の距離程に後にオフセットさせるためのフラグを内部的に立てるだけであることに注意して下さい。 即ちこれが意味する所として、インクルードされたファイル内に 1$Rnd(2;8)00 のような記述があったとして、まだ実際のオフセット後の距離程が形成されていない段階であっても、それらは正しくオフセットされます。</p>
 
 <div id="warning">
 <span>⚠</span>
-<p>The track position offset feature is only available in the development release 1.2.11 and above.</p>
+<p>距離程のオフセット機能は release 1.2.11 以降に対応します。</p>
 
 </div>
 
@@ -603,93 +618,93 @@ $Include(<em>File<sub>1</sub></em>; <em>Weight<sub>1</sub></em>; <em>File<sub>2<
 <hr />
 
 <div id="command">
-<p>$Chr(<em>Ascii</em>)</p>
+<p>$Chr(<em>アスキーコード番号</em>)</p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Ascii</em></strong>: An integer in the range from 20 to 127, or 10 or 13, corresponding to an ASCII character of the same code.</p>
+<p><strong><em>アスキーコード番号</em></strong>:  20 から 127までの整数値、もしくは 10、13のいずれかの整数値で、 ASCIIコード表の同じ番号に対応します。</p>
 
 </div>
 
 
-<p>This directive is replaced by the ASCII character represented by <em>Ascii</em>. This is useful if you want to include characters that are part of syntax rules or would be stripped away. A list of relevant characters:</p>
+<p>このディレクティブは <em>アスキーコード番号</em> で示される番号に対応するASCII 文字コードの文字へ置き換えます。 これは構文規則に用いる記号などを含めたりする場合や、除去したい場合に有用です。 関連するASCII文字のリスト:</p>
 
 
 <table class='type0'>
 <thead>
 <tr>
-<th>Code</th>
-<th>Meaning</th>
-<th>Character</th>
+<th>ASCIIコード番号</th>
+<th>意味</th>
+<th>文字</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td>10</td>
-<td>Newline</td>
+<td>改行</td>
 <td><em>newline</em></td>
 </tr>
 
 <tr>
 <td>13</td>
-<td>Newline</td>
+<td>改行</td>
 <td><em>newline</em></td>
 </tr>
 
 <tr>
 <td>20</td>
-<td>Space</td>
+<td>スペース</td>
 <td><em>space</em></td>
 </tr>
 
 <tr>
 <td>40</td>
-<td>Opening parentheses</td>
+<td>開き括弧</td>
 <td>(</td>
 </tr>
 
 <tr>
 <td>41</td>
-<td>Closing parentheses</td>
+<td>閉じ括弧</td>
 <td>)</td>
 </tr>
 
 <tr>
 <td>44</td>
-<td>Comma</td>
+<td>カンマ</td>
 <td>,</td>
 </tr>
 
 <tr>
 <td>59</td>
-<td>Semicolon</td>
+<td>セミコロン</td>
 <td>;</td>
 </tr>
 </tbody>
 </table>
 
 
-<p>The sequence $Chr(13)$Chr(10) is handled as a single newline. Inserting $Chr(59) can be interpreted as a comment starter or as an argument separator, depending on where it is used.</p>
+<p>$Chr(13)$Chr(10) のシーケンスは単一の改行として扱われます。 $Chr(59) が挿入された場合、 それが使用されている場所に応じてコメントの開始、もしくは引数の区切り文字として解釈されます。</p>
 
 <hr />
 
 <div id="command">
-<p>$Rnd(<em>Start</em>; <em>End</em>)</p>
+<p>$Rnd(<em>下限の数値</em>; <em>上限の数値</em>)</p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Start</em></strong>: An integer representing the lower bound.<br />
-<strong><em>End</em></strong>: An integer representing the upper bound.</p>
+<p><strong><em>下限の数値</em></strong>: 乱数の数値の下限を表す整数値
+<strong><em>上限の数値</em></strong>: 乱数の上限を表す整数値</p>
 
 </div>
 
 
-<p>This directive is replaced by a random integer in the range from <em>Start</em> to <em>End</em>. It is useful to add randomness to a route.</p>
+<p>このディレクティブは <em>下限の数値</em> から <em>上限の数値</em> までのランダムな整数値を置き換えます。 これは例えば路線にランダム性を持たせたい時に有用です。</p>
 
 <table style="border: none;">
   <tbody>
@@ -738,24 +753,24 @@ $Include(<em>File<sub>1</sub></em>; <em>Weight<sub>1</sub></em>; <em>File<sub>2<
 <hr />
 
 <div id="command">
-<p>$Sub(<em>Index</em>) = <em>Expression</em></p>
+<p>$Sub(<em>インデックス</em>) = <em>表現</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Index</em></strong>: A non-negative integer representing the index of a variable.<br />
-<strong><em>Expression</em></strong>: The expression to store in the variable.</p>
+<p><strong><em>インデックス</em></strong>: 変数のインデックスを表す負でない整数.<br />
+<strong><em>表現</em></strong>: 変数に格納される内容.</p>
 
 </div>
 
 
-<p>This directive should only appear as a single expression. It is used to assign <em>Expression</em> to a variable identified by <em>Index</em>. The whole $Sub directive is replaced by an empty string once the assignment is done. It is useful for storing values obtained by the $Rnd directive in order to reuse the same randomly-generated value. See the following definition of the $Sub(<em>Index</em>) directive for examples.</p>
+<p>このディレクティブは単一の式としてのみ表示されます。 <em>インデックス</em> で割り当てられた場所へ、 <em>表現</em> の内容で置き換えるために使用されます。 すべての割当が完了すると、 $Sub ディレクティブは空の文字列に置き換えられます。 $Rnd ディレクティブで生成された乱数値を変化させずに共用したい場合、それを保存したいときに有用です。 例については次の $Sub(<em>インデックス</em>) ディレクティブを参照して下さい。</p>
 
 <div id="warning">
-<h4 id="implementation-note">Implementation note</h4>
+<h4 id="実装にあたってのメモ">実装にあたってのメモ</h4>
 
-<p>While it is also possible to store non-numeric strings, it is not possible to include commas via $Chr(44) and have them work as a statement separator. However, it is possible to store a semicolon as the first character via $Chr(59) and have it work as a comment. For conditional expressions, you should use $Include or $If, though.</p>
+<p>数値以外の文字列を格納することも可能ですが、 コンマを含める際に $Chr(44) を用いてもステートメントの区切りとして機能させることはできません。 ですが、 最初の文字として $Chr(59) 含めさせて、コメントとして機能させることは可能です。 条件式に用いる場合には、 $Include もしくは $If を用いる必要があります。</p>
 
 </div>
 
@@ -763,18 +778,18 @@ $Include(<em>File<sub>1</sub></em>; <em>Weight<sub>1</sub></em>; <em>File<sub>2<
 <hr />
 
 <div id="command">
-<p>$Sub(<em>Index</em>)</p>
+<p>$Sub(<em>インデックス</em>)</p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Index</em></strong>: A non-negative integer representing the index of the variable to retrieve.</p>
+<p><strong><em>インデックス</em></strong>: 呼び出される変数のインデックスを表す負でない整数。</p>
 
 </div>
 
 
-<p>This directive is replaced by the content of the variable <em>Index</em>. The variable must have been assigned prior to retrieving it.</p>
+<p>このディレクティブは、 変数*インデックス*に格納されている内容に置き換えます。 変数は置き換えられる前に予め設定されていなければなりません。</p>
 
 <table style="border: none;">
   <tbody>

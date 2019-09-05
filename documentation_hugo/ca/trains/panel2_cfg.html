@@ -289,11 +289,11 @@
           
         </li>
         
-        <li><a href="../../ca/information/standards.html">Standards</a>
+        <li><a href="../../ca/information/standards.html">Estàndards</a>
           
         </li>
         
-        <li><a href="../../ca/information/distribution.html">Distributing add-ons</a>
+        <li><a href="../../ca/information/distribution.html">Distribució de continguts</a>
           
         </li>
         
@@ -337,7 +337,7 @@
       
       <ul class="second">
         
-        <li><a href="../../ca/examples/demoroute.html">Demonstration route</a>
+        <li><a href="../../ca/examples/demoroute.html">Ruta de demostració</a>
           
         </li>
         
@@ -373,8 +373,23 @@
       </a>
       
       <hr class="dropdown-divider">
+      <a href="../../es_mx/trains/panel2_cfg.html" class="dropdown-item">
+        Mexican Spanish
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../fr/trains/panel2_cfg.html" class="dropdown-item">
+        French
+      </a>
+      
+      <hr class="dropdown-divider">
       <a href="../../ja/trains/panel2_cfg.html" class="dropdown-item">
         日本語
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../zh/trains/panel2_cfg.html" class="dropdown-item">
+        Chinese
       </a>
       
     </div>
@@ -397,18 +412,18 @@
 <div id="content">
   
 
-<h2 id="contents">■ Contents</h2>
+<h2 id="continguts">■ Continguts</h2>
 
 <ul class='contents'>
 <li><a href="#overview">1. Descripció</a></li>
-<li><a href="#syntax">2. Syntax</a></li>
-<li><a href="#this">3. The This section</a></li>
-<li><a href="#pilotlamp">4. The PilotLamp section</a></li>
-<li><a href="#needle">5. The Needle section</a></li>
-<li><a href="#digitalnumber">6. The DigitalNumber section</a></li>
-<li><a href="#digitalgauge">7. The DigitalGauge section</a></li>
-<li><a href="#lineargauge">8. The LinearGauge section</a></li>
-<li><a href="#timetable">9. The Timetable section</a></li>
+<li><a href="#syntax">2. Sintaxi</a></li>
+<li><a href="#this">3. Secció This</a></li>
+<li><a href="#pilotlamp">4. Secció PilotLamp</a></li>
+<li><a href="#needle">5. Secció Needle</a></li>
+<li><a href="#digitalnumber">6. Secció DigitalNumber</a></li>
+<li><a href="#digitalgauge">7. Secció DigitalGauge</a></li>
+<li><a href="#lineargauge">8. Secció LinearGauge</a></li>
+<li><a href="#timetable">9. Secció Timetable</a></li>
 <li><a href="#subjects">10. Available subjects</a></li>
 </ul>
 
@@ -421,7 +436,7 @@
 <p>The panel2.cfg file is a plain text file encoded in any arbitrary <a href="../../ca/information/encodings.html" target="_blank">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../ca/information/numberformats.html" target="_blank">parsing model</a> for numbers is <strong>Loose</strong>, however, you are encouraged to produce <em>Strict</em> output nonetheless. The file is required to be located inside the train folder and is expected to be named <strong>panel2.cfg</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
 
 <div id="notice">
-<h4 id="layers">Layers</h4>
+<h4 id="capes">Capes</h4>
 
 <p>All elements in the panel are associated layers. The layer is described as an integer, where small values represent the background and high numbers the foreground. When placing elements, you should make sure that no overlapping elements share the same layer number. The background image of the panel is always associated layer number 0, so elements on top of it should start with layer number 1 or higher. If you want to place elements behind the panel background image, you can likewise use negative numbers to represent these layers.</p>
 
@@ -448,7 +463,7 @@
 </div>
 
 
-<h2 id="a-name-syntax-a-2-syntax"><a name="syntax"></a>■ 2. Syntax</h2>
+<h2 id="a-name-syntax-a-2-sintaxi"><a name="syntax"></a>■ 2. Sintaxi</h2>
 
 <p>Each line in the file can be empty (or solely consist of white spaces) and will be ignored, can mark the beginning of a new section or contain key-value pairs inside a section. All key-value pairs relate to the last section opened.</p>
 
@@ -474,7 +489,7 @@
 
 <h2 id="a-name-this-a-3-the-this-section"><a name="this"></a>■ 3. The This section</h2>
 
-<p>The This section defines the background image to use for the panel and which resolution the panel has. Only one This section may be used within the file.</p>
+<p>La secció This defineix la imatge de fons que s&rsquo;utilitzarà al tauler i la resolució del tauler. Només es pot utilitzar una secció This al fitxer.</p>
 
 <hr />
 
@@ -489,7 +504,7 @@
 <hr />
 
 <div id="command">
-<p>Resolution = <em>Value</em></p>
+<p>Resolution = <em>Valor</em></p>
 
 </div>
 
@@ -503,7 +518,7 @@
 <hr />
 
 <div id="command">
-<p>Left = <em>Value</em></p>
+<p>Left = <em>Valor</em></p>
 
 </div>
 
@@ -517,7 +532,7 @@
 <hr />
 
 <div id="command">
-<p>Right = <em>Value</em></p>
+<p>Right = <em>Valor</em></p>
 
 </div>
 
@@ -531,7 +546,7 @@
 <hr />
 
 <div id="command">
-<p>Top = <em>Value</em></p>
+<p>Top = <em>Valor</em></p>
 
 </div>
 
@@ -545,7 +560,7 @@
 <hr />
 
 <div id="command">
-<p>Bottom = <em>Value</em></p>
+<p>Bottom = <em>Valor</em></p>
 
 </div>
 
@@ -642,7 +657,7 @@
 </div>
 
 
-<h2 id="a-name-pilotlamp-a-4-the-pilotlamp-section"><a name="pilotlamp"></a>■ 4. The PilotLamp section</h2>
+<h2 id="a-name-pilotlamp-a-4-secció-pilotlamp"><a name="pilotlamp"></a>■ 4. Secció PilotLamp</h2>
 
 <p>The PilotLamp section creates an indicator that can be made visible or invisible. You can use as many of these sections as required.</p>
 
@@ -743,7 +758,7 @@
 </div>
 
 
-<h2 id="a-name-needle-a-5-the-needle-section"><a name="needle"></a>■ 5. The Needle section</h2>
+<h2 id="a-name-needle-a-5-secció-needle"><a name="needle"></a>■ 5. Secció Needle</h2>
 
 <p>The Needle section creates a rotating element, or needle. You can use as many of these sections as required.</p>
 
@@ -908,7 +923,7 @@
 <hr />
 
 <div id="command">
-<p>Minimum = <em>Value</em></p>
+<p>Minimum = <em>Valor</em></p>
 
 </div>
 
@@ -922,7 +937,7 @@
 <hr />
 
 <div id="command">
-<p>Maximum = <em>Value</em></p>
+<p>Maximum = <em>Valor</em></p>
 
 </div>
 
@@ -936,7 +951,7 @@
 <hr />
 
 <div id="command">
-<p>NaturalFreq = <em>Value</em></p>
+<p>NaturalFreq = <em>Valor</em></p>
 
 </div>
 
@@ -952,7 +967,7 @@
 <hr />
 
 <div id="command">
-<p>DampingRatio = <em>Value</em></p>
+<p>DampingRatio = <em>Valor</em></p>
 
 </div>
 
@@ -981,7 +996,7 @@
 </div>
 
 
-<h2 id="a-name-digitalnumber-a-6-the-digitalnumber-section"><a name="digitalnumber"></a>■ 6. The DigitalNumber section</h2>
+<h2 id="a-name-digitalnumber-a-6-secció-digitalnumber"><a name="digitalnumber"></a>■ 6. Secció DigitalNumber</h2>
 
 <p>The DigitalNumber section creates an indicator that can switch between multiple states, useful to build up a display of decimal digits. You can use as many of these sections as required.</p>
 
@@ -1096,7 +1111,7 @@
 </div>
 
 
-<h2 id="a-name-digitalgauge-a-7-the-digitalgauge-section"><a name="digitalgauge"></a>■ 7. The DigitalGauge section</h2>
+<h2 id="a-name-digitalgauge-a-7-secció-digitalgauge"><a name="digitalgauge"></a>■ 7. Secció DigitalGauge</h2>
 
 <p>The DigitalGauge section creates a solid-color square of which only a radial section is shown at a time. You can use as many of these sections as required.</p>
 
@@ -1275,7 +1290,7 @@
 </div>
 
 
-<h2 id="a-name-lineargauge-a-8-the-lineargauge-section"><a name="lineargauge"></a>■ 8. The LinearGauge section</h2>
+<h2 id="a-name-lineargauge-a-8-secció-lineargauge"><a name="lineargauge"></a>■ 8. Secció LinearGauge</h2>
 
 <p>The LinearGauge section creates a panel layer, which uses texture shifting to create a sliding linear gauge. You can use as many of these sections as required.</p>
 
@@ -1395,7 +1410,7 @@
 </div>
 
 
-<h2 id="a-name-timetable-a-9-the-timetable-section"><a name="timetable"></a>■ 9. The Timetable section</h2>
+<h2 id="a-name-timetable-a-9-secció-timetable"><a name="timetable"></a>■ 9. Secció Timetable</h2>
 
 <p>The Timetable section defines where to place custom timetables. The actual images are loaded via the route file. Only one Timetable section may be used within the file.</p>
 
@@ -1854,14 +1869,14 @@
 </table>
 
 
-<h5 id="suffixes">● Suffixes</h5>
+<h5 id="sufixos">● Sufixos</h5>
 
 
 <table class='type0'>
 <thead>
 <tr>
 <th>Subject suffix</th>
-<th>Description</th>
+<th>Descripció</th>
 </tr>
 </thead>
 

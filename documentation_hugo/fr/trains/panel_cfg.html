@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8"/>
+    <title>openBVE Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="../../css/bulma.custom.css">
+    <link rel="icon" href="../../favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta name="generator" content="Hugo 0.53" />
+
+  </head>
+  <body>
+
+    <div id="sidebar">
+
+      
+      <div id="site-logo">
+          <img alt="Site logo" src="../../images/logo.png">
+      </div>
+      
+
+      <nav>
+<input type="checkbox" id="burger-toggle" class="burger-toggle" hidden>
+
+<div id="menu-entries">
+  <ul class="first">
+    
+    
+    
+    <li>Objects
+      
+      <ul class="second">
+        
+        <li>Native formats
+          
+          <ul class="third">
+            
+            <li><a href="../../fr/objects/native/b3d.html">The B3D object</a>
+              
+            </li>
+            
+            <li><a href="../../fr/objects/native/csv.html">The CSV object</a>
+              
+            </li>
+            
+            <li><a href="../../fr/objects/native/animated.html">The ANIMATED object</a>
+              
+            </li>
+            
+            
+              
+            </li>
+            
+            
+              
+            </li>
+            
+            
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>Other formats
+          
+          <ul class="third">
+            
+            <li><a href="../../fr/objects/other/loksim.html">Loksim3D (.l3dobj)</a>
+              
+            </li>
+            
+            <li><a href="../../fr/objects/other/x.html">Microsoft DirectX (.x)</a>
+              
+            </li>
+            
+            <li><a href="../../fr/objects/other/msts.html">Microsoft Train Simulator (.s)</a>
+              
+            </li>
+            
+            <li><a href="../../fr/objects/other/obj.html">Wavefront (.obj)</a>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li><a href="../../fr/objects/information.html">Information and tips</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Routes
+      
+      <ul class="second">
+        
+        <li><a href="../../fr/routes/csv.html">The CSV route</a>
+          
+        </li>
+        
+        
+          
+          <ul class="third">
+            
+            <li><a href="../../fr/routes/xml/dynamiclight.html">Adding Dynamic Lighting</a>
+              
+            </li>
+            
+            <li><a href="../../fr/routes/xml/dynamicbackground.html">Dynamic and Object Based Backgrounds</a>
+              
+            </li>
+            
+            <li><a href="../../fr/routes/xml/route_marker.html">Scripted Markers</a>
+              
+            </li>
+            
+            <li><a href="../../fr/routes/xml/stationxml.html">XML Stations &amp; Request Stops</a>
+              
+            </li>
+            
+            <li><a href="../../fr/routes/xml/trackfollowingobject.html">Track Following Object</a>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li><a href="../../fr/routes/micsounds.html">Playing Sounds from a Microphone Input</a>
+          
+        </li>
+        
+        <li><a href="../../fr/routes/rw.html">The RW route</a>
+          
+        </li>
+        
+        <li><a href="../../fr/routes/tutorial_ats.html">Tutorial: Using ATS</a>
+          
+        </li>
+        
+        <li><a href="../../fr/routes/tutorial_atc.html">Tutorial: Using ATC</a>
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Trains
+      
+      <ul class="second">
+        
+        <li><a href="../../fr/trains/overview.html">Overview</a>
+          
+        </li>
+        
+        <li><a href="../../fr/trains/train_dat.html">The train.dat file</a>
+          
+        </li>
+        
+        <li><a href="../../fr/trains/train_xml.html">The train.xml file</a>
+          
+        </li>
+        
+        <li><a href="../../fr/trains/extensions_cfg.html">The extensions.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../fr/trains/panel_cfg.html">The panel.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../fr/trains/panel2_cfg.html">The panel2.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../fr/trains/panel_animated.html">The panel.animated file</a>
+          
+        </li>
+        
+        <li><a href="../../fr/trains/default_sounds.html">Default sounds</a>
+          
+        </li>
+        
+        <li><a href="../../fr/trains/sound_cfg.html">The sound.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../fr/trains/openbveats.html">The OpenBveAts Plugin</a>
+          
+        </li>
+        
+        <li><a href="../../fr/trains/ats_cfg.html">The ats.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../fr/trains/plugins.html">Train plugins</a>
+          
+          <ul class="third">
+            
+            
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li><a href="../../fr/trains/information.html">Information and tips</a>
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Plugins
+      
+      <ul class="second">
+        
+        <li><a href="../../fr/plugins/overview.html">Overview</a>
+          
+        </li>
+        
+        
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Information
+      
+      <ul class="second">
+        
+        <li><a href="../../fr/information/encodings.html">Character encodings</a>
+          
+        </li>
+        
+        <li><a href="../../fr/information/numberformats.html">Number formats</a>
+          
+        </li>
+        
+        <li><a href="../../fr/information/whitespaces.html">White Spaces</a>
+          
+        </li>
+        
+        <li><a href="../../fr/information/textureformats.html">Texture formats</a>
+          
+        </li>
+        
+        <li><a href="../../fr/information/soundformats.html">Sound formats</a>
+          
+        </li>
+        
+        <li><a href="../../fr/information/standards.html">Standards</a>
+          
+        </li>
+        
+        <li><a href="../../fr/information/distribution.html">Distributing add-ons</a>
+          
+        </li>
+        
+        <li><a href="../../fr/information/forking.html">Forking guidelines</a>
+          
+        </li>
+        
+        <li><a href="../../fr/information/bve.html">Vs. BVE Trainsim</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Tools
+      
+      <ul class="second">
+        
+        <li><a href="../../fr/tools/objectviewer.html">Object Viewer</a>
+          
+        </li>
+        
+        <li><a href="../../fr/tools/objectbender.html">Object Bender</a>
+          
+        </li>
+        
+        <li><a href="../../fr/tools/routeviewer.html">Route Viewer</a>
+          
+        </li>
+        
+        <li><a href="../../fr/tools/traineditor.html">Train Editor</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Further Examples
+      
+      <ul class="second">
+        
+        <li><a href="../../fr/examples/demoroute.html">Demonstration route</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+  </ul>
+</div>
+</nav>
+
+    </div>
+
+    <div id="language-menu">
+<div class="dropdown is-hoverable">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+      <span>Language</span>
+      <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu" role="menu">
+    <div class="dropdown-content">
+      <a href="../../fr/trains/panel_cfg.html" class="dropdown-item">
+        French
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../ca/trains/panel_cfg.html" class="dropdown-item">
+        Català
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../en/trains/panel_cfg.html" class="dropdown-item">
+        English
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../es_mx/trains/panel_cfg.html" class="dropdown-item">
+        Mexican Spanish
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../ja/trains/panel_cfg.html" class="dropdown-item">
+        日本語
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../zh/trains/panel_cfg.html" class="dropdown-item">
+        Chinese
+      </a>
+      
+    </div>
+  </div>
+</div>
+</div>
+
+
+    <div id="container">
+
+        <div id="page-title">
+          <h1>The <strong>panel.cfg</strong> file format</h1>
+        </div>
+
+        
+
+
+
+
+<div id="content">
+  
+
+<h2 id="contents">■ Contents</h2>
+
+<ul class='contents'>
+<li><a href="#overview">1. Overview</a></li>
+<li><a href="#syntax">2. Syntax</a></li>
+<li><a href="#panel">3. The Panel section</a></li>
+<li><a href="#view">4. The View section</a></li>
+<li><a href="#pressureindicator">5. The PressureIndicator section</a></li>
+<li><a href="#speedindicator">6. The SpeedIndicator section</a></li>
+<li><a href="#digitalindicator">7. The DigitalIndicator section</a></li>
+<li><a href="#pilotlamp">8. The PilotLamp section</a></li>
+<li><a href="#watch">9. The Watch section</a></li>
+<li><a href="#brakeindicator">10. The BrakeIndicator section</a></li>
+</ul>
+
+
+
+<h2 id="a-name-overview-a-1-overview"><a name="overview"></a>■ 1. Overview</h2>
+
+<p>The panel.cfg file allows to create 2D panels by defining which elements to use, like speedometers, pressure gauges etc., and where they are to be placed.</p>
+
+<p>The panel.cfg file is a plain text file encoded in any arbitrary <a href="../../fr/information/encodings.html" target="_blank">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../fr/information/numberformats.html" target="_blank">parsing model</a> for numbers is <strong>Loose</strong>, however, you are encouraged to produce <em>Strict</em> output nonetheless. The file is required to be located inside the train folder and is expected to be named <strong>panel.cfg</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
+
+<div id="notice">
+<h4 id="the-panel-cfg-is-outdated">The panel.cfg is outdated</h4>
+
+<p>The panel.cfg has been superseded by the panel2.cfg. You can achieve the full functionality of the panel.cfg and more by using the panel2.cfg instead. If both files are present in the train folder, the panel2.cfg has precedence over the panel.cfg.</p>
+
+</div>
+
+
+<p>➟ <a href="../../fr/trains/panel_cfg_quick.html" target="_blank">See also the quick reference for the panel.cfg&hellip;</a></p>
+
+<div id="notice">
+<h4 id="overlay-and-lighting">Overlay and Lighting</h4>
+
+<p>The cab is rendered as an overlay. This means that the cab will always appear in front of scenery objects. This is intentional, because this way, rain, walls and other obstructing objects cannot be accidentally rendered inside the cab. Furthermore, lighting in the cab is different than in the scenery. While the ambient brightness is reflected in the cab, the ambient color is not, and the cab always appears as if reflecting white light.</p>
+
+</div>
+
+
+<h2 id="a-name-syntax-a-2-syntax"><a name="syntax"></a>■ 2. Syntax</h2>
+
+<p>Each line in the file can be empty (or solely consist of white spaces) and will be ignored, can mark the beginning of a new section or contain key-value pairs inside a section. All key-value pairs relate to the last section opened.</p>
+
+<p>A new section is opened by starting the line with an opening bracket (U+005B) and ending it with a closing bracket (U+005D). The text in-between the brackets indicates the name of the section and is case-insensitive. White spaces at the beginning and the end of the line are ignored, as well as at the beginning and the end of the name of the section. Thus, the beginning of the section has the following form:</p>
+
+<div id="command">
+<p>[NameOfTheSection]</p>
+
+</div>
+
+
+<p>A key-value pair is indicated by giving the key, an equals sign (U+003D) and then the value. The key is case-insensitive. White spaces at the beginning and the end of the line are ignored, as well as in front and after the equals sign. Alternatively, white spaces surrounding the key and the value are ignored. Thus, a key-value pair as the following form:</p>
+
+<div id="command">
+<p>NameOfTheKey = Value</p>
+
+</div>
+
+
+<p>Some values are further split into multiple parts, separated by commas (U+002C). Instead of a comma, a colon (U+003A) can be used interchangeably.</p>
+
+<p>You can use comments anywhere at the end of a line. A comment is started by a semicolon (U+003B). Comments, if present, are stripped away from all lines before these are processed.</p>
+
+<h2 id="a-name-panel-a-3-the-panel-section"><a name="panel"></a>■ 3. The Panel section</h2>
+
+<p>The Panel section defines which background image to use. Only one Panel section is expected in a panel.cfg file.</p>
+
+<hr />
+
+<div id="command">
+<p>[Panel]</p>
+
+</div>
+
+
+<p>This starts the section.</p>
+
+<hr />
+
+<div id="command">
+<p>Background = <em>FileName</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>FileName</em></strong>: The image file to use as the panel background image.</p>
+
+</div>
+
+
+<p>Defines which background image to use. <em>File</em> is relative to the train folder. The image is aligned at the bottom-left of the screen, where a width of 480 corresponds to the right edge of the screen. You cannot meaningfully use images of larger width with the panel.cfg. Consider using the panel2.cfg if you want to employ images of any size. If this key-value pair is not used, the background image file is implicitly assumed to be called <em>Panel.bmp</em>. Pure blue in the image (red=0, green=0, blue=255) represents transparent pixels.</p>
+
+<h2 id="a-name-view-a-4-the-view-section"><a name="view"></a>■ 4. The View section</h2>
+
+<p>The View section defines the viewing angle conditions. Only one View section is expected in a panel.cfg file.</p>
+
+<hr />
+
+<div id="command">
+<p>[View]</p>
+
+</div>
+
+
+<p>This starts the section.</p>
+
+<hr />
+
+<div id="command">
+<p>Yaw = <em>ValueInDegrees</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>ValueInDegrees</em></strong>: A floating-point number measured in <strong>degrees</strong> indicating the yaw. Positive values represent right, negative ones left. The default value is 0.</p>
+
+</div>
+
+
+<div id="command">
+<p>Pitch = <em>ValueInDegrees</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>ValueInDegrees</em></strong>: A floating-point number measured in <strong>degrees</strong> indicating the pitch. Positive values represent up, negative ones down. The default value is 0.</p>
+
+</div>
+
+
+<p>Defines the pitch of the view. Any value entered will be additionally subtract by 11 degrees, resulting in a slight downward pitch if <em>ValueInDegrees</em> is 0. If this key-value pair is not used, the final viewing angle will be -11 degrees.</p>
+
+<h2 id="a-name-pressureindicator-a-5-the-pressureindicator-section"><a name="pressureindicator"></a>■ 5. The PressureIndicator section</h2>
+
+<p>This section creates a pressure indicator. You can use as many of these sections as required.</p>
+
+<hr />
+
+<div id="command">
+<p>[PressureIndicator]</p>
+
+</div>
+
+
+<p>This starts the section.</p>
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>PressureIndicator, PressureGauge, PressureMeter, 圧力計</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Type = <em>Value</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Value</em></strong>: The type of pressure indicator to use. The default value is 0.</p>
+
+</div>
+
+
+<p>▸ Options for <em>Value</em>:</p>
+
+<div id="command-arguments">
+<p><strong>0</strong>: The pressure indicator is a gauge.<br />
+<strong>1</strong>: The pressure indicator is an LED.</p>
+
+</div>
+
+
+<p><img src="../../images/illustration_pressuregauge.png" alt="illustration_pressuregauge" /><img src="../../images/illustration_pressuregauge_led.png" alt="illustration_pressuregauge_led" /></p>
+
+<p>This defines the type of the pressure indicator. While both the gauge type and the LED type indicators can show two different pressures, this is not generally useful for the LED type as the upper LED shape will block the view into the lower LED shape.</p>
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>Type, 形態</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>LowerNeedle = <em>Subject</em>, <em>RedValue</em>, <em>GreenValue</em>, <em>BlueValue</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Subject</em></strong>: The kind of pressure to indicate.<br />
+<strong><em>RedValue</em></strong>: The red component of the color. Measured from 0 (black) to 255 (red). The default value is 0.<br />
+<strong><em>GreenValue</em></strong>: The green component of the color. Measured from 0 (black) to 255 (green). The default value is 0.<br />
+<strong><em>BlueValue</em></strong>: The blue component of the color. Measured from 0 (black) to 255 (blue). The default value is 0.</p>
+
+</div>
+
+
+<p>▸ Options for <em>Subject</em>:</p>
+
+<div id="command-arguments">
+<p><strong>0</strong>: Does not show the lower needle.<br />
+<strong>1</strong> or <strong>BC</strong> or <strong>ブレーキシリンダ</strong>: Indicates the pressure of the brake cylinder.<br />
+<strong>2</strong> or <strong>BP</strong> or <strong>ブレーキ管</strong> or <strong>制動管</strong>: Indicates the pressure of the brake pipe.<br />
+<strong>3</strong> or <strong>ER</strong> or <strong>釣り合い空気溜め</strong> or <strong>釣り合い空気ダメ</strong> or <strong>つりあい空気溜め</strong> or <strong>ツリアイ空気ダメ</strong>: Indicates the pressure of the equalizing reservoir.<br />
+<strong>4</strong> or <strong>MR</strong> or <strong>元空気溜め</strong> or <strong>元空気ダメ</strong>: Indicates the pressure of the main reservoir.<br />
+<strong>5</strong> or <strong>SAP</strong> or <strong>直通管</strong>: Indicates the pressure of the straight air pipe.</p>
+
+</div>
+
+
+<p>Creates the lower needle for a gauge-type pressure indicator, or defines the color of the lower shape for an LED-type indicator.</p>
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>LowerNeedle, LowerHand, 下針</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>UpperNeedle = <em>Subject</em>, <em>RedValue</em>, <em>GreenValue</em>, <em>BlueValue</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Subject</em></strong>: The kind of pressure to indicate.<br />
+<strong><em>RedValue</em></strong>: The red component of the color. Measured from 0 (black) to 255 (red). The default value is 0.<br />
+<strong><em>GreenValue</em></strong>: The green component of the color. Measured from 0 (black) to 255 (green). The default value is 0.<br />
+<strong><em>BlueValue</em></strong>: The blue component of the color. Measured from 0 (black) to 255 (blue). The default value is 0.</p>
+
+</div>
+
+
+<p>▸ Options for <em>Subject</em>:</p>
+
+<div id="command-arguments">
+<p><strong>0</strong>: Does not show the upper needle.<br />
+<strong>1</strong> or <strong>BC</strong> or <strong>ブレーキシリンダ</strong>: Indicates the pressure of the brake cylinder.<br />
+<strong>2</strong> or <strong>BP</strong> or <strong>ブレーキ管</strong> or <strong>制動管</strong>: Indicates the pressure of the brake pipe.<br />
+<strong>3</strong> or <strong>ER</strong> or <strong>釣り合い空気溜め</strong> or <strong>釣り合い空気ダメ</strong> or <strong>つりあい空気溜め</strong> or <strong>ツリアイ空気ダメ</strong>: Indicates the pressure of the equalizing reservoir.<br />
+<strong>4</strong> or <strong>MR</strong> or <strong>元空気溜め</strong> or <strong>元空気ダメ</strong>: Indicates the pressure of the main reservoir.<br />
+<strong>5</strong> or <strong>SAP</strong> or <strong>直通管</strong>: Indicates the pressure of the straight air pipe.</p>
+
+</div>
+
+
+<p>Creates the upper needle for a gauge-type pressure indicator, or defines the color of the upper shape for an LED-type indicator.</p>
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>UpperNeedle, UpperHand, 上針</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Center = <em>X</em>, <em>Y</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>X</em></strong>: The X-coordinate in the panel image at which the center of the pressure indicator is placed <strong>in pixels</strong>. The default value is 0.<br />
+<strong><em>Y</em></strong>: The Y-coordinate in the panel image at which the center of the pressure indicator is placed <strong>in pixels</strong>. The default value is 0.</p>
+
+</div>
+
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>Center, 中心</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Radius = <em>ValueInPixels</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>ValueInPixels</em></strong>: The radius of the pressure indicator <strong>in pixels</strong>. The default value is 16.</p>
+
+</div>
+
+
+<p>For gauge-type indicators, defines the radius of the pressure gauge needle in pixels. For LED-type indicators, defines half the edge length of the LED-square in pixels. The radius is measured in pixels of the panel image.</p>
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>Radius, 半径</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Background = <em>FileName</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>FileName</em></strong>: The background image to use, relative to the train folder.</p>
+
+</div>
+
+
+<p>Creates a background for the pressure indicator. The background is shown below the needles or the LED-square. Pure blue in the image (red=0, green=0, blue=255) represents transparent pixels.</p>
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>Background, 背景</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Cover = <em>FileName</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>FileName</em></strong>: The cover image to use, relative to the train folder.</p>
+
+</div>
+
+
+<p>Creates a cover for the pressure indicator. The cover is shown on top of the needles or the LED-square. Pure blue in the image (red=0, green=0, blue=255) represents transparent pixels.</p>
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>Cover, ふた</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Unit = <em>Value</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Value</em></strong>: The type of unit to use for the <em>Minimum</em> and <em>Maximum</em> settings. The default value is 0.</p>
+
+</div>
+
+
+<p>▸ Options for <em>Value</em>:</p>
+
+<div id="command-arguments">
+<p><strong>0</strong> or <strong>kpa</strong>: The unit is kilo-pascal (1000 Pa).<br />
+<strong>1</strong> or <strong>kgf/cm2</strong> or <strong>kgf/cm^2</strong> or <strong>kg/cm2</strong> or <strong>kg/cm^2</strong>: The unit is kilogram-force per centimeter squared (98066.5 Pa).</p>
+
+</div>
+
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>Unit, 単位</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Minimum = <em>PressureValue</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>PressureValue</em></strong>: The minimum pressure corresponding to <em>Angle</em>. The unit is defined via <em>Unit</em>.</p>
+
+</div>
+
+
+<p>Defines the minimum pressure corresponding to the <em>Angle</em> measured clockwise from the 6 o&rsquo;clock position. The default value is 0.</p>
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>Minimum, 最小</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Maximum = <em>PressureValue</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>PressureValue</em></strong>: The maximum pressure corresponding to <em>Angle</em>. The unit is defined via <em>Unit</em>.</p>
+
+</div>
+
+
+<p>Defines the maximum pressure corresponding to the <em>Angle</em> measured counter-clockwise from the 6 o&rsquo;clock position. The default value is 1000.</p>
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>Maximum, 最大</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Angle = <em>ValueInDegrees</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>ValueInDegrees</em></strong>: The angle corresponding to the <em>Minimum</em> and <em>Maximum</em> pressures in <strong>degrees</strong>.</p>
+
+</div>
+
+
+<p>Defines the angle, measured clockwise from the 6 o&rsquo;clock position, corresponding to the <em>Minimum</em> pressure, and also the angle, measured counter-clockwise from the 6 o&rsquo;clock position, corresponding to the <em>Maximum</em> pressure. The default value is 45.</p>
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>Angle, 角度</p>
+
+</div>
+
+
+<h2 id="a-name-speedindicator-a-6-the-speedindicator-section"><a name="speedindicator"></a>■ 6. The SpeedIndicator section</h2>
+
+<p>This section creates an analog speed indicator. You can use as many of these sections as required.</p>
+
+<hr />
+
+<div id="command">
+<p>[SpeedIndicator]</p>
+
+</div>
+
+
+<p>This starts the section.</p>
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>SpeedIndicator, Speedometer, 速度計</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Type = <em>Value</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Value</em></strong>: The type of pressure indicator to use. The default value is 0.</p>
+
+</div>
+
+
+<p>▸ Options for <em>Value</em>:</p>
+
+<div id="command-arguments">
+<p><strong>0</strong>: The pressure indicator is a gauge.<br />
+<strong>1</strong>: The pressure indicator is an LED.</p>
+
+</div>
+
+
+<p><img src="../../images/illustration_speedometer.png" alt="illustration_speedometer" /><img src="../../images/illustration_speedometer_led.png" alt="illustration_speedometer_led" /></p>
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>Type, 形態</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Needle = <em>RedValue</em>, <em>GreenValue</em>, <em>BlueValue</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>RedValue</em></strong>: The red component of the color. Measured from 0 (black) to 255 (red). The default value is 255.<br />
+<strong><em>GreenValue</em></strong>: The green component of the color. Measured from 0 (black) to 255 (green). The default value is 255.<br />
+<strong><em>BlueValue</em></strong>: The blue component of the color. Measured from 0 (black) to 255 (blue). The default value is 255.</p>
+
+</div>
+
+
+<p>Defines the color for the needle (gauges) or for the overlay (LEDs).</p>
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>Needle, Hand, 針</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Center = <em>X</em>, <em>Y</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>X</em></strong>: The X-coordinate in the panel image at which the center of the speed indicator is placed <strong>in pixels</strong>. The default value is 0.<br />
+<strong><em>Y</em></strong>: The Y-coordinate in the panel image at which the center of the speed indicator is placed <strong>in pixels</strong>. The default value is 0.</p>
+
+</div>
+
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>Center, 中心</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Radius = <em>ValueInPixels</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>ValueInPixels</em></strong>: The radius of the pressure indicator <strong>in pixels</strong>. The default value is 16.</p>
+
+</div>
+
+
+<p>For gauge-type indicators, defines the radius of the pressure gauge needle in pixels. For LED-type indicators, defines half the edge length of the LED-square in pixels. The radius is measured in pixels of the panel image.</p>
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>Radius, 半径</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Background = <em>FileName</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>FileName</em></strong>: The background image to use, relative to the train folder.</p>
+
+</div>
+
+
+<p>Creates a background for the pressure indicator. The background is shown below the needles or the LED-square. Pure blue in the image (red=0, green=0, blue=255) represents transparent pixels.</p>
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>Background, 背景</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Cover = <em>FileName</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>FileName</em></strong>: The cover image to use, relative to the train folder.</p>
+
+</div>
+
+
+<p>Creates a cover for the pressure indicator. The cover is shown on top of the needles or the LED-square. Pure blue in the image (red=0, green=0, blue=255) represents transparent pixels.</p>
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>Cover, ふた</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Maximum = <em>SpeedValue</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>SpeedValue</em></strong>: The maximum speed corresponding to <em>Angle</em>. The unit is <strong>kilometers per hour</strong> (km/h).</p>
+
+</div>
+
+
+<p>Defines the maximum speed corresponding to the Angle measured counter-clockwise from the 6 o&rsquo;clock position. The default value is 120.</p>
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>Maximum, 最大</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Angle = <em>SpeedValue</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>SpeedValue</em></strong>: The angle corresponding to the <em>Maximum</em> speed in <strong>degrees</strong>.</p>
+
+</div>
+
+
+<p>Defines the angle, measured counter-clockwise from the 6 o&rsquo;clock position, corresponding to the Maximum speed. The default value is 60.</p>
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>Angle, 角度</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Atc = <em>FileName</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>FileName</em></strong>: The image file to extract ATC indicator lamps from, relative to the train folder.</p>
+
+</div>
+
+
+<p>Creates ATC indicators. The bitmap is required to have 13 square elements stacked horizontally, anchored at the right of the bitmap. The height of the bitmap defines the size of one square element. From left to right, the elements represent:</p>
+
+<p><img src="../../images/illustration_atc.png" alt="illustration_atc" /></p>
+
+<ul>
+<li><em>1<sup>st</sup></em>: ATC not currently available</li>
+<li><em>2<sup>nd</sup></em>: 0 km/h speed restriction</li>
+<li><em>3<sup>rd</sup></em>: 15 km/h speed restriction</li>
+<li><em>4<sup>th</sup></em>: 25 km/h speed restriction</li>
+<li><em>5<sup>th</sup></em>: 45 km/h speed restriction</li>
+<li><em>6<sup>th</sup></em>: 55 km/h speed restriction</li>
+<li><em>7<sup>th</sup></em>: 65 km/h speed restriction</li>
+<li><em>8<sup>th</sup></em>: 75 km/h speed restriction</li>
+<li><em>9<sup>th</sup></em>: 90 km/h speed restriction</li>
+<li><em>10<sup>th</sup></em>: 100 km/h speed restriction</li>
+<li><em>11<sup>th</sup></em>: 110 km/h speed restriction</li>
+<li><em>12<sup>th</sup></em>: 120 km/h speed restriction</li>
+<li><em>13<sup>th</sup></em>: ATS currently active</li>
+</ul>
+
+<p>The center of any of the indicators is placed on a circle defined by <em>Center</em> as the center of the circle and <em>AtsRadius</em> as the radius of the circle. The angle at which an element is placed on that circle corresponds to the respective speed, or to the 6 o&rsquo;clock position for the <em>ATC not currently available</em> and <em>ATS currently active</em> indicators. Only the one currently representative indicator is shown. Pure blue in the image (red=0, green=0, blue=255) represents transparent pixels.</p>
+
+<hr />
+
+<div id="command">
+<p>AtcRadius = <em>ValueInPixels</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>ValueInPixels</em></strong>: The radius <strong>in pixels</strong> at which ATC indicators are placed around the speed indicator. The default value is 0.</p>
+
+</div>
+
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>AtcRadius, Atc半径</p>
+
+</div>
+
+
+<h2 id="a-name-digitalindicator-a-7-the-digitalindicator-section"><a name="digitalindicator"></a>■ 7. The DigitalIndicator section</h2>
+
+<p>This section creates a digital speed indicator. You can use as many of these sections as required.</p>
+
+<hr />
+
+<div id="command">
+<p>[DigitalIndicator]</p>
+
+</div>
+
+
+<p>This starts the section.</p>
+
+<hr />
+
+<div id="command">
+<p>Number = <em>FileName</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>FileName</em></strong>: The image file to extract digits from, relative to the train folder. Is required to be specified.</p>
+
+</div>
+
+
+<p>Creates a three-digit decimal speed display in kilometers per hour (km/h). The bitmap is required to have 11 elements stacked vertically, anchored at the top-right of the bitmap. From top to bottom, the 1<sup>st</sup> through 10<sup>th</sup> elements represent the digits 0 through 9, while the 11<sup>th</sup> element represents a missing digit that is shown in the 10s when the speed is below 10 km/h, and in the 100s when the speed is below 100 km/h. Pure blue in the image (red=0, green=0, blue=255) represents transparent pixels.</p>
+
+<hr />
+
+<div id="command">
+<p>Corner = <em>Left</em>, <em>Top</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Left</em></strong>: The X-coordinate in the panel image at which the left of the speed indicator is placed <strong>in pixels</strong>. The default value is 0.<br />
+<strong><em>Top</em></strong>: The Y-coordinate in the panel image at which the top of the speed indicator is placed <strong>in pixels</strong>. The default value is 0.</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Size = <em>Width</em>, <em>Height</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Width</em></strong>: The width of a single digit inside the bitmap <strong>in pixels</strong>.<br />
+<strong><em>Height</em></strong>: The height of a single digit inside the bitmap <strong>in pixels</strong>.</p>
+
+</div>
+
+
+<p>Defines the size of a single digit. Is required to be specified.</p>
+
+<hr />
+
+<div id="command">
+<p>Unit = <em>Value</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Value</em></strong>: The type of unit to use for the display. The default value is 0.</p>
+
+</div>
+
+
+<p>▸ Options for <em>Value</em>:</p>
+
+<div id="command-arguments">
+<p><strong>0</strong> or <strong>km/h</strong>: The unit is kilometers per hour.<br />
+<strong>1</strong> or <strong>mph</strong>: The unit is international miles per hour.<br />
+<strong>2</strong> or <strong>m/s</strong>: The unit is meters per second.</p>
+
+</div>
+
+
+<h2 id="a-name-pilotlamp-a-8-the-pilotlamp-section"><a name="pilotlamp"></a>■ 8. The PilotLamp section</h2>
+
+<p>This section creates a door indicator. You can use as many of these sections as required.</p>
+
+<hr />
+
+<div id="command">
+<p>[PilotLamp]</p>
+
+</div>
+
+
+<p>This starts the section.</p>
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>PilotLamp, 知らせ灯</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>TurnOn = <em>FileName</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>FileName</em></strong>: The image file shown when the doors are fully closed.</p>
+
+</div>
+
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>TurnOn, 点灯</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>TurnOff = <em>FileName</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>FileName</em></strong>: The image file shown when the doors are not fully closed.</p>
+
+</div>
+
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>TurnOff, 消灯</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Corner = <em>Left</em>, <em>Top</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Left</em></strong>: The X-coordinate in the panel image <strong>in pixels</strong> at which the left of the pilot lamp is placed. The default value is 0.<br />
+<strong><em>Top</em></strong>: The Y-coordinate in the panel image <strong>in pixels</strong> at which the top of the pilot lamp is placed. The default value is 0.</p>
+
+</div>
+
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>Corner, 左上</p>
+
+</div>
+
+
+<h2 id="a-name-watch-a-9-the-watch-section"><a name="watch"></a>■ 9. The Watch section</h2>
+
+<p>This section creates a watch consisting of needles for hour, minute and second. You can use as many of these sections as required.</p>
+
+<hr />
+
+<div id="command">
+<p>[Watch]</p>
+
+</div>
+
+
+<p>This starts the section.</p>
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>Watch, 時計</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Background = <em>FileName</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>FileName</em></strong>: The background image to use, relative to the train folder.</p>
+
+</div>
+
+
+<p>Creates a background for the watch. The background is shown below the watch needles. Pure blue in the image (red=0, green=0, blue=255) represents transparent pixels.</p>
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>Background, 背景</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Center = <em>X</em>, <em>Y</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>X</em></strong>: The X-coordinate in the panel image at which the center of the watch is placed <strong>in pixels</strong>. The default value is 0.<br />
+<strong><em>Y</em></strong>: The Y-coordinate in the panel image at which the center of the watch is placed <strong>in pixels</strong>. The default value is 0.</p>
+
+</div>
+
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>Center, 中心</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Radius = <em>ValueInPixels</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>ValueInPixels</em></strong>: The radius of the watch needles <strong>in pixels</strong>. The default value is 16.</p>
+
+</div>
+
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>Radius, 半径</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Needle = <em>RedValue</em>, <em>GreenValue</em>, <em>BlueValue</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>RedValue</em></strong>: The red component of the color. Measured from 0 (black) to 255 (red). The default value is 255.<br />
+<strong><em>GreenValue</em></strong>: The green component of the color. Measured from 0 (black) to 255 (green). The default value is 255.<br />
+<strong><em>BlueValue</em></strong>: The blue component of the color. Measured from 0 (black) to 255 (blue). The default value is 255.</p>
+
+</div>
+
+
+<p>Defines the color for all of the three needles (second, minute and hour).</p>
+
+<div id="note">
+<h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
+
+<p>Needle, Hand, 針</p>
+
+</div>
+
+
+<h2 id="a-name-brakeindicator-a-10-the-brakeindicator-section"><a name="brakeindicator"></a>■ 10. The BrakeIndicator section</h2>
+
+<p>This section creates an indicator depicting the state of the power and brake handles. You can use as many of these sections as required.</p>
+
+<hr />
+
+<div id="command">
+<p>[BrakeIndicator]</p>
+
+</div>
+
+
+<p>This starts the section.</p>
+
+<hr />
+
+<div id="command">
+<p>Image = <em>FileName</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>FileName</em></strong>: The image to use, relative to the train folder. Is required to be specified.</p>
+
+</div>
+
+
+<p>Creates an indicator depicting the state of the power and brake handles. The bitmap is required to have a certain number of elements (depending on the train characteristics) stacked horizontally, anchored at the left of the bitmap. The height of the bitmap is equivalent to the height of an element. Pure blue in the image (red=0, green=0, blue=255) represents transparent pixels. The meaning of the elements depends on the type of brake systems used:</p>
+
+<p><em>For air brakes, from left to right:</em></p>
+
+<ul>
+<li>Power notch <em>n</em></li>
+<li>Power notch <em>n</em>-1</li>
+<li>&hellip;</li>
+<li>Power notch <em>2</em></li>
+<li>Power notch <em>1</em></li>
+<li>Release (REL)</li>
+<li>Lap (LAP)</li>
+<li>Service (SRV)</li>
+<li>Emergency brake (EMG)</li>
+</ul>
+
+<p><em>For notched brakes without the hold brake device, from left to right:</em></p>
+
+<ul>
+<li>Power notch <em>n</em></li>
+<li>Power notch <em>n</em>-1</li>
+<li>&hellip;</li>
+<li>Power notch 2</li>
+<li>Power notch 1</li>
+<li>Neutral</li>
+<li>Brake notch 1</li>
+<li>Brake notch 2</li>
+<li>&hellip;</li>
+<li>Brake notch <em>m</em>-1</li>
+<li>Brake notch <em>m</em></li>
+<li>Emergency brake</li>
+</ul>
+
+<p><em>For notched brakes with the hold brake device, from left to right:</em></p>
+
+<ul>
+<li>Power notch <em>n</em></li>
+<li>Power notch <em>n</em></li>
+<li>Power notch <em>n</em>-1</li>
+<li>&hellip;</li>
+<li>Power notch 2</li>
+<li>Power notch 1</li>
+<li>Neutral</li>
+<li>Hold brake</li>
+<li>Brake notch 1</li>
+<li>Brake notch 2</li>
+<li>&hellip;</li>
+<li>Brake notch <em>m</em>-1</li>
+<li>Brake notch <em>m</em></li>
+<li>Emergency brake</li>
+</ul>
+
+<hr />
+
+<div id="command">
+<p>Corner = <em>Left</em>, <em>Top</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Left</em></strong>: The X-coordinate in the panel image at which the left of the indicator is placed <strong>in pixels</strong>. The default value is 0.<br />
+<strong><em>Top</em></strong>: The Y-coordinate in the panel image at which the top of the indicator is placed <strong>in pixels</strong>. The default value is 0.</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p>Width = <em>ValueInPixels</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>Value</em></strong>: The width of a single element inside the bitmap <strong>in pixels</strong>. Is required to be specified.</p>
+
+</div>
+
+
+</div>
+
+      <div id="footer">
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
+

@@ -289,11 +289,11 @@
           
         </li>
         
-        <li><a href="../../ca/information/standards.html">Standards</a>
+        <li><a href="../../ca/information/standards.html">Estàndards</a>
           
         </li>
         
-        <li><a href="../../ca/information/distribution.html">Distributing add-ons</a>
+        <li><a href="../../ca/information/distribution.html">Distribució de continguts</a>
           
         </li>
         
@@ -337,7 +337,7 @@
       
       <ul class="second">
         
-        <li><a href="../../ca/examples/demoroute.html">Demonstration route</a>
+        <li><a href="../../ca/examples/demoroute.html">Ruta de demostració</a>
           
         </li>
         
@@ -373,8 +373,23 @@
       </a>
       
       <hr class="dropdown-divider">
+      <a href="../../es_mx/information/distribution.html" class="dropdown-item">
+        Mexican Spanish
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../fr/information/distribution.html" class="dropdown-item">
+        French
+      </a>
+      
+      <hr class="dropdown-divider">
       <a href="../../ja/information/distribution.html" class="dropdown-item">
         日本語
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../zh/information/distribution.html" class="dropdown-item">
+        Chinese
       </a>
       
     </div>
@@ -386,7 +401,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>Distributing add-ons created for openBVE</h1>
+          <h1>Distribució de continguts creats per a l&rsquo;OpenBVE</h1>
         </div>
 
         
@@ -410,14 +425,14 @@
 <thead>
 <tr>
 <th><font color="Green">✓</font></th>
-<th>Save your text files as UTF-8.</th>
+<th>Desar els fitxers de text en UTF-8.</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><font color="Green">✓</font></td>
-<td>Save your text files in any Unicode encoding with a byte order mark.</td>
+<td>Desar els fitxers de text en qualsevol codificació d&rsquo;Unicode amb una marca d&rsquo;ordre de bytes.</td>
 </tr>
 
 <tr>
@@ -427,43 +442,43 @@
 
 <tr>
 <td><font color="Red">✗</font></td>
-<td>Use different encodings for each file in a route or train.</td>
+<td>Utilitzar codificacions diferents per a cada fitxer d&rsquo;una ruta o un tren.</td>
 </tr>
 </tbody>
 </table>
 
 
 
-<h2 id="archives-versus-installers">■ Archives versus installers</h2>
+<h2 id="arxius-i-instal-ladors">■ Arxius i instal·ladors</h2>
 
 <p>When packaging a route or train, consider using a single archive instead of multiple smaller ones, unless the size of the download justifies splitting the archive. Never use platform-specific installers as they are not portable (unless you also provide an archive as an alternative). Platform-specific installers include Windows EXE files, Linux RPM repositories and Mac DMG files.</p>
 
-<p>Acceptable and not acceptable practices:</p>
+<p>Pràctiques acceptables i inacceptables:</p>
 
 
 <table class='type1'>
 <thead>
 <tr>
 <th><font color="Green">✓</font></th>
-<th>Use an archive format such as 7Z, ZIP, TAR.GZ, etc.</th>
+<th>Utilitzar un format d&rsquo;arxiu com ara 7Z, ZIP, TAR.GZ, etc.</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><font color="Red">✗</font></td>
-<td>Use a platform-specific format, such as EXE, RPM, DMG, etc.</td>
+<td>Utilitzar un format específic per a una plataforma, com ara EXE, RPM, DMG, etc.</td>
 </tr>
 </tbody>
 </table>
 
 
 
-<h2 id="files-names-and-archives">■ Files names and archives</h2>
+<h2 id="noms-de-fitxer-en-arxius">■ Noms de fitxer en arxius</h2>
 
 <p>Generally, you can use any file name you want, that is, include any characters such as Latin, Japanese, Chinese, and the like. However, you need to make very sure that the archive format you use supports Unicode file names then. If not, the user might be unable to extract your files correctly, leading to a series of files that cannot be found later. Unfortunately, the popuplar ZIP format does not support Unicode file names, while for example <a href="https://www.7-zip.org/" target="_blank">7Z</a> does. Alternatively, restrict yourself to ASCII characters, e.g. A-Z, a-z, 0-9.</p>
 
-<p>Pràctiques acceptables i no acceptables</p>
+<p>Pràctiques acceptables i inacceptables</p>
 
 
 <table class='type1'>
@@ -489,11 +504,11 @@
 
 
 
-<h2 id="archives-and-the-folder-structure">■ Archives and the folder structure</h2>
+<h2 id="arxius-i-estructura-de-carpetes">■ Arxius i estructura de carpetes</h2>
 
 <p>You should always include the full folder structure, that is, <strong>Railway</strong> and <strong>Train</strong>, when istributing outes or trains. This will make it easiest for people to understand where they need to extract the ontent to. Never just include a subdirectory such as <em>YourNameHere</em> that is supposed to be extracted to the Railway\Sound folder, for example. Only the more experienced users will enerally e able to figure out where to put such content to by examining the files or their extensions.</p>
 
-<p>Pràctiques acceptables i no acceptables</p>
+<p>Pràctiques acceptables i inacceptables</p>
 
 
 <table class='type1'>
@@ -507,18 +522,18 @@
 <tbody>
 <tr>
 <td><font color="Red">✗</font></td>
-<td>Just include some subdirectory or files directly and expect users to figure out how to handle this.</td>
+<td>Incloure només subcarpetes i fitxers directament i esperar que els usuaris sàpiguen què fer-ne.</td>
 </tr>
 </tbody>
 </table>
 
 
 
-<h2 id="errors-and-warnings">■ Errors and warnings</h2>
+<h2 id="errors-i-avisos">■ Errors i avisos</h2>
 
 <p>Generally, your route should be free of errors. Please note that openBVE distinguishes between errors and warnings. An error is something definately wrong with your coding that should be fixed immediately. A warning is usually only raised to encourage inspection of potentially ambiguous code or code that might not have been meant the way it was written. In order to inspect your routes and trains for errors and warnings, go to the Options menu in openBVE and enable eporting them. RouteViewer and ObjectViewer always report such messages. Please note that the arious tools and openBVE itself might report a different set of messages as they don&rsquo;t share all the ame functionality. Distributing add-ons containing errors might give users the impression that omething was incompletely downloaded or was incorrectly packaged, and should generally be voided.</p>
 
-<p>Pràctiques acceptables i no acceptables</p>
+<p>Pràctiques acceptables i inacceptables</p>
 
 
 <table class='type1'>
@@ -542,7 +557,7 @@
 
 <tr>
 <td><font color="Red">✗</font></td>
-<td>Distribute an add-on that contains errors.</td>
+<td>Distribuir continguts que continguin errors.</td>
 </tr>
 </tbody>
 </table>

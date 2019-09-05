@@ -289,11 +289,11 @@
           
         </li>
         
-        <li><a href="../../ca/information/standards.html">Standards</a>
+        <li><a href="../../ca/information/standards.html">Estàndards</a>
           
         </li>
         
-        <li><a href="../../ca/information/distribution.html">Distributing add-ons</a>
+        <li><a href="../../ca/information/distribution.html">Distribució de continguts</a>
           
         </li>
         
@@ -337,7 +337,7 @@
       
       <ul class="second">
         
-        <li><a href="../../ca/examples/demoroute.html">Demonstration route</a>
+        <li><a href="../../ca/examples/demoroute.html">Ruta de demostració</a>
           
         </li>
         
@@ -373,8 +373,23 @@
       </a>
       
       <hr class="dropdown-divider">
+      <a href="../../es_mx/information/bve.html" class="dropdown-item">
+        Mexican Spanish
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../fr/information/bve.html" class="dropdown-item">
+        French
+      </a>
+      
+      <hr class="dropdown-divider">
       <a href="../../ja/information/bve.html" class="dropdown-item">
         日本語
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../zh/information/bve.html" class="dropdown-item">
+        Chinese
       </a>
       
     </div>
@@ -397,7 +412,7 @@
 <div id="content">
   
 
-<p>Aquesta pàgina enumera les diferències <strong>incompatibles</strong> entre l&rsquo;openBVE i el BVE Trainsim pel que fa als formats de fitxer; és a dir, característiques de continguts per al BVE Trainsim que s&rsquo;interpreten de manera diferent a l&rsquo;openBVE i tenen un resultat incompatible. Fins ara només es coneix una incompatibilitat d&rsquo;aquesta mena.</p>
+<p>Aquesta pàgina enumera les diferències <strong>incompatibles</strong> entre l&rsquo;OpenBVE i el BVE Trainsim pel que fa als formats de fitxer; és a dir, característiques de continguts per al BVE Trainsim que s&rsquo;interpreten de manera diferent a l&rsquo;OpenBVE i tenen un resultat incompatible. Fins ara només es coneix una incompatibilitat d&rsquo;aquesta mena.</p>
 
 <p>Please note that for all incompatible differences that are mentioned on this page, the resolution is the same: It is considered to be more important to provide stable and consistent features in openBVE than to make backward-incompatible changes between versions just to increase similarity to BVE Trainsim. All differences depicted on this page will thus be permanent.</p>
 
@@ -405,7 +420,7 @@
 
 <p>The Track.Signal command (alternatively: Track.Sig) is used to create a default Japanese-style signal in CSV routes (alternative spellings are used in RW routes).</p>
 
-<p>A l&rsquo;openBVE, l&rsquo;ordre Track.Signal accepta els arguments següents:</p>
+<p>A l&rsquo;OpenBVE, l&rsquo;ordre Track.Signal accepta els arguments següents:</p>
 
 <div id="command">
 <p><strong>Track.Signal</strong> <em>Aspects</em>; <em><del>Unused</del></em>; <em>X</em>; <em>Y</em>; <u><em>Yaw</em></u>; <em>Pitch</em>; <em>Roll</em></p>
@@ -416,12 +431,12 @@
 <p>Al BVE Trainsim, l&rsquo;ordre Track.Signal accepta els arguments següents:</p>
 
 <div id="command">
-<p><strong>Track.Signal</strong> <em>Aspects</em>; <em>Label</em>; <em>X</em>; <em>Y</em>; <u><em>Type</em></u></p>
+<p><strong>Track.Signal</strong> <em>Aspectes</em>; <em>Etiqueta</em>; <em>X</em>; <em>Y</em>; <u><em>Tipus</em></u></p>
 
 </div>
 
 
-<p>The <em>Label</em> parameter in BVE Trainsim is a textual description of the signal which serves no function in openBVE (thus termed <em>Unused</em> in the documentation).</p>
+<p>El paràmetre <em>Etiqueta</em> al BVE Trainsim és una descripció textual del senyal que no té cap ús a l&rsquo;OpenBVE (per tant, es considera <em>Fora d&rsquo;ús</em> a la documentació).</p>
 
 <p>BVE Trainsim features a <em>Type</em> argument which can take values 1, 2 or 3. It is used to denote different types of signals, e.g. home signal vs. departure signal. By mere accident, this argument was never included in openBVE, while subsequently, the need arose to include <em>Yaw</em>, <em>Pitch</em> and <em>Roll</em> arguments to provide for more control over a signal head&rsquo;s orientation. Consequently, BVE Trainsim&rsquo;s <em>Type</em> and openBVE&rsquo;s <em>Yaw</em> argument incompatibly overlap. If a route created for BVE Trainsim includes the <em>Type</em> argument, it will be (mis)interpreted as a yaw of up to 3 degrees in openBVE. Usually, this small angle should not produce noticable differences, especially given that the parameter is not often used anyway.</p>
 
