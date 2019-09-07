@@ -392,6 +392,11 @@
         Chinese
       </a>
       
+      <hr class="dropdown-divider">
+      <a href="../../ko/routes/csv.html" class="dropdown-item">
+        한국어
+      </a>
+      
     </div>
   </div>
 </div>
@@ -450,7 +455,7 @@
 
 <p>ルートファイルは、(Structure 名前空間)で定義された一連の命令セットにより、ルートデータ内で一貫して共通で利用されます 。 路線データ向けの追加のプロパティ、路線側が定義した既定の列車、沿線の背景のイメージファイルも同様に定義することができます。 最後に、ルートファイルは Track 名前空間でのコマンドにより指示します。 ここでは、 線路の座標 (殆どの場合、単位はメートル) を指定することにより、線路をカーブさせるタイミングや駅を設置したり、 壁や土手などを開始したり終わらせたりします。一般的には、 Track 名前空間はその他の名前空間を予め記述し、定義した後に記述する必要があります。</p>
 
-<p>The format assumes an implicit rail 0 which cannot be explicitly started or ended. Instead, it is present from the beginning of the route to the end, and it marks the rail the player&rsquo;s train drives on. rail 0 and the other rails are not only for used for visual, and also use for  <a href="../../ja/routes/xml/trackfollowingobject.html" target="_blank">Track Following Object</a>.</p>
+<p>ルートフォーマットでは、暗黙の規定として開始や終了命令を実行することができない rail 0 が仮定されます。 代わりに、それは路線の最初から最後まで存在し続け、プレイヤーが運転する列車は必ずここを走行します。 レール0 、またその他のレールは視覚的効果だけでなく、 <a href="../../ja/routes/xml/trackfollowingobject.html" target="_blank">Track Following Object</a> にも用いられます。</p>
 
 <p>幾何学的に、カーブや勾配は暗黙の ｒａｉｌ ０ に対して作用しますが、 その他のすべてのレールは rail 0 に相対的に連動して定義され、 rail 0 のカーブや勾配に従って追従します。 オーバーライドされない限りファイルフォーマットではブロック長は25mの固定長で構築され、 特定のコマンドは25mのブロック単位でしか用いることができません。 オブジェクトの配置は、常に直線的に接続する非曲線座標系を想定しています。</p>
 
@@ -815,23 +820,23 @@ $Include(<em>ファイルパス<sub>1</sub></em>; <em>確率<sub>1</sub></em>; <
   </tbody>
 </table>
 
-<p>In the previous example, all three Track.FreeObj commands are guaranteed to use the same randomly-generated value in order to place a free object on the same rail. If you inserted the $Rnd(3;5) directive in each of the three lines individually, the objects could be placed on different rails each time.</p>
+<p>先の例では、3つ全ての Track.FreeObj コマンドにおいて、生成された乱数値は全て同じ数値が用いられ、FreeOBJのオブジェクトが同じレール上に配置されることが保証されます。 もし其々のFreeOBJの命令で其々 $Rnd(3;5) ディレクティブを指定した場合、 各オブジェクトはそれぞれ毎回、別のレール上に配置される可能性があります。</p>
 
 <hr />
 
 <div id="command">
-<p>$If(<em>Condition</em>)</p>
+<p>$If(<em>状態</em>)</p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Condition</em></strong>: A number that represents <strong>false</strong> if zero, and <strong>true</strong> otherwise.</p>
+<p><strong><em>状態</em></strong>: ゼロの場合は <strong>false</strong> 、それ以外の場合は <strong>true</strong> に相当する数値を表します。</p>
 
 </div>
 
 
-<p>The $If directive allows to only process subsequent expressions if the specified condition evaluates to true (any non-zero number). $If must be followed by $EndIf in any subsequent expression. Optionally, an $Else directive may appear between $If and $EndIf.</p>
+<p>$If ディレクティブは、 状態が true (もしくは非ゼロの数値) と評価されたときのみ、後続の式を処理します。  $If の後に続く式の最後には、 $EndIf を記述しなければなりません。 オプションで、 $If と $EndIf の間に $Else ディレクティブを記述することができます。</p>
 
 <hr />
 
@@ -841,7 +846,7 @@ $Include(<em>ファイルパス<sub>1</sub></em>; <em>確率<sub>1</sub></em>; <
 </div>
 
 
-<p>The $Else directive allows to only process subsequent expressions if the condition in the preceding $If evaluated to false (zero).</p>
+<p>$Else ディレクティブは、 それに先行して記述された $If ディレクションで false (ゼロ) と 評価されたときのみ、後に続く処理を処理できます。</p>
 
 <hr />
 
@@ -851,7 +856,7 @@ $Include(<em>ファイルパス<sub>1</sub></em>; <em>確率<sub>1</sub></em>; <
 </div>
 
 
-<p>The $EndIf directive marks the end of an $If block that was started previously.</p>
+<p>$EndIf ディレクティブは、 その前に開始された $If ブロックの終了をマークするものです。</p>
 
 <table style="border: none;">
   <tbody>
@@ -904,11 +909,11 @@ $If($Rnd(0;1)), .FreeObj 0; 4, $Else(), .FreeObj 0; 5, $EndIf()
   </tbody>
 </table>
 
-<p>It is possible to nest $If blocks. If you place $If/$Else/$EndIf on separate lines, you may want to employ indentation to improve readability of the block structure (as in the first example).</p>
+<p>$If ブロックは、入れ子処理をすることができます。 (最初の例のように)、もし $If/$Else/$EndIf をそれぞれ別の行に配置した場合、インデントを使用して可読性を改善させることができます。</p>
 
 <hr />
 
-<p><strong>Finally</strong>, after the $-directives have been processed, all expressions in the route file are sorted according to their associated track positions.</p>
+<p><strong>最後に</strong>、  $-ディレクティブの全ての処理を終えると、 ルートファイルにある全ての表現は、それに関連する距離程に従って自動的にソートされます。</p>
 
 <table style="border: none;">
   <tbody>
@@ -982,9 +987,9 @@ Track.FreeObj 1; 42<br />
   </tbody>
 </table>
 
-<h2 id="a-name-options-a-4-the-options-namespace"><a name="options"></a>■ 4. The Options namespace</h2>
+<h2 id="a-name-options-a-4-options-名前空間"><a name="options"></a>■ 4. Options 名前空間</h2>
 
-<p>Commands from this namespace provide generic options that affect the way other commands are processed. You should make use of commands from this namespace before making use of commands from other namespaces.</p>
+<p>この名前空間におけるコマンドは、その他のコマンドの処理において路線ファイル全体に渡って影響を与えるオプションを提供します。 他の名前空間でコマンドを用いる前に、この名前区間のコマンドを予め実行しておく必要があります。</p>
 
 <hr />
 
@@ -995,14 +1000,14 @@ Track.FreeObj 1; 42<br />
 
 
 <div id="command-arguments">
-<p><strong><em>FactorInMeters<sub>i</sub></em></strong>: A floating-point number representing how many meters the desired unit has. The default value is 1 for <em>FactorInMeters1</em>, and 0 for all others.</p>
+<p><strong><em>FactorInMeters<sub>i</sub></em></strong>: 其々のユニットの長さの単位を表す浮動小数点数 <em>FactorInMeters1</em> の初期値は1で、それ以外は全て0です。</p>
 
 </div>
 
 
-<p>This command can be used to specify the unit of length to be used in other commands. When entering a generic track position of the form <em>Part<sub>1</sub></em>:<em>Part<sub>2</sub></em>:&hellip;:<em>Part<sub>n</sub></em>, each of the <em>Part<sub>i</sub></em> will be multiplied with the corresponding <em>FactorInMeters<sub>i</sub></em>, then all of these products are added to form a single track position represented in meters. Ideally, you should set the block length to an integer multiple of any of the units you use via Options.BlockLength.</p>
+<p>このコマンドを用いることで、他のコマンドで用いる長さの単位を指定できます。 汎用のユニット単位を <em>Part<sub>1</sub></em>:<em>Part<sub>2</sub></em>:&hellip;:<em>Part<sub>n</sub></em> と入力すると、 其々の <em>Part<sub>i</sub></em> は <em>FactorInMeters<sub>i</sub></em> に準ずる距離程に乗算され、 そののち全ての実体の距離程をメートル単位で生成します。 理想は Options.BlockLength を使用して、ブロック長を使用する単位の整数倍に設定すべきです。</p>
 
-<p>Examples of conversion factors:</p>
+<p>単位の変換例:</p>
 
 
 <table class='type0'>

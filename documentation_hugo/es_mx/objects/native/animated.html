@@ -301,7 +301,7 @@
           
         </li>
         
-        <li><a href="../../../es_mx/information/bve.html">Vs. Simulador de trenes BVE</a>
+        <li><a href="../../../es_mx/information/bve.html">Vs. simulador de trenes BVE Trainsim</a>
           
         </li>
         
@@ -392,6 +392,11 @@
         Chinese
       </a>
       
+      <hr class="dropdown-divider">
+      <a href="../../../ko/objects/native/animated.html" class="dropdown-item">
+        한국어
+      </a>
+      
     </div>
   </div>
 </div>
@@ -447,7 +452,7 @@
 
 <h5 id="una-pequeña-formalidad">● Una pequeña formalidad</h5>
 
-<p>El archivo es un texto plano codificado en cualquier arbitrario <a href="../../../es_mx/information/encodings.html" target="_blank">codificación</a>, Sin embargo, UTF-8 con un byte de marca de orden es la opción preferida. El <a href="../../../es_mx/information/numberformats.html" target="_blank">modelo de análisis</a> para números es <strong>Strict</strong>. El nombre de archivo es arbitrario, pero debe tener la extensión <strong>.animated</strong>. El archivo es interpretado por cada linea, desde arriba hasta abajo.</p>
+<p>El archivo es un texto plano codificado en cualquier arbitrario <a href="../../../es_mx/information/encodings.html" target="_blank">codificación</a>, Sin embargo, UTF-8 con un byte de orden marca es la opción preferida. El <a href="../../../es_mx/information/numberformats.html" target="_blank">modelo de análisis</a> para números es <strong>Strict</strong>. El nombre de archivo es arbitrario, pero debe tener la extensión <strong>.animated</strong>. El archivo es interpretado por cada linea, desde arriba hasta abajo.</p>
 
 <h2 id="a-name-description-a-2-secciones"><a name="description"></a>■ 2. Secciones</h2>
 
@@ -520,13 +525,13 @@ Esto defina la función para cambiar de estado. El resultado de la fórmula <em>
 
 </div>
 <br />
-These define the directions for the <em>TranslateXFunction</em>, <em>TranslateYFunction</em> and <em>TranslateZFunction</em>, respectively. The default directions are:</p>
+Esto defina la dirección para la función <em>TranslateXFunction</em>, <em>TranslateYFunction</em> y <em>TranslateZFunction</em>, respectivamente. Las direcciones predeterminadas son:</p>
 
 <p><em>TranslateXDirection = 1, 0, 0</em><br />
 <em>TranslateYDirection = 0, 1, 0</em><br />
 <em>TranslateZDirection = 0, 0, 1</em></p>
 
-<p>This means that TranslateXFunction will move right by default, TranslateYFunction up and TranslateZFunction forward, which is also why TranslateXFunction and so on bear their names. If you define other directions, then simply think of the three functions and associated directions as three independent ways to move the object in that direction.</p>
+<p>Esto significa que la función TranslateXFunction se moverá hacia la derecha predeterminado,  TranslateYFunction hacia arriba y TranslateZFunction hacia adelante, también es por eso que TranslateXFunction y así sucesivamente llevan sus nombres. Si usted define otras direcciones, entonces simplemente piensa que las tres funciones y sus direcciones asociadas como tres maneras independientes para si mover el objeto en esa dirección</p>
 
 <p><div id="command">
 <p><strong>TranslateXFunction = Formula</strong><br />
@@ -535,7 +540,7 @@ These define the directions for the <em>TranslateXFunction</em>, <em>TranslateYF
 
 </div>
 <br />
-These define the functions to move the object into the respective direction. The <em>Formula</em> needs to return the amount of meters to move from the initial position. The <em>X</em>, <em>Y</em> and <em>Z</em> parameters in the respective direction are multiplied by the result of <em>Formula</em>, so you could for example either multiple the formula by 2 or the direction by 2 if you want to double the speed of movement.</p>
+Esto defina la función que moverá el objeto en la dirección respectiva. La <em>Formula</em> necesita retornar la cantidad de metros a mover desde la posición inicial. Los parámetros <em>X</em>, <em>Y</em> y <em>Z</em> en la respectiva dirección son multiplicados por el resultado de la <em>Formula</em>, así que puedes por ejemplo multiplicar la formula por 2 o la dirección por 2 si es que deseas doblar la velocidad del movimiento</p>
 
 <p><div id="command">
 <p><strong>RotateXDirection = X, Y, Z</strong><br />
@@ -544,13 +549,13 @@ These define the functions to move the object into the respective direction. The
 
 </div>
 <br />
-These define the directions for the <em>RotateXFunction</em>, <em>RotateYFunction</em> and <em>RotateZFunction</em>, respectively. The default directions are:</p>
+Esto defina la dirección para la función <em>RotateXFunction</em>, <em>RotateYFunction</em> y <em>RotateZFunction</em>, respectivamente. Las direcciones predeterminadas son:</p>
 
 <p><em>RotateXDirection = 1, 0, 0</em><br />
 <em>RotateYDirection = 0, 1, 0</em><br />
 <em>RotateZDirection = 0, 0, 1</em></p>
 
-<p>This means that RotateXFunction will rotate around the x-axis by default, RotateYFunction around the Y-axis, and RotateZFunction around the z-axis, which is also why RotateXFunction and so on bear their names. If you define other directions, then simply think of the three functions and associated directions as three independent ways to rotate the object.</p>
+<p>Esto significa que la función RotateXFunction rotará sobre el eje X predeterminadamente, RotateYFunction sobre el eje Y, y RotateZFunction sobre el eje Z, también es por eso que RotateXFunction y asi sucesivamente llevan sus nombres. Si usted define otras direcciones, entonces simplemente piense de que estas tres funciones y sus direcciones asociadas como tres maneras independientes para asi rotar el objeto.</p>
 
 <p><div id="command">
 <p><strong>RotateXFunction = Formula</strong><br />
@@ -559,7 +564,7 @@ These define the directions for the <em>RotateXFunction</em>, <em>RotateYFunctio
 
 </div>
 <br />
-These define the functions to rotate along the respective direction in counter-clockwise order. The <em>Formula</em> needs to return the angle by which to rotate in radians. The order in which the rotations are performed is: RotateXFunction (first), RotateYFunction (then) and RotateZFunction (last). If you use more than one rotation function at a time, bear this order in mind. If necessary, overwrite the default directions for the rotations if you need a different order.</p>
+Esto defina la función para rotar a lo largo de la dirección respectiva en orden contra-reloj. La <em>Formula</em> necesita regresar el ángulo por el cual rotar en radianes. El orden que estas rotaciones son ejecutadas es: RotateXFunction (primero), RotateYFunction (después) and RotateZFunction (último). Si usted usa más de una función de rotación al momento, ten en mente este orden. De ser necesario, reescribe las direcciones predeterminadas para las rotaciones si necesitas un orden distinto.</p>
 
 <p><div id="command">
 <p><strong>RotateXDamping = NaturalFrequency, DampingRatio</strong><br />
@@ -568,7 +573,7 @@ These define the functions to rotate along the respective direction in counter-c
 
 </div>
 <br />
-These define damping for the corresponding functions. If not used, damping will not be performed. <em>NaturalFrequency</em> is a non-negative value corresponding to the angular frequency of an assumed undamped oscillator in radians per second. <em>DampingRatio</em> is a non-negative value indicating the type of damping. Values between 0 and 1 represent under-damping, 1 represents critical damping, and values above 1 represent over-damping.</p>
+Esto defina la amortiguación para la función correspondiente. Si no es usado, la amortiguación no será ejecutada. <em>NaturalFrequency</em> es un valor no negativo correspondiente a la frecuencia angular del supuesta oscilación sin amortiguación en radianes por segundo. <em>DampingRatio</em> es un valor no negativo indicando el tipo de amortiguación. Valores entre 0 y 1 representa baja amortiguación, 1 representa amortiguación crítica, y valores superiores a 1 representan sobre-amortiguación</p>
 
 <p><div id="command">
 <p><strong>TextureShiftXDirection = X, Y</strong><br />
@@ -576,12 +581,12 @@ These define damping for the corresponding functions. If not used, damping will 
 
 </div>
 <br />
-These define the directions for the <em>TextureShiftXFunction</em> and <em>TextureShiftYFunction</em>, respectively. The default directions are:</p>
+Esto defina las direcciones para la función <em>TextureShiftXFunction</em> y<em>TextureShiftYFunction</em>, respectivamente. Las direcciones por defecto son:</p>
 
 <p><em>TextureShiftXDirection = 1, 0</em><br />
 <em>TextureShiftYDirection = 0, 1</em></p>
 
-<p>This means that TextureShiftXFunction will shift the texture right by default, and TextureShiftYFunction down, which is also why TextureShiftXFunction and so on bear their names. If you define other directions, then simply think of the two functions and associated directions as two independent ways to shift textures on the objects.</p>
+<p>Esto significa que TextureShiftXFunction cambiará la textura a la derecha por defecto, y TextureShiftYFunction hacia abajo, también es por eso que TextureShiftXFunction y así sucesivamente llevan sus nombres. Si usted defina otras direcciones, entonces simplemente piense que estas dos funciones y sus direcciones asociadas como dos maneras independientes de cambiar las texturas en los objetos.</p>
 
 <p><div id="command">
 <p><strong>TextureShiftXFunction = Formula</strong><br />
@@ -589,197 +594,197 @@ These define the directions for the <em>TextureShiftXFunction</em> and <em>Textu
 
 </div>
 <br />
-These define the functions to shift the texture in the respective direction. The texture is shifted by the return value of <em>Formula</em> in texture coordinates. The integer part of the result is ignored, and a fractional part of 0.5 represents moving the texture half way. The SetTextureCoordinate commands in the object file define the coordinates, which are then added the outcome of these formulas.</p>
+Esto defina las funciones para cambiar las texturas en la dirección respectiva. La textura es cambiada por el valor retornado de <em>Formula</em> en coordenadas de textura. La parte entra del resultado es ignorada, y la parte fraccional de 0.5 representa mover la textura a la mitad. El comando SetTextureCoordinate en el objeto defina las coordenadas, que son después agregadas en el resultado de estas formulas.</p>
 
 <p><div id="command">
 <p><strong>TrackFollowerFunction = Formula</strong></p>
 
 </div>
 <br />
-This defines the function which moves an object along the path of <strong>Rail 0</strong>. <em>Formula</em> must return a distance in meters, for which the object is then moved, respecting the curves and height changes of <strong>Rail 0</strong>.</p>
+Esto defina la función el cual mueve un objecto a lo largo de la vía de <strong>Rail 0</strong>. La <em>Formula</em> debe retornar la distancia en metros, para así el objeto sea movido, respetando las curvas y los cambios de altura de <strong>Rail 0</strong></p>
 
 <p><div id="command">
-<p><strong>TextureOverride = Value</strong></p>
+<p><strong>TextureOverride = Valor</strong></p>
 
 </div>
 <br />
-<em>Value</em> = <strong>Timetable</strong>: All faces will show the timetable bitmap as set up by CSV/RW routes.<br />
-<em>Value</em> = <strong>None</strong>: The original textures will be displayed on the faces (default behavior).</p>
+<em>Valor</em> = <strong>Timetable</strong>: Todas las caras mostrarán la imagen del itinerario configuradas por las rutas CSV/RW.<br />
+<em>Valor</em> = <strong>None</strong>: Las texturas originales se mostrarán en las caras (conducta predeterminada).</p>
 
 <p><div id="command">
-<p><strong>RefreshRate = Seconds</strong></p>
+<p><strong>RefreshRate = Segundos</strong></p>
 
 </div>
 <br />
-This defines the minimum amount of time that needs to pass before the functions are updated. A value of 0 forces the functions to be updated every frame. Please note that objects outside of the visual range might be updated less frequently regardless of this parameter. Use RefreshRate when you don&rsquo;t need a perfectly smooth animation (in order to optimize performance), or when you deliberately want the object to be only updated in fixed intervals.</p>
+Esto defina la mínima cantidad de tiempo que necesita transcurrir para que la función sea actualizada. Un valor de 0 obliga a la función a ser actualizada cada cuadro por segundo. Por favor tenga en cuenta que los objetos fuera del rango visual puedan ser actualizados menos frecuentemente sin importar este parámetro. Usa RefreshRate cuando no necesites una animación suave (en orden de optimizar los recursos), o cuando deliberadamente quieras que el objeto este actualizado con un intervalo personalizado.</p>
 
 <hr />
 
 <div id="warning">
-<h4 id="openbve-2-compatibility-note">openBVE 2 compatibility note</h4>
+<h4 id="nota-de-compatibilidad-con-openbve-2">Nota de compatibilidad con openBVE 2</h4>
 
-<p>During the development of openBVE (v0.9) and during the development of the animated object format, there were certain commands in existance ending in <em>RPN</em>, such as <em>TranslateXFunctionRPN</em>. These commands never made it into any official release (v1.0) and were thus never meant to be used outside of development environments. While they are still available undocumentedly, they will be removed for openBVE 2. If you are using these commands, please get rid of them as soon as possible.</p>
+<p>Durante el desarrolo de openBVE (v0.9) y durante el desarrollo del formato de objeto animado, hay algunos comandos en existencia que terminan en <em>RPN</em>, asi como <em>TranslateXFunctionRPN</em>. Estos comandos nunca se han hecho en cualquier lanzamiento oficial (v1.0) y nunca fueron pensados en ser usados fuera del entorno de desarrollo. Mientras estos siguen aún disponibles sin documentación, serán quitados en openBVE 2. Si estas usando algunos de estos comandos, por favor deshagase de ellos lo mas posible.</p>
 
 </div>
 
 
 <hr />
 
-<h5 id="about-the-formulas">● About the formulas</h5>
+<h5 id="sobre-las-formulas">● Sobre las formulas</h5>
 
-<p>First of all, infix notation, which is what you can enter for <em>Formula</em>, is converted into functional notation. Thus for every infix notation, there is a corresponding functional notation. Some functions do not have an infix operator and can thus only be entered in functional notation. For operators, precedence plays an important role. You can use parantheses to override the order of precedence just as in any usual mathematical formula. Names of functions are case-insensitive.</p>
+<p>Primero que todo, la notación aritmética, lo que puedes teclear dentro del parámetro <em>Formula</em>, es convertido en una notación funcional. Por cada notación aritmética, hay una notación funcional correspondiente. Algunas funciones no tienen un operador aritmético y solo pueden ser teclados en notación funcional. Para los operadores, la precedencia juega un rol importante. Puedes usar paréntesis para sobreponer el orden de precedencia así como generalmente en una fórmula matemática. Los nombres de las funciones no distinguen entre mayúsculas y minúsculas.</p>
 
 <div id="warning">
 <span>⚠</span>
-<p>Please note that if the result of any mathematical operation or function would be infinity, indeterminate or non-real, 0 is returned. Numeric overflow is not prevented, so you need to take that into account yourself.</p>
+<p>Por favor tenga en cuenta que el resultado de cualquier operación matemática o función pudiera ser infinito, intermediado o no real, 0 es retornado. Un error de desborde no puede ser prevenido, Así que debes tomar en cuenta esto.</p>
 
 </div>
 
 
-<h2 id="a-name-operators-a-3-list-of-infix-notation-operators"><a name="operators"></a>■ 3. List of infix notation operators</h2>
+<h2 id="a-name-operators-a-3-lista-de-operadores-aritméticos-de-notación"><a name="operators"></a>■ 3. Lista de operadores aritméticos de notación</h2>
 
-<h5 id="basic-arithmetics">● Basic arithmetics</h5>
+<h5 id="aritmética-básica">● Aritmética básica</h5>
 
 
 <table class='type0'>
 <thead>
 <tr>
-<th align="left">Infix</th>
-<th align="left">Functional</th>
-<th align="left">Description</th>
+<th align="left">Aritmética</th>
+<th align="left">Funcionalidad</th>
+<th align="left">Descripción</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td align="left"><code>a + b</code></td>
-<td align="left"><code>Plus[a,b, ...]</code></td>
-<td align="left">Represents addition</td>
+<td align="left"><code>Suma[a,b, ...]</code></td>
+<td align="left">Representa adición</td>
 </tr>
 
 <tr>
 <td align="left"><code>a - b</code></td>
-<td align="left"><code>Subtract[a,b]</code></td>
-<td align="left">Represents subtraction</td>
+<td align="left"><code>Sustraer[a,b]</code></td>
+<td align="left">Representa sustracción</td>
 </tr>
 
 <tr>
 <td align="left"><code>-a</code></td>
-<td align="left"><code>Minus[a]</code></td>
-<td align="left">Negates the number</td>
+<td align="left"><code>Menos[a]</code></td>
+<td align="left">Convierte a negativo el número</td>
 </tr>
 
 <tr>
 <td align="left"><code>a * b</code></td>
-<td align="left"><code>Times[a,b,...]</code></td>
-<td align="left">Represents multiplication</td>
+<td align="left"><code>Por[a,b,...]</code></td>
+<td align="left">Representa multiplicación</td>
 </tr>
 
 <tr>
 <td align="left"><code>a / b</code></td>
-<td align="left"><code>Divide[a,b]</code></td>
-<td align="left">Represents division</td>
+<td align="left"><code>Dividir[a,b]</code></td>
+<td align="left">Representa división</td>
 </tr>
 </tbody>
 </table>
 
 
-<h5 id="comparisons">● Comparisons</h5>
+<h5 id="comparaciones">● Comparaciones</h5>
 
-<p>All comparisons return 1 for true and 0 for false.</p>
+<p>Todas las comparaciones devuelven 1 para verdadero y 0 para falso.</p>
 
 
 <table class='type0'>
 <thead>
 <tr>
-<th align="left">Infix</th>
-<th>Functional</th>
-<th>Description</th>
+<th align="left">Aritmética</th>
+<th>Funcionalidad</th>
+<th>Descripción</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td align="left"><code>a == b</code></td>
-<td><code>Equal[a,b]</code></td>
-<td>True (1) if <em>a</em> equals <em>b</em></td>
+<td><code>Igual[a,b]</code></td>
+<td>Verdadero (1) si <em>a</em> es igual a <em>b</em></td>
 </tr>
 
 <tr>
 <td align="left"><code>a != b</code></td>
-<td><code>Unequal[a,b]</code></td>
-<td>True (1) if <em>a</em> does not equal <em>b</em></td>
+<td><code>Noigual[a,b]</code></td>
+<td>Verdadero (1) si <em>a</em> no es igual a <em>b</em></td>
 </tr>
 
 <tr>
 <td align="left"><code>a &lt; b</code></td>
-<td><code>Less[a,b]</code></td>
-<td>True (1) if <em>a</em> is less than <em>b</em></td>
+<td><code>Menor[a,b]</code></td>
+<td>Verdadero (1) si <em>a</em> es menor que <em>b</em></td>
 </tr>
 
 <tr>
 <td align="left"><code>a &gt; b</code></td>
-<td><code>Greater[a,b]</code></td>
-<td>True (1) if <em>a</em> is greater than <em>b</em></td>
+<td><code>Mayor[a,b]</code></td>
+<td>Verdadero (1) si <em>a</em> es mayor que <em>b</em></td>
 </tr>
 
 <tr>
 <td align="left"><code>a &lt;= b</code></td>
-<td><code>LessEqual[a,b]</code></td>
-<td>True (1) if <em>a</em> is less than or equal to <em>b</em></td>
+<td><code>MenorIgual[a,b]</code></td>
+<td>Verdadero (1) si <em>a</em> es menor o igual que <em>b</em></td>
 </tr>
 
 <tr>
 <td align="left"><code>a &gt;= b</code></td>
-<td><code>GreaterEqual[a,b]</code></td>
-<td>True (1) if <em>a</em> is greater than or equal to <em>b</em></td>
+<td><code>MayorIgual[a,b]</code></td>
+<td>Verdadero (1) si <em>a</em> es mayor o igual que <em>b</em></td>
 </tr>
 </tbody>
 </table>
 
-<h5 id="logical-operations">● Logical operations</h5>
+<h5 id="operadores-lógicos">● Operadores lógicos</h5>
 
-<p>All operations treat 0 as false and any other value as true, and return 1 for true and 0 for false.</p>
+<p>Todos los operadores tratan 0 como falso y cualquier otro valor como verdadero, y retornan 1 por verdadero y 0 por falso.</p>
 
 <table class='type0'>
 <thead>
 <tr>
-<th align="left">Infix</th>
-<th>Functional</th>
-<th>Description</th>
+<th align="left">Aritmética</th>
+<th>Funcionalidad</th>
+<th>Descripción</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td align="left"><code>!a</code></td>
-<td><code>Not[a]</code></td>
-<td>True (1) if <em>a</em> is false</td>
+<td><code>No[a]</code></td>
+<td>Verdadero (1) si <em>a</em> es falso</td>
 </tr>
 
 <tr>
 <td align="left"><code>a &amp; b</code></td>
-<td><code>And[a,b]</code></td>
-<td>True (1) if both <em>a</em> and <em>b</em> are true</td>
+<td><code>Y[a,b]</code></td>
+<td>Verdadero (1) si ambos <em>a</em> y <em>b</em> son verdad</td>
 </tr>
 
 <tr>
 <td align="left"><code>a</code> &#124; <code>b</code></td>
-<td><code>Or[a,b]</code></td>
-<td>True (1) if any of <em>a</em> or <em>b</em> are true</td>
+<td><code>O[a,b]</code></td>
+<td>Verdadero (1) si cualquiera de <em>a</em> o <em>b</em> es verdad</td>
 </tr>
 
 <tr>
 <td align="left"><code>a ^ b</code></td>
-<td><code>Xor[a,b]</code></td>
-<td>True (1) if either <em>a</em> or <em>b</em> is true</td>
+<td><code>Oexclusivo[a,b]</code></td>
+<td>True (1) si cualquiera <em>a</em> o <em>b</em> es verdad</td>
 </tr>
 </tbody>
 </table>
 
-<h5 id="operator-precedence">● Operator precedence</h5>
+<h5 id="operador-de-precedencia">● Operador de precedencia</h5>
 
-<p>From highest precedence to lowest. Operators of same precedence are evaluated left to right in the order in they occur in the formula.</p>
+<p>Desde la alta prioridad a la baja. Los operadores de la misma precedencia son evaluados de izquierda a derecha en orden en que aparezcan en la formula.</p>
 
 <table class='type1'>
 <thead>
@@ -790,7 +795,7 @@ This defines the minimum amount of time that needs to pass before the functions 
 
 <tbody>
 <tr>
-<td><code>-</code> (Minus)</td>
+<td><code>-</code> (Menos)</td>
 </tr>
 
 <tr>
@@ -802,7 +807,7 @@ This defines the minimum amount of time that needs to pass before the functions 
 </tr>
 
 <tr>
-<td><code>+</code>, <code>-</code> (Subtract)</td>
+<td><code>+</code>, <code>-</code> (Sustracción)</td>
 </tr>
 
 <tr>
@@ -831,232 +836,232 @@ This defines the minimum amount of time that needs to pass before the functions 
 
 <div id="warning">
 <span>⚠</span>
-<p>Please note that some combinations of prefix and infix operators are not recognized. For example <code>a*-b</code> is not accepted. Use <code>a*(-b)</code> or <code>-a*b</code> instead.</p>
+<p>Por favor tenga en cuenta que algunas combinaciones de prefijo y operadores aritméticos no son reconocidos. Por ejemplo  <code>a*-b</code> no es aceptado. Use en vez <code>a*(-b)</code> o <code>-a*b</code>.</p>
 
 </div>
 
-<h2 id="a-name-functions-a-4-list-of-functions"><a name="functions"></a>■ 4. List of functions</h2>
+<h2 id="a-name-functions-a-4-lista-de-funciones"><a name="functions"></a>■ 4. Lista de funciones</h2>
 
-<h5 id="basic-arithmetics">● Basic arithmetics</h5>
+<h5 id="aritmética-básica">● Aritmética básica</h5>
 
 <table class='type0'>
 <thead>
 <tr>
-<th>Function</th>
-<th>Description</th>
+<th>Función</th>
+<th>Descripción</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>Reciprocal[x]</code></td>
-<td>Returns the reciprocal, equal to 1/<em>x</em></td>
+<td>Retorna la reciprocidad, igual a 1/<em>x</em></td>
 </tr>
 
 <tr>
 <td><code>Power[a,b,...]</code></td>
-<td>Returns <em>a</em> raised to the <em>b</em><sup>th</sup> power. <em>b</em> must be a non-negative number. For consistency, Power[0,<em>b</em>] always returns 1, even in the degenerate case Power[0,0], and <em>a</em> being negative always returns 0. Adding more arguments will create a chain. Power[a,b,c] will return <em>a</em><sup><em>b</em><sup><em>c</em></sup></sup>.</td>
+<td>Retorna <em>a</em> elevado a la <em>b</em> <sup>ava </sup>potencia. <em>b</em> debe ser un número no negativo. Para consistencia,  Power[0,<em>b</em>] siempre reotrna 1, incluso en el caso degenerado de Power[0,0], y <em>a</em> comenzando en negativo siempre retorna 0. Agregar más argumentos creará una cadena. Power[a,b,c] retornará <em>a</em> <sup><em>b</em><sup><em>c</em></sup></sup>.</td>
 </tr>
 </tbody>
 </table>
 
-<h5 id="numeric-functions">● Numeric functions</h5>
+<h5 id="funciones-numéricas">● Funciones numéricas</h5>
 
 <table class='type0'>
 <thead>
 <tr>
-<th>Function</th>
-<th>Description</th>
+<th>Función</th>
+<th>Descripción</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>Quotient[a,b]</code></td>
-<td>Divides <em>a</em> by <em>b</em> and rounds the result down, equal to <code>Floor[a/b]</code>.</td>
+<td>Divide <em>a</em> entre <em>b</em> y redondea el resultado hacia abajo, igual a <code>Floor[a/b]</code>.</td>
 </tr>
 
 <tr>
 <td><code>Mod[a,b]</code></td>
-<td>Returns the remainder of dividing <em>a</em> by <em>b</em>, equal to <code>a-b*Floor[a/b]</code>.</td>
+<td>Retorna el residuo al dividir <em>a</em> entre <em>b</em>, igual a <code>a-b*Floor[a/b]</code>.</td>
 </tr>
 
 <tr>
 <td><code>Min[a,b,...]</code></td>
-<td>Returns the smallest of the terms.</td>
+<td>Retorna el menor de los términos.</td>
 </tr>
 
 <tr>
 <td><code>Max[a,b,...]</code></td>
-<td>Returns the largest of the terms.</td>
+<td>Retorna el mayor de los términos.</td>
 </tr>
 
 <tr>
 <td><code>Abs[x]</code></td>
-<td>Returns the absolute value.</td>
+<td>Retorna el valor absoluto.</td>
 </tr>
 
 <tr>
 <td><code>Sign[x]</code></td>
-<td>Returns the sign of <em>x</em>, which is either -1, 0 or 1.</td>
+<td>Retorna el signo de <em>x</em>, el cual puede ser -1, 0 or 1.</td>
 </tr>
 
 <tr>
 <td><code>Floor[x]</code></td>
-<td>Rounds down to the nearest integer.</td>
+<td>Redondea hacia abajo al entero más cercano.</td>
 </tr>
 
 <tr>
 <td><code>Ceiling[x]</code></td>
-<td>Rounds up to the nearest integer.</td>
+<td>Redondea hacia arriba al entero más cercano.</td>
 </tr>
 
 <tr>
 <td><code>Round[x]</code></td>
-<td>Rounds to the nearest integer. Numbers ending in .5 are rounded to the nearest even integer.</td>
+<td>Redondea al entero mas cercano. Números terminando en decimal .5 son redondeados hacia el entero más cercano.</td>
 </tr>
 
 <tr>
 <td><code>random[Minimum, Maximum]</code></td>
-<td>Returns a new random floating-point number between <em>Minimum</em> and <em>Maximum</em>.</td>
+<td>Retorna un nuevo número de coma flotante entre <em>Mínimo</em> y <em>Máximo</em>.</td>
 </tr>
 
 <tr>
 <td><code>randomInt[Minimum, Maximum]</code></td>
-<td>Returns a new random integer between <em>Minimum</em> and <em>Maximum</em>.</td>
+<td>Retorna un nuevo número entero entre <em>Mínimo</em> y <em>Máximo</em>.</td>
 </tr>
 </tbody>
 </table>
 
-<h5 id="elementary-functions">● Elementary functions</h5>
+<h5 id="funciones-elementales">● Funciones elementales</h5>
 
 <table class='type0'>
 <thead>
 <tr>
-<th>Function</th>
-<th>Description</th>
+<th>Función</th>
+<th>Descripción</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>Exp[x]</code></td>
-<td>The exponential function, or <em>e</em> to the <em>x</em><sup>th</sup> power.</td>
+<td>La función exponencial, o <em>e</em> de la <em>x</em><sup>ava</sup>potencia.</td>
 </tr>
 
 <tr>
 <td><code>Log[x]</code></td>
-<td>The natural logarithm, to base <em>e</em>.</td>
+<td>La función logarítmica, con base <em>e</em>.</td>
 </tr>
 
 <tr>
 <td><code>Sqrt[x]</code></td>
-<td>The square root.</td>
+<td>La raíz cuadrada.</td>
 </tr>
 
 <tr>
 <td><code>Sin[x]</code></td>
-<td>The sine (input in radians).</td>
+<td>Seno (en radianes).</td>
 </tr>
 
 <tr>
 <td><code>Cos[x]</code></td>
-<td>The cosine (input in radians).</td>
+<td>Coseno (en radianes)</td>
 </tr>
 
 <tr>
 <td><code>Tan[x]</code></td>
-<td>The tangent (input in radians).</td>
+<td>La tangente (en radianes).</td>
 </tr>
 
 <tr>
 <td><code>ArcTan[x]</code></td>
-<td>The inverse tangent (output in radians).</td>
+<td>La tangente inversa - Cotangente (en radianes)</td>
 </tr>
 </tbody>
 </table>
 
-<h5 id="conditionals">● Conditionals</h5>
+<h5 id="condicionales">● Condicionales</h5>
 
 <table class='type0'>
 <thead>
 <tr>
-<th>Function</th>
-<th>Description</th>
+<th>Función</th>
+<th>Descripción</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>If[cond,truevalue,falsevalue]</code></td>
-<td>If <em>cond</em> is != 0, returns <em>truevalue</em>, otherwise <em>falsevalue</em></td>
+<td>Si <em>condición</em> es != 0, retorna <em>valorverdadero</em>, en caso contrario <em>valorfalso</em></td>
 </tr>
 </tbody>
 </table>
 
-<h2 id="a-name-variables-a-5-list-of-variables"><a name="variables"></a>■ 5. List of variables</h2>
+<h2 id="a-name-variables-a-5-lista-de-variables"><a name="variables"></a>■ 5. Lista de variables</h2>
 
-<h5 id="primitives">● Primitives</h5>
+<h5 id="primitivas">● Primitivas</h5>
 
 <table class='type0'>
 <thead>
 <tr>
 <th>Variable</th>
-<th>Description</th>
+<th>Descripción</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>value</code></td>
-<td>The value returned by the function in the last evaluation. At the beginning of the simulation, this is 0.</td>
+<td>El valor retornado por la función en su ultima evaluación. Al comienzo de la simulación, esto es 0.</td>
 </tr>
 
 <tr>
 <td><code>delta</code></td>
-<td>The time difference since the last evaluation of the function in seconds. Please note that there is no guaranteed time that elapses between successive function calls.</td>
+<td>La diferencia desde la ultima evaluación de la función en segundos. Por favor tenga en cuenta que no hay tiempo garantizado desde que transcurre entre los llamados de función sucesivos.</td>
 </tr>
 
 <tr>
 <td><code>currentState</code></td>
-<td>Returns the current numerical state of the object.</td>
+<td>Retorna el estado actual numérico del objeto.</td>
 </tr>
 </tbody>
 </table>
 
-<h5 id="time-and-camera">● Time and camera</h5>
+<h5 id="tiempo-y-camara">● Tiempo y camara</h5>
 
 <table class='type0'>
 <thead>
 <tr>
 <th>Variable</th>
-<th>Description</th>
+<th>Descripción</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>time</code></td>
-<td>The current in-game time measured in seconds since midnight of the first day.</td>
+<td>El tiempo actual del juego medido en segundos desde la media noche del primer día.</td>
 </tr>
 
 <tr>
 <td><code>cameraDistance</code></td>
-<td>The non-negative cartesian distance measured from the object to the camera in meters.</td>
+<td>Una distancia cartesiana no negativa medida desde el objeto a la cámara en metros.</td>
 </tr>
 
 <tr>
 <td><code>cameraMode</code></td>
-<td>Returns 0 if the camera is currently in a 2D or 3D cab, 1 otherwise.</td>
+<td>Retorna 0 si la cámara es actualmente en cabina 2D o 3D, 1 en caso contrario.</td>
 </tr>
 </tbody>
 </table>
 
-<h5 id="trains">● Trains</h5>
+<h5 id="trenes">● Trenes</h5>
 
-<p>Generally, objects attached to a particular train and car return values for that train and car, unless stated otherwise. For scenery objects, the reference is the driver&rsquo;s car of the nearest train (not necessarily the player&rsquo;s train).</p>
+<p>Generalmente, objetos adjuntados a un tren particular o coche retorna valores para los trenes y cobhes, a menos que sean estados. Para objetos de escenario, la referencia es el coche del conductor del tren más cercano ( no necesariamente el tren del jugador).</p>
 
-<p>In some of the following variables, <em>carIndex</em> has the following meaning: 0 is the 1<sup>st</sup> car from the front, 1 is the 2<sup>nd</sup> car from the front, etc., while -1 is the 1<sup>st</sup> car from the rear, -2 is the 2<sup>nd</sup> car from the rear, etc. In general, car indices from -<em>cars</em> to <em>cars</em>-1 represent existing cars, where <em>cars</em> is the number of cars the train has, while values outside of this range represent non-existing cars. As all trains have at least 1 car, indices -1 and 0 are guaranteed to exist for any train.</p>
+<p>En algunas de las siguientes variables <em>IndiceCoche</em> tiene el siguiente significado: 0 si el 1<sup>er</sup>coche desde el frente,1 es el 2<sup>do</sup>coche del frente, etc., mientras que -1 es el 1<sup>er</sup>carro desde la parte posterior, -2 es el 2<sup>do</sup>carro desde la parte posterior, etc. En general, los indices de los coches desde -<em>coches</em> a <em>coches</em>-1 representa los coches existentes, donde <em>coches</em> es el numero de carros que el tren tiene, mientras los valores fuera de este rango representan coches no existentes. Así como los trenes tienen al menos un coche, indices -1 y 0 están garantizados en existir en cualquier tren.</p>
 
 <h5 id="trains-general">● Trains (general)</h5>
 
