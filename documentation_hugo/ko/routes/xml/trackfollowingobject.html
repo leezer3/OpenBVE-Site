@@ -125,7 +125,7 @@
               
             </li>
             
-            <li><a href="../../../ko/routes/xml/trackfollowingobject.html">Track Following Object</a>
+            <li><a href="../../../ko/routes/xml/trackfollowingobject.html">추적 개체</a>
               
             </li>
             
@@ -301,7 +301,7 @@
           
         </li>
         
-        <li><a href="../../../ko/information/bve.html">Vs. BVE Trainsim</a>
+        <li><a href="../../../ko/information/bve.html">대. BVE Trainsim</a>
           
         </li>
         
@@ -337,7 +337,7 @@
       
       <ul class="second">
         
-        <li><a href="../../../ko/examples/demoroute.html">Demonstration route</a>
+        <li><a href="../../../ko/examples/demoroute.html">시연 루트</a>
           
         </li>
         
@@ -406,7 +406,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>Track Following Object</h1>
+          <h1>추적 개체</h1>
         </div>
 
         
@@ -417,18 +417,18 @@
 <div id="content">
   
 
-<p>This page explains the principle and implementation of the XML-based Track Following Object, which is supported in openBVE v1.6.0 or later.</p>
+<p>이 페이지는 openBVE v1.6.0 이상에서 지원되는 XML 기반의 추적 개체의 원리와 구현을 설명합니다.</p>
 
-<h2 id="basic-principles">■ Basic Principles</h2>
+<h2 id="기본-원리">■ 기본 원리</h2>
 
-<p>openBVE can freely run a Track Following Object on other tracks.</p>
+<p>openBVE 에서는 다른 트랙에서 트랙을 따라가는 객체를 자유롭게 설정할 수 있습니다.</p>
 
-<p>In order to do this, it is necessary to setup each object that you want to run using Track Following Object XML files. An example is shown below.</p>
+<p>이를 위해서는 추적 개체의 XML 파일을 사용하여 실행할 각 개체에 대해 설정해야 합니다. 예시는 아래와 같습니다.</p>
 
-<p>In this example the object runs as follows.</p>
+<p>이 예시에서의 개체는 다음과 같이 실행됩니다.</p>
 
 <ol>
-<li>It is displayed when the in-game time 00:01:00 has elapsed and the object exists within 50 m to 100 m of the player&rsquo;s camera position in game. It becomes invisible after 5 minutes have elapsed since being displayed. The appearance is defined in extensions.cfg in 7-car formation.</li>
+<li>게임 내에서 1분이 경과하여 게임 중 플레이어의 카메라 위치로부터 50 m에서 100 m 이내에 개체가 존재할 때 표시됩니다. 개체가 표시된 후 5분이 경과하면 보이지 않게 됩니다. 개체의 외관은 extension.cfg에 작성된 내용을 따릅니다.</li>
 <li>The in-game distance is 200 m and the right door is opened for 20 seconds and then the object accelerates to 30 km/h at an acceleration of 1.71km/h/s on <strong>Rail2</strong>.</li>
 <li>It travels at 60 km/h on <strong>Rail2</strong> for 400 m.</li>
 <li>The object decelerates to 30km/h at 1.71 km/h/s on <strong>Rail2</strong>, when it reaches a distance of 1000 m within the game, it stops and opens the doors on both sides. After stopping for 10 seconds, it accelerates in reverse to 30 km/h with an acceleration of 1.71 km/h/s on Rail1.</li>
@@ -534,7 +534,7 @@
 </div>
 
 
-<p><strong>Position</strong> sets the in-game distance at which the object starts appearing. The object will appear when the player&rsquo;s camera position passes this point. The unit is <strong>meter</strong>.</p>
+<p><strong>Position</strong> sets the in-game distance at which the object starts appearing. The object will appear when the player&rsquo;s train passes this point. The unit is <strong>meter</strong>.</p>
 
 <p><em>Note:</em> If this parameter is omitted, the object will emerge from the start of the game.</p>
 

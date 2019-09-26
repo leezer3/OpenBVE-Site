@@ -37,11 +37,11 @@
           
           <ul class="third">
             
-            <li><a href="../../../es_mx/objects/native/b3d.html">The B3D object</a>
+            <li><a href="../../../es_mx/objects/native/b3d.html">El objeto B3D</a>
               
             </li>
             
-            <li><a href="../../../es_mx/objects/native/csv.html">The CSV object</a>
+            <li><a href="../../../es_mx/objects/native/csv.html">El objeto CSV</a>
               
             </li>
             
@@ -253,7 +253,7 @@
       
       <ul class="second">
         
-        <li><a href="../../../es_mx/plugins/overview.html">Overview</a>
+        <li><a href="../../../es_mx/plugins/overview.html">Vista general</a>
           
         </li>
         
@@ -406,7 +406,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>The <strong>.csv</strong> object format</h1>
+          <h1>El formato de objeto <strong>.csv</strong></h1>
         </div>
 
         
@@ -417,12 +417,12 @@
 <div id="content">
   
 
-<h2 id="contents">■ Contents</h2>
+<h2 id="contenidos">■ Contenidos</h2>
 
 <ul class='contents'>
-<li><a href="#overview">1. Overview</a></li>
-<li><a href="#syntax">2. Syntax</a></li>
-<li><a href="#commands">3. Available commands</a>
+<li><a href="#overview">1. Vista general</a></li>
+<li><a href="#syntax">2. Sintaxis</a></li>
+<li><a href="#commands">3. Comandos disponibles</a>
 
 <ul class='contents'>
 <li><a href="#createmeshbuilder">CreateMeshBuilder</a></li>
@@ -447,7 +447,7 @@
 
 
 
-<h2 id="a-name-overview-a-1-overview"><a name="overview"></a>■ 1. Overview</h2>
+<h2 id="a-name-overview-a-1-vista-general"><a name="overview"></a>■ 1. Vista general</h2>
 
 <p>A CSV object allows to create a single object by using textual instructions. The object can be used in routes or in trains. The object described by the file can contain any number of individual polygons. The file format allows to group multiple polygons in CreateMeshBuilder sections in which attributes like color or texture information is assigned to all polygons created in each section. This allows for the creation of many polygons in the same CreateMeshBuilder section which share common attributes. A polygon is called a face in this file format.</p>
 
@@ -455,7 +455,7 @@
 
 <p>➟ <a href="../../../es_mx/objects/native/b3d_quick.html" target="_blank">See also the quick reference for the CSV format&hellip;</a></p>
 
-<h2 id="a-name-syntax-a-2-syntax"><a name="syntax"></a>■ 2. Syntax</h2>
+<h2 id="a-name-syntax-a-2-sintaxis"><a name="syntax"></a>■ 2. Sintaxis</h2>
 
 <p>Each line in the file is split into the name of a command and its arguments. The syntax for all commands is the same:</p>
 
@@ -471,7 +471,7 @@
 
 <p>You can use comments anywhere at the end of a line. A comment is started by a semicolon (U+003B). Comments, if present, are stripped away from all lines before these are processed.</p>
 
-<h2 id="a-name-commands-a-3-available-commands"><a name="commands"></a>■ 3. Available commands</h2>
+<h2 id="a-name-commands-a-3-comandos-disponibles"><a name="commands"></a>■ 3. Comandos disponibles</h2>
 
 <p><a name="createmeshbuilder"></a></p>
 
@@ -513,7 +513,7 @@
 <p><a name="addface"></a></p>
 
 <div id="command">
-<p><strong>AddFace</strong>, <em>v<sub>1</sub></em>, <em>v<sub>2</sub></em>, <em>v<sub>3</sub></em>, &hellip;, <em>v<sub>max</sub></em></p>
+<p><strong>AddFace</strong>, <em>v<sub>1</sub></em>, <em>v<sub>2</sub></em>, <em>v<sub>3</sub></em>, &hellip;, <em>v<sub>máximo</sub></em></p>
 
 </div>
 
@@ -531,7 +531,7 @@
 <p><a name="addface2"></a></p>
 
 <div id="command">
-<p><strong>AddFace2</strong>, <em>v<sub>1</sub></em>, <em>v<sub>2</sub></em>, <em>v<sub>3</sub></em>, &hellip;, <em>v<sub>max</sub></em></p>
+<p><strong>AddFace2</strong>, <em>v<sub>1</sub></em>, <em>v<sub>2</sub></em>, <em>v<sub>3</sub></em>, &hellip;, <em>v<sub>máximo</sub></em></p>
 
 </div>
 
@@ -596,7 +596,7 @@
 <p>The number of vertices <em>n</em> will usually suffice to be 6 or 8 when only small radii are used, for example to create a pole. Regardless of the values of <em>UpperRadius</em>, <em>LowerRadius</em> and <em>n</em>, the frustum will always have 2*<em>n</em> vertices, and usually <em>n</em>+2 faces unless any of the caps are omitted. If <em>UpperRadius</em> or <em>LowerRadius</em> are negative, the absolute value is being taken, but the respective caps are not created. If <em>Height</em> is negative, the roles of top and bottom are reversed and the faces will be visible from the inside, while otherwise, they will be visible from the outside.</p>
 
 <div id="notice">
-<h4 id="cylinder-representation">Cylinder representation</h4>
+<h4 id="representación-del-cilindro">Representación del cilindro</h4>
 
 <p>The Cylinder command is equivalent to a series of AddVertex and AddFace commands, which you need to account for when using other commands in the same CreateMeshBuilder section. The details on what the Cylinder command does are available <a href="../../../es_mx/objects/native/cubecylinder.html">here</a>.</p>
 
@@ -611,7 +611,7 @@
 </div>
 
 
-<p><em><font color=#555555>This command is ignored by openBVE.</font></em></p>
+<p><em><font color=#555555>Este comando es ignorado por openBVE.</font></em></p>
 
 <hr />
 
@@ -660,8 +660,8 @@
 <p><a name="rotate"></a></p>
 
 <div id="command">
-<p><strong>Rotate</strong>, <em>X</em>, <em>Y</em>, <em>Z</em>, <em>Angle</em><br />
-<strong>RotateAll</strong>, <em>X</em>, <em>Y</em>, <em>Z</em>, <em>Angle</em></p>
+<p><strong>Rotate</strong>, <em>X</em>, <em>Y</em>, <em>Z</em>, <em>Ángulo</em><br />
+<strong>RotateAll</strong>, <em>X</em>, <em>Y</em>, <em>Z</em>, <em>Ángulo</em></p>
 
 </div>
 
@@ -735,7 +735,7 @@
 <p><a name="setcolor"></a></p>
 
 <div id="command">
-<p><strong>SetColor</strong>, <em>Red</em>, <em>Green</em>, <em>Blue</em>, <em>Alpha</em></p>
+<p><strong>SetColor</strong>, <em>Rojo</em>, <em>Verde</em>, <em>Azul</em>, <em>Alfa</em></p>
 
 </div>
 
@@ -756,7 +756,7 @@
 <p><a name="setemissivecolor"></a></p>
 
 <div id="command">
-<p><strong>SetEmissiveColor</strong>, <em>Red</em>, <em>Green</em>, <em>Blue</em></p>
+<p><strong>SetEmissiveColor</strong>, <em>Rojo</em>, <em>Verde</em>, <em>Azul</em></p>
 
 </div>
 
@@ -843,7 +843,7 @@
 <p><a name="setdecaltransparentcolor"></a></p>
 
 <div id="command">
-<p><strong>SetDecalTransparentColor</strong>, <em>Red</em>, <em>Green</em>, <em>Blue</em></p>
+<p><strong>SetDecalTransparentColor</strong>, <em>Rojo</em>, <em>Verde</em>, <em>Azul</em></p>
 
 </div>
 
