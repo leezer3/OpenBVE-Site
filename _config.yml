@@ -59,6 +59,9 @@ menu:
     submenu:
       - title: 'Discussion Board'
         url: 'http://bveworldwide.forumotion.com/f14-the-sim-in-time-general-discussion'
+        external: true
+      - title: 'Licence and Copyright'
+        url: '/copyright/'
       - title: 'Further Links'
         url: '/links/'
 
