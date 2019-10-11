@@ -15,7 +15,7 @@ OpenBVE is provided as a standard Windows Installer.
 
 The most recent stable version of OpenBVE is:
 
-<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.7.0.1-setup.exe" class="btn btn-info">1.7.0.1 (2019-09-24)</a>
+<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.7.0.2-setup.exe" class="btn btn-info">1.7.0.2 (2019-10-11)</a>
 
 ---
 
@@ -28,7 +28,7 @@ OpenBVE is provided as a .deb package.
 
 The most recent stable version of OpenBVE is:
 
-<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.7.0.1.deb" class="btn btn-info">1.7.0.1 (2019-09-24)</a>
+<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.7.0.2.deb" class="btn btn-info">1.7.0.2 (2019-10-11)</a>
 
 ---
 
@@ -41,7 +41,7 @@ OpenBVE is provided as a standard compressed archive.
 
 The most recent stable version of OpenBVE is:
 
-<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.7.0.1.zip" class="btn btn-info">1.7.0.1 (2019-09-24)</a>
+<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.7.0.2.zip" class="btn btn-info">1.7.0.2 (2019-10-11)</a>
 
 ---
 
@@ -56,7 +56,7 @@ Please note that unfortunately, OpenBVE is only compatible with Mojave and previ
 
 The most recent stable version of OpenBVE is:
 
-<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.7.0.1.dmg" class="btn btn-info">1.7.0.1 (2019-09-24)</a>
+<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.7.0.2.dmg" class="btn btn-info">1.7.0.2 (2019-10-11)</a>
 
 ---
 
