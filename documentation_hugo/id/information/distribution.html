@@ -37,7 +37,7 @@
           
           <ul class="third">
             
-            <li><a href="../../id/objects/native/b3d.html">The B3D object</a>
+            <li><a href="../../id/objects/native/b3d.html">Objek B3D</a>
               
             </li>
             
@@ -89,7 +89,7 @@
           
         </li>
         
-        <li><a href="../../id/objects/information.html">Information and tips</a>
+        <li><a href="../../id/objects/information.html">Info dan tips</a>
           
         </li>
         
@@ -101,7 +101,7 @@
       
       <ul class="second">
         
-        <li><a href="../../id/routes/csv.html">The CSV route</a>
+        <li><a href="../../id/routes/csv.html">Rute CSV</a>
           
         </li>
         
@@ -269,23 +269,23 @@
       
       <ul class="second">
         
-        <li><a href="../../id/information/encodings.html">Character encodings</a>
+        <li><a href="../../id/information/encodings.html">Enkoding karakter</a>
           
         </li>
         
-        <li><a href="../../id/information/numberformats.html">Number formats</a>
+        <li><a href="../../id/information/numberformats.html">Format angka</a>
           
         </li>
         
-        <li><a href="../../id/information/whitespaces.html">White Spaces</a>
+        <li><a href="../../id/information/whitespaces.html">Spasi</a>
           
         </li>
         
-        <li><a href="../../id/information/textureformats.html">Texture formats</a>
+        <li><a href="../../id/information/textureformats.html">Format gambar skin / tekstur</a>
           
         </li>
         
-        <li><a href="../../id/information/soundformats.html">Sound formats</a>
+        <li><a href="../../id/information/soundformats.html">Format suara</a>
           
         </li>
         
@@ -293,11 +293,11 @@
           
         </li>
         
-        <li><a href="../../id/information/distribution.html">Distributing add-ons</a>
+        <li><a href="../../id/information/distribution.html">Membagikan add-ons</a>
           
         </li>
         
-        <li><a href="../../id/information/forking.html">Forking guidelines</a>
+        <li><a href="../../id/information/forking.html">Panduan Forking</a>
           
         </li>
         
@@ -402,6 +402,11 @@
         한국어
       </a>
       
+      <hr class="dropdown-divider">
+      <a href="../../hu/information/distribution.html" class="dropdown-item">
+        Magyar
+      </a>
+      
     </div>
   </div>
 </div>
@@ -411,7 +416,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>Distributing add-ons created for openBVE</h1>
+          <h1>Share add-on openBVE</h1>
         </div>
 
         
@@ -424,161 +429,161 @@
 
 <p>Whether you have written a route, a train or a plugin, there are a few things you should be aware of before distributing your add-ons. As openBVE is a cross-platform simulator intended with international interoperability in mind, your add-ons should be, too.</p>
 
-<h2 id="text-files-and-encodings">■ Text files and encodings</h2>
+<h2 id="file-teks-dan-enkoding">■ File teks dan enkoding</h2>
 
 <p>Whichever text file you are about to include in your distribution, including readme files, you should make sure that the file can be correctly processed internationally. The default encoding for all text files accessed by openBVE is UTF-8. For routes and associated objects, you can also use a different encoding, but then, the user has to select the specific encoding from a list. The same situation applies to trains and associated files. If you encode your text files in anything else but UTF-8, you must inform the user about your choice, or otherwise, the user might end up with garbage characters and potentially incorrectly parsed files. Using UTF-8 is the preferred choice, while using legacy encodings is acceptable, but discouraged. Please note that all files in a route or train must use the same encoding as it is neither currently possible nor feasible for the user to select the encoding of every individual file.</p>
 
-<p>Acceptable and not acceptable practices:</p>
+<p>Yang diperbolehkan dan tidak:</p>
 
 
 <table class='type1'>
 <thead>
 <tr>
 <th><font color="Green">✓</font></th>
-<th>Save your text files as UTF-8.</th>
+<th>Simpan file anda dengan format UTF-8.</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><font color="Green">✓</font></td>
-<td>Save your text files in any Unicode encoding with a byte order mark.</td>
+<td>Menyimpan teks anda dengan format Unicode dan byte order mark.</td>
 </tr>
 
 <tr>
 <td><font color="Red">✗</font></td>
-<td>Save your text files in any non-Unicode encoding.</td>
+<td>Menyimpan teks anda dengan format selain Unicode.</td>
 </tr>
 
 <tr>
 <td><font color="Red">✗</font></td>
-<td>Use different encodings for each file in a route or train.</td>
+<td>Menggunakan enkoding yang berbeda di berbagai file dalam 1 add-on</td>
 </tr>
 </tbody>
 </table>
 
 
 
-<h2 id="archives-versus-installers">■ Archives versus installers</h2>
+<h2 id="archive-x-installer">■ Archive x Installer</h2>
 
-<p>When packaging a route or train, consider using a single archive instead of multiple smaller ones, unless the size of the download justifies splitting the archive. Never use platform-specific installers as they are not portable (unless you also provide an archive as an alternative). Platform-specific installers include Windows EXE files, Linux RPM repositories and Mac DMG files.</p>
+<p>Saat membuat archive add-on,  buat 1 file archive saja daripada membuat banyak file archive yang lebih kecil, kecuali jika sizenya terlalu besar. Jangan gunakan installer yang hanya bisa digunakan oleh 1 OS saja (kecuali jika anda ingin menyediakan installer untuk semua OS). Misalnya format EXE untuk Windows, RPM untuk Linux, dan DMG untuk Mac.</p>
 
-<p>Acceptable and not acceptable practices:</p>
+<p>Yang diperbolehkan dan tidak:</p>
 
 
 <table class='type1'>
 <thead>
 <tr>
 <th><font color="Green">✓</font></th>
-<th>Use an archive format such as 7Z, ZIP, TAR.GZ, etc.</th>
+<th>Menggunakan format 7Z, ZIP, TAR.GZ, dll.</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><font color="Red">✗</font></td>
-<td>Use a platform-specific format, such as EXE, RPM, DMG, etc.</td>
+<td>Menggunakan file EXE, RPM, DMG, dsb.</td>
 </tr>
 </tbody>
 </table>
 
 
 
-<h2 id="files-names-and-archives">■ Files names and archives</h2>
+<h2 id="nama-file-dan-archive">■ Nama file dan archive</h2>
 
 <p>Generally, you can use any file name you want, that is, include any characters such as Latin, Japanese, Chinese, and the like. However, you need to make very sure that the archive format you use supports Unicode file names then. If not, the user might be unable to extract your files correctly, leading to a series of files that cannot be found later. Unfortunately, the popuplar ZIP format does not support Unicode file names, while for example <a href="https://www.7-zip.org/" target="_blank">7Z</a> does. Alternatively, restrict yourself to ASCII characters, e.g. A-Z, a-z, 0-9.</p>
 
-<p>Acceptable and not acceptable practices:</p>
+<p>Yang dibolehkan dan tidak:</p>
 
 
 <table class='type1'>
 <thead>
 <tr>
 <th><font color="Green">✓</font></th>
-<th>Use an archive format that supports Unicode files names (e.g. 7Z)</th>
+<th>Menggunakan archive yang berformat Unicode (misal 7Z)</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><font color="Green">✓</font></td>
-<td>Use an archive format that doesn&rsquo;t support Unicode and restrict yourself to ASCII file names.</td>
+<td>Menggunakan archive format yang tidak didukung oleh Unicode dan memakai format bahasa anda sendiri.</td>
 </tr>
 
 <tr>
 <td><font color="Red">✗</font></td>
-<td>Use an archive format that doesn&rsquo;t support Unicode but use Unicode files names.</td>
+<td>Menggunakan archive yang tidak memakai Unicode tetapi memakai nama Unicode.</td>
 </tr>
 </tbody>
 </table>
 
 
 
-<h2 id="archives-and-the-folder-structure">■ Archives and the folder structure</h2>
+<h2 id="archive-dan-susunan-folder">■ Archive dan susunan folder</h2>
 
-<p>You should always include the full folder structure, that is, <strong>Railway</strong> and <strong>Train</strong>, when istributing outes or trains. This will make it easiest for people to understand where they need to extract the ontent to. Never just include a subdirectory such as <em>YourNameHere</em> that is supposed to be extracted to the Railway\Sound folder, for example. Only the more experienced users will enerally e able to figure out where to put such content to by examining the files or their extensions.</p>
+<p>Anda harus selalu menambahkan semua susunan folder, seperti <strong>Railway</strong> dan <strong>Train</strong>, saat membuat archive dan menyebarkan add-ons. Hal ini dapat membantu user untuk menentukan di mana mereka harus meng-ekstrak archivenya. Jangan pernah membiarkan isi archive anda hanya folder <em>NamaFolder</em> yang seharusnya disimpan di folder Railway\Sound, sebagai contoh. Hanya user yang sudah berpengalaman yang bisa mengatasi masalah ini.</p>
 
-<p>Acceptable and not acceptable practices:</p>
+<p>Yang dibolehkan dan tidak:</p>
 
 
 <table class='type1'>
 <thead>
 <tr>
 <th><font color="Green">✓</font></th>
-<th>Include the two base folders <strong>Railway</strong> or <strong>Train</strong>, best both.</th>
+<th>Menambahkan folder <strong>Railway</strong> atau <strong>Train</strong>, lebih baik tambahkan keduanya.</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><font color="Red">✗</font></td>
-<td>Just include some subdirectory or files directly and expect users to figure out how to handle this.</td>
+<td>Hanya memasukkan folder atau file dan membiarkan user mencari tau sendiri cara menggunakannya.</td>
 </tr>
 </tbody>
 </table>
 
 
 
-<h2 id="errors-and-warnings">■ Errors and warnings</h2>
+<h2 id="error-dan-peringatan">■ Error dan peringatan</h2>
 
 <p>Generally, your route should be free of errors. Please note that openBVE distinguishes between errors and warnings. An error is something definately wrong with your coding that should be fixed immediately. A warning is usually only raised to encourage inspection of potentially ambiguous code or code that might not have been meant the way it was written. In order to inspect your routes and trains for errors and warnings, go to the Options menu in openBVE and enable eporting them. RouteViewer and ObjectViewer always report such messages. Please note that the arious tools and openBVE itself might report a different set of messages as they don&rsquo;t share all the ame functionality. Distributing add-ons containing errors might give users the impression that omething was incompletely downloaded or was incorrectly packaged, and should generally be voided.</p>
 
-<p>Acceptable and not acceptable practices:</p>
+<p>Yang dibolehkan dan tidak:</p>
 
 
 <table class='type1'>
 <thead>
 <tr>
 <th><font color="Green">✓</font></th>
-<th>Activate the report of errors and warnings in the <em>Options</em> menu and inspect your add-ons.</th>
+<th>Mengaktifkan laporkan error dan peringatan pada menu <em>Pengaturan</em> dan cek add-ons anda.</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><font color="Green">✓</font></td>
-<td>Distribute add-ons that are eventually free of errors (not necessarily of warnings).</td>
+<td>Menyebarkan add-on yang tidak ada errornya (warning tidak apa-apa).</td>
 </tr>
 
 <tr>
 <td><font color="Red">✗</font></td>
-<td>Never inspect your add-ons for errors by disabling the error report or by ignoring the messages.</td>
+<td>Jangan mengecek error pada add-on dengan mematikan laporan error atau abaikan pesan.</td>
 </tr>
 
 <tr>
 <td><font color="Red">✗</font></td>
-<td>Distribute an add-on that contains errors.</td>
+<td>Membagikan add-on yang masih mempunyai error.</td>
 </tr>
 </tbody>
 </table>
 
 
 
-<h2 id="routes-and-trains-designed-for-using-plugins">■ Routes and trains designed for using plugins</h2>
+<h2 id="rute-dan-kereta-yang-menggunakan-plugin-khusus">■ Rute dan kereta yang menggunakan plugin khusus.</h2>
 
 <p>If you include plugins in your train, they should be only of the .NET type. Older Windows-only plugins are retained for backward compatibility, but should not be distributed any longer with new releases. If you cannot remove the dependency on a Windows-only plugin for the time being, then at least design your routes and trains so that they work with the default safety system. You can test how your train behaves without a plugin by deleting the ats.cfg file (or by temporarily enaming it).</p>
 
-<h2 id="operation-manuals">■ Operation manuals</h2>
+<h2 id="panduan-operasional">■ Panduan operasional</h2>
 
 <p>An overview on the signs and signalling in your route, as well as on how to operate your train, is generally in order. Otherwise, users unfamiliar with the particular territory might be left with guessing the meaning of signs, or have to guess which keys serve which purpose. If you can, provide an English version of the instruction, as this generally increases the number of people who are able to understand it.</p>
 

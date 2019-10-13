@@ -37,7 +37,7 @@
           
           <ul class="third">
             
-            <li><a href="../../id/objects/native/b3d.html">The B3D object</a>
+            <li><a href="../../id/objects/native/b3d.html">Objek B3D</a>
               
             </li>
             
@@ -89,7 +89,7 @@
           
         </li>
         
-        <li><a href="../../id/objects/information.html">Information and tips</a>
+        <li><a href="../../id/objects/information.html">Info dan tips</a>
           
         </li>
         
@@ -101,7 +101,7 @@
       
       <ul class="second">
         
-        <li><a href="../../id/routes/csv.html">The CSV route</a>
+        <li><a href="../../id/routes/csv.html">Rute CSV</a>
           
         </li>
         
@@ -269,23 +269,23 @@
       
       <ul class="second">
         
-        <li><a href="../../id/information/encodings.html">Character encodings</a>
+        <li><a href="../../id/information/encodings.html">Enkoding karakter</a>
           
         </li>
         
-        <li><a href="../../id/information/numberformats.html">Number formats</a>
+        <li><a href="../../id/information/numberformats.html">Format angka</a>
           
         </li>
         
-        <li><a href="../../id/information/whitespaces.html">White Spaces</a>
+        <li><a href="../../id/information/whitespaces.html">Spasi</a>
           
         </li>
         
-        <li><a href="../../id/information/textureformats.html">Texture formats</a>
+        <li><a href="../../id/information/textureformats.html">Format gambar skin / tekstur</a>
           
         </li>
         
-        <li><a href="../../id/information/soundformats.html">Sound formats</a>
+        <li><a href="../../id/information/soundformats.html">Format suara</a>
           
         </li>
         
@@ -293,11 +293,11 @@
           
         </li>
         
-        <li><a href="../../id/information/distribution.html">Distributing add-ons</a>
+        <li><a href="../../id/information/distribution.html">Membagikan add-ons</a>
           
         </li>
         
-        <li><a href="../../id/information/forking.html">Forking guidelines</a>
+        <li><a href="../../id/information/forking.html">Panduan Forking</a>
           
         </li>
         
@@ -402,6 +402,11 @@
         한국어
       </a>
       
+      <hr class="dropdown-divider">
+      <a href="../../hu/information/encodings.html" class="dropdown-item">
+        Magyar
+      </a>
+      
     </div>
   </div>
 </div>
@@ -411,7 +416,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>Character encodings</h1>
+          <h1>Enkoding karakter</h1>
         </div>
 
         
@@ -422,9 +427,9 @@
 <div id="content">
   
 
-<p><font color="Gray">This page describes what character encodings are and how they should be used.</font></p>
+<p><font color="Gray">Bagian ini menjelaskan tentang enkoding karakter dan cara penggunaannya.</font></p>
 
-<h2 id="overview">■ Overview</h2>
+<h2 id="penjelasan">■ Penjelasan</h2>
 
 <p>A character encoding is a way to translate characters into bytes that can be stored on the hard drive. In the beginnings, one byte (256 states) was used to encode one character. As different writing systems around the world have different requirements for characters to be encoded, there are a lot of different encodings in use throughout the world. Problematically, if the encoding of a text file is not known in advance, misinterpreting the encoding can result in mojibake (meaningless sequence of characters).</p>
 
@@ -444,7 +449,7 @@
   </tbody>
 </table>
 
-<p>The byte sequence generated from the previous example in Shift_JIS:</p>
+<p>Dari contoh Shift_JIS sebelumnya jika diubah ke byte sequence:</p>
 
 <table style="border: none;">
   <tbody>
@@ -482,7 +487,7 @@
 
 <p>Route and train files are usually, for compatibility reasons, allowed to be encoded in any arbitrary encoding. As the encoding is not known in advance, the user will need to select the correct encoding for the route and the train in the settings tab in the main menu. Of course this is a nuisance and should be avoided somehow.</p>
 
-<h2 id="the-byte-order-mark">■ The Byte Order Mark</h2>
+<h2 id="byte-order-mark">■ Byte Order Mark</h2>
 
 <p>UTF-16 descends from a character encoding (UTC-2) which always used two bytes to encode one character. As such, the order of those two bytes matters. In order to know in which order the bytes appear, a so-called byte order mark is frequently prepended to the text, usually automatically and transparently by the text editor. The byte order mark provides decoders a means of detecting in which byte order the file was saved in. Additionally, the byte order mark provides a fairly safe way of detecting that the text file is saved in Unicode in the first place.</p>
 
@@ -498,8 +503,8 @@
 <table class='type0'>
 <thead>
 <tr>
-<th>Encoding</th>
-<th>Hexadecimal representation</th>
+<th>Enkoding</th>
+<th>Representasi Hexadecimal</th>
 </tr>
 </thead>
 

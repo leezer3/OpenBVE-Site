@@ -398,6 +398,11 @@
       </a>
       
       <hr class="dropdown-divider">
+      <a href="../../../hu/objects/native/animated.html" class="dropdown-item">
+        Magyar
+      </a>
+      
+      <hr class="dropdown-divider">
       <a href="../../../id/objects/native/animated.html" class="dropdown-item">
         Indonesian
       </a>
@@ -625,171 +630,324 @@ Esto defina la mínima cantidad de tiempo que necesita transcurrir para que la f
 
 <hr />
 
-<div id="warning">
-<h4 id="nota-de-compatibilidad-con-openbve-2">Nota de compatibilidad con openBVE 2</h4>
+<h5 id="the-sound-section">● The [Sound] section</h5>
 
-<p>Durante el desarrolo de openBVE (v0.9) y durante el desarrollo del formato de objeto animado, hay algunos comandos en existencia que terminan en <em>RPN</em>, asi como <em>TranslateXFunctionRPN</em>. Estos comandos nunca se han hecho en cualquier lanzamiento oficial (v1.0) y nunca fueron pensados en ser usados fuera del entorno de desarrollo. Mientras estos siguen aún disponibles sin documentación, serán quitados en openBVE 2. Si estas usando algunos de estos comandos, por favor deshagase de ellos lo mas posible.</p>
+<p>You can use the [Sound] section to add standalone sound effects to animated objects.</p>
+
+<p><div id="command">
+<p>[Sound]</p>
+
+</div>
+<br />
+This starts the section.</p>
+
+<p><div id="command">
+<p><strong>FileName = File</strong></p>
+
+</div>
+<br />
+This loads the sound effect to play.</p>
+
+<p><div id="command">
+<p><strong>Position = X, Y, Z</strong></p>
+
+</div>
+<br />
+Defines the position of the sound, relative to the center of the animated file.</p>
+
+<div id="command">
+<p><strong>Volume = Value</strong></p>
+
+</div>
+
+
+<p>This defines the initial volume of the sound at the source position. A value of <strong>1.0</strong> represents the nominal unchanged volume of the sound file.</p>
+
+<div id="command">
+<p><strong>Pitch = Value</strong></p>
+
+</div>
+
+
+<p>This defines the initial pitch of the sound at the source position. A value of <strong>1.0</strong> represents the nominal unchanged pitch of the sound file.</p>
+
+<div id="command">
+<p><strong>Radius = Value</strong></p>
+
+</div>
+
+
+<p>This defines the radius in meters from it&rsquo;s source at which the sound effect plays at full volume. The default value is <strong>30</strong>.</p>
+
+<p><div id="command">
+<p><strong>VolumeFunction = Formula</strong></p>
+
+</div>
+<br />
+This defines the function which controls the volume of the sound. <em>Formula</em> must return a number representing the desired volume, where <strong>1.0</strong> represents the nomimal unchanged volume of the sound file.</p>
+
+<p><div id="command">
+<p><strong>PitchFunction = Formula</strong></p>
+
+</div>
+<br />
+This defines the function which controls the pitch of the sound. <em>Formula</em> must return a number representing the desired pitch, where <strong>1.0</strong> represents the nomimal unchanged pitch of the sound file.</p>
+
+<p><div id="command">
+<p><strong>TrackFollowerFunction = Formula</strong></p>
+
+</div>
+<br />
+This defines the function which moves the source of the sound along the path of <strong>Rail 0</strong>. <em>Formula</em> must return a distance in meters, for which the object is then moved, respecting the curves and height changes of <strong>Rail 0</strong>.</p>
+
+<hr />
+
+<h5 id="the-statechangesound-section">● The [StateChangeSound] section</h5>
+
+<p>You can use the [StateChangeSound] section to attach sound effects to the preceeding [Object] section.</p>
+
+<p><div id="command">
+<p>[StateChangeSound]</p>
+
+</div>
+<br />
+This starts the section- Must immediately follow an [Object] section.</p>
+
+<p><div id="command">
+<p><strong>FileName = File</strong></p>
+
+</div>
+<br />
+This loads the sound effect to play for all state changes. Alternatively, <strong>FileNames</strong> may be used, which is described below:</p>
+
+<p><div id="command">
+<p><strong>FileNames = File<sub>0</sub>, File<sub>1</sub>, &hellip;, File<sub>n-1</sub></strong></p>
+
+</div>
+<br />
+Loads a list of <em>n</em> sounds, which correspond to the states in the [Object] section above.
+If a state is to have no sound effect, the list entry should be left blank.</p>
+
+<p><div id="command">
+<p><strong>Position = X, Y, Z</strong></p>
+
+</div>
+<br />
+Defines the position of the sound, relative to the center of the animated file.</p>
+
+<div id="command">
+<p><strong>Volume = Value</strong></p>
+
+</div>
+
+
+<p>This defines the volume of the sound at the source position. A value of <strong>1.0</strong> represents the nominal unchanged volume of the sound file.</p>
+
+<div id="command">
+<p><strong>Pitch = Value</strong></p>
+
+</div>
+
+
+<p>This defines the pitch of the sound at the source position. A value of <strong>1.0</strong> represents the nominal unchanged pitch of the sound file.</p>
+
+<div id="command">
+<p><strong>Radius = Value</strong></p>
+
+</div>
+
+
+<p>This defines the radius in meters from it&rsquo;s source at which the sound effect plays at full volume. The default value is <strong>30</strong>.</p>
+
+<div id="command">
+<p><strong>PlayOnShow = Value</strong></p>
+
+</div>
+
+
+<p><em>Value</em> = <strong>0</strong>: The sound effect will not be played.
+<em>Value</em> = <strong>1</strong>: The sound effect will be played.</p>
+
+<p>This defines whether the sound effect defined above should be played when a the relevant state is shown.</p>
+
+<div id="command">
+<p><strong>PlayOnHide = Value</strong></p>
+
+</div>
+
+
+<p><em>Value</em> = <strong>0</strong>: The sound effect will not be played.
+<em>Value</em> = <strong>1</strong>: The sound effect will be played.</p>
+
+<p>This defines whether the sound effect defined above should be played when the relevant state is hidden.</p>
+
+<hr />
+
+<div id="warning">
+<h4 id="openbve-2-compatibility-note">openBVE 2 compatibility note</h4>
+
+<p>During the development of openBVE (v0.9) and during the development of the animated object format, there were certain commands in existance ending in <em>RPN</em>, such as <em>TranslateXFunctionRPN</em>. These commands never made it into any official release (v1.0) and were thus never meant to be used outside of development environments. While they are still available undocumentedly, they will be removed for openBVE 2. If you are using these commands, please get rid of them as soon as possible.</p>
 
 </div>
 
 
 <hr />
 
-<h5 id="sobre-las-formulas">● Sobre las formulas</h5>
+<h5 id="about-the-formulas">● About the formulas</h5>
 
-<p>Primero que todo, la notación aritmética, lo que puedes teclear dentro del parámetro <em>Formula</em>, es convertido en una notación funcional. Por cada notación aritmética, hay una notación funcional correspondiente. Algunas funciones no tienen un operador aritmético y solo pueden ser teclados en notación funcional. Para los operadores, la precedencia juega un rol importante. Puedes usar paréntesis para sobreponer el orden de precedencia así como generalmente en una fórmula matemática. Los nombres de las funciones no distinguen entre mayúsculas y minúsculas.</p>
+<p>First of all, infix notation, which is what you can enter for <em>Formula</em>, is converted into functional notation. Thus for every infix notation, there is a corresponding functional notation. Some functions do not have an infix operator and can thus only be entered in functional notation. For operators, precedence plays an important role. You can use parantheses to override the order of precedence just as in any usual mathematical formula. Names of functions are case-insensitive.</p>
 
 <div id="warning">
 <span>⚠</span>
-<p>Por favor tenga en cuenta que el resultado de cualquier operación matemática o función pudiera ser infinito, intermediado o no real, 0 es retornado. Un error de desborde no puede ser prevenido, Así que debes tomar en cuenta esto.</p>
+<p>Please note that if the result of any mathematical operation or function would be infinity, indeterminate or non-real, 0 is returned. Numeric overflow is not prevented, so you need to take that into account yourself.</p>
 
 </div>
 
 
-<h2 id="a-name-operators-a-3-lista-de-operadores-aritméticos-de-notación"><a name="operators"></a>■ 3. Lista de operadores aritméticos de notación</h2>
+<h2 id="a-name-operators-a-3-list-of-infix-notation-operators"><a name="operators"></a>■ 3. List of infix notation operators</h2>
 
-<h5 id="aritmética-básica">● Aritmética básica</h5>
+<h5 id="basic-arithmetics">● Basic arithmetics</h5>
 
 
 <table class='type0'>
 <thead>
 <tr>
-<th align="left">Aritmética</th>
-<th align="left">Funcionalidad</th>
-<th align="left">Descripción</th>
+<th align="left">Infix</th>
+<th align="left">Functional</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td align="left"><code>a + b</code></td>
-<td align="left"><code>Suma[a,b, ...]</code></td>
-<td align="left">Representa adición</td>
+<td align="left"><code>Plus[a,b, ...]</code></td>
+<td align="left">Represents addition</td>
 </tr>
 
 <tr>
 <td align="left"><code>a - b</code></td>
-<td align="left"><code>Sustraer[a,b]</code></td>
-<td align="left">Representa sustracción</td>
+<td align="left"><code>Subtract[a,b]</code></td>
+<td align="left">Represents subtraction</td>
 </tr>
 
 <tr>
 <td align="left"><code>-a</code></td>
-<td align="left"><code>Menos[a]</code></td>
-<td align="left">Convierte a negativo el número</td>
+<td align="left"><code>Minus[a]</code></td>
+<td align="left">Negates the number</td>
 </tr>
 
 <tr>
 <td align="left"><code>a * b</code></td>
-<td align="left"><code>Por[a,b,...]</code></td>
-<td align="left">Representa multiplicación</td>
+<td align="left"><code>Times[a,b,...]</code></td>
+<td align="left">Represents multiplication</td>
 </tr>
 
 <tr>
 <td align="left"><code>a / b</code></td>
-<td align="left"><code>Dividir[a,b]</code></td>
-<td align="left">Representa división</td>
+<td align="left"><code>Divide[a,b]</code></td>
+<td align="left">Represents division</td>
 </tr>
 </tbody>
 </table>
 
 
-<h5 id="comparaciones">● Comparaciones</h5>
+<h5 id="comparisons">● Comparisons</h5>
 
-<p>Todas las comparaciones devuelven 1 para verdadero y 0 para falso.</p>
+<p>All comparisons return 1 for true and 0 for false.</p>
 
 
 <table class='type0'>
 <thead>
 <tr>
-<th align="left">Aritmética</th>
-<th>Funcionalidad</th>
-<th>Descripción</th>
+<th align="left">Infix</th>
+<th>Functional</th>
+<th>Description</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td align="left"><code>a == b</code></td>
-<td><code>Igual[a,b]</code></td>
-<td>Verdadero (1) si <em>a</em> es igual a <em>b</em></td>
+<td><code>Equal[a,b]</code></td>
+<td>True (1) if <em>a</em> equals <em>b</em></td>
 </tr>
 
 <tr>
 <td align="left"><code>a != b</code></td>
-<td><code>Noigual[a,b]</code></td>
-<td>Verdadero (1) si <em>a</em> no es igual a <em>b</em></td>
+<td><code>Unequal[a,b]</code></td>
+<td>True (1) if <em>a</em> does not equal <em>b</em></td>
 </tr>
 
 <tr>
 <td align="left"><code>a &lt; b</code></td>
-<td><code>Menor[a,b]</code></td>
-<td>Verdadero (1) si <em>a</em> es menor que <em>b</em></td>
+<td><code>Less[a,b]</code></td>
+<td>True (1) if <em>a</em> is less than <em>b</em></td>
 </tr>
 
 <tr>
 <td align="left"><code>a &gt; b</code></td>
-<td><code>Mayor[a,b]</code></td>
-<td>Verdadero (1) si <em>a</em> es mayor que <em>b</em></td>
+<td><code>Greater[a,b]</code></td>
+<td>True (1) if <em>a</em> is greater than <em>b</em></td>
 </tr>
 
 <tr>
 <td align="left"><code>a &lt;= b</code></td>
-<td><code>MenorIgual[a,b]</code></td>
-<td>Verdadero (1) si <em>a</em> es menor o igual que <em>b</em></td>
+<td><code>LessEqual[a,b]</code></td>
+<td>True (1) if <em>a</em> is less than or equal to <em>b</em></td>
 </tr>
 
 <tr>
 <td align="left"><code>a &gt;= b</code></td>
-<td><code>MayorIgual[a,b]</code></td>
-<td>Verdadero (1) si <em>a</em> es mayor o igual que <em>b</em></td>
+<td><code>GreaterEqual[a,b]</code></td>
+<td>True (1) if <em>a</em> is greater than or equal to <em>b</em></td>
 </tr>
 </tbody>
 </table>
 
-<h5 id="operadores-lógicos">● Operadores lógicos</h5>
+<h5 id="logical-operations">● Logical operations</h5>
 
-<p>Todos los operadores tratan 0 como falso y cualquier otro valor como verdadero, y retornan 1 por verdadero y 0 por falso.</p>
+<p>All operations treat 0 as false and any other value as true, and return 1 for true and 0 for false.</p>
 
 <table class='type0'>
 <thead>
 <tr>
-<th align="left">Aritmética</th>
-<th>Funcionalidad</th>
-<th>Descripción</th>
+<th align="left">Infix</th>
+<th>Functional</th>
+<th>Description</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td align="left"><code>!a</code></td>
-<td><code>No[a]</code></td>
-<td>Verdadero (1) si <em>a</em> es falso</td>
+<td><code>Not[a]</code></td>
+<td>True (1) if <em>a</em> is false</td>
 </tr>
 
 <tr>
 <td align="left"><code>a &amp; b</code></td>
-<td><code>Y[a,b]</code></td>
-<td>Verdadero (1) si ambos <em>a</em> y <em>b</em> son verdad</td>
+<td><code>And[a,b]</code></td>
+<td>True (1) if both <em>a</em> and <em>b</em> are true</td>
 </tr>
 
 <tr>
 <td align="left"><code>a</code> &#124; <code>b</code></td>
-<td><code>O[a,b]</code></td>
-<td>Verdadero (1) si cualquiera de <em>a</em> o <em>b</em> es verdad</td>
+<td><code>Or[a,b]</code></td>
+<td>True (1) if any of <em>a</em> or <em>b</em> are true</td>
 </tr>
 
 <tr>
 <td align="left"><code>a ^ b</code></td>
-<td><code>Oexclusivo[a,b]</code></td>
-<td>True (1) si cualquiera <em>a</em> o <em>b</em> es verdad</td>
+<td><code>Xor[a,b]</code></td>
+<td>True (1) if either <em>a</em> or <em>b</em> is true</td>
 </tr>
 </tbody>
 </table>
 
-<h5 id="operador-de-precedencia">● Operador de precedencia</h5>
+<h5 id="operator-precedence">● Operator precedence</h5>
 
-<p>Desde la alta prioridad a la baja. Los operadores de la misma precedencia son evaluados de izquierda a derecha en orden en que aparezcan en la formula.</p>
+<p>From highest precedence to lowest. Operators of same precedence are evaluated left to right in the order in they occur in the formula.</p>
 
 <table class='type1'>
 <thead>
@@ -800,7 +958,7 @@ Esto defina la mínima cantidad de tiempo que necesita transcurrir para que la f
 
 <tbody>
 <tr>
-<td><code>-</code> (Menos)</td>
+<td><code>-</code> (Minus)</td>
 </tr>
 
 <tr>
@@ -812,7 +970,7 @@ Esto defina la mínima cantidad de tiempo que necesita transcurrir para que la f
 </tr>
 
 <tr>
-<td><code>+</code>, <code>-</code> (Sustracción)</td>
+<td><code>+</code>, <code>-</code> (Subtract)</td>
 </tr>
 
 <tr>
@@ -841,657 +999,657 @@ Esto defina la mínima cantidad de tiempo que necesita transcurrir para que la f
 
 <div id="warning">
 <span>⚠</span>
-<p>Por favor tenga en cuenta que algunas combinaciones de prefijo y operadores aritméticos no son reconocidos. Por ejemplo  <code>a*-b</code> no es aceptado. Use en vez <code>a*(-b)</code> o <code>-a*b</code>.</p>
+<p>Please note that some combinations of prefix and infix operators are not recognized. For example <code>a*-b</code> is not accepted. Use <code>a*(-b)</code> or <code>-a*b</code> instead.</p>
 
 </div>
 
-<h2 id="a-name-functions-a-4-lista-de-funciones"><a name="functions"></a>■ 4. Lista de funciones</h2>
+<h2 id="a-name-functions-a-4-list-of-functions"><a name="functions"></a>■ 4. List of functions</h2>
 
-<h5 id="aritmética-básica">● Aritmética básica</h5>
+<h5 id="basic-arithmetics">● Basic arithmetics</h5>
 
 <table class='type0'>
 <thead>
 <tr>
-<th>Función</th>
-<th>Descripción</th>
+<th>Function</th>
+<th>Description</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>Reciprocal[x]</code></td>
-<td>Retorna la reciprocidad, igual a 1/<em>x</em></td>
+<td>Returns the reciprocal, equal to 1/<em>x</em></td>
 </tr>
 
 <tr>
 <td><code>Power[a,b,...]</code></td>
-<td>Retorna <em>a</em> elevado a la <em>b</em> <sup>ava </sup>potencia. <em>b</em> debe ser un número no negativo. Para consistencia,  Power[0,<em>b</em>] siempre reotrna 1, incluso en el caso degenerado de Power[0,0], y <em>a</em> comenzando en negativo siempre retorna 0. Agregar más argumentos creará una cadena. Power[a,b,c] retornará <em>a</em> <sup><em>b</em><sup><em>c</em></sup></sup>.</td>
+<td>Returns <em>a</em> raised to the <em>b</em><sup>th</sup> power. <em>b</em> must be a non-negative number. For consistency, Power[0,<em>b</em>] always returns 1, even in the degenerate case Power[0,0], and <em>a</em> being negative always returns 0. Adding more arguments will create a chain. Power[a,b,c] will return <em>a</em><sup><em>b</em><sup><em>c</em></sup></sup>.</td>
 </tr>
 </tbody>
 </table>
 
-<h5 id="funciones-numéricas">● Funciones numéricas</h5>
+<h5 id="numeric-functions">● Numeric functions</h5>
 
 <table class='type0'>
 <thead>
 <tr>
-<th>Función</th>
-<th>Descripción</th>
+<th>Function</th>
+<th>Description</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>Quotient[a,b]</code></td>
-<td>Divide <em>a</em> entre <em>b</em> y redondea el resultado hacia abajo, igual a <code>Floor[a/b]</code>.</td>
+<td>Divides <em>a</em> by <em>b</em> and rounds the result down, equal to <code>Floor[a/b]</code>.</td>
 </tr>
 
 <tr>
 <td><code>Mod[a,b]</code></td>
-<td>Retorna el residuo al dividir <em>a</em> entre <em>b</em>, igual a <code>a-b*Floor[a/b]</code>.</td>
+<td>Returns the remainder of dividing <em>a</em> by <em>b</em>, equal to <code>a-b*Floor[a/b]</code>.</td>
 </tr>
 
 <tr>
 <td><code>Min[a,b,...]</code></td>
-<td>Retorna el menor de los términos.</td>
+<td>Returns the smallest of the terms.</td>
 </tr>
 
 <tr>
 <td><code>Max[a,b,...]</code></td>
-<td>Retorna el mayor de los términos.</td>
+<td>Returns the largest of the terms.</td>
 </tr>
 
 <tr>
 <td><code>Abs[x]</code></td>
-<td>Retorna el valor absoluto.</td>
+<td>Returns the absolute value.</td>
 </tr>
 
 <tr>
 <td><code>Sign[x]</code></td>
-<td>Retorna el signo de <em>x</em>, el cual puede ser -1, 0 or 1.</td>
+<td>Returns the sign of <em>x</em>, which is either -1, 0 or 1.</td>
 </tr>
 
 <tr>
 <td><code>Floor[x]</code></td>
-<td>Redondea hacia abajo al entero más cercano.</td>
+<td>Rounds down to the nearest integer.</td>
 </tr>
 
 <tr>
 <td><code>Ceiling[x]</code></td>
-<td>Redondea hacia arriba al entero más cercano.</td>
+<td>Rounds up to the nearest integer.</td>
 </tr>
 
 <tr>
 <td><code>Round[x]</code></td>
-<td>Redondea al entero mas cercano. Números terminando en decimal .5 son redondeados hacia el entero más cercano.</td>
+<td>Rounds to the nearest integer. Numbers ending in .5 are rounded to the nearest even integer.</td>
 </tr>
 
 <tr>
 <td><code>random[Minimum, Maximum]</code></td>
-<td>Retorna un nuevo número de coma flotante entre <em>Mínimo</em> y <em>Máximo</em>.</td>
+<td>Returns a new random floating-point number between <em>Minimum</em> and <em>Maximum</em>.</td>
 </tr>
 
 <tr>
 <td><code>randomInt[Minimum, Maximum]</code></td>
-<td>Retorna un nuevo número entero entre <em>Mínimo</em> y <em>Máximo</em>.</td>
+<td>Returns a new random integer between <em>Minimum</em> and <em>Maximum</em>.</td>
 </tr>
 </tbody>
 </table>
 
-<h5 id="funciones-elementales">● Funciones elementales</h5>
+<h5 id="elementary-functions">● Elementary functions</h5>
 
 <table class='type0'>
 <thead>
 <tr>
-<th>Función</th>
-<th>Descripción</th>
+<th>Function</th>
+<th>Description</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>Exp[x]</code></td>
-<td>La función exponencial, o <em>e</em> de la <em>x</em><sup>ava</sup>potencia.</td>
+<td>The exponential function, or <em>e</em> to the <em>x</em><sup>th</sup> power.</td>
 </tr>
 
 <tr>
 <td><code>Log[x]</code></td>
-<td>La función logarítmica, con base <em>e</em>.</td>
+<td>The natural logarithm, to base <em>e</em>.</td>
 </tr>
 
 <tr>
 <td><code>Sqrt[x]</code></td>
-<td>La raíz cuadrada.</td>
+<td>The square root.</td>
 </tr>
 
 <tr>
 <td><code>Sin[x]</code></td>
-<td>Seno (en radianes).</td>
+<td>The sine (input in radians).</td>
 </tr>
 
 <tr>
 <td><code>Cos[x]</code></td>
-<td>Coseno (en radianes)</td>
+<td>The cosine (input in radians).</td>
 </tr>
 
 <tr>
 <td><code>Tan[x]</code></td>
-<td>La tangente (en radianes).</td>
+<td>The tangent (input in radians).</td>
 </tr>
 
 <tr>
 <td><code>ArcTan[x]</code></td>
-<td>La tangente inversa - Cotangente (en radianes)</td>
+<td>The inverse tangent (output in radians).</td>
 </tr>
 </tbody>
 </table>
 
-<h5 id="condicionales">● Condicionales</h5>
+<h5 id="conditionals">● Conditionals</h5>
 
 <table class='type0'>
 <thead>
 <tr>
-<th>Función</th>
-<th>Descripción</th>
+<th>Function</th>
+<th>Description</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>If[cond,truevalue,falsevalue]</code></td>
-<td>Si <em>condición</em> es != 0, retorna <em>valorverdadero</em>, en caso contrario <em>valorfalso</em></td>
+<td>If <em>cond</em> is != 0, returns <em>truevalue</em>, otherwise <em>falsevalue</em></td>
 </tr>
 </tbody>
 </table>
 
-<h2 id="a-name-variables-a-5-lista-de-variables"><a name="variables"></a>■ 5. Lista de variables</h2>
+<h2 id="a-name-variables-a-5-list-of-variables"><a name="variables"></a>■ 5. List of variables</h2>
 
-<h5 id="primitivas">● Primitivas</h5>
+<h5 id="primitives">● Primitives</h5>
 
 <table class='type0'>
 <thead>
 <tr>
 <th>Variable</th>
-<th>Descripción</th>
+<th>Description</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>value</code></td>
-<td>El valor retornado por la función en su ultima evaluación. Al comienzo de la simulación, esto es 0.</td>
+<td>The value returned by the function in the last evaluation. At the beginning of the simulation, this is 0.</td>
 </tr>
 
 <tr>
 <td><code>delta</code></td>
-<td>La diferencia desde la ultima evaluación de la función en segundos. Por favor tenga en cuenta que no hay tiempo garantizado desde que transcurre entre los llamados de función sucesivos.</td>
+<td>The time difference since the last evaluation of the function in seconds. Please note that there is no guaranteed time that elapses between successive function calls.</td>
 </tr>
 
 <tr>
 <td><code>currentState</code></td>
-<td>Retorna el estado actual numérico del objeto.</td>
+<td>Returns the current numerical state of the object.</td>
 </tr>
 </tbody>
 </table>
 
-<h5 id="tiempo-y-camara">● Tiempo y camara</h5>
+<h5 id="time-and-camera">● Time and camera</h5>
 
 <table class='type0'>
 <thead>
 <tr>
 <th>Variable</th>
-<th>Descripción</th>
+<th>Description</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>time</code></td>
-<td>El tiempo actual del juego medido en segundos desde la media noche del primer día.</td>
+<td>The current in-game time measured in seconds since midnight of the first day.</td>
 </tr>
 
 <tr>
 <td><code>cameraDistance</code></td>
-<td>Una distancia cartesiana no negativa medida desde el objeto a la cámara en metros.</td>
+<td>The non-negative cartesian distance measured from the object to the camera in meters.</td>
 </tr>
 
 <tr>
 <td><code>cameraMode</code></td>
-<td>Retorna 0 si la cámara es actualmente en cabina 2D o 3D, 1 en caso contrario.</td>
+<td>Returns 0 if the camera is currently in a 2D or 3D cab, 1 otherwise.</td>
 </tr>
 </tbody>
 </table>
 
-<h5 id="trenes">● Trenes</h5>
+<h5 id="trains">● Trains</h5>
 
-<p>Generalmente, objetos adjuntados a un tren particular o coche retorna valores para los trenes y cobhes, a menos que sean estados. Para objetos de escenario, la referencia es el coche del conductor del tren más cercano ( no necesariamente el tren del jugador).</p>
+<p>Generally, objects attached to a particular train and car return values for that train and car, unless stated otherwise. For scenery objects, the reference is the driver&rsquo;s car of the nearest train (not necessarily the player&rsquo;s train).</p>
 
-<p>En algunas de las siguientes variables <em>IndiceCoche</em> tiene el siguiente significado: 0 si el 1<sup>er</sup>coche desde el frente,1 es el 2<sup>do</sup>coche del frente, etc., mientras que -1 es el 1<sup>er</sup>carro desde la parte posterior, -2 es el 2<sup>do</sup>carro desde la parte posterior, etc. En general, los indices de los coches desde -<em>coches</em> a <em>coches</em>-1 representa los coches existentes, donde <em>coches</em> es el numero de carros que el tren tiene, mientras los valores fuera de este rango representan coches no existentes. Así como los trenes tienen al menos un coche, indices -1 y 0 están garantizados en existir en cualquier tren.</p>
+<p>In some of the following variables, <em>carIndex</em> has the following meaning: 0 is the 1<sup>st</sup> car from the front, 1 is the 2<sup>nd</sup> car from the front, etc., while -1 is the 1<sup>st</sup> car from the rear, -2 is the 2<sup>nd</sup> car from the rear, etc. In general, car indices from -<em>cars</em> to <em>cars</em>-1 represent existing cars, where <em>cars</em> is the number of cars the train has, while values outside of this range represent non-existing cars. As all trains have at least 1 car, indices -1 and 0 are guaranteed to exist for any train.</p>
 
-<h5 id="trenes-generalidades">● Trenes (generalidades)</h5>
+<h5 id="trains-general">● Trains (general)</h5>
 
 <table class='type0'>
 <thead>
 <tr>
 <th>Variable</th>
-<th>Descripción</th>
+<th>Description</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>cars</code></td>
-<td>El número de coches que el tren posee.</td>
+<td>The number of cars the train has.</td>
 </tr>
 
 <tr>
 <td><code>speed</code></td>
-<td>La velocidad actual del coche en m/s. Es positivo cuando el tren viaja hacia adelante, y negativa cuando el tren viaja hacia atrás.</td>
+<td>The signed actual speed of the current car in m/s. Is positive when the train travels forward, and negative when the train travels backward.</td>
 </tr>
 
 <tr>
 <td><code>speed[carIndex]</code></td>
-<td>La velocidad actual del coche número <em>carIndex</em> en m/s. Es positivo cuando el tren viaja hacia adelante, y negativa cuando el tren viaja hacia atrás.</td>
+<td>The signed actual speed of the car <em>carIndex</em> in m/s. Is positive when the train travels forward, and negative when the train travels backward.</td>
 </tr>
 
 <tr>
 <td><code>speedometer</code></td>
-<td>La velocidad percibida del actual coche en m/s así como esto pudiera aparecer un velocímetro en patinaje de ruedas y bloqueo de ruedas.</td>
+<td>The signed perceived speed of the current car in m/s as it would appear to a speedometer on wheel slip and wheel lock.</td>
 </tr>
 
 <tr>
 <td><code>speedometer[carIndex]</code></td>
-<td>La velocidad percibida del coche de indice <em>carIndex</em> en m/s así como esto pudiera aparecer un velocímetro en patinaje de ruedas y bloqueo de ruedas.</td>
+<td>The signed perceived speed of the car <em>carIndex</em> in m/s as it would appear to a speedometer on wheel slip and wheel lock.</td>
 </tr>
 
 <tr>
 <td><code>acceleration</code></td>
-<td>La aceleración del coche actual en m/s².</td>
+<td>The actual acceleration of the current car in m/s².</td>
 </tr>
 
 <tr>
 <td><code>acceleration[carIndex]</code></td>
-<td>La aceleración actual del coche número <em>carIndex</em> en m/s².</td>
+<td>The actual acceleration of the car <em>carIndex</em> in m/s².</td>
 </tr>
 
 <tr>
 <td><code>accelerationMotor</code></td>
-<td>La aceleración actual la cual el motor del primer coche genera en m/s².</td>
+<td>The acceleration which the motor of the first motor car currently generates in m/s².</td>
 </tr>
 
 <tr>
 <td><code>accelerationMotor[carIndex]</code></td>
-<td>La aceleración actual la cual el motor del coche número <em>carIndex</em> genera en m/s².</td>
+<td>The acceleration which the motor of the car <em>carIndex</em> currently generates in m/s².</td>
 </tr>
 
 <tr>
 <td><code>distance</code></td>
-<td>Una distancia cartesiana no negativa medida desde el objeto al coche más cercano en metros. Solamente es usado por objetos de escenario.</td>
+<td>The non-negative cartesian distance measured from the object to the closest car in meters. Only meaningful for scenery objects.</td>
 </tr>
 
 <tr>
 <td><code>distance[carIndex]</code></td>
-<td>La distancia cartesiana no negativa medida desde el objeto al coche número <em>carIndex</em> en metros, ó 0 si el coche no existe. Solamente es usado por objetos de escenario.</td>
+<td>The non-negative cartesian distance measured from the object to the car <em>carIndex</em> in meters, or 0 if the car does not exist. Only meaningful for scenery objects.</td>
 </tr>
 
 <tr>
 <td><code>trackDistance</code></td>
-<td>La distancia de la vía desde el objeto al extremo más cercano del tren mas próximo en metros. Es positivo cuando el tren esta en frente del objeto, y negativo cuando esta por detrás, y cero cuando el objeto esta entre los extremos del tren.</td>
+<td>The signed track distance measured from the object to the closest end of the nearest train in meters. Is positive when the train is in front of the object, negative when behind, and zero when the object lies between the ends of the train.</td>
 </tr>
 
 <tr>
 <td><code>trackDistance[carIndex]</code></td>
-<td>La distancia de la vía desde el objeto al coche número <em>carIndex</em> del tren mas próximo en metros. Es positivo cuando el centro del coche esté en frente del objeto, y negativo cuando esta por detrás, Retorna 0 si el coche no existe. Solamente es usado por objetos de escenario.</td>
+<td>The signed track distance measured from the object to the car <em>carIndex</em> of the nearest train in meters. Is positive when the center of the car is in front of the object, and negative if behind. Returns 0 if the car does not exist. Only meaningful for scenery objects.</td>
 </tr>
 
 <tr>
 <td><code>destination</code></td>
-<td>La configuración actual del destino del tren (Es configurado por <em>Track.Destination</em> ó la interfaz del plugin)</td>
+<td>The currently set destination for this train. (Set via <em>Track.Destination</em> or the plugin interface)</td>
 </tr>
 
 <tr>
 <td><code>distanceNextStation</code></td>
-<td>La distancia en metros para la siguiente estación.</td>
+<td>The distance in m to the next station.</td>
 </tr>
 
 <tr>
 <td><code>distanceStation[stationIndex]</code></td>
-<td>La distancia en metros a la estación con indice <em>stationIndex</em></td>
+<td>The distance in m to the station with <em>stationIndex</em></td>
 </tr>
 
 <tr>
 <td><code>stopsNextStation</code></td>
-<td>Indica si el tren hace parada en la próxima estación.</td>
+<td>Whether the train stops at the next station.</td>
 </tr>
 
 <tr>
 <td><code>stopsStation[stationIndex]</code></td>
-<td>Indica que el tren se detiene en la estación con indice <em>stationIndex</em></td>
+<td>Whether the train stops at the station with <em>stationIndex</em></td>
 </tr>
 
 <tr>
 <td><code>nextStation</code></td>
-<td>El indice de la siguiente estación.</td>
+<td>The index of the next station.</td>
 </tr>
 
 <tr>
 <td><code>nextStationStop</code></td>
-<td>El indice de la siguiente estación donde el tren debe hacer parada.</td>
+<td>The index of the next station where the train must stop.</td>
 </tr>
 </tbody>
 </table>
 
-<h5 id="trenes-freno">● Trenes (freno)</h5>
+<h5 id="trains-brake">● Trains (brake)</h5>
 
 <table class='type0'>
 <thead>
 <tr>
 <th>Variable</th>
-<th>Descripción</th>
+<th>Description</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>mainReservoir</code></td>
-<td>La presión actual de la reserva principal del coche, medido en Pascal.</td>
+<td>The current pressure in the main reservoir in this car, measured in Pa.</td>
 </tr>
 
 <tr>
 <td><code>mainReservoir[carIndex]</code></td>
-<td>La presión actual de la reserva principal del coche de indice numero <em>carIndex</em>, medido en Pascal.</td>
+<td>The current pressure in the main reservoir in car <em>carIndex</em>, measured in Pa.</td>
 </tr>
 
 <tr>
 <td><code>emergencyReservoir</code></td>
-<td>La presión actual de reserva de emergencia en este coche, medido en Pascal.</td>
+<td>The current pressure in the emergency reservoir in this car, measured in Pa.</td>
 </tr>
 
 <tr>
 <td><code>emergencyReservoir[carIndex]</code></td>
-<td>La presión actual del reserva de emergencia en el coche de indice número <em>carIndex</em>, medido en Pascal.</td>
+<td>The current pressure in the emergency reservoir in car <em>carIndex</em>, measured in Pa.</td>
 </tr>
 
 <tr>
 <td><code>brakePipe</code></td>
-<td>La presión actual de la tubería de freno en este coche, medido en Pascal.</td>
+<td>The current pressure in the brake pipe in this car, measured in Pa.</td>
 </tr>
 
 <tr>
 <td><code>brakePipe[carIndex]</code></td>
-<td>La presión actual de la tubería de freno en este coche de indice número <em>carIndex</em>, medido en Pascal.</td>
+<td>The current pressure in the brake pipe in car <em>carIndex</em>, measured in Pa.</td>
 </tr>
 
 <tr>
 <td><code>brakeCylinder</code></td>
-<td>La presión actual del cilindro de freno en este coche, medido en Pascal.</td>
+<td>The current pressure in the brake cylinder in this car, measured in Pa.</td>
 </tr>
 
 <tr>
 <td><code>brakeCylinder[carIndex]</code></td>
-<td>La presión actual del cilindro de freno en este coche de indice número <em>carIndex</em>, medido en Pascal.</td>
+<td>The current pressure in the brake cylinder in car <em>carIndex</em>, measured in Pa.</td>
 </tr>
 
 <tr>
 <td><code>straightAirPipe</code></td>
-<td>La presión actual de la tubería de aire recto en este coche, medido en Pascal.</td>
+<td>The current pressure in the straight air pipe in this car, measured in Pa.</td>
 </tr>
 
 <tr>
 <td><code>straightAirPipe[carIndex]</code></td>
-<td>La presión actual de la tubería de aire recto en este coche de índice número <em>carIndex</em>, medido en Pascal.</td>
+<td>The current pressure in the straight air pipe in car <em>carIndex</em>, measured in Pa.</td>
 </tr>
 </tbody>
 </table>
 
-<h5 id="trenes-puertas">● Trenes (puertas)</h5>
+<h5 id="trains-doors">● Trains (doors)</h5>
 
 <table class='type0'>
 <thead>
 <tr>
 <th>Variable</th>
-<th>Descripción</th>
+<th>Description</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>doors</code></td>
-<td>El estado de las puertas. Retorna 0 si esta totalmente cerrada, 1 si esta totalmente abierta, o cualquier otro estado intermedio, las puertas están parciales en un estado abierto.</td>
+<td>The state of the doors. Returns 0 if fully closed, 1 if fully opened, or any intermediate value, biasing doors that are in a more open state.</td>
 </tr>
 
 <tr>
 <td><code>doors[carIndex]</code></td>
-<td>El estado de las puertas del coche de indice número <em>carIndex</em>. Retorna 0 si esta totalmente cerrada, 1 si esta totalmente abierta, o cualquier otro estado intermedio, las puertas están parciales en un estado abierto.</td>
+<td>The state of the doors of car <em>carIndex</em>. Returns 0 if fully closed, 1 if fully opened, or any intermediate value, biasing doors that are in a more open state.</td>
 </tr>
 
 <tr>
 <td><code>leftDoors</code></td>
-<td>El estado de las puertas del lado izquierdo. Retorna 0 si esta totalmente cerrada, 1 si esta totalmente abierta, o cualquier otro estado intermedio, las puertas están parciales en un estado abierto.</td>
+<td>The state of the left doors. Returns 0 if fully closed, 1 if fully opened, or any intermediate value, biasing doors that are in a more open state.</td>
 </tr>
 
 <tr>
 <td><code>leftDoors[carIndex]</code></td>
-<td>El estado de las puertas del lado izquierdo del coche de indice número <em>carIndex</em>. Retorna un valor entre 0 y 1, en un estado parcial de puertas que están en un estado de apertura, o -1 si el coche no existe.</td>
+<td>The state of the left doors of car <em>carIndex</em>. Returns a value between 0 and 1, biasing doors that are in a more open state, or -1 if the car does not exist.</td>
 </tr>
 
 <tr>
 <td><code>rightDoors</code></td>
-<td>El estado de las puertas del lado derecho. Retorna 0 si esta totalmente cerrada, 1 si esta totalmente abierta, o cualquier otro estado intermedio, las puertas están parciales en un estado abierto.</td>
+<td>The state of the right doors. Returns 0 if fully closed, 1 if fully opened, or any intermediate value, biasing doors that are in a more open state.</td>
 </tr>
 
 <tr>
 <td><code>rightDoors[carIndex]</code></td>
-<td>El estado de las puertas del lado derecho del coche de indice número <em>carIndex</em>. Retorna un valor entre 0 y 1, en un estado parcial de puertas que están en un estado de apertura, o -1 si el coche no existe.</td>
+<td>The state of the right doors of car <em>carIndex</em>. Returns a value between 0 and 1, biasing doors that are in a more open state, or -1 if the car does not exist.</td>
 </tr>
 
 <tr>
 <td><code>leftDoorsTarget</code></td>
-<td>El estado de destino anticipado de las puertas izquierdas. Retorna cualquiera 0 (cerrado) ó 1 (abierto).</td>
+<td>The anticipated target state of the left doors. Returns either 0 (closed) or 1 (opened).</td>
 </tr>
 
 <tr>
 <td><code>leftDoorsTarget[carIndex]</code></td>
-<td>El estado de destino anticipado de las puertas izquierdas del coche de indice número <em>carIndex</em>. Retorna cualquiera 0 (cerrado) ó 1 (abierto).</td>
+<td>The anticipated target state of the left doors of car <em>carIndex</em>. Returns either 0 (closed) or 1 (opened).</td>
 </tr>
 
 <tr>
 <td><code>rightDoorsTarget</code></td>
-<td>El estado de destino anticipado de las puertas derechas. Retorna cualquiera 0 (cerrado) ó 1 (abierto).</td>
+<td>The anticipated target state of the right doors. Returns either 0 (closed) or 1 (opened).</td>
 </tr>
 
 <tr>
 <td><code>rightDoorsTarget[carIndex]</code></td>
-<td>El estado de destino anticipado de las puertas derechas del coche de indice número <em>carIndex</em>. Retorna cualquiera 0 (cerrado) ó 1 (abierto).</td>
+<td>The anticipated target state of the right doors of car <em>carIndex</em>. Returns either 0 (closed) or 1 (opened).</td>
 </tr>
 
 <tr>
 <td><code>leftDoorsButton</code></td>
-<td>El estado del botón de la puerta izquierda. Retorna cualquiera 0 (liberado) o 1 (presionado).</td>
+<td>The state of the left doors button. Returns either 0 (released) or 1 (pressed).</td>
 </tr>
 
 <tr>
 <td><code>rightDoorsButton</code></td>
-<td>El estado del botón de la puerta derecha. Retorna cualquiera 0 (liberado) o 1 (presionado).</td>
+<td>The state of the right doors button. Returns either 0 (released) or 1 (pressed).</td>
 </tr>
 
 <tr>
 <td><code>pilotLamp</code></td>
-<td>El estado de la lampara piloto (Puertas cerradas y listo para iniciar). Retorna cualquiera 0 (apagado) o 1 (encendido).</td>
+<td>The state of the pilot lamp (Doors closed &amp; ready to start). Returns either 0 (unlit) or 1 (lit).</td>
 </tr>
 </tbody>
 </table>
 
-<h5 id="trenes-otros">● Trenes (otros)</h5>
+<h5 id="trains-miscellaneous">● Trains (miscellaneous)</h5>
 
 <table class='type0'>
 <thead>
 <tr>
 <th>Variable</th>
-<th>Descripción</th>
+<th>Description</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>reverserNotch</code></td>
-<td>El estado de inversor de marcha, el cual puede ser -1 (hacia atrás), 0 (neutro), o adelante (1).</td>
+<td>The state of the reverser, which is either -1 (backward), 0 (neutral), or forward (1).</td>
 </tr>
 
 <tr>
 <td><code>powerNotch</code></td>
-<td>El la posición de la palanca de tracción, por ejemplo, 0 para N, 1 para P1, 2 para P2, 3 para P3, etc.</td>
+<td>The current power notch, i.e. 0 for N, 1 for P1, 2 for P2, 3 for P3, etc.</td>
 </tr>
 
 <tr>
 <td><code>powerNotches</code></td>
-<td>La cantidad de posiciones de palanca de tracción que el tren tiene.</td>
+<td>The amount of power notches the train has.</td>
 </tr>
 
 <tr>
 <td><code>brakeNotch</code></td>
-<td>La posición actual de la posición de la palanca de freno. <br />● Para trenes sin freno de aire automático: 0 para N, 1 para B1, 2 para B2, 3 para B3, etc.<br />● Para trenes con freno de aire automático: 0  para REL, 1 para LAP y 2 para SRV.</td>
+<td>The current brake notch.<br />● For trains without the automatic air brake: 0 for N, 1 for B1, 2 for B2, 3 for B3, etc.<br />● For trains with the automatic air brake: 0 for REL, 1 for LAP and 2 for SRV.</td>
 </tr>
 
 <tr>
 <td><code>brakeNotches</code></td>
-<td>La cantidad de posiciones de palanca de freno que el tren posee. Para trenes con freno automático de aire, esto retorna 2.</td>
+<td>The amount of brake notches the train has. For trains with the automatic air brake, this returns 2.</td>
 </tr>
 
 <tr>
 <td><code>brakeNotchLinear</code></td>
-<td>La combinación de la palanca de freno, freno presionado y freno de emergencia.<br />● Para trenes sin freno de aire automático y sin freno presionado: 0 para N, 1 para B1, 2 para B2, 3 para B3, etc., hasta <em>BrakeNotches</em>+1 para EMG.<br />● Para trenes sin freno de aire automático pero con freno presionado: 0 for N, 1 para HLD, 2 para B1, 3 para B2, 4 para B3, etc., hasta <em>BrakeNotches</em>+2 para EMG.<br />● Para trenes con freno de aire automático: 0 para REL, 1 para LAP, 2 para SRV o 3 para EMG.</td>
+<td>A combination of brake notch, hold brake and emergency brake.<br />● For trains without the automatic air brake and without hold brake: 0 for N, 1 for B1, 2 for B2, 3 for B3, etc., up to <em>BrakeNotches</em>+1 for EMG.<br />● For trains without the automatic air brake but with hold brake: 0 for N, 1 for HLD, 2 for B1, 3 for B2, 4 for B3, etc., up to <em>BrakeNotches</em>+2 for EMG.<br />● For trains with the automatic air brake: 0 for REL, 1 for LAP, 2 for SRV or 3 for EMG.</td>
 </tr>
 
 <tr>
 <td><code>brakeNotchesLinear</code></td>
-<td>El valor mas alto retornado por <em>brakeNotchesLinear</em>.<br />● Para trenes sin freno de aire automático y sin freno presionado, esto es <em>BrakeNotches</em>+1.<br />● Para trenes sin freno de aire automático pero con freno presionado, esto es <em>BrakeNotches</em>+2.<br />● Para trenes con freno de aire automático, esto retorna 3.</td>
+<td>The highest value returned by <em>brakeNotchesLinear</em>.<br />● For trains without the automatic air brake and without hold brake, this is <em>BrakeNotches</em>+1.<br />● For trains without the automatic air brake but with hold brake, this is <em>BrakeNotches</em>+2.<br />● For trains with the automatic air brake, this returns 3.</td>
 </tr>
 
 <tr>
 <td><code>locoBrake</code></td>
-<td>La posición actual del freno de locomotora.</td>
+<td>The current Loco Brake notch.</td>
 </tr>
 
 <tr>
 <td><code>locoBrakeNotches</code></td>
-<td>La cantidad de posiciones de freno de locomotora que el tren tiene.</td>
+<td>The amount of Loco Brake notches the train has.</td>
 </tr>
 
 <tr>
 <td><code>emergencyBrake</code></td>
-<td>Cuando el freno de emergencia es activado (1) o no (0).</td>
+<td>Whether the emergency brake is currently active (1) or not (0).</td>
 </tr>
 
 <tr>
 <td><code>hasAirBrake</code></td>
-<td>Cuando el tren tiene freno de aire automático (1) o no (0).</td>
+<td>Whether the train has the automatic air brake (1) or not (0).</td>
 </tr>
 
 <tr>
 <td><code>holdBrake</code></td>
-<td>Cuando el freno presionado este activo (1) o no (0).</td>
+<td>Whether the hold brake is currently active (1) or not (0).</td>
 </tr>
 
 <tr>
 <td><code>hasHoldBrake</code></td>
-<td>Cuando el tren posee freno presionado (1) o no (0).</td>
+<td>Whether the train has a hold brake (1) or not (0).</td>
 </tr>
 
 <tr>
 <td><code>constSpeed</code></td>
-<td>Cuando el sistema de velocidad constante esta activo (1) o no (0).</td>
+<td>Whether the const speed system is currently active (1) or not (0).</td>
 </tr>
 
 <tr>
 <td><code>hasConstSpeed</code></td>
-<td>Cuando el tren posee sistema de velocidad constante (1) o no (0).</td>
+<td>Whether the train has a const speed system (1) or not (0).</td>
 </tr>
 
 <tr>
 <td><code>hasPlugin</code></td>
-<td>Cuando el tren usa plugin (1) o no (0).</td>
+<td>Whether the train uses a plugin (1) or not (0).</td>
 </tr>
 
 <tr>
 <td><code>pluginState[i]</code></td>
-<td>El estado de la i<sup>ava</sup> variable del plugin, retornando un entero dependiendo del plugin. Es lo mismo para ats<em>i</em> en el panel2.cfg.</td>
+<td>The state of the i<sup>th</sup> plugin variable, returning an integer depending on the plugin. Is the same as ats<em>i</em> in the panel2.cfg.</td>
 </tr>
 
 <tr>
 <td><code>FrontAxleCurveRadius[carIndex]</code></td>
-<td>Retorna el radio de curva del eje frontal del coche de indice número <em>carIndex</em>.</td>
+<td>Returns the curve radius at the front axle position of car <em>carIndex</em>.</td>
 </tr>
 
 <tr>
 <td><code>RearAxleCurveRadius[carIndex]</code></td>
-<td>Retorna el radio de curva del eje posterior del coche de indice número <em>carIndex</em>.</td>
+<td>Returns the curve radius at the rear axle position of car <em>carIndex</em>.</td>
 </tr>
 
 <tr>
 <td><code>CurveCant[carIndex]</code></td>
-<td>Retorna el valor del peralte del coche de indice número <em>carIndex</em>.</td>
+<td>Returns the cant value for car <em>carIndex</em>.</td>
 </tr>
 
 <tr>
 <td><code>Pitch[carIndex]</code></td>
-<td>Retorna el valor de la diferencia de elevación para el coche de indice número <em>carIndex</em>..</td>
+<td>Returns the pitch value for car <em>carIndex</em>.</td>
 </tr>
 
 <tr>
 <td><code>Odometer</code></td>
-<td>Retorna un numero representando la distancia en metros viajadas por el coche actual.</td>
+<td>Returns a signed number representing the distance in meters travelled by the current car.</td>
 </tr>
 
 <tr>
 <td><code>Odometer[carIndex]</code></td>
-<td>Retorna un numero representando la distancia en metros viajadas por el coche de indice número <em>carIndex</em>.</td>
+<td>Returns a signed number representing the distance in meters travelled by car <em>carIndex</em>.</td>
 </tr>
 
 <tr>
 <td><code>Klaxon</code></td>
-<td>Retorna la bocina actual que esta reproduciendo (cualquiera) de las siguientes: (0) Ninguna bocina se esta reproduciendo (1) La bocina principal esta reproduciéndose (2) La bocina secundaria esta reproduciéndose (3) La bocina musical esta reproduciéndose. <em>Nota</em>: Si múltiples bocinas se encuentran reproduciéndose, el valor mas bajo será retornado.</td>
+<td>Returns the currently playing horn (if any) as follows: (0) No horns are playing (1) The primary horn is playing (2) The secondary horn is playing (3) The music horn is playing. <em>Note</em> If multiple horns are playing, the lowest value will be returned.</td>
 </tr>
 
 <tr>
 <td><code>PrimaryKlaxon</code></td>
-<td>Retorna 1 si la bocina primaria esta reproduciéndose, 0 en caso contrario.</td>
+<td>Returns 1 if the primary horn is currently playing, 0 otherwise.</td>
 </tr>
 
 <tr>
 <td><code>SecondaryKlaxon</code></td>
-<td>Retorna 1 si la bocina secundaria esta reproduciéndose, 0 en caso contrario.</td>
+<td>Returns 1 if the secondary horn is currently playing, 0 otherwise.</td>
 </tr>
 
 <tr>
 <td><code>MusicKlaxon</code></td>
-<td>Retorna 1 si la bocina musical esta reproduciéndose, 0 en caso contrario.</td>
+<td>Returns 1 if the music horn is currently playing, 0 otherwise.</td>
 </tr>
 
 <tr>
 <td><code>passAlarm</code></td>
-<td>Cuando la alarma de rebase de estación ha sido activada. Retorna 0 (inactivo) o 1 (activo).</td>
+<td>Whether the station pass alarm has been activated. Returns either 0 (inactive) or 1 (active).</td>
 </tr>
 
 <tr>
 <td><code>stationAdjustAlarm</code></td>
-<td>Cuando la alarma de ajuste de estación ha sido activada. Retorna 0 (inactivo) o 1 (activo).</td>
+<td>Whether the station adjust alarm has been activated. Returns either 0 (inactive) or 1 (active).</td>
 </tr>
 </tbody>
 </table>
 
-<p>Si <em>pluginState[i]</em> es usado con el sistema de seguridad ATS y ATC, el siguiente mapa de opciones para <em>i</em> puede ser aplicado:</p>
+<p>If <em>pluginState[i]</em> is used with the built-in safety systems ATS and ATC, the following mappings for <em>i</em> apply:</p>
 
 <table class='type0'>
 <thead>
 <tr>
 <th><em>i</em></th>
-<th>Español</th>
-<th>日本語 (Japonés)</th>
-<th>Valores de retorno</th>
+<th>English</th>
+<th>日本語</th>
+<th>Return values</th>
 <th></th>
 <th>pluginState[271]</th>
-<th>Significado</th>
+<th>Meaning</th>
 </tr>
 </thead>
 
@@ -1500,17 +1658,17 @@ Esto defina la mínima cantidad de tiempo que necesita transcurrir para que la f
 <td>256</td>
 <td>ATS</td>
 <td>ATS</td>
-<td>0 (apagado) o 1 (encendido)</td>
+<td>0 (unlit) or 1 (lit)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>0</td>
-<td>ATC no disponible</td>
+<td>ATC not available</td>
 </tr>
 
 <tr>
 <td>257</td>
 <td>ATS RUN</td>
 <td>ATS 作動</td>
-<td>0 (apagado), 1 (encendido) o 2 (parpadeando)</td>
+<td>0 (unlit), 1 (lit) or 2 (flashing)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>1</td>
 <td>0 km/h</td>
@@ -1520,7 +1678,7 @@ Esto defina la mínima cantidad de tiempo que necesita transcurrir para que la f
 <td>258</td>
 <td>ATS RUN</td>
 <td>ATS 作動</td>
-<td>0 (apagado / sin parpadear), 1 (encendido / parpadeando)</td>
+<td>0 (unlit / non-flashing), 1 (lit / flashing)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>2</td>
 <td>15 km/h</td>
@@ -1530,7 +1688,7 @@ Esto defina la mínima cantidad de tiempo que necesita transcurrir para que la f
 <td>259</td>
 <td>P POWER</td>
 <td>P 電源</td>
-<td>0 (apagado) o 1 (encendido)</td>
+<td>0 (unlit) or 1 (lit)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>3</td>
 <td>25 km/h</td>
@@ -1540,7 +1698,7 @@ Esto defina la mínima cantidad de tiempo que necesita transcurrir para que la f
 <td>260</td>
 <td>PTN APPROACH</td>
 <td>パターン接近</td>
-<td>0 (apagado) o 1 (encendido)</td>
+<td>0 (unlit) or 1 (lit)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>4</td>
 <td>45 km/h</td>
@@ -1548,9 +1706,9 @@ Esto defina la mínima cantidad de tiempo que necesita transcurrir para que la f
 
 <tr>
 <td>261</td>
-<td>FRENO LIBERADO</td>
+<td>BRAKE RELEASE</td>
 <td>ブレーキ開放</td>
-<td>0 (apagado) o 1 (encendido)</td>
+<td>0 (unlit) or 1 (lit)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>5</td>
 <td>55 km/h</td>
@@ -1558,9 +1716,9 @@ Esto defina la mínima cantidad de tiempo que necesita transcurrir para que la f
 
 <tr>
 <td>262</td>
-<td>FRENO APLICADO</td>
+<td>BRAKE APPLY</td>
 <td>ブレーキ動作</td>
-<td>0 (apagado) o 1 (encendido)</td>
+<td>0 (unlit) or 1 (lit)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>6</td>
 <td>65 km/h</td>
@@ -1570,7 +1728,7 @@ Esto defina la mínima cantidad de tiempo que necesita transcurrir para que la f
 <td>263</td>
 <td>ATS P</td>
 <td>ATS-P</td>
-<td>0 (apagado) o 1 (encendido)</td>
+<td>0 (unlit) or 1 (lit)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>7</td>
 <td>75 km/h</td>
@@ -1578,9 +1736,9 @@ Esto defina la mínima cantidad de tiempo que necesita transcurrir para que la f
 
 <tr>
 <td>264</td>
-<td>FALLA</td>
+<td>FAILURE</td>
 <td>故障</td>
-<td>0 (apagado) o 1 (encendido)</td>
+<td>0 (unlit) or 1 (lit)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>8</td>
 <td>90 km/h</td>
@@ -1590,7 +1748,7 @@ Esto defina la mínima cantidad de tiempo que necesita transcurrir para que la f
 <td>265</td>
 <td>ATC</td>
 <td>ATC</td>
-<td>0 (apagado) o 1 (encendido)</td>
+<td>0 (unlit) or 1 (lit)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>9</td>
 <td>100 km/h</td>
@@ -1598,9 +1756,9 @@ Esto defina la mínima cantidad de tiempo que necesita transcurrir para que la f
 
 <tr>
 <td>266</td>
-<td>ATC ENCENDIDO</td>
+<td>ATC POWER</td>
 <td>ATC 電源</td>
-<td>0 (apagado) o 1 (encendido)</td>
+<td>0 (unlit) or 1 (lit)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>10</td>
 <td>110 km/h</td>
@@ -1608,9 +1766,9 @@ Esto defina la mínima cantidad de tiempo que necesita transcurrir para que la f
 
 <tr>
 <td>267</td>
-<td>ATC SERVICIO</td>
+<td>ATC SRV</td>
 <td>ATC 常用</td>
-<td>0 (apagado) o 1 (encendido)</td>
+<td>0 (unlit) or 1 (lit)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>11</td>
 <td>120 km/h</td>
@@ -1618,19 +1776,19 @@ Esto defina la mínima cantidad de tiempo que necesita transcurrir para que la f
 
 <tr>
 <td>268</td>
-<td>ATC EMERGENCIA</td>
+<td>ATC EMG</td>
 <td>ATC 非常</td>
-<td>0 (apagado) o 1 (encendido)</td>
+<td>0 (unlit) or 1 (lit)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>12</td>
-<td>ATS esta activo</td>
+<td>ATS is active</td>
 </tr>
 
 <tr>
 <td>269</td>
-<td>VELOCIDAD CONSTANTE</td>
+<td>CONST SPEED</td>
 <td>定速</td>
-<td>0 (apagado) o 1 (encendido)</td>
+<td>0 (unlit) or 1 (lit)</td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
@@ -1640,7 +1798,7 @@ Esto defina la mínima cantidad de tiempo que necesita transcurrir para que la f
 <td>270</td>
 <td>EB</td>
 <td>EB</td>
-<td>0 (apagado) o 1 (encendido)</td>
+<td>0 (unlit) or 1 (lit)</td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
@@ -1648,9 +1806,9 @@ Esto defina la mínima cantidad de tiempo que necesita transcurrir para que la f
 
 <tr>
 <td>271</td>
-<td>Indicador de velocidad del ATC</td>
+<td>ATC speed indicator</td>
 <td bgcolor='#D0D0D0'></td>
-<td>0 - 12, ver tabla a la derecha</td>
+<td>0 - 12, see table on the right</td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
@@ -1658,109 +1816,109 @@ Esto defina la mínima cantidad de tiempo que necesita transcurrir para que la f
 </tbody>
 </table>
 
-<h5 id="secciones-señalización">● Secciones (señalización)</h5>
+<h5 id="sections-signalling">● Sections (signalling)</h5>
 
-<p>El contexto sección es definido cuando el objeto es posicionado usando Track.SigF.</p>
+<p>The section context is defined when the object is placed using Track.SigF.</p>
 
 <table class='type0'>
 <thead>
 <tr>
 <th>Variable</th>
-<th>Descripción</th>
+<th>Description</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td><code>section</code></td>
-<td>El valor de la sección aspecto que se nuestra.<br /><em>si esta variable es usada fuera de un contexto de Track.Sifg, la conducta actual es indefinida y sujeto a cambios.</em></td>
+<td>The value of the section aspect currently shown.<br /><em>If this variable is used outside of a Track.SigF context, the behavior is currently undefined and subject to change.</em></td>
 </tr>
 </tbody>
 </table>
 
-<h2 id="a-name-performance-a-6-rendimiento"><a name="performance"></a>■ 6. Rendimiento</h2>
+<h2 id="a-name-performance-a-6-performance"><a name="performance"></a>■ 6. Performance</h2>
 
-<p>Existen ciertos tipos de animaciones los cuales son menos costosos, y otros que son mas. También, los objetos adyacentes juegan un papel importante . Si quieres diseñar objetos animados con un mejor rendimiento posible <strong>para versiones futuras de openBVE</strong>, échale un vistazo a la siguiente tabla de rendimiento:</p>
+<p>There are certain kinds of animation which are less expensive, and others which are more. Also, the underlying object plays a significant role. If you want to design your animated objects with as best performance as possible <strong>for future releases of openBVE</strong>, take a look at the following performance table:</p>
 
 <table class='type0'>
 <thead>
 <tr>
-<th>Animación</th>
-<th>Objeto</th>
-<th>Rendimiento</th>
+<th>Animation</th>
+<th>Object</th>
+<th>Performance</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>Cambios de estado</td>
-<td>Solo posee caras opacas</td>
-<td>Bien</td>
+<td>State changes</td>
+<td>Has only opaque faces</td>
+<td>Good</td>
 </tr>
 
 <tr>
-<td>Cambios de estado</td>
-<td>Tiene parcialmente caras transparentes</td>
-<td>Moderado</td>
+<td>State changes</td>
+<td>Has partially transparent faces</td>
+<td>Moderate</td>
 </tr>
 
 <tr>
-<td>Traslación</td>
-<td>Solo posee caras opacas</td>
-<td>Bien</td>
+<td>Translation</td>
+<td>Has only opaque faces</td>
+<td>Good</td>
 </tr>
 
 <tr>
-<td>Traslación</td>
-<td>Tiene parcialmente caras transparentes</td>
-<td>Moderado</td>
+<td>Translation</td>
+<td>Has partially transparent faces</td>
+<td>Moderate</td>
 </tr>
 
 <tr>
-<td>Rotación</td>
-<td>Solo posee caras opacas</td>
-<td>Bien</td>
+<td>Rotation</td>
+<td>Has only opaque faces</td>
+<td>Good</td>
 </tr>
 
 <tr>
-<td>Rotación</td>
-<td>Tiene parcialmente caras transparentes</td>
-<td>Mal</td>
+<td>Rotation</td>
+<td>Has partially transparent faces</td>
+<td>Bad</td>
 </tr>
 
 <tr>
-<td>Saltos de textura</td>
-<td>Solo tiene caras opacas</td>
-<td>Mal</td>
+<td>Texture shifts</td>
+<td>Has only opaque faces</td>
+<td>Bad</td>
 </tr>
 
 <tr>
-<td>Saltos de textura</td>
-<td>Tiene parcialmente caras transparentes</td>
-<td>Mal</td>
+<td>Texture shifts</td>
+<td>Has partially transparent faces</td>
+<td>Bad</td>
 </tr>
 </tbody>
 </table>
 
-<p>El rendimiento por lo general es mejor si el resultado de la función cambia sin frecuencia. Así que, incluso si habilitas el parámetro <em>RefreshRate</em> a cero, el rendimiento por lo general mejorará si el resultado de su formula es constante sobre largos periodos de tiempo. De otra manera, si cambia cada cuadro por segundo, el rendimiento por lo general empeorará.</p>
+<p>Performance is generally better if the result of a function only infrequently changes. So, even if you set the <em>RefreshRate</em> parameter to zero, performance is generally better if the outcome of your formula is constant over longer periods of time. On the other hand, if it changes every frame, performance is generally worse.</p>
 
-<p>Generalmente, debes evitar usar animaciones con caras parcialmente transparentes y enfocarte en caras opacas cuando sea posible. Tambien, intenta evitar los saltos de textura, y considera usar el cambio de estado o traslación donde sea posible.</p>
+<p>Generally, you should avoid using animation with partially transparent faces and stick to opaque faces when possible. Also, try to avoid texture shifts, and consider using state changes or translation where possible.</p>
 
-<h2 id="a-name-tips-a-7-sugerencias"><a name="tips"></a>■ 7. Sugerencias</h2>
+<h2 id="a-name-tips-a-7-tips"><a name="tips"></a>■ 7. Tips</h2>
 
 <ul>
-<li>Generalmente hablando, trata de mantener la complejidad de las funciones lo mas bajo posible. Esto no es el aspecto más critico, aunque, la mayoría del impacto del rendimiento resultará cuando se aplique resultados a una función, por ejemplo. rotar el objeto, y no evaluando la función.</li>
-<li>Usa el parámetro RefreshRate cuando sea posible para así optimizar el rendimiento. Usualmente, puedes usar este parámetro cuando no necesites una animación suave, o cuando deliberadamente necesites que estas funciones solo se actualicen en intervalos.</li>
-<li>No uses estas funciones cuando siempre evalúas la misma constante. Por ejemplo, no uses RotateXFunction = 3.14159, gira el objeto adyacente en el CSV/B3D/X directamente.</li>
-<li>Cambios de estado son un método muy barato cuando el estado no cambia entre dos ejecuciones por el StateFunction. Si un cambio ocurre, esto es una operación relativamente costosa.</li>
-<li>Trata de optimizar las operaciones condicionales <em>if</em> . Especialmente trata de evitar la anidación de funciones <em>if</em>. De vez en cuando, hay una solución matemática elegante.</li>
-<li>Ciertas funciones, por ejemplo. Exp, Sin, Cos, etc. son relativamente costosas. Úsalas solo cuando sean absolutamente necesarias para un efecto. No incluyas operaciones innecesarias. Por ejemplo, el resultado de StateFunction es automáticamente redondeado hacia el entero más cercano, así que no apliques una función Round adicional explícito.</li>
-<li>Cuando trabajas con objetos del coche, ten en mente que algunas variables tienen un indice de coche opcional (CarIndex). Debes usar este indice si necesitas consultar el estado de un coche en particular ( es decir, no necesariamente el único objeto que puede ser adjuntado).  Si, necesitas hacer una consulta el valor de un coche en particular del objeto que se plantea adjuntar, usa la variable sin el indice. Para objetos de escenario, por lo general no debes usar los indices del coche ya sea porque no puedes estar seguros de cuantos coches posee el tren consultado.</li>
+<li>Generally speaking, try to keep the complexity of functions as low as possible. This is not the most critical aspect, though, as most of the performance impact will result from applying the results of a function, e.g. rotating the object, and not evaluating the function.</li>
+<li>Use the RefreshRate parameter when possible to optimize performance. Usually, you can use this parameter when you don&rsquo;t need a smooth animation, or when you deliberately want the functions to only update in intervals.</li>
+<li>Don&rsquo;t use functions which always evaluate to the same constant. For example, don&rsquo;t use RotateXFunction = 3.14159, but rotate the underlying CSV/B3D/X object directly.</li>
+<li>State changes are very cheap as long as the state doesn&rsquo;t actually change in between two executions of the StateFunction. If a change occurs, this is a relatively expensive operation, though.</li>
+<li>Try to optimize out <em>if</em> conditions. Especially try to avoid nested <em>if</em> functions. Often, there is an elegant mathematical solution.</li>
+<li>Certain functions, e.g. Exp, Sin, Cos, etc., are relatively expensive. Use them only if absolutely necessary for an effect. Don&rsquo;t include unnecessary operations. For example, the result of StateFunction is automatically rounded toward the nearest integer, so don&rsquo;t apply an additional explicit Round.</li>
+<li>When working with car objects, bear in mind that some variables have an optional car index. You should use this index if you want to query the state of a particular car (that is, not necessarily the one the object is attached to). If, however, you just want to query the value of the particular car the object is attached to, use the variable without the index. For scenery objects, you should not generally use car indices as you can&rsquo;t be sure how many cars the queried train has.</li>
 </ul>
 
-<h2 id="a-name-examples-a-8-funciones-de-ejemplo"><a name="examples"></a>■ 8. Funciones de ejemplo</h2>
+<h2 id="a-name-examples-a-8-example-functions"><a name="examples"></a>■ 8. Example functions</h2>
 
-<h5 id="luz-parpadeante">● Luz parpadeante</h5>
+<h5 id="blinking-light">● Blinking light</h5>
 
 <table style="border: none;">
   <tbody>
@@ -1778,14 +1936,14 @@ Esto defina la mínima cantidad de tiempo que necesita transcurrir para que la f
          <font style="font-family: monospace">
          <p style='display:inline;'>States = OBJECT0, OBJECT1<br />
 StateFunction = value == 0<br />
-RefreshRate = SEGUNDOS
+RefreshRate = SECONDS
          </font>
        </td>
     </tr>
   </tbody>
 </table>
 
-<h5 id="rotación-de-rueda">● Rotación de rueda</h5>
+<h5 id="rotating-wheel">● Rotating wheel</h5>
 
 <table style="border: none;">
   <tbody>
@@ -1802,14 +1960,14 @@ RefreshRate = SEGUNDOS
        <td bgcolor="#D4D8FF" style="border: 1px dashed;">
          <font style="font-family: monospace">
          <p style='display:inline;'>States = OBJECT<br />
-RotateXFunction = value + delta * speedometer / RADIO_DE_LA_RUEDA
+RotateXFunction = value + delta * speedometer / RADIUS_OF_THE_WHEEL
          </font>
        </td>
     </tr>
   </tbody>
 </table>
 
-<h5 id="ciclo-a-través-de-una-lista-de-objetos">● Ciclo a través de una lista de objetos</h5>
+<h5 id="cycling-through-a-list-of-objects">● Cycling through a list of objects</h5>
 
 <table style="border: none;">
   <tbody>
@@ -1825,16 +1983,16 @@ RotateXFunction = value + delta * speedometer / RADIO_DE_LA_RUEDA
        <td width="16" valign="top">▶</td>
        <td bgcolor="#D4D8FF" style="border: 1px dashed;">
          <font style="font-family: monospace">
-         <p style='display:inline;'>States = OBJECTO0, OBJECTO1, OBJECTO2, &hellip;<br />
-StateFunction = mod[value + 1, CANTIDAD_DE_OBJETOS]<br />
-RefreshRate = TIEMPO_POR_OBJETO
+         <p style='display:inline;'>States = OBJECT0, OBJECT1, OBJECT2, &hellip;<br />
+StateFunction = mod[value + 1, AMOUNT_OF_OBJECTS]<br />
+RefreshRate = TIME_PER_OBJECT
          </font>
        </td>
     </tr>
   </tbody>
 </table>
 
-<h5 id="señal-3-aspectos-para-track-section-0-2-4">● Señal (3-aspectos) para Track.Section(0; 2; 4)</h5>
+<h5 id="signal-3-aspect-for-track-section-0-2-4">● Signal (3-aspect) for Track.Section(0; 2; 4)</h5>
 
 <table style="border: none;">
   <tbody>
@@ -1843,7 +2001,7 @@ RefreshRate = TIEMPO_POR_OBJETO
        <td width="16" valign="top">▶</td>
        <td bgcolor="#D4D8FF" style="border: 1px dashed;">
          <font style="font-family: monospace">
-         <p style='display:inline;'>States = OBJETO_ROJO, OBJETO_AMARILLO, OBJETO_VERDE<br />
+         <p style='display:inline;'>States = RED_OBJECT, YELLOW_OBJECT, GREEN_OBJECT<br />
 StateFunction = section / 2
          </font>
        </td>
@@ -1851,9 +2009,9 @@ StateFunction = section / 2
   </tbody>
 </table>
 
-<h5 id="emplear-un-retardo-en-señales-de-aproximación-controlada">● Emplear un retardo en señales de aproximación controlada.</h5>
+<h5 id="employing-an-approach-controlled-delay-in-signals">● Employing an approach-controlled delay in signals</h5>
 
-<p>Si deseas crear una señal que mantiene su comienzo en rojo hasta que el tren se acerca en cierta distancia, entonces usa un contador hacia abajo después que cambia su aspecto a verde, por favor, consulte a <a href="http://openbve.freeforums.org/delay-in-approach-controlled-signals-t1195.html#p5378" target="_blank">este post</a> en el foro para una explicación detallada. Una vez que entiendas el concepto, puedes usar este código de plantilla:</p>
+<p>If you want to create a signal that keeps being red until the train approaches it to some distance, then counts down a timer before it changes aspect to green, please refer to <a href="http://openbve.freeforums.org/delay-in-approach-controlled-signals-t1195.html#p5378" target="_blank">this post</a> on the forum for a detailed explanation. Once you understand the concepts, you can use this code template:</p>
 
 <table style="border: none;">
   <tbody>
@@ -1869,8 +2027,8 @@ StateFunction = section / 2
        <td width="16" valign="top">▶</td>
        <td bgcolor="#D4D8FF" style="border: 1px dashed;">
          <font style="font-family: monospace">
-         <p style='display:inline;'>States = OBJETO_ROJO,OBJETO_VERDE
-StateFunction = if[trackDistance&gt;DISTANCIA | section==0, 0, min[value + 0.5*delta/RETRASO, 1]]
+         <p style='display:inline;'>States = RED_OBJECT, GREEN_OBJECT<br />
+StateFunction = if[trackDistance&gt;DISTANCE | section==0, 0, min[value + 0.5*delta/DELAY, 1]]
          </font>
        </td>
     </tr>
@@ -1891,17 +2049,17 @@ StateFunction = if[trackDistance&gt;DISTANCIA | section==0, 0, min[value + 0.5*d
        <td width="16" valign="top">▶</td>
        <td bgcolor="#D4D8FF" style="border: 1px dashed;">
          <font style="font-family: monospace">
-         <p style='display:inline;'>States = OBJETO_ROJO, &hellip;, OBJETO_VERDE
-StateFunction = if[trackDistance&gt;DISTANCIA | section==0, 0, if[value&lt;0.5, value + 0.5*value/RETRASO, section]]
+         <p style='display:inline;'>States = RED_OBJECT, &hellip;, GREEN_OBJECT<br />
+StateFunction = if[trackDistance&gt;DISTANCE | section==0, 0, if[value&lt;0.5, value + 0.5*value/DELAY, section]]
          </font>
        </td>
     </tr>
   </tbody>
 </table>
 
-<h2 id="a-name-grammar-a-9-gramática-formal"><a name="grammar"></a>■ 9. Gramática formal</h2>
+<h2 id="a-name-grammar-a-9-formal-grammar"><a name="grammar"></a>■ 9. Formal Grammar</h2>
 
-<p>La gramática formal del lenguaje puede no coincidir perfectamente con la implementación incluida en openBVE. Un ejemplo es a*-b el cual es válido bajo la gramática pero el analizador lo rechaza.</p>
+<p>The formal grammar for the language may not match up perfectly with the implimentation included in OpenBVE. An example is a*-b which is valid under the grammar but the parser rejects it.</p>
 
 <table style="border: none;">
   <tbody>

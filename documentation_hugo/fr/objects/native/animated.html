@@ -398,6 +398,11 @@
       </a>
       
       <hr class="dropdown-divider">
+      <a href="../../../hu/objects/native/animated.html" class="dropdown-item">
+        Magyar
+      </a>
+      
+      <hr class="dropdown-divider">
       <a href="../../../id/objects/native/animated.html" class="dropdown-item">
         Indonesian
       </a>
@@ -622,6 +627,159 @@ This defines the function which moves an object along the path of <strong>Rail 0
 </div>
 <br />
 This defines the minimum amount of time that needs to pass before the functions are updated. A value of 0 forces the functions to be updated every frame. Please note that objects outside of the visual range might be updated less frequently regardless of this parameter. Use RefreshRate when you don&rsquo;t need a perfectly smooth animation (in order to optimize performance), or when you deliberately want the object to be only updated in fixed intervals.</p>
+
+<hr />
+
+<h5 id="the-sound-section">● The [Sound] section</h5>
+
+<p>You can use the [Sound] section to add standalone sound effects to animated objects.</p>
+
+<p><div id="command">
+<p>[Sound]</p>
+
+</div>
+<br />
+This starts the section.</p>
+
+<p><div id="command">
+<p><strong>FileName = File</strong></p>
+
+</div>
+<br />
+This loads the sound effect to play.</p>
+
+<p><div id="command">
+<p><strong>Position = X, Y, Z</strong></p>
+
+</div>
+<br />
+Defines the position of the sound, relative to the center of the animated file.</p>
+
+<div id="command">
+<p><strong>Volume = Value</strong></p>
+
+</div>
+
+
+<p>This defines the initial volume of the sound at the source position. A value of <strong>1.0</strong> represents the nominal unchanged volume of the sound file.</p>
+
+<div id="command">
+<p><strong>Pitch = Value</strong></p>
+
+</div>
+
+
+<p>This defines the initial pitch of the sound at the source position. A value of <strong>1.0</strong> represents the nominal unchanged pitch of the sound file.</p>
+
+<div id="command">
+<p><strong>Radius = Value</strong></p>
+
+</div>
+
+
+<p>This defines the radius in meters from it&rsquo;s source at which the sound effect plays at full volume. The default value is <strong>30</strong>.</p>
+
+<p><div id="command">
+<p><strong>VolumeFunction = Formula</strong></p>
+
+</div>
+<br />
+This defines the function which controls the volume of the sound. <em>Formula</em> must return a number representing the desired volume, where <strong>1.0</strong> represents the nomimal unchanged volume of the sound file.</p>
+
+<p><div id="command">
+<p><strong>PitchFunction = Formula</strong></p>
+
+</div>
+<br />
+This defines the function which controls the pitch of the sound. <em>Formula</em> must return a number representing the desired pitch, where <strong>1.0</strong> represents the nomimal unchanged pitch of the sound file.</p>
+
+<p><div id="command">
+<p><strong>TrackFollowerFunction = Formula</strong></p>
+
+</div>
+<br />
+This defines the function which moves the source of the sound along the path of <strong>Rail 0</strong>. <em>Formula</em> must return a distance in meters, for which the object is then moved, respecting the curves and height changes of <strong>Rail 0</strong>.</p>
+
+<hr />
+
+<h5 id="the-statechangesound-section">● The [StateChangeSound] section</h5>
+
+<p>You can use the [StateChangeSound] section to attach sound effects to the preceeding [Object] section.</p>
+
+<p><div id="command">
+<p>[StateChangeSound]</p>
+
+</div>
+<br />
+This starts the section- Must immediately follow an [Object] section.</p>
+
+<p><div id="command">
+<p><strong>FileName = File</strong></p>
+
+</div>
+<br />
+This loads the sound effect to play for all state changes. Alternatively, <strong>FileNames</strong> may be used, which is described below:</p>
+
+<p><div id="command">
+<p><strong>FileNames = File<sub>0</sub>, File<sub>1</sub>, &hellip;, File<sub>n-1</sub></strong></p>
+
+</div>
+<br />
+Loads a list of <em>n</em> sounds, which correspond to the states in the [Object] section above.
+If a state is to have no sound effect, the list entry should be left blank.</p>
+
+<p><div id="command">
+<p><strong>Position = X, Y, Z</strong></p>
+
+</div>
+<br />
+Defines the position of the sound, relative to the center of the animated file.</p>
+
+<div id="command">
+<p><strong>Volume = Value</strong></p>
+
+</div>
+
+
+<p>This defines the volume of the sound at the source position. A value of <strong>1.0</strong> represents the nominal unchanged volume of the sound file.</p>
+
+<div id="command">
+<p><strong>Pitch = Value</strong></p>
+
+</div>
+
+
+<p>This defines the pitch of the sound at the source position. A value of <strong>1.0</strong> represents the nominal unchanged pitch of the sound file.</p>
+
+<div id="command">
+<p><strong>Radius = Value</strong></p>
+
+</div>
+
+
+<p>This defines the radius in meters from it&rsquo;s source at which the sound effect plays at full volume. The default value is <strong>30</strong>.</p>
+
+<div id="command">
+<p><strong>PlayOnShow = Value</strong></p>
+
+</div>
+
+
+<p><em>Value</em> = <strong>0</strong>: The sound effect will not be played.
+<em>Value</em> = <strong>1</strong>: The sound effect will be played.</p>
+
+<p>This defines whether the sound effect defined above should be played when a the relevant state is shown.</p>
+
+<div id="command">
+<p><strong>PlayOnHide = Value</strong></p>
+
+</div>
+
+
+<p><em>Value</em> = <strong>0</strong>: The sound effect will not be played.
+<em>Value</em> = <strong>1</strong>: The sound effect will be played.</p>
+
+<p>This defines whether the sound effect defined above should be played when the relevant state is hidden.</p>
 
 <hr />
 

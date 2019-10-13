@@ -398,6 +398,11 @@
       </a>
       
       <hr class="dropdown-divider">
+      <a href="../../../hu/objects/native/animated.html" class="dropdown-item">
+        Magyar
+      </a>
+      
+      <hr class="dropdown-divider">
       <a href="../../../id/objects/native/animated.html" class="dropdown-item">
         Indonesian
       </a>
@@ -625,6 +630,159 @@ This defines the minimum amount of time that needs to pass before the functions 
 
 <hr />
 
+<h5 id="the-sound-section">● The [Sound] section</h5>
+
+<p>You can use the [Sound] section to add standalone sound effects to animated objects.</p>
+
+<p><div id="command">
+<p>[Sound]</p>
+
+</div>
+<br />
+This starts the section.</p>
+
+<p><div id="command">
+<p><strong>FileName = File</strong></p>
+
+</div>
+<br />
+This loads the sound effect to play.</p>
+
+<p><div id="command">
+<p><strong>Position = X, Y, Z</strong></p>
+
+</div>
+<br />
+Defines the position of the sound, relative to the center of the animated file.</p>
+
+<div id="command">
+<p><strong>Volume = Value</strong></p>
+
+</div>
+
+
+<p>This defines the initial volume of the sound at the source position. A value of <strong>1.0</strong> represents the nominal unchanged volume of the sound file.</p>
+
+<div id="command">
+<p><strong>Pitch = Value</strong></p>
+
+</div>
+
+
+<p>This defines the initial pitch of the sound at the source position. A value of <strong>1.0</strong> represents the nominal unchanged pitch of the sound file.</p>
+
+<div id="command">
+<p><strong>Radius = Value</strong></p>
+
+</div>
+
+
+<p>This defines the radius in meters from it&rsquo;s source at which the sound effect plays at full volume. The default value is <strong>30</strong>.</p>
+
+<p><div id="command">
+<p><strong>VolumeFunction = Formula</strong></p>
+
+</div>
+<br />
+This defines the function which controls the volume of the sound. <em>Formula</em> must return a number representing the desired volume, where <strong>1.0</strong> represents the nomimal unchanged volume of the sound file.</p>
+
+<p><div id="command">
+<p><strong>PitchFunction = Formula</strong></p>
+
+</div>
+<br />
+This defines the function which controls the pitch of the sound. <em>Formula</em> must return a number representing the desired pitch, where <strong>1.0</strong> represents the nomimal unchanged pitch of the sound file.</p>
+
+<p><div id="command">
+<p><strong>TrackFollowerFunction = Formula</strong></p>
+
+</div>
+<br />
+This defines the function which moves the source of the sound along the path of <strong>Rail 0</strong>. <em>Formula</em> must return a distance in meters, for which the object is then moved, respecting the curves and height changes of <strong>Rail 0</strong>.</p>
+
+<hr />
+
+<h5 id="the-statechangesound-section">● The [StateChangeSound] section</h5>
+
+<p>You can use the [StateChangeSound] section to attach sound effects to the preceeding [Object] section.</p>
+
+<p><div id="command">
+<p>[StateChangeSound]</p>
+
+</div>
+<br />
+This starts the section- Must immediately follow an [Object] section.</p>
+
+<p><div id="command">
+<p><strong>FileName = File</strong></p>
+
+</div>
+<br />
+This loads the sound effect to play for all state changes. Alternatively, <strong>FileNames</strong> may be used, which is described below:</p>
+
+<p><div id="command">
+<p><strong>FileNames = File<sub>0</sub>, File<sub>1</sub>, &hellip;, File<sub>n-1</sub></strong></p>
+
+</div>
+<br />
+Loads a list of <em>n</em> sounds, which correspond to the states in the [Object] section above.
+If a state is to have no sound effect, the list entry should be left blank.</p>
+
+<p><div id="command">
+<p><strong>Position = X, Y, Z</strong></p>
+
+</div>
+<br />
+Defines the position of the sound, relative to the center of the animated file.</p>
+
+<div id="command">
+<p><strong>Volume = Value</strong></p>
+
+</div>
+
+
+<p>This defines the volume of the sound at the source position. A value of <strong>1.0</strong> represents the nominal unchanged volume of the sound file.</p>
+
+<div id="command">
+<p><strong>Pitch = Value</strong></p>
+
+</div>
+
+
+<p>This defines the pitch of the sound at the source position. A value of <strong>1.0</strong> represents the nominal unchanged pitch of the sound file.</p>
+
+<div id="command">
+<p><strong>Radius = Value</strong></p>
+
+</div>
+
+
+<p>This defines the radius in meters from it&rsquo;s source at which the sound effect plays at full volume. The default value is <strong>30</strong>.</p>
+
+<div id="command">
+<p><strong>PlayOnShow = Value</strong></p>
+
+</div>
+
+
+<p><em>Value</em> = <strong>0</strong>: The sound effect will not be played.
+<em>Value</em> = <strong>1</strong>: The sound effect will be played.</p>
+
+<p>This defines whether the sound effect defined above should be played when a the relevant state is shown.</p>
+
+<div id="command">
+<p><strong>PlayOnHide = Value</strong></p>
+
+</div>
+
+
+<p><em>Value</em> = <strong>0</strong>: The sound effect will not be played.
+<em>Value</em> = <strong>1</strong>: The sound effect will be played.</p>
+
+<p>This defines whether the sound effect defined above should be played when the relevant state is hidden.</p>
+
+<hr />
+
 <div id="warning">
 <h4 id="openbve-2-compatibility-note">openBVE 2 compatibility note</h4>
 
@@ -656,7 +814,7 @@ This defines the minimum amount of time that needs to pass before the functions 
 <tr>
 <th align="left">Infix</th>
 <th align="left">Functional</th>
-<th align="left">Descripció</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 
@@ -694,7 +852,7 @@ This defines the minimum amount of time that needs to pass before the functions 
 </table>
 
 
-<h5 id="comparacions">● Comparacions</h5>
+<h5 id="comparisons">● Comparisons</h5>
 
 <p>All comparisons return 1 for true and 0 for false.</p>
 
@@ -704,7 +862,7 @@ This defines the minimum amount of time that needs to pass before the functions 
 <tr>
 <th align="left">Infix</th>
 <th>Functional</th>
-<th>Descripció</th>
+<th>Description</th>
 </tr>
 </thead>
 
@@ -747,7 +905,7 @@ This defines the minimum amount of time that needs to pass before the functions 
 </tbody>
 </table>
 
-<h5 id="operacions-lògiques">● Operacions lògiques</h5>
+<h5 id="logical-operations">● Logical operations</h5>
 
 <p>All operations treat 0 as false and any other value as true, and return 1 for true and 0 for false.</p>
 
@@ -756,7 +914,7 @@ This defines the minimum amount of time that needs to pass before the functions 
 <tr>
 <th align="left">Infix</th>
 <th>Functional</th>
-<th>Descripció</th>
+<th>Description</th>
 </tr>
 </thead>
 
@@ -845,15 +1003,15 @@ This defines the minimum amount of time that needs to pass before the functions 
 
 </div>
 
-<h2 id="a-name-functions-a-4-llista-de-funcions"><a name="functions"></a>■ 4. Llista de funcions</h2>
+<h2 id="a-name-functions-a-4-list-of-functions"><a name="functions"></a>■ 4. List of functions</h2>
 
 <h5 id="basic-arithmetics">● Basic arithmetics</h5>
 
 <table class='type0'>
 <thead>
 <tr>
-<th>Funció</th>
-<th>Descripció</th>
+<th>Function</th>
+<th>Description</th>
 </tr>
 </thead>
 
@@ -875,8 +1033,8 @@ This defines the minimum amount of time that needs to pass before the functions 
 <table class='type0'>
 <thead>
 <tr>
-<th>Funció</th>
-<th>Descripció</th>
+<th>Function</th>
+<th>Description</th>
 </tr>
 </thead>
 
@@ -943,8 +1101,8 @@ This defines the minimum amount of time that needs to pass before the functions 
 <table class='type0'>
 <thead>
 <tr>
-<th>Funció</th>
-<th>Descripció</th>
+<th>Function</th>
+<th>Description</th>
 </tr>
 </thead>
 
@@ -991,8 +1149,8 @@ This defines the minimum amount of time that needs to pass before the functions 
 <table class='type0'>
 <thead>
 <tr>
-<th>Funció</th>
-<th>Descripció</th>
+<th>Function</th>
+<th>Description</th>
 </tr>
 </thead>
 
@@ -1004,7 +1162,7 @@ This defines the minimum amount of time that needs to pass before the functions 
 </tbody>
 </table>
 
-<h2 id="a-name-variables-a-5-llista-de-variables"><a name="variables"></a>■ 5. Llista de variables</h2>
+<h2 id="a-name-variables-a-5-list-of-variables"><a name="variables"></a>■ 5. List of variables</h2>
 
 <h5 id="primitives">● Primitives</h5>
 
@@ -1012,7 +1170,7 @@ This defines the minimum amount of time that needs to pass before the functions 
 <thead>
 <tr>
 <th>Variable</th>
-<th>Descripció</th>
+<th>Description</th>
 </tr>
 </thead>
 
@@ -1034,13 +1192,13 @@ This defines the minimum amount of time that needs to pass before the functions 
 </tbody>
 </table>
 
-<h5 id="temps-i-càmera">● Temps i càmera</h5>
+<h5 id="time-and-camera">● Time and camera</h5>
 
 <table class='type0'>
 <thead>
 <tr>
 <th>Variable</th>
-<th>Descripció</th>
+<th>Description</th>
 </tr>
 </thead>
 
@@ -1062,19 +1220,19 @@ This defines the minimum amount of time that needs to pass before the functions 
 </tbody>
 </table>
 
-<h5 id="trens">● Trens</h5>
+<h5 id="trains">● Trains</h5>
 
 <p>Generally, objects attached to a particular train and car return values for that train and car, unless stated otherwise. For scenery objects, the reference is the driver&rsquo;s car of the nearest train (not necessarily the player&rsquo;s train).</p>
 
 <p>In some of the following variables, <em>carIndex</em> has the following meaning: 0 is the 1<sup>st</sup> car from the front, 1 is the 2<sup>nd</sup> car from the front, etc., while -1 is the 1<sup>st</sup> car from the rear, -2 is the 2<sup>nd</sup> car from the rear, etc. In general, car indices from -<em>cars</em> to <em>cars</em>-1 represent existing cars, where <em>cars</em> is the number of cars the train has, while values outside of this range represent non-existing cars. As all trains have at least 1 car, indices -1 and 0 are guaranteed to exist for any train.</p>
 
-<h5 id="trens-general">● Trens (general)</h5>
+<h5 id="trains-general">● Trains (general)</h5>
 
 <table class='type0'>
 <thead>
 <tr>
 <th>Variable</th>
-<th>Descripció</th>
+<th>Description</th>
 </tr>
 </thead>
 
@@ -1187,7 +1345,7 @@ This defines the minimum amount of time that needs to pass before the functions 
 <thead>
 <tr>
 <th>Variable</th>
-<th>Descripció</th>
+<th>Description</th>
 </tr>
 </thead>
 
@@ -1244,13 +1402,13 @@ This defines the minimum amount of time that needs to pass before the functions 
 </tbody>
 </table>
 
-<h5 id="trens-portes">● Trens (portes)</h5>
+<h5 id="trains-doors">● Trains (doors)</h5>
 
 <table class='type0'>
 <thead>
 <tr>
 <th>Variable</th>
-<th>Descripció</th>
+<th>Description</th>
 </tr>
 </thead>
 

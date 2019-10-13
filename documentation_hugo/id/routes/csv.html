@@ -37,7 +37,7 @@
           
           <ul class="third">
             
-            <li><a href="../../id/objects/native/b3d.html">The B3D object</a>
+            <li><a href="../../id/objects/native/b3d.html">Objek B3D</a>
               
             </li>
             
@@ -89,7 +89,7 @@
           
         </li>
         
-        <li><a href="../../id/objects/information.html">Information and tips</a>
+        <li><a href="../../id/objects/information.html">Info dan tips</a>
           
         </li>
         
@@ -101,7 +101,7 @@
       
       <ul class="second">
         
-        <li><a href="../../id/routes/csv.html">The CSV route</a>
+        <li><a href="../../id/routes/csv.html">Rute CSV</a>
           
         </li>
         
@@ -269,23 +269,23 @@
       
       <ul class="second">
         
-        <li><a href="../../id/information/encodings.html">Character encodings</a>
+        <li><a href="../../id/information/encodings.html">Enkoding karakter</a>
           
         </li>
         
-        <li><a href="../../id/information/numberformats.html">Number formats</a>
+        <li><a href="../../id/information/numberformats.html">Format angka</a>
           
         </li>
         
-        <li><a href="../../id/information/whitespaces.html">White Spaces</a>
+        <li><a href="../../id/information/whitespaces.html">Spasi</a>
           
         </li>
         
-        <li><a href="../../id/information/textureformats.html">Texture formats</a>
+        <li><a href="../../id/information/textureformats.html">Format gambar skin / tekstur</a>
           
         </li>
         
-        <li><a href="../../id/information/soundformats.html">Sound formats</a>
+        <li><a href="../../id/information/soundformats.html">Format suara</a>
           
         </li>
         
@@ -293,11 +293,11 @@
           
         </li>
         
-        <li><a href="../../id/information/distribution.html">Distributing add-ons</a>
+        <li><a href="../../id/information/distribution.html">Membagikan add-ons</a>
           
         </li>
         
-        <li><a href="../../id/information/forking.html">Forking guidelines</a>
+        <li><a href="../../id/information/forking.html">Panduan Forking</a>
           
         </li>
         
@@ -402,6 +402,11 @@
         한국어
       </a>
       
+      <hr class="dropdown-divider">
+      <a href="../../hu/routes/csv.html" class="dropdown-item">
+        Magyar
+      </a>
+      
     </div>
   </div>
 </div>
@@ -411,7 +416,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>The <strong>.csv</strong> route format</h1>
+          <h1>File rute <strong>.csv</strong></h1>
         </div>
 
         
@@ -422,39 +427,39 @@
 <div id="content">
   
 
-<p>➟ <a href="../../id/routes/csv_quick.html" target="_blank">Quick reference&hellip;</a></p>
+<p>➟ <a href="../../id/routes/csv_quick.html" target="_blank">Rangkuman skrip</a></p>
 
-<h2 id="contents">■ Contents</h2>
-
-<ul class='contents'>
-<li><a href="#overview">1. Overview</a></li>
-<li><a href="#syntax">2. Syntax</a></li>
-<li><a href="#preprocessing">3. Preprocessing</a></li>
-<li><a href="#options">4. The Options namespace</a></li>
-<li><a href="#route">5. The Route namespace</a></li>
-<li><a href="#train">6. The Train namespace</a></li>
-<li><a href="#structure">7. The Structure namespace</a></li>
-<li><a href="#texture">8. The Texture namespace</a></li>
-<li><a href="#cycle">9. The Cycle namespace</a></li>
-<li><a href="#signal">10. The Signal namespace</a></li>
-<li><a href="#track">11. The Track namespace</a>
+<h2 id="isi-konten">■ Isi konten</h2>
 
 <ul class='contents'>
-<li><a href="#track_rails">11.1. Rails</a></li>
-<li><a href="#track_geometry">11.2. Geometry</a></li>
-<li><a href="#track_objects">11.3. Objects</a></li>
-<li><a href="#track_stations">11.4. Stations</a></li>
-<li><a href="#track_signalling">11.5. Signalling and speed limits</a></li>
-<li><a href="#track_safety">11.6. Safety systems</a></li>
-<li><a href="#track_misc">11.7. Miscellaneous</a></li>
+<li><a href="#overview">1. Pengenalan</a></li>
+<li><a href="#syntax">2. Format penulisan</a></li>
+<li><a href="#preprocessing">3. Perintah unik</a></li>
+<li><a href="#options">4. Bagian Options</a></li>
+<li><a href="#route">5. Bagian Route</a></li>
+<li><a href="#train">6. Bagian Train</a></li>
+<li><a href="#structure">7. Bagian Structure</a></li>
+<li><a href="#texture">8. Bagian Texture</a></li>
+<li><a href="#cycle">9. Bagian Cycle</a></li>
+<li><a href="#signal">10. Bagian Signal</a></li>
+<li><a href="#track">11. Bagian Track</a>
+
+<ul class='contents'>
+<li><a href="#track_rails">11.1 Rel</a></li>
+<li><a href="#track_geometry">11.2. Geometri</a></li>
+<li><a href="#track_objects">11.3. Objek</a></li>
+<li><a href="#track_stations">11.4. Stasiun</a></li>
+<li><a href="#track_signalling">11.5. Persinyalan dan batas kecepatan</a></li>
+<li><a href="#track_safety">11.6. Sistem keamanan</a></li>
+<li><a href="#track_misc">11.7. Lainnya</a></li>
 </ul></li>
 </ul>
 
 
 
-<h2 id="a-name-overview-a-1-overview"><a name="overview"></a>■ 1. Overview</h2>
+<h2 id="a-name-overview-a-1-pengenalan"><a name="overview"></a>■ 1. Pengenalan</h2>
 
-<p>A CSV route allows to create a route in a text file.</p>
+<p>File rute CSV berfungsi membuat sebuah rute dari rangkaian teks.</p>
 
 <p>The file is a plain text file encoded in any arbitrary <a href="../../id/information/encodings.html" target="_blank">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../id/information/numberformats.html" target="_blank">parsing model</a> for numbers is <strong>Loose</strong> (unless otherwise stated), however, you are encouraged to produce <em>Strict</em> output nonetheless. The file is required to be located inside any folder whose current or parent folder includes the <em>Railway</em> and <em>Train</em> folders. The file name is arbitrary, but must have the extension <strong>.csv</strong>. The file is interpreted on a per-line basis, from top to bottom, where each line is split into expressions, which are interpreted from left to right.</p>
 
