@@ -273,7 +273,7 @@
           
         </li>
         
-        <li><a href="../../ja/information/numberformats.html">Number formats</a>
+        <li><a href="../../ja/information/numberformats.html">数値の形式</a>
           
         </li>
         
@@ -416,7 +416,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>Number formats</h1>
+          <h1>数値の形式</h1>
         </div>
 
         
@@ -427,29 +427,29 @@
 <div id="content">
   
 
-<p><font color="Gray">This page describes which number formats are encountered in the various route and train files and how to adhere to them.</font></p>
+<p><font color="Gray">このページでは、様々なルートファイルと車両ファイルで使用する数値形式と、それらに準拠する方法について説明します。</font></p>
 
-<h2 id="contents">■ Contents</h2>
+<h2 id="目次">目次</h2>
 
 <ul class='contents'>
-<li><a href="#overview">1. Overview</a></li>
-<li><a href="#integers">2. Integers</a></li>
-<li><a href="#floating">3. Floating-point numbers</a></li>
-<li><a href="#times">4. Times</a></li>
-<li><a href="#colors">5. Color values</a></li>
+<li><a href="#overview">1. 概要</a></li>
+<li><a href="#integers">2. 整数型</a></li>
+<li><a href="#floating">3. 浮動小数点型</a></li>
+<li><a href="#times">4. 時刻形式</a></li>
+<li><a href="#colors">5. 色表現</a></li>
 </ul>
 
 
 
-<h2 id="a-name-overview-a-1-overview"><a name="overview"></a>■ 1. Overview</h2>
+<h2 id="a-name-overview-a-1-概要"><a name="overview"></a>■ 1. 概要</h2>
 
-<p>Within the route and train files, you will encounter numbers like integers or floating-point numbers all the time, occasionally also others. These numbers are required to adhere to a certain format, which is described in the following sections.</p>
+<p>ルートファイルと車両ファイル内では、常に整数や浮動小数点数などの数値を使用しますが、場合によっては他の数値も使用します。 これらは、次章で説明する特定の形式に従うことが必要です。</p>
 
-<p>There are two parsing methods for numbers: <strong>Strict</strong> and <strong>Loose</strong>. The Strict method is a very tight specification which does not leave space for making typographic mistakes. This method is used in all new file formats. The Loose method is a legacy parsing model required for compatibility with older material. The different files as presented on the <em>Developing for openBVE</em> pages indicate which model is being used. Note that whenever a <em>Loose</em> model is permitted, you can also use the <em>Strict</em> formats as <em>Strict</em> forms a subset of <em>Loose</em>.</p>
+<p>数値の解析方法には、<strong>Strict</strong>および<strong>Loose</strong>の2つがあります。 Strictメソッドは非常に厳密な仕様であり、印刷上のミスを犯すスペースがありません。 このメソッドは、すべての新しいファイル形式で使用されます。 Looseメソッドは、古いリリースとの互換性を保持するために必要な、レガシー解析モデルです。 *Developing for openBVE*ページに記載されているさまざまなファイルは、使用されているモデルを示しています。 *Loose*モデルが許可されている場合は、*Strict*が*Loose*のサブセットを形成するため、*Strict*形式も使用できることに注意してください。</p>
 
-<h2 id="a-name-integers-a-2-integers"><a name="integers"></a>■ 2. Integers</h2>
+<h2 id="a-name-integers-a-2-整数型"><a name="integers"></a>■ 2. 整数型</h2>
 
-<p><strong>Strict:</strong> Permitted is any sequence of at least one decimal digit in the range from 0 to 9 (U+0030 - U+0039), optionally prepended by a negative sign (U+002D). The resulting character sequence may include leading or trailing white spaces.</p>
+<p><strong>Strict:</strong>使用できるのは、0から9 (U+0030 - U+0039) の範囲の少なくとも1つの10進数の任意の数列であり、オプションで負符号 (U+002D) が前に付加されます。 結果の文字列には、先頭または末尾の空白が含まれる場合があります。</p>
 
 <table style="border: none;">
   <tbody>
@@ -474,7 +474,7 @@
   </tbody>
 </table>
 
-<p><strong>Loose:</strong> All white spaces are removed from the character sequence first. Then, the remaining character sequence (<em>abcde</em>) is interpreted according to the <em>Strict</em> model. If this fails to create a valid number, the last character is dropped from the sequence (<em>abcd</em>) and then, the sequence is tested again. This continues until a valid number is produced or until no character remains, after which the character sequence is determined to be an invalid number.</p>
+<p><strong>Loose:</strong>最初に、すべての空白が文字列から削除されます。 次に、残りの文字列 (<em>abcde</em>) が*Strict*モデルに従って解釈されます。 ここで、有効な番号の作成に失敗した場合、最後の文字が文字列から削除され (<em>abcd</em>)、その後、文字列が再度テストされます。 これは、有効な数字が生成されるか、文字がなくなるまで続き、最終的に、文字列が無効な数字であると判断されます。</p>
 
 <table style="border: none;">
   <tbody>
@@ -522,9 +522,9 @@
   </tbody>
 </table>
 
-<h2 id="a-name-floating-a-3-floating-point-numbers"><a name="floating"></a>■ 3. Floating-point numbers</h2>
+<h2 id="a-name-floating-a-3-浮動小数点型"><a name="floating"></a>■ 3. 浮動小数点型</h2>
 
-<p><strong>Strict:</strong> Permitted is any sequence of at least one decimal digit in the range from 0 to 9 (U+0030 - U+0039), optionally interleaved by exactly one decimal separator in form of the period (U+002E), optionally prepended by a negative sign (U+002D). The resulting character sequence may include leading or trailing white spaces.</p>
+<p><strong>Strict:</strong>使用できるのは、0〜9の範囲の少なくとも1つの10進数 (U+0030 - U+0039) の任意の数列です。オプションで、ピリオド (U+002E) の形式で1つの小数点記号を挿入します。オプションで負符号 (U+002D) を前に付けます。 結果の文字列には、先頭または末尾の空白が含まれる場合があります。</p>
 
 <table style="border: none;">
   <tbody>
@@ -553,7 +553,7 @@
   </tbody>
 </table>
 
-<p><strong>Loose:</strong> All white spaces are removed from the character sequence first. Then, the remaining character sequence (<em>abcde</em>) is interpreted according to the <em>Strict</em> model. If this fails to create a valid number, the last character is dropped from the sequence (<em>abcd</em>) and then, the sequence is tested again. This continues until a valid number is produced or until no character remains, after which the character sequence is determined to be an invalid number.</p>
+<p><strong>Loose:</strong>最初に、すべての空白が文字列から削除されます。 次に、残りの文字列 (<em>abcde</em>) が*Strict*モデルに従って解釈されます。 ここで、有効な番号の作成に失敗した場合、最後の文字が文字列から削除され (<em>abcd</em>)、その後、文字列が再度テストされます。 これは、有効な数字が生成されるか、文字がなくなるまで続き、最終的に、文字列が無効な数字であると判断されます。</p>
 
 <table style="border: none;">
   <tbody>
@@ -599,9 +599,9 @@
   </tbody>
 </table>
 
-<h2 id="a-name-times-a-4-times"><a name="times"></a>■ 4. Times</h2>
+<h2 id="a-name-times-a-4-時刻形式"><a name="times"></a>■ 4. 時刻形式</h2>
 
-<p><strong>Legacy:</strong> Permitted is any of the following sequences:</p>
+<p><strong>Legacy:</strong> 次のいずれの形式も使用することができます:</p>
 
 <table style="border: none;">
   <tbody>
@@ -621,7 +621,7 @@
   </tbody>
 </table>
 
-<p>In these sequences, <em>hhh</em> denotes any sequence of at least one decimal digit to indicate the hour, <em>mm</em> denotes the two-digit minute part, <em>m</em> denotes a one-digit minute part, <em>ss</em> denotes a two-digit second part, <em>s</em> denotes a one-digit second part, and the character to separate the hours from the minutes is the period (U+002E). All digits need to be characters from 0 to 9 (U+0030 - U+0039). Leading or trailing white spaces are ignored. The total time is determined via the following formula, resulting in seconds since midnight:</p>
+<p>上記に示した文字列では、*hhh*は時間を示す少なくとも1つの10進数字列を示します。*mm*は2桁の分部分を示し、*m*は1桁の分部分を示します。*ss<em>は2桁の秒の部分を示し 、</em> s *は1桁の秒の部分を示します。時間と分を区切る文字はピリオド (U+002E) です。 すべての数字は、0〜9の文字 (U+0030 - U+0039) である必要があります。 先頭や末尾の空白は無視されます。 合計時間は次の式で決定され、0時ちょうどからの秒数になります。</p>
 
 <table style="border: none;">
   <tbody>
@@ -644,7 +644,7 @@
   </tbody>
 </table>
 
-<p>If minutes or seconds are not indicated, they are assumed to be zero. You can use any non-negative hour, including values greater than or equal to 24. If, for example, a station arrival time is 23:59:00 (day 1), and the arrival time of the following station is 00:02:15 (day 2), then use the following sequences to represent these times in order to ensure a chronological order:</p>
+<p>分または秒が指定されていない場合、ゼロと見なされます。 また、24以上の値を含む、負でない任意の時間も使用できます。たとえば、駅の到着時間が23:59:00 (1日目) で、次の駅の到着時間が00:02:15 (2日目) である場合 、次の文字列を使用してこれらの時間を表し、時系列順を確保します。</p>
 
 <table style="border: none;">
   <tbody>
@@ -668,9 +668,9 @@
   </tbody>
 </table>
 
-<h2 id="a-name-colors-a-5-color-values"><a name="colors"></a>■ 5. Color values</h2>
+<h2 id="a-name-colors-a-5-色表現"><a name="colors"></a>■ 5. 色表現</h2>
 
-<p><strong>Hexcolor:</strong> A six-digit hexadecimal number is preceded by a number sign character (U+0023). An individual hexadecimal digit can be comprised of the decimal digits from 0 to 9 (U+0030 - U+0039), the lowercase letters from a to f (U+0061 - U+0066) and the uppercase letters from A to F (U+0041 - U+0046).The hexcolor has the following form:</p>
+<p><strong>Hexcolor:</strong> 6桁の16進数の前にはシャープ記号 (U+0023) が付きます。個々の16進数は、0 - 9 (U+0030 - U+0039) の10進数、a - fの小文字 (U+0061 - U+0066)、およびA〜Fの大文字 (U+0041 - U+0046)  で構成されます。hexcolorの形式は次のとおりです:</p>
 
 <table style="border: none;">
   <tbody>
@@ -686,9 +686,9 @@
   </tbody>
 </table>
 
-<p>In this sequence, RR represents the red component, GG the green component and BB the blue component. Each component ranges from 00 to FF (0 - 255), where 00 represents no contribution for that channel and FF full contribution.</p>
+<p>上記において、 RR は赤色要素を表し、 GG は緑色要素を、そして BB は青色要素を表します。各要素の範囲は00からFF (0 - 255) です。00ではその色成分がなく、FFではその色成分が最大限入っていることを表します。</p>
 
-<p>Commonly used colors (to indicate transparency) include:</p>
+<p>一般的に使用される色 (透明性を示す) には以下が含まれます。</p>
 
 <table style="border: none;">
   <tbody>
