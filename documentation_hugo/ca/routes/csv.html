@@ -2981,7 +2981,9 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 <strong>T</strong> or <strong>=</strong>: This is the terminal station. If <em>ForcedRedSignal</em> is set to 1, the departure signal will be held at red indefinately.<br />
 <strong>T:</strong><em>time</em>: This is the terminal station. If <em>ForcedRedSignal</em> is set to 1, the departure signal will still switch to green before the specified time as if this was a regular station.<br />
 <strong>C</strong>: This is a station at which to &ldquo;change ends&rdquo;. See the description below.<br />
-<strong>C:</strong><em>time</em>: This is a station at which to &ldquo;change ends&rdquo;. Changing ends will take place at the specified time unless <em>StopDuration</em> interferes. See the description below.</p>
+<strong>C:</strong><em>time</em>: This is a station at which to &ldquo;change ends&rdquo;. Changing ends will take place at the specified time unless <em>StopDuration</em> interferes. See the description below.<br />
+<strong>J:</strong><em>index</em>: This is a station at which the train is &ldquo;jumped&rdquo; to the station specified by <em>index</em>. See the description below.<br />
+<strong>J:</strong><em>index:<strong>Time</strong></em>: This is a station at which the train is &ldquo;jumped&rdquo; to the specified by <em>index</em>. Jumping will take place at the specified time unless <em>StopDuration</em> interfers. See the description below.</p>
 
 </div>
 
@@ -3026,7 +3028,11 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 
 <p>This command initializes a new station. It should be placed at the beginning of the station platform. In order to finalize the creation of a station, use the Track.Stop command to place stop points following this command. All following Track.Stop commands will be associated to this station. At least one Track.Stop command must follow if trains are expected to stop at this station.</p>
 
+<p><strong>Special Features:</strong></p>
+
 <p>Stations can be marked as &ldquo;changing ends&rdquo; in the departure time. At such stations, when the departure time has been reached, the train will automatically jump to the next station. This feature is intended to fake a reverse of traveling direction without the need to jump to stations manually from the menu.</p>
+
+<p>Similarly, stations can be marked as a &ldquo;jump point&rdquo; in the departure time. At such stations, when the departure time has been reached, the train will automatically jump to the specified station index.</p>
 
 <div id="warning">
 <span>⚠</span>
