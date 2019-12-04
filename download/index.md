@@ -15,7 +15,7 @@ OpenBVE is provided as a standard Windows Installer.
 
 The most recent stable version of OpenBVE is:
 
-<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.7.0.3-setup.exe" class="btn btn-info">1.7.0.3 (2019-10-13)</a>
+<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.7.1.0-setup.exe" class="btn btn-info">1.7.1.0 (2019-12-04)</a>
 
 ---
 
@@ -31,7 +31,7 @@ This is available by default in the current Debian stable (Buster), or alternati
 
 The most recent stable version of OpenBVE is:
 
-<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.7.0.3.deb" class="btn btn-info">1.7.0.3 (2019-10-13)</a>
+<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.7.1.0.deb" class="btn btn-info">1.7.1.0 (2019-12-04)</a>
 
 ---
 
@@ -44,7 +44,7 @@ OpenBVE is provided as a standard compressed archive.
 
 The most recent stable version of OpenBVE is:
 
-<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.7.0.3.zip" class="btn btn-info">1.7.0.3 (2019-10-13)</a>
+<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.7.1.0.zip" class="btn btn-info">1.7.1.0 (2019-12-04)</a>
 
 ---
 
