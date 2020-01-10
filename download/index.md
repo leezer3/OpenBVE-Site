@@ -15,7 +15,7 @@ OpenBVE is provided as a standard Windows Installer.
 
 The most recent stable version of OpenBVE is:
 
-<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.7.1.1-setup.exe" class="btn btn-info">1.7.1.1 (2020-01-05)</a>
+<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.7.1.2-setup.exe" class="btn btn-info">1.7.1.2 (2020-01-10)</a>
 
 ---
 
@@ -31,7 +31,7 @@ This is available by default in the current Debian stable (Buster), or alternati
 
 The most recent stable version of OpenBVE is:
 
-<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.7.1.1.deb" class="btn btn-info">1.7.1.1 (2020-01-05)</a>
+<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.7.1.2.deb" class="btn btn-info">1.7.1.2 (2020-01-10)</a>
 
 ---
 
@@ -44,7 +44,7 @@ OpenBVE is provided as a standard compressed archive.
 
 The most recent stable version of OpenBVE is:
 
-<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.7.1.1.zip" class="btn btn-info">1.7.1.1 (2020-01-05)</a>
+<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.7.1.2.zip" class="btn btn-info">1.7.1.2 (2020-01-10)</a>
 
 ---
 
@@ -65,7 +65,7 @@ The most recent stable version of OpenBVE is:
 
 There were issues with the new renderer in 1.7.1.0, which meant that Mac support was unfortunately accidentally broken.
 I *believe* this version to have fixed the issues, but until this is confirmed it'll be labelled experimental :)
-<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.7.1.1.dmg" class="btn btn-info">1.7.1.1 (2020-01-05)</a>
+<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/OpenBVE-1.7.1.2.dmg" class="btn btn-info">1.7.1.2 (2020-01-10)</a>
 
 ---
 
