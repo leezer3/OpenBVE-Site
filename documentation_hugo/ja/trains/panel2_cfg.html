@@ -189,7 +189,7 @@
           
         </li>
         
-        <li><a href="../../ja/trains/panel2_cfg.html">The panel2.cfg file</a>
+        <li><a href="../../ja/trains/panel2_cfg.html">panel2.cfg ファイル</a>
           
         </li>
         
@@ -416,7 +416,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>The <strong>panel2.cfg</strong> file format</h1>
+          <h1><strong>panel2.cfg</strong> ファイルフォーマット</h1>
         </div>
 
         
@@ -427,33 +427,33 @@
 <div id="content">
   
 
-<h2 id="contents">■ Contents</h2>
+<h2 id="内容">■ 内容</h2>
 
 <ul class='contents'>
-<li><a href="#overview">1. Overview</a></li>
-<li><a href="#syntax">2. Syntax</a></li>
-<li><a href="#this">3. The This section</a></li>
-<li><a href="#pilotlamp">4. The PilotLamp section</a></li>
-<li><a href="#needle">5. The Needle section</a></li>
-<li><a href="#digitalnumber">6. The DigitalNumber section</a></li>
-<li><a href="#digitalgauge">7. The DigitalGauge section</a></li>
-<li><a href="#lineargauge">8. The LinearGauge section</a></li>
-<li><a href="#timetable">9. The Timetable section</a></li>
-<li><a href="#subjects">10. Available subjects</a></li>
+<li><a href="#overview">1. 概要</a></li>
+<li><a href="#syntax">2. 文法</a></li>
+<li><a href="#this">3. This セクション</a></li>
+<li><a href="#pilotlamp">4. PilotLamp セクション</a></li>
+<li><a href="#needle">5. Needle セクション</a></li>
+<li><a href="#digitalnumber">6. DigitalNumber セクション</a></li>
+<li><a href="#digitalgauge">7. DigitalGauge セクション</a></li>
+<li><a href="#lineargauge">8. LinearGauge セクション</a></li>
+<li><a href="#timetable">9. Timetable セクション</a></li>
+<li><a href="#subjects">10. 使用可能なコマンド</a></li>
 </ul>
 
 
 
-<h2 id="a-name-overview-a-1-overview"><a name="overview"></a>■ 1. Overview</h2>
+<h2 id="a-name-overview-a-1-概要"><a name="overview"></a>■ 1. 概要</h2>
 
-<p>The panel2.cfg file allows to create 2D panels by defining which elements to use, like lamps, needles, etc., what they are intended to display and where they are to be placed.</p>
+<p>panel2.cfg ファイルは lampやneedle等、運転台パネルを使用するための要素について表示、配置などの場所を定義することにより、2D運転台パネルを作成できます。</p>
 
-<p>The panel2.cfg file is a plain text file encoded in any arbitrary <a href="../../ja/information/encodings.html" target="_blank">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../ja/information/numberformats.html" target="_blank">parsing model</a> for numbers is <strong>Loose</strong>, however, you are encouraged to produce <em>Strict</em> output nonetheless. The file is required to be located inside the train folder and is expected to be named <strong>panel2.cfg</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
+<p>panel2.cfg ファイルは任意のエンコードで記述されたプレーンテキストですが <a href="../../ja/information/encodings.html" target="_blank">encoding</a>, 、好ましい選択としてはバイトオーダー付きのUTF-8です。 The <a href="../../ja/information/numberformats.html" target="_blank">parsing model</a> に用いる数字は <strong>ルーズ</strong>ですが、 それでも出力にあたっては <em>厳密な</em> 出力をすることが望ましいです。 このファイルは必ずTrainフォルダー内に配置する必要があり、 <strong>panel2.cfg</strong>という名前にする必要があります。 ファイルは各行ごとに上から下に解釈されます。</p>
 
 <div id="notice">
-<h4 id="layers">Layers</h4>
+<h4 id="レイヤー">レイヤー</h4>
 
-<p>All elements in the panel are associated layers. The layer is described as an integer, where small values represent the background and high numbers the foreground. When placing elements, you should make sure that no overlapping elements share the same layer number. The background image of the panel is always associated layer number 0, so elements on top of it should start with layer number 1 or higher. If you want to place elements behind the panel background image, you can likewise use negative numbers to represent these layers.</p>
+<p>パネル内の全ての要素はレイヤーに紐づけされています。 レイヤーは整数で記述されます。 小さな値はより背景寄りに、大きな値は前景寄りに配置されます。 要素を配置する際は、同じレイヤー番号に重複しないよう留意する必要があります。 パネルの背景イメージは常にレイヤー番号0に関連付けられているため、その上に配置する要素はつねにレイヤー番号1以上で始まる必要があります。パネルの背景画像の更に背後に要素を配置する場合は、同様に負の数を使用して、此等のレイヤーを表すことが出来ます。</p>
 
 </div>
 
@@ -461,28 +461,28 @@
 <p><br/></p>
 
 <div id="notice">
-<h4 id="daytime-and-nighttime-images">Daytime and nighttime images</h4>
+<h4 id="daytime-と-nighttime-イメージ">Daytime と nighttime イメージ</h4>
 
-<p>For all elements that take a texture, you can specify distinct daytime and nighttime textures. Depending on the lighting conditions and additional route instructions, openBVE will display any intermediate blend between the daytime and nighttime textures. If no nighttime textures are used, the daytime images will be darkened to simulate corresponding nighttime images.</p>
+<p>テクスチャを取得する全ての要素に対して、昼間と夜間用の異なるテクスチャを指定できます。照明の条件と追加の路線データからの命令に応じて、OpenBVEは昼間と夜間のテクスチャの中間的なブレンドの結果を表示します。夜間のテクスチャを使用しない場合は、対応する夜間の画像をシミュレートするために、昼間の画像が暗くなります。</p>
 
 </div>
 
 
-<p>➟ <a href="../../ja/trains/panel2_cfg_quick.html" target="_blank">See also the quick reference for the panel2.cfg&hellip;</a></p>
+<p>➟ <a href="../../ja/trains/panel2_cfg_quick.html" target="_blank"> panel2.cfgのクイックリファレンスも参照して下さい&hellip;</a></p>
 
 <div id="notice">
-<h4 id="overlay-and-lighting">Overlay and Lighting</h4>
+<h4 id="重なりとライティング">重なりとライティング</h4>
 
-<p>The cab is rendered as an overlay. This means that the cab will always appear in front of scenery objects. This is intentional, because this way, rain, walls and other obstructing objects cannot be accidentally rendered inside the cab. Furthermore, lighting in the cab is different than in the scenery. While the ambient brightness is reflected in the cab, the ambient color is not, and the cab always appears as if reflecting white light.</p>
+<p>運転台パネルのデータはオーバーレイとしてレンダリングされます。これは、運転台画像が常に風景のオブジェクトの手前に表示されることを意味します。この方法では、雨、壁、その他の遮るオブジェクト運転台画像内で誤ってレンダリングされることはありません。 周囲の明るさは運転台に反映されますが、運転台は常に白色光を反射しているように見えます。</p>
 
 </div>
 
 
-<h2 id="a-name-syntax-a-2-syntax"><a name="syntax"></a>■ 2. Syntax</h2>
+<h2 id="a-name-syntax-a-2-文法"><a name="syntax"></a>■ 2. 文法</h2>
 
-<p>Each line in the file can be empty (or solely consist of white spaces) and will be ignored, can mark the beginning of a new section or contain key-value pairs inside a section. All key-value pairs relate to the last section opened.</p>
+<p>ファイル内の各行は空(または空白)飲みにすることが出来、またその行は無視され、新しいセクションの開始をマークするか、セクション内にキーと値のペアを含めることが出来ます。全てのキーと値のペアは、最後に開かれたセクションと関連付けされます。</p>
 
-<p>A new section is opened by starting the line with an opening bracket (U+005B) and ending it with a closing bracket (U+005D). The text in-between the brackets indicates the name of the section and is case-insensitive. White spaces at the beginning and the end of the line are ignored, as well as at the beginning and the end of the name of the section. Thus, the beginning of the section has the following form:</p>
+<p>新しいセクションを開くには、行を開始ブラケット (U+005B) で開始し、終了ブラケット (U+005D)で終了します。 カッコ内のテキストはセクション名を示し、大文字と小文字を区別しません。 行の最初と最後の空白、及びセクション名の最初と最後の空白は無視されます。従って、セクションの先頭は次の形式になります:</p>
 
 <div id="command">
 <p>[NameOfTheSection]</p>
@@ -490,7 +490,7 @@
 </div>
 
 
-<p>A key-value pair is indicated by giving the key, an equals sign (U+003D) and then the value. The key is case-insensitive. White spaces at the beginning and the end of the line are ignored, as well as in front and after the equals sign. Alternatively, white spaces surrounding the key and the value are ignored. Thus, a key-value pair as the following form:</p>
+<p>キーと値のペアは、キー、等号 (U+003D)、そして値を与えることで示されます。 キーは大文字と小文字を区別しません。 行頭と末尾、及び等号の前後の空白は無視され、または、キーと値を囲む空白は無視されます。 従って、キーと値のペアは次のような書式をとります:</p>
 
 <div id="command">
 <p>NameOfTheKey = Value</p>
@@ -498,13 +498,13 @@
 </div>
 
 
-<p>Some values are further split into multiple parts, separated by commas (U+002C).</p>
+<p>一部の値は、カンマで区切られた複数の部分にさらに分割されます (U+002C)。</p>
 
-<p>You can use comments anywhere at the end of a line. A comment is started by a semicolon (U+003B). Comments, if present, are stripped away from all lines before these are processed.</p>
+<p>コメントは行末のどこでも使用可能です。 コメントはセミコロン (U+003B)で始まります。 コメントは存在する場合、処理される前に全ての行から削除されます。</p>
 
-<h2 id="a-name-this-a-3-the-this-section"><a name="this"></a>■ 3. The This section</h2>
+<h2 id="a-name-this-a-3-this-セクション"><a name="this"></a>■ 3. This セクション</h2>
 
-<p>The This section defines the background image to use for the panel and which resolution the panel has. Only one This section may be used within the file.</p>
+<p>This セクションはパネルの背景イメージを用いる為の定義や、解像度を定義します。このセクションは、ファイル内で一度だけ使用できます。</p>
 
 <hr />
 
@@ -514,7 +514,7 @@
 </div>
 
 
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 
 <hr />
 
@@ -525,7 +525,7 @@
 
 
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: A floating-point number representing the width measured on the panel background image that corresponds to the width of the screen for the default camera position, alignment and zoom.</p>
+<p><strong><em>Value</em></strong>: Thisセクションで示されたパネルの背景画像で、測定された幅を示す浮動小数点数で、デフォルトの画面の幅、カメラ位置、位置合わせ、ズームに用います。</p>
 
 </div>
 
@@ -539,7 +539,7 @@
 
 
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: A floating-point representing which x-coordinate in the panel background corresponds to the farthest point to which can be scrolled left. The point is not required to lie within the bounds of the background image.</p>
+<p><strong><em>Value</em></strong>: パネルの背景の、どのX座標が左にスクロールさせることができる最も遠い点に対応するかを示す浮動小数点数。 座標の点は背景画像の座標の範囲内である必要はありません。</p>
 
 </div>
 
@@ -553,7 +553,7 @@
 
 
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: A floating-point representing which x-coordinate in the panel background corresponds to the farthest point to which can be scrolled right. The point is not required to lie within the bounds of the background image.</p>
+<p><strong><em>Value</em></strong>: パネルの背景の、どのX座標が右にスクロールさせることができる最も遠い点に対応するかを示す浮動小数点数。 座標の点は背景画像の座標の範囲内である必要はありません。</p>
 
 </div>
 
@@ -567,7 +567,7 @@
 
 
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: A floating-point representing which y-coordinate in the panel background corresponds to the farthest point to which can be scrolled up. The point is not required to lie within the bounds of the background image.</p>
+<p><strong><em>Value</em></strong>: パネルの背景の、どのY座標が上にスクロールさせることができる最も遠い点に対応するかを示す浮動小数点数。 座標の点は背景画像の座標の範囲内である必要はありません。</p>
 
 </div>
 
@@ -581,7 +581,7 @@
 
 
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: A floating-point representing which y-coordinate in the panel background corresponds to the farthest point to which can be scrolled down. The point is not required to lie within the bounds of the background image.</p>
+<p><strong><em>Value</em></strong>: パネルの背景の、どのY座標が下にスクロールさせることができる最も遠い点に対応するかを示す浮動小数点数。 座標の点は背景画像の座標の範囲内である必要はありません。</p>
 
 </div>
 
@@ -595,7 +595,7 @@
 
 
 <div id="command-arguments">
-<p><strong><em>FileName</em></strong>: The image file to use as the daytime version of the panel background image, relative to the train folder. If not specified, no background image will be shown.</p>
+<p><strong><em>FileName</em></strong>: train フォルダに関連して、パネルの日中用の画像として使用するためのイメージファイル。 指定していない場合、背景画像は表示されません。</p>
 
 </div>
 
@@ -609,7 +609,7 @@
 
 
 <div id="command-arguments">
-<p><strong><em>FileName</em></strong>: The image file to use as the nighttime version of the panel background image, relative to the train folder. If specified, the daytime version must also be specified. Otherwise, no nighttime version will be available.</p>
+<p><strong><em>FileName</em></strong>: train フォルダに関連して、パネルの夜間用の画像として使用するためのイメージファイル。 指定する場合は、昼間用のバージョンも指定する必要があります。それ以外の場合は夜間バージョンを使用することは出来ません。</p>
 
 </div>
 
@@ -623,7 +623,7 @@
 
 
 <div id="command-arguments">
-<p><strong><em>HexColor</em></strong>: A <a href="../../ja/information/numberformats.html#colors">hexcolor</a> representing the exact color in both the <em>DaytimeImage</em> and <em>NighttimeImage</em> files which corresponds to a transparent pixel. The default value is #0000FF.</p>
+<p><strong><em>HexColor</em></strong>: A <a href="../../ja/information/numberformats.html#colors">hexcolor</a>  <em>DaytimeImage</em> および <em>NighttimeImage</em> ファイルの双方に、透明ピクセルに対応する正確な色を定義します。 デフォルト値は #0000FF です。</p>
 
 </div>
 
@@ -637,13 +637,13 @@
 
 
 <div id="command-arguments">
-<p><strong><em>X</em></strong>: A floating-point number representing the x-coordinate of the panel background image that corresponds to the center of the screen.<br />
-<strong><em>Y</em></strong>: A floating-point number representing the y-coordinate of the panel background image that corresponds to the center of the screen.</p>
+<p><strong><em>X</em></strong>: パネルの背景イメージの中心に対応するX座標を示す浮動小数点数
+<strong><em>Y</em></strong>: パネルの背景イメージの中心に対応するY座標を示す浮動小数点数</p>
 
 </div>
 
 
-<p>Defines which pixel in the background image corresponds to the center of the screen for the default camera position. The relation between <em>Center</em> and <em>Origin</em> influences the yaw and pitch of the cab alignment.</p>
+<p>背景画像のどのピクセルがデフォルトのカメラ位置の消失点に対応するかを定義します。これは、2本のレールが直線の線路上で水平線に収束するポイントです。 <em>Center</em> と <em>Origin</em> の関係は、運転台の位置合わせの yaw と pitch に影響します。</p>
 
 <hr />
 
@@ -654,29 +654,29 @@
 
 
 <div id="command-arguments">
-<p><strong><em>X</em></strong>: A floating-point number representing the x-coordinate of the panel background image that corresponds to the vanishing point.<br />
-<strong><em>Y</em></strong>: A floating-point number representing the y-coordinate of the panel background image that corresponds to the vanishing point.</p>
+<p><strong><em>X</em></strong>: 消失点に対応する、パネルの背景イメージのX座標を示す浮動小数点数。
+<strong><em>Y</em></strong>: 消失点に対応する、パネルの背景イメージのY座標を示す浮動小数点数。</p>
 
 </div>
 
 
-<p>Defines which pixel in the background image corresponds to the vanishing point for the default camera position. This is the point to which the two rails converge at the horizon on a straight piece of track. The relation between <em>Center</em> and <em>Origin</em> influences the yaw and pitch of the cab alignment.</p>
+<p>背景画像のどのピクセルがデフォルトのカメラ位置の消失点に対応するかを定義します。これは、2本のレールが直線の線路上で水平線に収束するポイントです。 <em>Center</em> と <em>Origin</em> の関係性は、運転台パネルの yaw と pitch に影響します。</p>
 
 <p><img src="../../images/illustration_center_origin.png" alt="illustration_center_origin" /></p>
 
 <div id="notice">
-<h4 id="when-camera-restriction-affects-the-default-camera-setup">When camera restriction affects the default camera setup</h4>
+<h4 id="カメラの制限がデフォルトのカメラ設定に影響する場合">カメラの制限がデフォルトのカメラ設定に影響する場合</h4>
 
-<p>Camera restriction is the built-in functionality to limit the camera view inside cabs created by the panel2.cfg to the rectangle as specified via <em>Left</em>, <em>Right</em>, <em>Top</em> and <em>Bottom</em>. If your setup of *Center*and <em>Resolution</em> would force the camera to show parts that are outside of that specified region even with the default camera settings, the camera position will be altered to guarantee that the view stays inside the cab region. In order to verify that your <em>Center</em> and <em>Origin</em> setup is unaffected by this, disable camera restriction by hitting the CAMERA_RESTRICTION key (default: CTRL+R) and then reset the camera by hitting the CAMERA_RESET key (default: num 5). The <em>Center</em> and <em>Origin</em> values will now be exactly as scripted, thereby revealing possible problems in the relations of <em>Resolution</em>, <em>Left</em>, <em>Right</em>, <em>Top</em>, <em>Bottom</em>, <em>Center</em> and <em>Origin</em>.</p>
+<p>カメラの制限は、Panel2.cfgで作成された運転台データ内のカメラの見え方を、 *Left*、 *Right*、 *Top*、*Bottom*で指定された長方形に制限する機能です。 <em>Center</em> と <em>Resolution</em> の設定により、デフォルトのカメラ設定でも、指定された領域外のパーツがカメラに表示された場合でも、カメラの位置が変更されて、ビューが運転台パネルの範囲内に表示されることが保証されます。 <em>Center</em> と <em>Origin</em> の設定がこの影響を受けないことを確認するには、 CAMERA_RESTRICTION キー (デフォルト: CTRL+R) を押してカメラの制限を無効にし、CAMERA_RESET キー (デフォルト: num 5) を押して、カメラをリセットします。それにより<em>Center</em> と <em>Origin</em> の値は 記述されたとおりの挙動をし、 *Resolution*、 *Left*、 *Right*、 *Top*、 *Bottom*、*Center*、*Origin*の関係で考えられる問題を明確にすることが出来ます。</p>
 
 </div>
 
 
-<h2 id="a-name-pilotlamp-a-4-the-pilotlamp-section"><a name="pilotlamp"></a>■ 4. The PilotLamp section</h2>
+<h2 id="a-name-pilotlamp-a-4-pilotlampセクション"><a name="pilotlamp"></a>■ 4. PilotLampセクション</h2>
 
-<p>The PilotLamp section creates an indicator that can be made visible or invisible. You can use as many of these sections as required.</p>
+<p>PilotLamp せくしょんでは、表示または非表示にできるインジケーターを作成できます。此等のセクションは、必要な数だけ使用することが出来ます。</p>
 
-<p>The <em>DaytimeImage</em> is required to be specified if you make use of the PilotLamp section. The <em>Subject</em> used needs to return 1 if the PilotLamp is to be made visible, otherwise it will be invisible.</p>
+<p>PilotLampセクションを使用する場合は、 <em>DaytimeImage</em> を指定する必要があります。 PilotLampを表示させたい場合は <em>Subject</em> は1を返す必要があります。そうでない場合は非表示になります。</p>
 
 <hr />
 
@@ -686,7 +686,7 @@
 </div>
 
 
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 
 <hr />
 
@@ -697,7 +697,7 @@
 
 
 <div id="command-arguments">
-<p><strong><em>Subject</em></strong>: One of the <a href="#subjects">available subjects</a>. The default subject is <strong>true</strong>.</p>
+<p><strong><em>Subject</em></strong>: <a href="#subjects">available subjects</a>の内のいずれか一つを指定します。 デフォルトのsubjectは <strong>true</strong> です。</p>
 
 </div>
 
@@ -711,8 +711,8 @@
 
 
 <div id="command-arguments">
-<p><strong><em>Left</em></strong>: A floating-point number representing the x-coordinate at which the left of the image is inserted. The default value is 0.<br />
-<strong><em>Top</em></strong>: A floating-point number representing the y-coordinate at which the top of the image is inserted. The default value is 0.</p>
+<p><strong><em>Left</em></strong>: 画面の左端が挿入されるX座標を示す浮動小数点数。デフォルトは値は0です。<br />
+<strong><em>Top</em></strong>: 画面の上端が挿入されるY座標を示す浮動小数点数。デフォルトは値は0です。</p>
 
 </div>
 
@@ -726,7 +726,7 @@
 
 
 <div id="command-arguments">
-<p><strong><em>FileName</em></strong>: The image file to use as the daytime version of the indicator image, relative to the train folder. <strong><em>Is required to be specified.</em></strong></p>
+<p><strong><em>FileName</em></strong>: Trainフォルダと関連して、インジケーターのイメージの日中バージョンとして使用するイメージファイル。 <strong><em>必ず指定する必要があります。</em></strong></p>
 
 </div>
 
@@ -740,7 +740,7 @@
 
 
 <div id="command-arguments">
-<p><strong><em>FileName</em></strong>: The image file to use as the nighttime version of the indicator image, relative to the train folder. If not specified, no nighttime version will be available.</p>
+<p><strong><em>FileName</em></strong>: Trainフォルダーに関連して、インジケーターのイメージの夜間バージョンとして使用するイメージファイル。指定していない場合、夜間バージョンは使用できません。</p>
 
 </div>
 
@@ -754,7 +754,7 @@
 
 
 <div id="command-arguments">
-<p><strong><em>HexColor</em></strong>: A <a href="../../ja/information/numberformats.html#colors">hexcolor</a> representing the exact color in both the <em>DaytimeImage</em> and <em>NighttimeImage</em> files which corresponds to a transparent pixel. The default value is #0000FF.</p>
+<p><strong><em>HexColor</em></strong>: <a href="../../ja/information/numberformats.html#colors">hexcolor</a>  <em>DaytimeImage</em> と <em>NighttimeImage</em> ファイルの双方で、透明ピクセルに対応する正確な色を表します。デフォルト値は #0000FF です。</p>
 
 </div>
 
@@ -768,16 +768,16 @@
 
 
 <div id="command-arguments">
-<p><strong><em>LayerIndex</em></strong>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.</p>
+<p><strong><em>LayerIndex</em></strong>: 重なり合うレイヤー要素の中で、個々の要素を一意に定義する整数。 小さい数字は背景側を示し、大きい数字は前景側を示します。 各要素は重なり合わない限り同じ <em>LayerIndex</em> を使用できます。 デフォルト値は0です。</p>
 
 </div>
 
 
-<h2 id="a-name-needle-a-5-the-needle-section"><a name="needle"></a>■ 5. The Needle section</h2>
+<h2 id="a-name-needle-a-5-needle-セクション"><a name="needle"></a>■ 5. Needle セクション</h2>
 
-<p>The Needle section creates a rotating element, or needle. You can use as many of these sections as required.</p>
+<p>Needle セクションは、 回転する要素、または針を作成します。 此等のセクションは必要な数だけ使用できます。</p>
 
-<p>The image used for the Needle, defined by <em>DaytimeImage</em> (required) or <em>NighttimeImage</em> (optional), will be rotated around a defined <em>Origin</em> and optionally scaled if <em>Radius</em> is used. The needle depicted in the image should be pointing up.</p>
+<p>Needleにはイメージを用い、<em>DaytimeImage</em> (必須) or <em>NighttimeImage</em> (オプション), は <em>Origin</em> で定義された中心により回転し、  <em>Radius</em> が定義されている場合オプションで拡大縮小されます。 描かれている針の画像は上を向いている必要があります。</p>
 
 <hr />
 
@@ -787,7 +787,7 @@
 </div>
 
 
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 
 <hr />
 
@@ -798,7 +798,7 @@
 
 
 <div id="command-arguments">
-<p><strong><em>Subject</em></strong>: One of the <a href="#subjects">available subjects</a>. The default subject is <strong>true</strong>.</p>
+<p><strong><em>Subject</em></strong>: <a href="#subjects">available subjects</a> で定義されているものの一つを指定します。デフォルトのサブジェクトは <strong>true</strong> です。</p>
 
 </div>
 

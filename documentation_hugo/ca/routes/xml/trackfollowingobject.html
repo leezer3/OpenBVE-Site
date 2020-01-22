@@ -582,10 +582,20 @@
 
 <p><strong>Path</strong> sets the relative path to the directory containing the object&rsquo;s train.dat, sound.cfg and extensions.cfg.</p>
 
+<p><em>Note:</em> If a train folder is intended solely for AI use, then the <strong>train.dat</strong> file may be renamed <strong>train.ai</strong></p>
+
+<div id="command">
+<p><strong>&lt;Reversed&gt;</strong> <em>true</em> <strong>&lt;/Reversed&gt;</strong></p>
+
+</div>
+
+
+<p>If this attribute is set to <strong>true</strong>  then the consist of the train will be reversed.</p>
+
 <h2 id="stop-attribute">■ Stop attribute</h2>
 
 <div id="command">
-<p><strong>&lt;Decelerate&gt;</strong> <em>Valor</em> <strong>&lt;/Decelerate&gt;</strong></p>
+<p><strong>&lt;Decelerate&gt;</strong> <em>Value</em> <strong>&lt;/Decelerate&gt;</strong></p>
 
 </div>
 
@@ -595,7 +605,7 @@
 <hr />
 
 <div id="command">
-<p><strong>&lt;StopPosition&gt;</strong> <em>Posició</em> <strong>&lt;/StopPosition&gt;</strong></p>
+<p><strong>&lt;StopPosition&gt;</strong> <em>Position</em> <strong>&lt;/StopPosition&gt;</strong></p>
 
 </div>
 
@@ -605,7 +615,7 @@
 <hr />
 
 <div id="command">
-<p><strong>&lt;Doors&gt;</strong> <em>Valor</em> <strong>&lt;/Doors&gt;</strong></p>
+<p><strong>&lt;Doors&gt;</strong> <em>Value</em> <strong>&lt;/Doors&gt;</strong></p>
 
 </div>
 
@@ -613,16 +623,16 @@
 <p><strong>Value</strong> sets the open door of the object. The valid values are:</p>
 
 <ul>
-<li><strong>L</strong> o <strong>-1</strong>: S&rsquo;obren les portes del costat esquerre.</li>
-<li><strong>N</strong> o <strong>0</strong>: No s&rsquo;obren les portes.</li>
-<li><strong>R</strong> o <strong>1</strong>: S&rsquo;obren les portes del costat dret.</li>
-<li><strong>B</strong>: S&rsquo;obren les portes de tots dos costats.</li>
+<li><strong>L</strong> or <strong>-1</strong>: The left door opens.</li>
+<li><strong>N</strong> or <strong>0</strong>: Neither door opens.</li>
+<li><strong>R</strong> or <strong>1</strong>: The right door opens.</li>
+<li><strong>B</strong>: Both doors open.</li>
 </ul>
 
 <hr />
 
 <div id="command">
-<p><strong>&lt;StopTime&gt;</strong> <em>Temps</em> <strong>&lt;/StopTime&gt;</strong></p>
+<p><strong>&lt;StopTime&gt;</strong> <em>Time</em> <strong>&lt;/StopTime&gt;</strong></p>
 
 </div>
 
@@ -632,7 +642,7 @@
 <hr />
 
 <div id="command">
-<p><strong>&lt;Accelerate&gt;</strong> <em>Valor</em> <strong>&lt;/Accelerate&gt;</strong></p>
+<p><strong>&lt;Accelerate&gt;</strong> <em>Value</em> <strong>&lt;/Accelerate&gt;</strong></p>
 
 </div>
 
@@ -642,7 +652,7 @@
 <hr />
 
 <div id="command">
-<p><strong>&lt;TargetSpeed&gt;</strong> <em>Valor</em> <strong>&lt;/TargetSpeed&gt;</strong></p>
+<p><strong>&lt;TargetSpeed&gt;</strong> <em>Value</em> <strong>&lt;/TargetSpeed&gt;</strong></p>
 
 </div>
 
@@ -652,16 +662,16 @@
 <hr />
 
 <div id="command">
-<p><strong>&lt;Direction&gt;</strong> <em>Valor</em> <strong>&lt;/Direction&gt;</strong></p>
+<p><strong>&lt;Direction&gt;</strong> <em>Value</em> <strong>&lt;/Direction&gt;</strong></p>
 
 </div>
 
 
-<p><strong>Valor</strong> defineix la direcció de desplaçament de l&rsquo;objecte. Són vàlids els valors següents.</p>
+<p><strong>Value</strong> sets the direction of travel of the object. Valid values are as follows.</p>
 
 <ul>
-<li><strong>F</strong> o <strong>1</strong> : L&rsquo;objecte es mourà cap endavant.</li>
-<li><strong>R</strong> o <strong>-1</strong> : L&rsquo;objecte es mourà cap enrere.</li>
+<li><strong>F</strong> or <strong>1</strong> : The object will move forward.</li>
+<li><strong>R</strong> or <strong>-1</strong> : The object goes backward.</li>
 </ul>
 
 <hr />
