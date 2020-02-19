@@ -947,50 +947,87 @@ Defines the position of the sound, relative to the center of the animated file.<
 
 <h5 id="operator-precedence">● Operator precedence</h5>
 
-<p>From highest precedence to lowest. Operators of same precedence are evaluated left to right in the order in they occur in the formula.</p>
+<p>From highest precedence to lowest. Operators of same precedence are evaluated either left to right or right to left, depending on if they share a precedence with another operator.</p>
 
-<table class='type1'>
+<table class='type0'>
 <thead>
 <tr>
-<th><code>a[...]</code></th>
+<th>Operator</th>
+<th>Associativity</th>
+<th>Unparenthesized</th>
+<th>Equivilant</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
+<td><code>a[...]</code></td>
+<td>unary</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
 <td><code>-</code> (Minus)</td>
+<td>unary</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 
 <tr>
 <td><code>/</code></td>
+<td>right-to-left</td>
+<td>1 / 2 / 3</td>
+<td>(1 / (2 / 3))</td>
 </tr>
 
 <tr>
 <td><code>*</code></td>
+<td>right-to-left</td>
+<td>1 * 2 * 3</td>
+<td>(1 * (2 * 3))</td>
 </tr>
 
 <tr>
 <td><code>+</code>, <code>-</code> (Subtract)</td>
+<td>left-to-right</td>
+<td>1 + 2 + 3</td>
+<td>((1 + 2) + 3)</td>
 </tr>
 
 <tr>
 <td><code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></td>
+<td>left-to-right</td>
+<td>1 &lt;= 2 &lt;= 3</td>
+<td>((1 &lt;= 2) &lt;= 3)</td>
 </tr>
 
 <tr>
 <td><code>!</code></td>
+<td>unary</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 
 <tr>
 <td><code>&amp;</code></td>
+<td>right-to-left</td>
+<td>1 &amp; 2 &amp; 3</td>
+<td>(1 &amp; (2 &amp; 3))</td>
 </tr>
 
 <tr>
 <td><code>^</code></td>
+<td>right-to-left</td>
+<td>1 ^ 2 ^ 3</td>
+<td>(1 ^ (2 ^ 3))</td>
 </tr>
 
 <tr>
 <td>&#124;</td>
+<td>right-to-left</td>
+<td>1 &#124; 2 &#124; 3</td>
+<td>(1 &#124; (2 &#124; 3))</td>
 </tr>
 </tbody>
 </table>
@@ -999,7 +1036,9 @@ Defines the position of the sound, relative to the center of the animated file.<
 
 <div id="warning">
 <span>⚠</span>
-<p>Please note that some combinations of prefix and infix operators are not recognized. For example <code>a*-b</code> is not accepted. Use <code>a*(-b)</code> or <code>-a*b</code> instead.</p>
+<p>The logical not and multiplication operator are not at the same precedence level as a lot of other languages. For example <code>!a + !b</code> is <code>!(!a + !(b))</code> <strong>not</strong> <code>(!a) + (!b)</code> as expected, similarly <code>1 * 2 / 3</code> is <code>1 * (2 / 3)</code> <strong>not</strong> <code>(1 * 2) / 3</code></p>
+
+<p>Please also note that some combinations of prefix and infix operators are not recognised. For example <code>a*-b</code> is not accepted. Use <code>a*(-b)</code> or <code>-a*b</code> instead.</p>
 
 </div>
 
@@ -2068,14 +2107,14 @@ StateFunction = if[trackDistance&gt;DISTANCE | section==0, 0, if[value&lt;0.5, v
        <td width="16" valign="top">▶</td>
        <td bgcolor="#D4D8FF" style="border: 1px dashed;">
          <font style="font-family: monospace">
-         <p style='display:inline;'>&lt;expression&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::=  &lt;xor_expression&gt; &ldquo;&rdquo; &lt;expression&gt;     | &lt;xor_expression&gt;<br />
-&lt;xor_expression&gt;&nbsp;&nbsp;&nbsp;&nbsp;::= &lt;or_expression&gt;  &ldquo;^&rdquo; &lt;xor_expression&gt; | &lt;or_expression&gt;<br />
-&lt;or_expression&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::= &lt;not_expression&gt; &ldquo;|&rdquo; &lt;or_expression&gt;  | &lt;not_expression&gt;<br />
+         <p style='display:inline;'>&lt;expression&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::=  &lt;xor_expression&gt; &ldquo;&amp;&rdquo; &lt;expression&gt; &nbsp;&nbsp;&nbsp;&nbsp;| &lt;xor_expression&gt;<br />
+&lt;xor_expression&gt;&nbsp;&nbsp;&nbsp;&nbsp;::= &lt;or_expression&gt;&nbsp;&nbsp;&rdquo;^&rdquo; &lt;xor_expression&gt; | &lt;or_expression&gt;<br />
+&lt;or_expression&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::= &lt;not_expression&gt; &ldquo;|&rdquo; &lt;or_expression&gt;&nbsp;&nbsp;| &lt;not_expression&gt;<br />
 <br/>&lt;not_expression&gt;&nbsp;&nbsp;&nbsp;&nbsp;::= &ldquo;!&rdquo; &lt;equal_expression&gt; | &lt;equal_expression&gt;<br />
-<br/>&lt;equal_expression&gt;&nbsp;&nbsp;::= &lt;plus_expression&gt; &ldquo;==&rdquo; &lt;equal_expression&gt; | &lt;plus_expression&gt; &ldquo;!=&rdquo; &lt;equal_expression&gt; |<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;plus_expression&gt; &ldquo;&gt;&rdquo;  &nbsp;&lt;equal_expression&gt; | &lt;plus_expression&gt; &ldquo;&lt;&rdquo;  &nbsp;&lt;equal_expression&gt; |<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;plus_expression&gt; &ldquo;&lt;=&rdquo; &lt;equal_expression&gt; | &lt;plus_expression&gt; &ldquo;&lt;=&rdquo; &lt;equal_expression&gt; | &lt;plus_expression&gt;<br />
-<br/>&lt;plus_expression&gt;&nbsp;&nbsp;&nbsp;::= &lt;times_expression&gt; &ldquo;+&rdquo; &lt;plus_expression&gt; &nbsp;| &lt;times_expression&gt; &ldquo;-&rdquo; &lt;plus_expression&gt; &nbsp;| &lt;times_expression&gt;<br />
+<br/>&lt;equal_expression&gt;&nbsp;&nbsp;::= &lt;plus_expression&gt; (&ldquo;==&rdquo; &lt;plus_expression&gt;)* | &lt;plus_expression&gt; (&ldquo;!=&rdquo; &lt;plus_expression&gt;)<code>*</code></br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;plus_expression&gt; (&ldquo;&gt;&rdquo;&nbsp; &lt;plus_expression&gt;)<code>*</code> | &lt;plus_expression&gt; (&rdquo;&lt;&ldquo;&nbsp; &lt;plus_expression&gt;)<code>*</code> | <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;plus_expression&gt; (&rdquo;&lt;=&rdquo; &lt;plus_expression&gt;)<code>*</code> | &lt;plus_expression&gt; (&rdquo;&lt;=&rdquo; &lt;plus_expression&gt;)<code>*</code> | &lt;plus_expression&gt;<br/>
+<br/>&lt;plus_expression&gt;&nbsp;&nbsp;&nbsp;::= &lt;times_expression&gt; (&ldquo;+&rdquo; &lt;times_expression&gt;)<code>*</code>&nbsp; | &lt;times_expression&gt; (&ldquo;-&rdquo; &lt;times_expression&gt;)<code>*</code> | &lt;times_expression&gt;<br/>
 <br/>&lt;times_expression&gt;&nbsp;&nbsp;::= &lt;divide_expression&gt; &ldquo;*&rdquo; &lt;times_expression&gt;  | &lt;divide_expression&gt;<br />
 &lt;divide_expression&gt; ::= &lt;minus_expression&gt;  &ldquo;/&rdquo; &lt;divide_expression&gt; | &lt;minus_expression&gt;<br />
 <br/>&lt;minus_expression&gt;&nbsp;&nbsp;::= &ldquo;-&rdquo; &lt;function_call&gt; | &lt;function_call&gt;<br />
