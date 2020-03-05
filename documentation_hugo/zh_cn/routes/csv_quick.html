@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+  <head>
+    <meta charset="utf-8"/>
+    <title>openBVE Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="../../css/bulma.custom.css">
+    <link rel="icon" href="../../favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta name="generator" content="Hugo 0.53" />
+
+  </head>
+  <body>
+
+    <div id="sidebar">
+
+      
+      <div id="site-logo">
+          <img alt="Site logo" src="../../images/logo.png">
+      </div>
+      
+
+      <nav>
+<input type="checkbox" id="burger-toggle" class="burger-toggle" hidden>
+
+<div id="menu-entries">
+  <ul class="first">
+    
+    
+    
+    <li>Objects
+      
+      <ul class="second">
+        
+        <li>Native formats
+          
+          <ul class="third">
+            
+            <li><a href="../../zh_cn/objects/native/b3d.html">The B3D object</a>
+              
+            </li>
+            
+            <li><a href="../../zh_cn/objects/native/csv.html">The CSV object</a>
+              
+            </li>
+            
+            <li><a href="../../zh_cn/objects/native/animated.html">The ANIMATED object</a>
+              
+            </li>
+            
+            
+              
+            </li>
+            
+            
+              
+            </li>
+            
+            
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>Other formats
+          
+          <ul class="third">
+            
+            <li><a href="../../zh_cn/objects/other/loksim.html">Loksim3D (.l3dobj)</a>
+              
+            </li>
+            
+            <li><a href="../../zh_cn/objects/other/x.html">Microsoft DirectX (.x)</a>
+              
+            </li>
+            
+            <li><a href="../../zh_cn/objects/other/msts.html">Microsoft Train Simulator (.s)</a>
+              
+            </li>
+            
+            <li><a href="../../zh_cn/objects/other/obj.html">Wavefront (.obj)</a>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/objects/information.html">Information and tips</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Routes
+      
+      <ul class="second">
+        
+        <li><a href="../../zh_cn/routes/csv.html">The CSV route</a>
+          
+        </li>
+        
+        
+          
+          <ul class="third">
+            
+            <li><a href="../../zh_cn/routes/xml/dynamiclight.html">Adding Dynamic Lighting</a>
+              
+            </li>
+            
+            <li><a href="../../zh_cn/routes/xml/dynamicbackground.html">Dynamic and Object Based Backgrounds</a>
+              
+            </li>
+            
+            <li><a href="../../zh_cn/routes/xml/route_marker.html">Scripted Markers</a>
+              
+            </li>
+            
+            <li><a href="../../zh_cn/routes/xml/stationxml.html">XML Stations &amp; Request Stops</a>
+              
+            </li>
+            
+            <li><a href="../../zh_cn/routes/xml/trackfollowingobject.html">Track Following Object</a>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/routes/micsounds.html">Playing Sounds from a Microphone Input</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/routes/rw.html">The RW route</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/routes/tutorial_ats.html">Tutorial: Using ATS</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/routes/tutorial_atc.html">Tutorial: Using ATC</a>
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Trains
+      
+      <ul class="second">
+        
+        <li><a href="../../zh_cn/trains/overview.html">Overview</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/train_dat.html">The train.dat file</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/train_xml.html">The train.xml file</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/extensions_cfg.html">The extensions.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/panel_cfg.html">The panel.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/panel2_cfg.html">The panel2.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/panel_animated.html">The panel.animated file</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/default_sounds.html">Default sounds</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/sound_cfg.html">The sound.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/openbveats.html">The OpenBveAts Plugin</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/ats_cfg.html">The ats.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/plugins.html">Train plugins</a>
+          
+          <ul class="third">
+            
+            
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/information.html">Information and tips</a>
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Plugins
+      
+      <ul class="second">
+        
+        <li><a href="../../zh_cn/plugins/overview.html">Overview</a>
+          
+        </li>
+        
+        
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Information
+      
+      <ul class="second">
+        
+        <li><a href="../../zh_cn/information/encodings.html">Character encodings</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/information/numberformats.html">Number formats</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/information/whitespaces.html">White Spaces</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/information/textureformats.html">Texture formats</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/information/soundformats.html">Sound formats</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/information/standards.html">Standards</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/information/distribution.html">Distributing add-ons</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/information/forking.html">Forking guidelines</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/information/bve.html">Vs. BVE Trainsim</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Tools
+      
+      <ul class="second">
+        
+        <li><a href="../../zh_cn/tools/objectviewer.html">Object Viewer</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/tools/objectbender.html">Object Bender</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/tools/routeviewer.html">Route Viewer</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/tools/traineditor.html">Train Editor</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Further Examples
+      
+      <ul class="second">
+        
+        <li><a href="../../zh_cn/examples/demoroute.html">Demonstration route</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+  </ul>
+</div>
+</nav>
+
+    </div>
+
+    <div id="language-menu">
+<div class="dropdown is-hoverable">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+      <span>Language</span>
+      <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu" role="menu">
+    <div class="dropdown-content">
+      <a href="../../zh_cn/routes/csv_quick.html" class="dropdown-item">
+        简体中文 (中国)
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../ca/routes/csv_quick.html" class="dropdown-item">
+        Català
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../en/routes/csv_quick.html" class="dropdown-item">
+        English
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../es_mx/routes/csv_quick.html" class="dropdown-item">
+        Español (México)
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../fr/routes/csv_quick.html" class="dropdown-item">
+        Français
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../hu/routes/csv_quick.html" class="dropdown-item">
+        Magyar
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../id/routes/csv_quick.html" class="dropdown-item">
+        Bahasa Indonesia
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../ja/routes/csv_quick.html" class="dropdown-item">
+        日本語
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../ko/routes/csv_quick.html" class="dropdown-item">
+        한국어
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../zh/routes/csv_quick.html" class="dropdown-item">
+        中文
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../zh_hk/routes/csv_quick.html" class="dropdown-item">
+        繁體中文 (香港特別行政區)
+      </a>
+      
+    </div>
+  </div>
+</div>
+</div>
+
+
+    <div id="container">
+
+        <div id="page-title">
+          <h1>The <strong>.csv</strong> route format - Quick reference</h1>
+        </div>
+
+        
+
+
+
+
+<div id="content">
+  <p><strong>Notes:</strong></p>
+
+<ul>
+<li>Arguments highlighted in <strong><font color="green">green</font></strong> are affected by Options.UnitOfLength.</li>
+<li>Arguments highlighted in <strong><font color="blue">blue</font></strong> are affected by Options.UnitOfSpeed.</li>
+<li>Optional suffixes are indicated in <font color="gray">gray</font>. Mandatory suffixes are <strong>bolded</strong>.</li>
+<li>Syntax variations are not possible with the $-directives.</li>
+<li>The statement separator is the , character.</li>
+</ul>
+
+<hr />
+
+<p><font color="red">Track positions</font><br />
+<em><font color="green">Number</font></em><br />
+<em><font color="green">Number<sub>1</sub></font></em> : <em><font color="green">Number<sub>2</sub></font></em> : <em>&hellip;</em> : <em><font color="green">Number<sub>n</sub></font></em></p>
+
+<p><font color="red">Preprocessing directives</font><br />
+<strong>$Include(</strong><em>File<sub>1</sub></em>; <em>Weight<sub>1</sub></em>; <em>File<sub>2</sub></em>; <em>Weight<sub>2</sub></em>; &hellip;<strong>)</strong><br />
+<strong>$Chr(</strong><em>AsciiCode</em><strong>)</strong><br />
+<strong>$Rnd(</strong>*Minimum*<strong>;</strong> <em>Maximum</em><strong>)</strong><br />
+<strong>$Sub(</strong><em>VariableIndex</em><strong>)</strong> = <em>Value</em><br />
+<strong>$Sub(</strong><em>VariableIndex</em><strong>)</strong><br />
+<strong>$If(</strong><em>Condition</em><strong>)</strong><br />
+<strong>$ElseIf</strong>()<br />
+<strong>$EndIf</strong>()</p>
+
+<p><font color="red">Options namespace</font><br />
+<strong>Options.UnitOfLength</strong> <em>FactorInMeters<sub>1</sub></em>; <em>FactorInMeters<sub>2</sub></em>; <em>&hellip;</em>; <em>FactorInMeters<sub>n</sub></em><br />
+<strong>Options.UnitOfSpeed</strong> <em>FactorInKmph</em><br />
+<strong>Options.BlockLength</strong> <em><font color="green">Length</font></em><br />
+<strong>Options.ObjectVisibility</strong> <font color="gray">{</font> <strong>0</strong> = legacy <font color="gray">|</font> <strong>1</strong> = track-based <font color="gray">}</font><br />
+<strong>Options.SectionBehavior</strong> <font color="gray">{</font> <strong>0</strong> = index-based <font color="gray">|</font> <strong>1</strong> = value-based <font color="gray">}</font><br />
+<strong>Options.CantBehavior</strong> <font color="gray">{</font> <strong>0</strong> = unsigned <font color="gray">|</font> <strong>1</strong> = signed <font color="gray">}</font><br />
+<strong>Options.FogBehavior</strong> <font color="gray">{</font> <strong>0</strong> = block-wise <font color="gray">|</font> <strong>1</strong> = interpolated <font color="gray">}</font><br />
+<strong>Options.CompatibleTransparencyMode</strong> <font color="gray">{</font> <strong>0</strong> = Specific Matching <font color="gray">|</font> <strong>1</strong> = Fuzzy Matching <font color="gray">}</font><br />
+<strong>Options.EnableBveTsHacks</strong> <font color="gray">{</font> <strong>0</strong> = Disabled <font color="gray">|</font> <strong>1</strong> = Enabled <font color="gray">}</font></p>
+
+<p><font color="red">Route namespace</font><br />
+<strong>Route.Comment</strong> <em>Text</em><br />
+<strong>Route.Image</strong> <em>FileName</em><br />
+<strong>Route.Timetable</strong> <em>Text</em><br />
+<strong>Route.Change</strong> <font color="gray">{</font> <strong>-1</strong> = service brakes (ATS) <font color="gray">|</font> <strong>0</strong> = emergency brakes (no ATS) <font color="gray">|</font> <strong>1</strong> = service brakes (ATS) <font color="gray">}</font><br />
+<strong>Route.Gauge</strong> <em>ValueInMillimeters</em><br />
+<strong>Route.Signal(</strong><em>Aspect</em><strong>)</strong><font color="gray">.Set</font> <font color="blue"><em>Speed</em></font><br />
+<strong>Route.RunInterval</strong> <em>Interval<sub>0</sub></em>; <em>Interval<sub>1</sub></em>; &hellip;; <em>Interval<sub>n-1</sub></em><br />
+<strong>Route.AccelerationDueToGravity</strong> <em>Value</em><br />
+<strong>Route.Elevation</strong> <em><font color="green">Height</font></em><br />
+<strong>Route.Temperature</strong> <em>ValueInCelsius</em><br />
+<strong>Route.Pressure</strong> <em>ValueInKPa</em><br />
+<strong>Route.DisplaySpeed</strong> <em>UnitText</em>; <em>ConversionFactor</em><br />
+<strong>Route.LoadingScreen</strong> <em>Image</em><br />
+<strong>Route.StartTime</strong> <em>Time</em><br />
+<strong>Route.DynamicLight</strong> <em>Dynamic.xml</em><br />
+<strong>Route.AmbientLight</strong> <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em><br />
+<strong>Route.DirectionalLight</strong> <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em><br />
+<strong>Route.LightDirection</strong> <em>Theta</em>; <em>Phi</em></p>
+
+<p><font color="red">Train namespace</font><br />
+<strong>Train.Folder</strong> <em>FolderName</em><br />
+<strong>Train.File</strong> <em>FolderName</em><br />
+<strong>Train.Run(</strong><em>RailTypeIndex</em><strong>)</strong><font color="gray">.Set</font> <em>RunSoundIndex</em><br />
+<strong>Train.Rail(</strong><em>RailTypeIndex</em><strong>)</strong><font color="gray">.Set</font> <em>RunSoundIndex</em><br />
+<strong>Train.Flange(</strong><em>RailTypeIndex</em><strong>)</strong><font color="gray">.Set</font> <em>FlangeSoundIndex</em><br />
+<strong>Train.Timetable(</strong><em>TimetableIndex</em><strong>).Day</strong><font color="gray">.Load</font> <em>FileName</em><br />
+<strong>Train.Timetable(</strong><em>TimetableIndex</em><strong>).Night</strong><font color="gray">.Load</font> <em>FileName</em><br />
+<strong>Train.Gauge</strong> <em>ValueInMillimeters</em><br />
+<strong>Train.Interval</strong> <em>Interval<sub>0</sub></em>; <em>Interval<sub>1</sub></em>; &hellip;; <em>Interval<sub>n-1</sub></em><br />
+<strong>Train.Velocity</strong> <em><font color="blue">Speed</font></em></p>
+
+<p><font color="red">Structure namespace</font><br />
+<strong>Structure.Rail(</strong><em>RailStructureIndex</em><strong>)</strong><font color="gray">.Load</font> <em>FileName</em><br />
+<strong>Structure.Ground(</strong><em>GroundStructureIndex</em><strong>)</strong><font color="gray">.Load</font> <em>FileName</em><br />
+<strong>Structure.WallL(</strong><em>WallStructureIndex</em><strong>)</strong><font color="gray">.Load</font> <em>FileName</em><br />
+<strong>Structure.WallR(</strong><em>WallStructureIndex</em><strong>)</strong><font color="gray">.Load</font> <em>FileName</em><br />
+<strong>Structure.DikeL(</strong><em>DikeStructureIndex</em><strong>)</strong><font color="gray">.Load</font> <em>FileName</em><br />
+<strong>Structure.DikeR(</strong><em>DikeStructureIndex</em><strong>)</strong><font color="gray">.Load</font> <em>FileName</em><br />
+<strong>Structure.FormL(</strong><em>FormStructureIndex</em><strong>)</strong><font color="gray">.Load</font> <em>FileName</em><br />
+<strong>Structure.FormR(</strong><em>FormStructureIndex</em><strong>)</strong><font color="gray">.Load</font> <em>FileName</em><br />
+<strong>Structure.FormCL(</strong><em>FormStructureIndex</em><strong>)</strong><font color="gray">.Load</font> <em>FileName</em><br />
+<strong>Structure.FormCR(</strong><em>FormStructureIndex</em><strong>)</strong><font color="gray">.Load</font> <em>FileName</em><br />
+<strong>Structure.RoofL(</strong><em>RoofStructureIndex</em><strong>)</strong><font color="gray">.Load</font> <em>FileName</em><br />
+<strong>Structure.RoofR(</strong><em>RoofStructureIndex</em><strong>)</strong><font color="gray">.Load</font> <em>FileName</em><br />
+<strong>Structure.RoofCL(</strong><em>RoofStructureIndex</em><strong>)</strong><font color="gray">.Load</font> <em>FileName</em><br />
+<strong>Structure.RoofCR(</strong><em>RoofStructureIndex</em><strong>)</strong><font color="gray">.Load</font> <em>FileName</em><br />
+<strong>Structure.CrackL(</strong><em>CrackStructureIndex</em><strong>)</strong><font color="gray">.Load</font> <em>FileName</em><br />
+<strong>Structure.CrackR(</strong><em>CrackStructureIndex</em><strong>)</strong><font color="gray">.Load</font> <em>FileName</em><br />
+<strong>Structure.FreeObj(</strong><em>FreeObjStructureIndex</em><strong>)</strong><font color="gray">.Load</font> <em>FileName</em><br />
+<strong>Structure.Beacon(</strong><em>BeaconStructureIndex</em><strong>)</strong><font color="gray">.Load</font> <em>FileName</em><br />
+<strong>Structure.Pole(</strong><em>NumberOfAdditionalRails</em><strong>;</strong> <em>PoleStructureIndex</em><strong>)</strong><font color="gray">.Load</font> <em>FileName</em></p>
+
+<p><font color="red">Texture namespace</font><br />
+<strong>Texture.Background(</strong><em>BackgroundTextureIndex</em><strong>)</strong><font color="gray">.Load</font> <em>FileName</em>
+<strong>Texture.Background(</strong><em>BackgroundTextureIndex</em><strong>).X</strong> <em>RepetitionCount</em><br />
+<strong>Texture.Background(</strong><em>BackgroundTextureIndex</em><strong>).Aspect</strong> <font color="gray">{</font> <strong>0</strong> = fixed height <font color="gray">|</font> <strong>1</strong> = keep aspect ratio <font color="gray">}</font></p>
+
+<p><font color="red">Cycle namespace</font><br />
+<strong>Cycle.Ground(</strong><em>GroundStructureIndex</em><strong>)</strong><font color="gray">.Params</font> <em>GroundStructureIndex<sub>1</sub></em>; <em>GroundStructureIndex<sub>2</sub></em>; <em>&hellip;</em>; <em>GroundStructureIndex<sub>n</sub></em><br />
+<strong>Cycle.Rail(</strong><em>RailStructureIndex</em><strong>)</strong><font color="gray">.Params</font> <em>RailStructureIndex<sub>1</sub></em>; <em>RailStructureIndex<sub>2</sub></em>; <em>&hellip;</em>; <em>RailStructureIndex<sub>n</sub></em></p>
+
+<p><font color="red">Signal namespace</font><br />
+<strong>Signal(</strong><em>SignalIndex</em><strong>)</strong><font color="gray">.Load</font> <em>AnimatedObjectFile</em><br />
+<strong>Signal(</strong><em>SignalIndex</em><strong>)</strong><font color="gray">.Load</font> <em>SignalFileWithoutExtension</em>; <em>GlowFileWithoutExtension</em></p>
+
+<p><font color="red">Track namespace</font><br />
+<em>Rails:</em><br />
+<strong>Track.RailStart</strong> <em>RailIndex</em>; <em>X</em>; <em>Y</em>; <em>RailStructureIndex</em><br />
+<strong>Track.Rail</strong> <em>RailIndex</em>; <em>X</em>; <em>Y</em>; <em>RailStructureIndex</em><br />
+<strong>Track.RailType</strong> <em>RailIndex</em>; <em>RailStructureIndex</em><br />
+<strong>Track.RailEnd</strong> <em>RailIndex</em>; <em>X</em>; <em>Y</em><br />
+<strong>Track.Accuracy</strong> <em>Value</em><br />
+<strong>Track.Adhesion</strong> <em>Value</em></p>
+
+<p><em>Geometry:</em><br />
+<strong>Track.Pitch</strong> <em>ValueInPermille</em><br />
+<strong>Track.Curve</strong> <em><font color="green">Radius</font></em>; <em>CantInMillimeters</em><br />
+<strong>Track.Turn</strong> <em>Ratio</em><br />
+<strong>Track.Height</strong> <em><font color="green">Height</font></em></p>
+
+<p><em>Objects:</em><br />
+<strong>Track.FreeObj</strong> <em>RailIndex</em>; <em>FreeObjStructureIndex</em>; <em>X</em>; <em>Y</em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em><br />
+<strong>Track.Wall</strong> <em>RailIndex</em>; <em>Direction</em>; <em>WallStructureIndex</em><br />
+<strong>Track.WallEnd</strong> <em>RailIndex</em><br />
+<strong>Track.Dike</strong> <em>RailIndex</em>; <em>Direction</em>; <em>DikeStructureIndex</em><br />
+<strong>Track.DikeEnd</strong> <em>RailIndex</em><br />
+<strong>Track.Pole</strong> <em>RailIndex</em>; <em>AdditionalRailsCovered</em>; <em>Location</em>; <em>Interval</em>; <em>PoleStructureIndex</em><br />
+<strong>Track.PoleEnd</strong> <em>RailIndex</em><br />
+<strong>Track.Crack</strong> <em>RailIndex<sub>1</sub></em>; <em>RailIndex<sub>2</sub></em>; <em>CrackStructureIndex</em><br />
+<strong>Track.Ground</strong> <em>CycleIndex</em></p>
+
+<p><em>Stations:</em><br />
+<strong>Track.Sta</strong> <em>Name</em>; <em>ArrivalTime</em>; <em>DepartureTime</em>; <em>PassAlarm</em>; <em>Doors</em>; <em>ForcedRedSignal</em>; <em>System</em>; <em>ArrivalSound</em>; <em>StopDuration</em>; <em>PassengerRatio</em>; <em>DepartureSound</em>; <em>TimetableIndex</em><br />
+<strong>Track.Station</strong> <em>Name</em>; <em>ArrivalTime</em>; <em>DepartureTime</em>; <em>ForcedRedSignal</em>; <em>System</em>; <em>DepartureSound</em><br />
+<strong>Track.Stop</strong> <em>Direction</em>; <em><font color="green">BackwardTolerance</font></em>; <em><font color="green">ForwardTolerance</font></em>; <em>Cars</em><br />
+<strong>Track.Form</strong> <em>RailIndex<sub>1</sub></em>; <em>RailIndex<sub>2</sub></em>; <em>RoofStructureIndex</em>; <em>FormStructureIndex</em></p>
+
+<p><em>Signalling and speed limits:</em><br />
+<strong>Track.Limit</strong> <em><font color="blue">Speed</font></em>; <em>Direction</em>; <em>Cource</em><br />
+<strong>Track.Section</strong> <em>Aspect<sub>0</sub></em>; <em>Aspect<sub>1</sub></em>; <em>&hellip;</em>; <em>Aspect<sub>n</sub></em><br />
+<strong>Track.SigF</strong> <em>SignalIndex</em>; <em>Section</em>; <em>X</em>; <em>Y</em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em><br />
+<strong>Track.Sig</strong> <em>Aspects</em>; <del><em><font color="gray">Unused</font></em></del>; <em>X</em>; <em>Y</em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em><br />
+<strong>Track.Signal</strong> <em>Aspects</em>; <del><em><font color="gray">Unused</font></em></del>; <em>X</em>; <em>Y</em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em><br />
+<strong>Track.Relay</strong> <em>X</em>; <em>Y</em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em></p>
+
+<p><em>Safety systems:</em><br />
+<strong>Track.Beacon</strong> <em>Type</em>; <em>BeaconStructureIndex</em>; <em>Section</em>; <em>Data</em>; <em>X</em>; <em>Y</em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em><br />
+<strong>Track.Transponder</strong> <em>Type</em>; <em>Signals</em>; <em>SwitchSystems</em>; <em>X</em>; <em>Y</em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em><br />
+<strong>Track.AtsSn</strong><br />
+<strong>Track.AtsP</strong><br />
+<strong>Track.Pattern</strong> <em>Type</em>; <em><font color="blue">Speed</font></em><br />
+<strong>Track.PLimit</strong> <em><font color="blue">Speed</font></em></p>
+
+<p><em>Miscellaneous:</em><br />
+<strong>Track.Back</strong> <em>BackgroundTextureIndex</em><br />
+<strong>Track.Fog</strong> <em><font color="green">StartingDistance</font></em>; <em><font color="green">EndingDistance</font></em>; <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em><br />
+<strong>Track.Brightness</strong> <em>Value</em><br />
+<strong>Track.Marker</strong> <em>FileName</em>; <em><font color="green">Distance</font></em><br />
+<strong>Track.PointOfInterest</strong> <em>RailIndex</em>; <em>X</em>; <em>Y</em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>; <em>Text</em><br />
+<strong>Track.PreTrain</strong> <em>Time</em><br />
+<strong>Track.Announce</strong> <em>FileName</em>; <em><font color="blue">Speed</font></em><br />
+<strong>Track.Doppler</strong> <em>FileName</em>; <em>X</em>; <em>Y</em><br />
+<strong>Track.Buffer</strong></p>
+
+</div>
+
+      <div id="footer">
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
+

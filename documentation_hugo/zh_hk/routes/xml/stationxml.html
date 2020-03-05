@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="zh_hk">
+  <head>
+    <meta charset="utf-8"/>
+    <title>openBVE Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css">
+    <link rel="stylesheet" href="../../../css/bulma.custom.css">
+    <link rel="icon" href="../../../favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta name="generator" content="Hugo 0.53" />
+
+  </head>
+  <body>
+
+    <div id="sidebar">
+
+      
+      <div id="site-logo">
+          <img alt="Site logo" src="../../../images/logo.png">
+      </div>
+      
+
+      <nav>
+<input type="checkbox" id="burger-toggle" class="burger-toggle" hidden>
+
+<div id="menu-entries">
+  <ul class="first">
+    
+    
+    
+    <li>物件
+      
+      <ul class="second">
+        
+        <li>原格式
+          
+          <ul class="third">
+            
+            <li><a href="../../../zh_hk/objects/native/b3d.html">The B3D object</a>
+              
+            </li>
+            
+            <li><a href="../../../zh_hk/objects/native/csv.html">The CSV object</a>
+              
+            </li>
+            
+            <li><a href="../../../zh_hk/objects/native/animated.html">The ANIMATED object</a>
+              
+            </li>
+            
+            
+              
+            </li>
+            
+            
+              
+            </li>
+            
+            
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>其他格式
+          
+          <ul class="third">
+            
+            <li><a href="../../../zh_hk/objects/other/loksim.html">Loksim3D (.l3dobj)</a>
+              
+            </li>
+            
+            <li><a href="../../../zh_hk/objects/other/x.html">Microsoft DirectX (.x)</a>
+              
+            </li>
+            
+            <li><a href="../../../zh_hk/objects/other/msts.html">Microsoft Train Simulator (.s)</a>
+              
+            </li>
+            
+            <li><a href="../../../zh_hk/objects/other/obj.html">Wavefront (.obj)</a>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/objects/information.html">Information and tips</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>路線
+      
+      <ul class="second">
+        
+        <li><a href="../../../zh_hk/routes/csv.html">CSV route</a>
+          
+        </li>
+        
+        
+          
+          <ul class="third">
+            
+            <li><a href="../../../zh_hk/routes/xml/dynamiclight.html">Adding Dynamic Lighting</a>
+              
+            </li>
+            
+            <li><a href="../../../zh_hk/routes/xml/dynamicbackground.html">Dynamic and Object Based Backgrounds</a>
+              
+            </li>
+            
+            <li><a href="../../../zh_hk/routes/xml/route_marker.html">Scripted Markers</a>
+              
+            </li>
+            
+            <li><a href="../../../zh_hk/routes/xml/stationxml.html">XML Stations &amp; Request Stops</a>
+              
+            </li>
+            
+            <li><a href="../../../zh_hk/routes/xml/trackfollowingobject.html">Track Following Object</a>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/routes/micsounds.html">Playing Sounds from a Microphone Input</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/routes/rw.html">The RW route</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/routes/tutorial_ats.html">Tutorial: Using ATS</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/routes/tutorial_atc.html">Tutorial: Using ATC</a>
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>列車
+      
+      <ul class="second">
+        
+        <li><a href="../../../zh_hk/trains/overview.html">Overview</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/train_dat.html">The train.dat file</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/train_xml.html">train.xml檔案</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/extensions_cfg.html">The extensions.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/panel_cfg.html">The panel.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/panel2_cfg.html">The panel2.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/panel_animated.html">The panel.animated file</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/default_sounds.html">Default sounds</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/sound_cfg.html">The sound.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/openbveats.html">The OpenBveAts Plugin</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/ats_cfg.html">The ats.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/plugins.html">Train plugins</a>
+          
+          <ul class="third">
+            
+            
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/information.html">Information and tips</a>
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Plugins
+      
+      <ul class="second">
+        
+        <li><a href="../../../zh_hk/plugins/overview.html">Overview</a>
+          
+        </li>
+        
+        
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>信息
+      
+      <ul class="second">
+        
+        <li><a href="../../../zh_hk/information/encodings.html">Character encodings</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/information/numberformats.html">Number formats</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/information/whitespaces.html">White Spaces</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/information/textureformats.html">Texture formats</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/information/soundformats.html">Sound formats</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/information/standards.html">Standards</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/information/distribution.html">Distributing add-ons</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/information/forking.html">Forking guidelines</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/information/bve.html">對比BVE Trainsim</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>工具
+      
+      <ul class="second">
+        
+        <li><a href="../../../zh_hk/tools/objectviewer.html">Object Viewer</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/tools/objectbender.html">Object Bender</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/tools/routeviewer.html">Route Viewer</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/tools/traineditor.html">Train Editor</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>更有深度嘅實例
+      
+      <ul class="second">
+        
+        <li><a href="../../../zh_hk/examples/demoroute.html">路綫説明</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+  </ul>
+</div>
+</nav>
+
+    </div>
+
+    <div id="language-menu">
+<div class="dropdown is-hoverable">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+      <span>Language</span>
+      <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu" role="menu">
+    <div class="dropdown-content">
+      <a href="../../../zh_hk/routes/xml/stationxml.html" class="dropdown-item">
+        繁體中文 (香港特別行政區)
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../../ca/routes/xml/stationxml.html" class="dropdown-item">
+        Català
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../../en/routes/xml/stationxml.html" class="dropdown-item">
+        English
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../../es_mx/routes/xml/stationxml.html" class="dropdown-item">
+        Español (México)
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../../fr/routes/xml/stationxml.html" class="dropdown-item">
+        Français
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../../hu/routes/xml/stationxml.html" class="dropdown-item">
+        Magyar
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../../id/routes/xml/stationxml.html" class="dropdown-item">
+        Bahasa Indonesia
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../../ja/routes/xml/stationxml.html" class="dropdown-item">
+        日本語
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../../ko/routes/xml/stationxml.html" class="dropdown-item">
+        한국어
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../../zh/routes/xml/stationxml.html" class="dropdown-item">
+        中文
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../../zh_cn/routes/xml/stationxml.html" class="dropdown-item">
+        简体中文 (中国)
+      </a>
+      
+    </div>
+  </div>
+</div>
+</div>
+
+
+    <div id="container">
+
+        <div id="page-title">
+          <h1>The XML Station Format</h1>
+        </div>
+
+        
+
+
+
+
+<div id="content">
+  
+
+<p>This page describes the principles and implementation of the XML based station format.</p>
+
+<h2 id="basic-principles">■ Basic Principles</h2>
+
+<p>A station within openBVE, when combined with one or more <em>.Stop</em> commands, defines a point at which trains call.</p>
+
+<p>Each station which you wish to use must be setup using a Station XML file an example of which is shown below:</p>
+
+<textarea rows="17" cols="110" style="border:2;">
+    
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
+&lt;openBVE xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xsd=&#34;http://www.w3.org/2001/XMLSchema&#34;&gt;
+    &lt;Station&gt;
+        &lt;Name&gt;Dockyard&lt;/Name&gt;
+        &lt;ArrivalTime&gt;12.3130&lt;/ArrivalTime&gt;
+        &lt;DepartureTime&gt;12.3150&lt;/DepartureTime&gt;
+        &lt;Doors&gt;Left&lt;/Doors&gt;
+        &lt;ForcedRedSignal&gt;False&lt;/ForcedRedSignal&gt;
+        &lt;PassengerRatio&gt;10&lt;/PassengerRatio&gt;
+    &lt;/Station&gt;
+&lt;/openBVE&gt;  
+
+</textarea>
+
+<h2 id="the-basic-station">■ The basic station</h2>
+
+<p>The following basic attributes are required for all stations:</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;Name&gt;</strong> <em>StationName</em> <strong>&lt;/Name&gt;</strong></p>
+
+</div>
+
+
+<p><strong>StationName</strong> sets the textual string by which this station is referred to in timetables, in-game messages etc.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;ArrivalTime&gt;</strong> <em>Time</em> <strong>&lt;/ArrivalTime&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Time</strong> sets the time at which the player&rsquo;s train is expected to arrive at this station.</p>
+
+<p><em>Note:</em> When this parameter is omitted, the player is permitted to arrive at any time.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;DepartureTime&gt;</strong> Time <strong>&lt;/DepartureTime&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Time</strong> sets the time at which the player&rsquo;s train is expected to depart this station.</p>
+
+<p><em>Note:</em> When this parameter is omitted, the player is permitted to depart at any time.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;Doors&gt;</strong> Value <strong>&lt;/Doors&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Doors</strong> controls the side on which the train doors are to open. Valid values are:</p>
+
+<ul>
+<li><strong>Left , L or -1</strong> : The left-hand doors are to open.</li>
+<li><strong>Right, R or 1</strong> : The right-hand doors are to open.</li>
+<li><strong>None, N or 0</strong> : No doors open at this station.</li>
+</ul>
+
+<p><em>Note:</em> If omitted, no doors open.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;ForcedRedSignal&gt;</strong> True / False <strong>&lt;/ForcedRedSignal&gt;</strong></p>
+
+</div>
+
+
+<p>If <em>ForcedRedSignal</em> is set to <strong>True</strong> , then the signal associated with this station will be held at Red (Aspect 0) until the scheduled departure time.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;PassengerRatio&gt;</strong> <em>Ratio</em> <strong>&lt;/PassengerRatio&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Ratio</strong> sets the approximate ratio of passengers on-board the train from this point onwards. As a reference, <strong>100</strong> represents a train with normal amount of passengers, while <strong>250</strong> represents an over-crowded train. Values in-between <strong>0</strong> and <strong>250</strong> should be used.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;ArrivalSound&gt;</strong> Sound <strong>&lt;/ArrivalSound&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Sound</strong> should be the path of the sound-file to be played upon arrival at this station, relative to the Sound folder.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;DepartureSound&gt;</strong> Sound <strong>&lt;/DepartureSound&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Sound</strong> should be the path of the sound-file to be played upon departure from this station, relative to the Sound folder.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;StopDuration&gt;</strong> Duration <strong>&lt;/StopDuration&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Duration</strong> should be the minimum stop duration in seconds, to include both the door opening and closing times. The default value is <strong>15</strong>.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;TimeTableIndex&gt;</strong> Index <strong>&lt;/TimeTableIndex&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Index</strong> sets the timetable to be shown from this station on as defined via <em>Train.Timetable(TimetableIndex)</em></p>
+
+<h2 id="creating-a-request-stop">■ Creating a Request Stop</h2>
+
+<p>Creating a request stop requires one further section to be added within your <em>&lt;Station&gt;</em> section:</p>
+
+<textarea rows="17" cols="110" style="border:2;">
+    
+&lt;RequestStop&gt;
+    &lt;Probability&gt;50&lt;/Probability&gt;
+    &lt;Distance&gt;700&lt;/Distance&gt;
+    &lt;StopMessage&gt;You will need to stop at Dockyard today.&lt;/StopMessage&gt;
+    &lt;PassMessage&gt;No passengers for Dockyard.&lt;/PassMessage&gt;
+&lt;/RequestStop&gt;  
+
+</textarea>
+
+<p>The following basic attributes are supported for this section:</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;EarlyTime&gt;</strong> Time <strong>&lt;/EarlyTime&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Time</strong> sets the time before which the Early probabilities / message will be used.</p>
+
+<p><em>Note:</em> May be omitted.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;LateTime&gt;</strong> Time <strong>&lt;/LateTime&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Time</strong> sets the time before which the Late probabilities / message will be used.</p>
+
+<p><em>Note:</em> May be omitted.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;Distance&gt;</strong> DistanceInMeters <strong>&lt;/Distance&gt;</strong></p>
+
+</div>
+
+
+<p><strong>DistanceInMeters</strong> sets the distance in meters before this station that the Request Stop roll will be made.</p>
+
+<p><em>Note:</em> This distance must be less than that to the previous station.</p>
+
+<hr />
+
+<p><div id="command">
+<p><strong>&lt;StopMessage&gt;</strong> Message <strong>&lt;/StopMessage&gt;</strong></p>
+
+</div>
+<br />
+<div id="command">
+<p><strong>&lt;PassMessage&gt;</strong> Message <strong>&lt;/PassMessage&gt;</strong></p>
+
+</div>
+</p>
+
+<p><strong>Message</strong> sets the textual message to be displayed in the upper left of the screen when the request stop is triggered, depending on whether we are to stop at or pass this station.</p>
+
+<p>Alternatively, if you require a specific message when the player is early/ late, the following sub-attributes are supported:</p>
+
+<p><div id="command">
+<p><font color="royalblue"><strong>&lt;Early&gt;</strong> <em>Message</em> <strong>&lt;/Early&gt;</strong></font></p>
+
+</div>
+<br />
+<div id="command">
+<p><font color="royalblue"><strong>&lt;OnTime&gt;</strong> <em>Message</em> <strong>&lt;/OnTime&gt;</strong></font></p>
+
+</div>
+<br />
+<div id="command">
+<p><font color="royalblue"><strong>&lt;Late&gt;</strong> <em>Message</em> <strong>&lt;/Late&gt;</strong></font></p>
+
+</div>
+</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;Probability&gt;</strong> <em>Value</em> <strong>&lt;/Probability&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Probability</strong> should be an integer from <strong>0</strong> to <strong>100</strong> , representing the approximate probability that this stop may be requested.</p>
+
+<p>Alternatively, if you require a specific probability when the player is early/ late, the following sub-attributes are supported:</p>
+
+<p><div id="command">
+<p><font color="royalblue"><strong>&lt;Early&gt;</strong> <em>Value</em> <strong>&lt;/Early&gt;</strong></font></p>
+
+</div>
+<br />
+<div id="command">
+<p><font color="royalblue"><strong>&lt;OnTime&gt;</strong> <em>Value</em> <strong>&lt;/OnTime&gt;</strong></font></p>
+
+</div>
+<br />
+<div id="command">
+<p><font color="royalblue"><strong>&lt;Late&gt;</strong> <em>Value</em> <strong>&lt;/Late&gt;</strong></font></p>
+
+</div>
+</p>
+
+<p><em>Note:</em> If only one or two of the specific probabilities above are set, the others are assumed to have a zero-probability and thus will not trigger.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;MaxCars&gt;</strong> <em>Cars</em> <strong>&lt;/MaxCars&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Cars</strong> sets the maximum length of a train before this request stop is automatically skipped.</p>
+
+<p><em>Note:</em> No message is displayed in this case.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;AIBehaviour&gt;</strong> <em>Value</em> <strong>&lt;/AIBehaviour&gt;</strong></p>
+
+</div>
+
+
+<p><strong>Value</strong> controls the behaviour of the default AI driver towards this request stop. Valid values are:</p>
+
+<ul>
+<li><strong>FullSpeed or 0</strong> : If the request stop is not triggered, the AI driver ignores it and passes at linespeed.</li>
+<li><strong>NormalBrake or 1</strong> : If the request stop is not triggered, the AI driver brakes to ~10mph as it passes through the station.</li>
+</ul>
+
+<p><em>Note:</em> May be overriden by plugins implementing an AI method.</p>
+
+</div>
+
+      <div id="footer">
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
+

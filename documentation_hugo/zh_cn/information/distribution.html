@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+  <head>
+    <meta charset="utf-8"/>
+    <title>openBVE Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="../../css/bulma.custom.css">
+    <link rel="icon" href="../../favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta name="generator" content="Hugo 0.53" />
+
+  </head>
+  <body>
+
+    <div id="sidebar">
+
+      
+      <div id="site-logo">
+          <img alt="Site logo" src="../../images/logo.png">
+      </div>
+      
+
+      <nav>
+<input type="checkbox" id="burger-toggle" class="burger-toggle" hidden>
+
+<div id="menu-entries">
+  <ul class="first">
+    
+    
+    
+    <li>Objects
+      
+      <ul class="second">
+        
+        <li>Native formats
+          
+          <ul class="third">
+            
+            <li><a href="../../zh_cn/objects/native/b3d.html">The B3D object</a>
+              
+            </li>
+            
+            <li><a href="../../zh_cn/objects/native/csv.html">The CSV object</a>
+              
+            </li>
+            
+            <li><a href="../../zh_cn/objects/native/animated.html">The ANIMATED object</a>
+              
+            </li>
+            
+            
+              
+            </li>
+            
+            
+              
+            </li>
+            
+            
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>Other formats
+          
+          <ul class="third">
+            
+            <li><a href="../../zh_cn/objects/other/loksim.html">Loksim3D (.l3dobj)</a>
+              
+            </li>
+            
+            <li><a href="../../zh_cn/objects/other/x.html">Microsoft DirectX (.x)</a>
+              
+            </li>
+            
+            <li><a href="../../zh_cn/objects/other/msts.html">Microsoft Train Simulator (.s)</a>
+              
+            </li>
+            
+            <li><a href="../../zh_cn/objects/other/obj.html">Wavefront (.obj)</a>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/objects/information.html">Information and tips</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Routes
+      
+      <ul class="second">
+        
+        <li><a href="../../zh_cn/routes/csv.html">The CSV route</a>
+          
+        </li>
+        
+        
+          
+          <ul class="third">
+            
+            <li><a href="../../zh_cn/routes/xml/dynamiclight.html">Adding Dynamic Lighting</a>
+              
+            </li>
+            
+            <li><a href="../../zh_cn/routes/xml/dynamicbackground.html">Dynamic and Object Based Backgrounds</a>
+              
+            </li>
+            
+            <li><a href="../../zh_cn/routes/xml/route_marker.html">Scripted Markers</a>
+              
+            </li>
+            
+            <li><a href="../../zh_cn/routes/xml/stationxml.html">XML Stations &amp; Request Stops</a>
+              
+            </li>
+            
+            <li><a href="../../zh_cn/routes/xml/trackfollowingobject.html">Track Following Object</a>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/routes/micsounds.html">Playing Sounds from a Microphone Input</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/routes/rw.html">The RW route</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/routes/tutorial_ats.html">Tutorial: Using ATS</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/routes/tutorial_atc.html">Tutorial: Using ATC</a>
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Trains
+      
+      <ul class="second">
+        
+        <li><a href="../../zh_cn/trains/overview.html">Overview</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/train_dat.html">The train.dat file</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/train_xml.html">The train.xml file</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/extensions_cfg.html">The extensions.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/panel_cfg.html">The panel.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/panel2_cfg.html">The panel2.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/panel_animated.html">The panel.animated file</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/default_sounds.html">Default sounds</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/sound_cfg.html">The sound.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/openbveats.html">The OpenBveAts Plugin</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/ats_cfg.html">The ats.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/plugins.html">Train plugins</a>
+          
+          <ul class="third">
+            
+            
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/trains/information.html">Information and tips</a>
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Plugins
+      
+      <ul class="second">
+        
+        <li><a href="../../zh_cn/plugins/overview.html">Overview</a>
+          
+        </li>
+        
+        
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Information
+      
+      <ul class="second">
+        
+        <li><a href="../../zh_cn/information/encodings.html">Character encodings</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/information/numberformats.html">Number formats</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/information/whitespaces.html">White Spaces</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/information/textureformats.html">Texture formats</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/information/soundformats.html">Sound formats</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/information/standards.html">Standards</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/information/distribution.html">Distributing add-ons</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/information/forking.html">Forking guidelines</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/information/bve.html">Vs. BVE Trainsim</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Tools
+      
+      <ul class="second">
+        
+        <li><a href="../../zh_cn/tools/objectviewer.html">Object Viewer</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/tools/objectbender.html">Object Bender</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/tools/routeviewer.html">Route Viewer</a>
+          
+        </li>
+        
+        <li><a href="../../zh_cn/tools/traineditor.html">Train Editor</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Further Examples
+      
+      <ul class="second">
+        
+        <li><a href="../../zh_cn/examples/demoroute.html">Demonstration route</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+  </ul>
+</div>
+</nav>
+
+    </div>
+
+    <div id="language-menu">
+<div class="dropdown is-hoverable">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+      <span>Language</span>
+      <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu" role="menu">
+    <div class="dropdown-content">
+      <a href="../../zh_cn/information/distribution.html" class="dropdown-item">
+        简体中文 (中国)
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../ca/information/distribution.html" class="dropdown-item">
+        Català
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../en/information/distribution.html" class="dropdown-item">
+        English
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../es_mx/information/distribution.html" class="dropdown-item">
+        Español (México)
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../fr/information/distribution.html" class="dropdown-item">
+        Français
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../hu/information/distribution.html" class="dropdown-item">
+        Magyar
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../id/information/distribution.html" class="dropdown-item">
+        Bahasa Indonesia
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../ja/information/distribution.html" class="dropdown-item">
+        日本語
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../ko/information/distribution.html" class="dropdown-item">
+        한국어
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../zh/information/distribution.html" class="dropdown-item">
+        中文
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../zh_hk/information/distribution.html" class="dropdown-item">
+        繁體中文 (香港特別行政區)
+      </a>
+      
+    </div>
+  </div>
+</div>
+</div>
+
+
+    <div id="container">
+
+        <div id="page-title">
+          <h1>Distributing add-ons created for openBVE</h1>
+        </div>
+
+        
+
+
+
+
+<div id="content">
+  
+
+<p>Whether you have written a route, a train or a plugin, there are a few things you should be aware of before distributing your add-ons. As openBVE is a cross-platform simulator intended with international interoperability in mind, your add-ons should be, too.</p>
+
+<h2 id="text-files-and-encodings">■ Text files and encodings</h2>
+
+<p>Whichever text file you are about to include in your distribution, including readme files, you should make sure that the file can be correctly processed internationally. The default encoding for all text files accessed by openBVE is UTF-8. For routes and associated objects, you can also use a different encoding, but then, the user has to select the specific encoding from a list. The same situation applies to trains and associated files. If you encode your text files in anything else but UTF-8, you must inform the user about your choice, or otherwise, the user might end up with garbage characters and potentially incorrectly parsed files. Using UTF-8 is the preferred choice, while using legacy encodings is acceptable, but discouraged. Please note that all files in a route or train must use the same encoding as it is neither currently possible nor feasible for the user to select the encoding of every individual file.</p>
+
+<p>Acceptable and not acceptable practices:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th><font color="Green">✓</font></th>
+<th>Save your text files as UTF-8.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><font color="Green">✓</font></td>
+<td>Save your text files in any Unicode encoding with a byte order mark.</td>
+</tr>
+
+<tr>
+<td><font color="Red">✗</font></td>
+<td>Save your text files in any non-Unicode encoding.</td>
+</tr>
+
+<tr>
+<td><font color="Red">✗</font></td>
+<td>Use different encodings for each file in a route or train.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2 id="archives-versus-installers">■ Archives versus installers</h2>
+
+<p>When packaging a route or train, consider using a single archive instead of multiple smaller ones, unless the size of the download justifies splitting the archive. Never use platform-specific installers as they are not portable (unless you also provide an archive as an alternative). Platform-specific installers include Windows EXE files, Linux RPM repositories and Mac DMG files.</p>
+
+<p>Acceptable and not acceptable practices:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th><font color="Green">✓</font></th>
+<th>Use an archive format such as 7Z, ZIP, TAR.GZ, etc.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><font color="Red">✗</font></td>
+<td>Use a platform-specific format, such as EXE, RPM, DMG, etc.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2 id="files-names-and-archives">■ Files names and archives</h2>
+
+<p>Generally, you can use any file name you want, that is, include any characters such as Latin, Japanese, Chinese, and the like. However, you need to make very sure that the archive format you use supports Unicode file names then. If not, the user might be unable to extract your files correctly, leading to a series of files that cannot be found later. Unfortunately, the popuplar ZIP format does not support Unicode file names, while for example <a href="https://www.7-zip.org/" target="_blank">7Z</a> does. Alternatively, restrict yourself to ASCII characters, e.g. A-Z, a-z, 0-9.</p>
+
+<p>Acceptable and not acceptable practices:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th><font color="Green">✓</font></th>
+<th>Use an archive format that supports Unicode files names (e.g. 7Z)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><font color="Green">✓</font></td>
+<td>Use an archive format that doesn&rsquo;t support Unicode and restrict yourself to ASCII file names.</td>
+</tr>
+
+<tr>
+<td><font color="Red">✗</font></td>
+<td>Use an archive format that doesn&rsquo;t support Unicode but use Unicode files names.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2 id="archives-and-the-folder-structure">■ Archives and the folder structure</h2>
+
+<p>You should always include the full folder structure, that is, <strong>Railway</strong> and <strong>Train</strong>, when istributing outes or trains. This will make it easiest for people to understand where they need to extract the ontent to. Never just include a subdirectory such as <em>YourNameHere</em> that is supposed to be extracted to the Railway\Sound folder, for example. Only the more experienced users will enerally e able to figure out where to put such content to by examining the files or their extensions.</p>
+
+<p>Acceptable and not acceptable practices:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th><font color="Green">✓</font></th>
+<th>Include the two base folders <strong>Railway</strong> or <strong>Train</strong>, best both.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><font color="Red">✗</font></td>
+<td>Just include some subdirectory or files directly and expect users to figure out how to handle this.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2 id="errors-and-warnings">■ Errors and warnings</h2>
+
+<p>Generally, your route should be free of errors. Please note that openBVE distinguishes between errors and warnings. An error is something definately wrong with your coding that should be fixed immediately. A warning is usually only raised to encourage inspection of potentially ambiguous code or code that might not have been meant the way it was written. In order to inspect your routes and trains for errors and warnings, go to the Options menu in openBVE and enable eporting them. RouteViewer and ObjectViewer always report such messages. Please note that the arious tools and openBVE itself might report a different set of messages as they don&rsquo;t share all the ame functionality. Distributing add-ons containing errors might give users the impression that omething was incompletely downloaded or was incorrectly packaged, and should generally be voided.</p>
+
+<p>Acceptable and not acceptable practices:</p>
+
+
+<table class='type1'>
+<thead>
+<tr>
+<th><font color="Green">✓</font></th>
+<th>Activate the report of errors and warnings in the <em>Options</em> menu and inspect your add-ons.</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><font color="Green">✓</font></td>
+<td>Distribute add-ons that are eventually free of errors (not necessarily of warnings).</td>
+</tr>
+
+<tr>
+<td><font color="Red">✗</font></td>
+<td>Never inspect your add-ons for errors by disabling the error report or by ignoring the messages.</td>
+</tr>
+
+<tr>
+<td><font color="Red">✗</font></td>
+<td>Distribute an add-on that contains errors.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2 id="routes-and-trains-designed-for-using-plugins">■ Routes and trains designed for using plugins</h2>
+
+<p>If you include plugins in your train, they should be only of the .NET type. Older Windows-only plugins are retained for backward compatibility, but should not be distributed any longer with new releases. If you cannot remove the dependency on a Windows-only plugin for the time being, then at least design your routes and trains so that they work with the default safety system. You can test how your train behaves without a plugin by deleting the ats.cfg file (or by temporarily enaming it).</p>
+
+<h2 id="operation-manuals">■ Operation manuals</h2>
+
+<p>An overview on the signs and signalling in your route, as well as on how to operate your train, is generally in order. Otherwise, users unfamiliar with the particular territory might be left with guessing the meaning of signs, or have to guess which keys serve which purpose. If you can, provide an English version of the instruction, as this generally increases the number of people who are able to understand it.</p>
+
+</div>
+
+      <div id="footer">
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
+

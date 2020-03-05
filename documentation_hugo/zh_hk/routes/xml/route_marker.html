@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh_hk">
+  <head>
+    <meta charset="utf-8"/>
+    <title>openBVE Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css">
+    <link rel="stylesheet" href="../../../css/bulma.custom.css">
+    <link rel="icon" href="../../../favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta name="generator" content="Hugo 0.53" />
+
+  </head>
+  <body>
+
+    <div id="sidebar">
+
+      
+      <div id="site-logo">
+          <img alt="Site logo" src="../../../images/logo.png">
+      </div>
+      
+
+      <nav>
+<input type="checkbox" id="burger-toggle" class="burger-toggle" hidden>
+
+<div id="menu-entries">
+  <ul class="first">
+    
+    
+    
+    <li>物件
+      
+      <ul class="second">
+        
+        <li>原格式
+          
+          <ul class="third">
+            
+            <li><a href="../../../zh_hk/objects/native/b3d.html">The B3D object</a>
+              
+            </li>
+            
+            <li><a href="../../../zh_hk/objects/native/csv.html">The CSV object</a>
+              
+            </li>
+            
+            <li><a href="../../../zh_hk/objects/native/animated.html">The ANIMATED object</a>
+              
+            </li>
+            
+            
+              
+            </li>
+            
+            
+              
+            </li>
+            
+            
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>其他格式
+          
+          <ul class="third">
+            
+            <li><a href="../../../zh_hk/objects/other/loksim.html">Loksim3D (.l3dobj)</a>
+              
+            </li>
+            
+            <li><a href="../../../zh_hk/objects/other/x.html">Microsoft DirectX (.x)</a>
+              
+            </li>
+            
+            <li><a href="../../../zh_hk/objects/other/msts.html">Microsoft Train Simulator (.s)</a>
+              
+            </li>
+            
+            <li><a href="../../../zh_hk/objects/other/obj.html">Wavefront (.obj)</a>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/objects/information.html">Information and tips</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>路線
+      
+      <ul class="second">
+        
+        <li><a href="../../../zh_hk/routes/csv.html">CSV route</a>
+          
+        </li>
+        
+        
+          
+          <ul class="third">
+            
+            <li><a href="../../../zh_hk/routes/xml/dynamiclight.html">Adding Dynamic Lighting</a>
+              
+            </li>
+            
+            <li><a href="../../../zh_hk/routes/xml/dynamicbackground.html">Dynamic and Object Based Backgrounds</a>
+              
+            </li>
+            
+            <li><a href="../../../zh_hk/routes/xml/route_marker.html">Scripted Markers</a>
+              
+            </li>
+            
+            <li><a href="../../../zh_hk/routes/xml/stationxml.html">XML Stations &amp; Request Stops</a>
+              
+            </li>
+            
+            <li><a href="../../../zh_hk/routes/xml/trackfollowingobject.html">Track Following Object</a>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/routes/micsounds.html">Playing Sounds from a Microphone Input</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/routes/rw.html">The RW route</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/routes/tutorial_ats.html">Tutorial: Using ATS</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/routes/tutorial_atc.html">Tutorial: Using ATC</a>
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>列車
+      
+      <ul class="second">
+        
+        <li><a href="../../../zh_hk/trains/overview.html">Overview</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/train_dat.html">The train.dat file</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/train_xml.html">train.xml檔案</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/extensions_cfg.html">The extensions.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/panel_cfg.html">The panel.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/panel2_cfg.html">The panel2.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/panel_animated.html">The panel.animated file</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/default_sounds.html">Default sounds</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/sound_cfg.html">The sound.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/openbveats.html">The OpenBveAts Plugin</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/ats_cfg.html">The ats.cfg file</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/plugins.html">Train plugins</a>
+          
+          <ul class="third">
+            
+            
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/trains/information.html">Information and tips</a>
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+        
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>Plugins
+      
+      <ul class="second">
+        
+        <li><a href="../../../zh_hk/plugins/overview.html">Overview</a>
+          
+        </li>
+        
+        
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>信息
+      
+      <ul class="second">
+        
+        <li><a href="../../../zh_hk/information/encodings.html">Character encodings</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/information/numberformats.html">Number formats</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/information/whitespaces.html">White Spaces</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/information/textureformats.html">Texture formats</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/information/soundformats.html">Sound formats</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/information/standards.html">Standards</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/information/distribution.html">Distributing add-ons</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/information/forking.html">Forking guidelines</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/information/bve.html">對比BVE Trainsim</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>工具
+      
+      <ul class="second">
+        
+        <li><a href="../../../zh_hk/tools/objectviewer.html">Object Viewer</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/tools/objectbender.html">Object Bender</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/tools/routeviewer.html">Route Viewer</a>
+          
+        </li>
+        
+        <li><a href="../../../zh_hk/tools/traineditor.html">Train Editor</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li>更有深度嘅實例
+      
+      <ul class="second">
+        
+        <li><a href="../../../zh_hk/examples/demoroute.html">路綫説明</a>
+          
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+  </ul>
+</div>
+</nav>
+
+    </div>
+
+    <div id="language-menu">
+<div class="dropdown is-hoverable">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+      <span>Language</span>
+      <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu" role="menu">
+    <div class="dropdown-content">
+      <a href="../../../zh_hk/routes/xml/route_marker.html" class="dropdown-item">
+        繁體中文 (香港特別行政區)
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../../ca/routes/xml/route_marker.html" class="dropdown-item">
+        Català
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../../en/routes/xml/route_marker.html" class="dropdown-item">
+        English
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../../es_mx/routes/xml/route_marker.html" class="dropdown-item">
+        Español (México)
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../../fr/routes/xml/route_marker.html" class="dropdown-item">
+        Français
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../../hu/routes/xml/route_marker.html" class="dropdown-item">
+        Magyar
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../../id/routes/xml/route_marker.html" class="dropdown-item">
+        Bahasa Indonesia
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../../ja/routes/xml/route_marker.html" class="dropdown-item">
+        日本語
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../../ko/routes/xml/route_marker.html" class="dropdown-item">
+        한국어
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../../zh/routes/xml/route_marker.html" class="dropdown-item">
+        中文
+      </a>
+      
+      <hr class="dropdown-divider">
+      <a href="../../../zh_cn/routes/xml/route_marker.html" class="dropdown-item">
+        简体中文 (中国)
+      </a>
+      
+    </div>
+  </div>
+</div>
+</div>
+
+
+    <div id="container">
+
+        <div id="page-title">
+          <h1>Creating XML Based Markers</h1>
+        </div>
+
+        
+
+
+
+
+<div id="content">
+  
+
+<p>This page describes the principles and implementation of the XML based marker system.</p>
+
+<h2 id="markers-basic-principles">■ Markers: Basic Principles</h2>
+
+<p>openBVE supports two distinct types of markers:</p>
+
+<ol>
+<li>&lsquo;Texture&rsquo; based markers. This displays an image in the top right-hand corner of the screen.</li>
+<li>&lsquo;Text&rsquo; based markers. These add a textual message above the list of game messages in the upper left of the screen.</li>
+</ol>
+
+<p>Each individual marker should be setup using a custom XML file, as per the examples below.</p>
+
+<p><strong>Image Based Markers:</strong></p>
+
+<textarea rows="17" cols="110" style="border:2;">
+    
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
+&lt;openBVE xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xsd=&#34;http://www.w3.org/2001/XMLSchema&#34;&gt;
+  &lt;ImageMarker&gt;
+                &lt;Early&gt;
+            &lt;Time&gt;12:00&lt;/Time&gt;
+            &lt;Image&gt;Early.png&lt;/Image&gt;
+        &lt;/Early&gt;
+        &lt;OnTime&gt;
+            &lt;Image&gt;Marker.png&lt;/Image&gt;
+        &lt;/OnTime&gt;
+        &lt;Late&gt;
+            &lt;Time&gt;12:10&lt;/Time&gt;
+            &lt;Image&gt;Late.png&lt;/Image&gt;
+        &lt;/Late&gt;
+        &lt;Distance&gt;200&lt;/Distance&gt;
+        &lt;trains&gt;81xx_2DCab&lt;/trains&gt;
+  &lt;/ImageMarker&gt;
+&lt;/openBVE&gt;  
+
+</textarea>
+
+<p><strong>Text Based Markers:</strong></p>
+
+<textarea rows="17" cols="110" style="border:2;">
+    
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
+&lt;openBVE xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xsd=&#34;http://www.w3.org/2001/XMLSchema&#34;&gt;
+  &lt;TextMarker&gt;
+                &lt;Early&gt;
+            &lt;Time&gt;12:00&lt;/Time&gt;
+            &lt;Text&gt;Early!&lt;/Text&gt;
+        &lt;/Early&gt;
+        &lt;OnTime&gt;
+            &lt;Text&gt;On Time.&lt;/Text&gt;
+        &lt;/OnTime&gt;
+        &lt;Late&gt;
+            &lt;Time&gt;12:10&lt;/Time&gt;
+            &lt;Text&gt;Late...&lt;/Text&gt;
+        &lt;/Late&gt;
+        &lt;Distance&gt;200&lt;/Distance&gt;
+        &lt;trains&gt;81xx_2DCab&lt;/trains&gt;
+  &lt;/TextMarker&gt;
+&lt;/openBVE&gt;  
+
+</textarea>
+
+<p>As you can see, the file is made up of either a <strong>&lt;ImageMarker&gt;</strong> section or a <strong>&lt;TextMarker&gt;</strong> section, which defines the properties of the marker itself.</p>
+
+<p>If required, the base marker and / or the early &amp; late markers may be omitted.</p>
+
+<h2 id="common-attributes">■ Common Attributes</h2>
+
+<p>The following attributes are supported by both image and text markers:</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;Early&gt;</strong> <em>&hellip;.</em> <strong>&lt;/Early&gt;</strong></p>
+
+</div>
+
+
+<p>Defines the marker used when the player is early.</p>
+
+<p>This must contain a <strong>time</strong> and either an <strong>image</strong> or a <strong>textual string</strong> (See below).</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;OnTime&gt;</strong> <em>&hellip;.</em> <strong>&lt;/OnTime&gt;</strong></p>
+
+</div>
+
+
+<p>Defines the marker used when the player is early.</p>
+
+<p>This must contain an <strong>image</strong> or a <strong>textual string</strong> (See below).</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;Late&gt;</strong> <em>&hellip;.</em> <strong>&lt;/Late&gt;</strong></p>
+
+</div>
+
+
+<p>Defines the marker used when the player is late.</p>
+
+<p>This must contain a <strong>time</strong> and either an <strong>image</strong> or a <strong>textual string</strong> (See below).</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;Distance&gt;</strong> <em>MarkerLength</em> <strong>&lt;/Distance&gt;</strong></p>
+
+</div>
+
+
+<p>Defines the distance for which this marker will show.</p>
+
+<p><strong>MarkerLength</strong> represents the distance in meters for which to show the marker. Positive values will be displayed FROM where this marker is placed in the routefile. Negative values will be displayed BEFORE where this marker is placed in the routefile.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;Timeout&gt;</strong> <em>TotalTime</em> <strong>&lt;/Timeout&gt;</strong></p>
+
+</div>
+
+
+<p>Defines the total time for which this marker will show.</p>
+
+<p><strong>TotalTime</strong> represents the maximum time in milliseconds for which this marker will be visible <em>Note:</em> This overrides <strong>Distance</strong> if it has not been reached.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;Trains&gt;</strong> <em>TrainList</em> <strong>&lt;/Trains&gt;</strong></p>
+
+</div>
+
+
+<p>Defines the list of trains for which this marker will show.</p>
+
+<p><strong>TrainList</strong> must contain a semi-colon deliminated list of trains for which you wish to display this marker.</p>
+
+<h2 id="textual-marker-attributes">■ Textual Marker Attributes</h2>
+
+<div id="command">
+<p><strong>&lt;Text&gt;</strong> <em>DisplayText</em> <strong>&lt;/Text&gt;</strong></p>
+
+</div>
+
+
+<p><strong>DisplayText</strong> is the text which will be displayed on-screen.</p>
+
+<hr />
+
+<div id="command">
+<p><strong>&lt;Color&gt;</strong> <em>TextColor</em> <strong>&lt;/Color&gt;</strong></p>
+
+</div>
+
+
+<p><strong>TextColor</strong> controls the color in which the message is renderered. The following colors are supported:</p>
+
+<ul>
+<li>Black</li>
+<li>Gray</li>
+<li>White</li>
+<li>Red</li>
+<li>Orange</li>
+<li>Green</li>
+<li>Blue</li>
+<li>Magenta</li>
+</ul>
+
+<h2 id="image-marker-attributes">■ Image Marker Attributes</h2>
+
+<div id="command">
+<p><strong>&lt;Image&gt;</strong> <em>RelativePath</em> <strong>&lt;/Image&gt;</strong></p>
+
+</div>
+
+
+<p><strong>RelativePath</strong> is the relative on-disk path to the marker image.</p>
+
+</div>
+
+      <div id="footer">
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
+
