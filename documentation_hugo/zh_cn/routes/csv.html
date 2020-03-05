@@ -101,7 +101,7 @@
       
       <ul class="second">
         
-        <li><a href="../../zh_cn/routes/csv.html">The CSV route</a>
+        <li><a href="../../zh_cn/routes/csv.html">CSV 线路格式</a>
           
         </li>
         
@@ -426,7 +426,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>The <strong>.csv</strong> route format</h1>
+          <h1><strong>CSV</strong> 线路格式</h1>
         </div>
 
         
@@ -437,129 +437,133 @@
 <div id="content">
   
 
-<p>➟ <a href="../../zh_cn/routes/csv_quick.html" target="_blank">Quick reference&hellip;</a></p>
+<p>➟ <a href="../../zh_cn/routes/csv_quick.html" target="_blank">快速查阅&hellip;</a></p>
 
-<h2 id="contents">■ Contents</h2>
-
-<ul class='contents'>
-<li><a href="#overview">1. Overview</a></li>
-<li><a href="#syntax">2. Syntax</a></li>
-<li><a href="#preprocessing">3. Preprocessing</a></li>
-<li><a href="#options">4. The Options namespace</a></li>
-<li><a href="#route">5. The Route namespace</a></li>
-<li><a href="#train">6. The Train namespace</a></li>
-<li><a href="#structure">7. The Structure namespace</a></li>
-<li><a href="#texture">8. The Texture namespace</a></li>
-<li><a href="#cycle">9. The Cycle namespace</a></li>
-<li><a href="#signal">10. The Signal namespace</a></li>
-<li><a href="#track">11. The Track namespace</a>
+<h2 id="内容目录">■ 内容目录</h2>
 
 <ul class='contents'>
-<li><a href="#track_rails">11.1. Rails</a></li>
-<li><a href="#track_geometry">11.2. Geometry</a></li>
-<li><a href="#track_objects">11.3. Objects</a></li>
-<li><a href="#track_stations">11.4. Stations</a></li>
-<li><a href="#track_signalling">11.5. Signalling and speed limits</a></li>
-<li><a href="#track_safety">11.6. Safety systems</a></li>
-<li><a href="#track_misc">11.7. Miscellaneous</a></li>
+<li><a href="#overview">1. 综述</a></li>
+<li><a href="#syntax">2. 语法</a></li>
+<li><a href="#preprocessing">3. 预处理</a></li>
+<li><a href="#options">4. Options (配置) 命名空间</a></li>
+<li><a href="#route">5. Route (路线) 命名空间</a></li>
+<li><a href="#train">6. Train (列车) 命名空间</a></li>
+<li><a href="#structure">7. Structure (结构) 命名空间</a></li>
+<li><a href="#texture">8. Texture (材质) 命名空间</a></li>
+<li><a href="#cycle">9. Cycle (循环) 命名空间</a></li>
+<li><a href="#signal">10. Signal (信号) 命名空间</a></li>
+<li><a href="#track">11. Track (轨道) 命名空间</a>
+
+<ul class='contents'>
+<li><a href="#track_rails">11.1. 轨道</a></li>
+<li><a href="#track_geometry">11.2. 几何变换</a></li>
+<li><a href="#track_objects">11.3. 物件</a></li>
+<li><a href="#track_stations">11.4. 车站</a></li>
+<li><a href="#track_signalling">11.5. 信号与限速</a></li>
+<li><a href="#track_safety">11.6. 车载信号系统</a></li>
+<li><a href="#track_misc">11.7. 杂项</a></li>
 </ul></li>
 </ul>
 
 
 
-<h2 id="a-name-overview-a-1-overview"><a name="overview"></a>■ 1. Overview</h2>
+<h2 id="a-name-overview-a-1-综述"><a name="overview"></a>■ 1. 综述</h2>
 
-<p>A CSV route allows to create a route in a text file.</p>
+<p>CSV格式线路是以纯文本形式编辑的线路。</p>
 
-<p>The file is a plain text file encoded in any arbitrary <a href="../../zh_cn/information/encodings.html" target="_blank">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../zh_cn/information/numberformats.html" target="_blank">parsing model</a> for numbers is <strong>Loose</strong> (unless otherwise stated), however, you are encouraged to produce <em>Strict</em> output nonetheless. The file is required to be located inside any folder whose current or parent folder includes the <em>Railway</em> and <em>Train</em> folders. The file name is arbitrary, but must have the extension <strong>.csv</strong>. The file is interpreted on a per-line basis, from top to bottom, where each line is split into expressions, which are interpreted from left to right.</p>
+<p>线路文件是纯文本，且可以使用任意<a href="../../zh_cn/information/encodings.html" target="_blank">字符编码</a>，但是，我们推荐线路作者们使用UTF8-BOM编码格式。游戏在解析数字数据时，使用的<a href="../../zh_cn/information/numberformats.html" target="_blank">解析方法</a>是<strong>宽松</strong>的(特别指出处除外)，但是，我们推荐线路作者们*严格规范*地编写线路文件。 这个文件一般来说可以被放在*Train*或*Railway*文件夹下的任何地方。文件名可以随意，但扩展名必须是<strong>.csv</strong>。线路文件被从头到尾逐行解析，每行被分割并被从左到右解析。</p>
 
-<p>The route file consists of a series of commands to define the objects which are used throughout the route (Structure namespace). Additional properties for the route, for the default train to be used and for the background images to be used can also be defined. At last, the route file will contain instructions from the Track namespace. Here, track positions (usually in meters) are used to define when the track should curve, when stations are to be placed, when a wall should start and end, and so on. Generally speaking, instructions from the Track namespace should be used after using instructions from any of the other namespaces.</p>
+<p>线路文件包括一系列指令，用来导入线路中用到的模型（Structure（结构）命名空间<em>)，线路的属性信息（说明线路使用的默认列车和背景等信息），文件的其余部分是Track（轨道）命名空间</em> 在这一部分中，主轨道位置（一般以米为单位）被用来描述轨道在哪里转弯，车站的位置在哪里，墙壁应当在哪里开始、哪里结束，以此类推。说得明白一点儿，Track（轨道）命名空间的指令是要放在最后的。</p>
 
-<p>The format assumes an implicit rail 0 which cannot be explicitly started or ended. Instead, it is present from the beginning of the route to the end, and it marks the rail the player&rsquo;s train drives on. rail 0 and the other rails are not only for used for visual, and also use for  <a href="../../zh_cn/routes/xml/trackfollowingobject.html" target="_blank">Track Following Object</a>.</p>
+<p>这个格式假设了一条游戏默认的主轨道（0号轨道），不可以指定它开始的位置，也不能结束它。和游戏中其他轨道不同的是，它从线路的开始一直延续到线路的终点，代表着玩家驾驶的列车行驶的轨道。除此之外，游戏中的其他轨道都是只供装饰，不能行驶的，但可以用 <a href="../../zh_cn/routes/xml/trackfollowingobject.html" target="_blank">轨道跟随物件</a> 来让AI车在其上行驶。</p>
 
-<p>Geometrically, you can curve and pitch the implicit rail 0, while all other rails are defined relative to rail 0 and follow rail 0 into curves and pitch changes. Unless overridden, the file format is built around a fixed block size of 25 meters length, and it is only possible for certain commands to be used on 25 meter block boundaries. The placement of objects always assumes a non-curved coordinate system which connects blocks linearly.</p>
+<p>可以几何意义上地弯曲和抬升默认的主轨道，而其他轨道都是相对于主轨道定义的，并随主轨道弯曲起伏。除非特别修改定义，线路中每25米划分为一个区间块，特定的命令只有在区间块的边界位置（整25米位置）才能发挥作用。物体的放置（尤其是在弯道上）总是基于一个坐标系，它的轴并不随轨道弯曲，而是直直地指向邻近的下一个区间块。
+* 有点不严谨地说，在CSV线路中和“章节”“部分”差不多。</p>
 
-<p>➟ <a href="../../zh_cn/routes/csv_quick.html" target="_blank">See also the quick reference for the CSV route&hellip;</a></p>
+<p>➟ <a href="../../zh_cn/routes/csv_quick.html" target="_blank">还可查阅这份CSV格式的快速参考手册&hellip;</a></p>
 
-<h2 id="a-name-syntax-a-2-syntax"><a name="syntax"></a>■ 2. Syntax</h2>
+<h2 id="a-name-syntax-a-2-语法"><a name="syntax"></a>■ 2. 语法</h2>
 
-<p>For each line in the file, <a href="../../zh_cn/information/whitespaces.html" target="_blank">white spaces</a> at the beginning and the end of that line are ignored. Then, lines are split into individual expressions, separated by commas (U+002C). Thus, each line is of the following form:</p>
+<p>对于线路文件中的每一行，在开头和结尾的<a href="../../zh_cn/information/whitespaces.html" target="_blank">空格</a>会被统统忽略。然后，每一行指令都会按逗号(U+002C，英文半角的那个)分割。于是，每一行都会被看作这样一个格式：</p>
 
 <div id="command">
-<p><em>Expression<sub>1</sub></em>, <em>Expression<sub>2</sub></em>, <em>Expression<sub>3</sub></em>, &hellip;, <em>Expression<sub>n</sub></em></p>
+<p><em>表达式<sub>1</sub></em>, <em>表达式<sub>2</sub></em>, <em>表达式<sub>3</sub></em>, &hellip;, <em>表达式<sub>n</sub></em></p>
 
 </div>
 
 
-<p>In turn, each expression can be of any of the following forms:</p>
+<p>表达式内容主要有以下类别：</p>
 
-<h5 id="comments">● Comments</h5>
+<h5 id="注释">● 注释</h5>
 
-<p>A comment is completely ignored by the parser. To form a comment, the expression must begin with a semicolon (U+003B).</p>
+<p>注释就是给人看的，游戏完全不管的。以分号(U+003B，英文半角的那个)开头的表达式都会被视为注释。</p>
 
-<h5 id="track-positions-and-lengths">● Track positions and lengths</h5>
+<h5 id="主轨道位置">● 主轨道位置</h5>
 
 <p><div id="command">
-<p><em>Position</em></p>
+<p><em>位置数字</em></p>
+
+</div>
+
+一个非负的 <a href="../../zh_cn/information/numberformats.html" target="_blank">严格格式</a> 浮点数，代表一个主轨道位置。随后的指令都将以此位置作为基准点。</p>
+
+<p><div id="command">
+<p><em>部分<sub>1</sub></em>:<em>部分<sub>2</sub></em>:&hellip;:<em>部分<sub>n</sub></em></p>
 
 </div>
 <br />
-A non-negative <a href="../../zh_cn/information/numberformats.html" target="_blank">strict</a> floating-point number corresponding to a track position. All subsequent commands from the Track namespace are associated to this track position.</p>
+这是一个配合Options.UnitOfLength的更加复杂的距离指定格式，可用于非公制计量单位。每一个 <em>部分<sub>i</sub></em> 都是 <a href="../../zh_cn/information/numberformats.html" target="_blank">炎严格格式</a> 的浮点数。 <em>部分<sub>1</sub></em> 会被乘上 <em>系数<sub>1</sub></em>, <em>部分<sub>2</sub></em> 乘上 *系数<sub>2</sub>*，以此类推，以此类推，真正的主轨道位置是所有积的和。这个结果必须是非负的。各部分被冒号(U+003A，英文半角的那个)分隔。如果想了解如何设定系数，请参见Options.UnitOfLength一节。</p>
 
-<p><div id="command">
-<p><em>Part<sub>1</sub></em>:<em>Part<sub>2</sub></em>:&hellip;:<em>Part<sub>n</sub></em></p>
+<p>在任何参数中使用距离的命令中，这个冒号表示法就可以被使用，到时我们会用<font color="green">绿色</font>标出这种情况。</p>
 
-</div>
-<br />
-This is a more complex way of specifying track positions for use in conjunction with Options.UnitOfLength. Each of the <em>Part<sub>i</sub></em> is a <a href="../../zh_cn/information/numberformats.html" target="_blank">strict</a> floating-point number. <em>Part<sub>1</sub></em> will be multiplied with <em>Factor<sub>1</sub></em>, <em>Part<sub>2</sub></em> with <em>Factor<sub>2</sub></em>, and so on, then all products are added together to form the final track position. This track position must be non-negative. The parts are separated by colons (U+003A). Please consult Options.UnitOfLength for further information on how to define the factors.</p>
+<p>当*n*个单位系数被使用Options.UnitOfLength定义，但是使用冒号表示法时输入的部分却少了，那么这些系数将会被向右匹配，在左边的会被忽略。因此，这几种表示方法是等效的：*0:0:2*，*0:2*，和<em>2</em>.</p>
 
-<p>Wherever arguments in commands represent lengths, they can also be entered using the colon notation. These cases are highlighted in <font color="green">green</font> in the following.</p>
+<h5 id="指令">● 指令</h5>
 
-<p>When <em>n</em> units are defined via Options.UnitOfLength, but fewer parameters are given using the colon notation, the parameters are right-associative, meaning, the parameters on the left are those which are skipped. Therefore, each of the following lengths are equivalent: <em>0:0:2</em>, <em>0:2</em>, and <em>2</em>.</p>
-
-<h5 id="commands">● Commands</h5>
-
-<p>Commands without arguments:</p>
+<p>没有参数的指令：</p>
 
 <div id="command">
-<p><em>NameOfTheCommand</em></p>
+<p><em>指令名称</em></p>
 
 </div>
 
 
-<p>Commands with arguments:</p>
+<p>含有几个参数的指令：</p>
 
 <div id="command">
-<p><em>NameOfTheCommand</em> <em>Argument<sub>1</sub></em>;<em>Argument<sub>2</sub></em>;<em>Argument<sub>3</sub></em>;&hellip;;<em>Argument<sub>n</sub></em><br />
-<em>NameOfTheCommand</em>(<em>Argument<sub>1</sub></em>;<em>Argument<sub>2</sub></em>;<em>Argument<sub>3</sub></em>;&hellip;;<em>Argument<sub>n</sub></em>)</p>
+<p><em>指令名称</em> <em>参数<sub>1</sub></em>;<em>参数<sub>2</sub></em>;<em>参数<sub>3</sub></em>;&hellip;;<em>参数<sub>n</sub></em>
+<em>指令名称</em>(<em>参数<sub>1</sub></em>;<em>参数<sub>2</sub></em>;<em>参数<sub>3</sub></em>;&hellip;;<em>参数<sub>n</sub></em>)</p>
 
 </div>
 
 
-<p>Commands with indices and arguments:</p>
+<p>不仅有参数还有后缀和编号的指令：</p>
 
 <div id="command">
-<p><em>NameOfTheCommand</em>(<em>Index<sub>1</sub></em>;<em>Index<sub>2</sub></em>;&hellip;;<em>Index<sub>m</sub></em>) <em>Argument<sub>1</sub></em>;<em>Argument<sub>2</sub></em>;<em>Argument<sub>3</sub></em>;&hellip;;<em>Argument<sub>n</sub></em><br />
-<em>NameOfTheCommand</em>(<em>Index<sub>1</sub></em>;<em>Index<sub>2</sub></em>;&hellip;;<em>Index<sub>m</sub></em>).<em>Suffix</em> <em>Argument<sub>1</sub></em>;<em>Argument<sub>2</sub></em>;<em>Argument<sub>3</sub></em>;&hellip;;<em>Argument<sub>n</sub></em><br />
-<em>NameOfTheCommand</em>(<em>Index<sub>1</sub></em>;<em>Index<sub>2</sub></em>;&hellip;;<em>Index<sub>m</sub></em>).<em>Suffix</em>(<em>Argument<sub>1</sub></em>;<em>Argument<sub>2</sub></em>;<em>Argument<sub>3</sub></em>;&hellip;;<em>Argument<sub>n</sub></em>)</p>
+<p><em>指令名称</em>(<em>编号<sub>1</sub></em>;<em>编号<sub>2</sub></em>;&hellip;;<em>编号<sub>m</sub></em>) <em>参数<sub>1</sub></em>;<em>参数<sub>2</sub></em>;<em>参数<sub>3</sub></em>;&hellip;;<em>参数<sub>n</sub></em>
+<em>指令名称</em>(<em>编号<sub>1</sub></em>;<em>编号<sub>2</sub></em>;&hellip;;<em>编号<sub>m</sub></em>).<em>后缀</em> <em>参数<sub>1</sub></em>;<em>参数<sub>2</sub></em>;<em>参数<sub>3</sub></em>;&hellip;;<em>参数<sub>n</sub></em>
+<em>指令名称</em>(<em>编号<sub>1</sub></em>;<em>编号<sub>2</sub></em>;&hellip;;<em>编号<sub>m</sub></em>).<em>后缀</em>(<em>参数<sub>1</sub></em>;<em>参数<sub>2</sub></em>;<em>参数<sub>3</sub></em>;&hellip;;<em>参数<sub>n</sub></em>)</p>
 
 </div>
 
 
-<p>Rules:</p>
+<p>规则：</p>
 
-<p><em>NameOfTheCommand</em> is case-insensitive. Indices and arguments are separated by semicolons (U+003B). White spaces around <em>NameOfTheCommand</em> and any of the indices and arguments are ignored. White spaces surrounding any of the parentheses are also ignored.</p>
+<p>*指令名称*是大小写都可以的。编号和参数被分号(U+003B，英文半角的那个)隔开。在*指令名称*、编号和参数周围的空格都是被忽略的，括号周围的空格也是被忽略的。</p>
 
-<p>If indices are used, these are enclosed by opening parentheses (U+0028) and closing parentheses (U+0029). At least one argument, or a <em>Suffix</em> is mandatory when using indices.</p>
+<p>如果要使用编号，它必须被成对括号(U+0028，英文半角在键盘9上面的那个)和(U+0029，英文半角在键盘0上面的那个)括起来。在使用编号时至少要提供一个参数和一个*后缀*。</p>
 
-<p>There are two variations on how to encode arguments. Except for the $-directives ($Chr, $Rnd, $Sub, &hellip;), you can freely choose which variant to use. Variant 1: The first argument is separated from the command, indices or <em>Suffix</em> by at least one space (U+0020). Variant two: The arguments are enclosed by opening parentheses (U+0028) and closing parentheses (U+0029). In the latter case, <em>Suffix</em> is mandatory when used in conjunction with indices. White spaces surrounding any of the parentheses are ignored.</p>
+<p>有两个使用参数的方法变种，除了$开头的预处理指令($Chr, $Rnd, $Sub, &hellip;)之外，可以按照个人喜好二选一。
+第一种方法：参数被至少一个空格(U+0020，平常用的那个)和编号、指令的大名以及*后缀*分开。
+第二种方法：参数被成对括号(U+0028，英文半角在键盘9上面的那个)和(U+0029，英文半角在键盘0上面的那个)括起来。
+在第二种方法中，当使用编号时就必须使用*后缀*。在参数周围的空格都会被忽略。</p>
 
-<p>Please note that in some commands, <em>Suffix</em> is mandatory regardless of the style you use to encode arguments. In the following, <em>Suffix</em> will be <strong>bolded</strong> when it is mandatory, and <font color="gray">grayed</font> when it is optional.</p>
+<p>请注意在有些指令中，不管是用哪种表示方法，*后缀*都是必需的。在接下来的文档中，必需的*后缀*将被<strong>加粗</strong>，对于第一种方法加不加均可的后缀将被使用<font color="gray">灰色</font>表示。</p>
 
-<h5 id="the-with-statement">● The <strong>With</strong> statement</h5>
+<h5 id="with-语句">● <strong>With</strong> 语句</h5>
 
 <div id="command">
-<p>With <em>Prefix</em></p>
+<p>With <em>命名空间前缀</em></p>
 
 </div>
 
@@ -582,7 +586,7 @@ This is a more complex way of specifying track positions for use in conjunction 
   </tbody>
 </table>
 
-<p>Is equivalent to:</p>
+<p>和这个是等效的：</p>
 
 <table style="border: none;">
   <tbody>
@@ -599,13 +603,13 @@ Route.Timetable 1157_M
   </tbody>
 </table>
 
-<h2 id="a-name-preprocessing-a-3-preprocessing"><a name="preprocessing"></a>■ 3. Preprocessing</h2>
+<h2 id="a-name-preprocessing-a-3-预处理"><a name="preprocessing"></a>■ 3. 预处理</h2>
 
 <p>Before any of the commands in the route file are actually interpreted, the expressions are preprocessed. The first thing done is to replace any occurrences of the $-directives within an expression from right to left. The $Chr, $Rnd and $Sub directives may be nested in any way, while $Include, $If, $Else and $EndIf must not appear inside another directive.</p>
 
 <div id="warning">
 <span>⚠</span>
-<p>The syntax for the $-directives cannot be freely chosen, but must adhere to the forms presented below.</p>
+<p>预处理指令的语法不可以随意使用，必须以下面给出的形式出现。</p>
 
 </div>
 
@@ -613,29 +617,29 @@ Route.Timetable 1157_M
 <hr />
 
 <div id="command">
-<p>$Include(<em>File</em>)<br />
-$Include(<em>File</em>:<em>TrackPositionOffset</em>)<br />
-$Include(<em>File<sub>1</sub></em>; <em>Weight<sub>1</sub></em>; <em>File<sub>2</sub></em>; <em>Weight<sub>2</sub></em>; &hellip;)</p>
+<p>$Include(<em>文件</em>)<br />
+$Include(<em>文件</em>:<em>主轨道位置偏移量</em>)<br />
+$Include(<em>文件<sub>1</sub></em>; <em>权值<sub>1</sub></em>; <em>文件<sub>2</sub></em>; <em>权值<sub>2</sub></em>; &hellip;)</p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>File<sub>i</sub></em></strong>: A file to include of the same format (CSV/RW) as the main file.<br />
-<strong><em>Weight<sub>i</sub></em></strong>: A positive floating-point number giving a probability weight for the corresponding file.</p>
+<p><strong><em>文件<sub>i</sub></em></strong>: 要被导入本线路的另一个文件。
+<strong><em>权值<sub>i</sub></em></strong>: 一个正浮点数，表示对应的这个文件被使用的可能性大小。数越大，这个文件就越可能被随机选中。</p>
 
 </div>
 
 
-<p>This directive chooses randomly from the specified files based on their associated probabilities and includes the content from one selected file into the main file. The content is copied into the place of the $Include directive, meaning that you need to take care of track positions and the last used With statement, for example. If the last weight in the argument sequence is omitted, it is treated as 1.</p>
+<p>该指令按照权值随机选出一个线路文件，再将其内容导入本线路中。因为该文件内容会被不加修改直接在该指令的位置插入，可能需要照顾一下With指令等，不要让它们出现冲突。如果参数中最后一个文件没有给出权值，它会被按1处理。</p>
 
-<p>The $Include directive is useful for splitting up a large file into smaller files, for sharing common sections of code between multiple routes, and for choosing randomly from a larger block of code. Please note that the included files may themselves include other files, but you need to make sure that there are no circular dependencies, e.g. file A including file B, and file B including file A, etc. You should use a file extension different from .csv for included files so that users cannot accidentally select them in the main menu (except where this is desired).</p>
+<p>$Include指令在几个线路有大量重复内容时很有用，可以把重复内容单独存进另一个文件，然后在主文件中导入它，以方便编码。这个指令还可以被用来随机选取线路代码。请注意导入的文件中也可以包含$Include指令来引用更多的文件，但是应该避免循环引用，例如A导入B而B又导入A。要导入的那个文件不应该使用.csv作为格式扩展名（也许用.include是个方便区分的好主意），不然玩家可能会一不小心从主菜单选择了这个“不完全的线路文件”然后发现没法加载（除非那个文件本身就是一个单独的线路，然后本来就想让玩家加载它）。</p>
 
-<p>If any of the <em>File<sub>i</sub></em> is followed by :<em>TrackPositionOffset</em>, then all expressions in the included file are offset by the specified track position <strong>in meters</strong>. For example, $Include(stations.include:2000) shifts all track positions in the part.include file by 2000 meters before including them. It is important to understand that &ldquo;track positions&rdquo; are not actually understood until after the $-directives have been processed, so all expressions in the included file are simply flagged to be offset later should they form track positions then. This means that if the included file contains expressions such as 1$Rnd(2;8)00, these are offset, too, even though at this stage, they do not form track positions yet.</p>
+<p>如果任何一个*文件<sub>i</sub>*被一个:*主轨道位置偏移量*后缀，那个文件中所有的主轨道位置表达式都会被按照这个量<strong>以米作单位</strong>偏移。例如，$Include(stations.include:2000) 会将stations.include文件中的所有内容在插入前都向前偏移2000米。需要注意这些主轨道位置表达式是在所有的预处理命令都被执行完才会被做偏移处理。这意味着像&rdquo;1$Rnd(2;8)00&rdquo;这样的主轨道位置表达式尽管在预处理前还不是一个主轨道距离表达式，但是它的随机结果照样会被进行偏移处理。</p>
 
 <div id="warning">
 <span>⚠</span>
-<p>The track position offset feature is only available in the development release 1.2.11 and above.</p>
+<p>只有OpenBVE1.2.11版以上支持“主轨道位置偏移量”。</p>
 
 </div>
 
@@ -643,93 +647,93 @@ $Include(<em>File<sub>1</sub></em>; <em>Weight<sub>1</sub></em>; <em>File<sub>2<
 <hr />
 
 <div id="command">
-<p>$Chr(<em>Ascii</em>)</p>
+<p>$Chr(<em>Ascii编号</em>)</p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Ascii</em></strong>: An integer in the range from 20 to 127, or 10 or 13, corresponding to an ASCII character of the same code.</p>
+<p><strong><em>Ascii编号</em></strong>: 一个在10~13或20~127范围内的数，代表一个拥有对应ASCII码的字符。</p>
 
 </div>
 
 
-<p>This directive is replaced by the ASCII character represented by <em>Ascii</em>. This is useful if you want to include characters that are part of syntax rules or would be stripped away. A list of relevant characters:</p>
+<p>这个指令会在原位插入一个对应*Ascii码*的字符。如果想要在某个地方放置一个字符却又不想破坏指令语法结构（比如站名里开头带空格、带括号逗号分号等，如果不这样加入就会被游戏误读），可以使用这个指令。有关的字符有：</p>
 
 
 <table class='type0'>
 <thead>
 <tr>
-<th>Code</th>
-<th>Meaning</th>
-<th>Character</th>
+<th>Ascii码</th>
+<th>含义</th>
+<th>对应字符</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td>10</td>
-<td>Newline</td>
+<td>换行 (CR)</td>
 <td><em>newline</em></td>
 </tr>
 
 <tr>
 <td>13</td>
-<td>Newline</td>
+<td>换行 (LF)</td>
 <td><em>newline</em></td>
 </tr>
 
 <tr>
 <td>20</td>
-<td>Space</td>
+<td>空格</td>
 <td><em>space</em></td>
 </tr>
 
 <tr>
 <td>40</td>
-<td>Opening parentheses</td>
+<td>括号</td>
 <td>(</td>
 </tr>
 
 <tr>
 <td>41</td>
-<td>Closing parentheses</td>
+<td>回括号</td>
 <td>)</td>
 </tr>
 
 <tr>
 <td>44</td>
-<td>Comma</td>
+<td>逗号</td>
 <td>,</td>
 </tr>
 
 <tr>
 <td>59</td>
-<td>Semicolon</td>
+<td>分号</td>
 <td>;</td>
 </tr>
 </tbody>
 </table>
 
 
-<p>The sequence $Chr(13)$Chr(10) is handled as a single newline. Inserting $Chr(59) can be interpreted as a comment starter or as an argument separator, depending on where it is used.</p>
+<p>&rdquo;$Chr(13)$Chr(10)&ldquo;(CRLF)代表一次换行。插入$Chr(59)可能基于它的位置被解释为注释开始或指令参数分隔符。</p>
 
 <hr />
 
 <div id="command">
-<p>$Rnd(<em>Start</em>; <em>End</em>)</p>
+<p>$Rnd(<em>最小值</em>; <em>最大值</em>)</p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Start</em></strong>: An integer representing the lower bound.<br />
-<strong><em>End</em></strong>: An integer representing the upper bound.</p>
+<p><strong><em>最小值</em></strong>：一个整数，代表随机数可以取的最小值。
+<strong><em>最大值</em></strong>：一个整数，代表随机数可以取的最大值。</p>
 
 </div>
 
 
-<p>This directive is replaced by a random integer in the range from <em>Start</em> to <em>End</em>. It is useful to add randomness to a route.</p>
+<p>这个指令会在原位插入一个位于*最小值*和*最大值*之间的随机整数。可以用这个来给线路添加一些随机性。</p>
 
 <table style="border: none;">
   <tbody>
@@ -752,6 +756,7 @@ $Include(<em>File<sub>1</sub></em>; <em>Weight<sub>1</sub></em>; <em>File<sub>2<
   </tbody>
 </table>
 
+<p>会产生以下三个结果之一：
 <table style="border: none;">
   <tbody>
   
@@ -773,29 +778,29 @@ $Include(<em>File<sub>1</sub></em>; <em>Weight<sub>1</sub></em>; <em>File<sub>2<
        </td>
     </tr>
   </tbody>
-</table>
+</table></p>
 
 <hr />
 
 <div id="command">
-<p>$Sub(<em>Index</em>) = <em>Expression</em></p>
+<p>$Sub(<em>编号</em>) = <em>表达式</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Index</em></strong>: A non-negative integer representing the index of a variable.<br />
-<strong><em>Expression</em></strong>: The expression to store in the variable.</p>
+<p><strong><em>编号</em></strong>: 一个非负整数，代表要存储的变量编号。
+<strong><em>表达式</em></strong>: 要存进这个变量的数字的值。</p>
 
 </div>
 
 
-<p>This directive should only appear as a single expression. It is used to assign <em>Expression</em> to a variable identified by <em>Index</em>. The whole $Sub directive is replaced by an empty string once the assignment is done. It is useful for storing values obtained by the $Rnd directive in order to reuse the same randomly-generated value. See the following definition of the $Sub(<em>Index</em>) directive for examples.</p>
+<p>这个指令只应该单独出现，它将会把*表达式*的值赋给编号为*编号*的这个变量。它不在原位插入任何内容。可以把一个随机数存起来然后以后多次使用（比如说放置几棵到一条随机但是却相同的轨道的排成一排的树）。下面关于 $Sub(<em>编号</em>) 的介绍处有几个使用实例。</p>
 
 <div id="warning">
-<h4 id="implementation-note">Implementation note</h4>
+<h4 id="程序实现备注">程序实现备注</h4>
 
-<p>While it is also possible to store non-numeric strings, it is not possible to include commas via $Chr(44) and have them work as a statement separator. However, it is possible to store a semicolon as the first character via $Chr(59) and have it work as a comment. For conditional expressions, you should use $Include or $If, though.</p>
+<p>虽然变量中也可以存储非数字的内容，还是不能把逗号通过$Chr(44)存进去然后希望它在使用时会起分隔符的作用。但是，可以把分号通过$Chr(59)存进去然后把它调用时放在开头使那一行成为注释。不过因为可以使用$Include和$If来进行条件判断，所以并没有必要这么干。</p>
 
 </div>
 
@@ -803,18 +808,18 @@ $Include(<em>File<sub>1</sub></em>; <em>Weight<sub>1</sub></em>; <em>File<sub>2<
 <hr />
 
 <div id="command">
-<p>$Sub(<em>Index</em>)</p>
+<p>$Sub(<em>编号</em>)</p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Index</em></strong>: A non-negative integer representing the index of the variable to retrieve.</p>
+<p><strong><em>编号</em></strong>：一个非负整数，代表要读出的变量编号。</p>
 
 </div>
 
 
-<p>This directive is replaced by the content of the variable <em>Index</em>. The variable must have been assigned prior to retrieving it.</p>
+<p>这个指令会在原位插入编号为*编号*的变量的内容。在读取前这个变量必须先被赋值。</p>
 
 <table style="border: none;">
   <tbody>
@@ -840,23 +845,23 @@ $Include(<em>File<sub>1</sub></em>; <em>Weight<sub>1</sub></em>; <em>File<sub>2<
   </tbody>
 </table>
 
-<p>In the previous example, all three Track.FreeObj commands are guaranteed to use the same randomly-generated value in order to place a free object on the same rail. If you inserted the $Rnd(3;5) directive in each of the three lines individually, the objects could be placed on different rails each time.</p>
+<p>在这个例子中，三个Track.FreeObj指令都使用同样的随机数值，所以这三个物体会被放在同一条随机的轨道边。如果使用三个$Rnd(3;5)而不是$Sub，这三个物体可能被单独放在不同的轨道边。</p>
 
 <hr />
 
 <div id="command">
-<p>$If(<em>Condition</em>)</p>
+<p>$If(<em>条件</em>)</p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Condition</em></strong>: A number that represents <strong>false</strong> if zero, and <strong>true</strong> otherwise.</p>
+<p><strong><em>条件</em></strong>：一个数值。如果它等于0，则它代表<strong>不成立</strong>的情况。如果它不等于0，则代表<strong>成立</strong>的情况。</p>
 
 </div>
 
 
-<p>The $If directive allows to only process subsequent expressions if the specified condition evaluates to true (any non-zero number). $If must be followed by $EndIf in any subsequent expression. Optionally, an $Else directive may appear between $If and $EndIf.</p>
+<p>$If(如果……那么)指令让游戏只在这个条件成立，即为非零值时才解析下面的线路指令。$If的后面必须有一个$EndIf。在$If和$EndIf之间也可以加一个$Else来表示条件是不成立的时要解析的指令。</p>
 
 <hr />
 
@@ -866,7 +871,7 @@ $Include(<em>File<sub>1</sub></em>; <em>Weight<sub>1</sub></em>; <em>File<sub>2<
 </div>
 
 
-<p>The $Else directive allows to only process subsequent expressions if the condition in the preceding $If evaluated to false (zero).</p>
+<p>$Else(否则)指令只在前面的$If的条件是不成立的时才解析下面的线路指令。</p>
 
 <hr />
 
@@ -876,7 +881,7 @@ $Include(<em>File<sub>1</sub></em>; <em>Weight<sub>1</sub></em>; <em>File<sub>2<
 </div>
 
 
-<p>The $EndIf directive marks the end of an $If block that was started previously.</p>
+<p>$EndIf指令标识前面的$If指令的影响范围到此结束。</p>
 
 <table style="border: none;">
   <tbody>
@@ -929,11 +934,11 @@ $If($Rnd(0;1)), .FreeObj 0; 4, $Else(), .FreeObj 0; 5, $EndIf()
   </tbody>
 </table>
 
-<p>It is possible to nest $If blocks. If you place $If/$Else/$EndIf on separate lines, you may want to employ indentation to improve readability of the block structure (as in the first example).</p>
+<p>可以嵌套$If指令。如果把$If/$Else/$EndIf放在不同的几行上，可以更清晰地表示块结构并使它更易读（例如第一个例子）。</p>
 
 <hr />
 
-<p><strong>Finally</strong>, after the $-directives have been processed, all expressions in the route file are sorted according to their associated track positions.</p>
+<p><strong>最后</strong>，当预处理结束，线路中的所有指令都会被按照轨道位置重新排序。</p>
 
 <table style="border: none;">
   <tbody>
@@ -959,6 +964,7 @@ Track.FreeObj 1; 42
   </tbody>
 </table>
 
+<p>经过预处理之后(假设随机结果是3):
 <table style="border: none;">
   <tbody>
   
@@ -981,8 +987,9 @@ Track.FreeObj 1; 42
        </td>
     </tr>
   </tbody>
-</table>
+</table></p>
 
+<p>最后被按照顺序重新排序:
 <table style="border: none;">
   <tbody>
   
@@ -1005,174 +1012,151 @@ Track.FreeObj 1; 42<br />
        </td>
     </tr>
   </tbody>
-</table>
+</table></p>
 
-<h2 id="a-name-options-a-4-the-options-namespace"><a name="options"></a>■ 4. The Options namespace</h2>
+<h2 id="a-name-options-a-4-options-选项-命名空间"><a name="options"></a>■ 4. Options (选项) 命名空间</h2>
 
-<p>Commands from this namespace provide generic options that affect the way other commands are processed. You should make use of commands from this namespace before making use of commands from other namespaces.</p>
+<p>这个命名空间里的指令设置一些基本设置，并影响其他指令的实际处理效果。所以应当在开始编写写其他指令之前先使用这些指令把设置都调整妥当。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>Options.UnitOfLength</strong> <em>FactorInMeters<sub>1</sub></em>; <em>FactorInMeters<sub>2</sub></em>; <em>FactorInMeters<sub>3</sub></em>; &hellip;; <em>FactorInMeters<sub>n</sub></em></p>
+<p><strong>Options.UnitOfLength</strong> <em>与米的换算系数<sub>1</sub></em>; <em>与米的换算系数<sub>2</sub></em>; <em>与米的换算系数<sub>3</sub></em>; &hellip;; <em>与米的换算系数<sub>n</sub></em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>FactorInMeters<sub>i</sub></em></strong>: A floating-point number representing how many meters the desired unit has. The default value is 1 for <em>FactorInMeters1</em>, and 0 for all others.</p>
+<p><strong><em>与米的换算系数<sub>i</sub></em></strong>：一个浮点数，表示一个单位等于多少米。*与米的换算系数1*的默认值是1，其他的默认值都是0。</p>
 
 </div>
 
 
-<p>This command can be used to specify the unit of length to be used in other commands. When entering a generic track position of the form <em>Part<sub>1</sub></em>:<em>Part<sub>2</sub></em>:&hellip;:<em>Part<sub>n</sub></em>, each of the <em>Part<sub>i</sub></em> will be multiplied with the corresponding <em>FactorInMeters<sub>i</sub></em>, then all of these products are added to form a single track position represented in meters. Ideally, you should set the block length to an integer multiple of any of the units you use via Options.BlockLength.</p>
+<p>这个指令可以被用来改变其他指令使用的长度单位。当和形如<em>部分<sub>1</sub></em>:<em>部分<sub>2</sub></em>:&hellip;:*部分<sub>n</sub>*的主轨道位置一起使用时，*部分<sub>i</sub>*会被乘上*系数<sub>i</sub>*，以此类推，真正的主轨道位置是所有积的和。更改了长度单位时，您也应同时使用 Options.BlockLength 将区间块长度也设为相应单位。</p>
 
-<p>Examples of conversion factors:</p>
+<p>换算系数的几个示例：</p>
 
 
 <table class='type0'>
 <thead>
 <tr>
-<th>Desired unit</th>
-<th>Conversion factor</th>
+<th>单位</th>
+<th>换算系数</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>mile</td>
+<td>哩/英里</td>
 <td>1609.344</td>
 </tr>
 
 <tr>
-<td>chain</td>
+<td>冈特测链</td>
 <td>20.1168</td>
 </tr>
 
 <tr>
-<td>meter</td>
+<td>米/公尺</td>
 <td>1</td>
 </tr>
 
 <tr>
-<td>yard</td>
+<td>码</td>
 <td>0.9144</td>
 </tr>
 
 <tr>
-<td>foot</td>
+<td>呎/英尺</td>
 <td>0.3048</td>
 </tr>
 </tbody>
 </table>
 
 
-<p>In the following, all arguments of all commands are highlighted in <font color="green">green</font> whenever they are affected by Options.UnitOfLength.</p>
+<p>在下面的示例中，会被Options.UnitOfLength影响的指令参数将被用<font color="green">绿色</font>表示。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>Options.UnitOfSpeed</strong> <em>FactorInKmph</em></p>
+<p><strong>Options.UnitOfSpeed</strong> <em>与千米每时的换算系数</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>FactorInKmph</em></strong>: A floating-point number representing how many kilometers per hour the desired unit has. The default value is 1.</p>
+<p><strong><em>与千米每时的换算系数</em></strong>：一个浮点数，表示一个单位等于多少千米每时。默认值是1。</p>
 
 </div>
 
 
-<p>This command can be used to specify the unit of speed to be used in other commands. Examples of conversion factors:</p>
+<p>这个指令可以被用来改变其他指令使用的速度单位。换算系数的几个示例：</p>
 
 
 <table class='type0'>
 <thead>
 <tr>
-<th>Desired unit</th>
-<th>Conversion factor</th>
+<th>单位</th>
+<th>换算系数</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>meters/second</td>
+<td>米每秒</td>
 <td>3.6</td>
 </tr>
 
 <tr>
-<td>miles/hour</td>
+<td>英里每时</td>
 <td>1.609344</td>
 </tr>
 
 <tr>
-<td>kilometers/hour</td>
+<td>千米每时</td>
 <td>1</td>
 </tr>
 </tbody>
 </table>
 
 
-<p>In the following, all arguments of all commands are highlighted in <font color="blue">blue</font> whenever they are affected by Options.UnitOfSpeed.</p>
+<p>在下面的示例中，会被Options.UnitOfSpeed影响的指令参数将被用<font color="blue">蓝色</font>表示。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>Options.BlockLength</strong> <em><font color="green">Length</font></em></p>
+<p><strong>Options.BlockLength</strong> <font color="green"><em>长度</em></font></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Length</em></strong>: A positive floating-point number representing the length of a block, <strong>by default</strong> measured in <strong>meters</strong>. The default is 25 meters.</p>
+<p><strong><em>长度</em></strong>：一个正浮点数，表示区间块的长度，<strong>默认</strong>的单位是<strong>米</strong>。默认值是25米。</p>
 
 </div>
 
 
-<p>This command can be used to specify the length of a block. This is an overall setting and cannot be changed in the middle of the route. <em>Length</em> is only expressed in the unit specified by Options.UnitOfLength if Options.UnitOfLength is used before Options.BlockLength.</p>
+<p>这个指令可以设置区间块的长度。这是个全局设置，一旦设置就不能来回更改。如果Options.UnitOfLength在该指令前被调用过，*长度*会使用Options.UnitOfLength作为单位。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>Options.ObjectVisibility</strong> <em>Mode</em></p>
+<p><strong>Options.ObjectVisibility</strong> <em>模式</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Mode</em></strong>: The mode determining how objects appear and disappear. The default value is 0 (legacy).</p>
+<p><strong><em>模式</em></strong>：游戏判断一个物体是否可视采用的算法。默认值是0（原版）。</p>
 
 </div>
 
 
-<p>▸ Available options for <em>Mode</em>:</p>
+<p>▸ *模式*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>0</strong>: Legacy: An object is made invisible as soon as the end of the block which it resides in has been passed by the camera. This does not work well when turning the camera around. Self-intersecting track (e.g. loops) is not possible.<br />
-<strong>1</strong>: Track-based: An object is made invisible as soon as its end has been passed by the camera. This is measured in track positions. Self-intersecting track (e.g. loops) is not possible.</p>
-
-</div>
-
-
-<hr />
-
-<div id="command">
-<p><strong>Options.SectionBehavior</strong> <em>Mode</em></p>
-
-</div>
-
-
-<div id="command-arguments">
-<p><strong><em>Mode</em></strong>: The mode determining how the Track.Section command is processed. The default value is 0 (default)</p>
-
-</div>
-
-
-<p>▸ Available options for <em>Mode</em>:</p>
-
-<div id="command-arguments">
-<p><strong>0</strong>: Default: In Track.Section <em>Aspect<sub>0</sub></em>; <em>Aspect<sub>1</sub></em>; &hellip;; <em>Aspect<sub>n</sub></em>, any of the <em>Aspect<sub>i</sub></em> refer to the aspect the section should have if <em>i</em> following sections are clear.<br />
-<strong>1</strong>: Simplified: In Track.Section <em>Aspect<sub>0</sub></em>; <em>Aspect<sub>1</sub></em>; &hellip;; <em>Aspect<sub>n</sub></em>, the section bears the smallest aspect which is higher than that of the following section.</p>
+<p><strong>0</strong>: 原版：当该物体所在的区间块已经被玩家通过，游戏就认为这个物体不再可见，也不再加载显示这个物体。游戏不会显示任何玩家后方的物体。在朝前看时不会有任何问题，但当向后看时所有物体都会消失，且没有任何途径可解决。自相交的轨道（例如环线）不会被正确显示。该设置会造成不正确且无法解决的视觉效果，保留且默认采取该设置只是为了兼容一些老线路。请不要在新线路中采用这个设置。
+<strong>1</strong>: 基于轨道：游戏仍然会加载列车后方可视范围内的物体。这是按照轨道位置计算的。可惜自相交的轨道（例如环线）还是不会被正确显示。推荐添加这个设置。</p>
 
 </div>
 
@@ -1180,22 +1164,22 @@ Track.FreeObj 1; 42<br />
 <hr />
 
 <div id="command">
-<p><strong>Options.CantBehavior</strong> <em>Mode</em></p>
+<p><strong>Options.SectionBehavior</strong> <em>模式</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Mode</em></strong>: The mode determining how cant in the Track.Curve command is processed. The default is 0 (unsigned).</p>
+<p><strong><em>模式</em></strong>：Track.Section指令应当被如何理解。默认值是0（默认）。</p>
 
 </div>
 
 
-<p>▸ Available options for <em>Mode</em>:</p>
+<p>▸ *模式*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>0</strong>: Unsigned: The <em>CantInMillimeters</em> parameter in Track.Curve is unsigned, i.e. the sign is ignored and the superelevation is always towards the curve center (inward). Cant cannot be applied on straight track.<br />
-<strong>1</strong>: Signed: The <em>CantInMillimeters</em> parameter in Track.Curve is signed, i.e. negative values bank outward and positive ones inward on curved track. Cant can be applied on straight track, where negative values bank toward the left and positive ones toward the right.</p>
+<p><strong>0</strong>: 默认：在Track.Section <em>状态<sub>0</sub></em>; <em>状态<sub>1</sub></em>; &hellip;; *状态<sub>n</sub>*中，任何一个*状态<sub>i</sub>*都代表当一个闭塞区间的前方有*i*个闭塞区间清空时要传达给信号机的信号状态。
+<strong>1</strong>: 简化：在Track.Section <em>状态<sub>0</sub></em>; <em>状态<sub>1</sub></em>; &hellip;; *状态<sub>n</sub>*中，每个闭塞区间的信号状态都是比它前面一个闭塞区间的状态值要高的最小值。</p>
 
 </div>
 
@@ -1203,22 +1187,22 @@ Track.FreeObj 1; 42<br />
 <hr />
 
 <div id="command">
-<p><strong>Options.FogBehavior</strong> <em>Mode</em></p>
+<p><strong>Options.CantBehavior</strong> <em>模式</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Mode</em></strong>: The mode determining how the Track.Fog command is processed. The default value is 0 (Block-based).</p>
+<p><strong><em>模式</em></strong>：Track.Curve指令应当被如何理解。默认值是0（忽略符号）</p>
 
 </div>
 
 
-<p>▸ Available options for <em>Mode</em>:</p>
+<p>▸ *模式*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>0</strong>: Block-based: Fog color and ranges are interpolated from the beginning of the block where Track.Fog is used with the old settings to the end of the block with the new settings.<br />
-<strong>1</strong>: Interpolated: Fog color and ranges are interpolated between adjacent Track.Fog commands. This behavior mimicks Track.Brightness.</p>
+<p><strong>0</strong>: 忽略符号：Track.Curve中的*CantInMillimeters*参数是无符号的，符号会被忽略，轨道总是会向弯道中心倾斜来提供弯道向心力。轨道不会在直道段倾斜。
+<strong>1</strong>: 保留符号：Track.Curve中的*CantInMillimeters*参数是有符号的，正值会使轨道向弯道中心倾斜，负值会使轨道向弯道外侧倾斜。轨道会在直道段倾斜，正值使轨道右倾，负值使轨道左倾。</p>
 
 </div>
 
@@ -1226,22 +1210,22 @@ Track.FreeObj 1; 42<br />
 <hr />
 
 <div id="command">
-<p><strong>Options.CompatibleTransparencyMode</strong> <em>Mode</em></p>
+<p><strong>Options.FogBehavior</strong> <em>模式</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Mode</em></strong>: The mode determining how transparencies are processed in BVE2/ BVE4 objects which use a restricted color pallet. This may be used on a per-route basis to override the value set in &lsquo;Options&rsquo;.</p>
+<p><strong><em>模式</em></strong>：Track.Fog命令应当被如何理解。默认值是0（基于区间块）</p>
 
 </div>
 
 
-<p>▸ Available options for <em>Mode</em>:</p>
+<p>▸ *模式*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>0</strong>: Off: Colors are matched specifically. If the specified transparent color does not exist within the color pallet, no transparency will be added.<br />
-<strong>1</strong>: On: Fuzzy matching. If the texture uses a restricted color pallet, the transparent color will be clamped to the nearest available color in the pallet.</p>
+<p><strong>0</strong>: 基于区间块：雾的颜色和范围从原先Track.Fog设置时的区间块的到新Track.Fog设置时的区间块以线性插值平滑过渡。
+<strong>1</strong>: 线性：雾的颜色和范围从两次Track.Fog调用的位置之间线性插值平滑过渡。这和Track.Brightness的效果类似。</p>
 
 </div>
 
@@ -1249,27 +1233,50 @@ Track.FreeObj 1; 42<br />
 <hr />
 
 <div id="command">
-<p><strong>Options.EnableBveTsHacks</strong> <em>Mode</em></p>
+<p><strong>Options.CompatibleTransparencyMode</strong> <em>模式</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Mode</em></strong>: The mode determining whether various hacks are applied in order to fix BVE2 / BVE4 content. This may be used on a per-route basis to override the value set in &lsquo;Options&rsquo;.</p>
+<p><strong><em>模式</em></strong>：当一个物体的材质使用的颜色通道不是真彩色时该如何判断透明区域。这可以在游戏设置中调整，但该指令可以超控游戏设置中的选项。</p>
 
 </div>
 
 
-<p>▸ Available options for <em>Mode</em>:</p>
+<p>▸ *模式*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>0</strong>: Off: Hacks are disabled.<br />
-<strong>1</strong>: On: Hacks are enabled.</p>
+<p><strong>0</strong>: 特定匹配：如果该图像使用的颜色通道色板内不包括设定的透明色，那么这个图象就会按不透明来处理。
+<strong>1</strong>: 模糊匹配：如果该图像使用的颜色通道色板内不包括设定的透明色，那么就转而匹配色板内与此最接近的颜色。</p>
 
 </div>
 
 
-<h2 id="a-name-route-a-5-the-route-namespace"><a name="route"></a>■ 5. The Route namespace</h2>
+<hr />
+
+<div id="command">
+<p><strong>Options.EnableBveTsHacks</strong> <em>模式</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>模式</em></strong>：是否应用几项对于部分奇葩的BVETs2/4线路的兼容性设置。这可以在游戏设置中调整，但该指令可以超控游戏设置中的选项。</p>
+
+</div>
+
+
+<p>▸ *模式*的可选项：</p>
+
+<div id="command-arguments">
+<p><strong>0</strong>: 不启用兼容模式。
+<strong>1</strong>: 启用兼容模式。</p>
+
+</div>
+
+
+<h2 id="a-name-route-a-5-route-路线-命名空间"><a name="route"></a>■ 5. Route (路线) 命名空间</h2>
 
 <p>Commands from this namespace define general properties of the route.</p>
 
