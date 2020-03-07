@@ -437,16 +437,16 @@
 <h2 id="内容目录">■ 内容目录</h2>
 
 <ul class='contents'>
-<li><a href="#overview">1. 综述</a></li>
-<li><a href="#syntax">2. 语法</a></li>
-<li><a href="#preprocessing">3. 预处理</a></li>
-<li><a href="#options">4. Options (配置) 命名空间</a></li>
-<li><a href="#route">5. Route (路线) 命名空间</a></li>
-<li><a href="#train">6. Train (列车) 命名空间</a></li>
-<li><a href="#structure">7. Structure (结构) 命名空间</a></li>
-<li><a href="#texture">8. Texture (材质) 命名空间</a></li>
-<li><a href="#cycle">9. Cycle (循环) 命名空间</a></li>
-<li><a href="#signal">10. Signal (信号) 命名空间</a></li>
+<li><a href="#overview"><a href="#overview">1. 综述</a>  </a></li>
+<li><a href="#syntax"><a href="#syntax">2. 语法</a>  </a></li>
+<li><a href="#preprocessing"><a href="#preprocessing">3. 预处理</a>  </a></li>
+<li><a href="#options"><a href="#options">4. Options (配置) 命名空间</a>  </a></li>
+<li><a href="#route"><a href="#route">5. Route (路线) 命名空间</a>  </a></li>
+<li><a href="#train"><a href="#train">6. Train (列车) 命名空间</a>  </a></li>
+<li><a href="#structure"><a href="#structure">7. Structure (结构) 命名空间</a>  </a></li>
+<li><a href="#texture"><a href="#texture">8. Texture (材质) 命名空间</a>  </a></li>
+<li><a href="#cycle"><a href="#cycle">9. Cycle (循环) 命名空间</a>  </a></li>
+<li><a href="#signal"><a href="#signal">10. Signal (信号) 命名空间</a>  </a></li>
 <li><a href="#track">11. Track (轨道) 命名空间</a>
 
 <ul class='contents'>
@@ -472,12 +472,13 @@
 
 <p>这个格式假设了一条游戏默认的主轨道（0号轨道），不可以指定它开始的位置，也不能结束它。和游戏中其他轨道不同的是，它从线路的开始一直延续到线路的终点，代表着玩家驾驶的列车行驶的轨道。除此之外，游戏中的其他轨道都是只供装饰，不能行驶的，但可以用 <a href="../../zh_cn/routes/xml/trackfollowingobject.html" target="_blank">轨道跟随物件</a> 来让AI车在其上行驶。</p>
 
-<p>可以几何意义上地弯曲和抬升默认的主轨道，而其他轨道都是相对于主轨道定义的，并随主轨道弯曲起伏。除非特别修改定义，线路中每25米划分为一个区间块，特定的命令只有在区间块的边界位置（整25米位置）才能发挥作用。物体的放置（尤其是在弯道上）总是基于一个坐标系，它的轴并不随轨道弯曲，而是直直地指向邻近的下一个区间块。
-* 有点不严谨地说，在CSV线路中和“章节”“部分”差不多。</p>
+<p>可以几何意义上地弯曲和抬升默认的主轨道，而其他轨道都是相对于主轨道定义的，并随主轨道弯曲起伏。除非特别修改定义，线路中每25米划分为一个区间块，特定的命令只有在区间块的边界位置（整25米位置）才能发挥作用。物体的放置（尤其是在弯道上）总是基于一个坐标系，它的轴并不随轨道弯曲，而是直直地指向邻近的下一个区间块。</p>
 
-<p>➟ <a href="../../zh_cn/routes/csv_quick.html" target="_blank">还可查阅这份CSV格式的快速参考手册&hellip;</a></p>
+<p>有点不严谨地说，在CSV线路中和“章节”“部分”差不多。</p>
 
-<h2 id="a-name-syntax-a-2-语法"><a name="syntax"></a>■ 2. 语法</h2>
+<h2 id="还可查阅这份csv格式的快速参考手册-hahahugoshortcode-0xc00438aa00-6-hbhb">➟ <a href="../../zh_cn/routes/csv_quick.html" target="_blank">还可查阅这份CSV格式的快速参考手册&hellip;</a></h2>
+
+<p><a name="syntax"></a>■ 2. 语法</p>
 
 <p>对于线路文件中的每一行，在开头和结尾的<a href="../../zh_cn/information/whitespaces.html" target="_blank">空格</a>会被统统忽略。然后，每一行指令都会按逗号(U+002C，英文半角的那个)分割。于是，每一行都会被看作这样一个格式：</p>
 
@@ -487,19 +488,19 @@
 </div>
 
 
-<p>表达式内容主要有以下类别：</p>
+<h5 id="表达式内容主要有以下类别">表达式内容主要有以下类别：</h5>
 
-<h5 id="注释">● 注释</h5>
+<p>● 注释</p>
 
-<p>注释就是给人看的，游戏完全不管的。以分号(U+003B，英文半角的那个)开头的表达式都会被视为注释。</p>
+<h5 id="注释就是给人看的-游戏完全不管的-以分号-u-003b-英文半角的那个-开头的表达式都会被视为注释">注释就是给人看的，游戏完全不管的。以分号(U+003B，英文半角的那个)开头的表达式都会被视为注释。</h5>
 
-<h5 id="主轨道位置">● 主轨道位置</h5>
+<p>● 主轨道位置</p>
 
 <p><div id="command">
 <p><em>位置数字</em></p>
 
 </div>
-
+<br />
 一个非负的 <a href="../../zh_cn/information/numberformats.html" target="_blank">严格格式</a> 浮点数，代表一个主轨道位置。随后的指令都将以此位置作为基准点。</p>
 
 <p><div id="command">
@@ -507,13 +508,13 @@
 
 </div>
 <br />
-这是一个配合Options.UnitOfLength的更加复杂的距离指定格式，可用于非公制计量单位。每一个 <em>部分<sub>i</sub></em> 都是 <a href="../../zh_cn/information/numberformats.html" target="_blank">炎严格格式</a> 的浮点数。 <em>部分<sub>1</sub></em> 会被乘上 <em>系数<sub>1</sub></em>, <em>部分<sub>2</sub></em> 乘上 *系数<sub>2</sub>*，以此类推，以此类推，真正的主轨道位置是所有积的和。这个结果必须是非负的。各部分被冒号(U+003A，英文半角的那个)分隔。如果想了解如何设定系数，请参见Options.UnitOfLength一节。</p>
+这是一个配合Options.UnitOfLength的更加复杂的距离指定格式，可用于非公制计量单位。每一个 <em>部分<sub>i</sub></em> 都是 <a href="../../zh_cn/information/numberformats.html" target="_blank">严格格式</a> 的浮点数。 <em>部分<sub>1</sub></em> 会被乘上 <em>系数<sub>1</sub></em>, <em>部分<sub>2</sub></em> 乘上 *系数<sub>2</sub>*，以此类推，以此类推，真正的主轨道位置是所有积的和。这个结果必须是非负的。各部分被冒号(U+003A，英文半角的那个)分隔。如果想了解如何设定系数，请参见Options.UnitOfLength一节。</p>
 
 <p>在任何参数中使用距离的命令中，这个冒号表示法就可以被使用，到时我们会用<font color="green">绿色</font>标出这种情况。</p>
 
-<p>当*n*个单位系数被使用Options.UnitOfLength定义，但是使用冒号表示法时输入的部分却少了，那么这些系数将会被向右匹配，在左边的会被忽略。因此，这几种表示方法是等效的：*0:0:2*，*0:2*，和<em>2</em>.</p>
+<h5 id="当-n-个单位系数被使用options-unitoflength定义-但是使用冒号表示法时输入的部分却少了-那么这些系数将会被向右匹配-在左边的会被忽略-因此-这几种表示方法是等效的-0-0-2-0-2-和-2">当*n*个单位系数被使用Options.UnitOfLength定义，但是使用冒号表示法时输入的部分却少了，那么这些系数将会被向右匹配，在左边的会被忽略。因此，这几种表示方法是等效的：*0:0:2*，*0:2*，和<em>2</em>.</h5>
 
-<h5 id="指令">● 指令</h5>
+<p>● 指令</p>
 
 <p>没有参数的指令：</p>
 
@@ -526,7 +527,7 @@
 <p>含有几个参数的指令：</p>
 
 <div id="command">
-<p><em>指令名称</em> <em>参数<sub>1</sub></em>;<em>参数<sub>2</sub></em>;<em>参数<sub>3</sub></em>;&hellip;;<em>参数<sub>n</sub></em>
+<p><em>指令名称</em> <em>参数<sub>1</sub></em>;<em>参数<sub>2</sub></em>;<em>参数<sub>3</sub></em>;&hellip;;<em>参数<sub>n</sub></em><br />
 <em>指令名称</em>(<em>参数<sub>1</sub></em>;<em>参数<sub>2</sub></em>;<em>参数<sub>3</sub></em>;&hellip;;<em>参数<sub>n</sub></em>)</p>
 
 </div>
@@ -535,8 +536,8 @@
 <p>不仅有参数还有后缀和编号的指令：</p>
 
 <div id="command">
-<p><em>指令名称</em>(<em>编号<sub>1</sub></em>;<em>编号<sub>2</sub></em>;&hellip;;<em>编号<sub>m</sub></em>) <em>参数<sub>1</sub></em>;<em>参数<sub>2</sub></em>;<em>参数<sub>3</sub></em>;&hellip;;<em>参数<sub>n</sub></em>
-<em>指令名称</em>(<em>编号<sub>1</sub></em>;<em>编号<sub>2</sub></em>;&hellip;;<em>编号<sub>m</sub></em>).<em>后缀</em> <em>参数<sub>1</sub></em>;<em>参数<sub>2</sub></em>;<em>参数<sub>3</sub></em>;&hellip;;<em>参数<sub>n</sub></em>
+<p><em>指令名称</em>(<em>编号<sub>1</sub></em>;<em>编号<sub>2</sub></em>;&hellip;;<em>编号<sub>m</sub></em>) <em>参数<sub>1</sub></em>;<em>参数<sub>2</sub></em>;<em>参数<sub>3</sub></em>;&hellip;;<em>参数<sub>n</sub></em><br />
+<em>指令名称</em>(<em>编号<sub>1</sub></em>;<em>编号<sub>2</sub></em>;&hellip;;<em>编号<sub>m</sub></em>).<em>后缀</em> <em>参数<sub>1</sub></em>;<em>参数<sub>2</sub></em>;<em>参数<sub>3</sub></em>;&hellip;;<em>参数<sub>n</sub></em><br />
 <em>指令名称</em>(<em>编号<sub>1</sub></em>;<em>编号<sub>2</sub></em>;&hellip;;<em>编号<sub>m</sub></em>).<em>后缀</em>(<em>参数<sub>1</sub></em>;<em>参数<sub>2</sub></em>;<em>参数<sub>3</sub></em>;&hellip;;<em>参数<sub>n</sub></em>)</p>
 
 </div>
@@ -548,14 +549,14 @@
 
 <p>如果要使用编号，它必须被成对括号(U+0028，英文半角在键盘9上面的那个)和(U+0029，英文半角在键盘0上面的那个)括起来。在使用编号时至少要提供一个参数和一个*后缀*。</p>
 
-<p>有两个使用参数的方法变种，除了$开头的预处理指令($Chr, $Rnd, $Sub, &hellip;)之外，可以按照个人喜好二选一。
-第一种方法：参数被至少一个空格(U+0020，平常用的那个)和编号、指令的大名以及*后缀*分开。
-第二种方法：参数被成对括号(U+0028，英文半角在键盘9上面的那个)和(U+0029，英文半角在键盘0上面的那个)括起来。
+<p>有两个使用参数的方法变种，除了$开头的预处理指令($Chr, $Rnd, $Sub, &hellip;)之外，可以按照个人喜好二选一。<br />
+第一种方法：参数被至少一个空格(U+0020，平常用的那个)和编号、指令的大名以及*后缀*分开。<br />
+第二种方法：参数被成对括号(U+0028，英文半角在键盘9上面的那个)和(U+0029，英文半角在键盘0上面的那个)括起来。<br />
 在第二种方法中，当使用编号时就必须使用*后缀*。在参数周围的空格都会被忽略。</p>
 
-<p>请注意在有些指令中，不管是用哪种表示方法，*后缀*都是必需的。在接下来的文档中，必需的*后缀*将被<strong>加粗</strong>，对于第一种方法加不加均可的后缀将被使用<font color="gray">灰色</font>表示。</p>
+<h5 id="请注意在有些指令中-不管是用哪种表示方法-后缀-都是必需的-在接下来的文档中-必需的-后缀-将被-加粗-对于第一种方法加不加均可的后缀将被使用-font-color-gray-灰色-font-表示">请注意在有些指令中，不管是用哪种表示方法，*后缀*都是必需的。在接下来的文档中，必需的*后缀*将被<strong>加粗</strong>，对于第一种方法加不加均可的后缀将被使用<font color="gray">灰色</font>表示。</h5>
 
-<h5 id="with-语句">● <strong>With</strong> 语句</h5>
+<p>● <strong>With</strong> 语句</p>
 
 <div id="command">
 <p>With <em>命名空间前缀</em></p>
@@ -583,7 +584,7 @@
 
 <p>和这个是等效的：</p>
 
-<table style="border: none;">
+<h2 id="hahahugoshortcode-0xc00438aa00-18-hbhb"><table style="border: none;">
   <tbody>
   
     <tr>
@@ -596,9 +597,9 @@ Route.Timetable 1157_M
        </td>
     </tr>
   </tbody>
-</table>
+</table></h2>
 
-<h2 id="a-name-preprocessing-a-3-预处理"><a name="preprocessing"></a>■ 3. 预处理</h2>
+<p><a name="preprocessing"></a>■ 3. 预处理</p>
 
 <p>Before any of the commands in the route file are actually interpreted, the expressions are preprocessed. The first thing done is to replace any occurrences of the $-directives within an expression from right to left. The $Chr, $Rnd and $Sub directives may be nested in any way, while $Include, $If, $Else and $EndIf must not appear inside another directive.</p>
 
@@ -620,7 +621,7 @@ $Include(<em>文件<sub>1</sub></em>; <em>权值<sub>1</sub></em>; <em>文件<su
 
 
 <div id="command-arguments">
-<p><strong><em>文件<sub>i</sub></em></strong>: 要被导入本线路的另一个文件。
+<p><strong><em>文件<sub>i</sub></em></strong>: 要被导入本线路的另一个文件。<br />
 <strong><em>权值<sub>i</sub></em></strong>: 一个正浮点数，表示对应的这个文件被使用的可能性大小。数越大，这个文件就越可能被随机选中。</p>
 
 </div>
@@ -655,61 +656,62 @@ $Include(<em>文件<sub>1</sub></em>; <em>权值<sub>1</sub></em>; <em>文件<su
 
 <p>这个指令会在原位插入一个对应*Ascii码*的字符。如果想要在某个地方放置一个字符却又不想破坏指令语法结构（比如站名里开头带空格、带括号逗号分号等，如果不这样加入就会被游戏误读），可以使用这个指令。有关的字符有：</p>
 
-
+<p>| 
 <table class='type0'>
 <thead>
 <tr>
+<th></th>
 <th>Ascii码</th>
 <th>含义</th>
-<th>对应字符</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td>10</td>
+<td>对应字符</td>
 <td>换行 (CR)</td>
-<td><em>newline</em></td>
 </tr>
 
 <tr>
 <td>13</td>
-<td>换行 (LF)</td>
 <td><em>newline</em></td>
+<td>换行 (LF)</td>
 </tr>
 
 <tr>
 <td>20</td>
+<td><em>newline</em></td>
 <td>空格</td>
-<td><em>space</em></td>
 </tr>
 
 <tr>
 <td>40</td>
+<td><em>space</em></td>
 <td>括号</td>
-<td>(</td>
 </tr>
 
 <tr>
 <td>41</td>
+<td>(</td>
 <td>回括号</td>
-<td>)</td>
 </tr>
 
 <tr>
 <td>44</td>
+<td>)</td>
 <td>逗号</td>
-<td>,</td>
 </tr>
 
 <tr>
 <td>59</td>
+<td>,</td>
 <td>分号</td>
-<td>;</td>
 </tr>
 </tbody>
 </table>
 
+<p>;</p>
 
 <p>&rdquo;$Chr(13)$Chr(10)&ldquo;(CRLF)代表一次换行。插入$Chr(59)可能基于它的位置被解释为注释开始或指令参数分隔符。</p>
 
@@ -722,7 +724,7 @@ $Include(<em>文件<sub>1</sub></em>; <em>权值<sub>1</sub></em>; <em>文件<su
 
 
 <div id="command-arguments">
-<p><strong><em>最小值</em></strong>：一个整数，代表随机数可以取的最小值。
+<p><strong><em>最小值</em></strong>：一个整数，代表随机数可以取的最小值。<br />
 <strong><em>最大值</em></strong>：一个整数，代表随机数可以取的最大值。</p>
 
 </div>
@@ -751,7 +753,7 @@ $Include(<em>文件<sub>1</sub></em>; <em>权值<sub>1</sub></em>; <em>文件<su
   </tbody>
 </table>
 
-<p>会产生以下三个结果之一：
+<p>会产生以下三个结果之一：<br />
 <table style="border: none;">
   <tbody>
   
@@ -784,7 +786,7 @@ $Include(<em>文件<sub>1</sub></em>; <em>权值<sub>1</sub></em>; <em>文件<su
 
 
 <div id="command-arguments">
-<p><strong><em>编号</em></strong>: 一个非负整数，代表要存储的变量编号。
+<p><strong><em>编号</em></strong>: 一个非负整数，代表要存储的变量编号。<br />
 <strong><em>表达式</em></strong>: 要存进这个变量的数字的值。</p>
 
 </div>
@@ -792,13 +794,13 @@ $Include(<em>文件<sub>1</sub></em>; <em>权值<sub>1</sub></em>; <em>文件<su
 
 <p>这个指令只应该单独出现，它将会把*表达式*的值赋给编号为*编号*的这个变量。它不在原位插入任何内容。可以把一个随机数存起来然后以后多次使用（比如说放置几棵到一条随机但是却相同的轨道的排成一排的树）。下面关于 $Sub(<em>编号</em>) 的介绍处有几个使用实例。</p>
 
-<div id="warning">
-<h4 id="程序实现备注">程序实现备注</h4>
+<h4 id="hahahugoshortcode-0xc00438aa00-32-hbhb"><div id="warning">
+<p>程序实现备注</p>
 
 <p>虽然变量中也可以存储非数字的内容，还是不能把逗号通过$Chr(44)存进去然后希望它在使用时会起分隔符的作用。但是，可以把分号通过$Chr(59)存进去然后把它调用时放在开头使那一行成为注释。不过因为可以使用$Include和$If来进行条件判断，所以并没有必要这么干。</p>
 
 </div>
-
+</h4>
 
 <hr />
 
@@ -959,7 +961,7 @@ Track.FreeObj 1; 42
   </tbody>
 </table>
 
-<p>经过预处理之后(假设随机结果是3):
+<p>经过预处理之后(假设随机结果是3):<br />
 <table style="border: none;">
   <tbody>
   
@@ -984,7 +986,8 @@ Track.FreeObj 1; 42
   </tbody>
 </table></p>
 
-<p>最后被按照顺序重新排序:
+<h2 id="最后被按照顺序重新排序">最后被按照顺序重新排序:</h2>
+
 <table style="border: none;">
   <tbody>
   
@@ -1007,9 +1010,9 @@ Track.FreeObj 1; 42<br />
        </td>
     </tr>
   </tbody>
-</table></p>
+</table>
 
-<h2 id="a-name-options-a-4-options-选项-命名空间"><a name="options"></a>■ 4. Options (选项) 命名空间</h2>
+<p><a name="options"></a>■ 4. Options (选项) 命名空间</p>
 
 <p>这个命名空间里的指令设置一些基本设置，并影响其他指令的实际处理效果。所以应当在开始编写写其他指令之前先使用这些指令把设置都调整妥当。</p>
 
@@ -1031,43 +1034,44 @@ Track.FreeObj 1; 42<br />
 
 <p>换算系数的几个示例：</p>
 
-
+<p>| 
 <table class='type0'>
 <thead>
 <tr>
+<th></th>
 <th>单位</th>
-<th>换算系数</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>哩/英里</td>
+<td>换算系数</td>
 <td>1609.344</td>
 </tr>
 
 <tr>
-<td>冈特测链</td>
+<td>哩/英里</td>
 <td>20.1168</td>
 </tr>
 
 <tr>
-<td>米/公尺</td>
+<td>冈特测链</td>
 <td>1</td>
 </tr>
 
 <tr>
-<td>码</td>
+<td>米/公尺</td>
 <td>0.9144</td>
 </tr>
 
 <tr>
-<td>呎/英尺</td>
+<td>码</td>
 <td>0.3048</td>
 </tr>
 </tbody>
 </table>
 
+<p>呎/英尺</p>
 
 <p>在下面的示例中，会被Options.UnitOfLength影响的指令参数将被用<font color="green">绿色</font>表示。</p>
 
@@ -1087,33 +1091,17 @@ Track.FreeObj 1; 42<br />
 
 <p>这个指令可以被用来改变其他指令使用的速度单位。换算系数的几个示例：</p>
 
+<p>| 
+<pre><code>| 单位 |
+</code></pre>
 
-<table class='type0'>
-<thead>
-<tr>
-<th>单位</th>
-<th>换算系数</th>
-</tr>
-</thead>
+<p>| &mdash;&mdash;&mdash;&mdash;&mdash; | &mdash;&mdash;&mdash;&mdash;&mdash;&ndash; |
+| 换算系数   | 3.6               |
+| 米每秒      | 1.609344          |
+| 英里每时 | 1                 |</p>
 
-<tbody>
-<tr>
-<td>米每秒</td>
-<td>3.6</td>
-</tr>
-
-<tr>
-<td>英里每时</td>
-<td>1.609344</td>
-</tr>
-
-<tr>
-<td>千米每时</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-
+<p>千米每时</p>
+</p>
 
 <p>在下面的示例中，会被Options.UnitOfSpeed影响的指令参数将被用<font color="blue">蓝色</font>表示。</p>
 
@@ -1150,7 +1138,7 @@ Track.FreeObj 1; 42<br />
 <p>▸ *模式*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>0</strong>: 原版：当该物体所在的区间块已经被玩家通过，游戏就认为这个物体不再可见，也不再加载显示这个物体。游戏不会显示任何玩家后方的物体。在朝前看时不会有任何问题，但当向后看时所有物体都会消失，且没有任何途径可解决。自相交的轨道（例如环线）不会被正确显示。该设置会造成不正确且无法解决的视觉效果，保留且默认采取该设置只是为了兼容一些老线路。请不要在新线路中采用这个设置。
+<p><strong>0</strong>: 原版：当该物体所在的区间块已经被玩家通过，游戏就认为这个物体不再可见，也不再加载显示这个物体。游戏不会显示任何玩家后方的物体。在朝前看时不会有任何问题，但当向后看时所有物体都会消失，且没有任何途径可解决。自相交的轨道（例如环线）不会被正确显示。该设置会造成不正确且无法解决的视觉效果，保留且默认采取该设置只是为了兼容一些老线路。请不要在新线路中采用这个设置。<br />
 <strong>1</strong>: 基于轨道：游戏仍然会加载列车后方可视范围内的物体。这是按照轨道位置计算的。可惜自相交的轨道（例如环线）还是不会被正确显示。推荐添加这个设置。</p>
 
 </div>
@@ -1173,7 +1161,7 @@ Track.FreeObj 1; 42<br />
 <p>▸ *模式*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>0</strong>: 默认：在Track.Section <em>状态<sub>0</sub></em>; <em>状态<sub>1</sub></em>; &hellip;; *状态<sub>n</sub>*中，任何一个*状态<sub>i</sub>*都代表当一个闭塞区间的前方有*i*个闭塞区间清空时要传达给信号机的信号状态。
+<p><strong>0</strong>: 默认：在Track.Section <em>状态<sub>0</sub></em>; <em>状态<sub>1</sub></em>; &hellip;; *状态<sub>n</sub>*中，任何一个*状态<sub>i</sub>*都代表当一个闭塞区间的前方有*i*个闭塞区间清空时要传达给信号机的信号状态。<br />
 <strong>1</strong>: 简化：在Track.Section <em>状态<sub>0</sub></em>; <em>状态<sub>1</sub></em>; &hellip;; *状态<sub>n</sub>*中，每个闭塞区间的信号状态都是比它前面一个闭塞区间的状态值要高的最小值。</p>
 
 </div>
@@ -1196,7 +1184,7 @@ Track.FreeObj 1; 42<br />
 <p>▸ *模式*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>0</strong>: 忽略符号：Track.Curve中的*CantInMillimeters*参数是无符号的，符号会被忽略，轨道总是会向弯道中心倾斜来提供弯道向心力。轨道不会在直道段倾斜。
+<p><strong>0</strong>: 忽略符号：Track.Curve中的*CantInMillimeters*参数是无符号的，符号会被忽略，轨道总是会向弯道中心倾斜来提供弯道向心力。轨道不会在直道段倾斜。<br />
 <strong>1</strong>: 保留符号：Track.Curve中的*CantInMillimeters*参数是有符号的，正值会使轨道向弯道中心倾斜，负值会使轨道向弯道外侧倾斜。轨道会在直道段倾斜，正值使轨道右倾，负值使轨道左倾。</p>
 
 </div>
@@ -1219,7 +1207,7 @@ Track.FreeObj 1; 42<br />
 <p>▸ *模式*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>0</strong>: 基于区间块：雾的颜色和范围从原先Track.Fog设置时的区间块的到新Track.Fog设置时的区间块以线性插值平滑过渡。
+<p><strong>0</strong>: 基于区间块：雾的颜色和范围从原先Track.Fog设置时的区间块的到新Track.Fog设置时的区间块以线性插值平滑过渡。<br />
 <strong>1</strong>: 线性：雾的颜色和范围从两次Track.Fog调用的位置之间线性插值平滑过渡。这和Track.Brightness的效果类似。</p>
 
 </div>
@@ -1242,7 +1230,7 @@ Track.FreeObj 1; 42<br />
 <p>▸ *模式*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>0</strong>: 特定匹配：如果该图像使用的颜色通道色板内不包括设定的透明色，那么这个图象就会按不透明来处理。
+<p><strong>0</strong>: 特定匹配：如果该图像使用的颜色通道色板内不包括设定的透明色，那么这个图象就会按不透明来处理。<br />
 <strong>1</strong>: 模糊匹配：如果该图像使用的颜色通道色板内不包括设定的透明色，那么就转而匹配色板内与此最接近的颜色。</p>
 
 </div>
@@ -1264,14 +1252,14 @@ Track.FreeObj 1; 42<br />
 
 <p>▸ *模式*的可选项：</p>
 
-<div id="command-arguments">
-<p><strong>0</strong>: 不启用兼容模式。
+<h2 id="hahahugoshortcode-0xc00438aa00-70-hbhb"><div id="command-arguments">
+<p><strong>0</strong>: 不启用兼容模式。<br />
 <strong>1</strong>: 启用兼容模式。</p>
 
 </div>
+</h2>
 
-
-<h2 id="a-name-route-a-5-route-路线-命名空间"><a name="route"></a>■ 5. Route (路线) 命名空间</h2>
+<p><a name="route"></a>■ 5. Route (路线) 命名空间</p>
 
 <p>这个命名空间里的指令设置一些线路的基本信息。</p>
 
@@ -1348,8 +1336,8 @@ Track.FreeObj 1; 42<br />
 <p>▸ *模式*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>-1</strong>：车载信号系统<strong>已被启动</strong>，制动手柄处于*最大常用制动*位置。
-<strong>0</strong>：车载信号系统<strong>已被启动</strong>，制动手柄处于<strong>紧急制动</strong>位置。
+<p><strong>-1</strong>：车载信号系统<strong>已被启动</strong>，制动手柄处于*最大常用制动*位置。<br />
+<strong>0</strong>：车载信号系统<strong>已被启动</strong>，制动手柄处于<strong>紧急制动</strong>位置。<br />
 <strong>1</strong>：车载信号系统*未被设置好*，制动手柄处于<strong>紧急制动</strong>位置。</p>
 
 </div>
@@ -1385,7 +1373,7 @@ Track.FreeObj 1; 42<br />
 
 
 <div id="command-arguments">
-<p><strong><em>状态编号</em></strong>：一个非负整数，代表信号状态。0代表前方没有区间空闲（红灯），1代表1个区间空闲，以此类推。
+<p><strong><em>状态编号</em></strong>：一个非负整数，代表信号状态。0代表前方没有区间空闲（红灯），1代表1个区间空闲，以此类推。<br />
 <font color="blue"><strong><em>速度</em></strong></font>：一个非负整数，代表这个信号状态下允许的最大通过速度。<strong>默认的</strong>单位是<strong>千米每时</strong>。</p>
 
 </div>
@@ -1393,55 +1381,56 @@ Track.FreeObj 1; 42<br />
 
 <p>用这个指令来设定信号状态所允许的最大通过速度。状态0代表前方没有区间空闲（红灯），1代表1个区间空闲，以此类推。默认值（根据默认的日式信号系统设置）是：</p>
 
-
+<p>| 
 <table class='type0'>
 <thead>
 <tr>
+<th></th>
 <th><em>状态编号</em></th>
 <th>显示</th>
-<th>允许速度</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td>0</td>
+<td>允许速度</td>
 <td><font color="#C00000">●</font></td>
-<td>0 km/h</td>
 </tr>
 
 <tr>
 <td>1</td>
+<td>0 km/h</td>
 <td><font color="#FFC000">●●</font></td>
-<td>25 km/h</td>
 </tr>
 
 <tr>
 <td>2</td>
+<td>25 km/h</td>
 <td><font color="#FFC000">●</font></td>
-<td>55 km/h</td>
 </tr>
 
 <tr>
 <td>3</td>
+<td>55 km/h</td>
 <td><font color="#00C000">●</font><font color="#FFC000">●</font></td>
-<td>75 km/h</td>
 </tr>
 
 <tr>
 <td>4</td>
+<td>75 km/h</td>
 <td><font color="#00C000">●</font></td>
-<td><em>没有限制</em></td>
 </tr>
 
 <tr>
 <td>5</td>
-<td><font color="#00C000">●●</font></td>
 <td><em>没有限制</em></td>
+<td><font color="#00C000">●●</font></td>
 </tr>
 </tbody>
 </table>
 
+<p><em>没有限制</em></p>
 
 <hr />
 
@@ -1531,7 +1520,7 @@ Track.FreeObj 1; 42<br />
 
 
 <div id="command-arguments">
-<p><strong><em>单位名称</em></strong>：当显示关于速度的信息时，使用的单位名称。
+<p><strong><em>单位名称</em></strong>：当显示关于速度的信息时，使用的单位名称。<br />
 <strong><em>换算系数</em></strong>：一个千米每时相当于几个单位。例如对于英里每时，换算系数是0.621371。</p>
 
 </div>
@@ -1594,9 +1583,9 @@ Track.FreeObj 1; 42<br />
 
 <p>该指令可以被用来替代*Route.AmbientLight*，*Route.DirectionalLight*和*Route.LightDirection*。</p>
 
-<p>它允许根据时间改变光照，具体细节在这一页上说明：</p>
+<p><a href="../../zh_cn/routes/xml/dynamiclight.html" target="_blank">它允许根据时间改变光照，具体细节在这一页上说明：</a></p>
 
-<p><a href="../../zh_cn/routes/xml/dynamiclight.html" target="_blank">动态光照系统</a></p>
+<p>动态光照系统</p>
 
 <hr />
 
@@ -1607,8 +1596,8 @@ Track.FreeObj 1; 42<br />
 
 
 <div id="command-arguments">
-<p><strong><em>红色分量</em></strong>：一个0~255之间的整数，表示漫射环境光颜色的红色值。默认值是160。
-<strong><em>绿色分量</em></strong>：一个0~255之间的整数，表示漫射环境光颜色的绿色值。默认值是160。：一个0~255之间的整数，表示漫射环境光颜色的红色值。默认值是160。
+<p><strong><em>红色分量</em></strong>：一个0~255之间的整数，表示漫射环境光颜色的红色值。默认值是160。<br />
+<strong><em>绿色分量</em></strong>：一个0~255之间的整数，表示漫射环境光颜色的绿色值。默认值是160。：一个0~255之间的整数，表示漫射环境光颜色的红色值。默认值是160。<br />
 <strong><em>蓝色分量</em></strong>：一个0~255之间的整数，表示漫射环境光颜色的蓝色值。默认值是160。</p>
 
 </div>
@@ -1625,8 +1614,8 @@ Track.FreeObj 1; 42<br />
 
 
 <div id="command-arguments">
-<p><strong><em>红色分量</em></strong>：一个0~255之间的整数，表示定向照射光颜色的红色值。默认值是160。
-<strong><em>绿色分量</em></strong>：一个0~255之间的整数，表示定向照射光颜色的绿色值。默认值是160。
+<p><strong><em>红色分量</em></strong>：一个0~255之间的整数，表示定向照射光颜色的红色值。默认值是160。<br />
+<strong><em>绿色分量</em></strong>：一个0~255之间的整数，表示定向照射光颜色的绿色值。默认值是160。<br />
 <strong><em>蓝色分量</em></strong>：一个0~255之间的整数，表示定向照射光颜色的蓝色值。默认值是160。</p>
 
 </div>
@@ -1643,7 +1632,7 @@ Track.FreeObj 1; 42<br />
 
 
 <div id="command-arguments">
-<p><strong><em>θ 倾斜角</em></strong>：一个以<strong>角度</strong>为单位的浮点数，控制定向光的仰角。默认值是60。
+<p><strong><em>θ 倾斜角</em></strong>：一个以<strong>角度</strong>为单位的浮点数，控制定向光的仰角。默认值是60。<br />
 <strong><em>φ 方位角</em></strong>：一个以<strong>角度</strong>为单位的浮点数，控制定向光的方位。默认值是-26.57。</p>
 
 </div>
@@ -1653,7 +1642,7 @@ Track.FreeObj 1; 42<br />
 
 <p><img src="../../images/illustration_light_direction.png" alt="__光照方向示意图" /></p>
 
-<p>将球面坐标(θ,φ)换算为直角坐标(x,y,z)的公式：
+<p>将球面坐标(θ,φ)换算为直角坐标(x,y,z)的公式：<br />
 <table style="border: none;">
   <tbody>
   
@@ -1677,7 +1666,7 @@ z = cos(theta) * cos(phi)
   </tbody>
 </table></p>
 
-<p>将直角坐标(x,y,z)换算为球面坐标(θ,φ)的公式（y²≠1）：
+<p>将直角坐标(x,y,z)换算为球面坐标(θ,φ)的公式（y²≠1）：<br />
 <table style="border: none;">
   <tbody>
   
@@ -1700,7 +1689,7 @@ phi = arctan(z,x)
   </tbody>
 </table></p>
 
-<p>将直角坐标(x,y,z)换算为球面坐标(θ,φ)的公式（y²=1）：
+<p>将直角坐标(x,y,z)换算为球面坐标(θ,φ)的公式（y²=1）：<br />
 <table style="border: none;">
   <tbody>
   
@@ -1723,12 +1712,12 @@ phi = 0
   </tbody>
 </table></p>
 
-<p><a href="http://functions.wolfram.com/ElementaryFunctions/Cos/02" target="_blank"><em>cos(x)</em></a> 代表余弦，
-<a href="http://functions.wolfram.com/ElementaryFunctions/Sin/02" target="_blank"><em>sin(x)</em></a> 代表正弦，
-<a href="http://functions.wolfram.com/ElementaryFunctions/ArcTan/02" target="_blank"><em>arctan(x)</em></a> 代表反正切，
-<a href="http://functions.wolfram.com/ElementaryFunctions/ArcTan2/02" target="_blank"><em>arctan(x,y)</em></a> 代表双变量反正切，
-<a href="http://functions.wolfram.com/ElementaryFunctions/Sqrt/02" target="_blank"><em>sqrt(x)</em></a> 代表平方根。
-如果更喜欢使用直角坐标的话，可以使用这些公式来进行转换。
+<p><a href="http://functions.wolfram.com/ElementaryFunctions/Cos/02" target="_blank"><em>cos(x)</em></a> 代表余弦，<br />
+<a href="http://functions.wolfram.com/ElementaryFunctions/Sin/02" target="_blank"><em>sin(x)</em></a> 代表正弦，<br />
+<a href="http://functions.wolfram.com/ElementaryFunctions/ArcTan/02" target="_blank"><em>arctan(x)</em></a> 代表反正切，<br />
+<a href="http://functions.wolfram.com/ElementaryFunctions/ArcTan2/02" target="_blank"><em>arctan(x,y)</em></a> 代表双变量反正切，<br />
+<a href="http://functions.wolfram.com/ElementaryFunctions/Sqrt/02" target="_blank"><em>sqrt(x)</em></a> 代表平方根。<br />
+如果更喜欢使用直角坐标的话，可以使用这些公式来进行转换。<br />
 这几条公式也作为定向光功能的数学证明（三角函数使用弧度制）。</p>
 
 <hr />
@@ -1740,10 +1729,10 @@ phi = 0
 
 
 <div id="command-arguments">
-<p><strong><em>模式</em></strong>：一个整数，代表游戏开始时摄像机的位置。可选项有：
-*0*：车内视点。（默认）
-*1*：轨道视点。
-*2*：定点观察。
+<p><strong><em>模式</em></strong>：一个整数，代表游戏开始时摄像机的位置。可选项有：<br />
+*0*：车内视点。（默认）<br />
+*1*：轨道视点。<br />
+*2*：定点观察。<br />
 *3*：定点观察（放大）。</p>
 
 </div>
@@ -1759,16 +1748,16 @@ phi = 0
 </div>
 
 
-<p><font color=#555555>该指令只被BVE4等使用，openBVE忽略这一指令。</font></p>
+<h2 id="font-color-555555-该指令只被bve4等使用-openbve忽略这一指令-font"><font color=#555555>该指令只被BVE4等使用，openBVE忽略这一指令。</font></h2>
 
-<h2 id="a-name-train-a-6-train-列车-命名空间"><a name="train"></a>■ 6. Train (列车) 命名空间</h2>
+<p><a name="train"></a>■ 6. Train (列车) 命名空间</p>
 
 <p>这个命名空间里的指令指定线路使用的列车。</p>
 
 <hr />
 
 <div id="command">
-<p>Train.Folder <em>文件夹名</em>
+<p>Train.Folder <em>文件夹名</em><br />
 Train.File <em>文件夹名</em></p>
 
 </div>
@@ -1783,14 +1772,14 @@ Train.File <em>文件夹名</em></p>
 <hr />
 
 <div id="command">
-<p><strong>Train.Run</strong>(<em>轨道类型编号</em>)<font color="gray">.Set</font> <em>走行音编号</em>
+<p><strong>Train.Run</strong>(<em>轨道类型编号</em>)<font color="gray">.Set</font> <em>走行音编号</em><br />
 <strong>Train.Rail</strong>(<em>轨道类型编号</em>)<font color="gray">.Set</font> <em>走行音编号</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>轨道类型编号</em></strong>：一个非负整数，代表一个轨道类型。这通过Structure.Rail设定，通过Track.RailType使用。
+<p><strong><em>轨道类型编号</em></strong>：一个非负整数，代表一个轨道类型。这通过Structure.Rail设定，通过Track.RailType使用。<br />
 <strong><em>走行音编号</em></strong>：一个非负整数，代表这个轨道类型使用的列车走行音。</p>
 
 </div>
@@ -1807,7 +1796,7 @@ Train.File <em>文件夹名</em></p>
 
 
 <div id="command-arguments">
-<p><strong><em>轨道类型编号</em></strong>：一个非负整数，代表一个轨道类型。这通过Structure.Rail设定，通过Track.RailType使用。
+<p><strong><em>轨道类型编号</em></strong>：一个非负整数，代表一个轨道类型。这通过Structure.Rail设定，通过Track.RailType使用。<br />
 <strong><em>轮缘摩擦声编号</em></strong>：一个非负整数，代表这个轨道类型使用的轮缘摩擦声。</p>
 
 </div>
@@ -1824,7 +1813,7 @@ Train.File <em>文件夹名</em></p>
 
 
 <div id="command-arguments">
-<p><strong><em>时刻表编号</em></strong>：一个非负整数，代表这个时刻表图片的编号。
+<p><strong><em>时刻表编号</em></strong>：一个非负整数，代表这个时刻表图片的编号。<br />
 <strong><em>文件名</em></strong>：时刻表图片被照亮的一版的文件名，路径应相对于列车文件夹（<sup>首先</sup>考虑），或相对于<strong>Objects</strong>文件夹（<sup>随后</sup>考虑）。</p>
 
 </div>
@@ -1841,7 +1830,7 @@ Train.File <em>文件夹名</em></p>
 
 
 <div id="command-arguments">
-<p><strong><em>时刻表编号</em></strong>：一个非负整数，代表这个时刻表图片的编号。
+<p><strong><em>时刻表编号</em></strong>：一个非负整数，代表这个时刻表图片的编号。<br />
 <strong><em>文件名</em></strong>：时刻表图片暗光照下的一版的文件名，路径应相对于列车文件夹（<sup>首先</sup>考虑），或相对于<strong>Objects</strong>文件夹（<sup>随后</sup>考虑）。</p>
 
 </div>
@@ -1925,9 +1914,9 @@ Train.File <em>文件夹名</em></p>
 </div>
 
 
-<p><font color=#555555>该指令已过时。OpenBVE忽略该指令。</font></p>
+<h2 id="font-color-555555-该指令已过时-openbve忽略该指令-font"><font color=#555555>该指令已过时。OpenBVE忽略该指令。</font></h2>
 
-<h2 id="a-name-structure-a-7-structure-结构-命名空间"><a name="structure"></a>■ 7. Structure (结构) 命名空间</h2>
+<p><a name="structure"></a>■ 7. Structure (结构) 命名空间</p>
 
 <p>这个命名空间里的指令用来载入在后面的其他指令中要用到的物体模型。总体来说，像Track.Rail、Track.FreeObj之类的命令通过*结构编号*来指定要使用的物体。这个*结构编号*对于这个指令是特定的，所以应当先载入要使用的模型。要使用哪个指令，要使用哪个模型，就把它们载入，不需要的就不用载入。</p>
 
@@ -1941,108 +1930,109 @@ Train.File <em>文件夹名</em></p>
 
 <p>*结构编号*是一个非负整数。*文件名*是一个相对于<strong>Object</strong>文件夹的路径，指向要加载的模型文件。*类型*是以下几种之一：</p>
 
-
+<p>| 
 <table class='type0'>
 <thead>
 <tr>
+<th></th>
 <th><em>类型</em>:</th>
-<th>简介</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
+<td>简介</td>
 <td>Ground</td>
+</tr>
+
+<tr>
 <td>用于Cycle.Ground和Track.Ground的地面模型。</td>
-</tr>
-
-<tr>
 <td>Rail</td>
+</tr>
+
+<tr>
 <td>用于Track.Rail、Track.RailStart和Track.RailType的轨道模型。</td>
-</tr>
-
-<tr>
 <td>WallL</td>
+</tr>
+
+<tr>
 <td>用于Track.Wall指令的左侧墙壁模型。</td>
-</tr>
-
-<tr>
 <td>WallR</td>
+</tr>
+
+<tr>
 <td>用于Track.Wall指令的右侧墙壁模型。</td>
-</tr>
-
-<tr>
 <td>DikeL</td>
+</tr>
+
+<tr>
 <td>用于Track.Dike指令的左侧路堤模型。</td>
-</tr>
-
-<tr>
 <td>DikeR</td>
+</tr>
+
+<tr>
 <td>用于Track.Dike指令的右侧路堤模型。</td>
-</tr>
-
-<tr>
 <td>FormL</td>
+</tr>
+
+<tr>
 <td>用于Track.Form指令的站台左边缘地面模型。</td>
-</tr>
-
-<tr>
 <td>FormR</td>
+</tr>
+
+<tr>
 <td>用于Track.Form指令的站台右边缘地面模型。</td>
-</tr>
-
-<tr>
 <td>FormCL</td>
+</tr>
+
+<tr>
 <td>用于Track.Form指令的可以被变换拉伸的站台左边缘地面模型。<font color="red">不支持ANIMATED格式带动画物体。</font></td>
-</tr>
-
-<tr>
 <td>FormCR</td>
+</tr>
+
+<tr>
 <td>用于Track.Form指令的可以被变换拉伸的站台右边缘地面模型。<font color="red">不支持ANIMATED格式带动画物体。</font></td>
-</tr>
-
-<tr>
 <td>RoofL</td>
+</tr>
+
+<tr>
 <td>用于Track.Form指令的站台左边缘顶棚模型。</td>
-</tr>
-
-<tr>
 <td>RoofR</td>
+</tr>
+
+<tr>
 <td>用于Track.Form指令的站台右边缘顶棚模型。</td>
-</tr>
-
-<tr>
 <td>RoofCL</td>
+</tr>
+
+<tr>
 <td>用于Track.Form指令的可以被变换拉伸的站台左边缘顶棚模型。 <font color="red">不支持ANIMATED格式带动画物体。</font></td>
-</tr>
-
-<tr>
 <td>RoofCR</td>
+</tr>
+
+<tr>
 <td>用于Track.Form指令的可以被变换拉伸的站台右边缘顶棚模型。 <font color="red">不支持ANIMATED格式带动画物体。</font></td>
-</tr>
-
-<tr>
 <td>CrackL</td>
+</tr>
+
+<tr>
 <td>用于Track.Crack指令的填充轨道间间隙的可以被变换拉伸的左侧地面模型。<font color="red">不支持ANIMATED格式带动画物体。</font></td>
-</tr>
-
-<tr>
 <td>CrackR</td>
+</tr>
+
+<tr>
 <td>用于Track.Crack指令的填充轨道间间隙的可以被变换拉伸的右侧地面模型。 <font color="red">不支持ANIMATED格式带动画物体。</font></td>
-</tr>
-
-<tr>
 <td>FreeObj</td>
-<td>用于Track.FreeObj指令在轨道旁放置的外景物体模型。</td>
 </tr>
 
 <tr>
+<td>用于Track.FreeObj指令在轨道旁放置的外景物体模型。</td>
 <td>Beacon</td>
-<td>用于Track.Beacon指令的轨旁无线电应答器模型。</td>
 </tr>
 </tbody>
 </table>
 
+<p>用于Track.Beacon指令的轨旁无线电应答器模型。</p>
 
 <p>这些指令可以加载B3D、CSV、X、L3DOBJ、S、OBJ和ANIMATED格式的模型。但是由于包含变换拉伸，FormCL、FormCR、RoofCL、RoofCR、CrackL和CrackR指令都不支持ANIMATED格式的模型。</p>
 
@@ -2057,16 +2047,16 @@ Train.File <em>文件夹名</em></p>
 
 
 <div id="command-arguments">
-<p><strong><em>额外轨道跨度值</em></strong>：一个非负整数，代表这个架线柱模型跨过的额外轨道数量。0代表跨度为1组轨道的架线柱，1代表2组轨道，以此类推。
-<strong><em>架线柱模型编号</em></strong>：一个非负整数，代表要加载到的模型编号。
+<p><strong><em>额外轨道跨度值</em></strong>：一个非负整数，代表这个架线柱模型跨过的额外轨道数量。0代表跨度为1组轨道的架线柱，1代表2组轨道，以此类推。<br />
+<strong><em>架线柱模型编号</em></strong>：一个非负整数，代表要加载到的模型编号。<br />
 <strong><em>文件名</em></strong>：一个相对于<strong>Object</strong>文件夹的路径，指向要加载的模型文件。</p>
 
 </div>
 
 
-<p>特别提示：除FreeObj之外的物体都是在区间块的开始位置被放置的，因此这些模型在建模时尺寸应当保证整个物体头尾的Z坐标伸展区域（放置时朝轨道前方的方向即Z轴正方向）在0~*区间块长度*（默认值为25m）之间（这样保证正好盖住整个区间块，否则出现空隙或相互重叠）。在Track命名空间中对应命令处有更详细的解释。</p>
+<h2 id="特别提示-除freeobj之外的物体都是在区间块的开始位置被放置的-因此这些模型在建模时尺寸应当保证整个物体头尾的z坐标伸展区域-放置时朝轨道前方的方向即z轴正方向-在0-区间块长度-默认值为25m-之间-这样保证正好盖住整个区间块-否则出现空隙或相互重叠-在track命名空间中对应命令处有更详细的解释">特别提示：除FreeObj之外的物体都是在区间块的开始位置被放置的，因此这些模型在建模时尺寸应当保证整个物体头尾的Z坐标伸展区域（放置时朝轨道前方的方向即Z轴正方向）在0~*区间块长度*（默认值为25m）之间（这样保证正好盖住整个区间块，否则出现空隙或相互重叠）。在Track命名空间中对应命令处有更详细的解释。</h2>
 
-<h2 id="a-name-texture-a-8-texture-材质-命名空间"><a name="texture"></a>■ 8. Texture (材质) 命名空间</h2>
+<p><a name="texture"></a>■ 8. Texture (材质) 命名空间</p>
 
 <p>这个命名空间中的指令指定要使用的天空背景图像和它对齐的方式。</p>
 
@@ -2080,9 +2070,9 @@ Train.File <em>文件夹名</em></p>
 
 <p>除非主轨道位置开头的Track.Back指令应用了一张不同的背景图，Texture.Background(0)的图像会在线路的开头被默认使用。</p>
 
-<p>也可以使用<strong><em>动态或基于模型的</em></strong>背景。这个页面详细描述了如何使用这一功能：</p>
+<p><a href="../../zh_cn/routes/xml/dynamicbackground.html" target="_blank">也可以使用<strong><em>动态或基于模型的</em></strong>背景。这个页面详细描述了如何使用这一功能：</a></p>
 
-<p><a href="../../zh_cn/routes/xml/dynamicbackground.html" target="_blank">动态和基于模型的背景</a></p>
+<p>动态和基于模型的背景</p>
 
 <hr />
 
@@ -2145,7 +2135,7 @@ Train.File <em>文件夹名</em></p>
 <p>▸ *模式*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>0</strong>：使用固定高度。
+<p><strong>0</strong>：使用固定高度。<br />
 <strong>1</strong>：保留宽高比。</p>
 
 </div>
@@ -2158,7 +2148,7 @@ Train.File <em>文件夹名</em></p>
 </div>
 
 
-<h2 id="a-name-cycle-a-9-cycle-循环-命名空间"><a name="cycle"></a>■ 9. Cycle (循环) 命名空间</h2>
+<p><a name="cycle"></a>■ 9. Cycle (循环) 命名空间</p>
 
 <div id="command">
 <p><strong>Cycle.Ground(<em>地面模型编号</em>)<font color="gray">.Params</font> <em>地面模型编号<sub>0</sub></em>; <em>地面模型编号<sub>1</sub></em>; <em>地面模型编号<sub>2</sub></em>; &hellip;; <em>地面模型编号<sub>n-1</sub></em></strong></p>
@@ -2167,7 +2157,7 @@ Train.File <em>文件夹名</em></p>
 
 
 <div id="command-arguments">
-<p><strong><em>地面模型编号</em></strong>：一个非负整数，指定哪一个地面模型编号要被定义为循环的。
+<p><strong><em>地面模型编号</em></strong>：一个非负整数，指定哪一个地面模型编号要被定义为循环的。<br />
 <strong><em>地面模型编号<sub>i</sub></em></strong>：一个非负整数，表示一个先前已经被加载的地面模型是循环的一部分。</p>
 
 </div>
@@ -2182,7 +2172,7 @@ Train.File <em>文件夹名</em></p>
 
 
 <div id="command-arguments">
-<p><strong><em>轨道模型编号</em></strong>：一个非负整数，指定哪一个轨道模型编号要被定义为循环的。
+<p><strong><em>轨道模型编号</em></strong>：一个非负整数，指定哪一个轨道模型编号要被定义为循环的。<br />
 <strong><em>轨道模型编号<sub>i</sub></em></strong>：一个非负整数，表示一个先前已经被加载的轨道模型是循环的一部分。</p>
 
 </div>
@@ -2230,7 +2220,7 @@ Train.File <em>文件夹名</em></p>
   </tbody>
 </table>
 
-<table style="border: none;">
+<h2 id="hahahugoshortcode-0xc00438aa00-165-hbhb"><table style="border: none;">
   <tbody>
   
     <tr>
@@ -2252,9 +2242,9 @@ With Track<br />
        </td>
     </tr>
   </tbody>
-</table>
+</table></h2>
 
-<h2 id="a-name-signal-a-10-signal-信号-命名空间"><a name="signal"></a>■ 10. Signal (信号) 命名空间</h2>
+<p><a name="signal"></a>■ 10. Signal (信号) 命名空间</p>
 
 <p>这个命名空间内的指令用来加载自定义信号机。</p>
 
@@ -2267,7 +2257,7 @@ With Track<br />
 
 
 <div id="command-arguments">
-<p><strong><em>信号机编号</em></strong>：一个非负整数，代表这类信号机的编号。
+<p><strong><em>信号机编号</em></strong>：一个非负整数，代表这类信号机的编号。<br />
 <strong><em>ANIMATED动画模型文件</em></strong>：一个相对于<strong>Object</strong>文件夹的路径，指向要加载的ANIMATED动画模型文件。</p>
 
 </div>
@@ -2284,8 +2274,8 @@ With Track<br />
 
 
 <div id="command-arguments">
-<p><strong><em>信号机编号</em></strong>：一个非负整数，代表这类信号机的编号。
-<strong><em>不带扩展名的基座模型文件</em></strong>：一个相对于<strong>Object</strong>文件夹的路径，指向要加载的基座B3D/CSV/……模型文件（不带扩展名）。<strong>必须指定。</strong>
+<p><strong><em>信号机编号</em></strong>：一个非负整数，代表这类信号机的编号。<br />
+<strong><em>不带扩展名的基座模型文件</em></strong>：一个相对于<strong>Object</strong>文件夹的路径，指向要加载的基座B3D/CSV/……模型文件（不带扩展名）。<strong>必须指定。</strong><br />
 <strong><em>不带扩展名的发光模型文件</em></strong>：一个相对于<strong>Object</strong>文件夹的路径，指向要加载的发光B3D/CSV/……模型文件（不带扩展名）。如果不需要发光效果，可以不指定。</p>
 
 </div>
@@ -2295,10 +2285,10 @@ With Track<br />
 
 <p>举个例子来说，对于*不带扩展名的基座模型文件*，应该有大概这样的一些文件：</p>
 
-<p><em>基座模型文件</em><strong>.csv</strong>
-<em>基座模型文件</em><strong><font color="red">0</font>.bmp</strong>
-<em>基座模型文件</em><strong><font color="red">1</font>.bmp</strong>
-<em>基座模型文件</em><strong><font color="red">2</font>.bmp</strong>
+<p><em>基座模型文件</em><strong>.csv</strong><br />
+<em>基座模型文件</em><strong><font color="red">0</font>.bmp</strong><br />
+<em>基座模型文件</em><strong><font color="red">1</font>.bmp</strong><br />
+<em>基座模型文件</em><strong><font color="red">2</font>.bmp</strong><br />
 <em>基座模型文件</em><strong><font color="red">n</font>.bmp</strong></p>
 
 <p>从0到*n*的这一串状态表示中，数值越大表示前方空闲区间越多，允许速度越快。0代表红灯。举个例子来说，内置的信号机是这样规定的：0 (<font color="#C00000">●</font>), 1 (<font color="#FFC000">●●</font>), 2 (<font color="#FFC000">●</font>), 3 (<font color="#00C000">●</font><font color="#FFC000">●</font>), 4 (<font color="#00C000">●</font>) 还有 5 (<font color="#00C000">●●</font>)。可以按照线路信号系统的实际情况增减设置。</p>
@@ -2307,51 +2297,35 @@ With Track<br />
 
 <p>发光模型材质的处理方法真的值得特别注意。发光模型材质是按照以下的步骤预处理的：</p>
 
+<p>| 
+<pre><code>                                                   | A                                                       | B                                                       | C                                                       | D                                                       | E                                                       |
+</code></pre>
 
-<table class='type0'>
-<thead>
-<tr>
-<th>A</th>
-<th>B</th>
-<th>C</th>
-<th>D</th>
-<th>E</th>
-<th>F</th>
-</tr>
-</thead>
+<p>| &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- | &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- | &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- | &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- | &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- | &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- |
+| F | <img src="../../images/illustration_glow_1.png" alt="illustration_glow_1" /> | <img src="../../images/illustration_glow_2.png" alt="illustration_glow_2" /> | <img src="../../images/illustration_glow_3.png" alt="illustration_glow_3" /> | <img src="../../images/illustration_glow_4.png" alt="illustration_glow_4" /> | <img src="../../images/illustration_glow_5.png" alt="illustration_glow_5" /> |</p>
 
-<tbody>
-<tr>
-<td><img src="../../images/illustration_glow_1.png" alt="illustration_glow_1" /></td>
-<td><img src="../../images/illustration_glow_2.png" alt="illustration_glow_2" /></td>
-<td><img src="../../images/illustration_glow_3.png" alt="illustration_glow_3" /></td>
-<td><img src="../../images/illustration_glow_4.png" alt="illustration_glow_4" /></td>
-<td><img src="../../images/illustration_glow_5.png" alt="illustration_glow_5" /></td>
-<td><img src="../../images/illustration_glow_6.png" alt="illustration_glow_6" /></td>
-</tr>
-</tbody>
-</table>
-
+<p><img src="../../images/illustration_glow_6.png" alt="illustration_glow_6" /></p>
+</p>
 
 <p>用作发光材质的图像一般来说应该是椭圆的并且应该有一个锐利的边缘。图形的中心应该完全饱和，并在其外缘加入纯白色。图形的外边既可以是纯黑 (A) 也可以是纯白 (B)。</p>
 
 <p>当openBVE加载这个发光材质时，它会把所有纯黑颜色都换成纯白颜色，变成 (B) 的样子。之后，图像会被反色 &copy;，然后进行180°的色调偏移 (D) 。比起 (B) 来说，这使整幅图像的亮度反转，即满饱和的颜色不会被改变（例如中心），亮颜色（例如图形外框）将会变暗，反之亦然。然后，将会进行亮度校正使暗部更暗 (E)，最后再稍稍加上一点模糊效果 (F)。</p>
 
-<p>结果所得到的材质是被叠加混合的。这意味着不是直接在屏幕上覆盖性地绘制材质，而是将材质的颜色以RGB通道值相加的方法叠加在屏幕像素上。加上黑色不会改变原有颜色，而加上完全饱和的颜色就会覆盖原有颜色。例如，加上白色就会得到白色。在设计材质时，请牢记这个处理过程，并遵循它的逆规则。一定要设计出 (A) 或 (B) 这样的图像。</p>
+<h2 id="结果所得到的材质是被叠加混合的-这意味着不是直接在屏幕上覆盖性地绘制材质-而是将材质的颜色以rgb通道值相加的方法叠加在屏幕像素上-加上黑色不会改变原有颜色-而加上完全饱和的颜色就会覆盖原有颜色-例如-加上白色就会得到白色-在设计材质时-请牢记这个处理过程-并遵循它的逆规则-一定要设计出-a-或-b-这样的图像">结果所得到的材质是被叠加混合的。这意味着不是直接在屏幕上覆盖性地绘制材质，而是将材质的颜色以RGB通道值相加的方法叠加在屏幕像素上。加上黑色不会改变原有颜色，而加上完全饱和的颜色就会覆盖原有颜色。例如，加上白色就会得到白色。在设计材质时，请牢记这个处理过程，并遵循它的逆规则。一定要设计出 (A) 或 (B) 这样的图像。</h2>
 
-<h2 id="a-name-track-a-11-track-轨道-命名空间"><a name="track"></a>■ 11. Track (轨道) 命名空间</h2>
+<p><a name="track"></a>■ 11. Track (轨道) 命名空间</p>
 
 <p>这个命名空间中的指令定义了轨道的布局。这个命名空间内的指令应该出现在所有其他指令之后，一般位于线路文件的最后部分，且代码量基本都要远超其他部分。</p>
 
-<div id="notice">
-<h4 id="使用主轨道位置">使用主轨道位置</h4>
+<h4 id="hahahugoshortcode-0xc00438aa00-171-hbhb"><div id="notice">
+<p>使用主轨道位置</p>
 
 <p>Track命名空间内的所有指令都需要和一个主轨道位置联系起来，这表示该指令执行的位置。一旦出现一个主轨道位置表达式，它后面的Track指令都会在这个位置执行，直到一个新的主轨道位置表达式指定一个新的位置。在主轨道位置表达式出现前写出的Track指令默认会在0位置执行。由于指令会被自动地排序和执行，所以并不一定需要把主轨道位置按照固定顺序写（虽然按照顺序写可以使结构更加清晰）。虽然主轨道位置可以是任意非负浮点数，有一些指令是<strong>只可以在区间块开始位置（默认为25m的整倍数位置）</strong>被使用的。默认情况下这意味着它们必须被放在0、25、50、75、100、125、以此类推的位置上。下面有这个特别限制的指令都会被标注出来。</p>
 
 </div>
+</h4>
 
-
-<h5 id="a-name-track-rails-a-11-1-轨道"><a name="track_rails"></a>● 11.1. 轨道</h5>
+<p><a name="track_rails"></a>● 11.1. 轨道</p>
 
 <hr />
 
@@ -2362,9 +2336,9 @@ With Track<br />
 
 
 <div id="command-arguments">
-<p><strong><em>轨道编号</em></strong>：一个正整数(<strong>&gt;=1</strong>)表示这个编号的轨道从这里开始。
-<strong><font color="green"><em>X</em></font></strong>：一个浮点数，表示该轨道和主轨道之间的水平距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向右偏移，负值代表向左偏移。
-<strong><font color="green"><em>Y</em></font></strong>：一个浮点数，表示该轨道和主轨道之间的垂直距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向上偏移，负值代表向下偏移。
+<p><strong><em>轨道编号</em></strong>：一个正整数(<strong>&gt;=1</strong>)表示这个编号的轨道从这里开始。<br />
+<strong><font color="green"><em>X</em></font></strong>：一个浮点数，表示该轨道和主轨道之间的水平距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向右偏移，负值代表向左偏移。<br />
+<strong><font color="green"><em>Y</em></font></strong>：一个浮点数，表示该轨道和主轨道之间的垂直距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向上偏移，负值代表向下偏移。<br />
 <strong><em>轨道类型</em></strong>：一个非负整数，表示一个由Structure.Rail或Structure.Cycle指令先前已经载入的模型编号。</p>
 
 </div>
@@ -2388,9 +2362,9 @@ With Track<br />
 
 
 <div id="command-arguments">
-<p><strong><em>轨道编号</em></strong>：一个正整数(<strong>&gt;=1</strong>)表示这个编号的轨道要被修改。
-<strong><font color="green"><em>X</em></font></strong>：一个浮点数，表示该轨道和主轨道之间的水平距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向右偏移，负值代表向左偏移。
-<strong><font color="green"><em>Y</em></font></strong>：一个浮点数，表示该轨道和主轨道之间的垂直距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向上偏移，负值代表向下偏移。
+<p><strong><em>轨道编号</em></strong>：一个正整数(<strong>&gt;=1</strong>)表示这个编号的轨道要被修改。<br />
+<strong><font color="green"><em>X</em></font></strong>：一个浮点数，表示该轨道和主轨道之间的水平距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向右偏移，负值代表向左偏移。<br />
+<strong><font color="green"><em>Y</em></font></strong>：一个浮点数，表示该轨道和主轨道之间的垂直距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向上偏移，负值代表向下偏移。<br />
 <strong><em>轨道类型</em></strong>：一个非负整数，表示一个由Structure.Rail或Structure.Cycle指令先前已经载入的模型编号。</p>
 
 </div>
@@ -2412,13 +2386,13 @@ With Track<br />
 </div>
 
 
-<div id="notice">
-<h4 id="对比track-railstart和track-rail">对比Track.RailStart和Track.Rail</h4>
+<h4 id="hahahugoshortcode-0xc00438aa00-179-hbhb"><div id="notice">
+<p>对比Track.RailStart和Track.Rail</p>
 
 <p>这两个都可以用来开始一条轨道。但是当使用Track.RailStart时，openBVE将会检查这个*编号*是否已被占用。所以，使用Track.RailStart来开始轨道是更为明确的，且可以避免由于失误造成的bug。译注：可惜很无奈Hmmsim并不支持Track.RailStart，所以要用Hmmsim的话没得选。</p>
 
 </div>
-
+</h4>
 
 <hr />
 
@@ -2429,7 +2403,7 @@ With Track<br />
 
 
 <div id="command-arguments">
-<p><strong><em>轨道编号</em></strong>：一个非负整数，代表要进行改变的轨道编号。主轨道编号为<strong>0</strong>。默认值是0.
+<p><strong><em>轨道编号</em></strong>：一个非负整数，代表要进行改变的轨道编号。主轨道编号为<strong>0</strong>。默认值是0.<br />
 <strong><em>轨道类型</em></strong>：一个非负整数，表示一个由Structure.Rail或Structure.Cycle指令先前已经载入的模型编号。默认值是0。</p>
 
 </div>
@@ -2453,8 +2427,8 @@ With Track<br />
 
 
 <div id="command-arguments">
-<p><strong><em>轨道编号</em></strong>：一个正整数(&gt;=1)表示这个编号的轨道要被结束。
-<strong><font color="green"><em>X</em></font></strong>：一个浮点数，表示该轨道和主轨道之间的水平距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向右偏移，负值代表向左偏移。
+<p><strong><em>轨道编号</em></strong>：一个正整数(&gt;=1)表示这个编号的轨道要被结束。<br />
+<strong><font color="green"><em>X</em></font></strong>：一个浮点数，表示该轨道和主轨道之间的水平距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向右偏移，负值代表向左偏移。<br />
 <strong><font color="green"><em>Y</em></font></strong>：一个浮点数，表示该轨道和主轨道之间的垂直距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向上偏移，负值代表向下偏移。</p>
 
 </div>
@@ -2533,9 +2507,9 @@ With Track<br />
 </div>
 
 
-<p>该指令设定之后轨道的附着系数。这会影响车轮打滑等物理计算。作为参考，干燥轨面大约是135，湿滑轨面大约是70，降雪轨面大约是50。如果附着系数是0，意味着轨面完全理想光滑，列车车轮将一直打滑，根本不可能移动。</p>
+<h5 id="该指令设定之后轨道的附着系数-这会影响车轮打滑等物理计算-作为参考-干燥轨面大约是135-湿滑轨面大约是70-降雪轨面大约是50-如果附着系数是0-意味着轨面完全理想光滑-列车车轮将一直打滑-根本不可能移动">该指令设定之后轨道的附着系数。这会影响车轮打滑等物理计算。作为参考，干燥轨面大约是135，湿滑轨面大约是70，降雪轨面大约是50。如果附着系数是0，意味着轨面完全理想光滑，列车车轮将一直打滑，根本不可能移动。</h5>
 
-<h5 id="a-name-track-geometry-a-11-2-几何变换"><a name="track_geometry"></a>● 11.2. 几何变换</h5>
+<p><a name="track_geometry"></a>● 11.2. 几何变换</p>
 
 <hr />
 
@@ -2590,7 +2564,7 @@ With Track<br />
 
 
 <div id="command-arguments">
-<p><strong><font color="green"><em>半径</em></font></strong>：一个浮点数，表示转弯的半径。<strong>默认的</strong>单位是<strong>米</strong>。默认值是0。
+<p><strong><font color="green"><em>半径</em></font></strong>：一个浮点数，表示转弯的半径。<strong>默认的</strong>单位是<strong>米</strong>。默认值是0。<br />
 <strong><em>超高</em></strong>：一个浮点数，代表弯道的超高（外侧轨道比内侧轨道高出的高度，用来提供向心力），单位<strong>一定</strong>是<strong>毫米</strong>（千分之一米）。默认值是0。另参见Options.CantBehavior。</p>
 
 </div>
@@ -2711,7 +2685,7 @@ With Track<br />
        </td>
     </tr>
   </tbody>
-</table>
+</table><br />
 作为参考顺便提一句，有很多轨道模型都是0.3米高的。</p>
 
 <div id="warning">
@@ -2721,7 +2695,7 @@ With Track<br />
 </div>
 
 
-<h5 id="a-name-track-objects-a-11-3-物件"><a name="track_objects"></a>● 11.3. 物件</h5>
+<p><a name="track_objects"></a>● 11.3. 物件</p>
 
 <hr />
 
@@ -2732,12 +2706,12 @@ With Track<br />
 
 
 <div id="command-arguments">
-<p><strong><em>轨道编号</em></strong>：一个非负整数，指定这个物体要被放在哪一条轨道旁。默认值是0.
-<strong><em>外景物体模型编号</em></strong>：一个非负整数，指定要被放置的物体模型。默认值是0。
-<strong><font color="green"><em>水平位置</em></font></strong>：物体距离轨道中心的水平距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向右，负值代表向左。默认值是0。
-<strong><font color="green"><em>垂直位置</em></font></strong>：物体距离轨道中心的垂直距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向上，负值代表向下。默认值是0。这个距离是直线距离，在弯道处并不随轨道弯曲。
-<strong><em>偏转角</em></strong>：该物体在XZ平面上转动的角度（相对于上方顺时针）。默认值是0。
-<strong><em>俯仰角</em></strong>：该物体在YZ平面上转动的角度（相对于左方顺时针）。默认值是0。
+<p><strong><em>轨道编号</em></strong>：一个非负整数，指定这个物体要被放在哪一条轨道旁。默认值是0.<br />
+<strong><em>外景物体模型编号</em></strong>：一个非负整数，指定要被放置的物体模型。默认值是0。<br />
+<strong><font color="green"><em>水平位置</em></font></strong>：物体距离轨道中心的水平距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向右，负值代表向左。默认值是0。<br />
+<strong><font color="green"><em>垂直位置</em></font></strong>：物体距离轨道中心的垂直距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向上，负值代表向下。默认值是0。这个距离是直线距离，在弯道处并不随轨道弯曲。<br />
+<strong><em>偏转角</em></strong>：该物体在XZ平面上转动的角度（相对于上方顺时针）。默认值是0。<br />
+<strong><em>俯仰角</em></strong>：该物体在YZ平面上转动的角度（相对于左方顺时针）。默认值是0。<br />
 <strong><em>侧倾角</em></strong>：该物体在XY平面上转动的角度（相对于后方顺时针）。默认值是0。</p>
 
 </div>
@@ -2754,8 +2728,8 @@ With Track<br />
 
 
 <div id="command-arguments">
-<p><strong><em>轨道编号</em></strong>：一个非负整数，指定要放置墙壁的轨道。
-<strong><em>方向</em></strong>：指示要放置墙壁的方向。
+<p><strong><em>轨道编号</em></strong>：一个非负整数，指定要放置墙壁的轨道。<br />
+<strong><em>方向</em></strong>：指示要放置墙壁的方向。<br />
 <strong><em>墙壁模型编号</em></strong>：一个非负整数，指定要被放置的墙壁模型。默认值是0。</p>
 
 </div>
@@ -2764,8 +2738,8 @@ With Track<br />
 <p>▸ *方向*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>-1</strong>：放置左侧墙壁(WallL)。
-<strong>0</strong>：放置双侧墙壁(WallL+WallR)。
+<p><strong>-1</strong>：放置左侧墙壁(WallL)。<br />
+<strong>0</strong>：放置双侧墙壁(WallL+WallR)。<br />
 <strong>1</strong>：放置右侧墙壁(WallR)。</p>
 
 </div>
@@ -2812,8 +2786,8 @@ With Track<br />
 
 
 <div id="command-arguments">
-<p><strong><em>轨道编号</em></strong>：一个非负整数，指定要放置路堤的轨道。默认值是0。
-<strong><em>方向</em></strong>：指示要放置路堤的方向。
+<p><strong><em>轨道编号</em></strong>：一个非负整数，指定要放置路堤的轨道。默认值是0。<br />
+<strong><em>方向</em></strong>：指示要放置路堤的方向。<br />
 <strong><em>路堤模型编号</em></strong>：一个非负整数，指定要被放置的路堤模型。默认值是0。</p>
 
 </div>
@@ -2822,8 +2796,8 @@ With Track<br />
 <p>▸ *方向*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>-1</strong>：放置左侧路堤(DikeL)。
-<strong>0</strong>：放置双侧路堤(DikeL+DikeR)。
+<p><strong>-1</strong>：放置左侧路堤(DikeL)。<br />
+<strong>0</strong>：放置双侧路堤(DikeL+DikeR)。<br />
 <strong>1</strong>：放置右侧路堤(DikeR)。</p>
 
 </div>
@@ -2870,10 +2844,10 @@ With Track<br />
 
 
 <div id="command-arguments">
-<p><strong><em>轨道编号</em></strong>：一个非负整数，指定要放置架线柱的轨道。默认值是0。
-<strong><em>额外轨道跨度值</em></strong>：一个非负整数，代表这个架线柱模型跨过的额外轨道数量。（即这个轨道，再加上 <em>额外轨道跨度值</em> 条轨道）0代表跨度为1组轨道的架线柱，1代表2组轨道，以此类推。默认值是0。
-<strong><em>位置</em></strong>：指定以3.8米的倍数的放置位置的水平位置（详情见下）。当*额外轨道跨度值*为0时指定放置的方向。
-<strong><em>间隔</em></strong>：一个*为区间块长度的倍数*的整数，指定每两个架线柱之间的距离。
+<p><strong><em>轨道编号</em></strong>：一个非负整数，指定要放置架线柱的轨道。默认值是0。<br />
+<strong><em>额外轨道跨度值</em></strong>：一个非负整数，代表这个架线柱模型跨过的额外轨道数量。（即这个轨道，再加上 <em>额外轨道跨度值</em> 条轨道）0代表跨度为1组轨道的架线柱，1代表2组轨道，以此类推。默认值是0。<br />
+<strong><em>位置</em></strong>：指定以3.8米的倍数的放置位置的水平位置（详情见下）。当*额外轨道跨度值*为0时指定放置的方向。<br />
+<strong><em>间隔</em></strong>：一个*为区间块长度的倍数*的整数，指定每两个架线柱之间的距离。<br />
 <strong><em>架线柱模型编号</em></strong>：一个非负整数，指定要被放置的架线柱模型。默认值是0。</p>
 
 </div>
@@ -2922,14 +2896,14 @@ With Track<br />
 <p>该指令将一个物件缩放拉伸，以填补轨道之间的空隙。</p>
 
 <div id="command-arguments">
-<p><strong><em>轨道编号<sub>1</sub></em></strong>：一个非负整数，指定第一条轨道。
-<strong><em>轨道编号<sub>2</sub></em></strong>：一个非负整数，指定另一条轨道。
+<p><strong><em>轨道编号<sub>1</sub></em></strong>：一个非负整数，指定第一条轨道。<br />
+<strong><em>轨道编号<sub>2</sub></em></strong>：一个非负整数，指定另一条轨道。<br />
 <strong><em>填充间隙地面模型编号</em></strong>：一个非负整数，指定要用来填充间隙的模型(Structure.Crack)。默认值是0。</p>
 
 </div>
 
 
-<p><strong>注意:</strong>
+<p><strong>注意:</strong><br />
 如果 <em>轨道编号<sub>1</sub></em> 处于 <em>轨道编号<sub>2</sub></em> 的<strong>左侧</strong>（即：其X坐标更小），则使用Structure.CrackL定义的物件，否则使用CrackR。</p>
 
 <hr />
@@ -2955,7 +2929,7 @@ With Track<br />
 </div>
 
 
-<h5 id="a-name-track-stations-a-11-4-车站"><a name="track_stations"></a>● 11.4. 车站</h5>
+<p><a name="track_stations"></a>● 11.4. 车站</p>
 
 <hr />
 
@@ -2966,27 +2940,27 @@ With Track<br />
 
 
 <div id="command-arguments">
-<p><strong><em>站名</em></strong>：该车站的站名。将会在时刻表和提示信息中显示，所以不应留空。
-<strong><em>到达时间</em></strong>：玩家驾驶的列车应当到达此站的<a href="../../zh_cn/information/numberformats.html#times">时间</a>。可以使用特殊值表示额外信息——见下。
-<strong><em>发车时间</em></strong>：玩家驾驶的列车应当从此站发车的<a href="../../zh_cn/information/numberformats.html#times">时间</a>。可以使用特殊值表示额外信息——见下。
-<strong><em>停车铃</em></strong>：指示停车警铃设备（如果列车有安装）是否应该鸣响以提示列车驾驶在这站停车。默认值是0。
-<strong><em>开门方向</em></strong>：指示列车应开启的车门方向。默认值是0。
-<strong><em>强制红灯</em></strong>：指示是否应该将最后一个停车点后方的信号机（发车信号机）在玩家驾驶列车接近时设为红色。默认值是0。
-<strong><em>信号系统</em></strong>：指示从此站到下一站之间的区间安装的列车信号系统。默认值是0。
-<strong><em>到达广播</em></strong>：一个相对于<strong>Sound</strong>文件夹的路径，指向列车停站时播放的音频。
-<strong><em>停车时间</em></strong>：一个正浮点数表示列车在车站的最小停车时间（包括开关门时间）。默认值是15。
-<strong><em>乘车率</em></strong>：一个非负浮点数表示在该站列车上乘客的相对数量。作为参考，100差不多是正常载客量，而250则表示超载列车。输入值应当在0~250之间。默认值是100。
-<strong><em>发车广播</em></strong>：一个相对于<strong>Sound</strong>文件夹的路径，指向在发车前（发车时间-关门时间-音频时长）要播放的音频。
+<p><strong><em>站名</em></strong>：该车站的站名。将会在时刻表和提示信息中显示，所以不应留空。<br />
+<strong><em>到达时间</em></strong>：玩家驾驶的列车应当到达此站的<a href="../../zh_cn/information/numberformats.html#times">时间</a>。可以使用特殊值表示额外信息——见下。<br />
+<strong><em>发车时间</em></strong>：玩家驾驶的列车应当从此站发车的<a href="../../zh_cn/information/numberformats.html#times">时间</a>。可以使用特殊值表示额外信息——见下。<br />
+<strong><em>停车铃</em></strong>：指示停车警铃设备（如果列车有安装）是否应该鸣响以提示列车驾驶在这站停车。默认值是0。<br />
+<strong><em>开门方向</em></strong>：指示列车应开启的车门方向。默认值是0。<br />
+<strong><em>强制红灯</em></strong>：指示是否应该将最后一个停车点后方的信号机（发车信号机）在玩家驾驶列车接近时设为红色。默认值是0。<br />
+<strong><em>信号系统</em></strong>：指示从此站到下一站之间的区间安装的列车信号系统。默认值是0。<br />
+<strong><em>到达广播</em></strong>：一个相对于<strong>Sound</strong>文件夹的路径，指向列车停站时播放的音频。<br />
+<strong><em>停车时间</em></strong>：一个正浮点数表示列车在车站的最小停车时间（包括开关门时间）。默认值是15。<br />
+<strong><em>乘车率</em></strong>：一个非负浮点数表示在该站列车上乘客的相对数量。作为参考，100差不多是正常载客量，而250则表示超载列车。输入值应当在0~250之间。默认值是100。<br />
+<strong><em>发车广播</em></strong>：一个相对于<strong>Sound</strong>文件夹的路径，指向在发车前（发车时间-关门时间-音频时长）要播放的音频。<br />
 <strong><em>时刻表编号</em></strong>：一个非负整数，指示一个由Train.Timetable(<em>时刻表编号</em>)指定的，从此站开始要显示的时刻表。默认保持上站设定。</p>
 
 <p>▸ *到达时间*的可选项：</p>
 
 <div id="command-arguments">
-<p>*[一个时间]*：所有列车都需要停车，玩家驾驶的列车需要在这个特定时间到达。
-*[留空]*：所有列车都需要停车，但可以在任意时间到达。
-<strong>P</strong>或<strong>L</strong>：所有列车都只需要通过这个车站。
-<strong>B</strong>：玩家驾驶的列车只需要通过这个车站，而AI车需要停车。
-<strong>S</strong>：玩家驾驶的列车需要停车，而AI车只需要通过。
+<p>*[一个时间]*：所有列车都需要停车，玩家驾驶的列车需要在这个特定时间到达。<br />
+*[留空]*：所有列车都需要停车，但可以在任意时间到达。<br />
+<strong>P</strong>或<strong>L</strong>：所有列车都只需要通过这个车站。<br />
+<strong>B</strong>：玩家驾驶的列车只需要通过这个车站，而AI车需要停车。<br />
+<strong>S</strong>：玩家驾驶的列车需要停车，而AI车只需要通过。<br />
 <strong>S:</strong>_[一个时间]_：玩家驾驶的列车需要在这个特定时间到达停车，而AI车只需要通过。</p>
 
 </div>
@@ -2994,13 +2968,13 @@ With Track<br />
 <p>▸ *发车时间*的可选项：</p>
 
 <div id="command-arguments">
-<p>*[一个时间]*：列车将会在这个时间之后发车。
-*[留空]*：列车只要停足停车时间就可以发车。
-<strong>T</strong>或<strong>=</strong>：这是终点站，列车不会发车。如果*强制红灯*被设定，发车信号机会被无限保持在红灯。
-<strong>T:</strong>_[一个时间]<em>：这是终点站，列车不会发车。如果*强制红灯*被设定，发车信号机还是会在发车时间后转为绿灯。
-<strong>C</strong>：这是一个“换端传送”车站。详情见下。
-<strong>C:</strong></em>[一个时间]<em>：这是一个“换端传送”车站，除非*停车时间*要求推迟发车，列车会在特定时间传送换端。详情见下。
-<strong>J:</strong></em>[车站编号]<em>：列车可以在该车站&rdquo;跳转传送&rdquo;到由*车站编号*指定的车站。详情见下。
+<p>*[一个时间]*：列车将会在这个时间之后发车。<br />
+*[留空]*：列车只要停足停车时间就可以发车。<br />
+<strong>T</strong>或<strong>=</strong>：这是终点站，列车不会发车。如果*强制红灯*被设定，发车信号机会被无限保持在红灯。<br />
+<strong>T:</strong>_[一个时间]<em>：这是终点站，列车不会发车。如果*强制红灯*被设定，发车信号机还是会在发车时间后转为绿灯。<br />
+<strong>C</strong>：这是一个“换端传送”车站。详情见下。<br />
+<strong>C:</strong></em>[一个时间]<em>：这是一个“换端传送”车站，除非*停车时间*要求推迟发车，列车会在特定时间传送换端。详情见下。<br />
+<strong>J:</strong></em>[车站编号]<em>：列车可以在该车站&rdquo;跳转传送&rdquo;到由*车站编号*指定的车站。详情见下。<br />
 <strong>J:</strong></em>[车站编号]<strong>[一个时间]</strong>_：列车可以在该车站&rdquo;跳转传送&rdquo;到由*车站编号*指定的车站。除非*停车时间*要求推迟发车，列车将会在指定时间传送。详情见下。</p>
 
 </div>
@@ -3008,7 +2982,7 @@ With Track<br />
 <p>▸ *停车铃*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>0</strong>：停车铃不鸣响。
+<p><strong>0</strong>：停车铃不鸣响。<br />
 <strong>1</strong>：停车铃会鸣响来提醒列车驾驶在这站停车。</p>
 
 </div>
@@ -3016,9 +2990,9 @@ With Track<br />
 <p>▸ *开门方向*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>L</strong>或<strong>-1</strong>：开左侧门。
-<strong>N</strong>或<strong>0</strong>：不开门。即列车只需要临时停车。
-<strong>R</strong>或<strong>1</strong>：开右侧门。
+<p><strong>L</strong>或<strong>-1</strong>：开左侧门。<br />
+<strong>N</strong>或<strong>0</strong>：不开门。即列车只需要临时停车。<br />
+<strong>R</strong>或<strong>1</strong>：开右侧门。<br />
 <strong>B</strong>：开两侧门。</p>
 
 </div>
@@ -3026,7 +3000,7 @@ With Track<br />
 <p>▸ *强制红灯*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>0</strong>：该车站不影响信号灯。
+<p><strong>0</strong>：该车站不影响信号灯。<br />
 <strong>1</strong>：在最后一个停止点后方的信号机（发车信号机）在列车完成停车动作并到达发车时间后才会变绿。</p>
 
 </div>
@@ -3034,7 +3008,7 @@ With Track<br />
 <p>▸ *信号系统*的可选项：（由于BVE是日本的模拟游戏所以原装只支持日式信号系统）</p>
 
 <div id="command-arguments">
-<p><strong>ATS</strong>或<strong>0</strong>：前方轨道未安装ATC，应切换至ATS。
+<p><strong>ATS</strong>或<strong>0</strong>：前方轨道未安装ATC，应切换至ATS。<br />
 <strong>ATC</strong>或<strong>1</strong>：前方轨道已安装ATC，应切换至ATC。</p>
 
 </div>
@@ -3061,11 +3035,11 @@ With Track<br />
 </div>
 
 <div id="command-arguments">
-<p><strong><em>站名</em></strong>：该车站的站名。将会在时刻表和提示信息中显示，所以不应留空。
-<strong><em>到达时间</em></strong>：玩家驾驶的列车应当到达此站的<a href="../../zh_cn/information/numberformats.html#times">时间</a>。可以使用特殊值表示额外信息——见下。
-<strong><em>发车时间</em></strong>：玩家驾驶的列车应当从此站发车的<a href="../../zh_cn/information/numberformats.html#times">时间</a>。可以使用特殊值表示额外信息——见下。
-<strong><em>强制红灯</em></strong>：指示是否应该将最后一个停车点后方的信号机（发车信号机）在玩家驾驶列车接近时设为红色。默认值是0。
-<strong><em>信号系统</em></strong>：指示从此站到下一站之间的区间安装的列车信号系统。默认值是0。
+<p><strong><em>站名</em></strong>：该车站的站名。将会在时刻表和提示信息中显示，所以不应留空。<br />
+<strong><em>到达时间</em></strong>：玩家驾驶的列车应当到达此站的<a href="../../zh_cn/information/numberformats.html#times">时间</a>。可以使用特殊值表示额外信息——见下。<br />
+<strong><em>发车时间</em></strong>：玩家驾驶的列车应当从此站发车的<a href="../../zh_cn/information/numberformats.html#times">时间</a>。可以使用特殊值表示额外信息——见下。<br />
+<strong><em>强制红灯</em></strong>：指示是否应该将最后一个停车点后方的信号机（发车信号机）在玩家驾驶列车接近时设为红色。默认值是0。<br />
+<strong><em>信号系统</em></strong>：指示从此站到下一站之间的区间安装的列车信号系统。默认值是0。<br />
 <strong><em>发车广播</em></strong>：一个相对于<strong>Sound</strong>文件夹的路径，指向在发车前（发车时间-关门时间-音频时长）要播放的音频。</p>
 
 </div>
@@ -3073,11 +3047,11 @@ With Track<br />
 <p>▸ *到达时间*的可选项：</p>
 
 <div id="command-arguments">
-<p>*[一个时间]*：所有列车都需要停车，玩家驾驶的列车需要在这个特定时间到达。
-*[留空]*：所有列车都需要停车，但可以在任意时间到达。
-<strong>P</strong>或<strong>L</strong>：所有列车都只需要通过这个车站。
-<strong>B</strong>：玩家驾驶的列车只需要通过这个车站，而AI车需要停车。
-<strong>S</strong>：玩家驾驶的列车需要停车，而AI车只需要通过。
+<p>*[一个时间]*：所有列车都需要停车，玩家驾驶的列车需要在这个特定时间到达。<br />
+*[留空]*：所有列车都需要停车，但可以在任意时间到达。<br />
+<strong>P</strong>或<strong>L</strong>：所有列车都只需要通过这个车站。<br />
+<strong>B</strong>：玩家驾驶的列车只需要通过这个车站，而AI车需要停车。<br />
+<strong>S</strong>：玩家驾驶的列车需要停车，而AI车只需要通过。<br />
 <strong>S:</strong>_[一个时间]_：玩家驾驶的列车需要在这个特定时间到达停车，而AI车只需要通过。</p>
 
 </div>
@@ -3085,11 +3059,11 @@ With Track<br />
 <p>▸ *发车时间*的可选项：</p>
 
 <div id="command-arguments">
-<p>*[一个时间]*：列车将会在这个时间之后发车。
-*[留空]*：列车只要停足停车时间就可以发车。
-<strong>T</strong>或<strong>=</strong>：这是终点站，列车不会发车。如果*强制红灯*被设定，发车信号机会被无限保持在红灯。
-<strong>T:</strong>_[一个时间]<em>：这是终点站，列车不会发车。如果*强制红灯*被设定，发车信号机还是会在发车时间后转为绿灯。
-<strong>C</strong>：这是一个“换端传送”车站。详情见下。
+<p>*[一个时间]*：列车将会在这个时间之后发车。<br />
+*[留空]*：列车只要停足停车时间就可以发车。<br />
+<strong>T</strong>或<strong>=</strong>：这是终点站，列车不会发车。如果*强制红灯*被设定，发车信号机会被无限保持在红灯。<br />
+<strong>T:</strong>_[一个时间]<em>：这是终点站，列车不会发车。如果*强制红灯*被设定，发车信号机还是会在发车时间后转为绿灯。<br />
+<strong>C</strong>：这是一个“换端传送”车站。详情见下。<br />
 <strong>C:</strong></em>[一个时间]_：这是一个“换端传送”车站，除非*停车时间*要求推迟发车，列车会在特定时间传送换端。详情见下。</p>
 
 </div>
@@ -3097,7 +3071,7 @@ With Track<br />
 <p>▸ *强制红灯*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>0</strong>：该车站不影响信号灯。
+<p><strong>0</strong>：该车站不影响信号灯。<br />
 <strong>1</strong>：在最后一个停止点后方的信号机（发车信号机）在列车完成停车动作并到达发车时间后才会变绿。</p>
 
 </div>
@@ -3105,49 +3079,27 @@ With Track<br />
 <p>▸ *信号系统*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>ATS</strong>或<strong>0</strong>：前方轨道未安装ATC，应切换至ATS。
+<p><strong>ATS</strong>或<strong>0</strong>：前方轨道未安装ATC，应切换至ATS。<br />
 <strong>ATC</strong>或<strong>1</strong>：前方轨道已安装ATC，应切换至ATC。</p>
 
 </div>
 
-<p>该指令早已过时，请不要使用该指令（它连开门方向都指定不了）——请使用包含更多选项的Track.Sta代替它。
+<p>该指令早已过时，请不要使用该指令（它连开门方向都指定不了）——请使用包含更多选项的Track.Sta代替它。<br />
 该指令创建一个新站。对于它没有提供的参数，默认采用以下值：</p>
 
-<table class='type1'>
-<thead>
-<tr>
-<th><em>停车铃</em></th>
-<th>0 （不提醒）</th>
-</tr>
-</thead>
+<p>|</p>
 
-<tbody>
-<tr>
-<td><em>开门方向</em></td>
-<td>B （开两侧门）</td>
-</tr>
+<pre><code>  | *停车铃*                  |
+</code></pre>
 
-<tr>
-<td><em>到达广播</em></td>
-<td>不播放</td>
-</tr>
+<p>| &mdash;&mdash;&mdash;&mdash;&mdash;- | &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash; |
+| 0 （不提醒）          | <em>开门方向</em> |
+| B （开两侧门）   | <em>到达广播</em>                    |
+| 不播放   | 15                            |
+| <em>停车时间</em> | 100                           |
+| <em>乘车率</em> | <em>时刻表编号</em>                  |</p>
 
-<tr>
-<td><em>停车时间</em></td>
-<td>15</td>
-</tr>
-
-<tr>
-<td><em>乘车率</em></td>
-<td>100</td>
-</tr>
-
-<tr>
-<td><em>时刻表编号</em></td>
-<td>不更改</td>
-</tr>
-</tbody>
-</table>
+<p>不更改</p>
 
 <p>该指令设定一个新车站。在编写指令时，该指令应该被放置在车站站台的开始处。其后（到下一站之前）的所有Track.Stop指令都被视为和该站有关。如果该站需要停车，该指令后面应该有一个或多个Track.Stop指令指定车站的停车点，以完成车站的定义。</p>
 
@@ -3167,9 +3119,9 @@ With Track<br />
 </div>
 
 <div id="command-arguments">
-<p><strong><em>标牌方向</em></strong>：放置一个默认（日式）停车位置指示牌的方向。
-<font color="green"><strong><em>后方容差</em></strong></font>：一个正浮点数，表示在停止位置后方的容差。<strong>默认的</strong>单位是<strong>米</strong>。默认值是5。
-<font color="green"><strong><em>前方容差</em></strong></font>：一个正浮点数，表示在停止位置前方的容差。<strong>默认的</strong>单位是<strong>米</strong>。默认值是5。
+<p><strong><em>标牌方向</em></strong>：放置一个默认（日式）停车位置指示牌的方向。<br />
+<font color="green"><strong><em>后方容差</em></strong></font>：一个正浮点数，表示在停止位置后方的容差。<strong>默认的</strong>单位是<strong>米</strong>。默认值是5。<br />
+<font color="green"><strong><em>前方容差</em></strong></font>：一个正浮点数，表示在停止位置前方的容差。<strong>默认的</strong>单位是<strong>米</strong>。默认值是5。<br />
 <strong><em>编组数量</em></strong>：一个非负整数，指示该位置适合的列车编组（节数）。0代表该位置适合所有列车编组。默认值是0。</p>
 
 </div>
@@ -3177,8 +3129,8 @@ With Track<br />
 <p>▸ *方向*的可选项:</p>
 
 <div id="command-arguments">
-<p><strong>-1</strong>：在左侧放置指示牌。
-<strong>0</strong>：不放置默认指示牌。
+<p><strong>-1</strong>：在左侧放置指示牌。<br />
+<strong>0</strong>：不放置默认指示牌。<br />
 <strong>1</strong>：在右侧放置指示牌。</p>
 
 </div>
@@ -3199,11 +3151,11 @@ With Track<br />
        <td width="16" valign="top">▶</td>
        <td bgcolor="#D4D8FF" style="border: 1px dashed;">
          <font style="font-family: monospace">
-         <p style='display:inline;'>With Track
-0100, .Sta 国际空间站
-0178, .Stop 1;;;4 ,; 适合4编组及以下列车
-0212, .Stop 1;;;6 ,; 适合5~6编组列车
-0246, .Stop 1;;;8 ,; 适合7~8编组列车
+         <p style='display:inline;'>With Track<br />
+0100, .Sta 国际空间站<br />
+0178, .Stop 1;;;4 ,; 适合4编组及以下列车<br />
+0212, .Stop 1;;;6 ,; 适合5~6编组列车<br />
+0246, .Stop 1;;;8 ,; 适合7~8编组列车<br />
 0280, .Stop 1;;;0 ,; 适合9编组及以上列车
          </font>
        </td>
@@ -3219,9 +3171,9 @@ With Track<br />
 </div>
 
 <div id="command-arguments">
-<p><strong><em>轨道编号<sub>1</sub></em></strong>：要创建站台的轨道。
-<strong><em>轨道编号<sub>2</sub></em></strong>：在创建岛式站台的情况下，输入另一侧轨道的编号；在创建侧式站台的情况下，输入L或R来指定站台创建在轨道左边还是右边。
-<strong><em>顶棚模型编号</em></strong>：一个非负整数，指定要被放置的顶棚模型。
+<p><strong><em>轨道编号<sub>1</sub></em></strong>：要创建站台的轨道。<br />
+<strong><em>轨道编号<sub>2</sub></em></strong>：在创建岛式站台的情况下，输入另一侧轨道的编号；在创建侧式站台的情况下，输入L或R来指定站台创建在轨道左边还是右边。<br />
+<strong><em>顶棚模型编号</em></strong>：一个非负整数，指定要被放置的顶棚模型。<br />
 <strong><em>站台模型编号</em></strong>：一个非负整数，指定要被放置的站台模型。</p>
 
 </div>
@@ -3229,16 +3181,17 @@ With Track<br />
 <p>▸ <em>轨道编号<sub>2</sub></em> 的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>任何已开始的轨道</strong>：站台模型将被拉伸变形以形成贴合轨道的岛式站台。
+<p><strong>任何已开始的轨道</strong>：站台模型将被拉伸变形以形成贴合轨道的岛式站台。<br />
 <strong>L</strong>: 将原样无变形地使用FormL, FormCL 与 RoofL物件。<br />
 <strong>R</strong>: 将原样无变形地使用FormR, FormCR 与 RoofR物件。</p>
 
 </div>
 
-<p><strong>注意:</strong>
-如果 <em>轨道编号<sub>1</sub></em> 处于 <em>轨道编号<sub>2</sub></em> 的<strong>左侧</strong>（即：其X坐标更小），则使用Structure.FormL, Structure.FormCL 与 Structure.RoofL定义的物件，否则使用FormR, FormCR与RoofR。</p>
+<h5 id="注意"><strong>注意:</strong></h5>
 
-<h5 id="a-name-track-signalling-a-11-5-信号与限速"><a name="track_signalling"></a>● 11.5. 信号与限速</h5>
+<p>如果 <em>轨道编号<sub>1</sub></em> 处于 <em>轨道编号<sub>2</sub></em> 的<strong>左侧</strong>（即：其X坐标更小），则使用Structure.FormL, Structure.FormCL 与 Structure.RoofL定义的物件，否则使用FormR, FormCR与RoofR。</p>
+
+<p><a name="track_signalling"></a>● 11.5. 信号与限速</p>
 
 <hr />
 
@@ -3290,12 +3243,13 @@ With Track<br />
 
 <p>This command starts a section, the functional part of signalling, to be used in conjunction with Track.SigF, which creates a visual representation of a section (a signal). The <em>a<sub>i</sub></em> parameters specify the aspects the section can bear. An aspect of 0 corresponds to a red section which must not be passed by a train. The <em>a<sub>0</sub></em> term is mandatory.</p>
 
-<div id="notice">
-<h4 id="default-versus-simplified-section-behavior">Default versus simplified section behavior</h4>
+<h4 id="div-id-notice"><div id="notice"></h4>
+
+<p>Default versus simplified section behavior</p>
 
 <p>There are two different modes of behavior on how to interpret the <em>a<sub>i</sub></em> parameters. The mode can be set via Options.SectionBehavior. The following are separate descriptions for default and simplified behavior.</p>
 
-</div>
+<p></div></p>
 
 <p><strong>Default behavior:</strong><br />
 The <em>a<sub>i</sub></em> terms specify the aspect the section should bear depending on how many sections ahead are clear until a red one is encountered. The order of the terms is relevant. The same aspect may occur multiple times.</p>
@@ -3465,9 +3419,9 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-<p>This commands creates a default Japanese repeating signal. The repeating signal repeats the state of the upcoming signal. Setting <em>X</em> to zero does not create a repeating signal, but forces the command to be ignored. Setting <em>X</em> to a non-zero number and <em>Y</em> to a negative number resets the y-coordinate to 4.8 and attaches a default signal post.</p>
+<h5 id="this-commands-creates-a-default-japanese-repeating-signal-the-repeating-signal-repeats-the-state-of-the-upcoming-signal-setting-x-to-zero-does-not-create-a-repeating-signal-but-forces-the-command-to-be-ignored-setting-x-to-a-non-zero-number-and-y-to-a-negative-number-resets-the-y-coordinate-to-4-8-and-attaches-a-default-signal-post">This commands creates a default Japanese repeating signal. The repeating signal repeats the state of the upcoming signal. Setting <em>X</em> to zero does not create a repeating signal, but forces the command to be ignored. Setting <em>X</em> to a non-zero number and <em>Y</em> to a negative number resets the y-coordinate to 4.8 and attaches a default signal post.</h5>
 
-<h5 id="a-name-track-safety-a-11-6-safety-systems"><a name="track_safety"></a>● 11.6. Safety systems</h5>
+<p><a name="track_safety"></a>● 11.6. Safety systems</p>
 
 <hr />
 
@@ -3607,9 +3561,9 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-<p>This command is equivalent to <strong>Track.Pattern 1;<em>Speed</em></strong>. See there for more information.</p>
+<h5 id="this-command-is-equivalent-to-track-pattern-1-speed-see-there-for-more-information">This command is equivalent to <strong>Track.Pattern 1;<em>Speed</em></strong>. See there for more information.</h5>
 
-<h5 id="a-name-track-misc-a-11-7-miscellaneous"><a name="track_misc"></a>● 11.7. Miscellaneous</h5>
+<p><a name="track_misc"></a>● 11.7. Miscellaneous</p>
 
 <hr />
 
@@ -3864,8 +3818,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 <strong><em>Roll</em></strong>: The angle in degrees by which the object is rotated in the XY-plane in clock-wise order when viewed from behind. The default value is 0.</p>
 
 </div>
-
-<p>This command places a special beacon, which sets the destination variable, available for use by plugins and animated objects. The object must have been loaded via Structure.Beacon(<em>BeaconStructureIndex</em>) prior to using this command.</p>
 
 </div>
 
