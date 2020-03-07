@@ -3529,17 +3529,17 @@ The <em>a<sub>i</sub></em> terms specify the aspect the section should bear depe
 <p>▸ *关联信号机*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>0</strong>: The upcoming signal is referenced.<br />
-<strong>1</strong>: The signal immediately behind the upcoming signal is referenced.<br />
-<strong>n</strong>: The <em>n</em>&lsquo;th signal behind the upcoming signal is referenced.</p>
+<p><strong>0</strong>：这个应答器传递它前方第一个信号机的状态。<br />
+<strong>1</strong>：这个应答器传递它前方第二个信号机的状态。<br />
+<strong>n</strong>：以此类推，这个应答器传递它前方信号机后面的第*n*个信号机的状态。</p>
 
 </div>
 
-<p>▸ Options for <em>SwitchSystem</em>:</p>
+<p>▸ *自动系统切换*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>-1</strong>: The transponder does not switch the train between ATS-SN and ATS-P.<br />
-<strong>0</strong>: The transponder automatically switches the train to ATS-SN for transponder types <em>0</em> and <em>1</em>, and to ATS-P for types <em>3</em> and <em>4</em>.</p>
+<p><strong>-1</strong>：这个应答器并不要求车载信号设备切换模式。<br />
+<strong>0</strong>：当这个应答器的类型是*0*或*1*时，车载信号设备将转到ATS-SN模式；当这个应答器的类型是*3*或*4*时，车载信号设备将转到ATS-P模式。</p>
 
 </div>
 
