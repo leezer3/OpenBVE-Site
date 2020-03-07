@@ -3640,17 +3640,17 @@ The <em>a<sub>i</sub></em> terms specify the aspect the section should bear depe
 </div>
 
 <div id="command-arguments">
-<p><strong><em><font color="green">StartingDistance</font></em></strong>: A floating-point number indicating the start of fog, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br />
-<strong><em><font color="green">EndingDistance</font></em></strong>: A floating-point number indicating the end of fog, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br />
-<strong><em>RedValue</em></strong>: An integer ranging from 0 to 255 representing the red component of the fog. The default value is 128.<br />
-<strong><em>GreenValue</em></strong>: An integer ranging from 0 to 255 representing the green component of the fog. The default value is 128.<br />
-<strong><em>BlueValue</em></strong>: An integer ranging from 0 to 255 representing the blue component of the fog. The default value is 128.</p>
+<p><strong><font color="green"><em>起始近距离</em></font></strong>：一个浮点数，指示雾的起始位置距离摄像机的距离。<strong>默认的</strong>单位是<strong>米</strong>。默认值是0。
+<strong><font color="green"><em>终止远距离</em></font></strong>：一个浮点数，指示雾的终止位置距离摄像机的距离。<strong>默认的</strong>单位是<strong>米</strong>。默认值是0。
+<strong><em>红色分量</em></strong>：一个0~255之间的整数，表示雾颜色的红色值。默认值是128。
+<strong><em>绿色分量</em></strong>：一个0~255之间的整数，表示雾颜色的绿色值。默认值是128。
+<strong><em>蓝色分量</em></strong>：一个0~255之间的整数，表示雾颜色的蓝色值。默认值是128。</p>
 
 </div>
 
-<p>This command defines the fog from this point on, or deactivates fog. If fog is to be enabled, <em>StartingDistance</em> must be less than <em>EndingDistance</em>. If fog is to be disabled, <em>StartingDistance</em> must be greater than or equal to <em>EndingDistance</em>.</p>
+<p>该指令可以启用、更新或停用雾效果。如果需要启用雾，*起始近距离*必须小于*终止远距离*。如果需要停用雾，只需将*起始近距离*设得大于等于*终止远距离*。</p>
 
-<p>Fog affects the coloring of objects. Objects before the starting distance appear as-is, objects after the ending distance appear in the fog color, and objects in-between blend linearly between those. The background image is affected by fog as well. For the fog calculations, the background image is assumed to be at 600 meters distance from the camera, regardless of the actual viewing distance.</p>
+<p>雾效果影响物体绘制的颜色。在起始近距离以内的物体颜色保持原样，在终止远距离外的物体颜色和雾颜色完全相同，在两个位置中间的物体颜色是线性平滑渐变的。雾也会影响背景图像。不论实际情况如何，在计算时背景图像都会被假定距离摄像机600米远。</p>
 
 <p>Depending on Options.FogBehavior, there are two options how this command affects fog from this point on. In block-wise mode, the current fog blends from the beginning of this block to the new settings at the end of this block. The new setting is kept for following blocks. This is the default behavior. In interpolation mode, each Track.Fog command defines a control point for fog, where all of the settings (distances and colors) are interpolated linearly between the control points.</p>
 
