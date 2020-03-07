@@ -476,7 +476,7 @@
 
 <p>有点不严谨地说，在CSV线路中和“章节”“部分”差不多。</p>
 
-<h2 id="还可查阅这份csv格式的快速参考手册-hahahugoshortcode-0xc00438aa00-6-hbhb">➟ <a href="../../zh_cn/routes/csv_quick.html" target="_blank">还可查阅这份CSV格式的快速参考手册&hellip;</a></h2>
+<h2 id="还可查阅这份csv格式的快速参考手册-hahahugoshortcode-0xc00255ea00-6-hbhb">➟ <a href="../../zh_cn/routes/csv_quick.html" target="_blank">还可查阅这份CSV格式的快速参考手册&hellip;</a></h2>
 
 <p><a name="syntax"></a>■ 2. 语法</p>
 
@@ -584,7 +584,7 @@
 
 <p>和这个是等效的：</p>
 
-<h2 id="hahahugoshortcode-0xc00438aa00-18-hbhb"><table style="border: none;">
+<h2 id="hahahugoshortcode-0xc00255ea00-18-hbhb"><table style="border: none;">
   <tbody>
   
     <tr>
@@ -794,7 +794,7 @@ $Include(<em>文件<sub>1</sub></em>; <em>权值<sub>1</sub></em>; <em>文件<su
 
 <p>这个指令只应该单独出现，它将会把*表达式*的值赋给编号为*编号*的这个变量。它不在原位插入任何内容。可以把一个随机数存起来然后以后多次使用（比如说放置几棵到一条随机但是却相同的轨道的排成一排的树）。下面关于 $Sub(<em>编号</em>) 的介绍处有几个使用实例。</p>
 
-<h4 id="hahahugoshortcode-0xc00438aa00-32-hbhb"><div id="warning">
+<h4 id="hahahugoshortcode-0xc00255ea00-32-hbhb"><div id="warning">
 <p>程序实现备注</p>
 
 <p>虽然变量中也可以存储非数字的内容，还是不能把逗号通过$Chr(44)存进去然后希望它在使用时会起分隔符的作用。但是，可以把分号通过$Chr(59)存进去然后把它调用时放在开头使那一行成为注释。不过因为可以使用$Include和$If来进行条件判断，所以并没有必要这么干。</p>
@@ -1252,7 +1252,7 @@ Track.FreeObj 1; 42<br />
 
 <p>▸ *模式*的可选项：</p>
 
-<h2 id="hahahugoshortcode-0xc00438aa00-70-hbhb"><div id="command-arguments">
+<h2 id="hahahugoshortcode-0xc00255ea00-70-hbhb"><div id="command-arguments">
 <p><strong>0</strong>: 不启用兼容模式。<br />
 <strong>1</strong>: 启用兼容模式。</p>
 
@@ -2220,7 +2220,7 @@ Train.File <em>文件夹名</em></p>
   </tbody>
 </table>
 
-<h2 id="hahahugoshortcode-0xc00438aa00-165-hbhb"><table style="border: none;">
+<h2 id="hahahugoshortcode-0xc00255ea00-165-hbhb"><table style="border: none;">
   <tbody>
   
     <tr>
@@ -2317,7 +2317,7 @@ With Track<br />
 
 <p>这个命名空间中的指令定义了轨道的布局。这个命名空间内的指令应该出现在所有其他指令之后，一般位于线路文件的最后部分，且代码量基本都要远超其他部分。</p>
 
-<h4 id="hahahugoshortcode-0xc00438aa00-171-hbhb"><div id="notice">
+<h4 id="hahahugoshortcode-0xc00255ea00-171-hbhb"><div id="notice">
 <p>使用主轨道位置</p>
 
 <p>Track命名空间内的所有指令都需要和一个主轨道位置联系起来，这表示该指令执行的位置。一旦出现一个主轨道位置表达式，它后面的Track指令都会在这个位置执行，直到一个新的主轨道位置表达式指定一个新的位置。在主轨道位置表达式出现前写出的Track指令默认会在0位置执行。由于指令会被自动地排序和执行，所以并不一定需要把主轨道位置按照固定顺序写（虽然按照顺序写可以使结构更加清晰）。虽然主轨道位置可以是任意非负浮点数，有一些指令是<strong>只可以在区间块开始位置（默认为25m的整倍数位置）</strong>被使用的。默认情况下这意味着它们必须被放在0、25、50、75、100、125、以此类推的位置上。下面有这个特别限制的指令都会被标注出来。</p>
@@ -2386,7 +2386,7 @@ With Track<br />
 </div>
 
 
-<h4 id="hahahugoshortcode-0xc00438aa00-179-hbhb"><div id="notice">
+<h4 id="hahahugoshortcode-0xc00255ea00-179-hbhb"><div id="notice">
 <p>对比Track.RailStart和Track.Rail</p>
 
 <p>这两个都可以用来开始一条轨道。但是当使用Track.RailStart时，openBVE将会检查这个*编号*是否已被占用。所以，使用Track.RailStart来开始轨道是更为明确的，且可以避免由于失误造成的bug。译注：可惜很无奈Hmmsim并不支持Track.RailStart，所以要用Hmmsim的话没得选。</p>
