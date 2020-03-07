@@ -3577,7 +3577,7 @@ The <em>a<sub>i</sub></em> terms specify the aspect the section should bear depe
 </div>
 
 <div id="command-arguments">
-<p> <strong><em>类型</em></strong>：速度限制的类型。
+<p><strong><em>类型</em></strong>：速度限制的类型。<br />
 <strong><font color="blue"><em>速度</em></font></strong>：一个非负浮点数，指定这里的限速。<strong>默认的</strong>单位是<strong>km/h</strong>。</p>
 
 </div>
@@ -3585,12 +3585,12 @@ The <em>a<sub>i</sub></em> terms specify the aspect the section should bear depe
 <p>▸ *类型*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>0</strong>: A temporary speed restriction.<br />
-<strong>1</strong>: A permanent speed restriction.</p>
+<p><strong>0</strong>：点限速（临时限速、道岔限速）。<br />
+<strong>1</strong>：段限速（永久限速、路段限速）。</p>
 
 </div>
 
-<p>This command defines a speed restriction for the built-in safety system ATS-P.</p>
+<p>该指令为内置的ATS-P系统设定一个限速，使它自动控制速度，防止列车超速。</p>
 
 <p>A temporary speed restriction (<em>Type</em>=0) is to be inserted at the point where the speed restriction should apply. ATS-P will know about this speed restriction in advance and will brake the train so that the train meets the speed restriction at that point. Once the point is passed, the speed restriction no longer applies.</p>
 
