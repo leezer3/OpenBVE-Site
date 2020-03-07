@@ -3311,8 +3311,8 @@ The <em>a<sub>i</sub></em> terms specify the aspect the section should bear depe
 
 <p>如果前方有比*<sub>n</sub><em>个还要多的清空的区间，最后一个状态</em><sub>n</sub>*状态会被传给信号机。</p>
 
-<p><strong>Simplified behavior:</strong><br />
-The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section can have. A section will bear the smallest of the <em>a<sub>i</sub></em> which is greater than the current aspect of the upcoming section. If no such <em>a<sub>i</sub></em> exists, the section will bear the aspect of <em>an</em>. The order of the <em>a<sub>i</sub></em> is irrelevant. If the same aspect occurs multiple times, this has no effect.</p>
+<p><strong>简化解读方式：</strong><br />
+*状态<sub>i</sub>*指定这个信号区段会传达给信号机的所有状态。当前方有x个被清空的区间时，被传达给信号机的信号状态就是所有*状态<sub>i</sub>*状态从小到大排的第x个。如果*x*比*状态<sub>i</sub>*状态的总数还要多，最大的一个*状态<sub>i</sub>*状态会被传给信号机。状态的顺序无关紧要，重复出现的值只会被留下一个。</p>
 
 <table style="border: none;">
   <tbody>
