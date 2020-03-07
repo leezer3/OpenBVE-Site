@@ -3273,17 +3273,17 @@ With Track<br />
 
 </div>
 
-<p>This command defines the new speed limit from this point on. If the new speed limit is lower than the current speed limit, the new speed limit will take effect immediately. If the speed limit is higher than the current speed limit, the new speed limit will take effect only once the whole train has passed this point. By setting <em>Speed</em> to <code>0</code>, the speed restriction is released. By setting <em>Post</em> to either <code>-1</code> or <code>1</code>, a default Japanese-style speed post is placed at the respective side of the track. Setting <em>Course</em> to either <code>-1</code> or <code>1</code> includes a directional indication, which is usually used at railroad switches to indicate that the speed limit only applies if the respective direction is being taken. If <em>Speed</em> is set to <code>0</code>, the setting of <em>Course</em> has no effect.</p>
+<p>该指令设定从该点开始的速度限制。如果新限速低于原限速，限速将立刻起效；如果新限速高于原限速，限速会在整列列车全部通过标牌之后起效。将*限速*设为<code>0</code>将解除限速。将<em>标牌位置</em> 设为<code>-1</code>或<code>1</code>会在轨道的对应一侧放置一个默认的日式限速标牌。将*方向*设为<code>-1</code>或<code>1</code>会给标牌加上方向显示，用来指示该标牌与道岔方向的关系。*速度*设为<code>0</code>的解除限速标牌从来都不会有*方向*显示。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>Track.Section</strong> <em>a<sub>0</sub></em>; <em>a<sub>1</sub></em>; <em>a<sub>2</sub></em>; &hellip;; <em>a<sub>n</sub></em></p>
+<p><strong>Track.Section</strong> <em>状态<sub>0</sub></em>; <em>状态<sub>1</sub></em>; <em>状态<sub>2</sub></em>; &hellip;; <em>状态<sub>n</sub></em></p>
 
 </div>
 
 <div id="command-arguments">
-<p><strong><em>a<sub>i</sub></em></strong>: A non-negative number specifying one of the section&rsquo;s aspects.</p>
+<p><strong>状态*<sub>i</sub></strong>*：一个非负整数，指示该自动闭塞区段传递给信号机的一个状态。</p>
 
 </div>
 
