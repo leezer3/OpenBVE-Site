@@ -3594,33 +3594,33 @@ The <em>a<sub>i</sub></em> terms specify the aspect the section should bear depe
 
 <p>当一个点限速(*类型*为0)被插入在要应用的地方，ATS-P会提前了解这个限速的位置，并提前减速列车使列车通过这一点时速度正好在限速之下。一旦列车通过限速点，速度限制就不再有效，列车将会重新加速。</p>
 
-<p>A permanent speed restriction (<em>Type</em>=1) is to be inserted at the point where the speed restriction should apply, however, ATS-P does not know about this limit in advance and will only brake the train from that point on. For a higher degree of realism, insert permanent speed restrictions at the same point as ATS-P transponders. A permanent speed restriction, as the name suggests, is remembered by ATS-P and is only released by a subsequent permanent speed restriction.</p>
+<p>当一个段限速(*类型*为1)被插入在应用的地方，ATS-P不会提前了解这个限速的位置，只会从这个位置开始减速列车。为了尽量真实，请把限速设定和ATS-P发信器放在一起。段限速则会被ATS-P记忆并保持，并且直到下一个段限速重新设定才会解除。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>Track.PLimit</strong> <em><font color="blue">Speed</font></em></p>
+<p><strong>Track.PLimit</strong> <font color="blue"><em>速度</em></font></p>
 
 </div>
 
 <div id="command-arguments">
-<p><strong><em><font color="blue">Speed</font></em></strong>: A positive floating-point number representing the permanent speed restriction for ATS-P, <strong>by default</strong> measured in <strong>km/h</strong>.</p>
+<p><strong><font color="blue"><em>速度</em></font></strong>：一个非负浮点数，指定这里的段限速。<strong>默认的</strong>单位是<strong>km/h</strong>。</p>
 
 </div>
 
-<p>This command is equivalent to <strong>Track.Pattern 1;<em>Speed</em></strong>. See there for more information.</p>
+<p>该指令设定一个段限速，等同于<strong>Track.Pattern 1;<em>速度</em></strong>。</p>
 
-<h5 id="a-name-track-misc-a-11-7-miscellaneous"><a name="track_misc"></a>● 11.7. Miscellaneous</h5>
+<h5 id="a-name-track-misc-a-11-7-杂项"><a name="track_misc"></a>● 11.7. 杂项</h5>
 
 <hr />
 
 <div id="command">
-<p><strong>Track.Back</strong> <em>BackgroundTextureIndex</em></p>
+<p><strong>Track.Back</strong> <em>背景材质编号</em></p>
 
 </div>
 
 <div id="command-arguments">
-<p><strong><em>BackgroundTextureIndex</em></strong>: A non-negative integer representing the background image to be displayed as defined via Texture.Background(<em>BackgroundTextureIndex</em>).</p>
+<p><strong><em>背景材质编号</em></strong>：一个非负整数，指定一个已经通过Texture.Background(<em>背景材质编号</em>)载入的背景材质。</p>
 
 </div>
 
