@@ -3813,7 +3813,7 @@ The <em>a<sub>i</sub></em> terms specify the aspect the section should bear depe
 </div>
 
 <div id="command-arguments">
-<p><strong><em>文件</em></strong>：相对于<strong>Sound</strong>文件夹的要播放的声音的路径。
+<p><strong><em>文件</em></strong>：相对于<strong>Sound</strong>文件夹的要播放的声音的路径。<br />
 <font color="blue"><strong><em>参考速度</em></strong></font>：如果该声音的播放速度会随列车速度改变，输入该声音录制时列车的行驶速度作为参考。如果该声音的播放速度不随列车速度改变，输入0或留空。</p>
 
 </div>
@@ -3823,14 +3823,14 @@ The <em>a<sub>i</sub></em> terms specify the aspect the section should bear depe
 <hr />
 
 <div id="command">
-<p><strong>Track.Doppler</strong> <em>FileName</em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em></p>
+<p><strong>Track.Doppler</strong> <em>文件</em>; <font color="green"><em>水平位置</em></font>; <font color="green"><em>垂直位置</em></font></p>
 
 </div>
 
 <div id="command-arguments">
-<p><strong><em>FileName</em></strong>: The file name for the sound to play, relative to the <strong>Sound</strong> folder.<br />
-<strong><em><font color="green">X</font></em></strong>: A floating-point number representing the horizontal offset from rail 0, <strong>by default</strong> measured in <strong>meters</strong>. Negative values indicate left, positive ones right.<br />
-<strong><em><font color="green">Y</font></em></strong>: A floating-point number representing the vertical offset from rail 0, <strong>by default</strong> measured in <strong>meters</strong>. Negative values indicate below, positive ones above.</p>
+<p><strong><em>文件</em></strong>：相对于<strong>Sound</strong>文件夹的要播放的声音的路径。<br />
+<strong><font color="green"><em>水平位置</em></font></strong>：声源距离轨道中心的水平距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向右，负值代表向左。默认值是0。<br />
+<strong><font color="green"><em>垂直位置</em></font></strong>：声源距离轨道中心的垂直距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向上，负值代表向下。默认值是0。</p>
 
 </div>
 
