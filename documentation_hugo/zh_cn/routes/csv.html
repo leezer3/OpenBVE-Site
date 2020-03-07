@@ -3302,10 +3302,10 @@ The <em>a<sub>i</sub></em> terms specify the aspect the section should bear depe
 <p>▸ *状态<sub>i</sub>*的意义：</p>
 
 <div id="command-arguments">
-<p><strong>a<sub>0</sub></strong>: The aspect to show when this section is occupied by a train or otherwise hold at red.<br />
-<strong>a<sub>1</sub></strong>: The aspect to show when this section is clear, but the immediately following section is red.<br />
-<strong>a<sub>2</sub></strong>: The aspect to show when this section and the following section are clear, but the one immediately following the latter one is red.<br />
-<strong>a<sub>n</sub></strong>: The aspect to show when <em>n</em> sections are clear before a red one is encountered.</p>
+<p><strong>状态<sub>0</sub></strong>：当该区间内已经有列车，或因为停车站ForceRedSignal的缘故被保持在红灯时的信号状态。<br />
+<strong>状态<sub>1</sub></strong>：当前区间已经清空，但前面的下一个区间有列车时的信号状态。<br />
+<strong>状态<sub>2</sub></strong>：当前区间已经被清空，下一个区间也已经被清空，但是再下一个区间里就有列车了时的信号状态。<br />
+<strong>状态<sub>n</sub></strong>：以此类推，当前方有*n*个区间清空时的信号状态。</p>
 
 </div>
 
