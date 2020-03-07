@@ -3287,7 +3287,7 @@ With Track<br />
 
 </div>
 
-<p>This command starts a section, the functional part of signalling, to be used in conjunction with Track.SigF, which creates a visual representation of a section (a signal). The <em>a<sub>i</sub></em> parameters specify the aspects the section can bear. An aspect of 0 corresponds to a red section which must not be passed by a train. The <em>a<sub>0</sub></em> term is mandatory.</p>
+<p>该指令开始一个自动闭塞区间。这是真正设置自动闭塞系统使其工作的指令，一般和放置显示自动闭塞系统状态的信号机的Track.SigF指令一起使用。*状态<sub>i</sub>*指定区段传递给信号机的一个信号状态。状态0代表不可有列车通过的红灯，越大的值代表前方清空的区间越多，代表列车可以以更快的速度通过。必须指定*状态<sub>0</sub>*。</p>
 
 <div id="notice">
 <h4 id="default-versus-simplified-section-behavior">Default versus simplified section behavior</h4>
