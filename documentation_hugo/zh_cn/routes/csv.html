@@ -1273,25 +1273,25 @@ Track.FreeObj 1; 42<br />
 
 <h2 id="a-name-route-a-5-route-路线-命名空间"><a name="route"></a>■ 5. Route (路线) 命名空间</h2>
 
-<p>Commands from this namespace define general properties of the route.</p>
+<p>这个命名空间里的指令设置一些线路的基本信息。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>Route.Comment</strong> <em>Text</em></p>
+<p><strong>Route.Comment</strong> <em>文字</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Text</em></strong>: The route comments which appear in the route selection dialog.</p>
+<p><strong><em>文字</em></strong>：选择线路页面上显示的描述文字。</p>
 
 </div>
 
 
 <div id="warning">
 <span>⚠</span>
-<p>You need to use $Chr directives if you want to include newlines, commas and the like in the text.</p>
+<p>如果需要插入换行、逗号之类的字符，必须使用$Chr。</p>
 
 </div>
 
@@ -1299,13 +1299,13 @@ Track.FreeObj 1; 42<br />
 <hr />
 
 <div id="command">
-<p><strong>Route.Image</strong> <em>File</em></p>
+<p><strong>Route.Image</strong> <em>文件</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>File</em></strong>: The file name of the image which appears in the route selection dialog, relative to the route&rsquo;s folder.</p>
+<p><strong><em>文件</em></strong>：选择线路时显示的描述图片，路径按相对于存储这一线路文件的文件夹书写。</p>
 
 </div>
 
@@ -1313,20 +1313,20 @@ Track.FreeObj 1; 42<br />
 <hr />
 
 <div id="command">
-<p><strong>Route.Timetable</strong> <em>Text</em></p>
+<p><strong>Route.Timetable</strong> <em>文字</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Text</em></strong>: The text which appears at the top of the default timetable.</p>
+<p><strong><em>文字</em></strong>：作为线路默认时刻表表头的文字。</p>
 
 </div>
 
 
 <div id="warning">
 <span>⚠</span>
-<p>You need to use $Chr directives if you want to include newlines, commas and the like in the text.</p>
+<p>如果需要插入换行、逗号之类的字符，必须使用$Chr。</p>
 
 </div>
 
@@ -1334,23 +1334,23 @@ Track.FreeObj 1; 42<br />
 <hr />
 
 <div id="command">
-<p><strong>Route.Change</strong> <em>Mode</em></p>
+<p><strong>Route.Change</strong> <em>模式</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Mode</em></strong>: The mode for the train&rsquo;s safety system to start in. The default value is implementation-specific.</p>
+<p><strong><em>模式</em></strong>：当游戏启动时，列车的车载信号系统默认处于什么状态。</p>
 
 </div>
 
 
-<p>▸ Available options for <em>Mode</em>:</p>
+<p>▸ *模式*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>-1</strong>: The safety system is <strong>activated</strong> and the <em>service</em> brakes are applied.<br />
-<strong>0</strong>: The safety system is <strong>activated</strong> and the <strong>emergency</strong> brakes are applied.<br />
-<strong>1</strong>: The safety system is <em>deactivated</em> and the <strong>emergency</strong> brakes are applied.</p>
+<p><strong>-1</strong>：车载信号系统<strong>已被启动</strong>，制动手柄处于*最大常用制动*位置。
+<strong>0</strong>：车载信号系统<strong>已被启动</strong>，制动手柄处于<strong>紧急制动</strong>位置。
+<strong>1</strong>：车载信号系统*未被设置好*，制动手柄处于<strong>紧急制动</strong>位置。</p>
 
 </div>
 
@@ -1358,20 +1358,20 @@ Track.FreeObj 1; 42<br />
 <hr />
 
 <div id="command">
-<p><strong>Route.Gauge</strong> <em>ValueInMillimeters</em></p>
+<p><strong>Route.Gauge</strong> <em>毫米数值</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>ValueInMillimeters</em></strong>: A floating-point number representing the rail gauge, measured in <strong>millimeters</strong> (0.001 meters). The default value is 1435.</p>
+<p><strong><em>毫米数值</em></strong>：一个浮点数，代表轨道的轨距。单位是<strong>毫米</strong>（0.001m,0.1cm）。默认值是1435（标准轨）。</p>
 
 </div>
 
 
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
-<p>Train.Gauge is the same as Route.Gauge.</p>
+<p>Route.Gauge和Train.Gauge作用相同。</p>
 
 </div>
 
@@ -1379,27 +1379,27 @@ Track.FreeObj 1; 42<br />
 <hr />
 
 <div id="command">
-<p><strong>Route.Signal</strong>(<em>AspectIndex</em>)<font color="gray">.Set</font> <em><font color="blue">Speed</font></em></p>
+<p><strong>Route.Signal</strong>(<em>状态编号</em>)<font color="gray">.Set</font> <font color="blue"><em>允许速度</em></font></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>AspectIndex</em></strong>: A non-negative integer representing the signal aspect. The aspect 0 corresponds to red.<br />
-<strong><em><font color="blue">Speed</font></em></strong>: A non-negative floating-point number representing the allowed speed for this aspect, <strong>by default</strong> measured in <strong>kilometers per hour</strong> (km/h).</p>
+<p><strong><em>状态编号</em></strong>：一个非负整数，代表信号状态。0代表前方没有区间空闲（红灯），1代表1个区间空闲，以此类推。
+<font color="blue"><strong><em>速度</em></strong></font>：一个非负整数，代表这个信号状态下允许的最大通过速度。<strong>默认的</strong>单位是<strong>千米每时</strong>。</p>
 
 </div>
 
 
-<p>Use this command to associate speed limits to signal aspects. Aspect 0 represents a red signal, higher values represent more permissive aspects. The default values (for the included Japanese signals) are:</p>
+<p>用这个指令来设定信号状态所允许的最大通过速度。状态0代表前方没有区间空闲（红灯），1代表1个区间空闲，以此类推。默认值（根据默认的日式信号系统设置）是：</p>
 
 
 <table class='type0'>
 <thead>
 <tr>
-<th><em>Index</em></th>
-<th>Aspect</th>
-<th>Speed</th>
+<th><em>状态编号</em></th>
+<th>显示</th>
+<th>允许速度</th>
 </tr>
 </thead>
 
@@ -1431,13 +1431,13 @@ Track.FreeObj 1; 42<br />
 <tr>
 <td>4</td>
 <td><font color="#00C000">●</font></td>
-<td><em>unlimited</em></td>
+<td><em>没有限制</em></td>
 </tr>
 
 <tr>
 <td>5</td>
 <td><font color="#00C000">●●</font></td>
-<td><em>unlimited</em></td>
+<td><em>没有限制</em></td>
 </tr>
 </tbody>
 </table>
@@ -1446,22 +1446,22 @@ Track.FreeObj 1; 42<br />
 <hr />
 
 <div id="command">
-<p><strong>Route.RunInterval</strong> <em>Interval<sub>0</sub></em>; <em>Interval<sub>1</sub></em>; &hellip;; <em>Interval<sub>n-1</sub></em></p>
+<p><strong>Route.RunInterval</strong> <em>间隔<sub>0</sub></em>; <em>间隔<sub>1</sub></em>; &hellip;; <em>间隔<sub>n-1</sub></em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Interval<sub>i</sub></em></strong>: A floating-point number representing the time interval between the player&rsquo;s train&rsquo;s timetable and that of another train to be created, measured in <strong>seconds</strong>. Positive values indicate an earlier train, negative numbers a later train.</p>
+<p><strong><em>间隔<sub>i</sub></em></strong>：一个浮点数，指定一辆AI列车从第一站的发车时间和玩家操作的列车的时间差。单位是<strong>秒</strong>。正数使AI列车在玩家之前发车，负数使AI列车在玩家之后发车。</p>
 
 </div>
 
 
-<p>This command creates one or more preceding or following trains. These other trains are visible, fully operational, and use the same train as the player has. The other trains follow the same schedule as the player does, but are offset in time by <em>Intervali</em>. Via the Track.Sta command, you can also define stations where only the player or only the other trains should stop. Follow-up trains only appear once the section they are placed in has been cleared by other trains, but the player&rsquo;s train is introduced regardless of the current signalling section&rsquo;s state. Therefore, you should make sure that other trains have cleared the area where the player&rsquo;s train will appear when the scenario begins.</p>
+<p>该指令创建几辆和玩家在同一轨道上的AI车。这些列车可见，正常工作，且使用和玩家一样的列车模型。其他列车使用和玩家相同的时刻表，但是发车时间和玩家列车有着*间隔<sub>i</sub>*的时间差。通过Track.Sta指令，可以为玩家和AI车指定不同的停车站。在玩家列车之后的车辆只会在区间里没有列车时出现，但玩家列车不论是否已经有列车阻挡位置都会被放置。所以，应当正确设置在玩家之前发车的AI车的发车时间，使玩家进入游戏时该列车已经离开玩家要出现的轨道区域。</p>
 
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
-<p>Route.RunInterval is the same as Train.Interval.</p>
+<p>Route.RunInterval和Train.Interval作用相同。</p>
 
 </div>
 
@@ -1469,13 +1469,13 @@ Track.FreeObj 1; 42<br />
 <hr />
 
 <div id="command">
-<p><strong>Route.AccelerationDueToGravity</strong> <em>Value</em></p>
+<p><strong>Route.AccelerationDueToGravity</strong> <em>数值</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong>Value</strong>: A positive floating-point number representing the acceleration due to gravity in <strong>meters per second squared</strong> (m/s²). The default value is 9.80665.</p>
+<p><strong>数值</strong>：一个正浮点数，表示以<strong>米每秒平方</strong>(m/s²)为单位的重力加速度。默认值是9.80665。</p>
 
 </div>
 
@@ -1483,13 +1483,13 @@ Track.FreeObj 1; 42<br />
 <hr />
 
 <div id="command">
-<p><strong>Route.Elevation</strong> <em><font color="green">Height</font></em></p>
+<p><strong>Route.Elevation</strong> <font color="green"><em>高度数值</em></font></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em><font color="green">Height</font></em></strong>: A floating-point number representing the initial height above sea level, <strong>by default</strong> measured in <strong>meters</strong> (m). The default value is 0.</p>
+<p><font color="green"><strong><em>高度数值</em></strong></font>：一个浮点数，表示主轨道起始点的海拔高度。<strong>默认</strong>的单位是<strong>米</strong>。默认值是0。</p>
 
 </div>
 
@@ -1497,13 +1497,13 @@ Track.FreeObj 1; 42<br />
 <hr />
 
 <div id="command">
-<p><strong>Route.Temperature</strong> <em>ValueInCelsius</em></p>
+<p><strong>Route.Temperature</strong> <em>摄氏度数值</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: A floating-point number representing the initial temperature in <strong>Celsius</strong>. The default value is 20.</p>
+<p><strong><em>摄氏度数值</em></strong>：一个浮点数，代表以<strong>摄氏度</strong>为单位的初始外温。默认值是20。</p>
 
 </div>
 
@@ -1511,13 +1511,13 @@ Track.FreeObj 1; 42<br />
 <hr />
 
 <div id="command">
-<p><strong>Route.Pressure</strong> <em>ValueInKPa</em></p>
+<p><strong>Route.Pressure</strong> <em>千帕数值</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>ValueInKPa</em></strong>: A positive floating-point number representing the initial air pressure in <strong>kPa</strong> (1000 Pascal). The default value is 101.325.</p>
+<p><strong><em>千帕数值</em></strong>：一个正浮点数，表示以<strong>千帕斯卡</strong>为单位的环境大气压力。默认值是101.325（标准大气压）。</p>
 
 </div>
 
@@ -1525,54 +1525,55 @@ Track.FreeObj 1; 42<br />
 <hr />
 
 <div id="command">
-<p><strong>Route.DisplaySpeed</strong> <em>Unit; ConversionFactor</em></p>
+<p><strong>Route.DisplaySpeed</strong> <em>单位名称,换算系数</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Unit</em></strong>: The textual units in which speed-related messages are to be displayed.    <strong><em>ConversionFactor</em></strong>: The conversion factor between km/h and your custom unit of speed. For mph, this is 0.621371.</p>
+<p><strong><em>单位名称</em></strong>：当显示关于速度的信息时，使用的单位名称。
+<strong><em>换算系数</em></strong>：一个千米每时相当于几个单位。例如对于英里每时，换算系数是0.621371。</p>
 
 </div>
 
 
-<p>This command allows speed related messages (overspeed etc.) to be displayed in a custom unit, for example mph.</p>
+<p>该指令可以改变关于速度的信息（例如超速提示）中使用的单位。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>Route.LoadingScreen</strong> <em>Image</em></p>
+<p><strong>Route.LoadingScreen</strong><em>文件</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Image</em></strong>: A path to a supported image file.</p>
+<p><strong><em>文件</em></strong>：一个路径，指向一个图像文件。</p>
 
 </div>
 
 
-<p>This command allows a custom image to be set as the loading screen background.</p>
+<p>该指令可以自定义加载界面的背景图。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>Route.StartTime</strong> <em>Time</em></p>
+<p><strong>Route.StartTime</strong> <em>时间</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Time</em></strong>: The time at which the simulation is to start.</p>
+<p><strong><em>时间</em></strong>：线路载入，模拟开始的时间。</p>
 
 </div>
 
 
-<p>This command allows the start time of the simulation to be set.</p>
+<p>该指令可以定义玩家进入游戏时的时间。</p>
 
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
-<p>If this is not set or is invalid, the simulation will start at the arrival time set at the first station.</p>
+<p>*注意：*如果开始时间没有用这一指令特意设定或设定的值不正确，游戏将自动采用第一站的到达时间。</p>
 
 </div>
 
@@ -1580,78 +1581,79 @@ Track.FreeObj 1; 42<br />
 <hr />
 
 <div id="command">
-<p><strong>Route.DynamicLight</strong> <em>Dynamic.XML</em></p>
+<p><strong>Route.DynamicLight</strong> <em>动态光XML配置文件</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Dynamic.XML</em></strong>: A path to a Dynamic Lighting definition XML file.</p>
+<p><strong><em>动态光XML配置文件</em></strong>：一个路径，指向配置动态光照的XML文件。</p>
 
 </div>
 
 
-<p>This command may be used as an alternative to the <em>Route.AmbientLight</em> , <em>Route.DirectionalLight</em> and <em>Route.LightDirection</em> commands.</p>
+<p>该指令可以被用来替代*Route.AmbientLight*，*Route.DirectionalLight*和*Route.LightDirection*。</p>
 
-<p>It allows the lighting to be varied using a time-based model, and is described fully on the following page:</p>
+<p>它允许根据时间改变光照，具体细节在这一页上说明：</p>
 
-<p><a href="../../zh_cn/routes/xml/dynamiclight.html" target="_blank">Dynamic Lighting</a></p>
+<p><a href="../../zh_cn/routes/xml/dynamiclight.html" target="_blank">动态光照系统</a></p>
 
 <hr />
 
 <div id="command">
-<p><strong>Route.AmbientLight</strong> <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em></p>
+<p><strong>Route.AmbientLight</strong> <em>红色分量</em>; <em>绿色分量</em>; <em>蓝色分量</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>RedValue</em></strong>: An integer ranging from 0 to 255 representing the red component of the ambient light. The default value is 160.<br />
-<strong><em>GreenValue</em></strong>: An integer ranging from 0 to 255 representing the green component of the ambient light. The default value is 160.<br />
-<strong><em>BlueValue</em></strong>: An integer ranging from 0 to 255 representing the blue component of the ambient light. The default value is 160.</p>
+<p><strong><em>红色分量</em></strong>：一个0~255之间的整数，表示漫射环境光颜色的红色值。默认值是160。
+<strong><em>绿色分量</em></strong>：一个0~255之间的整数，表示漫射环境光颜色的绿色值。默认值是160。：一个0~255之间的整数，表示漫射环境光颜色的红色值。默认值是160。
+<strong><em>蓝色分量</em></strong>：一个0~255之间的整数，表示漫射环境光颜色的蓝色值。默认值是160。</p>
 
 </div>
 
 
-<p>This command defines the ambient light color to be used. All polygons in the scene are illuminated by the ambient light regardless of the light direction.</p>
+<p>该指令指定漫射环境光的颜色。这个光照亮场景中所有物体的所有面。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>Route.DirectionalLight</strong> <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em></p>
+<p><strong>Route.DirectionalLight</strong> <em>红色分量</em>; <em>绿色分量</em>; <em>蓝色分量</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>RedValue</em></strong>: An integer ranging from 0 to 255 representing the red component of the directional light. The default value is 160.<br />
-<strong><em>GreenValue</em></strong>: An integer ranging from 0 to 255 representing the green component of the directional light. The default value is 160.<br />
-<strong><em>BlueValue</em></strong>: An integer ranging from 0 to 255 representing the blue component of the directional light. The default value is 160.</p>
+<p><strong><em>红色分量</em></strong>：一个0~255之间的整数，表示定向照射光颜色的红色值。默认值是160。
+<strong><em>绿色分量</em></strong>：一个0~255之间的整数，表示定向照射光颜色的绿色值。默认值是160。
+<strong><em>蓝色分量</em></strong>：一个0~255之间的整数，表示定向照射光颜色的蓝色值。默认值是160。</p>
 
 </div>
 
 
-<p>This command defines the directional light to be used. The polygons in the scene are only fully illuminated by the directional light if the light direction points at the front faces. If pointing at back faces, no light is contributed. <em>Route.LightDirection</em> should be set to specify the light direction.</p>
+<p>该指令指定定向照射光的颜色。只有物体的迎光面会被照亮，背光面不受影响。应配合*Route.LightDirection*使用，设定光照方向。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>Route.LightDirection</strong> <em>Theta</em>; <em>Phi</em></p>
+<p><strong>Route.LightDirection</strong> <em>θ 倾斜角</em>; <em>φ 方位角</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Theta</em></strong>: A floating-point number representing the angle in <strong>degrees</strong> which controls the pitch of the light direction. The default value is 60.<br />
-<strong><em>Phi</em></strong>: A floating-point number representing the angle in <strong>degrees</strong> which controls the planar rotation of the light direction. The default value is about -26.57.</p>
+<p><strong><em>θ 倾斜角</em></strong>：一个以<strong>角度</strong>为单位的浮点数，控制定向光的仰角。默认值是60。
+<strong><em>φ 方位角</em></strong>：一个以<strong>角度</strong>为单位的浮点数，控制定向光的方位。默认值是-26.57。</p>
 
 </div>
 
 
-<p>This command defines the initial light direction for track position 0. This is the direction the light shines at, meaning the opposite direction the sun is located at. First, <em>Theta</em> determines the pitch. A value of 90 represents a downward direction, while a value of -90 represents an upward direction. With those extremes, the value of <em>Phi</em> is irrelevant. A value of 0 for <em>Theta</em> represents a forward direction originating at the horizon behind. Once the pitch is defined by <em>Theta</em>, <em>Phi</em> determines the rotation in the plane. A value of 0 does not rotate, a value of 90 rotates the direction to the right and a value of -90 rotates to the left. A backward direction can be both obtained by setting <em>Theta</em> and <em>Phi</em> to 180 and 0 or to 0 and 180, respectively. Values in-between allow for more precise control of the exact light direction.</p>
+<p>该指令定义相对于主轨道位置0的定向光照射方向。这是光照亮区域的计算方向，和光源（太阳）的方向正好相反。首先，*θ 倾斜角*定义光照仰角。90代表垂直向下，-90代表竖直向上，在这两个极值处*φ*就不影响位置。 *θ*值为0时代表从地平线后方水平向前照射。*φ 方位角*表示一个旋转方向。*φ*为0代表从前方，90为从正右，-90为正左。分别设置*θ*和*φ*为(180,0)或(0,180)都代表从后方照射。通过调节这两个数值，可以精确地控制光照的方向。</p>
 
-<p><img src="../../images/illustration_light_direction.png" alt="illustration_light_direction" /></p>
+<p><img src="../../images/illustration_light_direction.png" alt="__光照方向示意图" /></p>
 
+<p>将球面坐标(θ,φ)换算为直角坐标(x,y,z)的公式：
 <table style="border: none;">
   <tbody>
   
@@ -1673,8 +1675,9 @@ z = cos(theta) * cos(phi)
        </td>
     </tr>
   </tbody>
-</table>
+</table></p>
 
+<p>将直角坐标(x,y,z)换算为球面坐标(θ,φ)的公式（y²≠1）：
 <table style="border: none;">
   <tbody>
   
@@ -1695,8 +1698,9 @@ phi = arctan(z,x)
        </td>
     </tr>
   </tbody>
-</table>
+</table></p>
 
+<p>将直角坐标(x,y,z)换算为球面坐标(θ,φ)的公式（y²=1）：
 <table style="border: none;">
   <tbody>
   
@@ -1717,29 +1721,35 @@ phi = 0
        </td>
     </tr>
   </tbody>
-</table>
+</table></p>
 
-<p>In the formulas above, <a href="http://functions.wolfram.com/ElementaryFunctions/Cos/02" target="_blank"><em>cos(x)</em></a> represents the cosine, <a href="http://functions.wolfram.com/ElementaryFunctions/Sin/02" target="_blank"><em>sin(x)</em></a> the sine, <a href="http://functions.wolfram.com/ElementaryFunctions/ArcTan/02" target="_blank"><em>arctan(x)</em></a> the inverse tangent, <a href="http://functions.wolfram.com/ElementaryFunctions/ArcTan2/02" target="_blank"><em>arctan(x,y)</em></a> the two-argument inverse tangent and <a href="http://functions.wolfram.com/ElementaryFunctions/Sqrt/02" target="_blank"><em>sqrt(x)</em></a> the square root. The formulas can be used to convert between spherical and cartesian coordinates if working with either one seems more intuitive than working with the other one. The formulas also serve as the official documentation on how the light direction is mathematically defined (using radians for the trigonometric functions).</p>
+<p><a href="http://functions.wolfram.com/ElementaryFunctions/Cos/02" target="_blank"><em>cos(x)</em></a> 代表余弦，
+<a href="http://functions.wolfram.com/ElementaryFunctions/Sin/02" target="_blank"><em>sin(x)</em></a> 代表正弦，
+<a href="http://functions.wolfram.com/ElementaryFunctions/ArcTan/02" target="_blank"><em>arctan(x)</em></a> 代表反正切，
+<a href="http://functions.wolfram.com/ElementaryFunctions/ArcTan2/02" target="_blank"><em>arctan(x,y)</em></a> 代表双变量反正切，
+<a href="http://functions.wolfram.com/ElementaryFunctions/Sqrt/02" target="_blank"><em>sqrt(x)</em></a> 代表平方根。
+如果更喜欢使用直角坐标的话，可以使用这些公式来进行转换。
+这几条公式也作为定向光功能的数学证明（三角函数使用弧度制）。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>Route.InitialViewpoint</strong> <em>Value</em></p>
+<p><strong>Route.InitialViewpoint</strong> <em>模式</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: An integer defining the initial camera viewpoint mode. The following values are valid:<br />
-<em>0</em> : The camera will be placed in the cab. (Default)<br />
-<em>1</em> : The camera will be placed in &lsquo;Track Camera&rsquo; mode.<br />
-<em>2</em> : The camera will be placed in &lsquo;Flyby Camera&rsquo; mode.<br />
-<em>3</em> : The camera will be placed in &lsquo;Flyby Zooming Camera&rsquo; mode.</p>
+<p><strong><em>模式</em></strong>：一个整数，代表游戏开始时摄像机的位置。可选项有：
+*0*：车内视点。（默认）
+*1*：轨道视点。
+*2*：定点观察。
+*3*：定点观察（放大）。</p>
 
 </div>
 
 
-<p>This command allows the route developer to place the initial camera in one of the alternate camera modes.</p>
+<p>该指令允许自定义游戏开始时的视角。</p>
 
 <hr />
 
@@ -1749,23 +1759,23 @@ phi = 0
 </div>
 
 
-<p><font color=#555555>This command is ignored by openBVE.</font></p>
+<p><font color=#555555>该指令只被BVE4等使用，openBVE忽略这一指令。</font></p>
 
-<h2 id="a-name-train-a-6-the-train-namespace"><a name="train"></a>■ 6. The Train namespace</h2>
+<h2 id="a-name-train-a-6-train-列车-命名空间"><a name="train"></a>■ 6. Train (列车) 命名空间</h2>
 
-<p>Commands from this namespace define route-train associations.</p>
+<p>这个命名空间里的指令指定线路使用的列车。</p>
 
 <hr />
 
 <div id="command">
-<p>Train.Folder <em>FolderName</em><br />
-Train.File <em>FolderName</em></p>
+<p>Train.Folder <em>文件夹名</em>
+Train.File <em>文件夹名</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>FolderName</em></strong>: The folder name of the default train to use on this route.</p>
+<p><strong><em>文件夹名</em></strong>：该线路要使用的列车的文件夹名。</p>
 
 </div>
 
@@ -1773,89 +1783,89 @@ Train.File <em>FolderName</em></p>
 <hr />
 
 <div id="command">
-<p><strong>Train.Run</strong>(<em>RailTypeIndex</em>)<font color="gray">.Set</font> <em>RunSoundIndex</em><br />
-<strong>Train.Rail</strong>(<em>RailTypeIndex</em>)<font color="gray">.Set</font> <em>RunSoundIndex</em></p>
+<p><strong>Train.Run</strong>(<em>轨道类型编号</em>)<font color="gray">.Set</font> <em>走行音编号</em>
+<strong>Train.Rail</strong>(<em>轨道类型编号</em>)<font color="gray">.Set</font> <em>走行音编号</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>RailTypeIndex</em></strong>: A non-negative integer representing the rail type as defined via Structure.Rail and used via Track.RailType.<br />
-<strong><em>RunSoundIndex</em></strong>: A non-negative integer representing the train&rsquo;s run sound to associate to the rail type.</p>
+<p><strong><em>轨道类型编号</em></strong>：一个非负整数，代表一个轨道类型。这通过Structure.Rail设定，通过Track.RailType使用。
+<strong><em>走行音编号</em></strong>：一个非负整数，代表这个轨道类型使用的列车走行音。</p>
 
 </div>
 
 
-<p>The train developer provides a repertoire of different run sounds. Use this command to associate these run sounds to the rail types you use in your route. In order for the correct run sounds to be played on any of your rail types, you need to coordinate your efforts with the train developer. Please see the page about <a href="../../zh_cn/information/standards.html" target="_blank">standards</a> for further information.</p>
+<p>列车开发者会为他的列车设定一些在特定轨道种类上的运行时的声音。使用该指令来为轨道类型分配列车走行音。由于走行音编号是由列车开发者指定的，所以需要和列车开发者合作协调，来确保为正确的轨道类型使用相应的走行音。这里有一个<a href="../../zh_cn/information/standards.html" target="_blank">编号标准</a>，但使用得并不很广泛。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>Train.Flange</strong>(<em>RailTypeIndex</em>)<font color="gray">.Set</font> <em>FlangeSoundIndex</em></p>
+<p><strong>Train.Flange</strong>(<em>轨道类型编号</em>)<font color="gray">.Set</font> <em>轮缘摩擦声编号</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>RailTypeIndex</em></strong>: A non-negative integer representing the rail type as defined via Structure.Rail and used via Track.RailType.<br />
-<strong><em>RunSoundIndex</em></strong>: A non-negative integer representing the train&rsquo;s flange sound to associate to the rail type.</p>
+<p><strong><em>轨道类型编号</em></strong>：一个非负整数，代表一个轨道类型。这通过Structure.Rail设定，通过Track.RailType使用。
+<strong><em>轮缘摩擦声编号</em></strong>：一个非负整数，代表这个轨道类型使用的轮缘摩擦声。</p>
 
 </div>
 
 
-<p>The train developer provides a repertoire of different flange sounds. Use this command to associate these flange sounds to the rail types you use in your route. In order for the correct flange sounds to be played on any of your rail types, you need to coordinate your efforts with the train developer. Please see the page about <a href="../../zh_cn/information/standards.html" target="_blank">standards</a> for further information.</p>
+<p>列车开发者会为他的列车设定一些在特定轨道种类上的轮缘摩擦声。使用该指令来为轨道类型分配轮缘摩擦声。由于轮缘摩擦声编号是由列车开发者指定的，所以需要和列车开发者合作协调，来确保为正确的轨道类型使用相应的轮缘摩擦声。这里有一个<a href="../../zh_cn/information/standards.html" target="_blank">编号标准</a>，但使用得并不很广泛。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>Train.Timetable</strong>(<em>TimetableIndex</em>)<strong>.Day</strong><font color="gray">.Load</font> FileName</p>
+<p><strong>Train.Timetable</strong>(<em>时刻表编号</em>)<strong>.Day</strong><font color="gray">.Load</font> 文件名</p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>TimetableIndex</em></strong>: A non-negative integer representing the timetable index.<br />
-<strong><em>FileName</em></strong>: The file name for the daytime version of the timetable, relative to the train&rsquo;s folder (1<sup>st</sup> choice), or relative to the <strong>Object</strong> folder (2<sup>nd</sup> choice).</p>
+<p><strong><em>时刻表编号</em></strong>：一个非负整数，代表这个时刻表图片的编号。
+<strong><em>文件名</em></strong>：时刻表图片被照亮的一版的文件名，路径应相对于列车文件夹（<sup>首先</sup>考虑），或相对于<strong>Objects</strong>文件夹（<sup>随后</sup>考虑）。</p>
 
 </div>
 
 
-<p>Use this command to load daytime versions of the timetable. Which timetable index to show starting with a particular station can be set in Track.Sta commands.</p>
+<p>用该指令来加载被照亮的时刻表图片。使用Track.Sta命令可以指定在哪站使用哪张时刻表图片。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>Train.Timetable</strong>(<em>TimetableIndex</em>)<strong>.Night</strong><font color="gray">.Load</font> FileName</p>
+<p><strong>Train.Timetable</strong>(<em>时刻表编号</em>)<strong>.Night</strong><font color="gray">.Load</font> 文件名</p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>TimetableIndex</em></strong>: A non-negative integer representing the timetable index.<br />
-<strong><em>FileName</em></strong>: The file name for the daytime version of the timetable, relative to the train&rsquo;s folder (1<sup>st</sup> choice), or relative to the <strong>Object</strong> folder (2<sup>nd</sup> choice).</p>
+<p><strong><em>时刻表编号</em></strong>：一个非负整数，代表这个时刻表图片的编号。
+<strong><em>文件名</em></strong>：时刻表图片暗光照下的一版的文件名，路径应相对于列车文件夹（<sup>首先</sup>考虑），或相对于<strong>Objects</strong>文件夹（<sup>随后</sup>考虑）。</p>
 
 </div>
 
 
-<p>Use this command to load nighttime versions of the timetable. Which timetable index to show starting with a particular station can be set in Track.Sta commands.</p>
+<p>用该指令来加载暗光照下的时刻表图片。使用Track.Sta命令可以指定在哪站使用哪张时刻表图片。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>Train.Gauge</strong> <em>ValueInMillimeters</em></p>
+<p><strong>Train.Gauge</strong> <em>毫米数值</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>ValueInMillimeters</em></strong>: A floating-point number representing the rail gauge, measured in <strong>millimeters</strong> (0.001 meters). The default value is 1435.</p>
+<p><strong><em>毫米数值</em></strong>：一个浮点数，代表轨道的轨距。单位是<strong>毫米</strong>（0.001m,0.1cm）。默认值是1435（标准轨）。</p>
 
 </div>
 
 
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
-<p>Train.Gauge is the same as Route.Gauge.</p>
+<p>Train.Gauge和Route.Gauge作用相同。</p>
 
 </div>
 
@@ -1863,20 +1873,20 @@ Train.File <em>FolderName</em></p>
 <hr />
 
 <div id="command">
-<p><strong>Train.Interval</strong> <em>Interval<sub>0</sub></em>; <em>Interval<sub>1</sub></em>; &hellip;; <em>Interval<sub>n-1</sub></em></p>
+<p><strong>Train.Interval</strong> <em>间隔<sub>0</sub></em>; <em>间隔<sub>1</sub></em>; &hellip;; <em>间隔<sub>n-1</sub></em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>ValueInSeconds</em></strong>: A floating-point number representing the time interval between the player&rsquo;s train and the preceding train, measured in <strong>seconds</strong>. The default value is 0.</p>
+<p><strong><em>间隔<sub>i</sub></em></strong>：一个浮点数，指定一辆AI列车从第一站的发车时间和玩家操作的列车的时间差。单位是<strong>秒</strong>。正数使AI列车在玩家之前发车，负数使AI列车在玩家之后发车。</p>
 
 </div>
 
 
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
-<p>Train.ValueInSeconds is the same as Route.RunInterval.</p>
+<p>请参见Route.RunInterval，作用相同。</p>
 
 </div>
 
@@ -1884,18 +1894,18 @@ Train.File <em>FolderName</em></p>
 <hr />
 
 <div id="command">
-<p><strong>Train.Velocity</strong> <em><font color="blue">Speed</font></em></p>
+<p><strong>Train.Velocity</strong> <font color="blue"><em>速度</em></font></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em><font color="blue">Speed</font></em></strong>: A positive floating-point number representing the maximum speed the preceding trains may travel at, <strong>by default</strong> measured in <strong>kilometers per hour</strong>, or 0 for infinite speed. The default value is 0.</p>
+<p><strong><font color="blue"><em>速度</em></font></strong>：该指令可以进一步给AI车设置限速。设定为0表示不给AI车设定额外限速。<strong>默认</strong>单位是<strong>km/h</strong>，默认值是0。</p>
 
 </div>
 
 
-<p>This command defines the maximum speed limit the preceding trains may travel at. The actual speed limit may be reduced by Track.Limit commands. The player&rsquo;s train is unaffected by this setting and may travel up to the limits defined by Track.Limit.</p>
+<p>该指令设定的是额外限速，具体限速仍然受Track.Limit限制。玩家驾驶的列车不受影响，仍然可以一直加速到Track.Limit。</p>
 
 <hr />
 
@@ -1905,7 +1915,7 @@ Train.File <em>FolderName</em></p>
 </div>
 
 
-<p><font color=#555555>This command is ignored by openBVE.</font></p>
+<p><font color=#555555>该指令已过时。OpenBVE忽略该指令。</font></p>
 
 <hr />
 
@@ -1915,164 +1925,164 @@ Train.File <em>FolderName</em></p>
 </div>
 
 
-<p><font color=#555555>This command is ignored by openBVE.</font></p>
+<p><font color=#555555>该指令已过时。OpenBVE忽略该指令。</font></p>
 
-<h2 id="a-name-structure-a-7-the-structure-namespace"><a name="structure"></a>■ 7. The Structure namespace</h2>
+<h2 id="a-name-structure-a-7-structure-结构-命名空间"><a name="structure"></a>■ 7. Structure (结构) 命名空间</h2>
 
-<p>The commands in the Structure namespace define which objects to use in other commands. Generally, commands like Track.Rail, Track.FreeObj and so on create objects referenced by a <em>StructureIndex</em>. This <em>StructureIndex</em> is specific to that command, so you can define a set of objects specific to Track.Rail, Track.FreeObj and so on.</p>
+<p>这个命名空间里的指令用来载入在后面的其他指令中要用到的物体模型。总体来说，像Track.Rail、Track.FreeObj之类的命令通过*结构编号*来指定要使用的物体。这个*结构编号*对于这个指令是特定的，所以应当先载入要使用的模型。要使用哪个指令，要使用哪个模型，就把它们载入，不需要的就不用载入。</p>
 
-<p>The general syntax for commands in the Structure namespace is:</p>
+<p>这个命名空间中的指令基本上都是以下这个结构：</p>
 
 <div id="command">
-<p><strong>Structure.<em>Command</em>(<em>StructureIndex</em>)</strong><font color="gray">.Load</font> <em>FileName</em></p>
+<p><strong>Structure.<em>类型</em>(<em>结构编号</em>)</strong><font color="gray">.Load</font> <em>文件名</em></p>
 
 </div>
 
 
-<p><em>StructureIndex</em> is a non-negative integer. <em>FileName</em> is the object file to load, relative to the <strong>Object</strong> folder. <em>Command</em> is any of the following commands:</p>
+<p>*结构编号*是一个非负整数。*文件名*是一个相对于<strong>Object</strong>文件夹的路径，指向要加载的模型文件。*类型*是以下几种之一：</p>
 
 
 <table class='type0'>
 <thead>
 <tr>
-<th><em>Command</em>:</th>
-<th>Remarks</th>
+<th><em>类型</em>:</th>
+<th>简介</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td>Ground</td>
-<td>Defines objects for Cycle.Ground and Track.Ground.</td>
+<td>用于Cycle.Ground和Track.Ground的地面模型。</td>
 </tr>
 
 <tr>
 <td>Rail</td>
-<td>Defines objects for Track.Rail, Track.RailStart and Track.RailType.</td>
+<td>用于Track.Rail、Track.RailStart和Track.RailType的轨道模型。</td>
 </tr>
 
 <tr>
 <td>WallL</td>
-<td>Defines left objects for Track.Wall.</td>
+<td>用于Track.Wall指令的左侧墙壁模型。</td>
 </tr>
 
 <tr>
 <td>WallR</td>
-<td>Defines right objects for Track.Wall.</td>
+<td>用于Track.Wall指令的右侧墙壁模型。</td>
 </tr>
 
 <tr>
 <td>DikeL</td>
-<td>Defines left objects for Track.Dike.</td>
+<td>用于Track.Dike指令的左侧路堤模型。</td>
 </tr>
 
 <tr>
 <td>DikeR</td>
-<td>Defines right objects for Track.Dike.</td>
+<td>用于Track.Dike指令的右侧路堤模型。</td>
 </tr>
 
 <tr>
 <td>FormL</td>
-<td>Defines left platforms edges for Track.Form.</td>
+<td>用于Track.Form指令的站台左边缘地面模型。</td>
 </tr>
 
 <tr>
 <td>FormR</td>
-<td>Defines right platforms edges for Track.Form.</td>
+<td>用于Track.Form指令的站台右边缘地面模型。</td>
 </tr>
 
 <tr>
 <td>FormCL</td>
-<td>Defines transformable left platforms for Track.Form. <font color="red">No ANIMATED objects supported.</font></td>
+<td>用于Track.Form指令的可以被变换拉伸的站台左边缘地面模型。<font color="red">不支持ANIMATED格式带动画物体。</font></td>
 </tr>
 
 <tr>
 <td>FormCR</td>
-<td>Defines transformable right platforms for Track.Form. <font color="red">No ANIMATED objects supported.</font></td>
+<td>用于Track.Form指令的可以被变换拉伸的站台右边缘地面模型。<font color="red">不支持ANIMATED格式带动画物体。</font></td>
 </tr>
 
 <tr>
 <td>RoofL</td>
-<td>Defines left roof edges for Track.Form.</td>
+<td>用于Track.Form指令的站台左边缘顶棚模型。</td>
 </tr>
 
 <tr>
 <td>RoofR</td>
-<td>Defines right roof edges for Track.Form.</td>
+<td>用于Track.Form指令的站台右边缘顶棚模型。</td>
 </tr>
 
 <tr>
 <td>RoofCL</td>
-<td>Defines transformable left roofs for Track.Form. <font color="red">No ANIMATED objects supported.</font></td>
+<td>用于Track.Form指令的可以被变换拉伸的站台左边缘顶棚模型。 <font color="red">不支持ANIMATED格式带动画物体。</font></td>
 </tr>
 
 <tr>
 <td>RoofCR</td>
-<td>Defines transformable right roofs for Track.Form. <font color="red">No ANIMATED objects supported.</font></td>
+<td>用于Track.Form指令的可以被变换拉伸的站台右边缘顶棚模型。 <font color="red">不支持ANIMATED格式带动画物体。</font></td>
 </tr>
 
 <tr>
 <td>CrackL</td>
-<td>Defines transformable left objects for Track.Crack. <font color="red">No ANIMATED objects supported.</font></td>
+<td>用于Track.Crack指令的填充轨道间间隙的可以被变换拉伸的左侧地面模型。<font color="red">不支持ANIMATED格式带动画物体。</font></td>
 </tr>
 
 <tr>
 <td>CrackR</td>
-<td>Defines transformable right objects for Track.Crack. <font color="red">No ANIMATED objects supported.</font></td>
+<td>用于Track.Crack指令的填充轨道间间隙的可以被变换拉伸的右侧地面模型。 <font color="red">不支持ANIMATED格式带动画物体。</font></td>
 </tr>
 
 <tr>
 <td>FreeObj</td>
-<td>Defines objects for Track.FreeObj.</td>
+<td>用于Track.FreeObj指令在轨道旁放置的外景物体模型。</td>
 </tr>
 
 <tr>
 <td>Beacon</td>
-<td>Defines objects for Track.Beacon.</td>
+<td>用于Track.Beacon指令的轨旁无线电应答器模型。</td>
 </tr>
 </tbody>
 </table>
 
 
-<p>Generally, supported objects are B3D, CSV, X and ANIMATED. However, the FormCL, FormCR, RoofCL, RoofCR, CrackL and CrackR commands only accept B3D, CSV and X objects.</p>
+<p>这些指令可以加载B3D、CSV、X、L3DOBJ、S、OBJ和ANIMATED格式的模型。但是由于包含变换拉伸，FormCL、FormCR、RoofCL、RoofCR、CrackL和CrackR指令都不支持ANIMATED格式的模型。</p>
 
-<p>➟ <a href="../../zh_cn/routes/formroofcrack.html" target="_blank">More information about forms, roofs and cracks&hellip;</a></p>
+<p>➟ <a href="../../zh_cn/routes/formroofcrack.html" target="_blank">关于Forms, Roofs, Cracks的更详尽说明&hellip;</a></p>
 
-<p>Additionally, there is the Structure.Pole command, which has a slightly different syntax:</p>
+<p>还有一个特殊的Structure.Pole指令，用法稍有不同：</p>
 
 <div id="command">
-<p><strong>Structure.Pole(<em>NumberOfAdditionalRails</em>; <em>PoleStructureIndex</em>)</strong><font color="gray">.Load</font> <em>FileName</em></p>
+<p><strong>Structure.Pole(<em>额外轨道跨度值</em>; <em>架线柱模型编号</em>)</strong><font color="gray">.Load</font> <em>文件名</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>NumberOfAdditionalRails</em></strong>: An non-negative integer representing the number of additional rails covered by the pole. 0 creates a pole for one rail, 1 for two rails, etc.<br />
-<strong><em>PoleStructureIndex</em></strong>: A non-negative integer representing the pole structure index.<br />
-<strong><em>FileName</em></strong>: The object file to load, relative to the <strong>Object</strong> folder.</p>
+<p><strong><em>额外轨道跨度值</em></strong>：一个非负整数，代表这个架线柱模型跨过的额外轨道数量。0代表跨度为1组轨道的架线柱，1代表2组轨道，以此类推。
+<strong><em>架线柱模型编号</em></strong>：一个非负整数，代表要加载到的模型编号。
+<strong><em>文件名</em></strong>：一个相对于<strong>Object</strong>文件夹的路径，指向要加载的模型文件。</p>
 
 </div>
 
 
-<p>Please note that all objects but the FreeObj are inserted at the beginning of a block and should thus extend from 0 to <em>BlockLength</em> (by default 25m) on the z-axis. For further information on usage, see the respective commands from the Track namespace.</p>
+<p>特别提示：除FreeObj之外的物体都是在区间块的开始位置被放置的，因此这些模型在建模时尺寸应当保证整个物体头尾的Z坐标伸展区域（放置时朝轨道前方的方向即Z轴正方向）在0~*区间块长度*（默认值为25m）之间（这样保证正好盖住整个区间块，否则出现空隙或相互重叠）。在Track命名空间中对应命令处有更详细的解释。</p>
 
-<h2 id="a-name-texture-a-8-the-texture-namespace"><a name="texture"></a>■ 8. The Texture namespace</h2>
+<h2 id="a-name-texture-a-8-texture-材质-命名空间"><a name="texture"></a>■ 8. Texture (材质) 命名空间</h2>
 
-<p>Commands from this namespace define which background images to use and how they are aligned.</p>
+<p>这个命名空间中的指令指定要使用的天空背景图像和它对齐的方式。</p>
 
-<p><img src="../../images/illustration_background.png" alt="illustration_background" /></p>
+<p><img src="../../images/illustration_background.png" alt="_背景示意图" /></p>
 
-<p>The background image is displayed as a cylindric wall around the camera whose start (viewed from above) is 60 degrees to the left of the initial forward direction (at the 10 o&rsquo;clock position). From there, the background image wraps clock-wise around the cylinder with a repetition count specified via Texture.Background(<em>BackgroundTextureIndex</em>).X, which by default creates 6 repetitions in a full circle.</p>
+<p>背景图片被贴在一个环绕着游戏主视角摄像机的圆柱形墙上，从相对于初始前视角方向左偏60°（即十点钟方向）开始，将指定的这张图片重复平铺到Texture.Background(<em>背景材质编号</em>).X指令指定的次数（默认为一圈重复六次）。</p>
 
-<p>The upper <sup>3</sup>&frasl;<sub>4</sub> of the image is displayed above the horizon, while the lower <sup>1</sup>&frasl;<sub>4</sub> is displayed below the horizon. Via Texture.Background(<em>BackgroundTextureIndex</em>).Aspect, you can choose whether to have a fixed cylinder height or to preserve the aspect ratio of the texture. If the image should have a fixed height, the cylinder has a height of <sup>1</sup>&frasl;<sub>2</sub> its radius, which corresponds to about 20 degree inclination to the top of the image, and about -7 degrees to the bottom of the image. If the aspect ratio of the image is preserved, this takes not only the width and height of the image into account, but also the repetition count.</p>
+<p>图片的上方四分之三显示在地平面之上，下方四分之一显示在地平面之下。 通过Texture.Background(<em>背景材质编号</em>).Aspect指令，可以选择圆柱体的高度是固定的还是根据图片宽高比自动适应的。如果选择固定高度，圆柱体的高度将是其半径的二分之一，即图片上边缘位于20°视角，下边缘位于-7°视角。如果选择保持图片宽高比，这就不但计算图片宽度和高度，还将参考重复次数计算圆柱高度。</p>
 
-<p>Regardless of the repetition count you chose, you should make sure that the left and right edges of the textures fit seamlessly together. Please also take into account that top and bottom caps are created which sample from the top and bottom 10% of the image. You should avoid mountain peaks and similar extremes in the top 10% of the image in order for such extremes to not leak into the top cap.</p>
+<p>不论需要重复几次，都要保证传入的这张图片在重复时左右边缘可以完美贴合。圆柱的顶面和底面材质是按照图片最上方和最下方的十分之一来计算决定的。因此应尽量避免图片最上方十分之一有高山山峰等物体，否则它们会跑到顶面上去。</p>
 
-<p>The image loaded into Texture.Background(0) is displayed at the beginning of the route, unless a Track.Back command at the beginning of the route requests a different image.</p>
+<p>除非主轨道位置开头的Track.Back指令应用了一张不同的背景图，Texture.Background(0)的图像会在线路的开头被默认使用。</p>
 
-<p>As an alternative <strong><em>Dynamic or Object</em></strong> based backgrounds may be used. The implementation of these is described upon this page:</p>
+<p>也可以使用<strong><em>动态或基于模型的</em></strong>背景。这个页面详细描述了如何使用这一功能：</p>
 
-<p><a href="../../zh_cn/routes/xml/dynamicbackground.html" target="_blank">Dynamic &amp; Object Based Backgrounds</a></p>
+<p><a href="../../zh_cn/routes/xml/dynamicbackground.html" target="_blank">动态和基于模型的背景</a></p>
 
 <hr />
 
@@ -2083,16 +2093,16 @@ Train.File <em>FolderName</em></p>
 
 
 <div id="command-arguments">
-<p><strong><em>FileName</em></strong>: The texture file to load, relative to the <strong>Object</strong> folder.</p>
+<p><strong><em>文件名</em></strong>：一个相对于<strong>Object</strong>文件夹的路径，指向要加载的模型文件或动态XML配置文件。</p>
 
 </div>
 
 
-<p>This command loads a background image to be later used by Track.Back.</p>
+<p>该指令加载用于Track.Back指令的背景图像。</p>
 
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
-<p>If a dynamic or object based background is to be used, this must instead point to the appropriate XML file.</p>
+<p><strong>注意：</strong>如果要使用动态或基于模型的背景，请把它指向需要的XML配置文件。</p>
 
 </div>
 
@@ -2100,20 +2110,20 @@ Train.File <em>FolderName</em></p>
 <hr />
 
 <div id="command">
-<p><strong>Texture.Background(<em>BackgroundTextureIndex</em>).X</strong> <em>RepetitionCount</em></p>
+<p><strong>Texture.Background(<em>背景材质编号</em>).X</strong> <em>重复次数</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>RepetitionCount</em></strong>: The number of times the background image is repeated in a full circle. The default value is 6.</p>
+<p><strong><em>重复次数</em></strong>：这张图像一圈中重复的次数。默认值是6。</p>
 
 </div>
 
 
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
-<p>Ignored if using a dynamic or object based background.</p>
+<p>如使用动态或基于模型的背景，这项设置不起作用。</p>
 
 </div>
 
@@ -2121,64 +2131,64 @@ Train.File <em>FolderName</em></p>
 <hr />
 
 <div id="command">
-<p><strong>Texture.Background(<em>BackgroundTextureIndex</em>).Aspect</strong> <em>Mode</em></p>
+<p><strong>Texture.Background(<em>背景材质编号</em>).Aspect</strong> <em>模式</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Mode</em></strong>: The mode of aspect ratio handling to use. The default value is 0 (fixed).</p>
+<p><strong><em>模式</em></strong>：宽高比的处理模式。默认值是0（固定高度）。</p>
 
 </div>
 
 
-<p>▸ Options for <em>Mode</em>:</p>
+<p>▸ *模式*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>0</strong>: Fixed: Use a fixed height for the cylinder.<br />
-<strong>1</strong>: Aspect: Preserve the aspect ratio of the image.</p>
+<p><strong>0</strong>：使用固定高度。
+<strong>1</strong>：保留宽高比。</p>
 
 </div>
 
 
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
-<p>Ignored if using a dynamic or object based background.</p>
+<p>如使用动态或基于模型的背景，这项设置不起作用。</p>
 
 </div>
 
 
-<h2 id="a-name-cycle-a-9-the-cycle-namespace"><a name="cycle"></a>■ 9. The Cycle namespace</h2>
+<h2 id="a-name-cycle-a-9-cycle-循环-命名空间"><a name="cycle"></a>■ 9. Cycle (循环) 命名空间</h2>
 
 <div id="command">
-<p><strong>Cycle.Ground(<em>GroundStructureIndex</em>)<font color="gray">.Params</font> <em>GroundStructureIndex<sub>0</sub></em>; <em>GroundStructureIndex<sub>1</sub></em>; <em>GroundStructureIndex<sub>2</sub></em>; &hellip;; <em>GroundStructureIndex<sub>n-1</sub></em></strong></p>
+<p><strong>Cycle.Ground(<em>地面模型编号</em>)<font color="gray">.Params</font> <em>地面模型编号<sub>0</sub></em>; <em>地面模型编号<sub>1</sub></em>; <em>地面模型编号<sub>2</sub></em>; &hellip;; <em>地面模型编号<sub>n-1</sub></em></strong></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>GroundStructureIndex</em></strong>: A non-negative integer indicating the ground structure index for which a cycle is to be defined.<br />
-<strong><em>GroundStructureIndex<sub>i</sub></em></strong>: A non-negative integer indicating a ground structure that has been previously loaded via Structure.Ground.</p>
+<p><strong><em>地面模型编号</em></strong>：一个非负整数，指定哪一个地面模型编号要被定义为循环的。
+<strong><em>地面模型编号<sub>i</sub></em></strong>：一个非负整数，表示一个先前已经被加载的地面模型是循环的一部分。</p>
 
 </div>
 
 
-<p>When usually using Track.Ground(<em>GroundStructureIndex</em>), the same ground structure object will be repeatedly placed in every block. Via Cycle.Ground, you can override this behavior and automatically cycle through a series of different objects when using Track.Ground(<em>GroundStructureIndex</em>). The cycle repeats indefinitely, where <em>GroundStructureIndex0</em> starts at track position 0. Technically, the <em>i</em> in <em>GroundStructureIndex<sub>i</sub></em> chosen for a particular track position <em>p</em> is <code>Mod[p / BlockLength, n]</code>.</p>
+<p>当平常使用Track.Ground(<em>地面模型编号</em>)指令时，选定的模型每个区间块都被重复一次。但是通过Cycle.Ground指令，在使用Track.Ground(<em>地面模型编号</em>)时可以把它改成几个不同模型循环出现。这个循环无限重复，*地面模型编号0*从主轨道位置0开始。从技术角度来说，对于一个特定的主轨道位置*p*计算出的*地面模型编号<sub>i</sub>*中的*i*是<code>Mod[p/区间块长度, n]</code>（P ÷ 区间块长度 Mod n）。</p>
 
 <div id="command">
-<p><strong>Cycle.Rail(<em>RailStructureIndex</em>)<font color="gray">.Params</font> <em>RailStructureIndex<sub>0</sub></em>; <em>RailStructureIndex<sub>1</sub></em>; <em>RailStructureIndex<sub>2</sub></em>; &hellip;; <em>RailStructureIndex<sub>n-1</sub></em></strong></p>
+<p><strong>Cycle.Rail(<em>轨道模型编号</em>)<font color="gray">.Params</font> <em>轨道模型编号<sub>0</sub></em>; <em>轨道模型编号<sub>1</sub></em>; <em>轨道模型编号<sub>2</sub></em>; &hellip;; <em>轨道模型编号<sub>n-1</sub></em></strong></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>RailStructureIndex</em></strong>: A non-negative integer indicating the rail structure index for which a cycle is to be defined.<br />
-<strong><em>RailStructureIndex<sub>i</sub></em></strong>: A non-negative integer indicating a rail structure that has been previously loaded via Structure.Rail.</p>
+<p><strong><em>轨道模型编号</em></strong>：一个非负整数，指定哪一个轨道模型编号要被定义为循环的。
+<strong><em>轨道模型编号<sub>i</sub></em></strong>：一个非负整数，表示一个先前已经被加载的轨道模型是循环的一部分。</p>
 
 </div>
 
 
-<p>Consider the following definition:</p>
+<p>以这一定义为例：</p>
 
 <table style="border: none;">
   <tbody>
@@ -2197,7 +2207,7 @@ Train.File <em>FolderName</em></p>
   </tbody>
 </table>
 
-<p>The following two codes will produce the same output:</p>
+<p>这两组代码效果相同：</p>
 
 <table style="border: none;">
   <tbody>
@@ -2244,58 +2254,58 @@ With Track<br />
   </tbody>
 </table>
 
-<h2 id="a-name-signal-a-10-the-signal-namespace"><a name="signal"></a>■ 10. The Signal namespace</h2>
+<h2 id="a-name-signal-a-10-signal-信号-命名空间"><a name="signal"></a>■ 10. Signal (信号) 命名空间</h2>
 
-<p>Commands from this namespace define custom signals.</p>
+<p>这个命名空间内的指令用来加载自定义信号机。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>Signal(</strong><em>SignalIndex</em><strong>)</strong><font color="gray">.Load</font> <em>AnimatedObjectFile</em></p>
+<p><strong>Signal(</strong><em>信号机编号</em><strong>)</strong><font color="gray">.Load</font> <em>ANIMATED动画模型文件</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>SignalIndex</em></strong>: A non-negative integer representing the signal index.<br />
-<strong><em>AnimatedObjectFile</em></strong>: A reference to an animated object file, relative to the <strong>Object</strong> folder.</p>
+<p><strong><em>信号机编号</em></strong>：一个非负整数，代表这类信号机的编号。
+<strong><em>ANIMATED动画模型文件</em></strong>：一个相对于<strong>Object</strong>文件夹的路径，指向要加载的ANIMATED动画模型文件。</p>
 
 </div>
 
 
-<p>Use this command to load signals directly from animated objects. The <em>SignalIndex</em> can be later referenced in Track.SigF commands to place the signal.</p>
+<p>用该指令来直接加在一个动画模型文件作为信号机。*信号机编号*可以在使用Track.SigF命令放置这类信号机时使用。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>Signal(</strong><em>SignalIndex</em><strong>)</strong><font color="gray">.Load</font> <em>SignalFileWithoutExtension</em>; <em>GlowFileWithoutExtension</em></p>
+<p><strong>Signal(</strong><em>信号机编号</em><strong>)</strong><font color="gray">.Load</font> <em>不带扩展名的基座模型文件</em>; <em>不带扩展名的发光模型文件</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>SignalIndex</em></strong>: A non-negative integer representing the signal index.<br />
-<strong><em>SignalFileWithoutExtension</em></strong>: A reference to a B3D/CSV/X object file representing the signal, relative to the <strong>Object</strong> folder, but without the file extension. <strong>Is required to be specified.</strong><br />
-<strong><em>GlowFileWithoutExtension</em></strong>: An optional reference to a B3D/CSV/X object file representing the distance glow, relative to the <strong>Object</strong> folder, but without the file extension.</p>
+<p><strong><em>信号机编号</em></strong>：一个非负整数，代表这类信号机的编号。
+<strong><em>不带扩展名的基座模型文件</em></strong>：一个相对于<strong>Object</strong>文件夹的路径，指向要加载的基座B3D/CSV/……模型文件（不带扩展名）。<strong>必须指定。</strong>
+<strong><em>不带扩展名的发光模型文件</em></strong>：一个相对于<strong>Object</strong>文件夹的路径，指向要加载的发光B3D/CSV/……模型文件（不带扩展名）。如果不需要发光效果，可以不指定。</p>
 
 </div>
 
 
-<p>Use this command to load signals from a series of individual textures applied onto a common object. openBVE looks for X, CSV and B3D objects in this exact order. Textures are required to have the same name as the signal or glow, plus a non-negative aspect index, plus a file extension for textures. The <em>SignalIndex</em> can be later referenced in Track.SigF commands to place the signal.</p>
+<p>该指令加载的信号机切换是通过给同一个模型糊上不同的材质实现的。openBVE按顺序搜索X、CSV、B3D……模型。材质的名字需要是“[模型名字不带扩展名]+[状态编号]+.[扩展名]”这样一个格式。*信号机编号*可以在使用Track.SigF命令放置这类信号机时使用。</p>
 
-<p>For the <em>SignalFileWithoutExtension</em>, there should be the following files present (example):</p>
+<p>举个例子来说，对于*不带扩展名的基座模型文件*，应该有大概这样的一些文件：</p>
 
-<p><em>SignalFileWithoutExtension</em><strong>.x</strong><br />
-<em>SignalFileWithoutExtension</em><strong><font color="red">0</font>.bmp</strong><br />
-<em>SignalFileWithoutExtension</em><strong><font color="red">1</font>.bmp</strong><br />
-<em>SignalFileWithoutExtension</em><strong><font color="red">2</font>.bmp</strong><br />
-<em>SignalFileWithoutExtension</em><strong><font color="red">n</font>.bmp</strong></p>
+<p><em>基座模型文件</em><strong>.csv</strong>
+<em>基座模型文件</em><strong><font color="red">0</font>.bmp</strong>
+<em>基座模型文件</em><strong><font color="red">1</font>.bmp</strong>
+<em>基座模型文件</em><strong><font color="red">2</font>.bmp</strong>
+<em>基座模型文件</em><strong><font color="red">n</font>.bmp</strong></p>
 
-<p>The aspect indices from 0 through <em>n</em> represent successively more permissive aspects, where 0 is red. The built-in signals, for example, use the indices 0 (<font color="#C00000">●</font>), 1 (<font color="#FFC000">●●</font>), 2 (<font color="#FFC000">●</font>), 3 (<font color="#00C000">●</font><font color="#FFC000">●</font>), 4 (<font color="#00C000">●</font>) and 5 (<font color="#00C000">●●</font>). You can use as many as required.</p>
+<p>从0到*n*的这一串状态表示中，数值越大表示前方空闲区间越多，允许速度越快。0代表红灯。举个例子来说，内置的信号机是这样规定的：0 (<font color="#C00000">●</font>), 1 (<font color="#FFC000">●●</font>), 2 (<font color="#FFC000">●</font>), 3 (<font color="#00C000">●</font><font color="#FFC000">●</font>), 4 (<font color="#00C000">●</font>) 还有 5 (<font color="#00C000">●●</font>)。可以按照线路信号系统的实际情况增减设置。</p>
 
-<p>All faces in the object will be applied the currently active aspect texture. This means that you cannot use any other texture in the object, but still have to assign texture coordinates appropriately. For the glow object, the above rules also apply. The glow object is usually a rectangle placed clearly in front of the signal, although you can also use different shapes.</p>
+<p>文件里的材质指定指令会被忽略，所有面都会被糊上这个同样的状态材质。这表示不能在这个模型里使用一个以上的材质文件（甚至都不能指定），只需要正确地设置材质顶点坐标即可。对于发光模型也是一样的规则。发光模型一般来说是放在信号机前面的一个大方块（虽说也可以用其他的形状，但是由于一般大家都使用透明材质，所以这并没有什么用）。</p>
 
-<p>The glow textures deserve special attention. All glow textures are pre-processed in the following way:</p>
+<p>发光模型材质的处理方法真的值得特别注意。发光模型材质是按照以下的步骤预处理的：</p>
 
 
 <table class='type0'>
@@ -2323,89 +2333,48 @@ With Track<br />
 </table>
 
 
-<p>The texture you start with should have a sharp shape, usually oval. The shape should be fully saturated in the core and blend into pure white at its outer rim. The surroundings of the shape can be either pure black (A) or pure white (B).</p>
+<p>用作发光材质的图像一般来说应该是椭圆的并且应该有一个锐利的边缘。图形的中心应该完全饱和，并在其外缘加入纯白色。图形的外边既可以是纯黑 (A) 也可以是纯白 (B)。</p>
 
-<p>When openBVE loads the glow texture, it will replace all purely black pixels with purely white pixels, thus arriving at (B). From there, the image is inverted (C), then hue-shifted by 180 degrees (D). Compared to (B), this has the overall effect of inverting the lightness of the image, i.e. fully saturated pixels will be left unchanged (e.g. the core), while bright pixels (such as the outer rim of the shape) will become dark, and vice versa. Then, the image is gamma-corrected to further darken the dark parts (E), and finally, the image is blurred slightly (F).</p>
+<p>当openBVE加载这个发光材质时，它会把所有纯黑颜色都换成纯白颜色，变成 (B) 的样子。之后，图像会被反色 &copy;，然后进行180°的色调偏移 (D) 。比起 (B) 来说，这使整幅图像的亮度反转，即满饱和的颜色不会被改变（例如中心），亮颜色（例如图形外框）将会变暗，反之亦然。然后，将会进行亮度校正使暗部更暗 (E)，最后再稍稍加上一点模糊效果 (F)。</p>
 
-<p>The resulting texture is always additively blended. This means that instead of directly drawing the texture onto the screen, the pixels of the texture are added to the screen pixels. Here, adding black (0) does not change the screen pixels, while adding a fully satured color channel (1) will result in a fully satured color channel, e.g. adding white produces white. Keep in mind that when designing the textures, you will have to follow the inverse rules, e.g. design the image as depicted in (A) or (B), while having in mind how it will be processed afterward.</p>
+<p>结果所得到的材质是被叠加混合的。这意味着不是直接在屏幕上覆盖性地绘制材质，而是将材质的颜色以RGB通道值相加的方法叠加在屏幕像素上。加上黑色不会改变原有颜色，而加上完全饱和的颜色就会覆盖原有颜色。例如，加上白色就会得到白色。在设计材质时，请牢记这个处理过程，并遵循它的逆规则。一定要设计出 (A) 或 (B) 这样的图像。</p>
 
-<h2 id="a-name-track-a-11-the-track-namespace"><a name="track"></a>■ 11. The Track namespace</h2>
+<h2 id="a-name-track-a-11-track-轨道-命名空间"><a name="track"></a>■ 11. Track (轨道) 命名空间</h2>
 
-<p>Commands from this namespace define the track layout. Commands from this namespace should appear after commands from any of the other namespaces, and they usually form the largest part of the route file.</p>
-
-<div id="notice">
-<h4 id="use-of-track-positions">Use of track positions</h4>
-
-<p>All commands from the Track namespace need to be associated to track positions. Once a track position has been defined, all subsequent commands are associated to this track position until a new track position is defined. If you do not explicitly state a track position before the first command of the Track namespace is used, 0 will be assumed. While you do not need to use track positions in ascending order, series of commands which are associated the same track position will be sorted into ascending order once the file is loaded. While track positions can be any non-negative floating-point number, many commands in the Track namespace are only to be applied at the beginning of a block, which is 25m by default. For the default situation, this means that some commands are only to be used at track positions 0, 25, 50, 75, 100, 125 and so on. All commands for which this restriction applies are marked as such.</p>
-
-</div>
-
-
-<h5 id="a-name-track-rails-a-11-1-rails"><a name="track_rails"></a>● 11.1. Rails</h5>
-
-<hr />
-
-<div id="command">
-<p><strong>Track.RailStart</strong> <em>RailIndex</em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em>; <em>RailType</em></p>
-
-</div>
-
-
-<div id="command-arguments">
-<p><strong><em>RailIndex</em></strong>: A positive integer (<strong>&gt;=1</strong>) indicating which rail index to use.<br />
-<strong><em><font color="green">X</font></em></strong>: A floating-point number representing the horizontal distance from the player&rsquo;s rail, <strong>by default</strong> measured in <strong>meters</strong>. Negative values indicate left, positive ones right.<br />
-<strong><em><font color="green">Y</font></em></strong>: A floating-point number representing the vertical distance from the player&rsquo;s rail, <strong>by default</strong> measured in <strong>meters</strong>. Negative values indicate below, positive ones above.<br />
-<strong><em>RailType</em></strong>: A non-negative integer referencing the rail type to use as defined by either a Structure.Rail or a Structure.Cycle command.</p>
-
-</div>
-
-
-<p>This command starts a new rail represented by the index <em>RailIndex</em>. Upon the point where this command is used, a rail of the same <em>RailIndex</em> must either not have been used so far in the route, or must have been ended via a Track.RailEnd command. If a rail of the same <em>RailIndex</em> was already used in the route, the default values of <em>X</em>, <em>Y</em> and <em>RailType</em> are the values last used by that rail, otherwise 0. If the rail is to be updated, use the Track.Rail command. If it is to be ended, use the Track.RailEnd command. You can end a rail of a given <em>RailIndex</em> and start a new rail of the same <em>RailIndex</em> at the same track position provided that the old rail is first ended and the new rail started afterward. For every block, a structure, determined by <em>RailType</em>, is automatically placed.</p>
-
-<div id="warning">
-<span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
-
-</div>
-
-
-<hr />
-
-<div id="command">
-<p><strong>Track.Rail</strong> <em>RailIndex</em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em>; <em>RailType</em></p>
-
-</div>
-
-
-<div id="command-arguments">
-<p><strong><em>RailIndex</em></strong>: A positive integer (<strong>&gt;=1</strong>) indicating which rail index to use.<br />
-<strong><em><font color="green">X</font></em></strong>: A floating-point number representing the horizontal distance from the player&rsquo;s rail, <strong>by default</strong> measured in <strong>meters</strong>. Negative values indicate left, positive ones right.<br />
-<strong><em><font color="green">Y</font></em></strong>: A floating-point number representing the vertical distance from the player&rsquo;s rail, <strong>by default</strong> measured in <strong>meters</strong>. Negative values indicate below, positive ones above.<br />
-<strong><em>RailType</em></strong>: A non-negative integer referencing the rail type to use as defined by either a Structure.Rail or a Structure.Cycle command.</p>
-
-</div>
-
-
-<p>This command starts a new rail or updates an existing rail. The rail is represented by the index <em>RailIndex</em>. If a rail of the same <em>RailIndex</em> was already used in the route, the default values of <em>X</em>, <em>Y</em> and <em>RailType</em> are the values last used by that rail, otherwise 0. If the rail is to be ended, use the Track.RailEnd command. You can end a rail of a given <em>RailIndex</em> and start a new rail of the same <em>RailIndex</em> at the same track position provided that the old rail is first ended and the new rail started afterward. In each block, the <em>X</em> and <em>Y</em> values are repeated if a Track.Rail command is not used for that block. As a consequence, updating the <em>X</em> or <em>Y</em> values affects the layout of the rail from the preceding block only. Changing the <em>RailType</em> will affect the rail from the point on where this command is used. If this command is used multiple times on the same track position for the same rail, then the first instance of the command takes effect, while subsequent ones are ignored.</p>
-
-<div id="warning">
-<span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
-
-</div>
-
-
-<div id="warning">
-<span>⚠</span>
-<p>Using a RailIndex value of 0 is not valid for this command: <a href="https://github.com/leezer3/OpenBVE/wiki/Errata#rail-and-railend-commands-with-an-index-of-zero" target="_blank">Errata Note</a></p>
-
-</div>
-
+<p>这个命名空间中的指令定义了轨道的布局。这个命名空间内的指令应该出现在所有其他指令之后，一般位于线路文件的最后部分，且代码量基本都要远超其他部分。</p>
 
 <div id="notice">
-<h4 id="track-railstart-vs-track-rail">Track.RailStart vs. Track.Rail</h4>
+<h4 id="使用主轨道位置">使用主轨道位置</h4>
 
-<p>If you want to start a new rail, you can either use Track.RailStart or Track.Rail. When using Track.RailStart, you provide markup that a new rail is in fact to be started, which is invalid if the rail already exists. Using an explicit Track.RailStart will protect you from using a <em>RailIndex</em> which is already in use, in which case an error message is generated.</p>
+<p>Track命名空间内的所有指令都需要和一个主轨道位置联系起来，这表示该指令执行的位置。一旦出现一个主轨道位置表达式，它后面的Track指令都会在这个位置执行，直到一个新的主轨道位置表达式指定一个新的位置。在主轨道位置表达式出现前写出的Track指令默认会在0位置执行。由于指令会被自动地排序和执行，所以并不一定需要把主轨道位置按照固定顺序写（虽然按照顺序写可以使结构更加清晰）。虽然主轨道位置可以是任意非负浮点数，有一些指令是<strong>只可以在区间块开始位置（默认为25m的整倍数位置）</strong>被使用的。默认情况下这意味着它们必须被放在0、25、50、75、100、125、以此类推的位置上。下面有这个特别限制的指令都会被标注出来。</p>
+
+</div>
+
+
+<h5 id="a-name-track-rails-a-11-1-轨道"><a name="track_rails"></a>● 11.1. 轨道</h5>
+
+<hr />
+
+<div id="command">
+<p><strong>Track.RailStart</strong> <em>轨道编号</em>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>; <em>轨道类型</em></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>轨道编号</em></strong>：一个正整数(<strong>&gt;=1</strong>)表示这个编号的轨道从这里开始。
+<strong><font color="green"><em>X</em></font></strong>：一个浮点数，表示该轨道和主轨道之间的水平距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向右偏移，负值代表向左偏移。
+<strong><font color="green"><em>Y</em></font></strong>：一个浮点数，表示该轨道和主轨道之间的垂直距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向上偏移，负值代表向下偏移。
+<strong><em>轨道类型</em></strong>：一个非负整数，表示一个由Structure.Rail或Structure.Cycle指令先前已经载入的模型编号。</p>
+
+</div>
+
+
+<p>该指令开始一条由*轨道编号*代表的新轨道。当使用该指令时，*轨道编号*必须是没有被占用的（没有使用过或已经被Track.RailEnd指令声明结束）。*X*、*Y*和*轨道类型*的默认值是0，除非这个*编号*已被占用（不应该这样做）的情况下维持该轨道上次的原值。该指令只用于开始轨道。如果需要更新它的位置，应当使用Track.Rail指令。如果需要结束它，使用Track.RailEnd指令。 在同一位置先终止*一条轨道*再开始同样*编号*的新轨道是允许的。每个区间块中都会根据*轨道类型*自动放置一个对应的轨道模型。</p>
+
+<div id="warning">
+<span>⚠</span>
+<p>该指令只能在区间块开始位置使用。</p>
 
 </div>
 
@@ -2413,23 +2382,40 @@ With Track<br />
 <hr />
 
 <div id="command">
-<p><strong>Track.RailType</strong> <em>RailIndex</em>; <em>RailType</em></p>
+<p><strong>Track.Rail</strong> <em>轨道编号</em>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>; <em>轨道类型</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>RailIndex</em></strong>: A non-negative integer indicating which rail index to change. The player&rsquo;s rail can be referred to with index <strong>0</strong>. The default value is 0.<br />
-<strong><em>RailType</em></strong>: A non-negative integer referencing the rail type to use as defined by either a Structure.Rail or a Structure.Cycle command. The default value is 0.</p>
+<p><strong><em>轨道编号</em></strong>：一个正整数(<strong>&gt;=1</strong>)表示这个编号的轨道要被修改。
+<strong><font color="green"><em>X</em></font></strong>：一个浮点数，表示该轨道和主轨道之间的水平距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向右偏移，负值代表向左偏移。
+<strong><font color="green"><em>Y</em></font></strong>：一个浮点数，表示该轨道和主轨道之间的垂直距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向上偏移，负值代表向下偏移。
+<strong><em>轨道类型</em></strong>：一个非负整数，表示一个由Structure.Rail或Structure.Cycle指令先前已经载入的模型编号。</p>
 
 </div>
 
 
-<p>This command changes the rail type for an existing rail, represented by <em>RailIndex</em>. The rail must have been started with a Track.RailStart or Track.Rail command and must not have been ended by a Track.RailEnd command. Changing the <em>RailType</em> will affect the rail from the point on where this command is used.</p>
+<p>该指令开始一条轨道或更新一条轨道的位置或类型。*轨道编号*代表要执行操作的轨道。在该*轨道编号*已存在轨道的情况下<em>X</em>,<em>Y</em>,*轨道类型*默认维持该轨道上次的原值，否则若未给出，默认值为0。如果需要结束它，使用Track.RailEnd指令。在同一位置先终止*一条轨道*再开始*同样编号*的新轨道是允许的。在每一个区间块中，如果没有Track.Rail指令执行更新，*X*和*Y*值都会保持上一个区间块的同样值。所以，更新*X*或*Y*值只会影响前方区间块的轨道形态。改变*轨道类型*将会改变从指令生效位置开始的轨道类型。如果试图在同一位置反复对同一条轨道进行多次修改，只有第一条指令会起作用，之后的将会被全部忽略。</p>
 
 <div id="warning">
 <span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<p>该指令只能在区间块开始位置使用。</p>
+
+</div>
+
+
+<div id="warning">
+<span>⚠</span>
+<p>在该指令上使用为0的轨道编号是无效的，请改用RailType: <a href="https://github.com/leezer3/OpenBVE/wiki/Errata#rail-and-railend-commands-with-an-index-of-zero" target="_blank">勘误备注</a></p>
+
+</div>
+
+
+<div id="notice">
+<h4 id="对比track-railstart和track-rail">对比Track.RailStart和Track.Rail</h4>
+
+<p>这两个都可以用来开始一条轨道。但是当使用Track.RailStart时，openBVE将会检查这个*编号*是否已被占用。所以，使用Track.RailStart来开始轨道是更为明确的，且可以避免由于失误造成的bug。译注：可惜很无奈Hmmsim并不支持Track.RailStart，所以要用Hmmsim的话没得选。</p>
 
 </div>
 
@@ -2437,31 +2423,55 @@ With Track<br />
 <hr />
 
 <div id="command">
-<p><strong>Track.RailEnd</strong> <em>RailIndex</em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em></p>
+<p><strong>Track.RailType</strong> <em>轨道编号</em>; <em>轨道类型</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>RailIndex</em></strong>: A positive integer (&gt;=1) indicating which rail index to use.<br />
-<strong><em><font color="green">X</font></em></strong>: A floating-point number representing the horizontal distance from the player&rsquo;s rail, <strong>by default</strong> measured in <strong>meters</strong>. Negative values indicate left, positive ones right.<br />
-<strong><em><font color="green">Y</font></em></strong>: A floating-point number representing the vertical distance from the player&rsquo;s rail, <strong>by default</strong> measured in <strong>meters</strong>. Negative values indicate below, positive ones above.</p>
+<p><strong><em>轨道编号</em></strong>：一个非负整数，代表要进行改变的轨道编号。主轨道编号为<strong>0</strong>。默认值是0.
+<strong><em>轨道类型</em></strong>：一个非负整数，表示一个由Structure.Rail或Structure.Cycle指令先前已经载入的模型编号。默认值是0。</p>
 
 </div>
 
 
-<p>This command ends an existing rail, represented by the index <em>RailIndex</em>. The default values of <em>X</em> and <em>Y</em> are the ones last used by the rail. Once this command is used for a specific <em>RailIndex</em>, the corresponding rail is considered to be non-existing afterward.</p>
+<p>该指令改变由*轨道编号*代表的一条已存在轨道的类型。该轨道必须已经被Track.RailStart或Track.Rail指令创建且还没有被Track.RailEnd指令结束。*轨道类型*的更改将从该指令生效时的轨道位置开始。</p>
 
 <div id="warning">
 <span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<p>该指令只能在区间块开始位置使用。</p>
+
+</div>
+
+
+<hr />
+
+<div id="command">
+<p><strong>Track.RailEnd</strong> <em>轨道编号</em>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font></p>
+
+</div>
+
+
+<div id="command-arguments">
+<p><strong><em>轨道编号</em></strong>：一个正整数(&gt;=1)表示这个编号的轨道要被结束。
+<strong><font color="green"><em>X</em></font></strong>：一个浮点数，表示该轨道和主轨道之间的水平距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向右偏移，负值代表向左偏移。
+<strong><font color="green"><em>Y</em></font></strong>：一个浮点数，表示该轨道和主轨道之间的垂直距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向上偏移，负值代表向下偏移。</p>
+
+</div>
+
+
+<p>该指令结束由*轨道编号*代表的一条已存在轨道。*X*和*Y*的默认值是该轨道上次的原值。一旦该指令执行，*该轨道*就会在这一点结束，并在之后视为不再存在。轨道模型不会再继续被放置。</p>
+
+<div id="warning">
+<span>⚠</span>
+<p>该指令只能在区间块开始位置使用。</p>
 
 </div>
 
 
 <div id="warning">
 <span>⚠</span>
-<p>Using a RailIndex value of 0 is not valid for this command: <a href="https://github.com/leezer3/OpenBVE/wiki/Errata#rail-and-railend-commands-with-an-index-of-zero" target="_blank">Errata Note</a></p>
+<p>在该指令上使用为0的轨道编号是无效的，您不能终止主轨道: <a href="https://github.com/leezer3/OpenBVE/wiki/Errata#rail-and-railend-commands-with-an-index-of-zero" target="_blank">勘误备注</a></p>
 
 </div>
 
@@ -2491,57 +2501,57 @@ With Track<br />
   </tbody>
 </table>
 
-<p>In the preceding example, rail 1 starts with an x-value of 3.8 and bears a rail index which corresponds to an object intended to depict a straight rail. The rail keeps the x-value of 3.8 at track position 1025, where the rail type is changed to correspond to an object intended to depict an s-shaped curve. At track position 1050, the rail is redefined to have an x-value of 1.9, after which the rail is straight again until 1075, where it is ended, still having an x-value of 1.9.</p>
+<p>在这个例子中：1号轨道在1000米位置位于主轨道右侧3.8米处开始，使用类型0（这个线路中加载为直线轨道）；在1025米处轨道模型被换为1（加载的一个向左的S型曲线，让它在25米内左偏1.9米，以和下面轨道位置的改变正好对接）；在1050米处轨道被内移至主轨道右侧1.9米处，正好和先前的S型曲线对上，并重新换回直道类型；轨道在1075米处终止，并且在终止时仍旧在主轨道右侧1.9米处。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>Track.Accuracy</strong> <em>Value</em></p>
+<p><strong>Track.Accuracy</strong> <em>精度系数</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: A non-negative floating-point number representing the accuracy of the track. The default value is 2.</p>
+<p><strong><em>精度系数</em></strong>：一个非负浮点数，表示轨道的精度（质量、平稳度）。默认值是2.</p>
 
 </div>
 
 
-<p>This command sets the accuracy of the track from this point on. Values should be in the range from 0 to 4, where 0 means perfect accuracy (no inaccuracy at all), 1 means very good accuracy (high speed lines), 2 means good accuracy, 3 means mediocre accuracy, and 4 means poor accuracy. Intermediate values are also possible. Currently, values below 0 are clamped at 0, and values above 4 are clamped at 4.</p>
+<p>该指令设定之后轨道的精度，影响晃动效果和一些物理计算。精度系数需要在0~4之间，超出这个范围的数会被截取到0或4两个值。0代表理想的轨道（没有任何不平），1代表很好的轨道（高速铁路标准），2代表较好的轨道，3代表一般的轨道，4代表较差的轨道。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>Track.Adhesion</strong> <em>Rate</em></p>
+<p><strong>Track.Adhesion</strong> <em>附着系数</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Rate</em></strong>: A non-negative floating-point number measured in percent representing the adhesion of the track. The default value is 100.</p>
+<p><strong><em>附着系数</em></strong>：一个非负整数，代表轨道的附着系数（数值越大，能产生越大的静摩擦力，车轮越不易打滑），单位是%。默认值是100。</p>
 
 </div>
 
 
-<p>This command sets the adhesion of the track from this point on. As a reference, the value of 135 represents dry conditions, 85 represents frost and 50 represents snowy conditions. With a value of 0, the train will not be able to move at all.</p>
+<p>该指令设定之后轨道的附着系数。这会影响车轮打滑等物理计算。作为参考，干燥轨面大约是135，湿滑轨面大约是70，降雪轨面大约是50。如果附着系数是0，意味着轨面完全理想光滑，列车车轮将一直打滑，根本不可能移动。</p>
 
-<h5 id="a-name-track-geometry-a-11-2-geometry"><a name="track_geometry"></a>● 11.2. Geometry</h5>
+<h5 id="a-name-track-geometry-a-11-2-几何变换"><a name="track_geometry"></a>● 11.2. 几何变换</h5>
 
 <hr />
 
 <div id="command">
-<p><strong>Track.Pitch</strong> <em>Rate</em></p>
+<p><strong>Track.Pitch</strong> <em>坡度</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Rate</em></strong>: A floating-point number measured in per thousands representing the pitch of the track. The default value is 0.</p>
+<p><strong><em>坡度</em></strong>：一个浮点数，单位是‰(千分之一)，代表轨道的坡度。默认值是0。</p>
 
 </div>
 
 
-<p>This command defines the pitch of all rails from this point on. Negative values indicate a downward gradient, positive ones an upward gradient. The value of 0 represents a level track. Rate can be calculated from a length difference X and a height difference Y in the following way:</p>
+<p>该命令改变之后<strong>所有</strong>轨道的坡度。正值代表上坡，负值代表下坡。0代表平路。*坡度*可以根据在*水平距离*米内上升（下降为负）*垂直高度*米来计算：</p>
 
 <table style="border: none;">
   <tbody>
@@ -2557,7 +2567,7 @@ With Track<br />
        <td width="16" valign="top">ƒ</td>
        <td bgcolor="#FFD8C0" style="border: 1px dotted;">
          <font style="font-family: monospace;">
-         <p style='display:inline;'><em>Rate = 1000 * Y / X</em>
+         <p style='display:inline;'><em>坡度 = 1000 * 垂直高度 / 水平距离</em>
          </font>
        </td>
     </tr>
@@ -2566,7 +2576,7 @@ With Track<br />
 
 <div id="warning">
 <span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<p>该指令只能在区间块开始位置使用。</p>
 
 </div>
 
@@ -2574,23 +2584,23 @@ With Track<br />
 <hr />
 
 <div id="command">
-<p><strong>Track.Curve</strong> <em><font color=green>Radius</font></em>; <em>CantInMillimeters</em></p>
+<p><strong>Track.Curve</strong> <font color="green"><em>半径</em></font>; <em>超高</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em><font color=green>Radius</font></em></strong>: A floating-point number representing the radius of the curve, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br />
-<strong><em>CantInMillimeters</em></strong>: A floating-point number which represents the superelevation of a banked curve, <strong>always</strong> measured in <strong>millimeters</strong> (0.001 meters). The default value is 0. See also Options.CantBehavior.</p>
+<p><strong><font color="green"><em>半径</em></font></strong>：一个浮点数，表示转弯的半径。<strong>默认的</strong>单位是<strong>米</strong>。默认值是0。
+<strong><em>超高</em></strong>：一个浮点数，代表弯道的超高（外侧轨道比内侧轨道高出的高度，用来提供向心力），单位<strong>一定</strong>是<strong>毫米</strong>（千分之一米）。默认值是0。另参见Options.CantBehavior。</p>
 
 </div>
 
 
-<p>This command defines the radius of the curve for the player&rsquo;s rail from this point on. Negative values for <em>Radius</em> indicate a curve to the left, positive ones to the right. The value of 0 represents straight track. The <em>CantInMillimeters</em> parameter defines the cant (superelevation) in millimeters. If Options.CantBehavior is 0 (default), only the absolute value of <em>CantInMillimeters</em> is considered, and the superelevation is always towards the curve center (inward). Also, cant cannot be applied on straight track. If Options.CantBehavior is 1, <em>CantInMillimeters</em> is signed, i.e. negative values bank outward and positive ones inward on curved track. Also, cant can be applied on straight track, where negative values bank toward the left and positive ones toward the right.</p>
+<p>该指令使所有轨道从这一位置开始转弯，并指定转弯的*半径*。正半径代表向右转弯，负半径代表向左转弯。0代表直道。*超高*以毫米指定弯道的超高。对于该数值正负值的含义，请参见Options.CantBehavior。如果它是0(默认)，*超高*的设定值将被取绝对值，并向弯道内侧倾斜，同时在直道上不采取超高；如果它是1，*超高*的符号将被考虑，正数向内倾斜，负数向外倾斜，同时在直道上也会采取超高，负值向左，正值向右。</p>
 
 <div id="warning">
 <span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<p>该指令只能在区间块开始位置使用。</p>
 
 </div>
 
@@ -2598,18 +2608,18 @@ With Track<br />
 <hr />
 
 <div id="command">
-<p><strong>Track.Turn</strong> <em>Ratio</em></p>
+<p><strong>Track.Turn</strong> <em>斜率</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Rate</em></strong>: A floating-point number representing a turn. The default value is 0.</p>
+<p><strong><em>斜率</em></strong>：一个浮点数，表示弯折的斜率。 默认值是0。</p>
 
 </div>
 
 
-<p>This command creates a point-based turn at the point of insertion. <em>Ratio</em> indicates the ratio between the length difference <em>Z</em> and the horizontal offset <em>X</em> in the following way:</p>
+<p>该指令使轨道在指令插入位置做一个弯折。*斜率*可以根据在*纵向距离*米转向*横向距离*米来计算：</p>
 
 <table style="border: none;">
   <tbody>
@@ -2618,25 +2628,25 @@ With Track<br />
        <td width="16" valign="top">ƒ</td>
        <td bgcolor="#FFD8C0" style="border: 1px dotted;">
          <font style="font-family: monospace;">
-         <p style='display:inline;'><em>Ratio = X / Z</em>
+         <p style='display:inline;'><em>斜率 = 纵向距离 / 横向距离</em>
          </font>
        </td>
     </tr>
   </tbody>
 </table>
 
-<p>A negative ratio represents a turn to the left, a positive one to the right. The value of 0 represents a straight track.</p>
+<p>正值代表右转，负值代表左转，0代表直道。</p>
 
 <div id="warning">
 <span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<p>该指令只能在区间块开始位置使用。</p>
 
 </div>
 
 
 <div id="warning">
 <span>⚠</span>
-<p>This command is deprecated - use Track.Curve instead.</p>
+<p>在创建弯道方面，该指令较为难用，且已过时。如要编辑弯道，可使用Track.Curve。</p>
 
 </div>
 
@@ -2644,18 +2654,18 @@ With Track<br />
 <hr />
 
 <div id="command">
-<p><strong>Track.Height</strong> <em><font color=green>Y</font></em></p>
+<p><strong>Track.Height</strong> <font color="green"><em>离地高度</em></font></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em><font color=green>Y</font></em></strong>: A floating-point number representing the height of the player&rsquo;s rail, <strong>by default</strong> measured in <strong>meters</strong>.</p>
+<p><strong><font color="green"><em>离地高度</em></font></strong>：一个浮点数，表示主轨道在距离地面的高度。正值会将地面向下移动。<strong>默认的</strong>单位是<strong>米</strong>。</p>
 
 </div>
 
 
-<p>This command defines the height of the player&rsquo;s rail above the ground at the point of insertion. It influences the placement of the ground objects defined via Structure.Ground and changed via Track.Ground. The height is interpolated between adjacent Track.Height commands. For example, the following two codes produce equivalent results:</p>
+<p>该指令告诉游戏在特定位置地面应当距离主轨道下方的距离。它影响通过Structure.Ground和Track.Ground载入和选定的地面模型的放置位置。由于默认的位置0代表轨道的上表面（我想您应该并不希望地面被糊在轨道上面而不是衬在下面），您应该把它设置为一个合适的正值。在相邻的Track.Height之间，高度值被平滑细分以使地面过渡平滑。 例如，以下两段代码是等效的：</p>
 
 <table style="border: none;">
   <tbody>
@@ -2679,7 +2689,7 @@ With Track<br />
   </tbody>
 </table>
 
-<table style="border: none;">
+<p><table style="border: none;">
   <tbody>
   
     <tr>
@@ -2702,69 +2712,70 @@ With Track<br />
     </tr>
   </tbody>
 </table>
+作为参考顺便提一句，有很多轨道模型都是0.3米高的。</p>
 
 <div id="warning">
 <span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<p>该指令只能在区间块开始位置使用。</p>
 
 </div>
 
 
-<h5 id="a-name-track-objects-a-11-3-objects"><a name="track_objects"></a>● 11.3. Objects</h5>
+<h5 id="a-name-track-objects-a-11-3-物件"><a name="track_objects"></a>● 11.3. 物件</h5>
 
 <hr />
 
 <div id="command">
-<p><strong>Track.FreeObj</strong> <em>RailIndex</em>; <em>FreeObjStructureIndex</em>; <em>X</em>; <em>Y</em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em></p>
+<p><strong>Track.FreeObj</strong> <em>轨道编号</em>; <em>物体模型编号</em>; <em>水平位置</em>; <em>垂直位置</em>; <em>偏转角</em>; <em>俯仰角</em>; <em>侧倾角</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>RailIndex</em></strong>: A non-negative integer representing the rail on which to place the object. The default value is 0.<br />
-<strong><em>FreeObjStructureIndex</em></strong>: A non-negative integer representing the object to place as defined via Structure.FreeObj. The default value is 0.<br />
-<strong><em><font color="green">X</font></em></strong>: The x-offset from the (straight) rail, <strong>by default</strong> measured in <strong>meters</strong>. Negative values represent the left, positive ones the right. The default value is 0.<br />
-<strong><em><font color="green">Y</font></em></strong>: The y-offset from the (straight) rail, <strong>by default</strong> measured in <strong>meters</strong>. Negative values represent below the top of the rails, positive ones above. The default value is 0.<br />
-<strong><em>Yaw</em></strong>: The angle in degrees by which the object is rotated in the XZ-plane in clock-wise order when viewed from above. The default value is 0.<br />
-<strong><em>Pitch</em></strong>: The angle in degrees by which the object is rotated in the YZ-plane in clock-wise order when viewed from the left. The default value is 0.<br />
-<strong><em>Roll</em></strong>: The angle in degrees by which the object is rotated in the XY-plane in clock-wise order when viewed from behind. The default value is 0.</p>
+<p><strong><em>轨道编号</em></strong>：一个非负整数，指定这个物体要被放在哪一条轨道旁。默认值是0.
+<strong><em>外景物体模型编号</em></strong>：一个非负整数，指定要被放置的物体模型。默认值是0。
+<strong><font color="green"><em>水平位置</em></font></strong>：物体距离轨道中心的水平距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向右，负值代表向左。默认值是0。
+<strong><font color="green"><em>垂直位置</em></font></strong>：物体距离轨道中心的垂直距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向上，负值代表向下。默认值是0。这个距离是直线距离，在弯道处并不随轨道弯曲。
+<strong><em>偏转角</em></strong>：该物体在XZ平面上转动的角度（相对于上方顺时针）。默认值是0。
+<strong><em>俯仰角</em></strong>：该物体在YZ平面上转动的角度（相对于左方顺时针）。默认值是0。
+<strong><em>侧倾角</em></strong>：该物体在XY平面上转动的角度（相对于后方顺时针）。默认值是0。</p>
 
 </div>
 
 
-<p>This places a &ldquo;free&rdquo; object a single time on a specified rail. The object must have been loaded via Structure.FreeObj(<em>FreeObjStructureIndex</em>) prior to using this command.</p>
+<p>该指令在指定轨道旁放置一个“自由”的外景物体。在放置前需要先用*Structure.FreeObj*载入模型。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>Track.Wall</strong> <em>RailIndex</em>; <em>Direction</em>; <em>WallStructureIndex</em></p>
+<p><strong>Track.Wall</strong> <em>轨道编号</em>; <em>方向</em>; <em>墙壁模型编号</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>RailIndex</em></strong>: A non-negative integer representing the rail on which to start or update the wall. The default value is 0.<br />
-<strong><em>Direction</em></strong>: An integer indicating which wall to use as described below.<br />
-<strong><em>WallStructureIndex</em></strong>: A non-negative integer representing the object to place as defined via Structure.WallL and Structure.WallR. The default value is 0.</p>
+<p><strong><em>轨道编号</em></strong>：一个非负整数，指定要放置墙壁的轨道。
+<strong><em>方向</em></strong>：指示要放置墙壁的方向。
+<strong><em>墙壁模型编号</em></strong>：一个非负整数，指定要被放置的墙壁模型。默认值是0。</p>
 
 </div>
 
 
-<p>▸ Options for <em>Direction</em>:</p>
+<p>▸ *方向*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>-1</strong>: The WallL object (left wall) is used.<br />
-<strong>0</strong>: Both the WallL and WallR objects are used.<br />
-<strong>1</strong>: The WallR object (right wall) is used.</p>
+<p><strong>-1</strong>：放置左侧墙壁(WallL)。
+<strong>0</strong>：放置双侧墙壁(WallL+WallR)。
+<strong>1</strong>：放置右侧墙壁(WallR)。</p>
 
 </div>
 
 
-<p>This starts or updates a wall on a specified rail. The object must have been loaded via Structure.WallL(<em>WallObjectIndex</em>) or Structure.WallR(<em>WallObjectIndex</em>) prior to using this command. The walls are placed at the beginning of every block until a corresponding Track.WallEnd ends the wall for this rail. Please note that walls are resurrected if a rail is ended via Track.RailEnd and then started again via Track.RailStart or Track.Rail unless the wall was also ended via Track.WallEnd.</p>
+<p>该指令开始或更新一条轨道两侧的墙壁。在放置前需要先用*Structure.WallL*以及*Structure.WallR*载入模型。直到使用Track.WallEnd结束墙壁，对应的墙壁模型会在每个区间块的开始处被不停放置。请注意墙壁是和轨道对应的，这意味着如果先前设定了墙壁，在结束轨道然后重新利用这一相同轨道编号时墙壁依然会被继续放置。</p>
 
 <div id="warning">
 <span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<p>该指令只能在区间块开始位置使用。</p>
 
 </div>
 
@@ -2772,22 +2783,22 @@ With Track<br />
 <hr />
 
 <div id="command">
-<p><strong>Track.WallEnd</strong> <em>RailIndex</em></p>
+<p><strong>Track.WallEnd</strong> <em>轨道编号</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>RailIndex</em></strong>: A non-negative integer representing the rail on which to end an existing wall.</p>
+<p><strong><em>轨道编号</em></strong>：一个非负整数，指定要停止放置墙壁的轨道。</p>
 
 </div>
 
 
-<p>This ends an existing wall that was previously started via Track.Wall on a specified rail. The wall is not placed for the block in which this command is used.</p>
+<p>该指令停止在一条轨道两侧放置墙壁模型。该指令从它的位置即刻生效。</p>
 
 <div id="warning">
 <span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<p>该指令只能在区间块开始位置使用。</p>
 
 </div>
 
@@ -2795,34 +2806,34 @@ With Track<br />
 <hr />
 
 <div id="command">
-<p><strong>Track.Dike</strong> <em>RailIndex</em>; <em>Direction</em>; <em>DikeStructureIndex</em></p>
+<p><strong>Track.Dike</strong> <em>轨道编号</em>; <em>Direction</em>; <em>路堤模型编号</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>RailIndex</em></strong>: A non-negative integer representing the rail on which to start or update the dike. The default value is 0.<br />
-<strong><em>Direction</em></strong>: An integer indicating which dike to use as described below.<br />
-<strong><em>DikeStructureIndex</em></strong>: A non-negative integer representing the object to place as defined via Structure.DikeL and Structure.DikeR. The default value is 0.</p>
+<p><strong><em>轨道编号</em></strong>：一个非负整数，指定要放置路堤的轨道。默认值是0。
+<strong><em>方向</em></strong>：指示要放置路堤的方向。
+<strong><em>路堤模型编号</em></strong>：一个非负整数，指定要被放置的路堤模型。默认值是0。</p>
 
 </div>
 
 
-<p>▸ Options for <em>Direction</em>:</p>
+<p>▸ *方向*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>-1</strong>: The DikeL object (left dike) is used.<br />
-<strong>0</strong>: Both the DikeL and DikeR objects are used.<br />
-<strong>1</strong>: The DikeR object (right dike) is used.</p>
+<p><strong>-1</strong>：放置左侧路堤(DikeL)。
+<strong>0</strong>：放置双侧路堤(DikeL+DikeR)。
+<strong>1</strong>：放置右侧路堤(DikeR)。</p>
 
 </div>
 
 
-<p>This starts or updates a dike on a specified rail. The object must have been loaded via Structure.DikeL(<em>DikeObjectIndex</em>) or Structure.DikeR(<em>DikeObjectIndex</em>) prior to using this command. The dikes are placed at the beginning of every block until a corresponding Track.DikeEnd ends the dike for this rail. Please note that dikes are resurrected if a rail is ended via Track.RailEnd and then started again via Track.RailStart or Track.Rail unless the dike was also ended via Track.DikeEnd.</p>
+<p>该指令开始或更新一条轨道两侧的路堤。在放置前需要先用*Structure.DikeL*以及*Structure.DikeR*载入模型。直到使用Track.DikeEnd结束路堤，对应的路堤模型会在每个区间块的开始处被不停放置。请注意路堤是和轨道对应的，这意味着如果先前设定了路堤，在结束轨道然后重新利用这一相同轨道编号时路堤依然会被继续放置。</p>
 
 <div id="warning">
 <span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<p>该指令只能在区间块开始位置使用。</p>
 
 </div>
 
@@ -2830,22 +2841,22 @@ With Track<br />
 <hr />
 
 <div id="command">
-<p><strong>Track.DikeEnd</strong> <em>RailIndex</em></p>
+<p><strong>Track.DikeEnd</strong> <em>轨道编号</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>RailIndex</em></strong>: A non-negative integer representing the rail on which to end an existing dike.</p>
+<p><strong><em>轨道编号</em></strong>：一个非负整数，指定要停止放置路堤的轨道。</p>
 
 </div>
 
 
-<p>This ends an existing dike that was previously started via Track.Dike on a specified rail. The dike is not placed for the block in which this command is used.</p>
+<p>该指令停止在一条轨道两侧放置路堤模型。该指令从它的位置即刻生效。</p>
 
 <div id="warning">
 <span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<p>该指令只能在区间块开始位置使用。</p>
 
 </div>
 
@@ -2853,26 +2864,26 @@ With Track<br />
 <hr />
 
 <div id="command">
-<p><strong>Track.Pole</strong> <em>RailIndex</em>; <em>NumberOfAdditionalRails</em>; <em>Location</em>; <em>Interval</em>; <em>PoleStructureIndex</em></p>
+<p><strong>Track.Pole</strong> <em>轨道编号</em>; <em>额外轨道跨度值</em>; <em>位置</em>; <em>间隔</em>; <em>架线柱模型编号</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>RailIndex</em></strong>: A non-negative integer representing the rail on which to start or update the pole. The default value is 0.<br />
-<strong><em>NumberOfAdditionalRails</em></strong>: A non-negative integer representing the amount of additional rails covered by this pole (i.e. this rail, plus <em>NumberOfAdditionalRails</em> rails). The default value is 0.<br />
-<strong><em>Location</em></strong>: If <em>NumberOfAdditionalRails</em> is 0, the side on which the pole is placed (see below), or the x-offset in multiples of 3.8 meters if <em>NumberOfAdditionalRails</em> is at least 1. The default value is 0.<br />
-<strong><em>Interval</em></strong>: An integer multiple of the block length specifying the interval in which poles are placed.<br />
-<strong><em>PoleStructureIndex</em></strong>: A non-negative integer representing the object to place as defined via Structure.Pole. The default value is 0.</p>
+<p><strong><em>轨道编号</em></strong>：一个非负整数，指定要放置架线柱的轨道。默认值是0。
+<strong><em>额外轨道跨度值</em></strong>：一个非负整数，代表这个架线柱模型跨过的额外轨道数量。（即这个轨道，再加上 <em>额外轨道跨度值</em> 条轨道）0代表跨度为1组轨道的架线柱，1代表2组轨道，以此类推。默认值是0。
+<strong><em>位置</em></strong>：指定以3.8米的倍数的放置位置的水平位置（详情见下）。当*额外轨道跨度值*为0时指定放置的方向。
+<strong><em>间隔</em></strong>：一个*为区间块长度的倍数*的整数，指定每两个架线柱之间的距离。
+<strong><em>架线柱模型编号</em></strong>：一个非负整数，指定要被放置的架线柱模型。默认值是0。</p>
 
 </div>
 
 
-<p>This starts or updates a pole on a specified rail. The object must have been loaded via Structure.Pole(<em>NumberOfAdditionalRails</em>; <em>PoleStructureIndex</em>) prior to using this command. The poles are placed at the beginning of every block whose track positions are an integer multiple of the <em>Interval</em> (that is not necessarily at the same location this command is placed). If <em>NumberOfAdditionalRails</em> is 0, *Location*indicates the side of the rail on which the pole is placed. If <em>Location</em> is less than or equal to 0, the pole is placed as-is (corresponding to the left side). If <em>Location</em> is greater than 0, the object is mirrored on the x-axis and then placed (corresponding to the right side). If <em>NumberOfAdditionalRails</em> is greater than or equal to 1, <em>Location</em> specifies the x-offset in multiples of 3.8 meters. Please note that poles are resurrected if a rail is ended via Track.RailEnd and then started again via Track.RailStart or Track.Rail unless the pole was also ended via Track.PoleEnd.</p>
+<p>该指令开始或更新一条轨道两侧的架线柱。在放置前需要先用Structure.Pole载入模型。架线柱被放在每一个轨道位置是*间隔*的<strong>倍数</strong>的区间块开始位置（这就是为什么可能发现指令的执行位置处并没有一个架线柱）。如果*额外轨道跨度值*是0，*位置*指定放置的方向。如果*位置*小于或等于0，模型被按原样放置（对应左侧架线柱）。如果*位置*大于0，模型会被在X轴向反转180°后放置（对应右侧架线柱）。如果*额外轨道跨度值*大于等于1，*位置*指定以3.8米的倍数的放置位置的水平位置。请注意架线柱是和轨道对应的，这意味着如果先前设定了架线柱，在结束轨道然后重新利用这一相同轨道编号时架线柱依然会被继续放置。</p>
 
 <div id="warning">
 <span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<p>该指令只能在区间块开始位置使用。</p>
 
 </div>
 
@@ -2880,22 +2891,22 @@ With Track<br />
 <hr />
 
 <div id="command">
-<p><strong>Track.PoleEnd</strong> <em>RailIndex</em></p>
+<p><strong>Track.PoleEnd</strong> <em>轨道编号</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>RailIndex</em></strong>: A non-negative integer representing the rail on which to end an existing pole.</p>
+<p><strong><em>轨道编号</em></strong>：一个非负整数，指定要停止放置架线柱的轨道。默认值是0。</p>
 
 </div>
 
 
-<p>This ends an existing pole that was previously started via Track.Pole on a specified rail. The pole is not placed for the block in which this command is used.</p>
+<p>该指令停止在一条轨道两侧放置架线柱模型。该指令从它的位置即刻生效。</p>
 
 <div id="warning">
 <span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<p>该指令只能在区间块开始位置使用。</p>
 
 </div>
 
@@ -2903,299 +2914,276 @@ With Track<br />
 <hr />
 
 <div id="command">
-<p><font color="gray"><strong>Track.Crack</strong> <em>RailIndex<sub>1</sub></em>; <em>RailIndex<sub>2</sub></em>; <em>CrackStructureIndex</em></font></p>
+<p><font color="gray"><strong>Track.Crack</strong> <em>轨道编号<sub>1</sub></em>; <em>轨道编号<sub>2</sub></em>; <em>填充间隙地面模型编号</em></font></p>
 
 </div>
 
 
-<p>This deforms a specified object to fill the space between two Rails.</p>
+<p>该指令将一个物件缩放拉伸，以填补轨道之间的空隙。</p>
 
 <div id="command-arguments">
-<p><strong><em>RailIndex<sub>1</sub></em></strong>: A non-negative integer representing the first RailIndex.<br />
-<strong><em>RailIndex<sub>2</sub></em></strong>: A non-negative integer representing the second RailIndex.<br />
-<strong><em>CrackStructureIndex</em></strong>: A non-negative integer representing the object defined in Structure.Crack</p>
+<p><strong><em>轨道编号<sub>1</sub></em></strong>：一个非负整数，指定第一条轨道。
+<strong><em>轨道编号<sub>2</sub></em></strong>：一个非负整数，指定另一条轨道。
+<strong><em>填充间隙地面模型编号</em></strong>：一个非负整数，指定要用来填充间隙的模型(Structure.Crack)。默认值是0。</p>
 
 </div>
 
 
-<p><strong>Note:</strong>
-If <em>RailIndex<sub>1</sub></em> is to the <strong>left</strong> of <em>RailIndex<sub>2</sub></em> (e.g. it&rsquo;s X-cordinate is smaller), then the object defined in Structure.CrackL will be used.<br />
-Otherwise, the objects defined in Structure.CrackR will be used.</p>
+<p><strong>注意:</strong>
+如果 <em>轨道编号<sub>1</sub></em> 处于 <em>轨道编号<sub>2</sub></em> 的<strong>左侧</strong>（即：其X坐标更小），则使用Structure.CrackL定义的物件，否则使用CrackR。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>Track.Ground</strong> <em>CycleIndex</em></p>
+<p><strong>Track.Ground</strong> <em>地面模型编号</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>CycleIndex</em></strong>: A non-negative integer representing the cycle of ground objects to place as defined via Structure.Ground or Cycle.Ground.</p>
+<p><strong><em>地面模型编号</em></strong>：一个非负整数，指定要被放置的地面模型(Structure.Ground/Cycle.Ground)。</p>
 
 </div>
 
 
-<p>This defines which ground objects to place from this point on. Ground objects are always placed at the beginning of a block at a certain height below the player&rsquo;s rail (as defined via Track.Height). If no cycle was defined for <em>CycleIndex</em>, then the object loaded into Structure.Ground(<em>CycleIndex</em>) is placed. Otherwise, the cycle of ground objects as defined via Cycle.Ground(<em>CycleIndex</em>) is used.</p>
+<p>该指令设定从这一点开始被放置的地面模型。地面模型总是被放在主轨道下方的一段距离（由Track.Height指定）。如果能查找到定义为*地面模型编号*的循环模型(<em>Cycle.Ground</em>)，则优先使用；如果没有，则使用普通模型(<em>Structure.Ground</em>)。</p>
 
 <div id="warning">
 <span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<p>该指令只能在区间块开始位置使用。</p>
 
 </div>
 
 
-<h5 id="a-name-track-stations-a-11-4-stations"><a name="track_stations"></a>● 11.4. Stations</h5>
+<h5 id="a-name-track-stations-a-11-4-车站"><a name="track_stations"></a>● 11.4. 车站</h5>
 
 <hr />
 
 <div id="command">
-<p><strong>Track.Sta</strong> <em>Name</em>; <em>ArrivalTime</em>; <em>DepartureTime</em>; <em>PassAlarm</em>; <em>Doors</em>; <em>ForcedRedSignal</em>; <em>System</em>; <em>ArrivalSound</em>; <em>StopDuration</em>; <em>PassengerRatio</em>; <em>DepartureSound</em>; <em>TimetableIndex</em></p>
+<p><strong>Track.Sta</strong> <em>站名</em>; <em>到达时间</em>; <em>发车时间</em>; <em>停车铃</em>; <em>开门方向</em>; <em>强制红灯</em>; <em>信号系统</em>; <em>到达广播</em>; <em>停车时间</em>; <em>乘车率</em>; <em>发车广播</em>; <em>时刻表编号</em></p>
 
 </div>
 
 
 <div id="command-arguments">
-<p><strong><em>Name</em></strong>: The name of the station. This is displayed in the timetable and in messages, so should not be omitted.<br />
-<strong><em>ArrivalTime</em></strong>: The <a href="../../zh_cn/information/numberformats.html#times">time</a> the player&rsquo;s train is expected to arrive at this station. Special values may also appear - see below.<br />
-<strong><em>DepartureTime</em></strong>: The <a href="../../zh_cn/information/numberformats.html#times">time</a> the player&rsquo;s train is expected to depart from this station. Special values may also appear - see below.<br />
-<strong><em>PassAlarm</em></strong>: Indicates whether the pass alarm device should remind the driver of stopping at this station. The default value is 0.<br />
-<strong><em>Doors</em></strong>: Indicates which doors should open at this station. The default value is 0.<br />
-<strong><em>ForcedRedSignal</em></strong>: Indicates whether the signal behind the last station stop should be red on a train approach. The default value is 0.<br />
-<strong><em>System</em></strong>: Indicates which built-in safety system should apply until the next station. The default value is 0.<br />
-<strong><em>ArrivalSound</em></strong>: The sound file to be played on arrival, relative to the <strong>Sound</strong> folder.<br />
-<strong><em>StopDuration</em></strong>: A positive floating-point number indicating the minimum stop duration in seconds, including door opening/closing times. The default value is 15.<br />
-<strong><em>PassengerRatio</em></strong>: A non-negative floating-point number indicating the relative amount of passengers in the train from this station on. As a reference, 100 represents a train with normal amount of passengers, while 250 represents an over-crowded train. Values in-between 0 and 250 should be used. The default value is 100.<br />
-<strong><em>DepartureSound</em></strong>: The sound file to be played before departure (departure time minus sound duration minus door closing time), relative to the <strong>Sound</strong> folder.<br />
-<strong><em>TimetableIndex</em></strong>: A non-negative integer representing the timetable to be shown from this station on as defined via Train.Timetable(<em>TimetableIndex</em>).</p>
+<p><strong><em>站名</em></strong>：该车站的站名。将会在时刻表和提示信息中显示，所以不应留空。
+<strong><em>到达时间</em></strong>：玩家驾驶的列车应当到达此站的<a href="../../zh_cn/information/numberformats.html#times">时间</a>。可以使用特殊值表示额外信息——见下。
+<strong><em>发车时间</em></strong>：玩家驾驶的列车应当从此站发车的<a href="../../zh_cn/information/numberformats.html#times">时间</a>。可以使用特殊值表示额外信息——见下。
+<strong><em>停车铃</em></strong>：指示停车警铃设备（如果列车有安装）是否应该鸣响以提示列车驾驶在这站停车。默认值是0。
+<strong><em>开门方向</em></strong>：指示列车应开启的车门方向。默认值是0。
+<strong><em>强制红灯</em></strong>：指示是否应该将最后一个停车点后方的信号机（发车信号机）在玩家驾驶列车接近时设为红色。默认值是0。
+<strong><em>信号系统</em></strong>：指示从此站到下一站之间的区间安装的列车信号系统。默认值是0。
+<strong><em>到达广播</em></strong>：一个相对于<strong>Sound</strong>文件夹的路径，指向列车停站时播放的音频。
+<strong><em>停车时间</em></strong>：一个正浮点数表示列车在车站的最小停车时间（包括开关门时间）。默认值是15。
+<strong><em>乘车率</em></strong>：一个非负浮点数表示在该站列车上乘客的相对数量。作为参考，100差不多是正常载客量，而250则表示超载列车。输入值应当在0~250之间。默认值是100。
+<strong><em>发车广播</em></strong>：一个相对于<strong>Sound</strong>文件夹的路径，指向在发车前（发车时间-关门时间-音频时长）要播放的音频。
+<strong><em>时刻表编号</em></strong>：一个非负整数，指示一个由Train.Timetable(<em>时刻表编号</em>)指定的，从此站开始要显示的时刻表。默认保持上站设定。</p>
 
-</div>
-
-
-<p>▸ Available options for <em>ArrivalTime</em>:</p>
+<p>▸ *到达时间*的可选项：</p>
 
 <div id="command-arguments">
-<p><em>time</em>: The train is expected to arrive at this particular time.<br />
-<em>omitted</em>: The train may arrive at any time.<br />
-<strong>P</strong> or <strong>L</strong>: All trains are expected to pass this station.<br />
-<strong>B</strong>: The player&rsquo;s train is expected to pass this station, while all other trains are expected to stop.<br />
-<strong>S</strong>: The player&rsquo;s train is expected to stop at this station, while all other trains are expected to pass.<br />
-<strong>S:</strong><em>time</em>: The player&rsquo;s train is expected to arrive at this particular time, while all other trains are expected to pass.</p>
+<p>*[一个时间]*：所有列车都需要停车，玩家驾驶的列车需要在这个特定时间到达。
+*[留空]*：所有列车都需要停车，但可以在任意时间到达。
+<strong>P</strong>或<strong>L</strong>：所有列车都只需要通过这个车站。
+<strong>B</strong>：玩家驾驶的列车只需要通过这个车站，而AI车需要停车。
+<strong>S</strong>：玩家驾驶的列车需要停车，而AI车只需要通过。
+<strong>S:</strong>_[一个时间]_：玩家驾驶的列车需要在这个特定时间到达停车，而AI车只需要通过。</p>
 
 </div>
 
-
-<p>▸ Available options for <em>DepartureTime</em>:</p>
+<p>▸ *发车时间*的可选项：</p>
 
 <div id="command-arguments">
-<p><em>time</em>: The train is expected to depart at this particular time.<br />
-<em>omitted</em>: The train may depart at any time.<br />
-<strong>T</strong> or <strong>=</strong>: This is the terminal station. If <em>ForcedRedSignal</em> is set to 1, the departure signal will be held at red indefinately.<br />
-<strong>T:</strong><em>time</em>: This is the terminal station. If <em>ForcedRedSignal</em> is set to 1, the departure signal will still switch to green before the specified time as if this was a regular station.<br />
-<strong>C</strong>: This is a station at which to &ldquo;change ends&rdquo;. See the description below.<br />
-<strong>C:</strong><em>time</em>: This is a station at which to &ldquo;change ends&rdquo;. Changing ends will take place at the specified time unless <em>StopDuration</em> interferes. See the description below.<br />
-<strong>J:</strong><em>index</em>: This is a station at which the train is &ldquo;jumped&rdquo; to the station specified by <em>index</em>. See the description below.<br />
-<strong>J:</strong><em>index:<strong>Time</strong></em>: This is a station at which the train is &ldquo;jumped&rdquo; to the specified by <em>index</em>. Jumping will take place at the specified time unless <em>StopDuration</em> interfers. See the description below.</p>
+<p>*[一个时间]*：列车将会在这个时间之后发车。
+*[留空]*：列车只要停足停车时间就可以发车。
+<strong>T</strong>或<strong>=</strong>：这是终点站，列车不会发车。如果*强制红灯*被设定，发车信号机会被无限保持在红灯。
+<strong>T:</strong>_[一个时间]<em>：这是终点站，列车不会发车。如果*强制红灯*被设定，发车信号机还是会在发车时间后转为绿灯。
+<strong>C</strong>：这是一个“换端传送”车站。详情见下。
+<strong>C:</strong></em>[一个时间]<em>：这是一个“换端传送”车站，除非*停车时间*要求推迟发车，列车会在特定时间传送换端。详情见下。
+<strong>J:</strong></em>[车站编号]<em>：列车可以在该车站&rdquo;跳转传送&rdquo;到由*车站编号*指定的车站。详情见下。
+<strong>J:</strong></em>[车站编号]<strong>[一个时间]</strong>_：列车可以在该车站&rdquo;跳转传送&rdquo;到由*车站编号*指定的车站。除非*停车时间*要求推迟发车，列车将会在指定时间传送。详情见下。</p>
 
 </div>
 
-
-<p>▸ Available options for <em>PassAlarm</em>:</p>
+<p>▸ *停车铃*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>0</strong>: The pass alarm device does not remind the driver of stopping at this station.<br />
-<strong>1</strong>: The pass alarm device reminds the driver of stopping at this station.</p>
+<p><strong>0</strong>：停车铃不鸣响。
+<strong>1</strong>：停车铃会鸣响来提醒列车驾驶在这站停车。</p>
 
 </div>
 
-
-<p>▸ Available options for <em>Doors</em>:</p>
+<p>▸ *开门方向*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>L</strong> or <strong>-1</strong>: The left doors are expected to open at this station.<br />
-<strong>N</strong> or <strong>0</strong>: No doors are expected to open at this station, i.e. the train should simply come to a hold.<br />
-<strong>R</strong> or <strong>1</strong>: The right doors are expected to open at this station.<br />
-<strong>B</strong>: Both the left and right doors are expected to open at this station.</p>
+<p><strong>L</strong>或<strong>-1</strong>：开左侧门。
+<strong>N</strong>或<strong>0</strong>：不开门。即列车只需要临时停车。
+<strong>R</strong>或<strong>1</strong>：开右侧门。
+<strong>B</strong>：开两侧门。</p>
 
 </div>
 
-
-<p>▸ Available options for <em>ForcedRedSignal</em>:</p>
+<p>▸ *强制红灯*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>0</strong>: Signals are unaffected by this station.<br />
-<strong>1</strong>: The signal immediately following the last station stop is hold at red until the train reaches the stopping area and the departure time.</p>
+<p><strong>0</strong>：该车站不影响信号灯。
+<strong>1</strong>：在最后一个停止点后方的信号机（发车信号机）在列车完成停车动作并到达发车时间后才会变绿。</p>
 
 </div>
 
-
-<p>▸ Available options for <em>System</em>:</p>
+<p>▸ *信号系统*的可选项：（由于BVE是日本的模拟游戏所以原装只支持日式信号系统）</p>
 
 <div id="command-arguments">
-<p><strong>ATS</strong> or <strong>0</strong>: ATS should be used from this station on. The following track is not be equipped with ATC.<br />
-<strong>ATC</strong> or <strong>1</strong>: ATC should be used from this station on. The following track is equipped with ATC.</p>
+<p><strong>ATS</strong>或<strong>0</strong>：前方轨道未安装ATC，应切换至ATS。
+<strong>ATC</strong>或<strong>1</strong>：前方轨道已安装ATC，应切换至ATC。</p>
 
 </div>
 
+<p>该指令设定一个新车站。在编写指令时，该指令应该被放置在车站站台的开始处。其后（到下一站之前）的所有Track.Stop指令都被视为和该站有关。如果该站需要停车，该指令后面应该有一个或多个Track.Stop指令指定车站的停车点，以完成车站的定义。</p>
 
-<p>This command initializes a new station. It should be placed at the beginning of the station platform. In order to finalize the creation of a station, use the Track.Stop command to place stop points following this command. All following Track.Stop commands will be associated to this station. At least one Track.Stop command must follow if trains are expected to stop at this station.</p>
+<p><strong>特殊功能：</strong></p>
 
-<p><strong>Special Features:</strong></p>
+<p>车站可以被设为“换端车站”。在这样的车站，列车会在满足发车时间后自动被传送到下一站。这个特性可以用来假装列车折返，而不用人工打开菜单跳站。</p>
 
-<p>Stations can be marked as &ldquo;changing ends&rdquo; in the departure time. At such stations, when the departure time has been reached, the train will automatically jump to the next station. This feature is intended to fake a reverse of traveling direction without the need to jump to stations manually from the menu.</p>
-
-<p>Similarly, stations can be marked as a &ldquo;jump point&rdquo; in the departure time. At such stations, when the departure time has been reached, the train will automatically jump to the specified station index.</p>
+<p>类似的，车站也可以被设定为”跳站传送“。在这些车站，当到达发车时间，列车就会被传送到指定编号的车站。这样就可以将列车传送到之前的车站，还可以此模拟环线。</p>
 
 <div id="warning">
 <span>⚠</span>
-<p>The &ldquo;changing ends&rdquo; feature is only available in the development release 1.2.11 and above.</p>
+<p>只有1.2.11版以上支持换端车站。</p>
 
 </div>
-
 
 <hr />
 
 <div id="command">
-<p><strong>Track.Station</strong> <em>Name</em>; <em>ArrivalTime</em>; <em>DepartureTime</em>; <em>ForcedRedSignal</em>; <em>System</em>; <em>DepartureSound</em></p>
+<p><strong>Track.Station</strong> <em>站名</em>; <em>到达时间</em>; <em>发车时间</em>; <em>强制红灯</em>; <em>信号系统</em>; <em>发车广播</em></p>
 
 </div>
-
 
 <div id="command-arguments">
-<p><strong><em>Name</em></strong>: The name of the station. This is displayed in the timetable and in messages, so should not be omitted.<br />
-<strong><em>ArrivalTime</em></strong>: The <a href="../../zh_cn/information/numberformats.html#times">time</a> the player&rsquo;s train is expected to arrive at this station. Special values may also appear - see below.<br />
-<strong><em>DepartureTime</em></strong>: The <a href="../../zh_cn/information/numberformats.html#times">time</a> the player&rsquo;s train is expected to depart from this station. Special values may also appear - see below.<br />
-<strong><em>ForcedRedSignal</em></strong>: Indicates whether the signal behind the last station stop should be red on a train approach. The default value is 0.<br />
-<strong><em>System</em></strong>: Indicates which built-in safety system should apply until the next station. The default value is 0.<br />
-<strong><em>DepartureSound</em></strong>: The sound file to be played before departure (departure time minus sound duration minus door closing time), relative to the <strong>Sound</strong> folder.</p>
+<p><strong><em>站名</em></strong>：该车站的站名。将会在时刻表和提示信息中显示，所以不应留空。
+<strong><em>到达时间</em></strong>：玩家驾驶的列车应当到达此站的<a href="../../zh_cn/information/numberformats.html#times">时间</a>。可以使用特殊值表示额外信息——见下。
+<strong><em>发车时间</em></strong>：玩家驾驶的列车应当从此站发车的<a href="../../zh_cn/information/numberformats.html#times">时间</a>。可以使用特殊值表示额外信息——见下。
+<strong><em>强制红灯</em></strong>：指示是否应该将最后一个停车点后方的信号机（发车信号机）在玩家驾驶列车接近时设为红色。默认值是0。
+<strong><em>信号系统</em></strong>：指示从此站到下一站之间的区间安装的列车信号系统。默认值是0。
+<strong><em>发车广播</em></strong>：一个相对于<strong>Sound</strong>文件夹的路径，指向在发车前（发车时间-关门时间-音频时长）要播放的音频。</p>
 
 </div>
 
-
-<p>▸ Available options for <em>ArrivalTime</em>:</p>
+<p>▸ *到达时间*的可选项：</p>
 
 <div id="command-arguments">
-<p><em>time</em>: The train is expected to arrive at this particular time.<br />
-<em>omitted</em>: The train may arrive at any time.<br />
-<strong>P</strong> or <strong>L</strong>: All trains are expected to pass this station.<br />
-<strong>B</strong>: The player&rsquo;s train is expected to pass this station, while all other trains are expected to stop.<br />
-<strong>S</strong>: The player&rsquo;s train is expected to stop at this station, while all other trains are expected to pass.<br />
-<strong>S:</strong><em>time</em>: The player&rsquo;s train is expected to arrive at this particular time, while all other trains are expected to pass.</p>
+<p>*[一个时间]*：所有列车都需要停车，玩家驾驶的列车需要在这个特定时间到达。
+*[留空]*：所有列车都需要停车，但可以在任意时间到达。
+<strong>P</strong>或<strong>L</strong>：所有列车都只需要通过这个车站。
+<strong>B</strong>：玩家驾驶的列车只需要通过这个车站，而AI车需要停车。
+<strong>S</strong>：玩家驾驶的列车需要停车，而AI车只需要通过。
+<strong>S:</strong>_[一个时间]_：玩家驾驶的列车需要在这个特定时间到达停车，而AI车只需要通过。</p>
 
 </div>
 
-
-<p>▸ Available options for <em>DepartureTime</em>:</p>
+<p>▸ *发车时间*的可选项：</p>
 
 <div id="command-arguments">
-<p><em>time</em>: The train is expected to depart at this particular time.<br />
-<em>omitted</em>: The train may depart at any time.<br />
-<strong>T</strong> or <strong>=</strong>: This is the terminal station. If <em>ForcedRedSignal</em> is set to 1, the departure signal will be held at red indefinately.<br />
-<strong>T:</strong><em>time</em>: This is the terminal station. If <em>ForcedRedSignal</em> is set to 1, the departure signal will still switch to green before the specified time as if this was a regular station.<br />
-<strong>C</strong>: This is a station at which to &ldquo;change ends&rdquo;. See the description below.<br />
-<strong>C:</strong><em>time</em>: This is a station at which to &ldquo;change ends&rdquo;. Changing ends will take place at the specified time unless <em>StopDuration</em> interferes. See the description below.</p>
+<p>*[一个时间]*：列车将会在这个时间之后发车。
+*[留空]*：列车只要停足停车时间就可以发车。
+<strong>T</strong>或<strong>=</strong>：这是终点站，列车不会发车。如果*强制红灯*被设定，发车信号机会被无限保持在红灯。
+<strong>T:</strong>_[一个时间]<em>：这是终点站，列车不会发车。如果*强制红灯*被设定，发车信号机还是会在发车时间后转为绿灯。
+<strong>C</strong>：这是一个“换端传送”车站。详情见下。
+<strong>C:</strong></em>[一个时间]_：这是一个“换端传送”车站，除非*停车时间*要求推迟发车，列车会在特定时间传送换端。详情见下。</p>
 
 </div>
 
-
-<p>▸ Available options for <em>ForcedRedSignal</em>:</p>
+<p>▸ *强制红灯*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>0</strong>: Signals are unaffected by this station.<br />
-<strong>1</strong>: The signal immediately following the last station stop is hold at red until the train reaches the stopping area and the departure time.</p>
+<p><strong>0</strong>：该车站不影响信号灯。
+<strong>1</strong>：在最后一个停止点后方的信号机（发车信号机）在列车完成停车动作并到达发车时间后才会变绿。</p>
 
 </div>
 
-
-<p>▸ Available options for <em>System</em>:</p>
+<p>▸ *信号系统*的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>ATS</strong> or <strong>0</strong>: ATS should be used from this station on. The following track is not be equipped with ATC.<br />
-<strong>ATC</strong> or <strong>1</strong>: ATC should be used from this station on. The following track is equipped with ATC.</p>
+<p><strong>ATS</strong>或<strong>0</strong>：前方轨道未安装ATC，应切换至ATS。
+<strong>ATC</strong>或<strong>1</strong>：前方轨道已安装ATC，应切换至ATC。</p>
 
 </div>
 
-
-<p>This command initializes a new station. Prefer using the Track.Sta command, which includes more options. For the options of Track.Sta which are not offered by Track.Station, the following values apply:</p>
-
+<p>该指令早已过时，请不要使用该指令（它连开门方向都指定不了）——请使用包含更多选项的Track.Sta代替它。
+该指令创建一个新站。对于它没有提供的参数，默认采用以下值：</p>
 
 <table class='type1'>
 <thead>
 <tr>
-<th><em>PassAlarm</em></th>
-<th>0 (not used)</th>
+<th><em>停车铃</em></th>
+<th>0 （不提醒）</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><em>Doors</em></td>
-<td>B (both doors must be opened)</td>
+<td><em>开门方向</em></td>
+<td>B （开两侧门）</td>
 </tr>
 
 <tr>
-<td><em>ArrivalSound</em></td>
-<td>Not played</td>
+<td><em>到达广播</em></td>
+<td>不播放</td>
 </tr>
 
 <tr>
-<td><em>StopDuration</em></td>
+<td><em>停车时间</em></td>
 <td>15</td>
 </tr>
 
 <tr>
-<td><em>PassengerRatio</em></td>
+<td><em>乘车率</em></td>
 <td>100</td>
 </tr>
 
 <tr>
-<td><em>TimetableIndex</em></td>
-<td>Not affected</td>
+<td><em>时刻表编号</em></td>
+<td>不更改</td>
 </tr>
 </tbody>
 </table>
 
+<p>该指令设定一个新车站。在编写指令时，该指令应该被放置在车站站台的开始处。其后（到下一站之前）的所有Track.Stop指令都被视为和该站有关。如果该站需要停车，该指令后面应该有一个或多个Track.Stop指令指定车站的停车点，以完成车站的定义。</p>
 
-
-<p>The command should be placed at the beginning of the station platform. In order to finalize the creation of a station, use the Track.Stop command to place stop points following this command. All following Track.Stop commands will be associated to this station. At least one Track.Stop command must follow if trains are expected to stop at this station.</p>
-
-<p>Stations can be marked as &ldquo;changing ends&rdquo; in the departure time. At such stations, when the departure time has been reached, the train will automatically jump to the next station. This feature is intended to fake a reverse of traveling direction without the need to jump to stations manually from the menu.</p>
+<p>车站可以被设为“换端车站”。在这样的车站，列车会在满足发车时间后自动被传送到下一站。这个特性可以用来假装列车折返，而不用人工打开菜单跳站。</p>
 
 <div id="warning">
 <span>⚠</span>
-<p>The &ldquo;changing ends&rdquo; feature is only available in the development release 1.2.11 and above.</p>
+<p>只有1.2.11版以上支持换端车站。</p>
 
 </div>
-
 
 <hr />
 
 <div id="command">
-<p><strong>Track.Stop</strong> <em>Direction</em>; <em><font color="green">BackwardTolerance</font></em>; <em><font color="green">ForwardTolerance</font></em>; <em>Cars</em></p>
+<p><strong>Track.Stop</strong> <em>标牌方向</em>; <font color="green"><em>后方容差</em></font>; <font color="green"><em>前方容差</em></font>; <em>编组数量</em></p>
 
 </div>
-
 
 <div id="command-arguments">
-<p><strong><em>Direction</em></strong>: On which side to place a default stop post. The default value is 0.<br />
-<strong><em><font color="green">BackwardTolerance</font></em></strong>: A positive floating-point number indicating the allowed tolerance in the backward direction, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 5.<br />
-<strong><em><font color="green">ForwardTolerance</font></em></strong>: A positive floating-point number indicating the allowed tolerance in the forward direction, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 5.<br />
-<strong><em>Cars</em></strong>: A non-negative integer indicating for how many cars this stop point applies, or 0 for all cars. The default value is 0.</p>
+<p><strong><em>标牌方向</em></strong>：放置一个默认（日式）停车位置指示牌的方向。
+<font color="green"><strong><em>后方容差</em></strong></font>：一个正浮点数，表示在停止位置后方的容差。<strong>默认的</strong>单位是<strong>米</strong>。默认值是5。
+<font color="green"><strong><em>前方容差</em></strong></font>：一个正浮点数，表示在停止位置前方的容差。<strong>默认的</strong>单位是<strong>米</strong>。默认值是5。
+<strong><em>编组数量</em></strong>：一个非负整数，指示该位置适合的列车编组（节数）。0代表该位置适合所有列车编组。默认值是0。</p>
 
 </div>
 
-
-<p>▸ Available options for <em>Direction</em>:</p>
+<p>▸ *方向*的可选项:</p>
 
 <div id="command-arguments">
-<p><strong>-1</strong>: A stop post is created on the left side.<br />
-<strong>0</strong>: No stop post is created.<br />
-<strong>1</strong>: A stop post is created on the right side.</p>
+<p><strong>-1</strong>：在左侧放置指示牌。
+<strong>0</strong>：不放置默认指示牌。
+<strong>1</strong>：在右侧放置指示牌。</p>
 
 </div>
 
-
-<p>This command places a stop point for the last created station. If there is more than one stop defined for a station, a train is expected to stop at the first Track.Stop command for which <em>Cars</em> is greater than or equal to the number of cars the train has, where a value for <em>Cars</em> of 0 indicates a stop point regardless of the amount of cars to be used as the last stop point for a station.</p>
+<p>该指令为上一个创建的车站添加停车点。如果有多个停车点，列车会停在设定的*编组数量*大于等于它的实际编组数量的第一个停车点。一个*编组数量*为0，代表允许所有编组列车停靠的停车点，在配合其他停车点放置时一般被放在最后。</p>
 
 <table style="border: none;">
   <tbody>
@@ -3211,12 +3199,12 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
        <td width="16" valign="top">▶</td>
        <td bgcolor="#D4D8FF" style="border: 1px dashed;">
          <font style="font-family: monospace">
-         <p style='display:inline;'>With Track<br />
-0100, .Sta STATION<br />
-0178, .Stop 1;;;4 ,; for 4 or less cars<br />
-0212, .Stop 1;;;6 ,; for 5 or 6 cars<br />
-0246, .Stop 1;;;8 ,; for 7 or 8 cars<br />
-0280, .Stop 1;;;0 ,; for 9 or more cars
+         <p style='display:inline;'>With Track
+0100, .Sta 国际空间站
+0178, .Stop 1;;;4 ,; 适合4编组及以下列车
+0212, .Stop 1;;;6 ,; 适合5~6编组列车
+0246, .Stop 1;;;8 ,; 适合7~8编组列车
+0280, .Stop 1;;;0 ,; 适合9编组及以上列车
          </font>
        </td>
     </tr>
@@ -3226,35 +3214,31 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 <hr />
 
 <div id="command">
-<p><font color="gray"><strong>Track.Form</strong> <em>RailIndex<sub>1</sub></em>; <em>RailIndex<sub>2</sub></em>; <em>RoofStructureIndex</em>; <em>FormStructureIndex</em></font></p>
+<p><font color="gray"><strong>Track.Form</strong> <em>轨道编号<sub>1</sub></em>; <em>轨道编号<sub>2</sub></em>; <em>顶棚模型编号</em>; <em>站台模型编号</em></font></p>
 
 </div>
-
 
 <div id="command-arguments">
-<p><strong><em>RailIndex<sub>1</sub></em></strong>: The RailIndex to which the platform is bound.<br />
-<strong><em>RailIndex<sub>2</sub></em></strong>: The secondary RailIndex to which the platform will deform. Special values may also appear- see below.<br />
-<strong><em>RoofStructureIndex</em></strong>: A non-negative integer representing the object to be placed as defined via Structure.Roof<br />
-<strong><em>FormStructureIndex</em></strong>: A non-negative integer representing the object to be placed as defined via Structure.Form and Structure.FormC</p>
+<p><strong><em>轨道编号<sub>1</sub></em></strong>：要创建站台的轨道。
+<strong><em>轨道编号<sub>2</sub></em></strong>：在创建岛式站台的情况下，输入另一侧轨道的编号；在创建侧式站台的情况下，输入L或R来指定站台创建在轨道左边还是右边。
+<strong><em>顶棚模型编号</em></strong>：一个非负整数，指定要被放置的顶棚模型。
+<strong><em>站台模型编号</em></strong>：一个非负整数，指定要被放置的站台模型。</p>
 
 </div>
 
-
-<p>▸ Available options for <em>RailIndex<sub>2</sub></em>:</p>
+<p>▸ <em>轨道编号<sub>2</sub></em> 的可选项：</p>
 
 <div id="command-arguments">
-<p><strong>Any current RailIndex</strong>: The form is deformed to meet the specified RailIndex.<br />
-<strong>L</strong>: The specified FormL, FormCL and RoofL objects are placed without deformation.<br />
-<strong>R</strong>: The specified FormR, FormCR and RoofR objects are placed without deformation.</p>
+<p><strong>任何已开始的轨道</strong>：站台模型将被拉伸变形以形成贴合轨道的岛式站台。
+<strong>L</strong>: 将原样无变形地使用FormL, FormCL 与 RoofL物件。<br />
+<strong>R</strong>: 将原样无变形地使用FormR, FormCR 与 RoofR物件。</p>
 
 </div>
 
+<p><strong>注意:</strong>
+如果 <em>轨道编号<sub>1</sub></em> 处于 <em>轨道编号<sub>2</sub></em> 的<strong>左侧</strong>（即：其X坐标更小），则使用Structure.FormL, Structure.FormCL 与 Structure.RoofL定义的物件，否则使用FormR, FormCR与RoofR。</p>
 
-<p><strong>Note:</strong>
-If <em>RailIndex<sub>1</sub></em> is to the <strong>left</strong> of <em>RailIndex<sub>2</sub></em> (e.g. it&rsquo;s X-cordinate is smaller), then the objects defined in Structure.FormL, Structure.FormCL and Structure.RoofL will be used.<br />
-Otherwise, the objects defined in Structure.FormR, Structure.FormCL and Structure.RoofR will be used.</p>
-
-<h5 id="a-name-track-signalling-a-11-5-signalling-and-speed-limits"><a name="track_signalling"></a>● 11.5. Signalling and speed limits</h5>
+<h5 id="a-name-track-signalling-a-11-5-信号与限速"><a name="track_signalling"></a>● 11.5. 信号与限速</h5>
 
 <hr />
 
@@ -3263,14 +3247,12 @@ Otherwise, the objects defined in Structure.FormR, Structure.FormCL and Structur
 
 </div>
 
-
 <div id="command-arguments">
 <p><strong><em><font color="blue">Speed</font></em></strong>: A positive floating-point number representing the speed, <strong>by default</strong> measured in <strong>km/h</strong>, or 0 to indicate no speed restriction. The default value is 0.<br />
 <strong><em>Post</em></strong>: The side on which to place a default Japanese-style speed limit post. The default value is 0.<br />
 <strong><em>Cource</em></strong>: The directional indication. The default value is 0.</p>
 
 </div>
-
 
 <p><img src="../../images/illustration_limit.png" alt="illustration_limit" /></p>
 
@@ -3283,7 +3265,6 @@ Otherwise, the objects defined in Structure.FormR, Structure.FormCL and Structur
 
 </div>
 
-
 <p>▸ Options for <em>Cource</em>:</p>
 
 <div id="command-arguments">
@@ -3292,7 +3273,6 @@ Otherwise, the objects defined in Structure.FormR, Structure.FormCL and Structur
 <strong>1</strong>: The post applies for a right-bound track.</p>
 
 </div>
-
 
 <p>This command defines the new speed limit from this point on. If the new speed limit is lower than the current speed limit, the new speed limit will take effect immediately. If the speed limit is higher than the current speed limit, the new speed limit will take effect only once the whole train has passed this point. By setting <em>Speed</em> to <code>0</code>, the speed restriction is released. By setting <em>Post</em> to either <code>-1</code> or <code>1</code>, a default Japanese-style speed post is placed at the respective side of the track. Setting <em>Course</em> to either <code>-1</code> or <code>1</code> includes a directional indication, which is usually used at railroad switches to indicate that the speed limit only applies if the respective direction is being taken. If <em>Speed</em> is set to <code>0</code>, the setting of <em>Course</em> has no effect.</p>
 
@@ -3303,12 +3283,10 @@ Otherwise, the objects defined in Structure.FormR, Structure.FormCL and Structur
 
 </div>
 
-
 <div id="command-arguments">
 <p><strong><em>a<sub>i</sub></em></strong>: A non-negative number specifying one of the section&rsquo;s aspects.</p>
 
 </div>
-
 
 <p>This command starts a section, the functional part of signalling, to be used in conjunction with Track.SigF, which creates a visual representation of a section (a signal). The <em>a<sub>i</sub></em> parameters specify the aspects the section can bear. An aspect of 0 corresponds to a red section which must not be passed by a train. The <em>a<sub>0</sub></em> term is mandatory.</p>
 
@@ -3318,7 +3296,6 @@ Otherwise, the objects defined in Structure.FormR, Structure.FormCL and Structur
 <p>There are two different modes of behavior on how to interpret the <em>a<sub>i</sub></em> parameters. The mode can be set via Options.SectionBehavior. The following are separate descriptions for default and simplified behavior.</p>
 
 </div>
-
 
 <p><strong>Default behavior:</strong><br />
 The <em>a<sub>i</sub></em> terms specify the aspect the section should bear depending on how many sections ahead are clear until a red one is encountered. The order of the terms is relevant. The same aspect may occur multiple times.</p>
@@ -3332,7 +3309,6 @@ The <em>a<sub>i</sub></em> terms specify the aspect the section should bear depe
 <strong>a<sub>n</sub></strong>: The aspect to show when <em>n</em> sections are clear before a red one is encountered.</p>
 
 </div>
-
 
 <p>In the case more sections ahead are clear than indicated by the <em>a<sub>i</sub></em> terms, the section will bear the aspect of <em>a<sub>n</sub></em>.</p>
 
@@ -3368,7 +3344,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <div id="command-arguments">
 <p><strong><em>SignalIndex</em></strong>: A non-negative integer representing the signal to be placed as defined via Signal(<em>SignalIndex</em>).Load.<br />
 <strong><em>Section</em></strong>: A non-negative integer representing the section this signal is attached to, with 0 being the current section, 1 the upcoming section, 2 the section after that, and so on.<br />
@@ -3379,7 +3354,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 <strong><em>Roll</em></strong>: The angle in degrees by which the object is rotated in the XY-plane in clock-wise order when viewed from behind. The default value is 0.</p>
 
 </div>
-
 
 <p>This command creates a non-function signal, that is, a visual representation of a section as defined via Track.Section. Setting <em>Y</em> to a negative number resets the y-coordinate to 4.8 meters and attaches a default signal post. Also see Track.Section.</p>
 
@@ -3395,7 +3369,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <hr />
 
 <div id="command">
@@ -3403,7 +3376,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 <strong>Track.Sig</strong> <em>Aspects</em>; <em><font color="gray">Unused</font></em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em></p>
 
 </div>
-
 
 <div id="command-arguments">
 <p><strong><em>Type</em></strong>: The number of aspects for this signal. The default value is -2.<br />
@@ -3415,7 +3387,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 <strong><em>Roll</em></strong>: The angle in degrees by which the object is rotated in the XY-plane in clock-wise order when viewed from behind. The default value is 0.</p>
 
 </div>
-
 
 <p>▸ Options for <em>Type</em>:</p>
 
@@ -3431,7 +3402,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 <strong>6</strong>: A six-aspect signal having aspects <font color="#C00000">●</font>red, <font color="#FFC000">●●</font>yellow-yellow, <font color="#FFC000">●</font>yellow, <font color="#FFC000">●</font><font color="#00C000">●</font>yellow-green, <font color="#00C000">●</font>green and <font color="#00C000">●●</font>green-green.</p>
 
 </div>
-
 
 <p>This command creates a functional signal. You can choose from the available options for <em>Aspect</em> to create any of the default Japanese signals. Setting <em>X</em> to 0 creates a functional but invisible signal similar to Track.Section. Setting <em>X</em> to a non-zero number and <em>Y</em> to a negative number resets the y-coordinate to 4.8 meters and attaches a default signal post.</p>
 
@@ -3486,7 +3456,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <div id="command-arguments">
 <p><strong><em><font color="green">X</font></em></strong>: The X-coordinate at which to place the object, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br />
 <strong><em><font color="green">Y</font></em></strong>: The Y-coordinate at which to place the object, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br />
@@ -3495,7 +3464,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 <strong><em>Roll</em></strong>: The angle in degrees by which the object is rotated in the XY-plane in clock-wise order when viewed from behind. The default value is 0.</p>
 
 </div>
-
 
 <p>This commands creates a default Japanese repeating signal. The repeating signal repeats the state of the upcoming signal. Setting <em>X</em> to zero does not create a repeating signal, but forces the command to be ignored. Setting <em>X</em> to a non-zero number and <em>Y</em> to a negative number resets the y-coordinate to 4.8 and attaches a default signal post.</p>
 
@@ -3507,7 +3475,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 <p><strong>Track.Beacon</strong> <em>Type</em>; <em>BeaconStructureIndex</em>; <em>Section</em>; <em>Data</em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em></p>
 
 </div>
-
 
 <div id="command-arguments">
 <p><strong><em>Type</em></strong>: A non-negative integer representing the type of the beacon to be transmitted to the train.<br />
@@ -3522,10 +3489,9 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <p>This command places a beacon (transponder). The object must have been loaded via Structure.Beacon(<em>BeaconStructureIndex</em>) prior to using this command. When the train passes the beacon, the type of beacon and various data will be transmitted to the train, including the state of the referenced section.</p>
 
-<p>It should be noted that the built-in safety systems also receive data from these beacons as Track.Beacon(<em>Type</em>) is roughly equivalent to Track.Transponder(<em>Type</em>). Please see <a href="../../zh_cn/information/standards.html" target="_blank">the page about beacon standards</a> for more information.</p>
+<p>It should be noted that the built-in safety systems also receive data from these beacons as Track.Beacon(<em>Type</em>) is roughly equivalent to Track.Transponder(<em>Type</em>). Please see <a href="../../zh_cn/information/standards.html">the page about beacon standards</a> for more information.</p>
 
 <hr />
 
@@ -3534,7 +3500,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 <strong>Track.Tr</strong> <em>Type</em>; <em>Signal</em>; <em>SwitchSystem</em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em></p>
 
 </div>
-
 
 <div id="command-arguments">
 <p><strong><em>Type</em></strong>: The type of the transponder. The default value is 0.<br />
@@ -3548,7 +3513,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <p>▸ Options for <em>Type</em>:</p>
 
 <div id="command-arguments">
@@ -3561,7 +3525,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <p>▸ Options for <em>Signal</em>:</p>
 
 <div id="command-arguments">
@@ -3571,7 +3534,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <p>▸ Options for <em>SwitchSystem</em>:</p>
 
 <div id="command-arguments">
@@ -3580,14 +3542,13 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <p>This command places a transponder, usually for the built-in safety systems ATS-SN or ATS-P. For more information about these systems and their transponders, see <a href="http://openbve-project.net/play-japanese/" target="_blank">the user&rsquo;s documentation about ATS</a>.</p>
 
-<p>It should be noted that custom safety system plugins also receive data from these transponders as Track.Transponder(<em>Type</em>) is roughly equivalent to Track.Beacon(<em>Type</em>). Please see <a href="../../zh_cn/information/standards.html" target="_blank">the page about beacon standards</a> for more information.</p>
+<p>It should be noted that custom safety system plugins also receive data from these transponders as Track.Transponder(<em>Type</em>) is roughly equivalent to Track.Beacon(<em>Type</em>). Please see <a href="../../zh_cn/information/standards.html">the page about beacon standards</a> for more information.</p>
 
 <p>➟ <a href="https://openbve-project.net/play-japanese/#3-ats-sn" target="_blank">Go here to find out more about ATS-SN and ATS-P.</a></p>
 
-<p>➟ <a href="../../zh_cn/routes/tutorial_ats.html" target="_blank">There is a tutorial available for the proper use of ATS-SN and ATS-P in route files, including all of the five transponders.</a></p>
+<p>➟ <a href="../../zh_cn/routes/tutorial_ats.html">There is a tutorial available for the proper use of ATS-SN and ATS-P in route files, including all of the five transponders.</a></p>
 
 <hr />
 
@@ -3595,7 +3556,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 <p><strong>Track.AtsSn</strong></p>
 
 </div>
-
 
 <p>This command places an S-type transponder for the built-in safety system ATS-SN, referencing the upcoming signal, and automatically switching to ATS-SN. The command is equivalent to <strong>Track.Tr 0;0;0</strong>. See there for more information.</p>
 
@@ -3606,7 +3566,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <p>This command places a pattern renewal transponder for the built-in safety system ATS-P, referencing the upcoming signal, and automatically switching to ATS-P. The command is equivalent to <strong>Track.Tr 3;0;0</strong>. See there for more information.</p>
 
 <hr />
@@ -3616,13 +3575,11 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <div id="command-arguments">
 <p><strong><em>Type</em></strong>: The type of speed restriction.<br />
 <strong><em><font color="blue">Speed</font></em></strong>: A non-negative floating-point number representing the speed restriction, <strong>by default</strong> measured in <strong>km/h</strong>.</p>
 
 </div>
-
 
 <p>▸ Options for <em>Type</em>:</p>
 
@@ -3631,7 +3588,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 <strong>1</strong>: A permanent speed restriction.</p>
 
 </div>
-
 
 <p>This command defines a speed restriction for the built-in safety system ATS-P.</p>
 
@@ -3646,12 +3602,10 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <div id="command-arguments">
 <p><strong><em><font color="blue">Speed</font></em></strong>: A positive floating-point number representing the permanent speed restriction for ATS-P, <strong>by default</strong> measured in <strong>km/h</strong>.</p>
 
 </div>
-
 
 <p>This command is equivalent to <strong>Track.Pattern 1;<em>Speed</em></strong>. See there for more information.</p>
 
@@ -3664,21 +3618,18 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <div id="command-arguments">
 <p><strong><em>BackgroundTextureIndex</em></strong>: A non-negative integer representing the background image to be displayed as defined via Texture.Background(<em>BackgroundTextureIndex</em>).</p>
 
 </div>
 
-
 <p>This command defines which background image to show from now on.</p>
 
 <div id="warning">
 <span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<p>该指令只能在区间块开始位置使用。</p>
 
 </div>
-
 
 <hr />
 
@@ -3686,7 +3637,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 <p><strong>Track.Fog</strong> <em><font color="green">StartingDistance</font></em>; <em><font color="green">EndingDistance</font></em>; <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em></p>
 
 </div>
-
 
 <div id="command-arguments">
 <p><strong><em><font color="green">StartingDistance</font></em></strong>: A floating-point number indicating the start of fog, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br />
@@ -3697,7 +3647,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <p>This command defines the fog from this point on, or deactivates fog. If fog is to be enabled, <em>StartingDistance</em> must be less than <em>EndingDistance</em>. If fog is to be disabled, <em>StartingDistance</em> must be greater than or equal to <em>EndingDistance</em>.</p>
 
 <p>Fog affects the coloring of objects. Objects before the starting distance appear as-is, objects after the ending distance appear in the fog color, and objects in-between blend linearly between those. The background image is affected by fog as well. For the fog calculations, the background image is assumed to be at 600 meters distance from the camera, regardless of the actual viewing distance.</p>
@@ -3706,10 +3655,9 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 <div id="warning">
 <span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<p>该指令只能在区间块开始位置使用。</p>
 
 </div>
-
 
 <hr />
 
@@ -3718,12 +3666,10 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <div id="command-arguments">
 <p><strong><em>Value</em></strong>: A non-negative integer within the range from 0 to 255. The default value is 255.</p>
 
 </div>
-
 
 <p>This command marks a point which affects the brightness in the cab. <em>Value</em> is measured from 0 (dark) to 255 (light), and is linearly interpolated between successive Track.Brightness commands for any given point on the track. This command should be used for tunnels, bridges, station roofs, or anything else that would affect the brightness as perceived inside the cab.</p>
 
@@ -3758,13 +3704,11 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <div id="command-arguments">
 <p><strong><em>FileName</em></strong>: The file name for the marker image, relative to the <strong>Object</strong> folder.<br />
 <strong><em><font color="green">Distance</font></em></strong>: A non-zero floating-point number indicating the length for which the marker image is displayed, <strong>by default</strong> measured in <strong>meters</strong>.</p>
 
 </div>
-
 
 <p>▸ Behavior for <em>Distance</em>:</p>
 
@@ -3773,7 +3717,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 <em>positive value</em>: The marker image starts to display <em>Distance</em> meters before the Track.Marker command, and ends at the Track.Marker command.</p>
 
 </div>
-
 
 <p>This command shows a so-called marker image, which is displayed in the top-right corner of the screen. You can use these images for advisory or informational purposes. The RGB color of 64,64,64 inside the image is made transparent.</p>
 
@@ -3784,10 +3727,9 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <p>A <em>Track.Marker</em> command, linking to a single XML file is also supported. These allow more control over markers than is available in the routefile commands.</p>
 
-<p>These are fully described on the <a href="../../zh_cn/routes/xml/route_marker.html" target="_blank">the XML Markers page&hellip;</a></p>
+<p>These are fully described on the <a href="../../zh_cn/routes/xml/route_marker.html">the XML Markers page&hellip;</a></p>
 
 <hr />
 
@@ -3796,14 +3738,12 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <div id="command-arguments">
 <p><strong><em>Text</em></strong>: The marker text to display. (No special characters supported).<br />
 <strong><em><font color="green">Distance</font></em></strong>: A non-zero floating-point number indicating the length for which the text is displayed, <strong>by default</strong> measured in <strong>meters</strong>.<br />
 <strong><em>FontColor</em></strong>: The font color for this marker text</p>
 
 </div>
-
 
 <p>▸ Behavior for <em>Distance</em>:</p>
 
@@ -3812,7 +3752,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 <em>positive value</em>: The marker image starts to display <em>Distance</em> meters before the Track.Marker command, and ends at the Track.Marker command.</p>
 
 </div>
-
 
 <p>▸ Available options for <em>FontColor</em>:</p>
 
@@ -3828,7 +3767,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <p>This command creates a simple textual marker, which is added to the list of messages in the upper left-hand corner of the screen.</p>
 
 <hr />
@@ -3838,7 +3776,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 <strong>Track.POI</strong> <em>RailIndex</em>; <em>X</em>; <em>Y</em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>; <em>Text</em></p>
 
 </div>
-
 
 <div id="command-arguments">
 <p><strong><em>RailIndex</em></strong>: A non-negative integer representing the rail for the point of interest.<br />
@@ -3851,7 +3788,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <p>This command creates a point of interest which the user can jump to by pressing the CAMERA_POI_PREVIOUS (NUM 1) or CAMERA_POI_NEXT (NUM 7) keys. The camera will be placed at the specified location with the specified orientation. If <em>Text</em> is non-empty, a message will appear briefly showing the text.</p>
 
 <hr />
@@ -3861,12 +3797,10 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <div id="command-arguments">
 <p><strong><em>Time</em></strong>: The <a href="../../zh_cn/information/numberformats.html#times">time</a> at which the pretrain is at this track position.</p>
 
 </div>
-
 
 <p>This commands creates a position-time-association for an invisible preceding train in order to influence signalling. Contrary to a real preceding train as created by Route.RunInterval, the invisible preceding train created by Track.PreTrain is a way of scripting where the invisible preceding train is at any given time. The position-time-associations must be in increasing order, that is, at a later track position, the associated time must also be later. Before the first scripted time, the invisible preceding train resides at the first scripted position. In-between the first and last scripted time, the invisible preceding train moves (linearly) between the scripted points. After the last scripted time, the invisible preceding train is removed and thus clears signalling.</p>
 
@@ -3877,13 +3811,11 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <div id="command-arguments">
 <p><strong><em>FileName</em></strong>: The file name for the sound to play, relative to the <strong>Sound</strong> folder.<br />
 <strong><em><font color="blue">Speed</font></em></strong>: The reference speed in km/h for speed-dependant sounds, or 0 to play the sound speed-independently. The default value is 0.</p>
 
 </div>
-
 
 <p>This command plays an announcement or other kind of sound in the cab once the player&rsquo;s train crosses the point where this command is used. If <em>Speed</em> is set to 0 (default), the sound is played as-is. If a <em>Speed</em> is given though, the sound plays at is original pitch at the specified speed, and is pitch-modulated proportionally for other speeds, useful for custom flange sounds, pointwork sounds, etc.</p>
 
@@ -3894,14 +3826,12 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <div id="command-arguments">
 <p><strong><em>FileName</em></strong>: The file name for the sound to play, relative to the <strong>Sound</strong> folder.<br />
 <strong><em><font color="green">X</font></em></strong>: A floating-point number representing the horizontal offset from rail 0, <strong>by default</strong> measured in <strong>meters</strong>. Negative values indicate left, positive ones right.<br />
 <strong><em><font color="green">Y</font></em></strong>: A floating-point number representing the vertical offset from rail 0, <strong>by default</strong> measured in <strong>meters</strong>. Negative values indicate below, positive ones above.</p>
 
 </div>
-
 
 <p>This command places an environmental sound effect at the specified location. The sound will play in a loop for the duration of the simulation and employs the doppler effect. (Note: All sounds in openBVE employ the doppler effect.)</p>
 
@@ -3912,7 +3842,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <p>This command places a bumper. The train can collide with the bumper in both the forward and backward directions. Place this command at the beginning and the end of the route. An object is not automatically created, so use Track.FreeObj to create a visual representation of the bumper if necessary.</p>
 
 <hr />
@@ -3921,7 +3850,6 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 <p><strong>Track.Destination</strong> <em>Type</em>; <em>BeaconStructureIndex</em>; <em>NextDestination</em>; <em>PreviousDestination</em>; <em>TriggerOnce</em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em></p>
 
 </div>
-
 
 <div id="command-arguments">
 <p><strong><em>Type</em></strong>: Defines the types of trains for which this destination setter applies: <em>-1</em> for AI trains only, <em>0</em> for all trains and <em>1</em> for the player train only.<br />
@@ -3937,8 +3865,10 @@ The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section c
 
 </div>
 
-
 <p>This command places a special beacon, which sets the destination variable, available for use by plugins and animated objects. The object must have been loaded via Structure.Beacon(<em>BeaconStructureIndex</em>) prior to using this command.</p>
+
+</div>
+
 
 </div>
 
