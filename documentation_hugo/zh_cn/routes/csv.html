@@ -3492,7 +3492,7 @@ The <em>a<sub>i</sub></em> terms specify the aspect the section should bear depe
 
 <p>该指令放置一个有源应答器。使用的模型需要通过Structure.Beacon(<em>BeaconStructureIndex</em>)预先加载。当列车通过它时，它会把类型、关联区间的信号状态、还有一堆其它信息全部发给车载信号系统接收器。</p>
 
-<p>It should be noted that the built-in safety systems also receive data from these beacons as Track.Beacon(<em>Type</em>) is roughly equivalent to Track.Transponder(<em>Type</em>). Please see <a href="../../zh_cn/information/standards.html">the page about beacon standards</a> for more information.</p>
+<p>需要注意，由于Track.Beacon(<em>类型</em>)和Track.Transponder(<em>类型</em>)是大致相同的，游戏内置的车载信号系统也会接收Track.Beacon的发信。所以，如果要自行编写ats.dll插件，请尽量避开游戏内置车载信号系统已经使用的标号，避免误发信息，造成混乱。详情参见<a href="../../zh_cn/information/standards.html">应答器类型标准</a>。</p>
 
 <hr />
 
