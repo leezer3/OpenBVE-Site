@@ -3779,22 +3779,22 @@ The <em>a<sub>i</sub></em> terms specify the aspect the section should bear depe
 </div>
 
 <div id="command-arguments">
-<p><strong><em>RailIndex</em></strong>: A non-negative integer representing the rail for the point of interest.<br />
-<strong><em><font color="green">X</font></em></strong>: A floating-point number representing the horizontal offset from the rail, <strong>by default</strong> measured in <strong>meters</strong>. Negative values indicate left, positive ones right.<br />
-<strong><em><font color="green">Y</font></em></strong>: A floating-point number representing the vertical offset from the rail, <strong>by default</strong> measured in <strong>meters</strong>. Negative values indicate below, positive ones above.<br />
-<strong><em>Yaw</em></strong>: The angle in degrees by which the view is rotated in the XZ-plane in clock-wise order when viewed from above. The default value is 0.<br />
-<strong><em>Pitch</em></strong>: The angle in degrees by which the view is rotated in the YZ-plane in clock-wise order when viewed from the left. The default value is 0.<br />
-<strong><em>Roll</em></strong>: The angle in degrees by which the view is rotated in the XY-plane in clock-wise order when viewed from behind. The default value is 0.<br />
-<strong><em>Text</em></strong>: A textual representation of the point of interest.</p>
+<p><strong><em>轨道编号</em></strong>：一个非负整数，代表这个兴趣点所在的轨道。<br />
+<strong><font color="green"><em>水平位置</em></font></strong>：物体距离轨道中心的水平距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向右，负值代表向左。默认值是0。<br />
+<strong><font color="green"><em>垂直位置</em></font></strong>：物体距离轨道中心的垂直距离。<strong>默认的</strong>单位是<strong>米</strong>。正值代表向上，负值代表向下。默认值是0。<br />
+<strong><em>偏转角</em></strong>：相机在XZ平面上转动的角度（相对于上方顺时针）。默认值是0。<br />
+<strong><em>俯仰角</em></strong>：相机在YZ平面上转动的角度（相对于左方顺时针）。默认值是0。<br />
+<strong><em>侧倾角</em></strong>：相机在XY平面上转动的角度（相对于后方顺时针）。默认值是0。<br />
+<strong><em>文字描述</em></strong>：一行描述这个兴趣点的文字。</p>
 
 </div>
 
-<p>This command creates a point of interest which the user can jump to by pressing the CAMERA_POI_PREVIOUS (NUM 1) or CAMERA_POI_NEXT (NUM 7) keys. The camera will be placed at the specified location with the specified orientation. If <em>Text</em> is non-empty, a message will appear briefly showing the text.</p>
+<p>这条指令创建一个用户可以使用CAMERA_POI_PREVIOUS（小键盘1）或CAMERA_POI_NEXT（小键盘7）跳转的一系列在轨道旁边的可能比较有意思的观察点。摄像机会被按照指定的方向放在指定的位置。如果设置了*文字描述*，在跳转时它会被显示，让玩家更好的了解这里是哪儿，为什么这里有意思。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>Track.PreTrain</strong> <em>Time</em></p>
+<p><strong>Track.PreTrain</strong> <em>通过时间</em></p>
 
 </div>
 
