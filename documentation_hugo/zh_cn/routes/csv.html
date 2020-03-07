@@ -3652,7 +3652,7 @@ The <em>a<sub>i</sub></em> terms specify the aspect the section should bear depe
 
 <p>雾效果影响物体绘制的颜色。在起始近距离以内的物体颜色保持原样，在终止远距离外的物体颜色和雾颜色完全相同，在两个位置中间的物体颜色是线性平滑渐变的。雾也会影响背景图像。不论实际情况如何，在计算时背景图像都会被假定距离摄像机600米远。</p>
 
-<p>Depending on Options.FogBehavior, there are two options how this command affects fog from this point on. In block-wise mode, the current fog blends from the beginning of this block to the new settings at the end of this block. The new setting is kept for following blocks. This is the default behavior. In interpolation mode, each Track.Fog command defines a control point for fog, where all of the settings (distances and colors) are interpolated linearly between the control points.</p>
+<p>根据Options.FogBehavior的设定，雾的处理方式会有所不同。详情见上。  In block-wise mode, the current fog blends from the beginning of this block to the new settings at the end of this block. The new setting is kept for following blocks. This is the default behavior. In interpolation mode, each Track.Fog command defines a control point for fog, where all of the settings (distances and colors) are interpolated linearly between the control points.</p>
 
 <div id="warning">
 <span>⚠</span>
@@ -3663,16 +3663,16 @@ The <em>a<sub>i</sub></em> terms specify the aspect the section should bear depe
 <hr />
 
 <div id="command">
-<p><strong>Track.Brightness</strong> <em>Value</em></p>
+<p><strong>Track.Brightness</strong> <em>亮度值</em></p>
 
 </div>
 
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: A non-negative integer within the range from 0 to 255. The default value is 255.</p>
+<p><strong><em>亮度值</em></strong>：一个位于0~255之间的整数。默认值是255。</p>
 
 </div>
 
-<p>This command marks a point which affects the brightness in the cab. <em>Value</em> is measured from 0 (dark) to 255 (light), and is linearly interpolated between successive Track.Brightness commands for any given point on the track. This command should be used for tunnels, bridges, station roofs, or anything else that would affect the brightness as perceived inside the cab.</p>
+<p>该指令控制驾驶台的照明亮度情况。*亮度值*按照0（黑暗）到255（明亮）测算，并在连续的Track.Brightness指令之间平滑渐变。只要是会影响驾驶室内的亮度的地方（例如隧道、桥梁、车站顶棚、等等，尤其注意隧道灯和顶棚房梁的处理，虽然十分繁琐，但是能大大提高真实度），都应该使用这条指令来进行微调。</p>
 
 <table style="border: none;">
   <tbody>
