@@ -12,11 +12,11 @@ share: true
 If you have not already done so, download the latest stable version of OpenBVE and extract it to a folder of your choice. This folder will be called your OpenBVE folder from here on. 
 
 First try launching the program, by double-clicking on the main **_openbve.exe_** in the top-level OpenBVE folder.
-In many cases, _Windows Update_ will have already installed the .Net framework for you, and you will need to do nothing.
+In many cases, _Windows Update_ will have already installed the .NET Framework 4.6.1 or later for you, and you will need to do nothing.
 
-If however, this is not the case please download the .Net framework Web Installer from Microsoft: 
+If however, this is not the case please download the .NET Framework 4.6.1 Web Installer from Microsoft: 
 
-<a href="http://go.microsoft.com/fwlink/?LinkId=181011" class="btn btn-info">http://go.microsoft.com/fwlink/?LinkId=181011</a>
+<a href="https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net461-web-installer" class="btn btn-info">Download .NET Framework 4.6.1</a>
 
 Follow the instructions in this installer, and then try launching the program again.
 
