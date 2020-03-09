@@ -125,7 +125,7 @@
               
             </li>
             
-            <li><a href="../../../zh_cn/routes/xml/trackfollowingobject.html">Track Following Object</a>
+            <li><a href="../../../zh_cn/routes/xml/trackfollowingobject.html">轨道循迹物件</a>
               
             </li>
             
@@ -421,7 +421,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>Track Following Object</h1>
+          <h1>轨道循迹物件</h1>
         </div>
 
         
@@ -432,22 +432,22 @@
 <div id="content">
   
 
-<p>This page explains the principle and implementation of the XML-based Track Following Object, which is supported in openBVE v1.6.0 or later.</p>
+<p>本页说明了openBVE v1.6.0或更高版本中支持的基于XML的轨道循迹对象 TFO 的原理和实现。</p>
 
-<h2 id="basic-principles">■ Basic Principles</h2>
+<h2 id="基本原则">■基本原则</h2>
 
-<p>openBVE can freely run a Track Following Object on other tracks.</p>
+<p>轨道循迹物件可在主轨道以外的其他轨道上自由运动。</p>
 
-<p>In order to do this, it is necessary to setup each object that you want to run using Track Following Object XML files. An example is shown below.</p>
+<p>为此，必须为每一个物件使用XML文件设置其运动方式。 一个例子如下所示。</p>
 
-<p>In this example the object runs as follows.</p>
+<p>在此示例中，这一物件以下述方式运动：</p>
 
 <ol>
-<li>It is displayed when the in-game time 00:01:00 has elapsed and the object exists within 50 m to 100 m of the player&rsquo;s camera position in game. It becomes invisible after 5 minutes have elapsed since being displayed. The appearance is defined in extensions.cfg in 7-car formation.</li>
-<li>The in-game distance is 200 m and the right door is opened for 20 seconds and then the object accelerates to 30 km/h at an acceleration of 1.71km/h/s on <strong>Rail2</strong>.</li>
-<li>It travels at 60 km/h on <strong>Rail2</strong> for 400 m.</li>
-<li>The object decelerates to 30km/h at 1.71 km/h/s on <strong>Rail2</strong>, when it reaches a distance of 1000 m within the game, it stops and opens the doors on both sides. After stopping for 10 seconds, it accelerates in reverse to 30 km/h with an acceleration of 1.71 km/h/s on Rail1.</li>
-<li>The object decelerates to 30 km/h at 1.71 km/h/s on <strong>Rail1</strong>, stops and opens the right door at an in-game distance of 200 m.</li>
+<li>当游戏内时间到达00:01:00之后，且该物件位于游戏中玩家位置前方50 m至100 m之内时，该物件就会出现，并在显示5分钟后消失。 这一物件的外观是7节编组列车，在对应的extensions.cfg中定义。</li>
+<li>游戏中距离为200 m，右门打开20秒，然后该物体在 ** Rail2 ** 上以1.71km / h / s的加速度加速至30 km / h。</li>
+<li>它在 <strong>Rail2</strong> 上以60 km / h的速度行驶400 m。</li>
+<li>在 <strong>Rail2</strong> 上，该物体以1.71 km / h / s的速度减速至30 km / h，当它在游戏中达到1000 m的距离时，这一列车物件会停止并打开两侧的门。 停止10秒钟后，它在 Rail1 上以1.71 km / h / s的速度反向加速至30 km / h。</li>
+<li>该物体在 <strong>Rail1</strong> 处以1.71 km / h / s的速度减速至30 km / h，停止并在主轨道位置200 m处打开右门。</li>
 </ol>
 
 <textarea rows="17" cols="110" style="border:2;">
@@ -456,40 +456,40 @@
 &lt;openBVE xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xsd=&#34;http://www.w3.org/2001/XMLSchema&#34;&gt;
   &lt;TrackFollowingObject&gt;
     &lt;Definition&gt;
-      &lt;!--Time when the object appears[hh.mmss]--&gt;
+      &lt;!--物件出现的时间[hh.mmss]--&gt;
       &lt;AppearanceTime&gt;00.0100&lt;/AppearanceTime&gt;
-      &lt;!--In-game distance of the starting point at which the object appears[m]--&gt;
+      &lt;!--物件出现近距离[m]--&gt;
       &lt;AppearanceStartPosition&gt;50&lt;/AppearanceStartPosition&gt;
-      &lt;!--In-game distance of the end point at which the object appears[m]--&gt;
+      &lt;!--物件出现远距离[m]--&gt;
       &lt;AppearanceEndPosition&gt;100&lt;/AppearanceEndPosition&gt;
-      &lt;!--The duration for which the object appears[hh.mmss]--&gt;
+      &lt;!--物件持续显示时间[hh.mmss]--&gt;
       &lt;LeaveTime&gt;00.0500&lt;/LeaveTime&gt;
     &lt;/Definition&gt;
     &lt;Train&gt;
-      &lt;!--Relative path of Train folder--&gt;
+      &lt;!--相对于Train文件夹的列车文件夹路径--&gt;
       &lt;Directory&gt;TrainDirectory&lt;/Directory&gt;
     &lt;/Train&gt;
     &lt;Stops&gt;
       &lt;!--Start--&gt;
       &lt;Stop&gt;
-        &lt;!--Deceleration[km/h/s]--&gt;
+        &lt;!--减速度[km/h/s]--&gt;
         &lt;Decelerate&gt;0.0&lt;/Decelerate&gt;
-        &lt;!--In-game distance of stop position[m]--&gt;
+        &lt;!--停车位置 游戏内距离[m]--&gt;
         &lt;StopPosition&gt;200&lt;/StopPosition&gt;
-        &lt;!--Door that open at this point--&gt;
+        &lt;!--停车后开启的车门--&gt;
         &lt;Doors&gt;1&lt;/Doors&gt;
-        &lt;!--Time to keep stopping[hh.mmss]--&gt;
+        &lt;!--停车时间[hh.mmss]--&gt;
         &lt;StopTime&gt;00.0020&lt;/StopTime&gt;
-        &lt;!--Acceleration[km/h/s]--&gt;
+        &lt;!--加速度[km/h/s]--&gt;
         &lt;Accelerate&gt;1.71&lt;/Accelerate&gt;
-        &lt;!--Speed after acceleration[km/h]--&gt;
+        &lt;!--加速到的最高速度[km/h]--&gt;
         &lt;TargetSpeed&gt;30&lt;/TargetSpeed&gt;
-        &lt;!--Progress direction [1: forward, -1: backward]--&gt;
+        &lt;!--前进方向[1: forward, -1: backward]--&gt;
         &lt;Direction&gt;1&lt;/Direction&gt;
-        &lt;!--Traveling track--&gt;
+        &lt;!--走行轨道--&gt;
         &lt;Rail&gt;2&lt;/Rail&gt;
       &lt;/Stop&gt;
-      &lt;!--Maximum speed change--&gt;
+      &lt;!--限速--&gt;
       &lt;Stop&gt;
         &lt;Decelerate&gt;0&lt;/Decelerate&gt;
         &lt;StopPosition&gt;400&lt;/StopPosition&gt;
@@ -499,7 +499,7 @@
         &lt;Direction&gt;1&lt;/Direction&gt;
         &lt;Rail&gt;2&lt;/Rail&gt;
       &lt;/Stop&gt;
-      &lt;!--Return--&gt;
+      &lt;!--返回--&gt;
       &lt;Stop&gt;
         &lt;Decelerate&gt;1.71&lt;/Decelerate&gt;
         &lt;StopPosition&gt;1000&lt;/StopPosition&gt;
@@ -510,7 +510,7 @@
         &lt;Direction&gt;-1&lt;/Direction&gt;
         &lt;Rail&gt;1&lt;/Rail&gt;
       &lt;/Stop&gt;
-      &lt;!--Goal--&gt;
+      &lt;!--终点--&gt;
       &lt;Stop&gt;
         &lt;Decelerate&gt;1.71&lt;/Decelerate&gt;
         &lt;StopPosition&gt;200&lt;/StopPosition&gt;
@@ -527,167 +527,153 @@
 
 </textarea>
 
-<p>As you can see, the file consists of one <strong>&lt;Definition&gt;</strong> section, one <strong>&lt;Car&gt;</strong> section and one <strong>&lt;Stops&gt;</strong> section. The <strong>&lt;Stops&gt;</strong> section consists of two or more <strong>&lt;Stop&gt;</strong> sections.</p>
+<p>如您所见，该文件由一个** \ 1<Definition><strong>部分，一个</strong> \ <Car> <strong>部分和一个</strong> \ <Stops> **部分组成。 ** \ <Stops> <strong>部分由两个或多个</strong> \ <Stop> **部分组成。</p>
 
-<h2 id="definition-attribute">■ Definition attribute</h2>
+<h2 id="定义属性">■定义属性</h2>
 
 <div id="command">
-<p><strong>&lt;AppearanceTime&gt;</strong> <em>Time</em> <strong>&lt;/AppearanceTime&gt;</strong></p>
-
+** \ <AppearanceTime> ** <em>时间</em> ** \ </AppearanceTime> **
 </div>
 
 
-<p><strong>Time</strong> sets the time when the object appears in the game.</p>
+<p>** 时间 ** 设置对象出现在游戏中的时间。</p>
 
-<p><em>Note:</em> If this parameter is omitted, the object will emerge from the start of the game.</p>
+<p>*注意：*如果省略此参数，则该对象将从游戏开始时出现。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>&lt;AppearanceStartPosition&gt;</strong> <em>Position</em> <strong>&lt;/AppearanceStartPosition&gt;</strong></p>
-
+** \ <AppearanceStartPosition> ** <em>位置</em> ** \ </AppearanceStartPosition> **
 </div>
 
 
-<p><strong>Position</strong> sets the in-game distance at which the object starts appearing. The object will appear when the player&rsquo;s train passes this point. The unit is <strong>meter</strong>.</p>
+<p><strong>位置</strong>设置物体开始出现在游戏中的距离。 当玩家的火车经过此点时，该对象将出现。 单位是<strong>米</strong>。</p>
 
-<p><em>Note:</em> If this parameter is omitted, the object will emerge from the start of the game.</p>
+<p>*注意：*如果省略此参数，则该对象将从游戏开始时出现。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>&lt;AppearanceEndPosition&gt;</strong> <em>Position</em> <strong>&lt;/AppearanceEndPosition&gt;</strong></p>
-
+** \ <AppearanceEndPosition> ** <em>位置</em> ** \ </AppearanceEndPosition> **
 </div>
 
 
-<p><strong>Position</strong> sets the in-game distance at the end point where the object appears. The object will be hidden when the player&rsquo;s camera position passes this point. It must also be greater than the value specified for <strong>&lt;AppearanceStartPosition&gt;</strong>. The unit is <strong>meter</strong>.</p>
+<p><strong>位置</strong> 在对象出现的终点设置游戏距离。 当玩家的摄像机位置超过该点时，该对象将被隐藏。 它也必须大于为** \ <AppearanceStartPosition> <strong>指定的值。 单位是</strong>米**。</p>
 
-<p><em>Note:</em> If this parameter is omitted, the object will emerge from the start of the game.</p>
+<p>*注意：*如果省略此参数，则该对象将从游戏开始时出现。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>&lt;LeaveTime&gt;</strong> <em>Time</em> <strong>&lt;/LeaveTime&gt;</strong></p>
-
+<strong>&lt;LeaveTime&gt;</strong> <em>时间</em> <strong>&lt;/LeaveTime&gt;</strong>
 </div>
 
 
-<p><strong>Time</strong> sets the duration from when the object appears in the game until it disappears. The object will not be visible after this time. This value is not an in-game time.</p>
+<p><strong>时间</strong>设置从物体出现在游戏中到消失为止的持续时间。 此时间之后该对象将不可见。 此值不是游戏时间。</p>
 
-<p><em>Note:</em> If this parameter is omitted, the object will remain visible until the end of the game, or until it is hidden by <strong>&lt;AppearanceEndPosition&gt;</strong></p>
+<p>*注意：*如果省略此参数，则该对象将保持可见状态，直到游戏结束或被** \ <AppearanceEndPosition> **隐藏为止</p>
 
-<h2 id="train-attribute">■ Train attribute</h2>
+<h2 id="列车属性">■列车属性</h2>
 
 <div id="command">
-<p><strong>&lt;Directory&gt;</strong> <em>Path</em> <strong>&lt;/Directory&gt;</strong></p>
-
+** \ <Directory> ** <em>路径</em> ** \ </Directory> **
 </div>
 
 
-<p><strong>Path</strong> sets the relative path to the directory containing the object&rsquo;s train.dat, sound.cfg and extensions.cfg.</p>
+<p>** Path **设置包含对象的train.dat，sound.cfg和extensions.cfg的目录的相对路径。</p>
 
-<p><em>Note:</em> If a train folder is intended solely for AI use, then the <strong>train.dat</strong> file may be renamed <strong>train.ai</strong></p>
+<p>*注意：*如果火车文件夹仅供AI使用，则** train.dat <strong>文件可以重命名为</strong> train.ai **。</p>
 
 <div id="command">
-<p><strong>&lt;Reversed&gt;</strong> <em>true</em> <strong>&lt;/Reversed&gt;</strong></p>
-
+<strong>&lt;Reversed&gt;</strong> <em>正确</em> <strong>&lt;/Reversed&gt;</strong>
 </div>
 
 
-<p>If this attribute is set to <strong>true</strong>  then the consist of the train will be reversed.</p>
+<p>如果将此属性设置为** true **，那么火车的组成将被反转。</p>
 
-<h2 id="stop-attribute">■ Stop attribute</h2>
+<h2 id="停止语法">■停止语法</h2>
 
 <div id="command">
-<p><strong>&lt;Decelerate&gt;</strong> <em>Value</em> <strong>&lt;/Decelerate&gt;</strong></p>
-
+** \ <Decelerate> ** <em>值</em> ** \ </Decelerate> **
 </div>
 
 
-<p><strong>Value</strong> sets the deceleration of the object. The unit is <strong>km/h/s</strong>.</p>
+<p><strong>值</strong>设置对象的减速度。 单位是** km / h / s **。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>&lt;StopPosition&gt;</strong> <em>Position</em> <strong>&lt;/StopPosition&gt;</strong></p>
-
+** \ <StopPosition> ** <em>位置</em> ** \ </StopPosition> **
 </div>
 
 
-<p><strong>Position</strong> sets the in-game distance where the object stops. The unit is <strong>meter</strong>.</p>
+<p><strong>位置</strong>设置物体停止的游戏距离。单位是<strong>米</strong>。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>&lt;Doors&gt;</strong> <em>Value</em> <strong>&lt;/Doors&gt;</strong></p>
-
+** \ <Doors> ** <em>值</em> ** \ </Doors> **
 </div>
 
 
-<p><strong>Value</strong> sets the open door of the object. The valid values are:</p>
+<p><strong>值</strong>设置对象的开门。 有效值为：</p>
 
 <ul>
-<li><strong>L</strong> or <strong>-1</strong>: The left door opens.</li>
-<li><strong>N</strong> or <strong>0</strong>: Neither door opens.</li>
-<li><strong>R</strong> or <strong>1</strong>: The right door opens.</li>
-<li><strong>B</strong>: Both doors open.</li>
+<li>** L <strong>或</strong>-1 **：左门打开。</li>
+<li>** N <strong>或</strong> 0 **：两扇门均不打开。</li>
+<li>** R <strong>或</strong> 1 **：右门打开。</li>
+<li>** B **：两扇门都会打开。</li>
 </ul>
 
 <hr />
 
 <div id="command">
-<p><strong>&lt;StopTime&gt;</strong> <em>Time</em> <strong>&lt;/StopTime&gt;</strong></p>
-
+<strong>&lt;StopTime&gt;</strong> <em>时间</em> <strong>&lt;/StopTime&gt;</strong>
 </div>
 
 
-<p><strong>Time</strong> sets the duration of the stop of the object. This value is not an in-game time.</p>
+<p>** 时间 **设置对象停止的持续时间。 此值不是游戏时间。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>&lt;Accelerate&gt;</strong> <em>Value</em> <strong>&lt;/Accelerate&gt;</strong></p>
-
+** \ <Accelerate> ** <em>值</em> ** \ </Accelerate> **
 </div>
 
 
-<p><strong>Value</strong> sets the acceleration of the object. The unit is <strong>km/h/s</strong>.</p>
+<p><strong>值</strong>设置对象的加速度。 单位是** km / h / s **。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>&lt;TargetSpeed&gt;</strong> <em>Value</em> <strong>&lt;/TargetSpeed&gt;</strong></p>
-
+** \ <TargetSpeed> ** <em>值</em> ** \ </TargetSpeed> **
 </div>
 
 
-<p><strong>Value</strong> sets the speed after the acceleration of the object. The unit is <strong>km/h</strong>.</p>
+<p><strong>值</strong>设置对象加速后的速度。 单位是** km / h **。</p>
 
 <hr />
 
 <div id="command">
-<p><strong>&lt;Direction&gt;</strong> <em>Value</em> <strong>&lt;/Direction&gt;</strong></p>
-
+** \ <Direction> ** <em>值</em> ** \ </Direction> **
 </div>
 
 
-<p><strong>Value</strong> sets the direction of travel of the object. Valid values are as follows.</p>
+<p><strong>值</strong>设置对象的行进方向。 有效值如下。</p>
 
 <ul>
-<li><strong>F</strong> or <strong>1</strong> : The object will move forward.</li>
-<li><strong>R</strong> or <strong>-1</strong> : The object goes backward.</li>
+<li>** F <strong>或</strong> 1 **：对象将向前移动。</li>
+<li>** R <strong>或</strong>-1 **：对象向后移动。</li>
 </ul>
 
 <hr />
 
 <div id="command">
-<p><strong>&lt;Rail&gt;</strong> <em>RailIndex</em> <strong>&lt;/Rail&gt;</strong></p>
-
+<strong>&lt;Rail&gt;</strong> <em>铁路指数</em> <strong>&lt;/Rail&gt;</strong>
 </div>
 
 
-<p><strong>RailIndex</strong> sets the trajectory on which the object will run. It is necessary to define the trajectory by the <strong>Track.Rail</strong> command of the route file.</p>
+<p>** RailIndex <strong>设置对象运行的轨迹。 必须通过路径文件的</strong> Track.Rail **命令定义轨迹。</p>
 
 </div>
 
