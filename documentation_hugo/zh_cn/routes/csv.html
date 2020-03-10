@@ -45,7 +45,7 @@
               
             </li>
             
-            <li><a href="../../zh_cn/objects/native/animated.html">The ANIMATED object</a>
+            <li><a href="../../zh_cn/objects/native/animated.html">ANIMATED 动画物件</a>
               
             </li>
             
@@ -297,7 +297,7 @@
           
         </li>
         
-        <li><a href="../../zh_cn/information/forking.html">Forking guidelines</a>
+        <li><a href="../../zh_cn/information/forking.html">分叉准则</a>
           
         </li>
         
@@ -459,7 +459,7 @@
 <p>CSV格式线路是以纯文本形式编辑的线路。</p>
 <p>线路文件是纯文本，且可以使用任意<a href="../../zh_cn/information/encodings.html">字符编码</a>，但是，我们推荐线路作者们使用UTF8-BOM编码格式。游戏在解析数字数据时，使用的<a href="../../zh_cn/information/numberformats.html">解析方法</a>是<strong>宽松</strong>的(特别指出处除外)，但是，我们推荐线路作者们<em>严格规范</em>地编写线路文件。 这个文件一般来说可以被放在<em>Train</em>或<em>Railway</em>文件夹下的任何地方。文件名可以随意，但扩展名必须是**.csv**。线路文件被从头到尾逐行解析，每行被分割并被从左到右解析。</p>
 <p>线路文件包括一系列指令，用来导入线路中用到的模型（Structure（结构）命名空间*)，线路的属性信息（说明线路使用的默认列车和背景等信息），文件的其余部分是Track（轨道）命名空间* 在这一部分中，主轨道位置（一般以米为单位）被用来描述轨道在哪里转弯，车站的位置在哪里，墙壁应当在哪里开始、哪里结束，以此类推。说得明白一点儿，Track（轨道）命名空间的指令是要放在最后的。</p>
-<p>这个格式假设了一条游戏默认的主轨道（0号轨道），不可以指定它开始的位置，也不能结束它。和游戏中其他轨道不同的是，它从线路的开始一直延续到线路的终点，代表着玩家驾驶的列车行驶的轨道。除此之外，游戏中的其他轨道都是只供装饰，不能行驶的，但可以用 <a href="../../zh_cn/routes/xml/trackfollowingobject.html">轨道跟随物件</a> 来让AI车在其上行驶。</p>
+<p>The format assumes an implicit rail 0 which cannot be explicitly started or ended. Instead, it is present from the beginning of the route to the end, and it marks the rail the player&rsquo;s train drives on. rail 0 and the other rails are not only for used for visual, and also use for  <a href="../../zh_cn/routes/xml/trackfollowingobject.html">Track Following Object</a>.</p>
 <p>可以几何意义上地弯曲和抬升默认的主轨道，而其他轨道都是相对于主轨道定义的，并随主轨道弯曲起伏。除非特别修改定义，线路中每25米划分为一个区间块，特定的命令只有在区间块的边界位置（整25米位置）才能发挥作用。物体的放置（尤其是在弯道上）总是基于一个坐标系，它的轴并不随轨道弯曲，而是直直地指向邻近的下一个区间块。</p>
 <p>➟ <a href="../../zh_cn/routes/csv_quick.html">还可查阅这份CSV格式的快速参考手册&hellip;</a></p>
 <h2 id="a-namesyntaxa-2-语法"><a name="syntax"></a>■ 2. 语法</h2>
@@ -1381,7 +1381,7 @@ Train.File <em>文件夹名</em>
 <p>这个命名空间里的指令用来载入在后面的其他指令中要用到的物体模型。总体来说，像Track.Rail、Track.FreeObj之类的命令通过<em>结构编号</em>来指定要使用的物体。这个<em>结构编号</em>对于这个指令是特定的，所以应当先载入要使用的模型。要使用哪个指令，要使用哪个模型，就把它们载入，不需要的就不用载入。</p>
 <p>这个命名空间中的指令基本上都是以下这个结构：</p>
 <div id="command">
-**Structure.<em>类型</em>(<em>结构编号</em>)**<font color="gray">.Load</font> <em>文件名</em>
+<strong>Structure.Command</strong>(<em>StructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em>
 </div>
 <p><em>结构编号</em>是一个非负整数。<em>文件名</em>是一个相对于<strong>Object</strong>文件夹的路径，指向要加载的模型文件。<em>类型</em>是以下几种之一：</p>
 <table class='type0'>
@@ -1470,7 +1470,7 @@ Train.File <em>文件夹名</em>
 <p>➟ <a href="../../zh_cn/routes/formroofcrack.html">关于Forms, Roofs, Cracks的更详尽说明&hellip;</a></p>
 <p>还有一个特殊的Structure.Pole指令，用法稍有不同：</p>
 <div id="command">
-**Structure.Pole(<em>额外轨道跨度值</em>; <em>架线柱模型编号</em>)**<font color="gray">.Load</font> <em>文件名</em>
+<strong>Structure.Pole</strong>(<em>NumberOfAdditionalRails</em>; <em>PoleStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em>
 </div>
 <div id="command-arguments">
 <em><strong>额外轨道跨度值</strong></em>：一个非负整数，代表这个架线柱模型跨过的额外轨道数量。0代表跨度为1组轨道的架线柱，1代表2组轨道，以此类推。<br>
@@ -1489,7 +1489,7 @@ Train.File <em>文件夹名</em>
 <p><a href="../../zh_cn/routes/xml/dynamicbackground.html">动态和基于模型的背景</a></p>
 <hr>
 <div id="command">
-**Texture.Background(<em>BackgroundTextureIndex</em>)**<font color="gray">.Load</font> <em>FileName</em>
+<strong>Texture.Background</strong>(<em>BackgroundTextureIndex</em>)<font color="gray">.Load</font> <em>FileName</em>
 </div>
 <div id="command-arguments">
 <em><strong>文件名</strong></em>：一个相对于<strong>Object</strong>文件夹的路径，指向要加载的模型文件或动态XML配置文件。
@@ -1501,7 +1501,7 @@ Train.File <em>文件夹名</em>
 </div>
 <hr>
 <div id="command">
-<strong>Texture.Background(<em>背景材质编号</em>).X</strong> <em>重复次数</em>
+<strong>Texture.Background</strong>(<em>BackgroundTextureIndex</em>)<strong>.X</strong> <em>RepetitionCount</em>
 </div>
 <div id="command-arguments">
 <em><strong>重复次数</strong></em>：这张图像一圈中重复的次数。默认值是6。
@@ -1512,7 +1512,7 @@ Train.File <em>文件夹名</em>
 </div>
 <hr>
 <div id="command">
-<strong>Texture.Background(<em>背景材质编号</em>).Aspect</strong> <em>模式</em>
+<strong>Texture.Background</strong>(<em>BackgroundTextureIndex</em>)<strong>.Aspect</strong> <em>Mode</em>
 </div>
 <div id="command-arguments">
 <em><strong>模式</strong></em>：宽高比的处理模式。默认值是0（固定高度）。

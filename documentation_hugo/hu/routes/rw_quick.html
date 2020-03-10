@@ -41,7 +41,7 @@
               
             </li>
             
-            <li><a href="../../hu/objects/native/csv.html">The CSV object</a>
+            <li><a href="../../hu/objects/native/csv.html">A CSV objektum</a>
               
             </li>
             
@@ -441,14 +441,14 @@
 <em><font color="green">Number</font></em><br>
 <em><font color="green">Number<sub>1</sub></font></em> : <em><font color="green">Number<sub>2</sub></font></em> : <em>&hellip;</em> : <em><font color="green">Number<sub>n</sub></font></em></p>
 <p><font color="red">Preprocessing directives</font><br>
-<strong>$Include(</strong><em>File<sub>1</sub></em>; <em>Weight<sub>1</sub></em>; <em>File<sub>2</sub></em>; <em>Weight<sub>2</sub></em>; &hellip;<strong>)</strong><br>
-<strong>$Chr(</strong><em>AsciiCode</em><strong>)</strong><br>
-<strong>$Rnd(</strong><em>Minimum</em>**;** *Maximum*__)__<br>
-__$Sub(__*VariableIndex*__)__ = *Value*<br>
-__$Sub(__*VariableIndex*__)__<br>
-__$If(__*Condition*__)__<br>
-**$ElseIf**()<br>
-**$EndIf**()</p>
+<strong>$Include</strong>(<em>File<sub>1</sub></em>; <em>Weight<sub>1</sub></em>; <em>File<sub>2</sub></em>; <em>Weight<sub>2</sub></em>; &hellip;)<br>
+<strong>$Chr</strong>(<em>AsciiCode</em>)<br>
+<strong>$Rnd</strong>(<em>Minimum</em>; <em>Maximum</em>)<br>
+<strong>$Sub</strong>(<em>VariableIndex</em>) = <em>Value</em><br>
+<strong>$Sub</strong>(<em>VariableIndex</em>)<br>
+<strong>$If</strong>(<em>Condition</em>)<br>
+<strong>$ElseIf</strong>()<br>
+<strong>$EndIf</strong>()</p>
 <p><font color="red">[Options]</font><br>
 <strong>UnitOfLength</strong> = <em>FactorInMeters<sub>1</sub></em>; <em>FactorInMeters<sub>2</sub></em>; <em>&hellip;</em>; <em>FactorInMeters<sub>n</sub></em><br>
 <strong>UnitOfSpeed</strong> = <em>FactorInKmph</em><br>
@@ -463,7 +463,7 @@ __$If(__*Condition*__)__<br>
 <strong>Timetable</strong> = <em>Text</em><br>
 <strong>Change</strong> = <font color="gray">{</font> <strong>-1</strong> = service brakes (ATS) <font color="gray">|</font> <strong>0</strong> = emergency brakes (no ATS) <font color="gray">|</font> <strong>1</strong> = service brakes (ATS) <font color="gray">}</font><br>
 <strong>Gauge</strong> = <em>ValueInMillimeters</em><br>
-<strong>Route.Signal(</strong><em>Aspect</em><strong>)</strong> = <font color="blue"><em>Speed</em></font><br>
+<strong>Route.Signal</strong>(<em>Aspect</em>) = <font color="blue"><em>Speed</em></font><br>
 <strong>RunInterval</strong> = <em>Interval<sub>0</sub></em>; <em>Interval<sub>1</sub></em>; &hellip;; <em>Interval<sub>n-1</sub></em><br>
 <strong>AccelerationDueToGravity</strong> = <em>Value</em><br>
 <strong>Elevation</strong> = <em><font color="green">Height</font></em><br>
@@ -474,37 +474,37 @@ __$If(__*Condition*__)__<br>
 <strong>LightDirection</strong> = <em>Theta</em>; <em>Phi</em></p>
 <p><font color="red">[Train]</font><br>
 <strong>Folder</strong> = <em>FolderName</em><br>
-<strong>Run(</strong><em>RailTypeIndex</em><strong>)</strong> = <em>RunSoundIndex</em><br>
-<strong>Rail(</strong><em>RailTypeIndex</em><strong>)</strong> = <em>RunSoundIndex</em><br>
-<strong>Flange(</strong><em>RailTypeIndex</em><strong>)</strong> = <em>FlangeSoundIndex</em><br>
-<strong>Timetable(</strong><em>TimetableIndex</em><strong>).Day</strong> = <em>FileName</em><br>
-<strong>Timetable(</strong><em>TimetableIndex</em><strong>).Night</strong> = <em>FileName</em><br>
+<strong>Run</strong>(<em>RailTypeIndex</em>) = <em>RunSoundIndex</em><br>
+<strong>Rail</strong>(<em>RailTypeIndex</em>) = <em>RunSoundIndex</em><br>
+<strong>Flange</strong>(<em>RailTypeIndex</em>) = <em>FlangeSoundIndex</em><br>
+<strong>Timetable</strong>(<em>TimetableIndex</em>)<strong>.Day</strong> = <em>FileName</em><br>
+<strong>Timetable</strong>(<em>TimetableIndex</em>)<strong>.Night</strong> = <em>FileName</em><br>
 <strong>Gauge</strong> = <em>ValueInMillimeters</em><br>
 <strong>Interval</strong> = <em>Interval<sub>0</sub></em>; <em>Interval<sub>1</sub></em>; &hellip;; <em>Interval<sub>n-1</sub></em><br>
 <strong>Velocity</strong> = <em><font color="blue">Speed</font></em></p>
 <p><font color="red">[Object]</font><br>
-<strong>Rail(</strong><em>RailStructureIndex</em><strong>)</strong> = <em>FileName</em><br>
-<strong>Beacon(</strong><em>BeaconStructureIndex</em><strong>)</strong> = <em>FileName</em><br>
-<strong>Pole(</strong><em>NumberOfAdditionalRails</em><strong>;</strong> <em>PoleStructureIndex</em><strong>)</strong> = <em>FileName</em><br>
-<strong>Ground(</strong><em>GroundStructureIndex</em><strong>)</strong> = <em>FileName</em><br>
-<strong>WallL(</strong><em>WallStructureIndex</em><strong>)</strong> = <em>FileName</em><br>
-<strong>WallR(</strong><em>WallStructureIndex</em><strong>)</strong> = <em>FileName</em><br>
-<strong>DikeL(</strong><em>DikeStructureIndex</em><strong>)</strong> = <em>FileName</em><br>
-<strong>DikeR(</strong><em>DikeStructureIndex</em><strong>)</strong> = <em>FileName</em><br>
-<strong>FormL(</strong><em>FormStructureIndex</em><strong>)</strong> = <em>FileName</em><br>
-<strong>FormR(</strong><em>FormStructureIndex</em><strong>)</strong> = <em>FileName</em><br>
-<strong>FormCL(</strong><em>FormStructureIndex</em><strong>)</strong> = <em>FileName</em><br>
-<strong>FormCR(</strong><em>FormStructureIndex</em><strong>)</strong> = <em>FileName</em><br>
-<strong>RoofL(</strong><em>RoofStructureIndex</em><strong>)</strong> = <em>FileName</em><br>
-<strong>RoofR(</strong><em>RoofStructureIndex</em><strong>)</strong> = <em>FileName</em><br>
-<strong>RoofCL(</strong><em>RoofStructureIndex</em><strong>)</strong> = <em>FileName</em><br>
-<strong>RoofCR(</strong><em>RoofStructureIndex</em><strong>)</strong> = <em>FileName</em><br>
-<strong>CrackL(</strong><em>CrackStructureIndex</em><strong>)</strong> = <em>FileName</em><br>
-<strong>CrackR(</strong><em>CrackStructureIndex</em><strong>)</strong> = <em>FileName</em><br>
-<strong>FreeObj(</strong><em>FreeObjStructureIndex</em><strong>)</strong> = <em>FileName</em><br>
-<strong>Back(</strong><em>BackgroundTextureIndex</em><strong>)</strong> = <em>FileName</em><br>
-<strong>Back(</strong><em>BackgroundTextureIndex</em><strong>).X</strong> = <em>RepetitionCount</em><br>
-<strong>Back(</strong><em>BackgroundTextureIndex</em><strong>).Aspect</strong> <font color="gray">{</font> <strong>0</strong> = fixed height <font color="gray">|</font> <strong>1</strong> = keep aspect ratio <font color="gray">}</font></p>
+<strong>Rail</strong>(<em>RailStructureIndex</em>) = <em>FileName</em><br>
+<strong>Beacon</strong>(<em>BeaconStructureIndex</em>) = <em>FileName</em><br>
+<strong>Pole</strong>(<em>NumberOfAdditionalRails</em>; <em>PoleStructureIndex</em>) = <em>FileName</em><br>
+<strong>Ground</strong>(<em>GroundStructureIndex</em>) = <em>FileName</em><br>
+<strong>WallL</strong>(<em>WallStructureIndex</em>) = <em>FileName</em><br>
+<strong>WallR</strong>(<em>WallStructureIndex</em>) = <em>FileName</em><br>
+<strong>DikeL</strong>(<em>DikeStructureIndex</em>) = <em>FileName</em><br>
+<strong>DikeR</strong>(<em>DikeStructureIndex</em>) = <em>FileName</em><br>
+<strong>FormL</strong>(<em>FormStructureIndex</em>) = <em>FileName</em><br>
+<strong>FormR</strong>(<em>FormStructureIndex</em>) = <em>FileName</em><br>
+<strong>FormCL</strong>(<em>FormStructureIndex</em>) = <em>FileName</em><br>
+<strong>FormCR</strong>(<em>FormStructureIndex</em>) = <em>FileName</em><br>
+<strong>RoofL</strong>(<em>RoofStructureIndex</em>) = <em>FileName</em><br>
+<strong>RoofR</strong>(<em>RoofStructureIndex</em>) = <em>FileName</em><br>
+<strong>RoofCL</strong>(<em>RoofStructureIndex</em>) = <em>FileName</em><br>
+<strong>RoofCR</strong>(<em>RoofStructureIndex</em>) = <em>FileName</em><br>
+<strong>CrackL</strong>(<em>CrackStructureIndex</em>) = <em>FileName</em><br>
+<strong>CrackR</strong>(<em>CrackStructureIndex</em>) = <em>FileName</em><br>
+<strong>FreeObj</strong>(<em>FreeObjStructureIndex</em>) = <em>FileName</em><br>
+<strong>Back</strong>(<em>BackgroundTextureIndex</em>) = <em>FileName</em><br>
+<strong>Back</strong>(<em>BackgroundTextureIndex</em>)<strong>.X</strong> = <em>RepetitionCount</em><br>
+<strong>Back</strong>(<em>BackgroundTextureIndex</em>)<strong>.Aspect</strong> <font color="gray">{</font> <strong>0</strong> = fixed height <font color="gray">|</font> <strong>1</strong> = keep aspect ratio <font color="gray">}</font></p>
 <p><font color="red">[Cycle]</font><br>
 <em>GroundStructureIndex</em> = <em>GroundStructureIndex<sub>1</sub></em>; <em>GroundStructureIndex<sub>2</sub></em>; <em>&hellip;</em>; <em>GroundStructureIndex<sub>n</sub></em></p>
 <p><font color="red">[Signal]</font><br>

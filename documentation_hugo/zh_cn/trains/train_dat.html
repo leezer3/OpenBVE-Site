@@ -45,7 +45,7 @@
               
             </li>
             
-            <li><a href="../../zh_cn/objects/native/animated.html">The ANIMATED object</a>
+            <li><a href="../../zh_cn/objects/native/animated.html">ANIMATED 动画物件</a>
               
             </li>
             
@@ -297,7 +297,7 @@
           
         </li>
         
-        <li><a href="../../zh_cn/information/forking.html">Forking guidelines</a>
+        <li><a href="../../zh_cn/information/forking.html">分叉准则</a>
           
         </li>
         
@@ -1439,12 +1439,12 @@ Eb
 <h2 id="a-namemotora-14-the-motor-sections"><a name="motor"></a>■ 14. The Motor sections</h2>
 <p>These sections define which sounds to play at a given speed for the electric motor and eletric brake, along with associated pitch and volume at that speed. There are four sections called #MOTOR_P1, #MOTOR_P2, #MOTOR_B1 and MOTOR_B2 that control the behavior.</p>
 <p>The #MOTOR_P1 and #MOTOR_P2 sections define two independent sounds that can be played at a given time for the electric motor. The #MOTOR_B1 and #MOTOR_B2 sections define two independent sounds that can be played at a given time for the electric brake.</p>
-<p>Each section starts with a corresponding #MOTOR_*Xi* line:</p>
+<p>Each section starts with a corresponding #MOTOR_<em>Xi</em> line:</p>
 <div id="command">
-#MOTOR_*Xi*
+#MOTOR_<em>Xi</em>
 </div>
 <p>The following entries define the sounds that are to be played at multiples of 0.2 km/h. The first entry corresponds to a speed of 0 km/h, the second entry to a speed of 0.2 km/h, the third entry to a speed of 0.4 km/h, and so on. There can be as many entries as desired. For example, with 800 entries, the 800<sup>th</sup> entry corresponds to a speed of 159.8 km/h. If the train travels at a higher speed than corresponding to the last entry, this last entry also takes effect for all higher speeds.</p>
-<p>An entry inside any of the #MOTOR_*Xi* sections has the following form:</p>
+<p>An entry inside any of the #MOTOR_<em>Xi</em> sections has the following form:</p>
 <div id="command">
 <em>SoundIndex</em>, <em>Pitch</em>, <em>Volume</em>
 </div>

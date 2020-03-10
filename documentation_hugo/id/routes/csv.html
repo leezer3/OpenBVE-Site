@@ -459,7 +459,7 @@
 <p>File rute CSV berfungsi membuat sebuah rute dari rangkaian teks.</p>
 <p>File ini berisi teks yang ditulis dalam 1 enkoding <a href="../../id/information/encodings.html">encoding</a>, Biasanya, otomatis menggunakan UTF-8. <a href="../../id/information/numberformats.html">format penulisan angkanya</a>  <strong>Loose</strong> (kecuali ada keterangan lain), namun bisa memakai format <em>Strict</em>. File ini harus disimpan di folder mana saja di dalam folder Route dari <em>Railway</em> dan <em>Train</em> . Nama filenya bebas, tapi harus diakhiri ekstensi <strong>.csv</strong>.  File ini berisi perintah dalam baris per baris, dibaca dari atas ke bawah. Setiap baris perintah dibagi jadi beberapa bagian dengan karakter koma.</p>
 <p>File rute terdiri dari berbagai perintah untuk menentukan posisi objek yang dipakai dalam rute (Bagian Structure). Tambahan info rute, rangkaian standar, dan gambar latar juga ditentukan di sini. Terakhir, file rute memuat instruksi untuk bagian trek kereta. Di sini, posisi trek atau jalur (biasanya dalam meter) dipakai untuk menentukan di mana rel harus berbelok, posisi stasiun, mulainya rel lain, dan sebagainya. Biasanya, bagian Track ditulis di paling ahkir setelah bagian lain selesai ditulis.</p>
-<p>Perintah rail 0 (rel yang akan dilewati kereta player) tidak bisa dimulai dan diakhiri (RailStart / Railend). Rail 0 tersedia dari ujung awal sampai akhir rute. Rail 0 dan rel ian tidak hanya berfungsi menampilkan objek secara visual, tapi digunakan juga untuk  <a href="../../id/routes/xml/trackfollowingobject.html">Track Following Object</a>.</p>
+<p>The format assumes an implicit rail 0 which cannot be explicitly started or ended. Instead, it is present from the beginning of the route to the end, and it marks the rail the player&rsquo;s train drives on. rail 0 and the other rails are not only for used for visual, and also use for  <a href="../../id/routes/xml/trackfollowingobject.html">Track Following Object</a>.</p>
 <p>Anda bisa membuat rail 0 berbelok, menanjak, atau menurun, sementara rail lainnya akan mengikuti belokan dan ketinggian rail 0. Di sini, beberapa perintah hanya tersedia di setiap blok, dimana per blok biasanya berjarak 25m. penempatan objek juga selalu mengikuti posisi rel.</p>
 <p>➟ <a href="../../id/routes/csv_quick.html">Lihat rangkuman perintah rute CSV&hellip;</a></p>
 <h2 id="a-namesyntaxa-2-format-penulisan"><a name="syntax"></a>■ 2. Format penulisan</h2>
@@ -1365,7 +1365,7 @@ Train.File <em>FolderName</em>
 <p>The commands in the Structure namespace define which objects to use in other commands. Generally, commands like Track.Rail, Track.FreeObj and so on create objects referenced by a <em>StructureIndex</em>. This <em>StructureIndex</em> is specific to that command, so you can define a set of objects specific to Track.Rail, Track.FreeObj and so on.</p>
 <p>The general syntax for commands in the Structure namespace is:</p>
 <div id="command">
-**Structure.<em>Command</em>(<em>StructureIndex</em>)**<font color="gray">.Load</font> <em>FileName</em>
+<strong>Structure.Command</strong>(<em>StructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em>
 </div>
 <p><em>StructureIndex</em> is a non-negative integer. <em>FileName</em> is the object file to load, relative to the <strong>Object</strong> folder. <em>Command</em> is any of the following commands:</p>
 <table class='type0'>
@@ -1454,7 +1454,7 @@ Train.File <em>FolderName</em>
 <p>➟ <a href="../../id/routes/formroofcrack.html">More information about forms, roofs and cracks&hellip;</a></p>
 <p>Additionally, there is the Structure.Pole command, which has a slightly different syntax:</p>
 <div id="command">
-**Structure.Pole(<em>NumberOfAdditionalRails</em>; <em>PoleStructureIndex</em>)**<font color="gray">.Load</font> <em>FileName</em>
+<strong>Structure.Pole</strong>(<em>NumberOfAdditionalRails</em>; <em>PoleStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em>
 </div>
 <div id="command-arguments">
 <em><strong>NumberOfAdditionalRails</strong></em>: An non-negative integer representing the number of additional rails covered by the pole. 0 creates a pole for one rail, 1 for two rails, etc.<br>
@@ -1473,7 +1473,7 @@ Train.File <em>FolderName</em>
 <p><a href="../../id/routes/xml/dynamicbackground.html">Dynamic &amp; Object Based Backgrounds</a></p>
 <hr>
 <div id="command">
-**Texture.Background(<em>BackgroundTextureIndex</em>)**<font color="gray">.Load</font> <em>FileName</em>
+<strong>Texture.Background</strong>(<em>BackgroundTextureIndex</em>)<font color="gray">.Load</font> <em>FileName</em>
 </div>
 <div id="command-arguments">
 <em><strong>FileName</strong></em>: The texture file to load, relative to the <strong>Object</strong> folder.
@@ -1485,7 +1485,7 @@ Train.File <em>FolderName</em>
 </div>
 <hr>
 <div id="command">
-<strong>Texture.Background(<em>BackgroundTextureIndex</em>).X</strong> <em>RepetitionCount</em>
+<strong>Texture.Background</strong>(<em>BackgroundTextureIndex</em>)<strong>.X</strong> <em>RepetitionCount</em>
 </div>
 <div id="command-arguments">
 <em><strong>RepetitionCount</strong></em>: The number of times the background image is repeated in a full circle. The default value is 6.
@@ -1496,7 +1496,7 @@ Train.File <em>FolderName</em>
 </div>
 <hr>
 <div id="command">
-<strong>Texture.Background(<em>BackgroundTextureIndex</em>).Aspect</strong> <em>Mode</em>
+<strong>Texture.Background</strong>(<em>BackgroundTextureIndex</em>)<strong>.Aspect</strong> <em>Mode</em>
 </div>
 <div id="command-arguments">
 <em><strong>Mode</strong></em>: The mode of aspect ratio handling to use. The default value is 0 (fixed).

@@ -459,7 +459,7 @@
 <p>CSVルートは、テキストファイルに記述することで路線データを作成できます。</p>
 <p>ファイルは任意のエンコードで記述されたプレーンテキストですが <a href="../../ja/information/encodings.html">encoding</a>、好ましい選択としてはバイトオーダー付きのUTF-8です。 <a href="../../ja/information/numberformats.html">parsing model</a> に用いる数字は <strong>ルーズ</strong>（特に明記しない限りは）ですが、 それでも出力にあたっては <em>厳密な</em> 出力をすることが望ましいです。  ファイルは任意のフォルダに格納できますが、カレントフォルダもしくは相対パスは <em>Railway</em> と <em>Train</em> フォルダ 以下に存在しなければなりません。 ファイル名は任意ですが、 拡張子は必ず <strong>.csv</strong> を用います。 ファイルは基本的に上から下に向かって解釈されていき、各行は式ごとに分割され、左から右に向かって解釈されていきます。</p>
 <p>ルートファイルは、(Structure 名前空間)で定義された一連の命令セットにより、ルートデータ内で一貫して共通で利用されます 。 路線データ向けの追加のプロパティ、路線側が定義した既定の列車、沿線の背景のイメージファイルも同様に定義することができます。 最後に、ルートファイルは Track 名前空間でのコマンドにより指示します。 ここでは、 線路の座標 (殆どの場合、単位はメートル) を指定することにより、線路をカーブさせるタイミングや駅を設置したり、 壁や土手などを開始したり終わらせたりします。一般的には、 Track 名前空間はその他の名前空間を予め記述し、定義した後に記述する必要があります。</p>
-<p>ルートフォーマットでは、暗黙の規定として開始や終了命令を実行することができない rail 0 が仮定されます。 代わりに、それは路線の最初から最後まで存在し続け、プレイヤーが運転する列車は必ずここを走行します。 レール0 、またその他のレールは視覚的効果だけでなく、 <a href="../../ja/routes/xml/trackfollowingobject.html">Track Following Object</a> にも用いられます。</p>
+<p>The format assumes an implicit rail 0 which cannot be explicitly started or ended. Instead, it is present from the beginning of the route to the end, and it marks the rail the player&rsquo;s train drives on. rail 0 and the other rails are not only for used for visual, and also use for  <a href="../../ja/routes/xml/trackfollowingobject.html">Track Following Object</a>.</p>
 <p>幾何学的に、カーブや勾配は暗黙の ｒａｉｌ ０ に対して作用しますが、 その他のすべてのレールは rail 0 に相対的に連動して定義され、 rail 0 のカーブや勾配に従って追従します。 オーバーライドされない限りファイルフォーマットではブロック長は25mの固定長で構築され、 特定のコマンドは25mのブロック単位でしか用いることができません。 オブジェクトの配置は、常に直線的に接続する非曲線座標系を想定しています。</p>
 <p>➟ <a href="../../ja/routes/csv_quick.html">CSV ルートフォーマットのクイックリファレンスも参照して下さい&hellip;</a></p>
 <h2 id="a-namesyntaxa-2-文法"><a name="syntax"></a>■ 2. 文法</h2>
@@ -1365,7 +1365,7 @@ Train.File <em>FolderName</em>
 <p>The commands in the Structure namespace define which objects to use in other commands. Generally, commands like Track.Rail, Track.FreeObj and so on create objects referenced by a <em>StructureIndex</em>. This <em>StructureIndex</em> is specific to that command, so you can define a set of objects specific to Track.Rail, Track.FreeObj and so on.</p>
 <p>The general syntax for commands in the Structure namespace is:</p>
 <div id="command">
-**Structure.<em>Command</em>(<em>StructureIndex</em>)**<font color="gray">.Load</font> <em>FileName</em>
+<strong>Structure.Command</strong>(<em>StructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em>
 </div>
 <p><em>StructureIndex</em> is a non-negative integer. <em>FileName</em> is the object file to load, relative to the <strong>Object</strong> folder. <em>Command</em> is any of the following commands:</p>
 <table class='type0'>
@@ -1454,7 +1454,7 @@ Train.File <em>FolderName</em>
 <p>➟ <a href="../../ja/routes/formroofcrack.html">More information about forms, roofs and cracks&hellip;</a></p>
 <p>Additionally, there is the Structure.Pole command, which has a slightly different syntax:</p>
 <div id="command">
-**Structure.Pole(<em>NumberOfAdditionalRails</em>; <em>PoleStructureIndex</em>)**<font color="gray">.Load</font> <em>FileName</em>
+<strong>Structure.Pole</strong>(<em>NumberOfAdditionalRails</em>; <em>PoleStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em>
 </div>
 <div id="command-arguments">
 <em><strong>NumberOfAdditionalRails</strong></em>: An non-negative integer representing the number of additional rails covered by the pole. 0 creates a pole for one rail, 1 for two rails, etc.<br>
@@ -1473,7 +1473,7 @@ Train.File <em>FolderName</em>
 <p><a href="../../ja/routes/xml/dynamicbackground.html">Dynamic &amp; Object Based Backgrounds</a></p>
 <hr>
 <div id="command">
-**Texture.Background(<em>BackgroundTextureIndex</em>)**<font color="gray">.Load</font> <em>FileName</em>
+<strong>Texture.Background</strong>(<em>BackgroundTextureIndex</em>)<font color="gray">.Load</font> <em>FileName</em>
 </div>
 <div id="command-arguments">
 <em><strong>FileName</strong></em>: The texture file to load, relative to the <strong>Object</strong> folder.
@@ -1485,7 +1485,7 @@ Train.File <em>FolderName</em>
 </div>
 <hr>
 <div id="command">
-<strong>Texture.Background(<em>BackgroundTextureIndex</em>).X</strong> <em>RepetitionCount</em>
+<strong>Texture.Background</strong>(<em>BackgroundTextureIndex</em>)<strong>.X</strong> <em>RepetitionCount</em>
 </div>
 <div id="command-arguments">
 <em><strong>RepetitionCount</strong></em>: The number of times the background image is repeated in a full circle. The default value is 6.
@@ -1496,7 +1496,7 @@ Train.File <em>FolderName</em>
 </div>
 <hr>
 <div id="command">
-<strong>Texture.Background(<em>BackgroundTextureIndex</em>).Aspect</strong> <em>Mode</em>
+<strong>Texture.Background</strong>(<em>BackgroundTextureIndex</em>)<strong>.Aspect</strong> <em>Mode</em>
 </div>
 <div id="command-arguments">
 <em><strong>Mode</strong></em>: The mode of aspect ratio handling to use. The default value is 0 (fixed).

@@ -45,7 +45,7 @@
               
             </li>
             
-            <li><a href="../../zh_cn/objects/native/animated.html">The ANIMATED object</a>
+            <li><a href="../../zh_cn/objects/native/animated.html">ANIMATED 动画物件</a>
               
             </li>
             
@@ -297,7 +297,7 @@
           
         </li>
         
-        <li><a href="../../zh_cn/information/forking.html">Forking guidelines</a>
+        <li><a href="../../zh_cn/information/forking.html">分叉准则</a>
           
         </li>
         
@@ -443,14 +443,14 @@
 <em><font color="green">Number</font></em><br>
 <em><font color="green">Number<sub>1</sub></font></em> : <em><font color="green">Number<sub>2</sub></font></em> : <em>&hellip;</em> : <em><font color="green">Number<sub>n</sub></font></em></p>
 <p><font color="red">Preprocessing directives</font><br>
-<strong>$Include(</strong><em>File<sub>1</sub></em>; <em>Weight<sub>1</sub></em>; <em>File<sub>2</sub></em>; <em>Weight<sub>2</sub></em>; &hellip;<strong>)</strong><br>
-<strong>$Chr(</strong><em>AsciiCode</em><strong>)</strong><br>
-<strong>$Rnd(</strong><em>Minimum</em>**;** *Maximum*__)__<br>
-__$Sub(__*VariableIndex*__)__ = *Value*<br>
-__$Sub(__*VariableIndex*__)__<br>
-__$If(__*Condition*__)__<br>
-**$ElseIf**()<br>
-**$EndIf**()</p>
+<strong>$Include</strong>(<em>File<sub>1</sub></em>; <em>Weight<sub>1</sub></em>; <em>File<sub>2</sub></em>; <em>Weight<sub>2</sub></em>; &hellip;)<br>
+<strong>$Chr</strong>(<em>AsciiCode</em>)<br>
+<strong>$Rnd</strong>(<em>Minimum</em>; <em>Maximum</em>)<br>
+<strong>$Sub</strong>(<em>VariableIndex</em>) = <em>Value</em><br>
+<strong>$Sub</strong>(<em>VariableIndex</em>)<br>
+<strong>$If</strong>(<em>Condition</em>)<br>
+<strong>$ElseIf</strong>()<br>
+<strong>$EndIf</strong>()</p>
 <p><font color="red">Options namespace</font><br>
 <strong>Options.UnitOfLength</strong> <em>FactorInMeters<sub>1</sub></em>; <em>FactorInMeters<sub>2</sub></em>; <em>&hellip;</em>; <em>FactorInMeters<sub>n</sub></em><br>
 <strong>Options.UnitOfSpeed</strong> <em>FactorInKmph</em><br>
@@ -467,7 +467,7 @@ __$If(__*Condition*__)__<br>
 <strong>Route.Timetable</strong> <em>Text</em><br>
 <strong>Route.Change</strong> <font color="gray">{</font> <strong>-1</strong> = service brakes (ATS) <font color="gray">|</font> <strong>0</strong> = emergency brakes (no ATS) <font color="gray">|</font> <strong>1</strong> = service brakes (ATS) <font color="gray">}</font><br>
 <strong>Route.Gauge</strong> <em>ValueInMillimeters</em><br>
-<strong>Route.Signal(</strong><em>Aspect</em>__)__<font color="gray">.Set</font> <font color="blue"><em>Speed</em></font><br>
+<strong>Route.Signal</strong>(<em>Aspect</em>)<font color="gray">.Set</font> <font color="blue"><em>Speed</em></font><br>
 <strong>Route.RunInterval</strong> <em>Interval<sub>0</sub></em>; <em>Interval<sub>1</sub></em>; &hellip;; <em>Interval<sub>n-1</sub></em><br>
 <strong>Route.AccelerationDueToGravity</strong> <em>Value</em><br>
 <strong>Route.Elevation</strong> <em><font color="green">Height</font></em><br>
@@ -483,44 +483,44 @@ __$If(__*Condition*__)__<br>
 <p><font color="red">Train namespace</font><br>
 <strong>Train.Folder</strong> <em>FolderName</em><br>
 <strong>Train.File</strong> <em>FolderName</em><br>
-<strong>Train.Run(</strong><em>RailTypeIndex</em><strong>)<strong><font color="gray">.Set</font> <em>RunSoundIndex</em><br>
-<strong>Train.Rail(</strong><em>RailTypeIndex</em></strong>)<strong><font color="gray">.Set</font> <em>RunSoundIndex</em><br>
-<strong>Train.Flange(</strong><em>RailTypeIndex</em></strong>)<strong><font color="gray">.Set</font> <em>FlangeSoundIndex</em><br>
-<strong>Train.Timetable(</strong><em>TimetableIndex</em></strong>).Day__<font color="gray">.Load</font> <em>FileName</em><br>
-<strong>Train.Timetable(</strong><em>TimetableIndex</em></strong>).Night__<font color="gray">.Load</font> <em>FileName</em><br>
+<strong>Train.Run</strong>(<em>RailTypeIndex</em>)<font color="gray">.Set</font> <em>RunSoundIndex</em><br>
+<strong>Train.Rail</strong>(<em>RailTypeIndex</em>)<font color="gray">.Set</font> <em>RunSoundIndex</em><br>
+<strong>Train.Flange</strong>(<em>RailTypeIndex</em>)<font color="gray">.Set</font> <em>FlangeSoundIndex</em><br>
+<strong>Train.Timetable</strong>(<em>TimetableIndex</em>)<strong>.Day</strong><font color="gray">.Load</font> <em>FileName</em><br>
+<strong>Train.Timetable</strong>(<em>TimetableIndex</em>)<strong>.Night</strong><font color="gray">.Load</font> <em>FileName</em><br>
 <strong>Train.Gauge</strong> <em>ValueInMillimeters</em><br>
 <strong>Train.Interval</strong> <em>Interval<sub>0</sub></em>; <em>Interval<sub>1</sub></em>; &hellip;; <em>Interval<sub>n-1</sub></em><br>
 <strong>Train.Velocity</strong> <em><font color="blue">Speed</font></em></p>
 <p><font color="red">Structure namespace</font><br>
-<strong>Structure.Rail(</strong><em>RailStructureIndex</em><strong>)<strong><font color="gray">.Load</font> <em>FileName</em><br>
-<strong>Structure.Ground(</strong><em>GroundStructureIndex</em></strong>)<strong><font color="gray">.Load</font> <em>FileName</em><br>
-<strong>Structure.WallL(</strong><em>WallStructureIndex</em></strong>)<strong><font color="gray">.Load</font> <em>FileName</em><br>
-<strong>Structure.WallR(</strong><em>WallStructureIndex</em></strong>)<strong><font color="gray">.Load</font> <em>FileName</em><br>
-<strong>Structure.DikeL(</strong><em>DikeStructureIndex</em></strong>)<strong><font color="gray">.Load</font> <em>FileName</em><br>
-<strong>Structure.DikeR(</strong><em>DikeStructureIndex</em></strong>)<strong><font color="gray">.Load</font> <em>FileName</em><br>
-<strong>Structure.FormL(</strong><em>FormStructureIndex</em></strong>)<strong><font color="gray">.Load</font> <em>FileName</em><br>
-<strong>Structure.FormR(</strong><em>FormStructureIndex</em></strong>)<strong><font color="gray">.Load</font> <em>FileName</em><br>
-<strong>Structure.FormCL(</strong><em>FormStructureIndex</em></strong>)<strong><font color="gray">.Load</font> <em>FileName</em><br>
-<strong>Structure.FormCR(</strong><em>FormStructureIndex</em></strong>)<strong><font color="gray">.Load</font> <em>FileName</em><br>
-<strong>Structure.RoofL(</strong><em>RoofStructureIndex</em></strong>)<strong><font color="gray">.Load</font> <em>FileName</em><br>
-<strong>Structure.RoofR(</strong><em>RoofStructureIndex</em></strong>)<strong><font color="gray">.Load</font> <em>FileName</em><br>
-<strong>Structure.RoofCL(</strong><em>RoofStructureIndex</em></strong>)<strong><font color="gray">.Load</font> <em>FileName</em><br>
-<strong>Structure.RoofCR(</strong><em>RoofStructureIndex</em></strong>)<strong><font color="gray">.Load</font> <em>FileName</em><br>
-<strong>Structure.CrackL(</strong><em>CrackStructureIndex</em></strong>)<strong><font color="gray">.Load</font> <em>FileName</em><br>
-<strong>Structure.CrackR(</strong><em>CrackStructureIndex</em></strong>)<strong><font color="gray">.Load</font> <em>FileName</em><br>
-<strong>Structure.FreeObj(</strong><em>FreeObjStructureIndex</em></strong>)<strong><font color="gray">.Load</font> <em>FileName</em><br>
-<strong>Structure.Beacon(</strong><em>BeaconStructureIndex</em></strong>)<strong><font color="gray">.Load</font> <em>FileName</em><br>
-<strong>Structure.Pole(</strong><em>NumberOfAdditionalRails</em></strong>;</strong> <em>PoleStructureIndex</em>__)__<font color="gray">.Load</font> <em>FileName</em></p>
+<strong>Structure.Rail</strong>(<em>RailStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em><br>
+<strong>Structure.Ground</strong>(<em>GroundStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em><br>
+<strong>Structure.WallL</strong>(<em>WallStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em><br>
+<strong>Structure.WallR</strong>(<em>WallStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em><br>
+<strong>Structure.DikeL</strong>(<em>DikeStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em><br>
+<strong>Structure.DikeR</strong>(<em>DikeStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em><br>
+<strong>Structure.FormL</strong>(<em>FormStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em><br>
+<strong>Structure.FormR</strong>(<em>FormStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em><br>
+<strong>Structure.FormCL</strong>(<em>FormStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em><br>
+<strong>Structure.FormCR</strong>(<em>FormStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em><br>
+<strong>Structure.RoofL</strong>(<em>RoofStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em><br>
+<strong>Structure.RoofR</strong>(<em>RoofStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em><br>
+<strong>Structure.RoofCL</strong>(<em>RoofStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em><br>
+<strong>Structure.RoofCR</strong>(<em>RoofStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em><br>
+<strong>Structure.CrackL</strong>(<em>CrackStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em><br>
+<strong>Structure.CrackR</strong>(<em>CrackStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em><br>
+<strong>Structure.FreeObj</strong>(<em>FreeObjStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em><br>
+<strong>Structure.Beacon</strong>(<em>BeaconStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em><br>
+<strong>Structure.Pole</strong>(<em>NumberOfAdditionalRails</em>; <em>PoleStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em></p>
 <p><font color="red">Texture namespace</font><br>
-<strong>Texture.Background(</strong><em>BackgroundTextureIndex</em><strong>)<strong><font color="gray">.Load</font> <em>FileName</em>
-<strong>Texture.Background(</strong><em>BackgroundTextureIndex</em></strong>).X</strong> <em>RepetitionCount</em><br>
-<strong>Texture.Background(</strong><em>BackgroundTextureIndex</em><strong>).Aspect</strong> <font color="gray">{</font> <strong>0</strong> = fixed height <font color="gray">|</font> <strong>1</strong> = keep aspect ratio <font color="gray">}</font></p>
+<strong>Texture.Background</strong>(<em>BackgroundTextureIndex</em>)<font color="gray">.Load</font> <em>FileName</em><br>
+<strong>Texture.Background</strong>(<em>BackgroundTextureIndex</em>)<strong>.X</strong> <em>RepetitionCount</em><br>
+<strong>Texture.Background</strong>(<em>BackgroundTextureIndex</em>)<strong>.Aspect</strong> <font color="gray">{</font> <strong>0</strong> = fixed height <font color="gray">|</font> <strong>1</strong> = keep aspect ratio <font color="gray">}</font></p>
 <p><font color="red">Cycle namespace</font><br>
-<strong>Cycle.Ground(</strong><em>GroundStructureIndex</em>__)<strong><font color="gray">.Params</font> <em>GroundStructureIndex<sub>1</sub></em>; <em>GroundStructureIndex<sub>2</sub></em>; <em>&hellip;</em>; <em>GroundStructureIndex<sub>n</sub></em><br>
-<strong>Cycle.Rail(</strong><em>RailStructureIndex</em></strong>)__<font color="gray">.Params</font> <em>RailStructureIndex<sub>1</sub></em>; <em>RailStructureIndex<sub>2</sub></em>; <em>&hellip;</em>; <em>RailStructureIndex<sub>n</sub></em></p>
+<strong>Cycle.Ground</strong>(<em>GroundStructureIndex</em>)<font color="gray">.Params</font> <em>GroundStructureIndex<sub>1</sub></em>; <em>GroundStructureIndex<sub>2</sub></em>; <em>&hellip;</em>; <em>GroundStructureIndex<sub>n</sub></em><br>
+<strong>Cycle.Rail</strong>(<em>RailStructureIndex</em>)<font color="gray">.Params</font> <em>RailStructureIndex<sub>1</sub></em>; <em>RailStructureIndex<sub>2</sub></em>; <em>&hellip;</em>; <em>RailStructureIndex<sub>n</sub></em></p>
 <p><font color="red">Signal namespace</font><br>
-<strong>Signal(</strong><em>SignalIndex</em>__)<strong><font color="gray">.Load</font> <em>AnimatedObjectFile</em><br>
-<strong>Signal(</strong><em>SignalIndex</em></strong>)__<font color="gray">.Load</font> <em>SignalFileWithoutExtension</em>; <em>GlowFileWithoutExtension</em></p>
+<strong>Signal</strong>(<em>SignalIndex</em>)<font color="gray">.Load</font> <em>AnimatedObjectFile</em><br>
+<strong>Signal</strong>(<em>SignalIndex</em>)<font color="gray">.Load</font> <em>SignalFileWithoutExtension</em>; <em>GlowFileWithoutExtension</em></p>
 <p><font color="red">Track namespace</font><br>
 <em>Rails:</em><br>
 <strong>Track.RailStart</strong> <em>RailIndex</em>; <em>X</em>; <em>Y</em>; <em>RailStructureIndex</em><br>

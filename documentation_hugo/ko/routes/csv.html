@@ -1365,7 +1365,7 @@ Train.File <em>FolderName</em>
 <p>The commands in the Structure namespace define which objects to use in other commands. Generally, commands like Track.Rail, Track.FreeObj and so on create objects referenced by a <em>StructureIndex</em>. This <em>StructureIndex</em> is specific to that command, so you can define a set of objects specific to Track.Rail, Track.FreeObj and so on.</p>
 <p>The general syntax for commands in the Structure namespace is:</p>
 <div id="command">
-**Structure.<em>Command</em>(<em>StructureIndex</em>)**<font color="gray">.Load</font> <em>FileName</em>
+<strong>Structure.Command</strong>(<em>StructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em>
 </div>
 <p><em>StructureIndex</em> is a non-negative integer. <em>FileName</em> is the object file to load, relative to the <strong>Object</strong> folder. <em>Command</em> is any of the following commands:</p>
 <table class='type0'>
@@ -1454,7 +1454,7 @@ Train.File <em>FolderName</em>
 <p>➟ <a href="../../ko/routes/formroofcrack.html">More information about forms, roofs and cracks&hellip;</a></p>
 <p>Additionally, there is the Structure.Pole command, which has a slightly different syntax:</p>
 <div id="command">
-**Structure.Pole(<em>NumberOfAdditionalRails</em>; <em>PoleStructureIndex</em>)**<font color="gray">.Load</font> <em>FileName</em>
+<strong>Structure.Pole</strong>(<em>NumberOfAdditionalRails</em>; <em>PoleStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em>
 </div>
 <div id="command-arguments">
 <em><strong>NumberOfAdditionalRails</strong></em>: An non-negative integer representing the number of additional rails covered by the pole. 0 creates a pole for one rail, 1 for two rails, etc.<br>
@@ -1473,7 +1473,7 @@ Train.File <em>FolderName</em>
 <p><a href="../../ko/routes/xml/dynamicbackground.html">Dynamic &amp; Object Based Backgrounds</a></p>
 <hr>
 <div id="command">
-**Texture.Background(<em>BackgroundTextureIndex</em>)**<font color="gray">.Load</font> <em>FileName</em>
+<strong>Texture.Background</strong>(<em>BackgroundTextureIndex</em>)<font color="gray">.Load</font> <em>FileName</em>
 </div>
 <div id="command-arguments">
 <em><strong>FileName</strong></em>: The texture file to load, relative to the <strong>Object</strong> folder.
@@ -1485,7 +1485,7 @@ Train.File <em>FolderName</em>
 </div>
 <hr>
 <div id="command">
-<strong>Texture.Background(<em>BackgroundTextureIndex</em>).X</strong> <em>RepetitionCount</em>
+<strong>Texture.Background</strong>(<em>BackgroundTextureIndex</em>)<strong>.X</strong> <em>RepetitionCount</em>
 </div>
 <div id="command-arguments">
 <em><strong>RepetitionCount</strong></em>: The number of times the background image is repeated in a full circle. The default value is 6.
@@ -1496,7 +1496,7 @@ Train.File <em>FolderName</em>
 </div>
 <hr>
 <div id="command">
-<strong>Texture.Background(<em>BackgroundTextureIndex</em>).Aspect</strong> <em>Mode</em>
+<strong>Texture.Background</strong>(<em>BackgroundTextureIndex</em>)<strong>.Aspect</strong> <em>Mode</em>
 </div>
 <div id="command-arguments">
 <em><strong>Mode</strong></em>: The mode of aspect ratio handling to use. The default value is 0 (fixed).
