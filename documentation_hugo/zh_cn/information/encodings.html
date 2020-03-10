@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../zh_cn/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../zh_cn/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../zh_cn/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../zh_cn/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,81 +430,57 @@
 
 
 <div id="content">
-  
-
-<p><font color="Gray">本页面为您讲解字符编码为何物，及应当如何运用正确的编码。</font></p>
-
-<h2 id="总览">■ 总览</h2>
-
+  <p><font color="Gray">本页面为您讲解字符编码为何物，及应当如何运用正确的编码。</font></p>
+<h2 id="-总览">■ 总览</h2>
 <p>字符编码指的是将文字转译成存储到磁盘上的二进制代码的方式。在计算机最早被发明的时候，文本中的每个字符被一个字节表示，但一个字节的数据量只能表示256种字符。因此，随着全世界的人们开始使用计算机，为了让当地的文字也能存储到计算机里，人们发明了许多种完全不同的字符编码方式。问题就在于此，如果一段文字数据的编码方式未被预先给出，误解了编码就会导致乱码字符出现。</p>
-
 <p>这是一段日文文字，以Shift_JIS编码 (如无法显示请安装合适的日文字体)：</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>ひらがなカタカナ漢字
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+ひらがなカタカナ漢字
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>这是它被以Shift_JIS方式编码后产生的字节数据：</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>82 D0 82 E7 82 AA 82 C8 83 4A 83 5E 83 4A 83 69 8A BF 8E 9A
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+82 D0 82 E7 82 AA 82 C8 83 4A 83 5E 83 4A 83 69 8A BF 8E 9A
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>假如某程序不知道它是由Shift_JIS编码，而误用了 ISO 8859-1 (Latin-1) 字符编码来解析它：</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>‚Ð‚ç‚ª‚ÈƒJƒ^ƒJƒiŠ¿Žš
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+‚Ð‚ç‚ª‚ÈƒJƒ^ƒJƒiŠ¿Žš
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>一般来说，一种字符编码方式设计时只囊括了特定一种书写系统的字符，十分不便。因此，人们发明了Unicode，即万国码，一种几乎囊括了全球所有书写系统中字符的编码方式，来解决这个问题。</p>
-
 <p>虽然Unicode时至今日已被广泛采用，用起来还是会有些问题。首先，Unicode其实并不是一种字符编码，而Unicode转换格式(UTF)才是真正编码文字的方式。常用的转换格式为UTF-16和UTF-8。</p>
-
 <p>路线和列车文件，由于历史兼容性原因，可以以任何字符编码存储。由于无法预先知晓相应的编码，就需要玩家对此一技术知识有所了解，并在游戏菜单中人工选择正确的字符编码。这显然很麻烦，因此必须避免使用Unicode以外的字符编码。</p>
-
-<h2 id="字节顺序记号-bom">■ 字节顺序记号 (BOM)</h2>
-
+<h2 id="-字节顺序记号-bom">■ 字节顺序记号 (BOM)</h2>
 <p>UTF-16 源于一个使用两个字节来编码一个字符的编码方式 (UTC-2)，因此知道这两个字节存储的顺序就十分重要。为了便于判断顺序，许多文本编辑器会默认自动在文字前端添加字节顺序记号。这一记号可让解码器了解文件以何种顺序储存，还可提供一个较为不易误判的判定文字是否是以Unicode编码的方式。说人话就是虽然字节顺序标记在UTF-8里不必须也不被Unicode官方建议，但在写openBVE路线时是建议加上的，这是为了便于检测编码。</p>
-
 <p>虽然并不必须也不被官方推荐，UTF-8也常使用字节序。因为UTF-8并不需要区分字节的顺序，这里字节顺序标记的意义是明显地说明该文件以UTF-8编码存储。</p>
-
 <p>如前所述，虽然Unicode允许对世界上所有书写系统中使用的几乎所有字符进行编码，但如果对要使用的编码没有达成一致，则不一定使处理文本文件变得更容易。</p>
-
 <p>使用字节顺序标记使openBVE能够自动检测每个单独文件的编码。如果你用了个不错的文本编辑器，你不仅可以手动选择编码，还可选择是否添加字节顺序标记。记事本（Windows中的）在以UTF-8编码保存文件时总是添加字节顺序标记，这也是个可接受的例子。</p>
-
 <p>下面就是技术内容了。从技术层面来说，字节顺序标记是一个文件最前端的几个字节。openBVE能够自动检测的字节顺序标记为：</p>
-
-
 <table class='type0'>
 <thead>
 <tr>
@@ -512,36 +488,29 @@
 <th>十六进制值</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>UTF-8</td>
 <td>EF BB BF</td>
 </tr>
-
 <tr>
 <td>UTF-16 (大字节序)</td>
 <td>FE FF</td>
 </tr>
-
 <tr>
 <td>UTF-16 (小字节序)</td>
 <td>FF FE</td>
 </tr>
-
 <tr>
 <td>UTF-32 (大字节序)</td>
 <td>00 00 FE FF</td>
 </tr>
-
 <tr>
 <td>UTF-32 (小字节序)</td>
 <td>FF FE 00 00</td>
 </tr>
 </tbody>
 </table>
-
-
 <p>openBVE鼓励您总是以带字节序的Unicode字符编码保存文件，以便自动识别。译者推荐您使用带BOM的UTF-8。</p>
 
 </div>

@@ -8,7 +8,7 @@
     <link rel="icon" href="../../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../../hu/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../../hu/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../../hu/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../../hu/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,26 +430,18 @@
 
 
 <div id="content">
-  
-
-<p>This page describes the principles and implementation of the dynamic lighting system..</p>
-
-<h2 id="the-lighting-system-basic-principles">■ The Lighting System: Basic Principles</h2>
-
+  <p>This page describes the principles and implementation of the dynamic lighting system..</p>
+<h2 id="-the-lighting-system-basic-principles">■ The Lighting System: Basic Principles</h2>
 <p>First, please consider these fundamental points:</p>
-
 <ul>
 <li>openBVE currently supports two distinct lights for the scene. These are the <strong>Dynamic Light</strong> and the <strong>Ambient Light</strong>.</li>
 <li>In addition to this, you must consider the <strong>Cab Brightness</strong> value, which determines the blend between the daytime and nighttime cab textures.</li>
 <li>The current implementation of openBVE produces incorrect illumination on the back face of faces created by <em>Face2</em> (B3D) or <em>AddFace2</em> (CSV) commands.</li>
 </ul>
-
 <p><strong>NOTE:</strong> This behavior is subject to change in future versions of openBVE, so that both sides are correctly illuminated.</p>
-
 <p>In order to setup the lighting system, a custom Dynamic Lighting XML file must be used. This file must contain a time-delineated series of light definitions, a basic example of which is shown below:</p>
-
 <textarea rows="17" cols="110" style="border:2;">
-    
+  
 &lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
 &lt;openBVE xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xsd=&#34;http://www.w3.org/2001/XMLSchema&#34;&gt;
   &lt;Brightness&gt;
@@ -469,83 +461,44 @@
 &lt;/openBVE&gt;  
 
 </textarea>
-
 <p>As you can see, each <strong>&lt;Brightness&gt;</strong> section contains a series of parameters, defining the lighting at the point in time specified by <em>Time</em>.</p>
-
 <p>When you are between two defined times, a simple cosine based interpolation curve is used.</p>
-
-<h2 id="the-ambient-light">■ The Ambient Light</h2>
-
+<h2 id="-the-ambient-light">■ The Ambient Light</h2>
 <div id="command">
-<p><strong>&lt;AmbientLight&gt;</strong> <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em> <strong>&lt;/AmbientLight&gt;</strong></p>
-
+<strong>&lt;AmbientLight&gt;</strong> <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em> <strong>&lt;/AmbientLight&gt;</strong>
 </div>
-
-
 <p>The ambient light describes the <strong>R,G,B</strong> color, which is used to illuminate the whole scene.</p>
-
 <p>All polygons in the scene are illuminated evenly.</p>
-
-<h2 id="the-directional-light">■ The Directional Light</h2>
-
+<h2 id="-the-directional-light">■ The Directional Light</h2>
 <div id="command">
-<p><strong>&lt;DirectionalLight&gt;</strong> <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em> <strong>&lt;/DirectionalLight&gt;</strong></p>
-
+<strong>&lt;DirectionalLight&gt;</strong> <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em> <strong>&lt;/DirectionalLight&gt;</strong>
 </div>
-
-
 <p>The directional light describes the <strong>R,G,B</strong> color, which is used to illuminate the whole scene from a specified direction.</p>
-
 <p>The polygons in the scene are only fully illuminated by the directional light if the light direction points at the front faces. If pointing at back faces, no light is contributed.</p>
-
 <p>The <em>LightDirection</em> attribute should be used to set the direction the light shines from.</p>
-
-<h2 id="the-lightdirection-attribute">■ The LightDirection Attribute</h2>
-
+<h2 id="-the-lightdirection-attribute">■ The LightDirection Attribute</h2>
 <p>The LightDirection attribute sets the direction from which the directional light shines, by default in cartesian co-ordinates. There are three possible overloads for this as follows:</p>
-
-<hr />
-
-<p><strong><em>LightDirection</em></strong> : Sets the light direction in cartesian co-ordinates.</p>
-
+<hr>
+<p><em><strong>LightDirection</strong></em> : Sets the light direction in cartesian co-ordinates.</p>
 <div id="command">
-<p><strong>&lt;LightDirection&gt;</strong> <em>DirectionX</em>; <em>DirectionY</em>; <em>DirectionZ</em> <strong>&lt;/LightDirection&gt;</strong></p>
-
+<strong>&lt;LightDirection&gt;</strong> <em>DirectionX</em>; <em>DirectionY</em>; <em>DirectionZ</em> <strong>&lt;/LightDirection&gt;</strong>
 </div>
-
-
-<hr />
-
-<p><strong><em>CartesianLightDirection</em></strong> : Sets the light direction in cartesian co-ordinates.</p>
-
+<hr>
+<p><em><strong>CartesianLightDirection</strong></em> : Sets the light direction in cartesian co-ordinates.</p>
 <div id="command">
-<p><strong>&lt;CartesianLightDirection&gt;</strong> <em>DirectionX</em>; <em>DirectionY</em>; <em>DirectionZ</em> <strong>&lt;/CartesianLightDirection&gt;</strong></p>
-
+<strong>&lt;CartesianLightDirection&gt;</strong> <em>DirectionX</em>; <em>DirectionY</em>; <em>DirectionZ</em> <strong>&lt;/CartesianLightDirection&gt;</strong>
 </div>
-
-
-<hr />
-
-<p><strong><em>SphericalLightDirection</em></strong> : Sets the light direction in spherical co-ordinates.</p>
-
+<hr>
+<p><em><strong>SphericalLightDirection</strong></em> : Sets the light direction in spherical co-ordinates.</p>
 <div id="command">
-<p><strong>&lt;SphericalLightDirection&gt;</strong> <em>Theta</em>; <em>Phi</em> <strong>&lt;/SphericalLightDirection&gt;</strong></p>
-
+<strong>&lt;SphericalLightDirection&gt;</strong> <em>Theta</em>; <em>Phi</em> <strong>&lt;/SphericalLightDirection&gt;</strong>
 </div>
-
-
-<h2 id="the-cablighting-attribute">■ The CabLighting Attribute</h2>
-
+<h2 id="-the-cablighting-attribute">■ The CabLighting Attribute</h2>
 <div id="command">
-<p><strong>&lt;CabLighting&gt;</strong> <em>CabLightingValue</em> <strong>&lt;/CabLighting&gt;</strong></p>
-
+<strong>&lt;CabLighting&gt;</strong> <em>CabLightingValue</em> <strong>&lt;/CabLighting&gt;</strong>
 </div>
-
-
 <p>The CabLighting attribute controls the maximum brightness of the cab, which in turn is used to determine the blend between the daytime and nighttime images.</p>
-
 <p>This must be a number between <em>0</em> (Completely dark) and <em>255</em> (Completely light).</p>
-
 <p>The minimum of this value, and the current <strong>Track.Brightness</strong> value is then used to determine the cab brightness displayed in-game.</p>
 
 </div>

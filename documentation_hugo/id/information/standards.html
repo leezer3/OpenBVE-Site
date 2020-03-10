@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -430,29 +430,16 @@
 
 
 <div id="content">
-  
-
-<p>Saat membuat add-on bersama orang lain, anda harus membuat standar atau bekerja sama dengan kreator lain untuk membuat standar dalam isi add-on rute dan kereta. Jika tidak, bisa saja kereta atau rute tidak dapat bekerja dengan baik.</p>
-
+  <p>Saat membuat add-on bersama orang lain, anda harus membuat standar atau bekerja sama dengan kreator lain untuk membuat standar dalam isi add-on rute dan kereta. Jika tidak, bisa saja kereta atau rute tidak dapat bekerja dengan baik.</p>
 <p>Contohnya, file run X.wav adalah suara kereta saat berjalan di rel, sedangkan X sendiri adalah angka railtype. Jika developer A membuat rail 1.wav untuk tikungan ke kiri, sedangkan developer B membuat rail 1.wav untuk membuat jembatan rel, kita tidak bisa menggunakan kereta yang sama untuk kedua rute tersebut. Meskipun jika dipaksakan dipakai, kereta masih bisa dipakai, hanya saja hasil suaranya akan berbeda.</p>
-
 <p>Jika anda membuat konten bersama orang lain, sebaiknya buatlah standar atau rule supaya hal di atas tidak terjadi. Berikut adalah list aturan yang bisa anda pakai.</p>
-
-<h2 id="file-run-i-wav-di-kereta">■ File run<em>i</em>.wav di kereta</h2>
-
-<p>Aturan yang biasanya dipakai adalah <a href="http://www.railsimroutes.net/bvetss/index.php" target="_blank">BVE Track Sound Standard</a>. Tidak semua developer mengikuti aturan ini, dan biasanya tidak dibutuhkan untuk add-on diluar Inggris karena jenis trek yang berbeda-beda.</p>
-
-<h2 id="suara-kereta-flange-i-wav">■ Suara kereta flange<em>i</em>.wav</h2>
-
+<h2 id="-file-runiwav-di-kereta">■ File run<em>i</em>.wav di kereta</h2>
+<p>Aturan yang biasanya dipakai adalah <a href="http://www.railsimroutes.net/bvetss/index.php">BVE Track Sound Standard</a>. Tidak semua developer mengikuti aturan ini, dan biasanya tidak dibutuhkan untuk add-on diluar Inggris karena jenis trek yang berbeda-beda.</p>
+<h2 id="-suara-kereta-flangeiwav">■ Suara kereta flange<em>i</em>.wav</h2>
 <p>Tidak ada aturan standar untuk file flange<em>i</em>.wav . Anda bisa membuatnya sendiri.</p>
-
-<h2 id="beacon">■ Beacon</h2>
-
+<h2 id="-beacon">■ Beacon</h2>
 <p>Tidak ada standar untuk membuat beacon, dan di Indonesia tidak ada aturan untuk membuat ini karena tidak ada di aslinya.</p>
-
 <p>Meskipun begitu, berikut ini adalah list beacon bawaan dari game untuk sistem ATS-SN dan ATS-P. Hanya untuk developer yang akan menggunakan beacon.</p>
-
-
 <table class='type0'>
 <thead>
 <tr>
@@ -461,32 +448,27 @@
 <th>Arti</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>0</td>
 <td><em>SwitchSystem</em></td>
 <td>ATS-SN transponder tipe S. Disimpan 600m di depan sinyal. Akan membunyikan alarm jika masinis akan mendekati sinyal merah.<br /><br />Nilai <em>SwitchSystem</em>:<br />-1: Kereta tidak akan mengganti sistem keamanan.<br />0: Sistem keamanan kereta berganti otomatis dari ATS-P ke ATS-SN saat melewati beacon.</td>
 </tr>
-
 <tr>
 <td>1</td>
 <td><em>SwitchSystem</em></td>
 <td>ATS-SN Transponder tipe SN. Disimpan 20m di depan sinyal. Mengaktifkan rem darurat jika sinyal merah.<br /><br />Nilai <em>SwitchSystem</em>:<br />-1: Kereta tidak akan mengganti sistem keamanan.<br />0: Kereta akan mengubah sistem keamanan dari ATS-P menjadi ATS-SN.</td>
 </tr>
-
 <tr>
 <td>2</td>
 <td><em>Cars</em></td>
 <td>Stop transponder untuk ATS-SN dan ATS-P. Disimpan setelah batas berhenti. Membuat rem darurat aktif jika sinyal merah dan angka CARS sesuai dengan data.<br /><br />Nilai <em>Cars</em>:<br />0: Transponder aktif untuk semua kereta.<br /><em>Angka Positif</em>: Transponder aktif jika angka <em>Cars</em> Lebih besar atau sama dengan jumlah kereta dalam 1 rangkaian.</td>
 </tr>
-
 <tr>
 <td>3</td>
 <td><em>SwitchSystem</em></td>
 <td>Transponder model baru untuk ATS-P. Beberapa disimpan di depan sinyal. Memberikan info kepada kereta tentang jarak sinyal terdekat dan aspek yang ditampilkan. Kereta akan mengerem bertahap jika sinyal merah.<br /><br />Nilai <em>SwitchSystem</em>:<br />-1: Kereta tidak akan mengganti sistem keamananan.<br />0: Kereta akan mengganti sistem dari ATS-SN menjadi ATS-P saat melewati beacon.</td>
 </tr>
-
 <tr>
 <td>4</td>
 <td><em>SwitchSystem</em></td>
@@ -494,7 +476,6 @@
 </tr>
 </tbody>
 </table>
-
 
 </div>
 

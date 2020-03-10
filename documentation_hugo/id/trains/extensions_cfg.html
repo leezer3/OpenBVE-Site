@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -430,10 +430,7 @@
 
 
 <div id="content">
-  
-
-<h2 id="isi">■ Isi</h2>
-
+  <h2 id="-isi">■ Isi</h2>
 <ul class='contents'>
 <li><a href="#overview">1. Penjelasan</a></li>
 <li><a href="#syntax">2. Format penulisan
@@ -442,312 +439,202 @@
 <li><a href="#coupler">4. Bagian Coupler<em>i</em></a></li>
 <li><a href="#exterior">5. Bagian Exterior (sudah tidak dipakai)</a></li>
 </ul>
-
-
-
-<h2 id="a-name-overview-a-1-penjelasan"><a name="overview"></a>■ 1. Penjelasan</h2>
-
+<h2 id="a-nameoverviewa-1-penjelasan"><a name="overview"></a>■ 1. Penjelasan</h2>
 <p>File Extensions.cfg berisi teks yang memuat info kereta seperti panjang kereta, posisi bogie, dan objek kereta.</p>
-
-<p>Isi file ini bisa menggunakan semua tipe <a href="../../id/information/encodings.html" target="_blank">encoding</a>, Biasanya untuk penulisan biasa dengan UTF-8.  <a href="../../id/information/numberformats.html" target="_blank">Cara penulisan</a> angka <strong>Strict</strong>. File ini harus berada di dalam folder kereta dan harus diberi nama  <strong>extensions.cfg</strong>. File akan dibaca oleh sistem dari atas ke bawah, dari kiri ke kanan.</p>
-
-<h5 id="bagian-car">● Bagian Car</h5>
-
-<p>All cars in the extensions.cfg are enumerated from 0 (front car) to <em>n</em>-1 (rear car), where <em>n</em> is the number of cars the train has in total, according to the <a href="../../id/trains/train_dat.html" target="_blank">train.dat</a> file. For example, on a train with 10 cars, the front car has index 0 and the rear car index 9.</p>
-
-<h5 id="bagian-coupler">● Bagian Coupler</h5>
-
-<p>A coupler in this document refers to the space between neighboring cars. All couplers in the extensions.cfg are enumerated from 0 (front-most coupler) to <em>n</em>-2 (rear-most coupler), where <em>n</em> is the number of cars the train has in total, according to the <a href="../../id/trains/train_dat.html" target="_blank">train.dat</a> file. Coupler index <em>i</em> corresponds to the coupler between the cars with indices <em>i</em> and <em>i+1</em>, so the coupler between the first two cars (0 and 1) in the train has index 0. Likewise, if a train has 10 cars, the coupler between the last two cars (8 and 9) would have index 8.</p>
-
-<h2 id="a-name-syntax-a-2-format-penulisan"><a name="syntax"></a>■ 2. Format penulisan</h2>
-
+<p>Isi file ini bisa menggunakan semua tipe <a href="../../id/information/encodings.html">encoding</a>, Biasanya untuk penulisan biasa dengan UTF-8.  <a href="../../id/information/numberformats.html">Cara penulisan</a> angka <strong>Strict</strong>. File ini harus berada di dalam folder kereta dan harus diberi nama  <strong>extensions.cfg</strong>. File akan dibaca oleh sistem dari atas ke bawah, dari kiri ke kanan.</p>
+<h5 id="-bagian-car">● Bagian Car</h5>
+<p>All cars in the extensions.cfg are enumerated from 0 (front car) to <em>n</em>-1 (rear car), where <em>n</em> is the number of cars the train has in total, according to the <a href="../../id/trains/train_dat.html">train.dat</a> file. For example, on a train with 10 cars, the front car has index 0 and the rear car index 9.</p>
+<h5 id="-bagian-coupler">● Bagian Coupler</h5>
+<p>A coupler in this document refers to the space between neighboring cars. All couplers in the extensions.cfg are enumerated from 0 (front-most coupler) to <em>n</em>-2 (rear-most coupler), where <em>n</em> is the number of cars the train has in total, according to the <a href="../../id/trains/train_dat.html">train.dat</a> file. Coupler index <em>i</em> corresponds to the coupler between the cars with indices <em>i</em> and <em>i+1</em>, so the coupler between the first two cars (0 and 1) in the train has index 0. Likewise, if a train has 10 cars, the coupler between the last two cars (8 and 9) would have index 8.</p>
+<h2 id="a-namesyntaxa-2-format-penulisan"><a name="syntax"></a>■ 2. Format penulisan</h2>
 <p>Setiap baris dalam file ini bisa dikosongkan (atau dikasih spasi) dan tidak akan dibaca oleh sistem. Dengan begitu anda bisa memisahkan bagian satu dengan bagian lainnya.</p>
-
-<p>Membuat bagian baru dimulai dengan menambahkan nama bagian dan memakai kurung tegak ( &ldquo; [ &ldquo; dan &rdquo; ] &ldquo; ). Spasi tidak akan terbaca di sistem. Contoh cara penulisannya:</p>
-
+<p>Membuat bagian baru dimulai dengan menambahkan nama bagian dan memakai kurung tegak ( &quot; [ &quot; dan &quot; ] &quot; ). Spasi tidak akan terbaca di sistem. Contoh cara penulisannya:</p>
 <div id="command">
-<p>[NamaBagian]</p>
-
+[NamaBagian]
 </div>
-
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Example for the indication of a new section:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>[exterior]
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Example for the indication of a new section:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+[exterior]
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>Cara menulis isi bagian ini yaitu dengan menambahkan kata kunci perintah, lalu sama dengan, kemudian masukkan angka atau teks yang dibutuhkan. Perhatian besar kecil huruf dan spasi. Contohnya seperti ini:</p>
-
 <div id="command">
-<p>Perintah = Nilai</p>
-
+Perintah = Nilai
 </div>
-
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Example of a key-value pair:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>0 = train.csv
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Example of a key-value pair:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+0 = train.csv
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
-<p>Komentar bisa ditambahkan di mana saja di akhir teks. Tambahkan titik koma &ldquo; ; &rdquo; lalu tulis komentar atau catatan yang diinginkan.</p>
-
-<h2 id="a-name-car-a-3-bagian-car-i"><a name="car"></a>■ 3. Bagian Car<em>i</em></h2>
-
+<p>Komentar bisa ditambahkan di mana saja di akhir teks. Tambahkan titik koma &quot; ; &quot; lalu tulis komentar atau catatan yang diinginkan.</p>
+<h2 id="a-namecara-3-bagian-cari"><a name="car"></a>■ 3. Bagian Car<em>i</em></h2>
 <p>Bagian Car<em>i</em> menentukan keterangan 1 kereta dalam rangkaian.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>[Cari]</strong></p>
-
+<strong>[Cari]</strong>
 </div>
-
-
 <p>This starts the section for car <em>i</em>, which is an integer between 0 and <em>n</em>-1, where <em>n</em> is the number of cars the train has.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>Object</strong> = <em>File</em></p>
-
+<strong>Object</strong> = <em>File</em>
 </div>
-
-
-<p><strong><em>File</em></strong>: Lokasi objek file kereta.</p>
-
+<p><em><strong>File</strong></em>: Lokasi objek file kereta.</p>
 <p>This key-value pair defines the exterior object for this car. Within the object file, the coordinate (0,0,0) (<em>x</em>, <em>y</em>, <em>z</em>) corresponds to the center of the car, both horizontally (<em>x</em>) and forward/backward (<em>z</em>), while <em>y</em>=0 corresponds to the top of the rails.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>Length</strong> = <em>Value</em></p>
-
+<strong>Length</strong> = <em>Value</em>
 </div>
-
-
-<p><strong><em>Value</em></strong>: Panjang kereta dalam meter.</p>
-
+<p><em><strong>Value</strong></em>: Panjang kereta dalam meter.</p>
 <p>Perintah ini menentukan panjang satu gerbong dalam satu rangkaian. Bagian ini akan mengganti nilai panjang kereta yang ditulis di train.dat. Jika tidak ada perintah ini, maka nilai yang ditulis di train.dat akan dipakai.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>Axles</strong> = <em>Rear</em>, <em>Front</em></p>
-
+<strong>Axles</strong> = <em>Rear</em>, <em>Front</em>
 </div>
-
-
-<p><strong><em>Rear</em></strong>: Jarak antara titik pusat dengan bogie belakang. biasanya angkanya negatif.
-<strong><em>Front</em></strong>: Jarak antara titik pusat dengan bogie depan. Biasanya angka positif.</p>
-
+<p><em><strong>Rear</strong></em>: Jarak antara titik pusat dengan bogie belakang. biasanya angkanya negatif.
+<em><strong>Front</strong></em>: Jarak antara titik pusat dengan bogie depan. Biasanya angka positif.</p>
 <p>This key-value pair defines the positions of the axles. While <em>Rear</em> and <em>Front</em> can take any values, the condition <em>Rear</em> &lt; <em>Front</em> must hold.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>Reversed</strong> = <em>Value</em></p>
-
+<strong>Reversed</strong> = <em>Value</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: <strong>True</strong> atau <strong>False</strong> untuk menentukan apakah objek perlu dibalik atau tidak.</p>
-
+<em><strong>Value</strong></em>: <strong>True</strong> atau <strong>False</strong> untuk menentukan apakah objek perlu dibalik atau tidak.
 </div>
-
-
 <p>Dengan perintah ini, gerbong bisa dibalik pada rangkaian. Catatan, posisi bogie pada perintah sebelumnya menentukan posisi saat kereta tidak dibalik.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>LoadingSway</strong> = <em>Value</em></p>
-
+<strong>LoadingSway</strong> = <em>Value</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: <strong>True</strong> atau <strong>False</strong></p>
-
+<em><strong>Value</strong></em>: <strong>True</strong> atau <strong>False</strong>
 </div>
-
-
 <p>Dengan pengaturan ini, kereta bisa diatur apakah akan bergoyang saat naik turun penumpang atau tidak.</p>
-
-<hr />
-
+<hr>
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Example of a Cari section:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>[Car0]<br />
-Object = locomotive.b3d<br />
-Length = 16<br />
-Axles = -6, 6<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Example of a Cari section:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+[Car0]<br>
+Object = locomotive.b3d<br>
+Length = 16<br>
+Axles = -6, 6<br>
 Reversed = False
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
-<h2 id="a-name-coupler-a-4-bagian-coupler-i"><a name="coupler"></a>■ 4. Bagian Coupler<em>i</em></h2>
-
+<h2 id="a-namecouplera-4-bagian-coupleri"><a name="coupler"></a>■ 4. Bagian Coupler<em>i</em></h2>
 <p>Bagian Coupler<em>i</em> menentukan info sambungan kereta di posisi yang ditentukan.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>[Coupleri]</strong></p>
-
+<strong>[Coupleri]</strong>
 </div>
-
-
 <p>This starts the section for coupler <em>i</em>, which is an integer between 0 and <em>n</em>-2, where <em>n</em> is the number of cars the train has.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>Distances</strong> = <em>Minimum</em>, <em>Maximum</em></p>
-
+<strong>Distances</strong> = <em>Minimum</em>, <em>Maximum</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Minimum</em></strong>: Jarak minimum antar gerbong.<br />
-<strong><em>Maximum</em></strong>: Jarak maksimum antar gerbong.</p>
-
+<em><strong>Minimum</strong></em>: Jarak minimum antar gerbong.<br>
+<em><strong>Maximum</strong></em>: Jarak maksimum antar gerbong.
 </div>
-
-
 <p>This key-value pair defines the lowest and highest allowed distances between the cars, resembling a buffer and chain coupler. The condition <em>Minimum</em> ≤ <em>Maximum</em> must hold.</p>
-
-<hr />
-
+<hr>
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Example of a Coupleri section:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>[Coupler0]<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Example of a Coupleri section:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+[Coupler0]<br>
 Distances = 0.30, 0.35
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
-<h2 id="a-name-exterior-a-5-bagian-exterior-sudah-tidak-dipakai"><a name="exterior"></a>■ 5. Bagian Exterior (Sudah tidak dipakai)</h2>
-
+<h2 id="a-nameexteriora-5-bagian-exterior-sudah-tidak-dipakai"><a name="exterior"></a>■ 5. Bagian Exterior (Sudah tidak dipakai)</h2>
 <p>The Exterior section provides an easy way of adding exterior objects to the particular train. For more control on the setting of axle positions and individual car lengths, the Car<em>i</em> section has been introduced and should be used instead.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>[Exterior]</strong></p>
-
+<strong>[Exterior]</strong>
 </div>
-
-
 <p>Perintah ini memulai bagian exterior</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>i</strong> = <em>File</em></p>
-
+<strong>i</strong> = <em>File</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>i</em></strong>: An integer between 0 and <em>n</em>-1, where <em>n</em> is the number of cars the train has. Index 0 corresponds to the front car and index <em>n</em>-1 to the last car in the train.<br />
-<strong><em>File</em></strong>: The relative file name of the exterior object to use for car <em>i</em>, relative to the train folder.</p>
-
+<em><strong>i</strong></em>: An integer between 0 and <em>n</em>-1, where <em>n</em> is the number of cars the train has. Index 0 corresponds to the front car and index <em>n</em>-1 to the last car in the train.<br>
+<em><strong>File</strong></em>: The relative file name of the exterior object to use for car <em>i</em>, relative to the train folder.
 </div>
-
-
 <p>This key-value pair can be used to set up the exterior objects for each individual car. Within the object file, the coordinate (0,0,0) (<em>x</em>, <em>y</em>, <em>z</em>) corresponds to the center of the car, both horizontally (<em>x</em>) and forward/backward (<em>z</em>), while <em>y</em>=0 corresponds to the top of the rails.</p>
-
-<hr />
-
+<hr>
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Example of an [Exterior] section</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>[Exterior]<br />
-0 = cars\engine.csv<br />
-1 = cars\passenger_mk1.b3d<br />
-2 = cars\passenger_mk1.b3d<br />
-3 = cars\passenger_bistro.b3d<br />
-4 = cars\passenger_mk2.b3d<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Example of an [Exterior] section</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+[Exterior]<br>
+0 = cars\engine.csv<br>
+1 = cars\passenger_mk1.b3d<br>
+2 = cars\passenger_mk1.b3d<br>
+3 = cars\passenger_bistro.b3d<br>
+4 = cars\passenger_mk2.b3d<br>
 5 = cars\postal.x
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 </div>
 
       <div id="footer">

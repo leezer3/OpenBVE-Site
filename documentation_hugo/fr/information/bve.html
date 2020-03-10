@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../fr/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../fr/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../fr/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../fr/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,34 +430,19 @@
 
 
 <div id="content">
-  
-
-<p>This page lists <strong>incompatible</strong> differences between openBVE and BVE Trainsim regarding the file formats, i.e. features of content developed for BVE Trainsim that is interpreted differently in openBVE with an incompatible outcome. As of the moment, only one such incompatibility is known.</p>
-
+  <p>This page lists <strong>incompatible</strong> differences between openBVE and BVE Trainsim regarding the file formats, i.e. features of content developed for BVE Trainsim that is interpreted differently in openBVE with an incompatible outcome. As of the moment, only one such incompatibility is known.</p>
 <p>Please note that for all incompatible differences that are mentioned on this page, the resolution is the same: It is considered to be more important to provide stable and consistent features in openBVE than to make backward-incompatible changes between versions just to increase similarity to BVE Trainsim. All differences depicted on this page will thus be permanent.</p>
-
-<h2 id="the-track-signal-command-csv-and-rw-routes">■ The Track.Signal command  (CSV and RW routes)</h2>
-
+<h2 id="-the-tracksignal-command--csv-and-rw-routes">■ The Track.Signal command  (CSV and RW routes)</h2>
 <p>The Track.Signal command (alternatively: Track.Sig) is used to create a default Japanese-style signal in CSV routes (alternative spellings are used in RW routes).</p>
-
 <p>In openBVE, the Track.Signal command takes the following arguments:</p>
-
 <div id="command">
-<p><strong>Track.Signal</strong> <em>Aspects</em>; <em><del>Unused</del></em>; <em>X</em>; <em>Y</em>; <u><em>Yaw</em></u>; <em>Pitch</em>; <em>Roll</em></p>
-
+<strong>Track.Signal</strong> <em>Aspects</em>; <em><del>Unused</del></em>; <em>X</em>; <em>Y</em>; <u><em>Yaw</em></u>; <em>Pitch</em>; <em>Roll</em>
 </div>
-
-
 <p>In BVE Trainsim, the Track.Signal command takes the following arguments:</p>
-
 <div id="command">
-<p><strong>Track.Signal</strong> <em>Aspects</em>; <em>Label</em>; <em>X</em>; <em>Y</em>; <u><em>Type</em></u></p>
-
+<strong>Track.Signal</strong> <em>Aspects</em>; <em>Label</em>; <em>X</em>; <em>Y</em>; <u><em>Type</em></u>
 </div>
-
-
 <p>The <em>Label</em> parameter in BVE Trainsim is a textual description of the signal which serves no function in openBVE (thus termed <em>Unused</em> in the documentation).</p>
-
 <p>BVE Trainsim features a <em>Type</em> argument which can take values 1, 2 or 3. It is used to denote different types of signals, e.g. home signal vs. departure signal. By mere accident, this argument was never included in openBVE, while subsequently, the need arose to include <em>Yaw</em>, <em>Pitch</em> and <em>Roll</em> arguments to provide for more control over a signal head&rsquo;s orientation. Consequently, BVE Trainsim&rsquo;s <em>Type</em> and openBVE&rsquo;s <em>Yaw</em> argument incompatibly overlap. If a route created for BVE Trainsim includes the <em>Type</em> argument, it will be (mis)interpreted as a yaw of up to 3 degrees in openBVE. Usually, this small angle should not produce noticable differences, especially given that the parameter is not often used anyway.</p>
 
 </div>

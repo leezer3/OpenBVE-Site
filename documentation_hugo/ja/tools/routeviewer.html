@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../ja/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../ja/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../ja/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../ja/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,113 +430,75 @@
 
 
 <div id="content">
-  
-
-<p><img src="../../images/tool_routeviewer_screenshot_1.png" alt="img" /></p>
-
-<h2 id="概要">■ 概要</h2>
-
+  <p><img src="../../images/tool_routeviewer_screenshot_1.png" alt="img"></p>
+<h2 id="-概要">■ 概要</h2>
 <p>このツールはルートファイルをプレビューすることができます。 カメラを移動することができ、回転や拡大ができます。 駅と駅の間や任意のビューポイント(Point Of Interest)へジャンプすることができ、  同様に一連のオプションを設定することができます。 もしルートデータにエラーがある場合、 レポートをオプションウインドウに表示することができます。</p>
-
 <p>起動時にコマンドラインオプションでファイルが指定されると、そのファイルが自動で開かれます。 もし CSV ファイルがCSVオブジェクトでなくCSVルートであると判断された場合、 <em>ObjectViewer.exe</em> は同一階層のフォルダ内にある <em>RouteViewer.exe</em> を自動で実行します。 これにより、 CSVファイルが  Route Viewer もしくは Object Viewer のいずれかに割り当てられたとしても、適切なツールが実行され、ファイルが開かれます。</p>
-
 <p>バイトオーダーマーク (BOM) が異なるUnicodeエンコーディングが示されない限り、ルートビューアーは常にUTF-8として解釈することに注意してください。非Unicodeのエンコーディングはサポートされません。</p>
-
 <p>カメラを動かすには <em>WASD</em> キーを用い、回転をするには <em>矢印</em> キーを用います。 駅の間をジャンプするには <em>PageUp</em> と <em>PageDown</em> キーを用い、 任意のビューポイント(Points Of Interests)へジャンプするには <em>Num1</em> と <em>Num7</em> キーを用います。 同様に任意の距離程に移動するにはフルキーの <em>数字</em> キーを用います。 入力した後 <em>Return</em> key で確定するか <em>Escape</em> キーでキャンセルします。 相対的に距離程をオフセットするには <em>マイナス</em> もしくは <em>プラス</em> キーを押下します。 その他の有用な操作キーの情報はルートビューアーのメインウインドウ内に表示されています。</p>
-
 <p>サポートされるルートデータのフォーマット:</p>
-
 <ul>
 <li>CSV</li>
 <li>RW</li>
 </ul>
-
 <p>このツールではプラグインAPIの表示はサポートされていません。これは組み込みのテクスチャフォーマット (BMP, PNG, GIF, JPG, TIF) 、及び組み込みののサウンドファイルフォーマット(WAV)のみサポートすることを意味します。</p>
-
-<h2 id="changelog">■ Changelog</h2>
-
+<h2 id="-changelog">■ Changelog</h2>
 <p>メインプログラムの更新履歴も同様に確認してください。</p>
-
-<h5 id="version-1-4-4-0-2016-01-30">● Version 1.4.4.0 (2016-01-30)</h5>
-
+<h5 id="-version-1440-2016-01-30">● Version 1.4.4.0 (2016-01-30)</h5>
 <ul>
 <li>Added support for antialiasing and anisotropic filtering.</li>
 <li>Added support for different window sizes.</li>
 </ul>
-
-<h5 id="version-1-3-2-0-2011-11-30">● Version 1.3.2.0 (2011-11-30)</h5>
-
+<h5 id="-version-1320-2011-11-30">● Version 1.3.2.0 (2011-11-30)</h5>
 <ul>
 <li>Added support for managed content package references.</li>
 </ul>
-
-<h5 id="version-1-2-11-0-2011-01-07">● Version 1.2.11.0 (2011-01-07)</h5>
-
+<h5 id="-version-12110-2011-01-07">● Version 1.2.11.0 (2011-01-07)</h5>
 <ul>
 <li>The file system organization has changed along with the openBVE main program. Route Viewer accepts the /filesystem=FILE switch.</li>
 </ul>
-
-<h5 id="version-1-2-7-2-2010-07-31">● Version 1.2.7.2 (2010-07-31)</h5>
-
+<h5 id="-version-1272-2010-07-31">● Version 1.2.7.2 (2010-07-31)</h5>
 <ul>
 <li>Animated objects were not updated immediately after loading or reloading routes, but only after <em>RefreshRate</em> seconds had passed.</li>
 </ul>
-
-<h5 id="version-1-2-6-0-2010-03-14">● Version 1.2.6.0 (2010-03-14)</h5>
-
+<h5 id="-version-1260-2010-03-14">● Version 1.2.6.0 (2010-03-14)</h5>
 <ul>
 <li>If a CSV file is passed as a command-line argument, Object Viewer is started if the file is determined to be a CSV object instead of a CSV route. The detection is now solely based on the presence of the <em>CreateMeshBuilder</em> string.</li>
 </ul>
-
-<h5 id="version-1-2-5-1-2010-02-14">● Version 1.2.5.1 (2010-02-14)</h5>
-
+<h5 id="-version-1251-2010-02-14">● Version 1.2.5.1 (2010-02-14)</h5>
 <ul>
 <li>You can now enter a track position using the number keys and jump to that position.</li>
 </ul>
-
-<h5 id="version-1-2-5-0-2010-01-24">● Version 1.2.5.0 (2010-01-24)</h5>
-
+<h5 id="-version-1250-2010-01-24">● Version 1.2.5.0 (2010-01-24)</h5>
 <ul>
 <li>Removed the dependency on specific versions of the Tao.OpenAL, Tao.OpenGL and Tao.SDL libraries, which could cause problems in recent Linux distributions.</li>
 </ul>
-
-<h5 id="version-1-2-3-0-2009-11-14">● Version 1.2.3.0 (2009-11-14)</h5>
-
+<h5 id="-version-1230-2009-11-14">● Version 1.2.3.0 (2009-11-14)</h5>
 <ul>
 <li>When loading a route via command line arguments, the wrong background image could show at the initial track position.</li>
 </ul>
-
-<h5 id="version-1-2-0-0-2009-07-26">● Version 1.2.0.0 (2009-07-26)</h5>
-
+<h5 id="-version-1200-2009-07-26">● Version 1.2.0.0 (2009-07-26)</h5>
 <ul>
 <li>The camera yaw, pitch and roll are now displayed along with the track position and offsets.</li>
 </ul>
-
-<h5 id="version-1-1-0-0-2009-06-28">● Version 1.1.0.0 (2009-06-28)</h5>
-
+<h5 id="-version-1100-2009-06-28">● Version 1.1.0.0 (2009-06-28)</h5>
 <ul>
 <li>The set of variables than can be used in functions of animated objects has been vastly extended. This matches with the corresponding version of openBVE.</li>
 </ul>
-
-<h5 id="version-1-0-7-1-2009-06-14">● Version 1.0.7.1 (2009-06-14)</h5>
-
+<h5 id="-version-1071-2009-06-14">● Version 1.0.7.1 (2009-06-14)</h5>
 <ul>
 <li>Support for new parameters in <em>ArrivalTime</em> in Track.Sta and Track.Station commands.</li>
 <li>Support for custom normals in AddVertex and Vertex commands (objects).</li>
-<li>Support for the Shear and ShearAll commands (objects).<br /></li>
+<li>Support for the Shear and ShearAll commands (objects).</li>
 <li>As for responsiveness, complex objects are not optimized any longer in order to improve loading times.</li>
 </ul>
-
-<h5 id="version-1-0-6-0-2009-05-24">● Version 1.0.6.0 (2009-05-24)</h5>
-
+<h5 id="-version-1060-2009-05-24">● Version 1.0.6.0 (2009-05-24)</h5>
 <ul>
-<li>Added the functionality to mute sound.<br /></li>
+<li>Added the functionality to mute sound.</li>
 </ul>
-
-<h5 id="version-1-0-4-0-2009-04-26">● Version 1.0.4.0 (2009-04-26)</h5>
-
+<h5 id="-version-1040-2009-04-26">● Version 1.0.4.0 (2009-04-26)</h5>
 <ul>
-<li>Changed some key assignments to be more memorable<br /></li>
+<li>Changed some key assignments to be more memorable</li>
 </ul>
 
 </div>

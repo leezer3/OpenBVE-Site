@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../ja/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../ja/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../ja/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../ja/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,34 +430,19 @@
 
 
 <div id="content">
-  
-
-<p>このページには、ファイルフォーマットに関するopenBVEとBVE Trainsimの間の<strong>互換性のない</strong>相違点、すなわち互換性のない結果でopenBVEで異なって解釈されるBVE Trainsimのために開発されたコンテンツの機能がリストされています。現時点では、そのような非互換性が1つだけ知られています。</p>
-
+  <p>このページには、ファイルフォーマットに関するopenBVEとBVE Trainsimの間の<strong>互換性のない</strong>相違点、すなわち互換性のない結果でopenBVEで異なって解釈されるBVE Trainsimのために開発されたコンテンツの機能がリストされています。現時点では、そのような非互換性が1つだけ知られています。</p>
 <p>このページに記載されているすべての非互換な違いについて、解決方法は同じであることに気をつけてください: BVE Trainsimとの類似性を高めるために、バージョン間で後方互換性のない変更を行うよりも、openBVEに安定した一貫した機能を提供することが重要です。 したがって、このページに記載されているすべての違いに関する情報は永続的なものとなるでしょう。</p>
-
-<h2 id="track-signalコマンド-csvおよびrwルート">■ Track.Signalコマンド（CSVおよびRWルート）</h2>
-
+<h2 id="-tracksignalコマンドcsvおよびrwルート">■ Track.Signalコマンド（CSVおよびRWルート）</h2>
 <p>Track.Signalコマンド（あるいはTrack.Sig）は、CSVルートでデフォルトの日本の信号方式で作成するために使用されます（代替の表記はRWルートで使用されます）。</p>
-
 <p>openBVEでは、Track.Signalコマンドは次の引数を取ります。</p>
-
 <div id="command">
-<p><strong>Track.Signal</strong> <em>Aspects</em>; <em><del>Unused</del></em>; <em>X</em>; <em>Y</em>; <u><em>Yaw</em></u>; <em>Pitch</em>; <em>Roll</em></p>
-
+<strong>Track.Signal</strong> <em>Aspects</em>; <em><del>Unused</del></em>; <em>X</em>; <em>Y</em>; <u><em>Yaw</em></u>; <em>Pitch</em>; <em>Roll</em>
 </div>
-
-
 <p>BVE Trainsimでは、Track.Signalコマンドは次の引数を取ります。</p>
-
 <div id="command">
-<p><strong>Track.Signal</strong> <em>Aspects</em>; <em>Label</em>; <em>X</em>; <em>Y</em>; <u><em>Type</em></u></p>
-
+<strong>Track.Signal</strong> <em>Aspects</em>; <em>Label</em>; <em>X</em>; <em>Y</em>; <u><em>Type</em></u>
 </div>
-
-
-<p>BVE Trainsimの *Label*パラメータは、openBVEでは機能しないシグナルの説明文です（したがって、このドキュメントでは <em>Unused</em> と呼ばれています）。</p>
-
+<p>BVE Trainsimの <em>Label</em>パラメータは、openBVEでは機能しないシグナルの説明文です（したがって、このドキュメントでは <em>Unused</em> と呼ばれています）。</p>
 <p>BVE Trainsimは1、2または3の値を取ることができる <em>Type</em> 引数を特徴としています。  それらは異なる信号を示します。 例えばホーム信号に対する出発信号です。 単なる偶然ではあるが、この引数はopenBVEには含まれていませんでしたが、その後、信号の向く方向をさらに制御するために <em>Yaw</em> 、 <em>Pitch</em> 、および <em>Roll</em> 引数を含める必要性が生じました。
 その結果、BVE Trainsimの <em>Type</em> 引数とopenBVEの <em>Yaw</em> 引数は、互換性が失われます。 BVE Trainsim用に作成されたルートには <em>Type</em> 引数が含まれていますが、openBVEでは最大3度の水平軸方向に（誤って）解釈されます。通常、この小さな角度では、特にパラメータが使用されないことが多いという点で、目立った違いは生じません。</p>
 

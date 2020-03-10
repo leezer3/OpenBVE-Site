@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -430,33 +430,23 @@
 
 
 <div id="content">
-  
-
-<p>Aquesta pàgina presenta informació que cal saber per al desenvolupament i consells generals per a la creació d&rsquo;objectes.</p>
-
-<h2 id="ordres">■ Ordres</h2>
-
+  <p>Aquesta pàgina presenta informació que cal saber per al desenvolupament i consells generals per a la creació d&rsquo;objectes.</p>
+<h2 id="-ordres">■ Ordres</h2>
 <ul>
 <li>In Face (B3D) or AddFace (CSV) commands, vertices need to be given in order of adjacency. Complex polygons, meaning self-intersecting polygons, will lead to erratic results.</li>
 <li>The current implementation of openBVE produces incorrect illumination on the back face of faces created by Face2 (B3D) or AddFace2 (CSV). This behavior might change in future versions of openBVE so that both sides are correctly illuminated.</li>
 </ul>
-
-<h2 id="geometria">■ Geometria</h2>
-
+<h2 id="-geometria">■ Geometria</h2>
 <ul>
 <li>Avoid overly complex geometry where the end results are hardly noticable. Avoid using Cube and Cylinder commands (B3D/CSV) if parts of the cube/cylinder will not be visible. Do not create cylinder caps unless they are likely to be visible.</li>
 <li>Per obtenir objectes amb una curvitat suau, feu servir normals personalitzades i poques cares en comptes de normals estàndard i moltes cares.</li>
 </ul>
-
-<h2 id="textures">■ Textures</h2>
-
+<h2 id="-textures">■ Textures</h2>
 <ul>
 <li>Intenteu crear textures que envoltin els objectes mitjançant les coordenades de textura apropiades. Això reduirà o eliminarà la necessitat de canviar la textura durant el renderitzat, que suposa un cost alt.</li>
 <li>Utilitzeu només textures amb una mida que sigui múltiple de dos, és a dir, amb una longitud per costat que sigui 1, 2, 4, 8, 16, 32, etc. Ara bé, no cal que siguin textures quadrades.</li>
 </ul>
-
-<h2 id="transparència">■ Transparència</h2>
-
+<h2 id="-transparència">■ Transparència</h2>
 <ul>
 <li>For best visual quality, every transparency has its overhead. Avoid using transparency at all if there are alternatives of similar implementational and geometric complexity.</li>
 <li>Use color-key transparency whenever possible. Avoid using alpha channels in textures or using Color (B3D) or SetColor (CSV) commands with an alpha setting at all costs.</li>

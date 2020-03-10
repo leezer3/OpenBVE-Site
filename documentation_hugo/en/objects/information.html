@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../en/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../en/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../en/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../en/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,33 +430,23 @@
 
 
 <div id="content">
-  
-
-<p>This page presents information developers need to be aware of and general tips for object creation.</p>
-
-<h2 id="commands">■ Commands</h2>
-
+  <p>This page presents information developers need to be aware of and general tips for object creation.</p>
+<h2 id="-commands">■ Commands</h2>
 <ul>
 <li>In Face (B3D) or AddFace (CSV) commands, vertices need to be given in order of adjacency. Complex polygons, meaning self-intersecting polygons, will lead to erratic results.</li>
 <li>The current implementation of openBVE produces incorrect illumination on the back face of faces created by Face2 (B3D) or AddFace2 (CSV). This behavior might change in future versions of openBVE so that both sides are correctly illuminated.</li>
 </ul>
-
-<h2 id="geometry">■ Geometry</h2>
-
+<h2 id="-geometry">■ Geometry</h2>
 <ul>
 <li>Avoid overly complex geometry where the end results are hardly noticable. Avoid using Cube and Cylinder commands (B3D/CSV) if parts of the cube/cylinder will not be visible. Do not create cylinder caps unless they are likely to be visible.</li>
 <li>To get smoothly curved objects, use custom normals with fewer faces instead of no custom normals with many faces.</li>
 </ul>
-
-<h2 id="textures">■ Textures</h2>
-
+<h2 id="-textures">■ Textures</h2>
 <ul>
 <li>Try to create textures that wrap around objects by using texture coordinates appropriately. This will reduce or eliminate the need to change the texture when rendering, which is expensive.</li>
 <li>Use only textures which are of power-of-two size, e.g. whose sides are of length 1, 2, 4, 8, 16, 32, etc. Textures do not need to be square, though.</li>
 </ul>
-
-<h2 id="transparency">■ Transparency</h2>
-
+<h2 id="-transparency">■ Transparency</h2>
 <ul>
 <li>For best visual quality, every transparency has its overhead. Avoid using transparency at all if there are alternatives of similar implementational and geometric complexity.</li>
 <li>Use color-key transparency whenever possible. Avoid using alpha channels in textures or using Color (B3D) or SetColor (CSV) commands with an alpha setting at all costs.</li>

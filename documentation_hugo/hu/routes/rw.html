@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../hu/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../hu/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../hu/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../hu/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -431,23 +431,14 @@
 
 <div id="content">
   <p>The RW route format is functionally equivalent to the CSV route format, but differs in syntax, structure and choice of words. Given that the RW route format is not frequently used any longer, it is recommended to use the CSV route format instead.</p>
-
 <p>There is no full documentation on RW routes, only the quick reference which illustrates the available commands and syntax:</p>
-
-<p>➟ <a href="../../hu/routes/rw_quick.html" target="_blank">Quick reference&hellip;</a></p>
-
-<p>Please refer to the documentation for CSV routes for the behavior of the various commands, but mind that choice of words and syntax differ in CSV. You can also compare against the <a href="../../hu/routes/csv_quick.html" target="_blank">quick reference for CSV routes</a> to work out the differences between the formats.</p>
-
-<hr />
-
+<p>➟ <a href="../../hu/routes/rw_quick.html">Quick reference&hellip;</a></p>
+<p>Please refer to the documentation for CSV routes for the behavior of the various commands, but mind that choice of words and syntax differ in CSV. You can also compare against the <a href="../../hu/routes/csv_quick.html">quick reference for CSV routes</a> to work out the differences between the formats.</p>
+<hr>
 <p><strong>Behavioral differences between CSV and RW</strong></p>
-
 <p>In RW, comments starting with a semicolon can only be used at the end of a line inside the [Railway] section. Outside of the [Railway] section, comments must appear on their own line.</p>
-
 <p>In RW, every piece of text before the first [Section] is considered part of the route description, which is Route.Comment in CSV.</p>
-
 <p>In RW, the default @Height at the beginning of the route is 0.3 meters, while in CSV, the default Track.Height is 0.0 meters. Additionally, every value passed to @Height is added an additional 0.3 meters in RW.</p>
-
 <p>In RW, the second argument to @Form can take special values: -9 is the same as L, 9 is the same as R, and 9X references rail 9. In CSV, -9 is invalid and 9 references rail 9.</p>
 
 </div>

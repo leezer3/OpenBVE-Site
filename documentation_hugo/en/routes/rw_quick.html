@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../en/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../en/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../en/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../en/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -431,153 +431,135 @@
 
 <div id="content">
   <p><strong>Notes:</strong></p>
-
 <ul>
 <li>Arguments highlighted in <strong><font color="green">green</font></strong> are affected by UnitOfLength in [Options].</li>
 <li>Arguments highlighted in <strong><font color="blue">blue</font></strong> are affected by UnitOfSpeed in [Options].</li>
 <li>Each command takes one line, except for commands starting in an @ sign, which can be chained together on the same line.</li>
 </ul>
-
-<hr />
-
-<p><font color="red">Track positions</font><br />
-<em><font color="green">Number</font></em><br />
+<hr>
+<p><font color="red">Track positions</font><br>
+<em><font color="green">Number</font></em><br>
 <em><font color="green">Number<sub>1</sub></font></em> : <em><font color="green">Number<sub>2</sub></font></em> : <em>&hellip;</em> : <em><font color="green">Number<sub>n</sub></font></em></p>
-
-<p><font color="red">Preprocessing directives</font><br />
-<strong>$Include(</strong><em>File<sub>1</sub></em>; <em>Weight<sub>1</sub></em>; <em>File<sub>2</sub></em>; <em>Weight<sub>2</sub></em>; &hellip;<strong>)</strong><br />
-<strong>$Chr(</strong><em>AsciiCode</em><strong>)</strong><br />
-<strong>$Rnd(</strong>*Minimum*<strong>;</strong> <em>Maximum</em><strong>)</strong><br />
-<strong>$Sub(</strong><em>VariableIndex</em><strong>)</strong> = <em>Value</em><br />
-<strong>$Sub(</strong><em>VariableIndex</em><strong>)</strong><br />
-<strong>$If(</strong><em>Condition</em><strong>)</strong><br />
-<strong>$ElseIf</strong>()<br />
+<p><font color="red">Preprocessing directives</font><br>
+<strong>$Include</strong>(<em>File<sub>1</sub></em>; <em>Weight<sub>1</sub></em>; <em>File<sub>2</sub></em>; <em>Weight<sub>2</sub></em>; &hellip;)<br>
+<strong>$Chr</strong>(<em>AsciiCode</em>)<br>
+<strong>$Rnd</strong>(<em>Minimum</em>; <em>Maximum</em>)<br>
+<strong>$Sub</strong>(<em>VariableIndex</em>) = <em>Value</em><br>
+<strong>$Sub</strong>(<em>VariableIndex</em>)<br>
+<strong>$If</strong>(<em>Condition</em>)<br>
+<strong>$ElseIf</strong>()<br>
 <strong>$EndIf</strong>()</p>
-
-<p><font color="red">[Options]</font><br />
-<strong>UnitOfLength</strong> = <em>FactorInMeters<sub>1</sub></em>; <em>FactorInMeters<sub>2</sub></em>; <em>&hellip;</em>; <em>FactorInMeters<sub>n</sub></em><br />
-<strong>UnitOfSpeed</strong> = <em>FactorInKmph</em><br />
-<strong>BlockLength</strong> = <em><font color="green">Length</font></em><br />
-<strong>ObjectVisibility</strong> = <font color="gray">{</font> <strong>0</strong> = legacy <font color="gray">|</font> <strong>1</strong> = track-based <font color="gray">}</font><br />
-<strong>SectionBehavior</strong> = <font color="gray">{</font> <strong>0</strong> = index-based <font color="gray">|</font> <strong>1</strong> = value-based <font color="gray">}</font><br />
-<strong>CantBehavior</strong> = <font color="gray">{</font> <strong>0</strong> = unsigned <font color="gray">|</font> <strong>1</strong> = signed <font color="gray">}</font><br />
+<p><font color="red">[Options]</font><br>
+<strong>UnitOfLength</strong> = <em>FactorInMeters<sub>1</sub></em>; <em>FactorInMeters<sub>2</sub></em>; <em>&hellip;</em>; <em>FactorInMeters<sub>n</sub></em><br>
+<strong>UnitOfSpeed</strong> = <em>FactorInKmph</em><br>
+<strong>BlockLength</strong> = <em><font color="green">Length</font></em><br>
+<strong>ObjectVisibility</strong> = <font color="gray">{</font> <strong>0</strong> = legacy <font color="gray">|</font> <strong>1</strong> = track-based <font color="gray">}</font><br>
+<strong>SectionBehavior</strong> = <font color="gray">{</font> <strong>0</strong> = index-based <font color="gray">|</font> <strong>1</strong> = value-based <font color="gray">}</font><br>
+<strong>CantBehavior</strong> = <font color="gray">{</font> <strong>0</strong> = unsigned <font color="gray">|</font> <strong>1</strong> = signed <font color="gray">}</font><br>
 <strong>FogBehavior</strong> = <font color="gray">{</font> <strong>0</strong> = block-wise <font color="gray">|</font> <strong>1</strong> = interpolated <font color="gray">}</font></p>
-
-<p><font color="red">[Route]</font><br />
-<strong>Comment</strong> = <em>Text</em><br />
-<strong>Image</strong> = <em>FileName</em><br />
-<strong>Timetable</strong> = <em>Text</em><br />
-<strong>Change</strong> = <font color="gray">{</font> <strong>-1</strong> = service brakes (ATS) <font color="gray">|</font> <strong>0</strong> = emergency brakes (no ATS) <font color="gray">|</font> <strong>1</strong> = service brakes (ATS) <font color="gray">}</font><br />
-<strong>Gauge</strong> = <em>ValueInMillimeters</em><br />
-<strong>Route.Signal(</strong><em>Aspect</em><strong>)</strong> = <font color="blue"><em>Speed</em></font><br />
-<strong>RunInterval</strong> = <em>Interval<sub>0</sub></em>; <em>Interval<sub>1</sub></em>; &hellip;; <em>Interval<sub>n-1</sub></em><br />
-<strong>AccelerationDueToGravity</strong> = <em>Value</em><br />
-<strong>Elevation</strong> = <em><font color="green">Height</font></em><br />
-<strong>Temperature</strong> = <em>ValueInCelsius</em><br />
-<strong>Pressure</strong> = <em>ValueInKPa</em><br />
-<strong>AmbientLight</strong> = <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em><br />
-<strong>DirectionalLight</strong> = <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em><br />
+<p><font color="red">[Route]</font><br>
+<strong>Comment</strong> = <em>Text</em><br>
+<strong>Image</strong> = <em>FileName</em><br>
+<strong>Timetable</strong> = <em>Text</em><br>
+<strong>Change</strong> = <font color="gray">{</font> <strong>-1</strong> = service brakes (ATS) <font color="gray">|</font> <strong>0</strong> = emergency brakes (no ATS) <font color="gray">|</font> <strong>1</strong> = service brakes (ATS) <font color="gray">}</font><br>
+<strong>Gauge</strong> = <em>ValueInMillimeters</em><br>
+<strong>Route.Signal</strong>(<em>Aspect</em>) = <font color="blue"><em>Speed</em></font><br>
+<strong>RunInterval</strong> = <em>Interval<sub>0</sub></em>; <em>Interval<sub>1</sub></em>; &hellip;; <em>Interval<sub>n-1</sub></em><br>
+<strong>AccelerationDueToGravity</strong> = <em>Value</em><br>
+<strong>Elevation</strong> = <em><font color="green">Height</font></em><br>
+<strong>Temperature</strong> = <em>ValueInCelsius</em><br>
+<strong>Pressure</strong> = <em>ValueInKPa</em><br>
+<strong>AmbientLight</strong> = <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em><br>
+<strong>DirectionalLight</strong> = <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em><br>
 <strong>LightDirection</strong> = <em>Theta</em>; <em>Phi</em></p>
-
-<p><font color="red">[Train]</font><br />
-<strong>Folder</strong> = <em>FolderName</em><br />
-<strong>Run(</strong><em>RailTypeIndex</em><strong>)</strong> = <em>RunSoundIndex</em><br />
-<strong>Rail(</strong><em>RailTypeIndex</em><strong>)</strong> = <em>RunSoundIndex</em><br />
-<strong>Flange(</strong><em>RailTypeIndex</em><strong>)</strong> = <em>FlangeSoundIndex</em><br />
-<strong>Timetable(</strong><em>TimetableIndex</em><strong>).Day</strong> = <em>FileName</em><br />
-<strong>Timetable(</strong><em>TimetableIndex</em><strong>).Night</strong> = <em>FileName</em><br />
-<strong>Gauge</strong> = <em>ValueInMillimeters</em><br />
-<strong>Interval</strong> = <em>Interval<sub>0</sub></em>; <em>Interval<sub>1</sub></em>; &hellip;; <em>Interval<sub>n-1</sub></em><br />
+<p><font color="red">[Train]</font><br>
+<strong>Folder</strong> = <em>FolderName</em><br>
+<strong>Run</strong>(<em>RailTypeIndex</em>) = <em>RunSoundIndex</em><br>
+<strong>Rail</strong>(<em>RailTypeIndex</em>) = <em>RunSoundIndex</em><br>
+<strong>Flange</strong>(<em>RailTypeIndex</em>) = <em>FlangeSoundIndex</em><br>
+<strong>Timetable</strong>(<em>TimetableIndex</em>)<strong>.Day</strong> = <em>FileName</em><br>
+<strong>Timetable</strong>(<em>TimetableIndex</em>)<strong>.Night</strong> = <em>FileName</em><br>
+<strong>Gauge</strong> = <em>ValueInMillimeters</em><br>
+<strong>Interval</strong> = <em>Interval<sub>0</sub></em>; <em>Interval<sub>1</sub></em>; &hellip;; <em>Interval<sub>n-1</sub></em><br>
 <strong>Velocity</strong> = <em><font color="blue">Speed</font></em></p>
-
-<p><font color="red">[Object]</font><br />
-<strong>Rail(</strong><em>RailStructureIndex</em><strong>)</strong> = <em>FileName</em><br />
-<strong>Beacon(</strong><em>BeaconStructureIndex</em><strong>)</strong> = <em>FileName</em><br />
-<strong>Pole(</strong><em>NumberOfAdditionalRails</em><strong>;</strong> <em>PoleStructureIndex</em><strong>)</strong> = <em>FileName</em><br />
-<strong>Ground(</strong><em>GroundStructureIndex</em><strong>)</strong> = <em>FileName</em><br />
-<strong>WallL(</strong><em>WallStructureIndex</em><strong>)</strong> = <em>FileName</em><br />
-<strong>WallR(</strong><em>WallStructureIndex</em><strong>)</strong> = <em>FileName</em><br />
-<strong>DikeL(</strong><em>DikeStructureIndex</em><strong>)</strong> = <em>FileName</em><br />
-<strong>DikeR(</strong><em>DikeStructureIndex</em><strong>)</strong> = <em>FileName</em><br />
-<strong>FormL(</strong><em>FormStructureIndex</em><strong>)</strong> = <em>FileName</em><br />
-<strong>FormR(</strong><em>FormStructureIndex</em><strong>)</strong> = <em>FileName</em><br />
-<strong>FormCL(</strong><em>FormStructureIndex</em><strong>)</strong> = <em>FileName</em><br />
-<strong>FormCR(</strong><em>FormStructureIndex</em><strong>)</strong> = <em>FileName</em><br />
-<strong>RoofL(</strong><em>RoofStructureIndex</em><strong>)</strong> = <em>FileName</em><br />
-<strong>RoofR(</strong><em>RoofStructureIndex</em><strong>)</strong> = <em>FileName</em><br />
-<strong>RoofCL(</strong><em>RoofStructureIndex</em><strong>)</strong> = <em>FileName</em><br />
-<strong>RoofCR(</strong><em>RoofStructureIndex</em><strong>)</strong> = <em>FileName</em><br />
-<strong>CrackL(</strong><em>CrackStructureIndex</em><strong>)</strong> = <em>FileName</em><br />
-<strong>CrackR(</strong><em>CrackStructureIndex</em><strong>)</strong> = <em>FileName</em><br />
-<strong>FreeObj(</strong><em>FreeObjStructureIndex</em><strong>)</strong> = <em>FileName</em><br />
-<strong>Back(</strong><em>BackgroundTextureIndex</em><strong>)</strong> = <em>FileName</em><br />
-<strong>Back(</strong><em>BackgroundTextureIndex</em><strong>).X</strong> = <em>RepetitionCount</em><br />
-<strong>Back(</strong><em>BackgroundTextureIndex</em><strong>).Aspect</strong> <font color="gray">{</font> <strong>0</strong> = fixed height <font color="gray">|</font> <strong>1</strong> = keep aspect ratio <font color="gray">}</font></p>
-
-<p><font color="red">[Cycle]</font><br />
+<p><font color="red">[Object]</font><br>
+<strong>Rail</strong>(<em>RailStructureIndex</em>) = <em>FileName</em><br>
+<strong>Beacon</strong>(<em>BeaconStructureIndex</em>) = <em>FileName</em><br>
+<strong>Pole</strong>(<em>NumberOfAdditionalRails</em>; <em>PoleStructureIndex</em>) = <em>FileName</em><br>
+<strong>Ground</strong>(<em>GroundStructureIndex</em>) = <em>FileName</em><br>
+<strong>WallL</strong>(<em>WallStructureIndex</em>) = <em>FileName</em><br>
+<strong>WallR</strong>(<em>WallStructureIndex</em>) = <em>FileName</em><br>
+<strong>DikeL</strong>(<em>DikeStructureIndex</em>) = <em>FileName</em><br>
+<strong>DikeR</strong>(<em>DikeStructureIndex</em>) = <em>FileName</em><br>
+<strong>FormL</strong>(<em>FormStructureIndex</em>) = <em>FileName</em><br>
+<strong>FormR</strong>(<em>FormStructureIndex</em>) = <em>FileName</em><br>
+<strong>FormCL</strong>(<em>FormStructureIndex</em>) = <em>FileName</em><br>
+<strong>FormCR</strong>(<em>FormStructureIndex</em>) = <em>FileName</em><br>
+<strong>RoofL</strong>(<em>RoofStructureIndex</em>) = <em>FileName</em><br>
+<strong>RoofR</strong>(<em>RoofStructureIndex</em>) = <em>FileName</em><br>
+<strong>RoofCL</strong>(<em>RoofStructureIndex</em>) = <em>FileName</em><br>
+<strong>RoofCR</strong>(<em>RoofStructureIndex</em>) = <em>FileName</em><br>
+<strong>CrackL</strong>(<em>CrackStructureIndex</em>) = <em>FileName</em><br>
+<strong>CrackR</strong>(<em>CrackStructureIndex</em>) = <em>FileName</em><br>
+<strong>FreeObj</strong>(<em>FreeObjStructureIndex</em>) = <em>FileName</em><br>
+<strong>Back</strong>(<em>BackgroundTextureIndex</em>) = <em>FileName</em><br>
+<strong>Back</strong>(<em>BackgroundTextureIndex</em>)<strong>.X</strong> = <em>RepetitionCount</em><br>
+<strong>Back</strong>(<em>BackgroundTextureIndex</em>)<strong>.Aspect</strong> <font color="gray">{</font> <strong>0</strong> = fixed height <font color="gray">|</font> <strong>1</strong> = keep aspect ratio <font color="gray">}</font></p>
+<p><font color="red">[Cycle]</font><br>
 <em>GroundStructureIndex</em> = <em>GroundStructureIndex<sub>1</sub></em>; <em>GroundStructureIndex<sub>2</sub></em>; <em>&hellip;</em>; <em>GroundStructureIndex<sub>n</sub></em></p>
-
-<p><font color="red">[Signal]</font><br />
-<em>SignalIndex</em> = <em>AnimatedObjectFile</em><br />
+<p><font color="red">[Signal]</font><br>
+<em>SignalIndex</em> = <em>AnimatedObjectFile</em><br>
 <em>SignalIndex</em> = <em>SignalFileWithoutExtension</em>; <em>GlowFileWithoutExtension</em></p>
-
 <p><font color="red">[Railway]</font></p>
-
-<p><em>Rails:</em><br />
-<strong>@RailStart</strong>(<em>RailIndex</em>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>; <em>RailStructureIndex</em>)<br />
-<strong>@Rail</strong>(<em>RailIndex</em>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>; <em>RailStructureIndex</em>)<br />
-<strong>@RailType</strong>(<em>RailIndex</em>; <em>RailStructureIndex</em>)<br />
-<strong>@RailEnd</strong>(<em>RailIndex</em>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>)<br />
-<strong>@Accuracy</strong>(<em>Value</em>)<br />
+<p><em>Rails:</em><br>
+<strong>@RailStart</strong>(<em>RailIndex</em>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>; <em>RailStructureIndex</em>)<br>
+<strong>@Rail</strong>(<em>RailIndex</em>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>; <em>RailStructureIndex</em>)<br>
+<strong>@RailType</strong>(<em>RailIndex</em>; <em>RailStructureIndex</em>)<br>
+<strong>@RailEnd</strong>(<em>RailIndex</em>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>)<br>
+<strong>@Accuracy</strong>(<em>Value</em>)<br>
 <strong>@Adhesion</strong>(<em>Value</em>)</p>
-
-<p><em>Geometry:</em><br />
-<strong>@Pitch</strong>(<em>ValueInPermille</em>)<br />
-<strong>@Curve</strong>(<em><font color="green">Radius</font></em>; <em>CantInMillimeters</em>)<br />
-<strong>@Turn</strong>(<em>Ratio</em>)<br />
+<p><em>Geometry:</em><br>
+<strong>@Pitch</strong>(<em>ValueInPermille</em>)<br>
+<strong>@Curve</strong>(<em><font color="green">Radius</font></em>; <em>CantInMillimeters</em>)<br>
+<strong>@Turn</strong>(<em>Ratio</em>)<br>
 <strong>@Height</strong>(<em><font color="green">Height</font></em>)</p>
-
-<p><em>Objects:</em><br />
-<strong>@FreeObj</strong>(<em>RailIndex</em>; <em>FreeObjStructureIndex</em>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>)<br />
-<strong>@Wall</strong>(<em>RailIndex</em>; <em>Direction</em>; <em>WallStructureIndex</em>)<br />
-<strong>@WallEnd</strong>(<em>RailIndex</em>)<br />
-<strong>@Dike</strong>(<em>RailIndex</em>; <em>Direction</em>; <em>DikeStructureIndex</em>)<br />
-<strong>@DikeEnd</strong>(<em>RailIndex</em>)<br />
-<strong>@Pole</strong>(<em>RailIndex</em>; <em>AdditionalRailsCovered</em>; <em>Location</em>; <em>Interval</em>; <em>PoleStructureIndex</em>)<br />
-<strong>@PoleEnd</strong>(<em>RailIndex</em>)<br />
-<strong>@Crack</strong>(<em>RailIndex<sub>1</sub></em>; <em>RailIndex<sub>2</sub></em>; <em>CrackStructureIndex</em>)<br />
+<p><em>Objects:</em><br>
+<strong>@FreeObj</strong>(<em>RailIndex</em>; <em>FreeObjStructureIndex</em>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>)<br>
+<strong>@Wall</strong>(<em>RailIndex</em>; <em>Direction</em>; <em>WallStructureIndex</em>)<br>
+<strong>@WallEnd</strong>(<em>RailIndex</em>)<br>
+<strong>@Dike</strong>(<em>RailIndex</em>; <em>Direction</em>; <em>DikeStructureIndex</em>)<br>
+<strong>@DikeEnd</strong>(<em>RailIndex</em>)<br>
+<strong>@Pole</strong>(<em>RailIndex</em>; <em>AdditionalRailsCovered</em>; <em>Location</em>; <em>Interval</em>; <em>PoleStructureIndex</em>)<br>
+<strong>@PoleEnd</strong>(<em>RailIndex</em>)<br>
+<strong>@Crack</strong>(<em>RailIndex<sub>1</sub></em>; <em>RailIndex<sub>2</sub></em>; <em>CrackStructureIndex</em>)<br>
 <strong>@Ground</strong>(<em>CycleIndex</em>)</p>
-
-<p><em>Stations:</em><br />
-<strong>@Sta</strong>(<em>Name</em>; <em>ArrivalTime</em>; <em>DepartureTime</em>; <em>PassAlarm</em>; <em>Doors</em>; <em>ForcedRedSignal</em>; <em>System</em>; <em>ArrivalSound</em>; <em>StopDuration</em>; <em>PassengerRatio</em>; <em>DepartureSound</em>; <em>TimetableIndex</em>)<br />
-<strong>@Station</strong>(<em>Name</em>; <em>ArrivalTime</em>; <em>DepartureTime</em>; <em>ForcedRedSignal</em>; <em>System</em>; <em>DepartureSound</em>)<br />
-<strong>@Stop</strong>(<em>Direction</em>; <em><font color="green">BackwardTolerance</font></em>; <em><font color="green">ForwardTolerance</font></em>; <em>Cars</em>)<br />
+<p><em>Stations:</em><br>
+<strong>@Sta</strong>(<em>Name</em>; <em>ArrivalTime</em>; <em>DepartureTime</em>; <em>PassAlarm</em>; <em>Doors</em>; <em>ForcedRedSignal</em>; <em>System</em>; <em>ArrivalSound</em>; <em>StopDuration</em>; <em>PassengerRatio</em>; <em>DepartureSound</em>; <em>TimetableIndex</em>)<br>
+<strong>@Station</strong>(<em>Name</em>; <em>ArrivalTime</em>; <em>DepartureTime</em>; <em>ForcedRedSignal</em>; <em>System</em>; <em>DepartureSound</em>)<br>
+<strong>@Stop</strong>(<em>Direction</em>; <em><font color="green">BackwardTolerance</font></em>; <em><font color="green">ForwardTolerance</font></em>; <em>Cars</em>)<br>
 <strong>@Form</strong>(<em>RailIndex<sub>1</sub></em>; <em>RailIndex<sub>2</sub></em>; <em>RoofStructureIndex</em>; <em>FormStructureIndex</em>)</p>
-
-<p><em>Signalling and speed limits:</em><br />
-<strong>@Limit</strong>(<em><font color="blue">Speed</font></em>; <em>Direction</em>; <em>Cource</em>)<br />
-<strong>@Section</strong>(<em>Aspect<sub>0</sub></em>; <em>Aspect<sub>1</sub></em>; <em>&hellip;</em>; <em>Aspect<sub>n</sub></em>)<br />
-<strong>@SigF</strong>(<em>SignalIndex</em>; <em>Section</em>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>)<br />
-<strong>@Signal</strong>(<em>Aspects</em>; <del><em><font color="gray">Unused</font></em></del>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>)<br />
+<p><em>Signalling and speed limits:</em><br>
+<strong>@Limit</strong>(<em><font color="blue">Speed</font></em>; <em>Direction</em>; <em>Cource</em>)<br>
+<strong>@Section</strong>(<em>Aspect<sub>0</sub></em>; <em>Aspect<sub>1</sub></em>; <em>&hellip;</em>; <em>Aspect<sub>n</sub></em>)<br>
+<strong>@SigF</strong>(<em>SignalIndex</em>; <em>Section</em>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>)<br>
+<strong>@Signal</strong>(<em>Aspects</em>; <del><em><font color="gray">Unused</font></em></del>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>)<br>
 <strong>@Relay</strong>(<font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>)</p>
-
-<p><em>Safety systems:</em><br />
-<strong>@Beacon</strong>(<em>Type</em>; <em>BeaconStructureIndex</em>; <em>Section</em>; <em>Data</em>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>)<br />
-<strong>@Transponder</strong>(<em>Type</em>; <em>Signals</em>; <em>SwitchSystems</em>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>)<br />
-<strong>@AtsSn</strong><br />
-<strong>@AtsP</strong><br />
-<strong>@Pattern</strong>(<em>Type</em>; <em><font color="blue">Speed</font></em>)<br />
+<p><em>Safety systems:</em><br>
+<strong>@Beacon</strong>(<em>Type</em>; <em>BeaconStructureIndex</em>; <em>Section</em>; <em>Data</em>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>)<br>
+<strong>@Transponder</strong>(<em>Type</em>; <em>Signals</em>; <em>SwitchSystems</em>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>)<br>
+<strong>@AtsSn</strong><br>
+<strong>@AtsP</strong><br>
+<strong>@Pattern</strong>(<em>Type</em>; <em><font color="blue">Speed</font></em>)<br>
 <strong>@PLimit</strong>(<em><font color="blue">Speed</font></em>)</p>
-
-<p><em>Miscellaneous:</em><br />
-<strong>@Back</strong>(<em>BackgroundTextureIndex</em>)<br />
-<strong>@Fog</strong>(<em><font color="green">StartingDistance</font></em>; <em><font color="green">EndingDistance</font></em>; <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em>)<br />
-<strong>@Brightness</strong>(<em>Value</em>)<br />
-<strong>@Marker</strong>(<em>FileName</em>; <em><font color="green">Distance</font></em>)<br />
-<strong>@PointOfInterest</strong>(<em>RailIndex</em>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>; <em>Text</em>)<br />
-<strong>@PreTrain</strong>(<em>Time</em>)<br />
-<strong>@Announce</strong>(<em>FileName</em>; <em><font color="blue">Speed</font></em>)<br />
-<strong>@Doppler</strong>(<em>FileName</em>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>)<br />
+<p><em>Miscellaneous:</em><br>
+<strong>@Back</strong>(<em>BackgroundTextureIndex</em>)<br>
+<strong>@Fog</strong>(<em><font color="green">StartingDistance</font></em>; <em><font color="green">EndingDistance</font></em>; <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em>)<br>
+<strong>@Brightness</strong>(<em>Value</em>)<br>
+<strong>@Marker</strong>(<em>FileName</em>; <em><font color="green">Distance</font></em>)<br>
+<strong>@PointOfInterest</strong>(<em>RailIndex</em>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>; <em>Text</em>)<br>
+<strong>@PreTrain</strong>(<em>Time</em>)<br>
+<strong>@Announce</strong>(<em>FileName</em>; <em><font color="blue">Speed</font></em>)<br>
+<strong>@Doppler</strong>(<em>FileName</em>; <font color="green"><em>X</em></font>; <font color="green"><em>Y</em></font>)<br>
 <strong>@Buffer</strong></p>
 
 </div>

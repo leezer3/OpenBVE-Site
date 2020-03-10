@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -430,33 +430,23 @@
 
 
 <div id="content">
-  
-
-<p>Esta página presenta información dedicada a los desarrolladores necesiten estar advertidos de sugerencias para la creación de objetos.</p>
-
-<h2 id="comandos">■ Comandos</h2>
-
+  <p>Esta página presenta información dedicada a los desarrolladores necesiten estar advertidos de sugerencias para la creación de objetos.</p>
+<h2 id="-comandos">■ Comandos</h2>
 <ul>
 <li>En los comandos Face (B3D) o AddFace (CSV), los vértices necesitan tener un orden de adyacente. Polígonos complejos, que se intersecten así mismos, acarrean resultados erráticos.</li>
 <li>La actual implementación de openBVE produce iluminación incorrecta en las caras posteriores de las caras creadas por Face2 (B3D) o AddFace2 (CSV). Esta conducta puede cambiar en versiones posteriores de openBVE para que así ambos lados estén correctamente iluminados.</li>
 </ul>
-
-<h2 id="geometría">■ Geometría</h2>
-
+<h2 id="-geometría">■ Geometría</h2>
 <ul>
 <li>Evite sobreponer geometría compleja donde los resultados finales son difícil de notar. Evita usar los comandos Cube y Cylinder (B3D/CSV) solamente si las partes de los cubos y cilindros no son visibles. No crees un cilindro con extremos a menos que son vistosamente visibles.</li>
 <li>Para tener objetos con una curva suave, usa normalizado personalizados con pocas caras en vez de un objeto no normalizado con muchas caras.</li>
 </ul>
-
-<h2 id="texturas">■ Texturas</h2>
-
+<h2 id="-texturas">■ Texturas</h2>
 <ul>
 <li>Trata de crear texturas que envuelvan el objeto usando coordenadas de textura apropiadamente. Esto reducirá o eliminará la necesidad de cambiar la textura cuando se renderice, lo cual es costoso.</li>
 <li>Solamente usa texturas que tengan un tamaño de base dos, por ejemplo. Estos lados pueden ser de longitud 1,2,4,8,16,32, etc. Las texturas no necesitan ser cuadradas.</li>
 </ul>
-
-<h2 id="transparencia">■ Transparencia</h2>
-
+<h2 id="-transparencia">■ Transparencia</h2>
 <ul>
 <li>Para mejor calidad visual, cada transparencia tiene sus altos. Evite usar transparencia en todo momento si existen alternativas o similitud al implementarse en geometría compleja.</li>
 <li>Usa llaves de colores transparentes cuando sea posible. Evite usar canales alfa en texturas o usar los comandos Color (B3D) o SetColor (CSV) con parámetro alfa a cualquier costo.</li>

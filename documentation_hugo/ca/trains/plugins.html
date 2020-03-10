@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -430,21 +430,14 @@
 
 
 <div id="content">
-  
-
-<p>Train plugins allow to change the runtime behavior of trains to some degree. Things you can do include displaying custom indicators in the panels, playing custom sounds and overriding the handles the driver originally set. Plugins can be used to simulate safety equipment such as ATS or ATC, among other things.</p>
-
-<h2 id="tipus-d-extensions-disponibles">■ Tipus d&rsquo;extensions disponibles</h2>
-
-<p><a href="../../ca/plugins/overview.html" target="_blank"><strong>.NET assemblies:</strong></a><br />
+  <p>Train plugins allow to change the runtime behavior of trains to some degree. Things you can do include displaying custom indicators in the panels, playing custom sounds and overriding the handles the driver originally set. Plugins can be used to simulate safety equipment such as ATS or ATC, among other things.</p>
+<h2 id="-tipus-dextensions-disponibles">■ Tipus d&rsquo;extensions disponibles</h2>
+<p><a href="../../ca/plugins/overview.html"><strong>.NET assemblies:</strong></a><br>
 This is the only officially endorsed form of plugin. The plugins are .NET assemblies and should be designed to be cross-platform-compatible without recompilation. You can choose from a variety of programming languages, including C# and Visual Basic .NET, among many others that target the .NET Framework.</p>
-
-<p><a href="../../ca/trains/plugins/legacy.html" target="_blank"><strong>Win32 DLLs:</strong></a><br />
+<p><a href="../../ca/trains/plugins/legacy.html"><strong>Win32 DLLs:</strong></a><br>
 This form of plugin is retained for backward compatibility with BVE Trainsim, but is no longer officially endorsed because these plugins can only run on Microsoft Windows. They are usually developed in C/C++. Given the cross-platform alternative, please develop .NET assemblies from now on.</p>
-
-<h2 id="configuració-d-un-tren-perquè-faci-servir-una-extensió">■ Configuració d&rsquo;un tren perquè faci servir una extensió</h2>
-
-<p>You will need to ship the plugin somewhere in your train folder and configure the path to your plugin inside the <a href="../../ca/trains/ats_cfg.html" target="_blank">ats.cfg</a> file. Please note that for .NET assembly train plugins, you should <strong>not</strong> ship OpenBveApi.dll along with your plugin.</p>
+<h2 id="-configuració-dun-tren-perquè-faci-servir-una-extensió">■ Configuració d&rsquo;un tren perquè faci servir una extensió</h2>
+<p>You will need to ship the plugin somewhere in your train folder and configure the path to your plugin inside the <a href="../../ca/trains/ats_cfg.html">ats.cfg</a> file. Please note that for .NET assembly train plugins, you should <strong>not</strong> ship OpenBveApi.dll along with your plugin.</p>
 
 </div>
 

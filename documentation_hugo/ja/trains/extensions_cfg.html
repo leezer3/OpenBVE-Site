@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../ja/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../ja/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../ja/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../ja/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,10 +430,7 @@
 
 
 <div id="content">
-  
-
-<h2 id="contents">■ Contents</h2>
-
+  <h2 id="-contents">■ Contents</h2>
 <ul class='contents'>
 <li><a href="#overview">1. Overview</a></li>
 <li><a href="#syntax">2. Syntax</a></li>
@@ -441,324 +438,208 @@
 <li><a href="#coupler">4. The Coupler<em>i</em> section</a></li>
 <li><a href="#exterior">5. The Exterior section (outdated)</a></li>
 </ul>
-
-
-
-<h2 id="a-name-overview-a-1-overview"><a name="overview"></a>■ 1. Overview</h2>
-
+<h2 id="a-nameoverviewa-1-overview"><a name="overview"></a>■ 1. Overview</h2>
 <p>The extensions.cfg file allows to define properties for individual cars, like length, axle positions and exterior objects.</p>
-
-<p>The file is a plain text file encoded in any arbitrary <a href="../../ja/information/encodings.html" target="_blank">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../ja/information/numberformats.html" target="_blank">parsing model</a> for numbers is <strong>Strict</strong>. The file is required to be located inside the train folder and is expected to be named <strong>extensions.cfg</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
-
-<h5 id="car-indices">● Car indices</h5>
-
-<p>All cars in the extensions.cfg are enumerated from 0 (front car) to <em>n</em>-1 (rear car), where <em>n</em> is the number of cars the train has in total, according to the <a href="../../ja/trains/train_dat.html" target="_blank">train.dat</a> file. For example, on a train with 10 cars, the front car has index 0 and the rear car index 9.</p>
-
-<h5 id="coupler-indices">● Coupler indices</h5>
-
-<p>A coupler in this document refers to the space between neighboring cars. All couplers in the extensions.cfg are enumerated from 0 (front-most coupler) to <em>n</em>-2 (rear-most coupler), where <em>n</em> is the number of cars the train has in total, according to the <a href="../../ja/trains/train_dat.html" target="_blank">train.dat</a> file. Coupler index <em>i</em> corresponds to the coupler between the cars with indices <em>i</em> and <em>i+1</em>, so the coupler between the first two cars (0 and 1) in the train has index 0. Likewise, if a train has 10 cars, the coupler between the last two cars (8 and 9) would have index 8.</p>
-
-<h2 id="a-name-syntax-a-2-syntax"><a name="syntax"></a>■ 2. Syntax</h2>
-
+<p>The file is a plain text file encoded in any arbitrary <a href="../../ja/information/encodings.html">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../ja/information/numberformats.html">parsing model</a> for numbers is <strong>Strict</strong>. The file is required to be located inside the train folder and is expected to be named <strong>extensions.cfg</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
+<h5 id="-car-indices">● Car indices</h5>
+<p>All cars in the extensions.cfg are enumerated from 0 (front car) to <em>n</em>-1 (rear car), where <em>n</em> is the number of cars the train has in total, according to the <a href="../../ja/trains/train_dat.html">train.dat</a> file. For example, on a train with 10 cars, the front car has index 0 and the rear car index 9.</p>
+<h5 id="-coupler-indices">● Coupler indices</h5>
+<p>A coupler in this document refers to the space between neighboring cars. All couplers in the extensions.cfg are enumerated from 0 (front-most coupler) to <em>n</em>-2 (rear-most coupler), where <em>n</em> is the number of cars the train has in total, according to the <a href="../../ja/trains/train_dat.html">train.dat</a> file. Coupler index <em>i</em> corresponds to the coupler between the cars with indices <em>i</em> and <em>i+1</em>, so the coupler between the first two cars (0 and 1) in the train has index 0. Likewise, if a train has 10 cars, the coupler between the last two cars (8 and 9) would have index 8.</p>
+<h2 id="a-namesyntaxa-2-syntax"><a name="syntax"></a>■ 2. Syntax</h2>
 <p>Each line in the file can be empty (or solely consist of white spaces) and will be ignored, can mark the beginning of a new section or contain key-value pairs inside a section. All key-value pairs relate to the last section opened.</p>
-
 <p>A new section is opened by starting the line with an opening bracket (U+005B) and ending it with a closing bracket (U+005D). The text in-between the brackets indicates the name of the section and is case-insensitive. White spaces at the beginning and the end of the line are ignored, as well as at the beginning and the end of the name of the section. Thus, the beginning of the section has the following form:</p>
-
 <div id="command">
-<p>[NameOfTheSection]</p>
-
+[NameOfTheSection]
 </div>
-
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Example for the indication of a new section:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>[exterior]
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Example for the indication of a new section:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+[exterior]
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>A key-value pair is indicated by giving the key, an equals sign (U+003D) and then the value. The key is case-insensitive. White spaces at the beginning and the end of the line are ignored, as well as in front and after the equals sign. Alternatively phrased, white spaces surrounding the key and the value are ignored. Thus, a key-value pair as the following form:</p>
-
 <div id="command">
-<p>NameOfTheKey = Value</p>
-
+NameOfTheKey = Value
 </div>
-
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Example of a key-value pair:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>0 = train.csv
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Example of a key-value pair:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+0 = train.csv
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>You can use comments anywhere at the end of a line. A comment is started by a semicolon (U+003B). Comments, if present, are stripped away from all lines before these are processed.</p>
-
-<h2 id="a-name-car-a-3-the-car-i-section"><a name="car"></a>■ 3. The Car<em>i</em> section</h2>
-
+<h2 id="a-namecara-3-the-cari-section"><a name="car"></a>■ 3. The Car<em>i</em> section</h2>
 <p>The Car<em>i</em> section allows to define properties specific to a certain car.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>[Cari]</strong></p>
-
+<strong>[Cari]</strong>
 </div>
-
-
 <p>This starts the section for car <em>i</em>, which is an integer between 0 and <em>n</em>-1, where <em>n</em> is the number of cars the train has.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>Object</strong> = <em>File</em></p>
-
+<strong>Object</strong> = <em>File</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>file</em></strong>: The relative file name of the exterior object to use for this car, relative to the train folder.</p>
-
+<em><strong>file</strong></em>: The relative file name of the exterior object to use for this car, relative to the train folder.
 </div>
-
-
 <p>This key-value pair defines the exterior object for this car. Within the object file, the coordinate (0,0,0) (<em>x</em>, <em>y</em>, <em>z</em>) corresponds to the center of the car, both horizontally (<em>x</em>) and forward/backward (<em>z</em>), while <em>y</em>=0 corresponds to the top of the rails.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>Length</strong> = <em>Value</em></p>
-
+<strong>Length</strong> = <em>Value</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: A positive floating-point number representing the length of the car.</p>
-
+<em><strong>Value</strong></em>: A positive floating-point number representing the length of the car.
 </div>
-
-
 <p>This key-value pair defines the length for this car. This overrides the length as defined in the train.dat for this particular car. If not used, this car will have the default length as defined in the train.dat.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>Axles</strong> = <em>Rear</em>, <em>Front</em></p>
-
+<strong>Axles</strong> = <em>Rear</em>, <em>Front</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Rear</em></strong>: A floating-point number indicating the z-position of the rear axle measured from the center of the car. Usually a negative value.<br />
-<strong><em>Front</em></strong>: A floating-point number indicating the z-position of the front axle measured from the center of the car. Usually a positive value.</p>
-
+<em><strong>Rear</strong></em>: A floating-point number indicating the z-position of the rear axle measured from the center of the car. Usually a negative value.<br>
+<em><strong>Front</strong></em>: A floating-point number indicating the z-position of the front axle measured from the center of the car. Usually a positive value.
 </div>
-
-
 <p>This key-value pair defines the positions of the axles. While <em>Rear</em> and <em>Front</em> can take any values, the condition <em>Rear</em> &lt; <em>Front</em> must hold.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>Reversed</strong> = <em>Value</em></p>
-
+<strong>Reversed</strong> = <em>Value</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: Either <strong>True</strong> or <strong>False</strong> to indicate whether to reverse the car.</p>
-
+<em><strong>Value</strong></em>: Either <strong>True</strong> or <strong>False</strong> to indicate whether to reverse the car.
 </div>
-
-
 <p>With this setting, you can reverse the car in the consist. Please note that axle positions are given as if the car was not reversed.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>LoadingSway</strong> = <em>Value</em></p>
-
+<strong>LoadingSway</strong> = <em>Value</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: Either <strong>True</strong> or <strong>False</strong> to indicate whether to reverse the car.</p>
-
+<em><strong>Value</strong></em>: Either <strong>True</strong> or <strong>False</strong> to indicate whether to reverse the car.
 </div>
-
-
 <p>With this setting, you can enable or disable loading sway for a specific car in the consist.</p>
-
-<hr />
-
+<hr>
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Example of a Cari section:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>[Car0]<br />
-Object = locomotive.b3d<br />
-Length = 16<br />
-Axles = -6, 6<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Example of a Cari section:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+[Car0]<br>
+Object = locomotive.b3d<br>
+Length = 16<br>
+Axles = -6, 6<br>
 Reversed = False
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
-<h2 id="a-name-coupler-a-4-the-coupler-i-section"><a name="coupler"></a>■ 4. The Coupler<em>i</em> section</h2>
-
+<h2 id="a-namecouplera-4-the-coupleri-section"><a name="coupler"></a>■ 4. The Coupler<em>i</em> section</h2>
 <p>The Coupler<em>i</em> section allows to define properties specific to a certain coupler.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>[Coupleri]</strong></p>
-
+<strong>[Coupleri]</strong>
 </div>
-
-
 <p>This starts the section for coupler <em>i</em>, which is an integer between 0 and <em>n</em>-2, where <em>n</em> is the number of cars the train has.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>Distances</strong> = <em>Minimum</em>, <em>Maximum</em></p>
-
+<strong>Distances</strong> = <em>Minimum</em>, <em>Maximum</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Minimum</em></strong>: A floating-point number indicating the minimum allowed distance between the cars.<br />
-<strong><em>Maximum</em></strong>: A floating-point number indicating the maximum allowed distance between the cars.</p>
-
+<em><strong>Minimum</strong></em>: A floating-point number indicating the minimum allowed distance between the cars.<br>
+<em><strong>Maximum</strong></em>: A floating-point number indicating the maximum allowed distance between the cars.
 </div>
-
-
 <p>This key-value pair defines the lowest and highest allowed distances between the cars, resembling a buffer and chain coupler. The condition <em>Minimum</em> ≤ <em>Maximum</em> must hold.</p>
-
-<hr />
-
+<hr>
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Example of a Coupleri section:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>[Coupler0]<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Example of a Coupleri section:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+[Coupler0]<br>
 Distances = 0.30, 0.35
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
-<h2 id="a-name-exterior-a-5-the-exterior-section-outdated"><a name="exterior"></a>■ 5. The Exterior section (outdated)</h2>
-
+<h2 id="a-nameexteriora-5-the-exterior-section-outdated"><a name="exterior"></a>■ 5. The Exterior section (outdated)</h2>
 <p>The Exterior section provides an easy way of adding exterior objects to the particular train. For more control on the setting of axle positions and individual car lengths, the Car<em>i</em> section has been introduced and should be used instead.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>[Exterior]</strong></p>
-
+<strong>[Exterior]</strong>
 </div>
-
-
 <p>This starts the Exterior section.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>i</strong> = <em>File</em></p>
-
+<strong>i</strong> = <em>File</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>i</em></strong>: An integer between 0 and <em>n</em>-1, where <em>n</em> is the number of cars the train has. Index 0 corresponds to the front car and index <em>n</em>-1 to the last car in the train.<br />
-<strong><em>File</em></strong>: The relative file name of the exterior object to use for car <em>i</em>, relative to the train folder.</p>
-
+<em><strong>i</strong></em>: An integer between 0 and <em>n</em>-1, where <em>n</em> is the number of cars the train has. Index 0 corresponds to the front car and index <em>n</em>-1 to the last car in the train.<br>
+<em><strong>File</strong></em>: The relative file name of the exterior object to use for car <em>i</em>, relative to the train folder.
 </div>
-
-
 <p>This key-value pair can be used to set up the exterior objects for each individual car. Within the object file, the coordinate (0,0,0) (<em>x</em>, <em>y</em>, <em>z</em>) corresponds to the center of the car, both horizontally (<em>x</em>) and forward/backward (<em>z</em>), while <em>y</em>=0 corresponds to the top of the rails.</p>
-
-<hr />
-
+<hr>
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Example of an [Exterior] section</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>[Exterior]<br />
-0 = cars\engine.csv<br />
-1 = cars\passenger_mk1.b3d<br />
-2 = cars\passenger_mk1.b3d<br />
-3 = cars\passenger_bistro.b3d<br />
-4 = cars\passenger_mk2.b3d<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Example of an [Exterior] section</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+[Exterior]<br>
+0 = cars\engine.csv<br>
+1 = cars\passenger_mk1.b3d<br>
+2 = cars\passenger_mk1.b3d<br>
+3 = cars\passenger_bistro.b3d<br>
+4 = cars\passenger_mk2.b3d<br>
 5 = cars\postal.x
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 </div>
 
       <div id="footer">

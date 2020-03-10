@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -430,29 +430,16 @@
 
 
 <div id="content">
-  
-
-<p>En un par de ocasiones durante el desarrollo de un tren o de una ruta, necesitarás coordinar tus esfuerzos con otros desarrolladores en orden para así intercambiar los trenes por las rutas. De otra manera, los trenes quizás no funcionen en la ruta o no sonaran adecuadamente.</p>
-
+  <p>En un par de ocasiones durante el desarrollo de un tren o de una ruta, necesitarás coordinar tus esfuerzos con otros desarrolladores en orden para así intercambiar los trenes por las rutas. De otra manera, los trenes quizás no funcionen en la ruta o no sonaran adecuadamente.</p>
 <p>Por ejemplo, los sonidos run i.wav son escuchados ya sea cuando el tren se mueva a través de los rieles, donde i es el numero que identifica el tipo del riel. Si el desarrollador A usa run1.wav para representar un riel continuo, pero otro desarrolador B usa run1.wav como el sonido para representar un riel con juntas en durmientes de concreto, ambos trenes quizás no están diseñados para la misma ruta. Esto hace que el intercambio de trenes a través de la rutas sea difícil, incluso si un tren pudiera ser usado en esa ruta en realidad.</p>
-
 <p>Así como, si usted conoce los estandares que han sido creado y están actualmente en uso por una cantidad de desarrolladores, dale su realimentación, y esos estandares pudieran ser escuchado allí.</p>
-
-<h2 id="sonidos-de-tren-run-i-wav">■ Sonidos de tren run<em>i</em>.wav</h2>
-
-<p>El único intento hasta ahora conocido es el de <a href="http://www.railsimroutes.net/bvetss/index.php" target="_blank">Sonido de Vía Estandard BVE</a>. Esto debería enfatizar que no es ampliamente usado afuera del Reino Unido , y también no necesariamente adaptado para cualquier tipo de ferrocarriles.</p>
-
-<h2 id="sonido-de-tren-flange-i-wav">■  Sonido de tren flange<em>i</em>.wav</h2>
-
+<h2 id="-sonidos-de-tren-runiwav">■ Sonidos de tren run<em>i</em>.wav</h2>
+<p>El único intento hasta ahora conocido es el de [Sonido de Vía Estandard BVE] (<a href="http://www.railsimroutes.net/bvetss/index.php)">http://www.railsimroutes.net/bvetss/index.php)</a>. Esto debería enfatizar que no es ampliamente usado afuera del Reino Unido , y también no necesariamente adaptado para cualquier tipo de ferrocarriles.</p>
+<h2 id="--sonido-de-tren-flangeiwav">■  Sonido de tren flange<em>i</em>.wav</h2>
 <p>Ningún intento es conocido hasta el momento en estandarizar el significado de los sonidos flange<em>i</em>.wav</p>
-
-<h2 id="balizas">■ Balizas</h2>
-
+<h2 id="-balizas">■ Balizas</h2>
 <p>Ningún intento es conocido hasta el momento en estandarizar el significado de las balizas.</p>
-
 <p>Sin embargo, la siguiente lista de balizas reservadas para el sistema de seguridad instalado ATS-SN y ATS-P. Estas deberán usarse por los desarrolladores de una ruta/tren si el significado de las balizas es muy (cercano) idéntico.</p>
-
-
 <table class='type0'>
 <thead>
 <tr>
@@ -461,32 +448,27 @@
 <th>Significado</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>0</td>
 <td><em>SistemaComutación</em></td>
 <td>El transponedor de tipo-S para el ATS-SN. Ubicado alrededor de 600m en frente de una señal. Dispara una alarma al conductor que debe rearmar cuando la referida señal sea roja.<br /><br /> Valores para <em>SistemaConmutado</em>: <br /> -1: El tren no debe conmutar el sistema de vigilancia. <br />0: El tren debe automaticamente conmutar de ATS-P a ATS-SN cuando pasa esta baliza.</td>
 </tr>
-
 <tr>
 <td>1</td>
 <td><em>SistemaComutación</em></td>
 <td>El transponedor de tipo SN para el ATS-SN. Ubicado cerca de 20m en frente de una señal. Dispara los frenos de emergencia ya sea que la referida señal este en rojo. los  <br /><br /> Valores para <em>SistemaConmutado</em>:<br />-1: El tren no debe conmutar el sistema de seguridad.<br /> 0: El tren debe automáticamente conmutar de ATS-P a ATS-SN cuando rebasa esta baliza.</td>
 </tr>
-
 <tr>
 <td>2</td>
 <td><em>Coches</em></td>
 <td>El transponedor de parada inmediata para el ATS-SN y ATS-P. Ubicada despues de los puntos de parada. Dispara el frenado de emergencia ya sea que la señal se encuentre en rojo y el número de coches corresponde a los datos opcionales. <br /><br />Valores para <em>Coches</em>:<br />0: El transponedor dispara sin importar la cantidad de coches.<br /> <em>Entero positivo</em>: El transponedor dispara solo si <em>Coches</em> es mayor o igual al numero de coches que el tren tiene.</td>
 </tr>
-
 <tr>
 <td>3</td>
 <td><em>SistemaConmutado</em></td>
 <td>El transponedor de patrón renovable para el ATS-P. Múltiples de ellos están ubicados en frente de una señal. Informa al tren sobre la distancia de la referida señal y si esta en rojo o no. El tren calcula la curva de frenado a la referida señal si esta en rojo.<br /><br />Valores para <em>SistemaConmutado</em>: <br />-1: El tren no debería conmutar el sistema de seguridad.<br />0: El tren debería automáticamente conmutar de ATS-SN a ATS-P cuando rebase esta baliza.</td>
 </tr>
-
 <tr>
 <td>4</td>
 <td><em>SistemaConmutado</em></td>
@@ -494,7 +476,6 @@
 </tr>
 </tbody>
 </table>
-
 
 </div>
 

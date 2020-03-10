@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../ko/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../ko/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../ko/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../ko/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,11 +430,7 @@
 
 
 <div id="content">
-  
-
-<p>This is a list of supported sound formats.</p>
-
-
+  <p>This is a list of supported sound formats.</p>
 <table class='type0'>
 <thead>
 <tr>
@@ -442,28 +438,20 @@
 <th>Usual file extension</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>RIFF WAVE</td>
 <td>.wav</td>
 </tr>
-
 <tr>
 <td>Native FLAC</td>
 <td>.flac</td>
 </tr>
 </tbody>
 </table>
-
-
 <p>Please note that due to its 3D positional nature, openBVE will convert multi-channel audio to mono upon loading, so there is no point in providing multi-channel audio in the first place. For multi-channel audio, openBVE discards silent channels and tries to detect constructive or destructive interference in the mixed version of the remaining channels. If interference is detected, the first non-silent channel in the file is used, otherwise the mixed channel.</p>
-
-<h2 id="riff-wave-format">■ RIFF WAVE format</h2>
-
+<h2 id="-riff-wave-format">■ RIFF WAVE format</h2>
 <p>WAVE files are supported, which technically are RIFF (or RIFX) container files with the WAVE format type. WAVE itself allows different formats, of which only a subset are supported. These are:</p>
-
-
 <table class='type0'>
 <thead>
 <tr>
@@ -473,7 +461,6 @@
 <th>Channels</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>PCM</td>
@@ -481,7 +468,6 @@
 <td>any</td>
 <td>any</td>
 </tr>
-
 <tr>
 <td>Microsoft ADPCM</td>
 <td>any</td>
@@ -490,39 +476,24 @@
 </tr>
 </tbody>
 </table>
-
-
 <p>Sample rate refers to the number of samples per second per channel. Bitrate refers to the umber of bits per sample per channel.</p>
-
-<h2 id="native-flac-format">■ Native FLAC format</h2>
-
+<h2 id="-native-flac-format">■ Native FLAC format</h2>
 <p>All native FLAC files are supported with the following (in practice rarely occuring) exceptions:</p>
-
 <ul>
-<li>Changing the sample rate in the middle of the file is not supported.<br /></li>
-<li>Negative predictor shifts are not supported.<br /></li>
-<li>MD5 checks are skipped for bit rates other than 8, 16 or 24.<br /></li>
+<li>Changing the sample rate in the middle of the file is not supported.</li>
+<li>Negative predictor shifts are not supported.</li>
+<li>MD5 checks are skipped for bit rates other than 8, 16 or 24.</li>
 </ul>
-
-<hr />
-
+<hr>
 <p>Further information about these formats from a programmer&rsquo;s point of view can be found on these external sites:</p>
-
 <p>General information about RIFF, WAVE and PCM:</p>
-
-<p>➟ <a href="http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/Docs/riffmci.pdf" target="_blank">http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/Docs/riffmci.pdf</a></p>
-
+<p>➟ <a href="http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/Docs/riffmci.pdf">http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/Docs/riffmci.pdf</a></p>
 <p>Information about Microsoft ADPCM:</p>
-
-<p>➟ <a href="http://icculus.org/SDL_sound/downloads/external_documentation/wavecomp.htm" target="_blank">http://icculus.org/SDL_sound/downloads/external_documentation/wavecomp.htm</a></p>
-
+<p>➟ <a href="http://icculus.org/SDL_sound/downloads/external_documentation/wavecomp.htm">http://icculus.org/SDL_sound/downloads/external_documentation/wavecomp.htm</a></p>
 <p>Official documentation on FLAC:</p>
-
-<p>➟ <a href="http://flac.sourceforge.net/documentation.html" target="_blank">http://flac.sourceforge.net/documentation.html</a></p>
-
+<p>➟ <a href="http://flac.sourceforge.net/documentation.html">http://flac.sourceforge.net/documentation.html</a></p>
 <p>Additional documentation on FLAC:</p>
-
-<p>➟ <a href="http://home.comcast.net/~b.langenb/audioformats_letter.pdf" target="_blank">http://home.comcast.net/~b.langenb/audioformats_letter.pdf</a></p>
+<p>➟ <a href="http://home.comcast.net/~b.langenb/audioformats_letter.pdf">http://home.comcast.net/~b.langenb/audioformats_letter.pdf</a></p>
 
 </div>
 

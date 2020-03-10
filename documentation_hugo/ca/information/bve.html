@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -430,34 +430,19 @@
 
 
 <div id="content">
-  
-
-<p>Aquesta pàgina enumera les diferències <strong>incompatibles</strong> entre l&rsquo;OpenBVE i el BVE Trainsim pel que fa als formats de fitxer; és a dir, característiques de continguts per al BVE Trainsim que s&rsquo;interpreten de manera diferent a l&rsquo;OpenBVE i tenen un resultat incompatible. Fins ara només es coneix una incompatibilitat d&rsquo;aquesta mena.</p>
-
+  <p>Aquesta pàgina enumera les diferències <strong>incompatibles</strong> entre l&rsquo;OpenBVE i el BVE Trainsim pel que fa als formats de fitxer; és a dir, característiques de continguts per al BVE Trainsim que s&rsquo;interpreten de manera diferent a l&rsquo;OpenBVE i tenen un resultat incompatible. Fins ara només es coneix una incompatibilitat d&rsquo;aquesta mena.</p>
 <p>Please note that for all incompatible differences that are mentioned on this page, the resolution is the same: It is considered to be more important to provide stable and consistent features in openBVE than to make backward-incompatible changes between versions just to increase similarity to BVE Trainsim. All differences depicted on this page will thus be permanent.</p>
-
-<h2 id="ordre-track-signal-rutes-csv-i-rw">■ Ordre Track.Signal (rutes CSV i RW)</h2>
-
+<h2 id="-ordre-tracksignal-rutes-csv-i-rw">■ Ordre Track.Signal (rutes CSV i RW)</h2>
 <p>The Track.Signal command (alternatively: Track.Sig) is used to create a default Japanese-style signal in CSV routes (alternative spellings are used in RW routes).</p>
-
 <p>A l&rsquo;OpenBVE, l&rsquo;ordre Track.Signal accepta els arguments següents:</p>
-
 <div id="command">
-<p><strong>Track.Signal</strong> <em>Aspects</em>; <em><del>Unused</del></em>; <em>X</em>; <em>Y</em>; <u><em>Yaw</em></u>; <em>Pitch</em>; <em>Roll</em></p>
-
+<strong>Track.Signal</strong> <em>Aspects</em>; <em><del>Unused</del></em>; <em>X</em>; <em>Y</em>; <u><em>Yaw</em></u>; <em>Pitch</em>; <em>Roll</em>
 </div>
-
-
 <p>Al BVE Trainsim, l&rsquo;ordre Track.Signal accepta els arguments següents:</p>
-
 <div id="command">
-<p><strong>Track.Signal</strong> <em>Aspectes</em>; <em>Etiqueta</em>; <em>X</em>; <em>Y</em>; <u><em>Tipus</em></u></p>
-
+<strong>Track.Signal</strong> <em>Aspectes</em>; <em>Etiqueta</em>; <em>X</em>; <em>Y</em>; <u><em>Tipus</em></u>
 </div>
-
-
-<p>El paràmetre <em>Etiqueta</em> al BVE Trainsim és una descripció textual del senyal que no té cap ús a l&rsquo;OpenBVE (per tant, es considera <em>Fora d&rsquo;ús</em> a la documentació).</p>
-
+<p>El paràmetre <em>Etiqueta</em> al BVE Trainsim és una descripció textual del senyal que no té cap ús a l&rsquo;OpenBVE (per tant, es considera <em>Fora d'ús</em> a la documentació).</p>
 <p>BVE Trainsim features a <em>Type</em> argument which can take values 1, 2 or 3. It is used to denote different types of signals, e.g. home signal vs. departure signal. By mere accident, this argument was never included in openBVE, while subsequently, the need arose to include <em>Yaw</em>, <em>Pitch</em> and <em>Roll</em> arguments to provide for more control over a signal head&rsquo;s orientation. Consequently, BVE Trainsim&rsquo;s <em>Type</em> and openBVE&rsquo;s <em>Yaw</em> argument incompatibly overlap. If a route created for BVE Trainsim includes the <em>Type</em> argument, it will be (mis)interpreted as a yaw of up to 3 degrees in openBVE. Usually, this small angle should not produce noticable differences, especially given that the parameter is not often used anyway.</p>
 
 </div>

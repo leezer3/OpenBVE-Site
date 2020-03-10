@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../ja/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../ja/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../ja/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../ja/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,12 +430,8 @@
 
 
 <div id="content">
-  
-
-<p><font color="Gray">このページでは、様々なルートファイルと車両ファイルで使用する数値形式と、それらに準拠する方法について説明します。</font></p>
-
+  <p><font color="Gray">このページでは、様々なルートファイルと車両ファイルで使用する数値形式と、それらに準拠する方法について説明します。</font></p>
 <h2 id="目次">目次</h2>
-
 <ul class='contents'>
 <li><a href="#overview">1. 概要</a></li>
 <li><a href="#integers">2. 整数型</a></li>
@@ -443,279 +439,229 @@
 <li><a href="#times">4. 時刻形式</a></li>
 <li><a href="#colors">5. 色表現</a></li>
 </ul>
-
-
-
-<h2 id="a-name-overview-a-1-概要"><a name="overview"></a>■ 1. 概要</h2>
-
+<h2 id="a-nameoverviewa-1-概要"><a name="overview"></a>■ 1. 概要</h2>
 <p>ルートファイルと車両ファイル内では、常に整数や浮動小数点数などの数値を使用しますが、場合によっては他の数値も使用します。 これらは、次章で説明する特定の形式に従うことが必要です。</p>
-
-<p>数値の解析方法には、<strong>Strict</strong>および<strong>Loose</strong>の2つがあります。 Strictメソッドは非常に厳密な仕様であり、印刷上のミスを犯すスペースがありません。 このメソッドは、すべての新しいファイル形式で使用されます。 Looseメソッドは、古いリリースとの互換性を保持するために必要な、レガシー解析モデルです。 *Developing for openBVE*ページに記載されているさまざまなファイルは、使用されているモデルを示しています。 *Loose*モデルが許可されている場合は、*Strict*が*Loose*のサブセットを形成するため、*Strict*形式も使用できることに注意してください。</p>
-
-<h2 id="a-name-integers-a-2-整数型"><a name="integers"></a>■ 2. 整数型</h2>
-
-<p><strong>Strict:</strong>使用できるのは、0から9 (U+0030 - U+0039) の範囲の少なくとも1つの10進数の任意の数列であり、オプションで負符号 (U+002D) が前に付加されます。 結果の文字列には、先頭または末尾の空白が含まれる場合があります。</p>
-
+<p>数値の解析方法には、<strong>Strict</strong>および<strong>Loose</strong>の2つがあります。 Strictメソッドは非常に厳密な仕様であり、印刷上のミスを犯すスペースがありません。 このメソッドは、すべての新しいファイル形式で使用されます。 Looseメソッドは、古いリリースとの互換性を保持するために必要な、レガシー解析モデルです。 <em>Developing for openBVE</em>ページに記載されているさまざまなファイルは、使用されているモデルを示しています。 <em>Loose</em>モデルが許可されている場合は、<em>Strict</em>が<em>Loose</em>のサブセットを形成するため、<em>Strict</em>形式も使用できることに注意してください。</p>
+<h2 id="a-nameintegersa-2-整数型"><a name="integers"></a>■ 2. 整数型</h2>
+<p>**Strict:**使用できるのは、0から9 (U+0030 - U+0039) の範囲の少なくとも1つの10進数の任意の数列であり、オプションで負符号 (U+002D) が前に付加されます。 結果の文字列には、先頭または末尾の空白が含まれる場合があります。</p>
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Examples for Strict integers:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>0<br />
-123<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Examples for Strict integers:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+0<br>
+123<br>
 -98
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
-<p><strong>Loose:</strong>最初に、すべての空白が文字列から削除されます。 次に、残りの文字列 (<em>abcde</em>) が*Strict*モデルに従って解釈されます。 ここで、有効な番号の作成に失敗した場合、最後の文字が文字列から削除され (<em>abcd</em>)、その後、文字列が再度テストされます。 これは、有効な数字が生成されるか、文字がなくなるまで続き、最終的に、文字列が無効な数字であると判断されます。</p>
-
+<p>**Loose:**最初に、すべての空白が文字列から削除されます。 次に、残りの文字列 (<em>abcde</em>) が<em>Strict</em>モデルに従って解釈されます。 ここで、有効な番号の作成に失敗した場合、最後の文字が文字列から削除され (<em>abcd</em>)、その後、文字列が再度テストされます。 これは、有効な数字が生成されるか、文字がなくなるまで続き、最終的に、文字列が無効な数字であると判断されます。</p>
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Examples for Loose integers:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>123<br />
-77 11<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Examples for Loose integers:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+123<br>
+77 11<br>
 -987x456
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>The interpreted integers from the preceding examples are:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>123<br />
-7711<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>The interpreted integers from the preceding examples are:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+123<br>
+7711<br>
 -987
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
-<h2 id="a-name-floating-a-3-浮動小数点型"><a name="floating"></a>■ 3. 浮動小数点型</h2>
-
-<p><strong>Strict:</strong>使用できるのは、0〜9の範囲の少なくとも1つの10進数 (U+0030 - U+0039) の任意の数列です。オプションで、ピリオド (U+002E) の形式で1つの小数点記号を挿入します。オプションで負符号 (U+002D) を前に付けます。 結果の文字列には、先頭または末尾の空白が含まれる場合があります。</p>
-
+<h2 id="a-namefloatinga-3-浮動小数点型"><a name="floating"></a>■ 3. 浮動小数点型</h2>
+<p>**Strict:**使用できるのは、0〜9の範囲の少なくとも1つの10進数 (U+0030 - U+0039) の任意の数列です。オプションで、ピリオド (U+002E) の形式で1つの小数点記号を挿入します。オプションで負符号 (U+002D) を前に付けます。 結果の文字列には、先頭または末尾の空白が含まれる場合があります。</p>
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Examples for Strict floating-point numbers:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>123<br />
-123.<br />
-123.0<br />
-123.456<br />
-0.456<br />
-.456<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Examples for Strict floating-point numbers:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+123<br>
+123.<br>
+123.0<br>
+123.456<br>
+0.456<br>
+.456<br>
 -123.456
-         </font>
-       </td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Loose:</strong>最初に、すべての空白が文字列から削除されます。 次に、残りの文字列 (<em>abcde</em>) が*Strict*モデルに従って解釈されます。 ここで、有効な番号の作成に失敗した場合、最後の文字が文字列から削除され (<em>abcd</em>)、その後、文字列が再度テストされます。 これは、有効な数字が生成されるか、文字がなくなるまで続き、最終的に、文字列が無効な数字であると判断されます。</p>
-
+</font>
+</td>
+</tr>
+</tbody>
+</table> 
+<p>**Loose:**最初に、すべての空白が文字列から削除されます。 次に、残りの文字列 (<em>abcde</em>) が<em>Strict</em>モデルに従って解釈されます。 ここで、有効な番号の作成に失敗した場合、最後の文字が文字列から削除され (<em>abcd</em>)、その後、文字列が再度テストされます。 これは、有効な数字が生成されるか、文字がなくなるまで続き、最終的に、文字列が無効な数字であると判断されます。</p>
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Examples for Loose floating-point numbers:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>-123 . 456<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Examples for Loose floating-point numbers:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+-123 . 456<br>
 987,333
-         </font>
-       </td>
-    </tr>
-  </tbody>
-</table>
-
+</font>
+</td>
+</tr>
+</tbody>
+</table>  
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>The interpreted floating-point numbers from the preceding examples are:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>-123.456<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>The interpreted floating-point numbers from the preceding examples are:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+-123.456<br>
 987
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
-<h2 id="a-name-times-a-4-時刻形式"><a name="times"></a>■ 4. 時刻形式</h2>
-
+<h2 id="a-nametimesa-4-時刻形式"><a name="times"></a>■ 4. 時刻形式</h2>
 <p><strong>Legacy:</strong> 次のいずれの形式も使用することができます:</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'><em>hhh</em><strong>.</strong><em>mmss</em><br />
-<em>hhh</em><strong>.</strong><em>mms</em><br />
-<em>hhh</em><strong>.</strong><em>mm</em><br />
-<em>hhh</em><strong>.</strong><em>m</em><br />
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+<em>hhh</em><strong>.</strong><em>mmss</em><br>
+<em>hhh</em><strong>.</strong><em>mms</em><br>
+<em>hhh</em><strong>.</strong><em>mm</em><br>
+<em>hhh</em><strong>.</strong><em>m</em><br>
 <em>hhh</em>
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
-<p>上記に示した文字列では、*hhh*は時間を示す少なくとも1つの10進数字列を示します。*mm*は2桁の分部分を示し、*m*は1桁の分部分を示します。*ss<em>は2桁の秒の部分を示し 、</em> s *は1桁の秒の部分を示します。時間と分を区切る文字はピリオド (U+002E) です。 すべての数字は、0〜9の文字 (U+0030 - U+0039) である必要があります。 先頭や末尾の空白は無視されます。 合計時間は次の式で決定され、0時ちょうどからの秒数になります。</p>
-
+<p>上記に示した文字列では、<em>hhh</em>は時間を示す少なくとも1つの10進数字列を示します。<em>mm</em>は2桁の分部分を示し、<em>m</em>は1桁の分部分を示します。<em>ss</em>は2桁の秒の部分を示し 、* s *は1桁の秒の部分を示します。時間と分を区切る文字はピリオド (U+002E) です。 すべての数字は、0〜9の文字 (U+0030 - U+0039) である必要があります。 先頭や末尾の空白は無視されます。 合計時間は次の式で決定され、0時ちょうどからの秒数になります。</p>
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Seconds since midnight for a given time:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">ƒ</td>
-       <td bgcolor="#FFD8C0" style="border: 1px dotted;">
-         <font style="font-family: monospace;">
-         <p style='display:inline;'>3600*<em>hhh</em> + 60*mm + <em>ss</em>
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Seconds since midnight for a given time:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">ƒ</td>
+<td bgcolor="#FFD8C0" style="border: 1px dotted;">
+<font style="font-family: monospace;">
+3600**hhh* + 60*mm + <em>ss</em>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>分または秒が指定されていない場合、ゼロと見なされます。 また、24以上の値を含む、負でない任意の時間も使用できます。たとえば、駅の到着時間が23:59:00 (1日目) で、次の駅の到着時間が00:02:15 (2日目) である場合 、次の文字列を使用してこれらの時間を表し、時系列順を確保します。</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Examples for times:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>23.5900<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Examples for times:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+23.5900<br>
 24.0215
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
-<h2 id="a-name-colors-a-5-色表現"><a name="colors"></a>■ 5. 色表現</h2>
-
+<h2 id="a-namecolorsa-5-色表現"><a name="colors"></a>■ 5. 色表現</h2>
 <p><strong>Hexcolor:</strong> 6桁の16進数の前にはシャープ記号 (U+0023) が付きます。個々の16進数は、0 - 9 (U+0030 - U+0039) の10進数、a - fの小文字 (U+0061 - U+0066)、およびA〜Fの大文字 (U+0041 - U+0046)  で構成されます。hexcolorの形式は次のとおりです:</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>#<em>RRGGBB</em>
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+#<em>RRGGBB</em>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>上記において、 RR は赤色要素を表し、 GG は緑色要素を、そして BB は青色要素を表します。各要素の範囲は00からFF (0 - 255) です。00ではその色成分がなく、FFではその色成分が最大限入っていることを表します。</p>
-
 <p>一般的に使用される色 (透明性を示す) には以下が含まれます。</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'><font color="Black">#000000 (black)</font><br />
-<font color="Red">#FF0000 (red)</font><br />
-<font color="Green">#00FF00 (green)</font><br />
-<font color="Blue">#0000FF (blue)</font><br />
-<font color="Cyan">#00FFFF (cyan)</font><br />
-<font color="Magenta">#FF00FF (magenta)</font><br />
-<font color="Yellow">#FFFF00 (yellow)</font><br />
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+<font color="Black">#000000 (black)</font><br>
+<font color="Red">#FF0000 (red)</font><br>
+<font color="Green">#00FF00 (green)</font><br>
+<font color="Blue">#0000FF (blue)</font><br>
+<font color="Cyan">#00FFFF (cyan)</font><br>
+<font color="Magenta">#FF00FF (magenta)</font><br>
+<font color="Yellow">#FFFF00 (yellow)</font><br>
 <font color="White">#FFFFFF (white)</font>
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 </div>
 
       <div id="footer">

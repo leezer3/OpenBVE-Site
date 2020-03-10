@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -430,11 +430,7 @@
 
 
 <div id="content">
-  
-
-<p>Esta es una lista oficial de los formatos de textura soportados. Generalmente, el formato PNG es la opción preferida debido a sin perdida de comprensión.</p>
-
-
+  <p>Esta es una lista oficial de los formatos de textura soportados. Generalmente, el formato PNG es la opción preferida debido a sin perdida de comprensión.</p>
 <table class='type0'>
 <thead>
 <tr>
@@ -443,26 +439,22 @@
 <th>Observaciones</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>PNG</td>
 <td>.png</td>
 <td>Preferido. Por favor entiéndase el hecho de que usar canales alfa significativamente reduce el rendimiento cuando estos son usados en objetos de escenario y exteriores del tren.</td>
 </tr>
-
 <tr>
 <td>Windows BMP</td>
 <td>.bmp</td>
 <td>No recomendado debido al gran tamaño del archivo.</td>
 </tr>
-
 <tr>
 <td>JPEG</td>
 <td>.jpg, .jpeg</td>
 <td>No recomendado debido a la perdida de comprensión (a menos que no sea visible incluso en un gran aumento).</td>
 </tr>
-
 <tr>
 <td>GIF</td>
 <td>.gif</td>
@@ -470,15 +462,10 @@
 </tr>
 </tbody>
 </table>
-
-
-<h5 id="tamaño-de-las-texturas">● Tamaño de las texturas</h5>
-
+<h5 id="-tamaño-de-las-texturas">● Tamaño de las texturas</h5>
 <p>Los anchos y las alturas de las texturas debe ser potencia de dos, por ejemplo. 1, 2, 4, 8, 16, 32, 64, 128, 256, y así sucesivamente. Mientras que esto no sea un requisito, teniendo texturas que no sean potencia de dos incrementa los tiempos de espera, incrementa los requisitos de almacenamiento y introduce difuminado, debido a que las texturas han sido convertidas a un tamaño potencia de dos por openBVE.</p>
-
-<h5 id="optimización-del-archivo-png">● Optimización del archivo PNG</h5>
-
-<p>PNG es un formato de compresión sin perdida. Así como muchos otros formatos de comprensión, el codificador puede hacer un rango amplio de opciones para tener como resultado diferentes productos - algunos codificadores pueden producir archivos pequeños, otros archivos grandes. Normalmente, los programas de edición de imágenes no producen el tamaño mas pequeño del archivo PNG, esto se debe porque hay un numero de herramientas que manipulan hasta el ultimo bit del archivo PNG. Estas invitado a usar estas herramientas para así reducir el requisito de almacenamiento. Los usuarios de Windows pueden usar esta conveniente herramienta <a href="http://brh.numbera.com/software/pnggauntlet/" target="_blank">PNGGauntlet</a>, mientras que los otros pueden encontrar una lista <a href="http://optipng.sourceforge.net/pngtech/optipng.html" target="_blank">aquí</a> (deslizate hasta la opción 3. PNG (lossless) optimization programs).</p>
+<h5 id="-optimización-del-archivo-png">● Optimización del archivo PNG</h5>
+<p>PNG es un formato de compresión sin perdida. Así como muchos otros formatos de comprensión, el codificador puede hacer un rango amplio de opciones para tener como resultado diferentes productos - algunos codificadores pueden producir archivos pequeños, otros archivos grandes. Normalmente, los programas de edición de imágenes no producen el tamaño mas pequeño del archivo PNG, esto se debe porque hay un numero de herramientas que manipulan hasta el ultimo bit del archivo PNG. Estas invitado a usar estas herramientas para así reducir el requisito de almacenamiento. Los usuarios de Windows pueden usar esta conveniente herramienta <a href="http://brh.numbera.com/software/pnggauntlet/">PNGGauntlet</a>, mientras que los otros pueden encontrar una lista <a href="http://optipng.sourceforge.net/pngtech/optipng.html">aquí</a> (deslizate hasta la opción 3. PNG (lossless) optimization programs).</p>
 
 </div>
 

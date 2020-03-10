@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -430,11 +430,7 @@
 
 
 <div id="content">
-  
-
-<p>Esta es una lista de los formatos soportados de sonido.</p>
-
-
+  <p>Esta es una lista de los formatos soportados de sonido.</p>
 <table class='type0'>
 <thead>
 <tr>
@@ -442,28 +438,20 @@
 <th>Extensión de archivo usual</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>RIFF WAVE</td>
 <td>.wav</td>
 </tr>
-
 <tr>
 <td>FLAC nativo</td>
 <td>.flac</td>
 </tr>
 </tbody>
 </table>
-
-
 <p>Tenga en cuenta que debido a la naturaleza de la posición 3D, openBVE convertirá los canales de multi-audio a mono en su carga, así que no hay ningún punto para proveer audio multi-canal en primer lugar. Para audio multi-canal, openBVE descarta los canales silenciosos e intenta detectar una interferencia constructiva o destructiva en la versión mezclada de los canales restantes. Si la interferencia es detectada, el primer canal no silencioso del archivo es usado, de otra manera el canal se mezclará.</p>
-
-<h2 id="formato-riff-wave">■ Formato RIFF WAVE</h2>
-
+<h2 id="-formato-riff-wave">■ Formato RIFF WAVE</h2>
 <p>los archivos WAVE son soportados, técnicamente son archivos contenidos RIFF (o RIFX) en el tipo de formato WAVE. El mismo WAVE permite diferentes tipos de formato, lo que solo un subtipo de ellos esta soportado. Estos son:</p>
-
-
 <table class='type0'>
 <thead>
 <tr>
@@ -473,7 +461,6 @@
 <th>Canales</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>PCM</td>
@@ -481,7 +468,6 @@
 <td>cualquiera</td>
 <td>cualquiera</td>
 </tr>
-
 <tr>
 <td>Microsoft ADPCM</td>
 <td>cualquiera</td>
@@ -490,39 +476,24 @@
 </tr>
 </tbody>
 </table>
-
-
 <p>La tasa de ejemplo refiera al numero de ejemplos por segundo por canal. La tasa de bits se refiera al numero de bits por ejemplo por canal.</p>
-
-<h2 id="formato-flac-nativo">■ Formato FLAC nativo</h2>
-
+<h2 id="-formato-flac-nativo">■ Formato FLAC nativo</h2>
 <p>Todos los archivos nativos de FLAC están soportados con las siguientes (en practica raramente ocurre) excepciones:</p>
-
 <ul>
 <li>Cambiar la tasa de ejemplo en el medio del archivo no esta soportado.</li>
 <li>Cambios de predictor negativos no están soportados.</li>
-<li>Comprobación MD5 son saltados para la tasa de bits otras que 8, 16 o 24.<br /></li>
+<li>Comprobación MD5 son saltados para la tasa de bits otras que 8, 16 o 24.</li>
 </ul>
-
-<hr />
-
+<hr>
 <p>Para mas información sobre estos formatos desde el punto de vista de un programador, puede ser encontrado en estos sitios externos:</p>
-
 <p>Información general sobre RIFF, WAVE y PCM:</p>
-
-<p>➟ <a href="http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/Docs/riffmci.pdf" target="_blank">http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/Docs/riffmci.pdf</a></p>
-
+<p>➟ <a href="http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/Docs/riffmci.pdf">http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/Docs/riffmci.pdf</a></p>
 <p>Información sobre Microsoft ADPCM:</p>
-
-<p>➟ <a href="http://icculus.org/SDL_sound/downloads/external_documentation/wavecomp.htm" target="_blank">http://icculus.org/SDL_sound/downloads/external_documentation/wavecomp.htm</a></p>
-
+<p>➟ <a href="http://icculus.org/SDL_sound/downloads/external_documentation/wavecomp.htm">http://icculus.org/SDL_sound/downloads/external_documentation/wavecomp.htm</a></p>
 <p>Documentación oficial de FLAC:</p>
-
-<p>➟ <a href="http://flac.sourceforge.net/documentation.html" target="_blank">http://flac.sourceforge.net/documentation.html</a></p>
-
+<p>➟ <a href="http://flac.sourceforge.net/documentation.html">http://flac.sourceforge.net/documentation.html</a></p>
 <p>Documentación adicional de FLAC:</p>
-
-<p>➟ <a href="http://home.comcast.net/~b.langenb/audioformats_letter.pdf" target="_blank">http://home.comcast.net/~b.langenb/audioformats_letter.pdf</a></p>
+<p>➟ <a href="http://home.comcast.net/~b.langenb/audioformats_letter.pdf">http://home.comcast.net/~b.langenb/audioformats_letter.pdf</a></p>
 
 </div>
 

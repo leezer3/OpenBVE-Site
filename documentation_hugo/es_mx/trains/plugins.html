@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -430,21 +430,14 @@
 
 
 <div id="content">
-  
-
-<p>Los plugins de tren permiten de cambiar la conducta de los trenes en cierto grado. Cosas que puedes hacer incluidas mostrar indicadores personalizados en los paneles, reproducir sonidos personalizados y sustituir las palancas del conductor que están originalmente configurados. Plugins también pueden usarse para simular los equipos de seguridad tales como ATS o ATC, entre otras cosas.</p>
-
-<h2 id="formas-disponibles-de-plugins">■ Formas disponibles de plugins</h2>
-
-<p><a href="../../es_mx/plugins/overview.html" target="_blank"><strong>.NET assemblies:</strong></a><br />
+  <p>Los plugins de tren permiten de cambiar la conducta de los trenes en cierto grado. Cosas que puedes hacer incluidas mostrar indicadores personalizados en los paneles, reproducir sonidos personalizados y sustituir las palancas del conductor que están originalmente configurados. Plugins también pueden usarse para simular los equipos de seguridad tales como ATS o ATC, entre otras cosas.</p>
+<h2 id="-formas-disponibles-de-plugins">■ Formas disponibles de plugins</h2>
+<p><a href="../../es_mx/plugins/overview.html"><strong>.NET assemblies:</strong></a><br>
 Esta es la única forma oficial apoyada de plugin. Los plugins son ensambladores .NET y deben ser diseñados para ser compatibles en multi-plataforma sin recompilarlos. Puedes escoger entre una variedad de lenguajes de programación, incluyendo C# y Visual Basic .NET, así como muchos otros que tienen de objetivo el .NET Framework.</p>
-
-<p><a href="../../es_mx/trains/plugins/legacy.html" target="_blank"><strong>Win32 DLLs:</strong></a><br />
+<p><a href="../../es_mx/trains/plugins/legacy.html"><strong>Win32 DLLs:</strong></a><br>
 Esta forma de plugin es retenida para la vieja compatibilidad con el simulador de trenes BVE Trainsim, pero no esta oficialmente apoyada debido a que estos plugins solo pueden ejecutarse en Microsoft Windows. Estos usualmente son desarrollados en lenguaje C/C++. Otorgando una alternativa multi-plataforma , por favor desarrolle con ensamblador .NET de ahora en adelante.</p>
-
-<h2 id="configurando-un-tren-para-usar-un-plugin">■ Configurando un tren para usar un plugin</h2>
-
-<p>Deberás de agregar el plugin en algún lado de la carpeta del tren y configurar el directorio del plugin dentro del archivo <a href="../../es_mx/trains/ats_cfg.html" target="_blank">ats.cfg</a> Por favor considere que para los plugins del tren ensamblado en .NET, <strong>no</strong> deben agregarse OpenBveApi.dll junto con su plugin.</p>
+<h2 id="-configurando-un-tren-para-usar-un-plugin">■ Configurando un tren para usar un plugin</h2>
+<p>Deberás de agregar el plugin en algún lado de la carpeta del tren y configurar el directorio del plugin dentro del archivo <a href="../../es_mx/trains/ats_cfg.html">ats.cfg</a> Por favor considere que para los plugins del tren ensamblado en .NET, <strong>no</strong> deben agregarse OpenBveApi.dll junto con su plugin.</p>
 
 </div>
 

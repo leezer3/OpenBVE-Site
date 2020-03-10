@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -430,34 +430,19 @@
 
 
 <div id="content">
-  
-
-<p>Bagian ini menjelaskan hal yang <strong>tidak bisa dipakai</strong> di openBVE, karena perintah dari BVE Trainsim memiliki fungsi yang berbeda dengan openBVE, atau hal lainnya. Sampai saat ini, baru hal-hal berikut yang diketahui tidak bisa digunakan.</p>
-
+  <p>Bagian ini menjelaskan hal yang <strong>tidak bisa dipakai</strong> di openBVE, karena perintah dari BVE Trainsim memiliki fungsi yang berbeda dengan openBVE, atau hal lainnya. Sampai saat ini, baru hal-hal berikut yang diketahui tidak bisa digunakan.</p>
 <p>Semua perbedaan yang tidak kompatibel yang disebutkan di halaman ini, mempunyai tujuan yang sama: Untuk menyediakan fitur yang stabil dan konsisten di openBVE daripada membuat perubahan yang tidak kompatibel hanya supaya bisa dipakai di BVE Trainsim. Semua perbedaan yang dijelaskan pada halaman ini akan bersifat permanen.</p>
-
-<h2 id="track-signal-csv-and-rw-routes">■ Track.Signal  (CSV and RW routes)</h2>
-
+<h2 id="-tracksignal--csv-and-rw-routes">■ Track.Signal  (CSV and RW routes)</h2>
 <p>Perintah Track.Signal (atau Track.Sig) dipakai untuk membuat sinyal tipe Jepang di rute CSV  (bentuk penulisan berbeda digunakan di rute RW)</p>
-
 <p>Di openBVE, Track.Signal ditulis sebagai berikut:</p>
-
 <div id="command">
-<p><strong>Track.Signal</strong> <em>Aspects</em>; <em><del>Unused</del></em>; <em>X</em>; <em>Y</em>; <u><em>Yaw</em></u>; <em>Pitch</em>; <em>Roll</em></p>
-
+<strong>Track.Signal</strong> <em>Aspects</em>; <em><del>Unused</del></em>; <em>X</em>; <em>Y</em>; <u><em>Yaw</em></u>; <em>Pitch</em>; <em>Roll</em>
 </div>
-
-
 <p>Di BVE Trainsim, Track.Signal ditulis sebagai berikut:</p>
-
 <div id="command">
-<p><strong>Track.Signal</strong> <em>Aspects</em>; <em>Label</em>; <em>X</em>; <em>Y</em>; <u><em>Type</em></u></p>
-
+<strong>Track.Signal</strong> <em>Aspects</em>; <em>Label</em>; <em>X</em>; <em>Y</em>; <u><em>Type</em></u>
 </div>
-
-
 <p><em>Label</em> pada BVE Trainsim adalah deskripsi sinyal yang tidak berfungsi apa-apa di openBVE (di tutorial ini, ditulis <em>unused</em>).</p>
-
 <p>BVE Trainsim menggunakan <em>Type</em> yang bisa diganti menjadi 1, 2, atau 3. Digunakan untuk menentukan tipe sinya, seperti sinyal masuk atau sinyal muka. Type ini tidak bisa digunakan di openBVE karena ada perintah <em>Yaw</em>, <em>Pitch</em> , dan <em>Roll</em> yang dipakai untuk membuat objek bisa diatur lebih beragam. Jika ada perintah BVE Trainsim <em>Type</em> tertulis di openBVE, maka isi <em>Type</em> akan salah diartikan sebagai <em>Yaw</em>.</p>
 
 </div>

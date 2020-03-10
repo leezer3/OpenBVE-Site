@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -430,12 +430,8 @@
 
 
 <div id="content">
-  
-
-<p><font color="Gray">This page describes which number formats are encountered in the various route and train files and how to adhere to them.</font></p>
-
-<h2 id="contents">■ Contents</h2>
-
+  <p><font color="Gray">This page describes which number formats are encountered in the various route and train files and how to adhere to them.</font></p>
+<h2 id="-contents">■ Contents</h2>
 <ul class='contents'>
 <li><a href="#overview">1. Overview</a></li>
 <li><a href="#integers">2. Integers</a></li>
@@ -443,279 +439,229 @@
 <li><a href="#times">4. Times</a></li>
 <li><a href="#colors">5. Color values</a></li>
 </ul>
-
-
-
-<h2 id="a-name-overview-a-1-overview"><a name="overview"></a>■ 1. Overview</h2>
-
+<h2 id="a-nameoverviewa-1-overview"><a name="overview"></a>■ 1. Overview</h2>
 <p>Within the route and train files, you will encounter numbers like integers or floating-point numbers all the time, occasionally also others. These numbers are required to adhere to a certain format, which is described in the following sections.</p>
-
 <p>There are two parsing methods for numbers: <strong>Strict</strong> and <strong>Loose</strong>. The Strict method is a very tight specification which does not leave space for making typographic mistakes. This method is used in all new file formats. The Loose method is a legacy parsing model required for compatibility with older material. The different files as presented on the <em>Developing for openBVE</em> pages indicate which model is being used. Note that whenever a <em>Loose</em> model is permitted, you can also use the <em>Strict</em> formats as <em>Strict</em> forms a subset of <em>Loose</em>.</p>
-
-<h2 id="a-name-integers-a-2-integers"><a name="integers"></a>■ 2. Integers</h2>
-
+<h2 id="a-nameintegersa-2-integers"><a name="integers"></a>■ 2. Integers</h2>
 <p><strong>Strict:</strong> Permitted is any sequence of at least one decimal digit in the range from 0 to 9 (U+0030 - U+0039), optionally prepended by a negative sign (U+002D). The resulting character sequence may include leading or trailing white spaces.</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Examples for Strict integers:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>0<br />
-123<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Examples for Strict integers:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+0<br>
+123<br>
 -98
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p><strong>Loose:</strong> All white spaces are removed from the character sequence first. Then, the remaining character sequence (<em>abcde</em>) is interpreted according to the <em>Strict</em> model. If this fails to create a valid number, the last character is dropped from the sequence (<em>abcd</em>) and then, the sequence is tested again. This continues until a valid number is produced or until no character remains, after which the character sequence is determined to be an invalid number.</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Examples for Loose integers:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>123<br />
-77 11<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Examples for Loose integers:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+123<br>
+77 11<br>
 -987x456
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>The interpreted integers from the preceding examples are:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>123<br />
-7711<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>The interpreted integers from the preceding examples are:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+123<br>
+7711<br>
 -987
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
-<h2 id="a-name-floating-a-3-floating-point-numbers"><a name="floating"></a>■ 3. Floating-point numbers</h2>
-
+<h2 id="a-namefloatinga-3-floating-point-numbers"><a name="floating"></a>■ 3. Floating-point numbers</h2>
 <p><strong>Strict:</strong> Permitted is any sequence of at least one decimal digit in the range from 0 to 9 (U+0030 - U+0039), optionally interleaved by exactly one decimal separator in form of the period (U+002E), optionally prepended by a negative sign (U+002D). The resulting character sequence may include leading or trailing white spaces.</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Examples for Strict floating-point numbers:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>123<br />
-123.<br />
-123.0<br />
-123.456<br />
-0.456<br />
-.456<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Examples for Strict floating-point numbers:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+123<br>
+123.<br>
+123.0<br>
+123.456<br>
+0.456<br>
+.456<br>
 -123.456
-         </font>
-       </td>
-    </tr>
-  </tbody>
-</table>
-
+</font>
+</td>
+</tr>
+</tbody>
+</table> 
 <p><strong>Loose:</strong> All white spaces are removed from the character sequence first. Then, the remaining character sequence (<em>abcde</em>) is interpreted according to the <em>Strict</em> model. If this fails to create a valid number, the last character is dropped from the sequence (<em>abcd</em>) and then, the sequence is tested again. This continues until a valid number is produced or until no character remains, after which the character sequence is determined to be an invalid number.</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Examples for Loose floating-point numbers:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>-123 . 456<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Examples for Loose floating-point numbers:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+-123 . 456<br>
 987,333
-         </font>
-       </td>
-    </tr>
-  </tbody>
-</table>
-
+</font>
+</td>
+</tr>
+</tbody>
+</table>  
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>The interpreted floating-point numbers from the preceding examples are:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>-123.456<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>The interpreted floating-point numbers from the preceding examples are:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+-123.456<br>
 987
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
-<h2 id="a-name-times-a-4-times"><a name="times"></a>■ 4. Times</h2>
-
+<h2 id="a-nametimesa-4-times"><a name="times"></a>■ 4. Times</h2>
 <p><strong>Legacy:</strong> Permitted is any of the following sequences:</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'><em>hhh</em><strong>.</strong><em>mmss</em><br />
-<em>hhh</em><strong>.</strong><em>mms</em><br />
-<em>hhh</em><strong>.</strong><em>mm</em><br />
-<em>hhh</em><strong>.</strong><em>m</em><br />
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+<em>hhh</em><strong>.</strong><em>mmss</em><br>
+<em>hhh</em><strong>.</strong><em>mms</em><br>
+<em>hhh</em><strong>.</strong><em>mm</em><br>
+<em>hhh</em><strong>.</strong><em>m</em><br>
 <em>hhh</em>
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>In these sequences, <em>hhh</em> denotes any sequence of at least one decimal digit to indicate the hour, <em>mm</em> denotes the two-digit minute part, <em>m</em> denotes a one-digit minute part, <em>ss</em> denotes a two-digit second part, <em>s</em> denotes a one-digit second part, and the character to separate the hours from the minutes is the period (U+002E). All digits need to be characters from 0 to 9 (U+0030 - U+0039). Leading or trailing white spaces are ignored. The total time is determined via the following formula, resulting in seconds since midnight:</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Seconds since midnight for a given time:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">ƒ</td>
-       <td bgcolor="#FFD8C0" style="border: 1px dotted;">
-         <font style="font-family: monospace;">
-         <p style='display:inline;'>3600*<em>hhh</em> + 60*mm + <em>ss</em>
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Seconds since midnight for a given time:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">ƒ</td>
+<td bgcolor="#FFD8C0" style="border: 1px dotted;">
+<font style="font-family: monospace;">
+3600**hhh* + 60*mm + <em>ss</em>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>If minutes or seconds are not indicated, they are assumed to be zero. You can use any non-negative hour, including values greater than or equal to 24. If, for example, a station arrival time is 23:59:00 (day 1), and the arrival time of the following station is 00:02:15 (day 2), then use the following sequences to represent these times in order to ensure a chronological order:</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Examples for times:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>23.5900<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Examples for times:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+23.5900<br>
 24.0215
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
-<h2 id="a-name-colors-a-5-color-values"><a name="colors"></a>■ 5. Color values</h2>
-
+<h2 id="a-namecolorsa-5-color-values"><a name="colors"></a>■ 5. Color values</h2>
 <p><strong>Hexcolor:</strong> A six-digit hexadecimal number is preceded by a number sign character (U+0023). An individual hexadecimal digit can be comprised of the decimal digits from 0 to 9 (U+0030 - U+0039), the lowercase letters from a to f (U+0061 - U+0066) and the uppercase letters from A to F (U+0041 - U+0046).The hexcolor has the following form:</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>#<em>RRGGBB</em>
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+#<em>RRGGBB</em>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>In this sequence, RR represents the red component, GG the green component and BB the blue component. Each component ranges from 00 to FF (0 - 255), where 00 represents no contribution for that channel and FF full contribution.</p>
-
 <p>Commonly used colors (to indicate transparency) include:</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'><font color="Black">#000000 (black)</font><br />
-<font color="Red">#FF0000 (red)</font><br />
-<font color="Green">#00FF00 (green)</font><br />
-<font color="Blue">#0000FF (blue)</font><br />
-<font color="Cyan">#00FFFF (cyan)</font><br />
-<font color="Magenta">#FF00FF (magenta)</font><br />
-<font color="Yellow">#FFFF00 (yellow)</font><br />
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+<font color="Black">#000000 (black)</font><br>
+<font color="Red">#FF0000 (red)</font><br>
+<font color="Green">#00FF00 (green)</font><br>
+<font color="Blue">#0000FF (blue)</font><br>
+<font color="Cyan">#00FFFF (cyan)</font><br>
+<font color="Magenta">#FF00FF (magenta)</font><br>
+<font color="Yellow">#FFFF00 (yellow)</font><br>
 <font color="White">#FFFFFF (white)</font>
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 </div>
 
       <div id="footer">

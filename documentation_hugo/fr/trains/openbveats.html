@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../fr/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../fr/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../fr/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../fr/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,12 +430,9 @@
 
 
 <div id="content">
-  
-
-<p>OpenBveAts is the default train plugin used by OpenBVE when trains lack their own plugin. It simulates a basic version of ATS-SN, ATS-P and ATC.
+  <p>OpenBveAts is the default train plugin used by OpenBVE when trains lack their own plugin. It simulates a basic version of ATS-SN, ATS-P and ATC.
 If you want to use this plugin in your train, then simply don&rsquo;t include the ats.cfg file.
 This plugin will then be used automatically.</p>
-
 <ul class='contents'>
 <li><a href="#panel">1. Panel Indices</a></li>
 <li><a href="#sounds">2. Sounds</a></li>
@@ -443,16 +440,9 @@ This plugin will then be used automatically.</p>
 <li><a href="#beacons-special">4. Special Beacons</a></li>
 <li><a href="#keyboard">5. Keyboard Assignments</a></li>
 </ul>
-
-
-
-<h2 id="a-name-panel-a-1-panel-indices"><a name="panel"></a>■ 1. Panel Indices</h2>
-
+<h2 id="a-namepanela-1-panel-indices"><a name="panel"></a>■ 1. Panel Indices</h2>
 <p>The following panel indices are exposed:</p>
-
 <p><strong>ATS-SN</strong></p>
-
-
 <table class='type0'>
 <thead>
 <tr>
@@ -461,20 +451,17 @@ This plugin will then be used automatically.</p>
 <th>Value Range</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>256</td>
 <td>ATS power (ATS電源)</td>
 <td>0 - 1</td>
 </tr>
-
 <tr>
 <td>257</td>
 <td>ATS actuation (ATS動作)</td>
 <td>0 - 2</td>
 </tr>
-
 <tr>
 <td>258</td>
 <td>ATS actuation (ATS動作)</td>
@@ -482,11 +469,7 @@ This plugin will then be used automatically.</p>
 </tr>
 </tbody>
 </table>
-
-
 <p><strong>ATS-P</strong></p>
-
-
 <table class='type0'>
 <thead>
 <tr>
@@ -495,38 +478,32 @@ This plugin will then be used automatically.</p>
 <th>Value Range</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>259</td>
 <td>P power (P電源)</td>
 <td>0 - 1</td>
 </tr>
-
 <tr>
 <td>260</td>
 <td>pattern approach (パターン接近)</td>
 <td>0 - 1</td>
 </tr>
-
 <tr>
 <td>261</td>
 <td>brake release (ブレーキ開放)</td>
 <td>0 - 1</td>
 </tr>
-
 <tr>
 <td>262</td>
 <td>brake application (ブレーキ動作)</td>
 <td>0 - 1</td>
 </tr>
-
 <tr>
 <td>263</td>
 <td>ATS-P</td>
 <td>0 - 1</td>
 </tr>
-
 <tr>
 <td>264</td>
 <td>failure (故障)</td>
@@ -534,9 +511,7 @@ This plugin will then be used automatically.</p>
 </tr>
 </tbody>
 </table>
-
 <p><strong>ATC speed indicator (panel index 271)</strong></p>
-
 <table class='type0'>
 <thead>
 <tr>
@@ -544,79 +519,63 @@ This plugin will then be used automatically.</p>
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>0</td>
 <td>ATC not available</td>
 </tr>
-
 <tr>
 <td>1</td>
 <td>0 km/h</td>
 </tr>
-
 <tr>
 <td>2</td>
 <td>15 km/h</td>
 </tr>
-
 <tr>
 <td>3</td>
 <td>25 km/h</td>
 </tr>
-
 <tr>
 <td>4</td>
 <td>45 km/h</td>
 </tr>
-
 <tr>
 <td>5</td>
 <td>55 km/h</td>
 </tr>
-
 <tr>
 <td>6</td>
 <td>65 km/h</td>
 </tr>
-
 <tr>
 <td>7</td>
 <td>75 km/h</td>
 </tr>
-
 <tr>
 <td>8</td>
 <td>90 km/h</td>
 </tr>
-
 <tr>
 <td>9</td>
 <td>100 km/h</td>
 </tr>
-
 <tr>
 <td>10</td>
 <td>110 km/h</td>
 </tr>
-
 <tr>
 <td>11</td>
 <td>120 km/h</td>
 </tr>
-
 <tr>
 <td>12</td>
 <td>ATS is active</td>
 </tr>
 </tbody>
 </table>
-
-<h2 id="a-name-sounds-a-2-sounds"><a name="sounds"></a>■ 2. Sounds</h2>
-
+<h2 id="a-namesoundsa-2-sounds"><a name="sounds"></a>■ 2. Sounds</h2>
 <p>The following sound indices are exposed:</p>
-
 <table class='type0'>
 <thead>
 <tr>
@@ -626,7 +585,6 @@ This plugin will then be used automatically.</p>
 <th>Type</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>0</td>
@@ -634,35 +592,30 @@ This plugin will then be used automatically.</p>
 <td>ATS bell</td>
 <td>looping</td>
 </tr>
-
 <tr>
 <td>1</td>
 <td>atscnt.wav</td>
 <td>ATS chime</td>
 <td>looping</td>
 </tr>
-
 <tr>
 <td>2</td>
 <td>ding.wav</td>
 <td>ATS-P/ATC bell</td>
 <td>once</td>
 </tr>
-
 <tr>
 <td>3</td>
 <td>toats.wav</td>
 <td>ATC to ATS</td>
 <td>once</td>
 </tr>
-
 <tr>
 <td>4</td>
 <td>toatc.wav</td>
 <td>ATS to ATC</td>
 <td>once</td>
 </tr>
-
 <tr>
 <td>5</td>
 <td>eb.wav</td>
@@ -671,125 +624,83 @@ This plugin will then be used automatically.</p>
 </tr>
 </tbody>
 </table>
-
-<h2 id="a-name-beacons-a-3-beacons"><a name="beacons"></a>■ 3. Beacons</h2>
-
+<h2 id="a-namebeaconsa-3-beacons"><a name="beacons"></a>■ 3. Beacons</h2>
 <p>The following beacon types are supported:</p>
-
 <h3 id="beacon-type-0-s-long">Beacon Type 0 (S-Long)</h3>
-
 <div id="command">
-<p><strong>Track.Beacon</strong> 0; <em>Object</em>; <em>Signal</em> ; <em>Optional</em></p>
-
+<strong>Track.Beacon</strong> 0; <em>Object</em>; <em>Signal</em> ; <em>Optional</em>
 </div>
-
 <div id="command-arguments">
-<p><strong><em>Object</em></strong>: A positive integer (<strong>&gt;=1</strong>) representing the beacon structure index to be displayed. Use <strong>-1</strong> for no object.<br />
-<strong><em>Signal</em></strong>: An integer ranging from 0 to 255 representing the green component of the ambient light. The default value is 160.<br />
-<strong>Optional</strong>: If the optional data is <strong>0</strong>, the train switches from ATS-P to ATS-SN. If the optional data is <strong>-1</strong>, the train stays in its current mode.</p>
-
+<em><strong>Object</strong></em>: A positive integer (<strong>&gt;=1</strong>) representing the beacon structure index to be displayed. Use <strong>-1</strong> for no object.<br>
+<em><strong>Signal</strong></em>: An integer ranging from 0 to 255 representing the green component of the ambient light. The default value is 160.<br>
+<strong>Optional</strong>: If the optional data is <strong>0</strong>, the train switches from ATS-P to ATS-SN. If the optional data is <strong>-1</strong>, the train stays in its current mode.
 </div>
-
 <p>When passing this beacon:</p>
-
 <ul>
 <li>If the signal is <font color=red>RED</font> , the alarm will sound.</li>
 <li>The train&rsquo;s safety system may switch modes, depending on the setting of <strong>Optional</strong>.</li>
 </ul>
-
 <h3 id="beacon-type-1-sn-immediate-stop">Beacon Type 1 (SN-Immediate Stop)</h3>
-
 <div id="command">
-<p><strong>Track.Beacon</strong> 1; <em>Object</em>; <em>Signal</em> ; <em>Optional</em></p>
-
+<strong>Track.Beacon</strong> 1; <em>Object</em>; <em>Signal</em> ; <em>Optional</em>
 </div>
-
 <div id="command-arguments">
-<p><strong><em>Object</em></strong>: A positive integer (<strong>&gt;=1</strong>) representing the beacon structure index to be displayed. Use <strong>-1</strong> for no object.<br />
-<strong><em>Signal</em></strong>: An integer ranging from 0 to 255 representing the green component of the ambient light. The default value is 160.<br />
-<strong>Optional</strong>: If the optional data is <strong>0</strong>, the train switches from ATS-P to ATS-SN. If the optional data is <strong>-1</strong>, the train stays in its current mode.</p>
-
+<em><strong>Object</strong></em>: A positive integer (<strong>&gt;=1</strong>) representing the beacon structure index to be displayed. Use <strong>-1</strong> for no object.<br>
+<em><strong>Signal</strong></em>: An integer ranging from 0 to 255 representing the green component of the ambient light. The default value is 160.<br>
+<strong>Optional</strong>: If the optional data is <strong>0</strong>, the train switches from ATS-P to ATS-SN. If the optional data is <strong>-1</strong>, the train stays in its current mode.
 </div>
-
 <p>When passing this beacon:</p>
-
 <ul>
 <li>If the signal is <font color=red>RED</font> , the emergency brakes will be applied immediately.</li>
 <li>The train&rsquo;s safety system may switch modes, depending on the setting of <strong>Optional</strong>.</li>
 </ul>
-
 <h3 id="beacon-type-2-accidental-departure">Beacon Type 2 (Accidental Departure)</h3>
-
 <div id="command">
-<p><strong>Track.Beacon</strong> 2; <em>Object</em>; <em>Signal</em> ; <em>Optional</em></p>
-
+<strong>Track.Beacon</strong> 2; <em>Object</em>; <em>Signal</em> ; <em>Optional</em>
 </div>
-
 <div id="command-arguments">
-<p><strong><em>Object</em></strong>: A positive integer (<strong>&gt;=1</strong>) representing the beacon structure index to be displayed. Use <strong>-1</strong> for no object.<br />
-<strong><em>Signal</em></strong>: An integer ranging from 0 to 255 representing the green component of the ambient light. The default value is 160.<br />
-<strong>Optional</strong>: If the optional data is 0, the train switches from ATS-P to ATS-SN. If the optional data is -1, the train stays in its current mode. If the optional data is <strong>greater than zero</strong>, the beacon only triggers for trains with at most the specified number of cars, and the train switches from ATS-P to ATS-SN.</p>
-
+<em><strong>Object</strong></em>: A positive integer (<strong>&gt;=1</strong>) representing the beacon structure index to be displayed. Use <strong>-1</strong> for no object.<br>
+<em><strong>Signal</strong></em>: An integer ranging from 0 to 255 representing the green component of the ambient light. The default value is 160.<br>
+<strong>Optional</strong>: If the optional data is 0, the train switches from ATS-P to ATS-SN. If the optional data is -1, the train stays in its current mode. If the optional data is <strong>greater than zero</strong>, the beacon only triggers for trains with at most the specified number of cars, and the train switches from ATS-P to ATS-SN.
 </div>
-
 <p>When passing this beacon:</p>
-
 <ul>
 <li>If the signal is <font color=red>RED</font> , the emergency brakes will be applied immediately.</li>
 <li>The train&rsquo;s safety system may switch modes, depending on the setting of <strong>Optional</strong>.</li>
 </ul>
-
 <h3 id="beacon-type-3-ats-p-pattern-renewal">Beacon Type 3 (ATS-P Pattern Renewal)</h3>
-
 <div id="command">
-<p><strong>Track.Beacon</strong> 3; <em>Object</em>; <em>Signal</em> ; <em>Optional</em></p>
-
+<strong>Track.Beacon</strong> 3; <em>Object</em>; <em>Signal</em> ; <em>Optional</em>
 </div>
-
 <div id="command-arguments">
-<p><strong><em>Object</em></strong>: A positive integer (<strong>&gt;=1</strong>) representing the beacon structure index to be displayed. Use <strong>-1</strong> for no object.<br />
-<strong><em>Signal</em></strong>: An integer ranging from 0 to 255 representing the green component of the ambient light. The default value is 160.<br />
-<strong>Optional</strong>: If the optional data is <strong>0</strong>, the train switches from ATS-SN to ATS-P. If the optional data is <strong>-1</strong>, the train stays in its current mode.</p>
-
+<em><strong>Object</strong></em>: A positive integer (<strong>&gt;=1</strong>) representing the beacon structure index to be displayed. Use <strong>-1</strong> for no object.<br>
+<em><strong>Signal</strong></em>: An integer ranging from 0 to 255 representing the green component of the ambient light. The default value is 160.<br>
+<strong>Optional</strong>: If the optional data is <strong>0</strong>, the train switches from ATS-SN to ATS-P. If the optional data is <strong>-1</strong>, the train stays in its current mode.
 </div>
-
 <p>When passing this beacon:</p>
-
 <ul>
 <li>The current ATS-P patterm is renewed.</li>
 <li>The train&rsquo;s safety system may switch modes, depending on the setting of <strong>Optional</strong>.</li>
 </ul>
-
 <h3 id="beacon-type-4-ats-p-immediate-stop">Beacon Type 4 (ATS-P Immediate Stop)</h3>
-
 <div id="command">
-<p><strong>Track.Beacon</strong> 2; <em>Object</em>; <em>Signal</em> ; <em>Optional</em></p>
-
+<strong>Track.Beacon</strong> 2; <em>Object</em>; <em>Signal</em> ; <em>Optional</em>
 </div>
-
 <div id="command-arguments">
-<p><strong><em>Object</em></strong>: A positive integer (<strong>&gt;=1</strong>) representing the beacon structure index to be displayed. Use <strong>-1</strong> for no object.<br />
-<strong><em>Signal</em></strong>: An integer ranging from 0 to 255 representing the green component of the ambient light. The default value is 160.<br />
-<strong>Optional</strong>: If the optional data is <strong>0</strong>, the train switches from ATS-SN to ATS-P. If the optional data is <strong>-1</strong>, the train stays in its current mode.</p>
-
+<em><strong>Object</strong></em>: A positive integer (<strong>&gt;=1</strong>) representing the beacon structure index to be displayed. Use <strong>-1</strong> for no object.<br>
+<em><strong>Signal</strong></em>: An integer ranging from 0 to 255 representing the green component of the ambient light. The default value is 160.<br>
+<strong>Optional</strong>: If the optional data is <strong>0</strong>, the train switches from ATS-SN to ATS-P. If the optional data is <strong>-1</strong>, the train stays in its current mode.
 </div>
-
 <p>When passing this beacon:</p>
-
 <ul>
 <li>The current ATS-P patterm is renewed.</li>
 <li>If the signal is red and less than 50 meters away, the brakes are applied immediately and the brake application needs to be canceled manually.</li>
 <li>The train&rsquo;s safety system may switch modes, depending on the setting of <strong>Optional</strong>.</li>
 </ul>
-
-<h2 id="a-name-beacons-special-a-4-special-beacons"><a name="beacons-special"></a>■ 4. Special Beacons</h2>
-
+<h2 id="a-namebeacons-speciala-4-special-beacons"><a name="beacons-special"></a>■ 4. Special Beacons</h2>
 <p><em><strong>Note:</strong></em> The following beacon types cannot be used directly in routes - They are automatically created by the CSV/RW parser to provide backward compatibility with ATS-P and ATC.</p>
-
 <h3 id="beacon-type-0xff000001-atc-track-status">Beacon type 0xFF000001 (ATC track status)</h3>
-
 <p>Marks the status of ATC. The optional data has the following meaning:</p>
-
 <table class='type1'>
 <thead>
 <tr>
@@ -797,29 +708,23 @@ This plugin will then be used automatically.</p>
 <th>ATC not available</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>1</td>
 <td>ATC available, switch from ATS to ATC</td>
 </tr>
-
 <tr>
 <td>2</td>
 <td>ATC available</td>
 </tr>
-
 <tr>
 <td>3</td>
 <td>ATC available, switch from ATC to ATS</td>
 </tr>
 </tbody>
 </table>
-
 <h3 id="beacon-type-0xff000002-atc-speed-limit">Beacon type 0xFF000002 (ATC speed limit)</h3>
-
 <p>Sets up an ATC speed limit. The optional data has the following meaning:</p>
-
 <table class='type1'>
 <thead>
 <tr>
@@ -827,7 +732,6 @@ This plugin will then be used automatically.</p>
 <th>Speed in km/h</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>bits 12-31</td>
@@ -835,13 +739,9 @@ This plugin will then be used automatically.</p>
 </tr>
 </tbody>
 </table>
-
 <p><em><strong>Note:</strong></em> All speed limits in the entire route are communicated to the plugin at the beginning of the route, so the plugin keeps a database of known speed limits and then applies them as necessary.</p>
-
 <h3 id="beacon-type-0xff000003-ats-p-temporary-speed-limit">Beacon type 0xFF000003 (ATS-P temporary speed limit)</h3>
-
 <p>Sets up an ATS-P temporary speed limit. The optional data has the following meaning:</p>
-
 <table class='type1'>
 <thead>
 <tr>
@@ -849,7 +749,6 @@ This plugin will then be used automatically.</p>
 <th>Speed in km/h</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>bits 12-31</td>
@@ -857,17 +756,11 @@ This plugin will then be used automatically.</p>
 </tr>
 </tbody>
 </table>
-
 <p><em><strong>Note:</strong></em> All speed limits in the entire route are communicated to the plugin at the beginning of the route, so the plugin keeps a database of known speed limits and then applies them as necessary.</p>
-
 <h3 id="beacon-type-0xff000004-ats-p-permanent-speed-limit">Beacon type 0xFF000004 (ATS-P permanent speed limit)</h3>
-
 <p>Sets up an ATS-P permanent speed limit. The optional data is the speed limit in km/h.</p>
-
-<h2 id="a-name-keyboard-a-5-keyboard-assignments"><a name="keyboard"></a>■ 5. Keyboard Assignments</h2>
-
+<h2 id="a-namekeyboarda-5-keyboard-assignments"><a name="keyboard"></a>■ 5. Keyboard Assignments</h2>
 <p>The OpenBveAts Plugin uses the following keyboard assignments:</p>
-
 <table class='type0'>
 <thead>
 <tr>
@@ -876,56 +769,47 @@ This plugin will then be used automatically.</p>
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>S</td>
 <td>space</td>
 <td>Cancels the ATS-SN bell.</td>
 </tr>
-
 <tr>
 <td>A1</td>
 <td>insert</td>
 <td>Cancels the ATS-SN chime.</td>
 </tr>
-
 <tr>
 <td>A2</td>
 <td>delete</td>
 <td>Cancels the EB.</td>
 </tr>
-
 <tr>
 <td>B1</td>
 <td>home</td>
 <td>Cancels the ATS-SN or ATS-P brake application.</td>
 </tr>
-
 <tr>
 <td>B2</td>
 <td>delete</td>
 <td>Activates the temporary ATS-P brake release.</td>
 </tr>
-
 <tr>
 <td>C1</td>
 <td>page up</td>
 <td>Switches from ATC to ATS.</td>
 </tr>
-
 <tr>
 <td>C2</td>
 <td>page down</td>
 <td>Switches from ATS to ATC.</td>
 </tr>
-
 <tr>
 <td>D</td>
 <td>2</td>
 <td>Enables the safety systems.</td>
 </tr>
-
 <tr>
 <td>E</td>
 <td>3</td>
@@ -933,7 +817,6 @@ This plugin will then be used automatically.</p>
 </tr>
 </tbody>
 </table>
-
 
 </div>
 

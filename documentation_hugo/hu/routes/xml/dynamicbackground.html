@@ -8,7 +8,7 @@
     <link rel="icon" href="../../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../../hu/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../../hu/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../../hu/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../../hu/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,26 +430,18 @@
 
 
 <div id="content">
-  
-
-<p>This page describes the principles and implementation of the XML based background system.</p>
-
-<h2 id="dynamic-backgrounds-basic-principles">■ Dynamic Backgrounds: Basic Principles</h2>
-
+  <p>This page describes the principles and implementation of the XML based background system.</p>
+<h2 id="-dynamic-backgrounds-basic-principles">■ Dynamic Backgrounds: Basic Principles</h2>
 <p>openBVE supports several distinct types of backgrounds:</p>
-
 <ol>
 <li>The original &lsquo;texture&rsquo; based background. This wraps the specified texture around the viewing frustum a specified number of times.</li>
 <li>&lsquo;Dynamic&rsquo; backgrounds. These are made up of a series of texture based backgrounds, and which are changed at the appropriate time.</li>
 <li>&lsquo;Object&rsquo; backgrounds. A static object (<strong>.b3d , .csv or .x</strong>) may be used instead of the standard viewing frustum.</li>
 </ol>
-
 <p><strong>NOTE:</strong> No transition effects are supported for object based backgrounds.</p>
-
 <p>Each individual background which you wish to use must be setup using a background XML file an example of which is shown below:</p>
-
 <textarea rows="17" cols="110" style="border:2;">
-    
+  
 &lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
 &lt;openBVE xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xsd=&#34;http://www.w3.org/2001/XMLSchema&#34;&gt;
   &lt;Background&gt;
@@ -468,81 +460,46 @@
 &lt;/openBVE&gt;  
 
 </textarea>
-
 <p>As you can see, the file is made up of one or more <strong>&lt;Background&gt;</strong> sections, each of which defines the background to be displayed at the point in time specified by <em>Time</em>.</p>
-
-<h2 id="texture-backgrounds">■ Texture Backgrounds</h2>
-
+<h2 id="-texture-backgrounds">■ Texture Backgrounds</h2>
 <p>A texture based background supports the following attributes:</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;Texture&gt;</strong> <em>FileName</em> <strong>&lt;/Texture&gt;</strong></p>
-
+<strong>&lt;Texture&gt;</strong> <em>FileName</em> <strong>&lt;/Texture&gt;</strong>
 </div>
-
-
 <p><strong>FileName</strong> must point to the image which you wish to display as the background texture.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;Repetitions&gt;</strong> <em>NumberOfRepetitions</em> <strong>&lt;/Repetitions&gt;</strong></p>
-
+<strong>&lt;Repetitions&gt;</strong> <em>NumberOfRepetitions</em> <strong>&lt;/Repetitions&gt;</strong>
 </div>
-
-
 <p><strong>NumberOfRepetitions</strong> is the number of times the texture is to be wrapped horizontally around the viewing frustum.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;Mode&gt;</strong> <em>TransitionMode</em> <strong>&lt;/Mode&gt;</strong></p>
-
+<strong>&lt;Mode&gt;</strong> <em>TransitionMode</em> <strong>&lt;/Mode&gt;</strong>
 </div>
-
-
 <p><strong>TransitionMode</strong> controls the transition effect to be used when this background is shown. Valid values are:</p>
-
 <ul>
 <li><strong>FadeIn</strong> : The new background fades in.</li>
 <li><strong>FadeOut</strong> : The old background fades out.</li>
 <li><strong>None</strong> : No transition effect is performed. ( Negates <strong>TransitionTime</strong> )</li>
 </ul>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;TransitionTime&gt;</strong> <em>Time</em> <strong>&lt;/TransitionTime&gt;</strong></p>
-
+<strong>&lt;TransitionTime&gt;</strong> <em>Time</em> <strong>&lt;/TransitionTime&gt;</strong>
 </div>
-
-
 <p><strong>Time</strong> is the time in seconds which the transition effect takes to complete.</p>
-
-<h2 id="dynamic-backgrounds">■ Dynamic Backgrounds</h2>
-
+<h2 id="-dynamic-backgrounds">■ Dynamic Backgrounds</h2>
 <p>A dynamic background should simply be made up of multiple <strong>Background</strong> elements, and takes one further attribute:</p>
-
 <div id="command">
-<p><strong>&lt;Time&gt;</strong> <em>GameTime</em> <strong>&lt;/Time&gt;</strong></p>
-
+<strong>&lt;Time&gt;</strong> <em>GameTime</em> <strong>&lt;/Time&gt;</strong>
 </div>
-
-
 <p><strong>GameTime</strong> is the 24-hour based time at which the transition to this background will begin.</p>
-
-<h2 id="object-backgrounds">■ Object Backgrounds</h2>
-
+<h2 id="-object-backgrounds">■ Object Backgrounds</h2>
 <p>An object based background may also be used. With these, the specified object is rendered with it&rsquo;s <strong>0,0,0</strong> co-ordinate centered upon the camera center.</p>
-
 <p>Only <strong>.b3d , .csv and .x</strong> files with no animation are supported. No transition effects or other attributes are supported.</p>
-
 <p>A sample XML is shown below:</p>
-
 <textarea rows="17" cols="110" style="border:2;">
-    
+  
 &lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
 &lt;openBVE xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xsd=&#34;http://www.w3.org/2001/XMLSchema&#34;&gt;
   &lt;Background&gt;

@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../ko/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../ko/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../ko/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../ko/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -431,26 +431,17 @@
 
 <div id="content">
   <p>openBVE 1.5.4.0 introduces the ability to play sounds from the microphone or line-in input to a specified position within the game world.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>Track.MicSound</strong> <em>X</em> ; <em>Y</em> ; <em>ForwardsTolerance</em> ; <em>BackwardsTolerance</em></p>
-
+<strong>Track.MicSound</strong> <em>X</em> ; <em>Y</em> ; <em>ForwardsTolerance</em> ; <em>BackwardsTolerance</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>X</em></strong>: The X position of the sound.<br />
-<strong><em>Y</em></strong>: The Y position of the sound.<br />
-<strong><em>ForwardsTolerance</em></strong>: The distance in meters at which the sound becomes audible as the train approaches it&rsquo;s position.<br />
-<strong><em>BackwardsTolerance</em></strong>: The distance in meters at which the sound is inaudible after the train passes it&rsquo;s position.</p>
-
+<em><strong>X</strong></em>: The X position of the sound.<br>
+<em><strong>Y</strong></em>: The Y position of the sound.<br>
+<em><strong>ForwardsTolerance</strong></em>: The distance in meters at which the sound becomes audible as the train approaches it&rsquo;s position.<br>
+<em><strong>BackwardsTolerance</strong></em>: The distance in meters at which the sound is inaudible after the train passes it&rsquo;s position.
 </div>
-
-
 <p><strong><strong>Implementation Notes</strong></strong>:</p>
-
 <ul>
 <li>Microphone input must be activated using the <strong>PLAY_MIC_SOUNDS</strong> key, which is assigned to <strong>W</strong> by default.</li>
 <li>The microphone input will be routed to all <strong>Track.MicSound</strong> sound sources within the camera range.</li>

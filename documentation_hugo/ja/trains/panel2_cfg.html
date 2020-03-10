@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../ja/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../ja/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../ja/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../ja/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,10 +430,7 @@
 
 
 <div id="content">
-  
-
-<h2 id="内容">■ 内容</h2>
-
+  <h2 id="-内容">■ 内容</h2>
 <ul class='contents'>
 <li><a href="#overview">1. 概要</a></li>
 <li><a href="#syntax">2. 文法</a></li>
@@ -446,1082 +443,548 @@
 <li><a href="#timetable">9. Timetable セクション</a></li>
 <li><a href="#subjects">10. 使用可能なコマンド</a></li>
 </ul>
-
-
-
-<h2 id="a-name-overview-a-1-概要"><a name="overview"></a>■ 1. 概要</h2>
-
+<h2 id="a-nameoverviewa-1-概要"><a name="overview"></a>■ 1. 概要</h2>
 <p>panel2.cfg ファイルは lampやneedle等、運転台パネルを使用するための要素について表示、配置などの場所を定義することにより、2D運転台パネルを作成できます。</p>
-
-<p>panel2.cfg ファイルは任意のエンコードで記述されたプレーンテキストですが <a href="../../ja/information/encodings.html" target="_blank">encoding</a>, 、好ましい選択としてはバイトオーダー付きのUTF-8です。 The <a href="../../ja/information/numberformats.html" target="_blank">parsing model</a> に用いる数字は <strong>ルーズ</strong>ですが、 それでも出力にあたっては <em>厳密な</em> 出力をすることが望ましいです。 このファイルは必ずTrainフォルダー内に配置する必要があり、 <strong>panel2.cfg</strong>という名前にする必要があります。 ファイルは各行ごとに上から下に解釈されます。</p>
-
+<p>panel2.cfg ファイルは任意のエンコードで記述されたプレーンテキストですが <a href="../../ja/information/encodings.html">encoding</a>, 、好ましい選択としてはバイトオーダー付きのUTF-8です。 The <a href="../../ja/information/numberformats.html">parsing model</a> に用いる数字は <strong>ルーズ</strong>ですが、 それでも出力にあたっては <em>厳密な</em> 出力をすることが望ましいです。 このファイルは必ずTrainフォルダー内に配置する必要があり、 <strong>panel2.cfg</strong>という名前にする必要があります。 ファイルは各行ごとに上から下に解釈されます。</p>
 <div id="notice">
 <h4 id="レイヤー">レイヤー</h4>
-
-<p>パネル内の全ての要素はレイヤーに紐づけされています。 レイヤーは整数で記述されます。 小さな値はより背景寄りに、大きな値は前景寄りに配置されます。 要素を配置する際は、同じレイヤー番号に重複しないよう留意する必要があります。 パネルの背景イメージは常にレイヤー番号0に関連付けられているため、その上に配置する要素はつねにレイヤー番号1以上で始まる必要があります。パネルの背景画像の更に背後に要素を配置する場合は、同様に負の数を使用して、此等のレイヤーを表すことが出来ます。</p>
-
+<p>パネル内の全ての要素はレイヤーに紐づけされています。 レイヤーは整数で記述されます。 小さな値はより背景寄りに、大きな値は前景寄りに配置されます。 要素を配置する際は、同じレイヤー番号に重複しないよう留意する必要があります。 パネルの背景イメージは常にレイヤー番号0に関連付けられているため、その上に配置する要素はつねにレイヤー番号1以上で始まる必要があります。パネルの背景画像の更に背後に要素を配置する場合は、同様に負の数を使用して、此等のレイヤーを表すことが出来ます。
 </div>
-
-
-<p><br/></p>
-
+<br/>
 <div id="notice">
 <h4 id="daytime-と-nighttime-イメージ">Daytime と nighttime イメージ</h4>
-
-<p>テクスチャを取得する全ての要素に対して、昼間と夜間用の異なるテクスチャを指定できます。照明の条件と追加の路線データからの命令に応じて、OpenBVEは昼間と夜間のテクスチャの中間的なブレンドの結果を表示します。夜間のテクスチャを使用しない場合は、対応する夜間の画像をシミュレートするために、昼間の画像が暗くなります。</p>
-
+<p>テクスチャを取得する全ての要素に対して、昼間と夜間用の異なるテクスチャを指定できます。照明の条件と追加の路線データからの命令に応じて、OpenBVEは昼間と夜間のテクスチャの中間的なブレンドの結果を表示します。夜間のテクスチャを使用しない場合は、対応する夜間の画像をシミュレートするために、昼間の画像が暗くなります。
 </div>
-
-
-<p>➟ <a href="../../ja/trains/panel2_cfg_quick.html" target="_blank"> panel2.cfgのクイックリファレンスも参照して下さい&hellip;</a></p>
-
+<p>➟ <a href="../../ja/trains/panel2_cfg_quick.html"> panel2.cfgのクイックリファレンスも参照して下さい&hellip;</a></p>
 <div id="notice">
 <h4 id="重なりとライティング">重なりとライティング</h4>
-
-<p>運転台パネルのデータはオーバーレイとしてレンダリングされます。これは、運転台画像が常に風景のオブジェクトの手前に表示されることを意味します。この方法では、雨、壁、その他の遮るオブジェクト運転台画像内で誤ってレンダリングされることはありません。 周囲の明るさは運転台に反映されますが、運転台は常に白色光を反射しているように見えます。</p>
-
+<p>運転台パネルのデータはオーバーレイとしてレンダリングされます。これは、運転台画像が常に風景のオブジェクトの手前に表示されることを意味します。この方法では、雨、壁、その他の遮るオブジェクト運転台画像内で誤ってレンダリングされることはありません。 周囲の明るさは運転台に反映されますが、運転台は常に白色光を反射しているように見えます。
 </div>
-
-
-<h2 id="a-name-syntax-a-2-文法"><a name="syntax"></a>■ 2. 文法</h2>
-
+<h2 id="a-namesyntaxa-2-文法"><a name="syntax"></a>■ 2. 文法</h2>
 <p>ファイル内の各行は空(または空白)飲みにすることが出来、またその行は無視され、新しいセクションの開始をマークするか、セクション内にキーと値のペアを含めることが出来ます。全てのキーと値のペアは、最後に開かれたセクションと関連付けされます。</p>
-
 <p>新しいセクションを開くには、行を開始ブラケット (U+005B) で開始し、終了ブラケット (U+005D)で終了します。 カッコ内のテキストはセクション名を示し、大文字と小文字を区別しません。 行の最初と最後の空白、及びセクション名の最初と最後の空白は無視されます。従って、セクションの先頭は次の形式になります:</p>
-
 <div id="command">
-<p>[NameOfTheSection]</p>
-
+[NameOfTheSection]
 </div>
-
-
 <p>キーと値のペアは、キー、等号 (U+003D)、そして値を与えることで示されます。 キーは大文字と小文字を区別しません。 行頭と末尾、及び等号の前後の空白は無視され、または、キーと値を囲む空白は無視されます。 従って、キーと値のペアは次のような書式をとります:</p>
-
 <div id="command">
-<p>NameOfTheKey = Value</p>
-
+NameOfTheKey = Value
 </div>
-
-
 <p>一部の値は、カンマで区切られた複数の部分にさらに分割されます (U+002C)。</p>
-
 <p>コメントは行末のどこでも使用可能です。 コメントはセミコロン (U+003B)で始まります。 コメントは存在する場合、処理される前に全ての行から削除されます。</p>
-
-<h2 id="a-name-this-a-3-this-セクション"><a name="this"></a>■ 3. This セクション</h2>
-
+<h2 id="a-namethisa-3-this-セクション"><a name="this"></a>■ 3. This セクション</h2>
 <p>This セクションはパネルの背景イメージを用いる為の定義や、解像度を定義します。このセクションは、ファイル内で一度だけ使用できます。</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p>[This]</p>
-
+[This]
 </div>
-
-
 <p>これをを定義することにより、セクションを開始します。</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Resolution = <em>Value</em></p>
-
+Resolution = <em>Value</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: Thisセクションで示されたパネルの背景画像で、測定された幅を示す浮動小数点数で、デフォルトの画面の幅、カメラ位置、位置合わせ、ズームに用います。</p>
-
+<em><strong>Value</strong></em>: Thisセクションで示されたパネルの背景画像で、測定された幅を示す浮動小数点数で、デフォルトの画面の幅、カメラ位置、位置合わせ、ズームに用います。
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Left = <em>Value</em></p>
-
+Left = <em>Value</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: パネルの背景の、どのX座標が左にスクロールさせることができる最も遠い点に対応するかを示す浮動小数点数。 座標の点は背景画像の座標の範囲内である必要はありません。</p>
-
+<em><strong>Value</strong></em>: パネルの背景の、どのX座標が左にスクロールさせることができる最も遠い点に対応するかを示す浮動小数点数。 座標の点は背景画像の座標の範囲内である必要はありません。
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Right = <em>Value</em></p>
-
+Right = <em>Value</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: パネルの背景の、どのX座標が右にスクロールさせることができる最も遠い点に対応するかを示す浮動小数点数。 座標の点は背景画像の座標の範囲内である必要はありません。</p>
-
+<em><strong>Value</strong></em>: パネルの背景の、どのX座標が右にスクロールさせることができる最も遠い点に対応するかを示す浮動小数点数。 座標の点は背景画像の座標の範囲内である必要はありません。
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Top = <em>Value</em></p>
-
+Top = <em>Value</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: パネルの背景の、どのY座標が上にスクロールさせることができる最も遠い点に対応するかを示す浮動小数点数。 座標の点は背景画像の座標の範囲内である必要はありません。</p>
-
+<em><strong>Value</strong></em>: パネルの背景の、どのY座標が上にスクロールさせることができる最も遠い点に対応するかを示す浮動小数点数。 座標の点は背景画像の座標の範囲内である必要はありません。
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Bottom = <em>Value</em></p>
-
+Bottom = <em>Value</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: パネルの背景の、どのY座標が下にスクロールさせることができる最も遠い点に対応するかを示す浮動小数点数。 座標の点は背景画像の座標の範囲内である必要はありません。</p>
-
+<em><strong>Value</strong></em>: パネルの背景の、どのY座標が下にスクロールさせることができる最も遠い点に対応するかを示す浮動小数点数。 座標の点は背景画像の座標の範囲内である必要はありません。
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>DaytimeImage = <em>FileName</em></p>
-
+DaytimeImage = <em>FileName</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>FileName</em></strong>: train フォルダに関連して、パネルの日中用の画像として使用するためのイメージファイル。 指定していない場合、背景画像は表示されません。</p>
-
+<em><strong>FileName</strong></em>: train フォルダに関連して、パネルの日中用の画像として使用するためのイメージファイル。 指定していない場合、背景画像は表示されません。
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>NighttimeImage = <em>FileName</em></p>
-
+NighttimeImage = <em>FileName</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>FileName</em></strong>: train フォルダに関連して、パネルの夜間用の画像として使用するためのイメージファイル。 指定する場合は、昼間用のバージョンも指定する必要があります。それ以外の場合は夜間バージョンを使用することは出来ません。</p>
-
+<em><strong>FileName</strong></em>: train フォルダに関連して、パネルの夜間用の画像として使用するためのイメージファイル。 指定する場合は、昼間用のバージョンも指定する必要があります。それ以外の場合は夜間バージョンを使用することは出来ません。
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>TransparentColor = <em>HexColor</em></p>
-
+TransparentColor = <em>HexColor</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>HexColor</em></strong>: A <a href="../../ja/information/numberformats.html#colors">hexcolor</a>  <em>DaytimeImage</em> および <em>NighttimeImage</em> ファイルの双方に、透明ピクセルに対応する正確な色を定義します。 デフォルト値は #0000FF です。</p>
-
+<em><strong>HexColor</strong></em>: A <a href="../../ja/information/numberformats.html#colors">hexcolor</a>  <em>DaytimeImage</em> および <em>NighttimeImage</em> ファイルの双方に、透明ピクセルに対応する正確な色を定義します。 デフォルト値は #0000FF です。
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Center = <em>X</em>, <em>Y</em></p>
-
+Center = <em>X</em>, <em>Y</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>X</em></strong>: パネルの背景イメージの中心に対応するX座標を示す浮動小数点数
-<strong><em>Y</em></strong>: パネルの背景イメージの中心に対応するY座標を示す浮動小数点数</p>
-
+<em><strong>X</strong></em>: パネルの背景イメージの中心に対応するX座標を示す浮動小数点数
+<em><strong>Y</strong></em>: パネルの背景イメージの中心に対応するY座標を示す浮動小数点数
 </div>
-
-
 <p>背景画像のどのピクセルがデフォルトのカメラ位置の消失点に対応するかを定義します。これは、2本のレールが直線の線路上で水平線に収束するポイントです。 <em>Center</em> と <em>Origin</em> の関係は、運転台の位置合わせの yaw と pitch に影響します。</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Origin = <em>X</em>, <em>Y</em></p>
-
+Origin = <em>X</em>, <em>Y</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>X</em></strong>: 消失点に対応する、パネルの背景イメージのX座標を示す浮動小数点数。
-<strong><em>Y</em></strong>: 消失点に対応する、パネルの背景イメージのY座標を示す浮動小数点数。</p>
-
+<em><strong>X</strong></em>: 消失点に対応する、パネルの背景イメージのX座標を示す浮動小数点数。
+<em><strong>Y</strong></em>: 消失点に対応する、パネルの背景イメージのY座標を示す浮動小数点数。
 </div>
-
-
 <p>背景画像のどのピクセルがデフォルトのカメラ位置の消失点に対応するかを定義します。これは、2本のレールが直線の線路上で水平線に収束するポイントです。 <em>Center</em> と <em>Origin</em> の関係性は、運転台パネルの yaw と pitch に影響します。</p>
-
-<p><img src="../../images/illustration_center_origin.png" alt="illustration_center_origin" /></p>
-
+<p><img src="../../images/illustration_center_origin.png" alt="illustration_center_origin"></p>
 <div id="notice">
 <h4 id="カメラの制限がデフォルトのカメラ設定に影響する場合">カメラの制限がデフォルトのカメラ設定に影響する場合</h4>
-
-<p>カメラの制限は、Panel2.cfgで作成された運転台データ内のカメラの見え方を、 *Left*、 *Right*、 *Top*、*Bottom*で指定された長方形に制限する機能です。 <em>Center</em> と <em>Resolution</em> の設定により、デフォルトのカメラ設定でも、指定された領域外のパーツがカメラに表示された場合でも、カメラの位置が変更されて、ビューが運転台パネルの範囲内に表示されることが保証されます。 <em>Center</em> と <em>Origin</em> の設定がこの影響を受けないことを確認するには、 CAMERA_RESTRICTION キー (デフォルト: CTRL+R) を押してカメラの制限を無効にし、CAMERA_RESET キー (デフォルト: num 5) を押して、カメラをリセットします。それにより<em>Center</em> と <em>Origin</em> の値は 記述されたとおりの挙動をし、 *Resolution*、 *Left*、 *Right*、 *Top*、 *Bottom*、*Center*、*Origin*の関係で考えられる問題を明確にすることが出来ます。</p>
-
+<p>カメラの制限は、Panel2.cfgで作成された運転台データ内のカメラの見え方を、 <em>Left</em>、 <em>Right</em>、 <em>Top</em>、<em>Bottom</em>で指定された長方形に制限する機能です。 <em>Center</em> と <em>Resolution</em> の設定により、デフォルトのカメラ設定でも、指定された領域外のパーツがカメラに表示された場合でも、カメラの位置が変更されて、ビューが運転台パネルの範囲内に表示されることが保証されます。 <em>Center</em> と <em>Origin</em> の設定がこの影響を受けないことを確認するには、 CAMERA_RESTRICTION キー (デフォルト: CTRL+R) を押してカメラの制限を無効にし、CAMERA_RESET キー (デフォルト: num 5) を押して、カメラをリセットします。それにより<em>Center</em> と <em>Origin</em> の値は 記述されたとおりの挙動をし、 <em>Resolution</em>、 <em>Left</em>、 <em>Right</em>、 <em>Top</em>、 <em>Bottom</em>、<em>Center</em>、<em>Origin</em>の関係で考えられる問題を明確にすることが出来ます。
 </div>
-
-
-<h2 id="a-name-pilotlamp-a-4-pilotlampセクション"><a name="pilotlamp"></a>■ 4. PilotLampセクション</h2>
-
+<h2 id="a-namepilotlampa-4-pilotlampセクション"><a name="pilotlamp"></a>■ 4. PilotLampセクション</h2>
 <p>PilotLamp せくしょんでは、表示または非表示にできるインジケーターを作成できます。此等のセクションは、必要な数だけ使用することが出来ます。</p>
-
 <p>PilotLampセクションを使用する場合は、 <em>DaytimeImage</em> を指定する必要があります。 PilotLampを表示させたい場合は <em>Subject</em> は1を返す必要があります。そうでない場合は非表示になります。</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p>[PilotLamp]</p>
-
+[PilotLamp]
 </div>
-
-
 <p>これをを定義することにより、セクションを開始します。</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Subject = <em>Subject</em></p>
-
+Subject = <em>Subject</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Subject</em></strong>: <a href="#subjects">available subjects</a>の内のいずれか一つを指定します。 デフォルトのsubjectは <strong>true</strong> です。</p>
-
+<em><strong>Subject</strong></em>: <a href="#subjects">available subjects</a>の内のいずれか一つを指定します。 デフォルトのsubjectは <strong>true</strong> です。
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Location = <em>Left</em>, <em>Top</em></p>
-
+Location = <em>Left</em>, <em>Top</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Left</em></strong>: 画面の左端が挿入されるX座標を示す浮動小数点数。デフォルトは値は0です。<br />
-<strong><em>Top</em></strong>: 画面の上端が挿入されるY座標を示す浮動小数点数。デフォルトは値は0です。</p>
-
+<em><strong>Left</strong></em>: 画面の左端が挿入されるX座標を示す浮動小数点数。デフォルトは値は0です。<br>
+<em><strong>Top</strong></em>: 画面の上端が挿入されるY座標を示す浮動小数点数。デフォルトは値は0です。
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>DaytimeImage = <em>FileName</em></p>
-
+DaytimeImage = <em>FileName</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>FileName</em></strong>: Trainフォルダと関連して、インジケーターのイメージの日中バージョンとして使用するイメージファイル。 <strong><em>必ず指定する必要があります。</em></strong></p>
-
+<em><strong>FileName</strong></em>: Trainフォルダと関連して、インジケーターのイメージの日中バージョンとして使用するイメージファイル。 <em><strong>必ず指定する必要があります。</strong></em>
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>NighttimeImage = <em>FileName</em></p>
-
+NighttimeImage = <em>FileName</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>FileName</em></strong>: Trainフォルダーに関連して、インジケーターのイメージの夜間バージョンとして使用するイメージファイル。指定していない場合、夜間バージョンは使用できません。</p>
-
+<em><strong>FileName</strong></em>: Trainフォルダーに関連して、インジケーターのイメージの夜間バージョンとして使用するイメージファイル。指定していない場合、夜間バージョンは使用できません。
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>TransparentColor = <em>HexColor</em></p>
-
+TransparentColor = <em>HexColor</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>HexColor</em></strong>: <a href="../../ja/information/numberformats.html#colors">hexcolor</a>  <em>DaytimeImage</em> と <em>NighttimeImage</em> ファイルの双方で、透明ピクセルに対応する正確な色を表します。デフォルト値は #0000FF です。</p>
-
+<em><strong>HexColor</strong></em>: <a href="../../ja/information/numberformats.html#colors">hexcolor</a>  <em>DaytimeImage</em> と <em>NighttimeImage</em> ファイルの双方で、透明ピクセルに対応する正確な色を表します。デフォルト値は #0000FF です。
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Layer = <em>LayerIndex</em></p>
-
+Layer = <em>LayerIndex</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>LayerIndex</em></strong>: 重なり合うレイヤー要素の中で、個々の要素を一意に定義する整数。 小さい数字は背景側を示し、大きい数字は前景側を示します。 各要素は重なり合わない限り同じ <em>LayerIndex</em> を使用できます。 デフォルト値は0です。</p>
-
+<em><strong>LayerIndex</strong></em>: 重なり合うレイヤー要素の中で、個々の要素を一意に定義する整数。 小さい数字は背景側を示し、大きい数字は前景側を示します。 各要素は重なり合わない限り同じ <em>LayerIndex</em> を使用できます。 デフォルト値は0です。
 </div>
-
-
-<h2 id="a-name-needle-a-5-needle-セクション"><a name="needle"></a>■ 5. Needle セクション</h2>
-
+<h2 id="a-nameneedlea-5-needle-セクション"><a name="needle"></a>■ 5. Needle セクション</h2>
 <p>Needle セクションは、 回転する要素、または針を作成します。 此等のセクションは必要な数だけ使用できます。</p>
-
 <p>Needleにはイメージを用い、<em>DaytimeImage</em> (必須) or <em>NighttimeImage</em> (オプション), は <em>Origin</em> で定義された中心により回転し、  <em>Radius</em> が定義されている場合オプションで拡大縮小されます。 描かれている針の画像は上を向いている必要があります。</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p>[Needle]</p>
-
+[Needle]
 </div>
-
-
 <p>これをを定義することにより、セクションを開始します。</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Subject = <em>Subject</em></p>
-
+Subject = <em>Subject</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Subject</em></strong>: <a href="#subjects">available subjects</a> で定義されているものの一つを指定します。デフォルトのサブジェクトは <strong>true</strong> です。</p>
-
+<em><strong>Subject</strong></em>: <a href="#subjects">available subjects</a> で定義されているものの一つを指定します。デフォルトのサブジェクトは <strong>true</strong> です。
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Location = <em>CenterX</em>, <em>CenterY</em></p>
-
+Location = <em>CenterX</em>, <em>CenterY</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>CenterX</em></strong>: A floating-point number representing the x-coordinate of the center of rotation in terms of the background image. The default value is 0.<br />
-<strong><em>CenterY</em></strong>: A floating-point number representing the y-coordinate of the center of rotation in terms of the background image. The default value is 0.</p>
-
+<em><strong>CenterX</strong></em>: A floating-point number representing the x-coordinate of the center of rotation in terms of the background image. The default value is 0.<br>
+<em><strong>CenterY</strong></em>: A floating-point number representing the y-coordinate of the center of rotation in terms of the background image. The default value is 0.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Radius = <em>ValueInPixels</em></p>
-
+Radius = <em>ValueInPixels</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>ValueInPixels</em></strong>: A non-zero floating-point number that redefines the radius of the element in pixels relative to the background image. The default value is <em>Y</em> from the <em>Origin</em> key-value pair.</p>
-
+<em><strong>ValueInPixels</strong></em>: A non-zero floating-point number that redefines the radius of the element in pixels relative to the background image. The default value is <em>Y</em> from the <em>Origin</em> key-value pair.
 </div>
-
-
-<p>The <em>Y</em> value in the <em>Origin</em> key-value pair defines the vertical point of rotation, but also defines the actual radius of the element in the bitmap&rsquo;s own pixel coordinates. If <em>ValueInPixels</em> is set to a different value than this actual radius, the image will be scaled by a factor of <em>Radius</em> / <em>Y</em>, while preserving the <em>Origin</em>-<em>Center</em> relation. If you do not want to scale the image, set <em>ValueInPixels</em> to the same value as *Y*in the <em>Origin</em> key-value pair, or omit <em>Radius</em> altogether.</p>
-
-<hr />
-
+<p>The <em>Y</em> value in the <em>Origin</em> key-value pair defines the vertical point of rotation, but also defines the actual radius of the element in the bitmap&rsquo;s own pixel coordinates. If <em>ValueInPixels</em> is set to a different value than this actual radius, the image will be scaled by a factor of <em>Radius</em> / <em>Y</em>, while preserving the <em>Origin</em>-<em>Center</em> relation. If you do not want to scale the image, set <em>ValueInPixels</em> to the same value as <em>Y</em>in the <em>Origin</em> key-value pair, or omit <em>Radius</em> altogether.</p>
+<hr>
 <div id="command">
-<p>DaytimeImage = <em>FileName</em></p>
-
+DaytimeImage = <em>FileName</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>FileName</em></strong>: The image file to use as the daytime version of the needle image, relative to the train folder. <strong><em>Is required to be specified.</em></strong></p>
-
+<em><strong>FileName</strong></em>: The image file to use as the daytime version of the needle image, relative to the train folder. <em><strong>Is required to be specified.</strong></em>
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>NighttimeImage = <em>FileName</em></p>
-
+NighttimeImage = <em>FileName</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>FileName</em></strong>: The image file to use as the nighttime version of the needle image, relative to the train folder. If not specified, no nighttime version will be available.</p>
-
+<em><strong>FileName</strong></em>: The image file to use as the nighttime version of the needle image, relative to the train folder. If not specified, no nighttime version will be available.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Color = <em>HexColor</em></p>
-
+Color = <em>HexColor</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>HexColor</em></strong>: A <a href="../../ja/information/numberformats.html#colors">hexcolor</a> representing the color by which the images are multiplied with. The default value is #FFFFFF.</p>
-
+<em><strong>HexColor</strong></em>: A <a href="../../ja/information/numberformats.html#colors">hexcolor</a> representing the color by which the images are multiplied with. The default value is #FFFFFF.
 </div>
-
-
 <p>Multiplies the images by the color specified by <em>HexColor</em>. Setting <em>HexColor</em> to <strong>#FFFFFF</strong> (white) preserves the original color of the images, while setting <em>HexColor</em> to <strong>#000000</strong> (black) produces black images. Pixels defined as being transparent via <em>TransparentColor</em> are not affected.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p>TransparentColor = <em>HexColor</em></p>
-
+TransparentColor = <em>HexColor</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>HexColor</em></strong>: A <a href="../../ja/information/numberformats.html#colors">hexcolor</a> representing the exact color in both the <em>DaytimeImage</em> and <em>NighttimeImage</em> files which corresponds to a transparent pixel. The default value is #0000FF.</p>
-
+<em><strong>HexColor</strong></em>: A <a href="../../ja/information/numberformats.html#colors">hexcolor</a> representing the exact color in both the <em>DaytimeImage</em> and <em>NighttimeImage</em> files which corresponds to a transparent pixel. The default value is #0000FF.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Origin = <em>X</em>, <em>Y</em></p>
-
+Origin = <em>X</em>, <em>Y</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>X</em></strong>: A floating-point number representing the x-coordinate that corresponds to the image&rsquo;s center of rotation. The default value is half the image width.<br />
-<strong><em>Y</em></strong>: A floating-point number representing the y-coordinate that corresponds to the image&rsquo;s center of rotation. The default value is half the image height.</p>
-
+<em><strong>X</strong></em>: A floating-point number representing the x-coordinate that corresponds to the image&rsquo;s center of rotation. The default value is half the image width.<br>
+<em><strong>Y</strong></em>: A floating-point number representing the y-coordinate that corresponds to the image&rsquo;s center of rotation. The default value is half the image height.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>InitialAngle = <em>ValueInDegrees</em></p>
-
+InitialAngle = <em>ValueInDegrees</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>ValueInDegrees</em></strong>: A floating-point number representing the angle <strong>in degrees</strong> that corresponds to the <em>Minimum</em> value. The angle is measured clock-wise from the 12 o&rsquo;clock position. The default value is -120.</p>
-
+<em><strong>ValueInDegrees</strong></em>: A floating-point number representing the angle <strong>in degrees</strong> that corresponds to the <em>Minimum</em> value. The angle is measured clock-wise from the 12 o&rsquo;clock position. The default value is -120.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>LastAngle = <em>ValueInDegrees</em></p>
-
+LastAngle = <em>ValueInDegrees</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>ValueInDegrees</em></strong>: A floating-point number representing the angle <strong>in degrees</strong> that corresponds to the <em>Maximum</em> value. The angle is measured clock-wise from the 12 o&rsquo;clock position. The default value is 120.</p>
-
+<em><strong>ValueInDegrees</strong></em>: A floating-point number representing the angle <strong>in degrees</strong> that corresponds to the <em>Maximum</em> value. The angle is measured clock-wise from the 12 o&rsquo;clock position. The default value is 120.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Minimum = <em>Value</em></p>
-
+Minimum = <em>Value</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: A floating-point value corresponding to the value returned by the <em>Subject</em> in use that should be linked to the <em>InitialAngle</em>. The default value is 0.</p>
-
+<em><strong>Value</strong></em>: A floating-point value corresponding to the value returned by the <em>Subject</em> in use that should be linked to the <em>InitialAngle</em>. The default value is 0.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Maximum = <em>Value</em></p>
-
+Maximum = <em>Value</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: A floating-point value corresponding to the value returned by the <em>Subject</em> in use that should be linked to the <em>LastAngle</em>. The default value is 1000.</p>
-
+<em><strong>Value</strong></em>: A floating-point value corresponding to the value returned by the <em>Subject</em> in use that should be linked to the <em>LastAngle</em>. The default value is 1000.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>NaturalFreq = <em>Value</em></p>
-
+NaturalFreq = <em>Value</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: A non-negative floating-point number representing the natural frequency of an assumed undamped oscillatory system. If not specified, damping will not be performed.</p>
-
+<em><strong>Value</strong></em>: A non-negative floating-point number representing the natural frequency of an assumed undamped oscillatory system. If not specified, damping will not be performed.
 </div>
-
-
 <p>Defines the natural frequency. In an undamped oscillatory system, this is the angular frequency in radians per second. As soon as damping is performed, the frequency will decrease with convergence of the oscillator. A natural frequency of 0 will not allow any rotation to be performed. Higher values roughly correspond to radians per second. If specified, <em>DampingRatio</em> should also be specified.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p>DampingRatio = <em>Value</em></p>
-
+DampingRatio = <em>Value</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: A non-negative floating-point number representing the damping ratio. If not specified, damping will not be performed.</p>
-
+<em><strong>Value</strong></em>: A non-negative floating-point number representing the damping ratio. If not specified, damping will not be performed.
 </div>
-
-
-<p>Defines the damping ratio for the oscillatory system. Values between 0 and 1 represent <a href="http://en.wikipedia.org/wiki/Damping#Under-damping" target="_blank">under-damping</a>, 1 represents <a href="http://en.wikipedia.org/wiki/Damping#Critical_damping" target="_blank">critical damping</a> and values above 1 represent <a href="http://en.wikipedia.org/wiki/Damping#Over-damping" target="_blank">over-damping</a>. Compare the following illustration in which the angle of rotation changes from 0 to 1 over time:</p>
-
+<p>Defines the damping ratio for the oscillatory system. Values between 0 and 1 represent <a href="http://en.wikipedia.org/wiki/Damping#Under-damping">under-damping</a>, 1 represents <a href="http://en.wikipedia.org/wiki/Damping#Critical_damping">critical damping</a> and values above 1 represent <a href="http://en.wikipedia.org/wiki/Damping#Over-damping">over-damping</a>. Compare the following illustration in which the angle of rotation changes from 0 to 1 over time:</p>
 <p>If specified, <em>NaturalFreq</em> should also be specified.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Layer = <em>LayerIndex</em></p>
-
+Layer = <em>LayerIndex</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>LayerIndex</em></strong>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.</p>
-
+<em><strong>LayerIndex</strong></em>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.
 </div>
-
-
-<h2 id="a-name-digitalnumber-a-6-the-digitalnumber-section"><a name="digitalnumber"></a>■ 6. The DigitalNumber section</h2>
-
+<h2 id="a-namedigitalnumbera-6-the-digitalnumber-section"><a name="digitalnumber"></a>■ 6. The DigitalNumber section</h2>
 <p>The DigitalNumber section creates an indicator that can switch between multiple states, useful to build up a display of decimal digits. You can use as many of these sections as required.</p>
-
 <p>The image used for the DigitalNumber, defined by <em>DaytimeImage</em> (required) and <em>NighttimeImage</em> (optional), is comprised of the individual states, which are stacked vertically, anchored at the top of the image. The width of a single state is equal to the width of the image, while the height of a single state is defined by <em>Interval</em> (required). The <em>Subject</em> used needs to return an integer from 0 (first element) to <em>n</em>-1 (last element), where <em>n</em> is the number of elements. If a value outside of that range is returned by <em>Subject</em>, the DigitalNumber will be made invisible.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p>[DigitalNumber]</p>
-
+[DigitalNumber]
 </div>
-
-
 <p>This starts the section.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Subject = <em>Subject</em></p>
-
+Subject = <em>Subject</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Subject</em></strong>: One of the <a href="#subjects">available subjects</a>. The default subject is <strong>true</strong>.</p>
-
+<em><strong>Subject</strong></em>: One of the <a href="#subjects">available subjects</a>. The default subject is <strong>true</strong>.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Location = <em>Left</em>, <em>Top</em></p>
-
+Location = <em>Left</em>, <em>Top</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Left</em></strong>: A floating-point number representing the x-coordinate at which the left of the image is inserted. The default value is 0.<br />
-<strong><em>Top</em></strong>: A floating-point number representing the y-coordinate at which the top of the image is inserted. The default value is 0.</p>
-
+<em><strong>Left</strong></em>: A floating-point number representing the x-coordinate at which the left of the image is inserted. The default value is 0.<br>
+<em><strong>Top</strong></em>: A floating-point number representing the y-coordinate at which the top of the image is inserted. The default value is 0.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>DaytimeImage = <em>FileName</em></p>
-
+DaytimeImage = <em>FileName</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>FileName</em></strong>: The image file to use as the daytime version of the DigitalNumber image, relative to the train folder. <strong><em>Is required to be specified.</em></strong></p>
-
+<em><strong>FileName</strong></em>: The image file to use as the daytime version of the DigitalNumber image, relative to the train folder. <em><strong>Is required to be specified.</strong></em>
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>NighttimeImage = <em>FileName</em></p>
-
+NighttimeImage = <em>FileName</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>FileName</em></strong>: The image file to use as the nighttime version of the DigitalNumber image, relative to the train folder. If not specified, no nighttime version will be available.</p>
-
+<em><strong>FileName</strong></em>: The image file to use as the nighttime version of the DigitalNumber image, relative to the train folder. If not specified, no nighttime version will be available.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>TransparentColor = <em>HexColor</em></p>
-
+TransparentColor = <em>HexColor</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>HexColor</em></strong>: A <a href="../../ja/information/numberformats.html#colors">hexcolor</a> representing the exact color in both the <em>DaytimeImage</em> and <em>NighttimeImage</em> files which corresponds to a transparent pixel. The default value is #0000FF.</p>
-
+<em><strong>HexColor</strong></em>: A <a href="../../ja/information/numberformats.html#colors">hexcolor</a> representing the exact color in both the <em>DaytimeImage</em> and <em>NighttimeImage</em> files which corresponds to a transparent pixel. The default value is #0000FF.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Interval = <em>Height</em></p>
-
+Interval = <em>Height</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Height</em></strong>: The height of a single state in the images in pixels. <strong><em>Is required to be specified.</em></strong></p>
-
+<em><strong>Height</strong></em>: The height of a single state in the images in pixels. <em><strong>Is required to be specified.</strong></em>
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Layer = <em>LayerIndex</em></p>
-
+Layer = <em>LayerIndex</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>LayerIndex</em></strong>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.</p>
-
+<em><strong>LayerIndex</strong></em>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.
 </div>
-
-
-<h2 id="a-name-digitalgauge-a-7-the-digitalgauge-section"><a name="digitalgauge"></a>■ 7. The DigitalGauge section</h2>
-
+<h2 id="a-namedigitalgaugea-7-the-digitalgauge-section"><a name="digitalgauge"></a>■ 7. The DigitalGauge section</h2>
 <p>The DigitalGauge section creates a solid-color square of which only a radial section is shown at a time. You can use as many of these sections as required.</p>
-
 <p>There are three important angles to consider. The <em>InitialAngle</em> defines which angle corresponds to the <em>Minimum</em> value, while <em>LastAngle</em> defines which angle corresponds to the <em>Maximum</em> value. The current value at a given time corresponds to the current angle. The solid-color square will only show the part that is between the current angle and the <em>LastAngle</em>. If <em>InitialAngle</em> is less than <em>LastAngle</em>, the solid-color square will wind clockwise. If <em>InitialAngle</em> is greater than <em>LastAngle</em>, the solid-color square will wind counter-clockwise.</p>
-
 <p>The subject needs to return a value that meaningfully works together with the <em>Minimum</em> and <em>Maximum</em> settings.</p>
-
-<p><img src="../../images/illustration_digitalgauge_1.png" alt="illustration_digitalgauge_1" /></p>
-
-<p><img src="../../images/illustration_digitalgauge_2.png" alt="illustration_digitalgauge_2" /></p>
-
-<hr />
-
+<p><img src="../../images/illustration_digitalgauge_1.png" alt="illustration_digitalgauge_1"></p>
+<p><img src="../../images/illustration_digitalgauge_2.png" alt="illustration_digitalgauge_2"></p>
+<hr>
 <div id="command">
-<p>[DigitalGauge]</p>
-
+[DigitalGauge]
 </div>
-
-
 <p>This starts the section.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Subject = <em>Subject</em></p>
-
+Subject = <em>Subject</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Subject</em></strong>: One of the <a href="#subjects">available subjects</a>. The default subject is <strong>true</strong>.</p>
-
+<em><strong>Subject</strong></em>: One of the <a href="#subjects">available subjects</a>. The default subject is <strong>true</strong>.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Location = <em>CenterX</em>, <em>CenterY</em></p>
-
+Location = <em>CenterX</em>, <em>CenterY</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>CenterX</em></strong>: A floating-point number representing the x-coordinate at which the left of the image is inserted. The default value is 0.<br />
-<strong><em>CenterY</em></strong>: A floating-point number representing the y-coordinate at which the top of the image is inserted. The default value is 0.</p>
-
+<em><strong>CenterX</strong></em>: A floating-point number representing the x-coordinate at which the left of the image is inserted. The default value is 0.<br>
+<em><strong>CenterY</strong></em>: A floating-point number representing the y-coordinate at which the top of the image is inserted. The default value is 0.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Radius = <em>ValueInPixels</em></p>
-
+Radius = <em>ValueInPixels</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>ValueInPixels</em></strong>: A non-zero floating-point number representing half the edge length of the solid-color square in pixels. <strong><em>Is required to be specified.</em></strong></p>
-
+<em><strong>ValueInPixels</strong></em>: A non-zero floating-point number representing half the edge length of the solid-color square in pixels. <em><strong>Is required to be specified.</strong></em>
 </div>
-
-
 <p>If <em>Radius</em> is negative, it is treated as if it was positive, but the entire LED is rotated by 180 degrees.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Color = <em>HexColor</em></p>
-
+Color = <em>HexColor</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>HexColor</em></strong>: A <a href="../../ja/information/numberformats.html#colors">hexcolor</a> representing the color of the solid-color square. The default value is #FFFFFF.</p>
-
+<em><strong>HexColor</strong></em>: A <a href="../../ja/information/numberformats.html#colors">hexcolor</a> representing the color of the solid-color square. The default value is #FFFFFF.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>InitialAngle = <em>ValueInDegrees</em></p>
-
+InitialAngle = <em>ValueInDegrees</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>ValueInDegrees</em></strong>: A floating-point number representing the angle <strong>in degrees</strong> that corresponds to the <em>Minimum</em> value. The angle is measured clock-wise from the 12 o&rsquo;clock position. The default value is -120.</p>
-
+<em><strong>ValueInDegrees</strong></em>: A floating-point number representing the angle <strong>in degrees</strong> that corresponds to the <em>Minimum</em> value. The angle is measured clock-wise from the 12 o&rsquo;clock position. The default value is -120.
 </div>
-
-
 <div id="warning">
 <span>⚠</span>
 <p>The absolute difference between <em>InitialAngle</em> and <em>LastAngle</em> may not exceed 360 degrees.</p>
-
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>LastAngle = <em>ValueInDegrees</em></p>
-
+LastAngle = <em>ValueInDegrees</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>ValueInDegrees</em></strong>: A floating-point number representing the angle <strong>in degrees</strong> that corresponds to the <em>Maximum</em> value. The angle is measured clock-wise from the 12 o&rsquo;clock position. The default value is 120.</p>
-
+<em><strong>ValueInDegrees</strong></em>: A floating-point number representing the angle <strong>in degrees</strong> that corresponds to the <em>Maximum</em> value. The angle is measured clock-wise from the 12 o&rsquo;clock position. The default value is 120.
 </div>
-
-
 <div id="warning">
 <span>⚠</span>
 <p>The absolute difference between <em>InitialAngle</em> and <em>LastAngle</em> may not exceed 360 degrees.</p>
-
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Minimum = <em>Value</em></p>
-
+Minimum = <em>Value</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: A floating-point value corresponding to the value returned by the <em>Subject</em> in use that should be linked to the <em>InitialAngle</em>. The default value is 0.</p>
-
+<em><strong>Value</strong></em>: A floating-point value corresponding to the value returned by the <em>Subject</em> in use that should be linked to the <em>InitialAngle</em>. The default value is 0.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Maximum = <em>Value</em></p>
-
+Maximum = <em>Value</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: A floating-point value corresponding to the value returned by the <em>Subject</em> in use that should be linked to the <em>LastAngle</em>. The default value is 1000.</p>
-
+<em><strong>Value</strong></em>: A floating-point value corresponding to the value returned by the <em>Subject</em> in use that should be linked to the <em>LastAngle</em>. The default value is 1000.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Step = <em>Value</em></p>
-
+Step = <em>Value</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: A floating-point value representing the step in which values on the solid-color square can increase. The value to be displayed via the solid-color square will be rounded down to the next integer multiple of <em>Value</em>. If <em>Value</em> is negative, values will be rounded up to the absolute value of <em>Value</em> instead. If <em>Value</em> is 0, increases will be smooth. The default value is 0.</p>
-
+<em><strong>Value</strong></em>: A floating-point value representing the step in which values on the solid-color square can increase. The value to be displayed via the solid-color square will be rounded down to the next integer multiple of <em>Value</em>. If <em>Value</em> is negative, values will be rounded up to the absolute value of <em>Value</em> instead. If <em>Value</em> is 0, increases will be smooth. The default value is 0.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Layer = <em>LayerIndex</em></p>
-
+Layer = <em>LayerIndex</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>LayerIndex</em></strong>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.</p>
-
+<em><strong>LayerIndex</strong></em>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.
 </div>
-
-
-<h2 id="a-name-lineargauge-a-8-the-lineargauge-section"><a name="lineargauge"></a>■ 8. The LinearGauge section</h2>
-
+<h2 id="a-namelineargaugea-8-the-lineargauge-section"><a name="lineargauge"></a>■ 8. The LinearGauge section</h2>
 <p>The LinearGauge section creates a panel layer, which uses texture shifting to create a sliding linear gauge. You can use as many of these sections as required.</p>
-
 <p>Consider a standard openBVE face:</p>
-
 <p>As you can see, the horizontal texture-coordinates upon this face are 0 at the <strong>right</strong> and 1 at the <strong>left</strong>. Thus, the value given by <em>Minimum</em> represents 0 <em>Maximum</em>, represents 1, and the current value may then be calculated as a simple percentage.</p>
-
 <p>Further, the direction of the texture shift may be changed from horizontal to vertical (or both) by using the <strong>Direction</strong> parameter.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p>[LinearGauge]</p>
-
+[LinearGauge]
 </div>
-
-
 <p>This starts the section.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Subject = <em>Subject</em></p>
-
+Subject = <em>Subject</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Subject</em></strong>: One of the <a href="#subjects">available subjects</a>. The default subject is <strong>true</strong>.</p>
-
+<em><strong>Subject</strong></em>: One of the <a href="#subjects">available subjects</a>. The default subject is <strong>true</strong>.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Location = <em>CenterX</em>, <em>CenterY</em></p>
-
+Location = <em>CenterX</em>, <em>CenterY</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>CenterX</em></strong>: A floating-point number representing the x-coordinate at which the left of the image is inserted. The default value is 0.<br />
-<strong><em>CenterY</em></strong>: A floating-point number representing the y-coordinate at which the top of the image is inserted. The default value is 0.</p>
-
+<em><strong>CenterX</strong></em>: A floating-point number representing the x-coordinate at which the left of the image is inserted. The default value is 0.<br>
+<em><strong>CenterY</strong></em>: A floating-point number representing the y-coordinate at which the top of the image is inserted. The default value is 0.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Minimum = <em>Value</em></p>
-
+Minimum = <em>Value</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: A floating-point value corresponding to the value returned by the <em>Subject</em> in use. The default value is 0.</p>
-
+<em><strong>Value</strong></em>: A floating-point value corresponding to the value returned by the <em>Subject</em> in use. The default value is 0.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Maximum = <em>Value</em></p>
-
+Maximum = <em>Value</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Value</em></strong>: A floating-point value corresponding to the value returned by the <em>Subject</em> in use. The default value is 1000.</p>
-
+<em><strong>Value</strong></em>: A floating-point value corresponding to the value returned by the <em>Subject</em> in use. The default value is 1000.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Direction = <em>XDirection</em>, <em>YDirection</em></p>
-
+Direction = <em>XDirection</em>, <em>YDirection</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>XDirection</em></strong>: <strong>-1:</strong> Translates from right to left <strong>0:</strong> No translation is performed <strong>1:</strong> Translates from left to right. The default value is 0.<br />
-<strong><em>YDirection</em></strong>: <strong>-1:</strong> Translates from top to bottom <strong>0:</strong> No translation is performed <strong>1:</strong> Translates from bottom to top. The default value is 0.</p>
-
+<em><strong>XDirection</strong></em>: <strong>-1:</strong> Translates from right to left <strong>0:</strong> No translation is performed <strong>1:</strong> Translates from left to right. The default value is 0.<br>
+<em><strong>YDirection</strong></em>: <strong>-1:</strong> Translates from top to bottom <strong>0:</strong> No translation is performed <strong>1:</strong> Translates from bottom to top. The default value is 0.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Width = <em>NeedleWidth</em></p>
-
+Width = <em>NeedleWidth</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>NeedleWidth</em></strong>: An integer which defines the width in pixels of the needle, from the edge of the texture- Translation of the texture will stop when this reaches this number of pixels from the end, in order to avoid wrapping around. The default value is 0.</p>
-
+<em><strong>NeedleWidth</strong></em>: An integer which defines the width in pixels of the needle, from the edge of the texture- Translation of the texture will stop when this reaches this number of pixels from the end, in order to avoid wrapping around. The default value is 0.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Layer = <em>LayerIndex</em></p>
-
+Layer = <em>LayerIndex</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>LayerIndex</em></strong>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.</p>
-
+<em><strong>LayerIndex</strong></em>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.
 </div>
-
-
-<h2 id="a-name-timetable-a-9-the-timetable-section"><a name="timetable"></a>■ 9. The Timetable section</h2>
-
+<h2 id="a-nametimetablea-9-the-timetable-section"><a name="timetable"></a>■ 9. The Timetable section</h2>
 <p>The Timetable section defines where to place custom timetables. The actual images are loaded via the route file. Only one Timetable section may be used within the file.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p>[Timetable]</p>
-
+[Timetable]
 </div>
-
-
 <p>This starts the section.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Location = <em>Left</em>, <em>Top</em></p>
-
+Location = <em>Left</em>, <em>Top</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Left</em></strong>: A floating-point number representing the x-coordinate at which the left of the image is inserted. The default value is 0.<br />
-<strong><em>Top</em></strong>: A floating-point number representing the y-coordinate at which the top of the image is inserted. The default value is 0.</p>
-
+<em><strong>Left</strong></em>: A floating-point number representing the x-coordinate at which the left of the image is inserted. The default value is 0.<br>
+<em><strong>Top</strong></em>: A floating-point number representing the y-coordinate at which the top of the image is inserted. The default value is 0.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Width = <em>ValueInPixels</em></p>
-
+Width = <em>ValueInPixels</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>ValueInPixels</em></strong>: A positive floating-point number representing the width of the timetable measured in terms of the background image. <strong><em>Is required to be specified.</em></strong></p>
-
+<em><strong>ValueInPixels</strong></em>: A positive floating-point number representing the width of the timetable measured in terms of the background image. <em><strong>Is required to be specified.</strong></em>
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Height = <em>ValueInPixels</em></p>
-
+Height = <em>ValueInPixels</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>ValueInPixels</em></strong>: A positive floating-point number representing the height of the timetable measured in terms of the background image. <strong><em>Is required to be specified.</em></strong></p>
-
+<em><strong>ValueInPixels</strong></em>: A positive floating-point number representing the height of the timetable measured in terms of the background image. <em><strong>Is required to be specified.</strong></em>
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>TransparentColor = <em>HexColor</em></p>
-
+TransparentColor = <em>HexColor</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>HexColor</em></strong>: A <a href="../../ja/information/numberformats.html#colors">hexcolor</a> representing the exact color in both the daytime and nighttime versions of the timetable which corresponds to a transparent pixel. The default value is #0000FF.</p>
-
+<em><strong>HexColor</strong></em>: A <a href="../../ja/information/numberformats.html#colors">hexcolor</a> representing the exact color in both the daytime and nighttime versions of the timetable which corresponds to a transparent pixel. The default value is #0000FF.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p>Layer = <em>LayerIndex</em></p>
-
+Layer = <em>LayerIndex</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>LayerIndex</em></strong>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.</p>
-
+<em><strong>LayerIndex</strong></em>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.
 </div>
-
-
-<h2 id="a-name-subjects-a-10-available-subjects"><a name="subjects"></a>■ 10. Available subjects</h2>
-
+<h2 id="a-namesubjectsa-10-available-subjects"><a name="subjects"></a>■ 10. Available subjects</h2>
 <p>A subject is composed of a base subject and an optional subject suffix. The subject controls what information is fed to the element that uses the subject. For example, a <em>Needle</em> can use the subject <em>kmph</em> to be fed with the current speed of the train in kilometers per hour, or with the <em>mr</em> subject to show the main reservoir pressure.</p>
-
-<h5 id="base-subjects">● Base subjects</h5>
-
-
+<h5 id="-base-subjects">● Base subjects</h5>
 <table class='type0'>
 <thead>
 <tr>
@@ -1529,189 +992,150 @@
 <th>subjectDescription</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>acc</td>
 <td>Returns the (signed) acceleration of the train in meters per second squared (m/s²).</td>
 </tr>
-
 <tr>
 <td>atc</td>
 <td>Equivalent to <em>ats271</em>.</td>
 </tr>
-
 <tr>
 <td>ats<em>i</em></td>
 <td>Returns the state of the <em>i</em><sup>th</sup> plugin variable, depending on the plugin used. This is the same as pluginState[<em>i</em>] in animated objects.<br/>For the built-in safety systems ATS and ATC, see below.</td>
 </tr>
-
 <tr>
 <td>locobrakecylinder</td>
 <td>Returns the pressure of the brake cylinder on the driver&rsquo;s car in kPa (1000 Pa).</td>
 </tr>
-
 <tr>
 <td>bc</td>
 <td>Returns the pressure of the brake cylinder in kPa (1000 Pa).</td>
 </tr>
-
 <tr>
 <td>locobrakepipe</td>
 <td>Returns the pressure of the brake pipe on the driver&rsquo;s car in kPa (1000 Pa).</td>
 </tr>
-
 <tr>
 <td>bp</td>
 <td>Returns the pressure of the brake pipe in kPa (1000 Pa).</td>
 </tr>
-
 <tr>
 <td>brake</td>
 <td>Returns the currently selected brake notch.<br/>For trains with automatic air brakes, 0 represents <em>RELEASE</em>, 1 represents <em>LAP</em>, 2 represents <em>SERVICE</em> and 3 represents the emergency brake.<br/>For trains without a hold brake device, 0 represents released brakes, <em>i</em> represents brake notch <em>i</em> and <em>n</em>+1 represents the emergency brake, where <em>n</em> is the number of brake notches the train has.<br/>For trains with a hold brake device, 0 represents released brakes, 1 represents the hold brake, <em>i</em>+1 represents brake notch <em>i</em>, and <em>n</em>+2 represents the emergency brakes, where <em>n</em> is the number of brake notches the train has.</td>
 </tr>
-
 <tr>
 <td>locobrake</td>
 <td>Returns the currently selected Loco Brake notch.</td>
 </tr>
-
 <tr>
 <td>csc</td>
 <td>Returns 1 if the const speed system is currently active and 0 otherwise.</td>
 </tr>
-
 <tr>
 <td>door</td>
 <td>Returns a value between 0 (open doors) and 1 (closed doors).</td>
 </tr>
-
 <tr>
 <td>doorl<em>i</em></td>
 <td>Returns a value between 0 (open) and 1 (closed) for the left doors of car <em>i</em>, or 2 if the car does not exist.<br/>Car index 0 represents the first car in the train, and <em>n</em>-1 the last car, where <em>n</em> is the number of cars in the train.</td>
 </tr>
-
 <tr>
 <td>doorr<em>i</em></td>
 <td>Returns a value between 0 (open) and 1 (closed) for the right doors of car <em>i</em>, or 2 if the car does not exist.<br/>Car index 0 represents the first car in the train, and <em>n</em>-1 the last car, where <em>n</em> is the number of cars in the train.</td>
 </tr>
-
 <tr>
 <td>doorbuttonl</td>
 <td>Returns 1 if the left door button is currently pressed, 0 otherwise.</td>
 </tr>
-
 <tr>
 <td>doorbuttonr</td>
 <td>Returns 1 if the right door button is currently pressed, 0 otherwise.</td>
 </tr>
-
 <tr>
 <td>er</td>
 <td>Returns the pressure of the equalizing reservoir in kPa (1000 Pa).</td>
 </tr>
-
 <tr>
 <td>hour</td>
 <td>Returns the integer part of the current hour.</td>
 </tr>
-
 <tr>
 <td>kmph</td>
 <td>Returns the absolute speed of the train in kilometers per hour (km/h).</td>
 </tr>
-
 <tr>
 <td>min</td>
 <td>Returns the integer part of the current minute.</td>
 </tr>
-
 <tr>
 <td>motor</td>
 <td>Returns the acceleration which the motor of the first motor car currently generates in m/s².</td>
 </tr>
-
 <tr>
 <td>mph</td>
 <td>Returns the absolute speed of the train in international miles per hour (mph).</td>
 </tr>
-
 <tr>
 <td>mr</td>
 <td>Returns the pressure of the main reservoir in kPa (1000 Pa).</td>
 </tr>
-
 <tr>
 <td>ms</td>
 <td>Returns the absolute speed of the train in meters per second (m/s).</td>
 </tr>
-
 <tr>
 <td>power</td>
 <td>Returns the currently selected power notch. This is an integer between 0 and <em>n</em>, where <em>n</em> is the number of power notches the train has.</td>
 </tr>
-
 <tr>
 <td>rev</td>
 <td>Returns the currently selected reverser position. 0 represents backward, 1 represents neutral and 2 represents forward.</td>
 </tr>
-
 <tr>
 <td>sap</td>
 <td>Returns the pressure of the straight air pipe in kPa (1000 Pa).</td>
 </tr>
-
 <tr>
 <td>sec</td>
 <td>Returns the integer part of the current second.</td>
 </tr>
-
 <tr>
 <td>true</td>
 <td>Always returns 1. This is useful for the <em>PilotLamp</em> element in order to always show the associated bitmap.</td>
 </tr>
-
 <tr>
 <td>Klaxon</td>
 <td>Returns the currently playing horn (if any) as follows: (0) No horns are playing (1) The primary horn is playing (2) The secondary horn is playing (3) The music horn is playing. <em>Note</em> If multiple horns are playing, the lowest value will be returned.</td>
 </tr>
-
 <tr>
 <td>PrimaryKlaxon</td>
 <td>Returns 1 if the primary horn is currently playing, 0 otherwise.</td>
 </tr>
-
 <tr>
 <td>SecondaryKlaxon</td>
 <td>Returns 1 if the secondary horn is currently playing, 0 otherwise.</td>
 </tr>
-
 <tr>
 <td>MusicKlaxon</td>
 <td>Returns 1 if the music horn is currently playing, 0 otherwise.</td>
 </tr>
-
 <tr>
 <td>passAlarm</td>
 <td>Whether the station pass alarm has been activated. Returns either 0 (inactive) or 1 (active).</td>
 </tr>
-
 <tr>
 <td>pilotLamp</td>
 <td>The state of the pilot lamp (Doors closed &amp; ready to start). Returns either 0 (unlit) or 1 (lit).</td>
 </tr>
-
 <tr>
 <td>stationAdjustAlarm</td>
 <td>Whether the station adjust alarm has been activated. Returns either 0 (inactive) or 1 (active).</td>
 </tr>
 </tbody>
 </table>
-
-
 <p>If ats<em>i</em> is used with the built-in safety systems ATS and ATC, the following mapping for <em>i</em> applies:</p>
-
-
 <table class='type0'>
 <thead>
 <tr>
@@ -1724,7 +1148,6 @@
 <th>Meaning</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>256</td>
@@ -1735,7 +1158,6 @@
 <td>0</td>
 <td>ATC not available</td>
 </tr>
-
 <tr>
 <td>257</td>
 <td>ATS RUN</td>
@@ -1745,7 +1167,6 @@
 <td>1</td>
 <td>0 km/h</td>
 </tr>
-
 <tr>
 <td>258</td>
 <td>ATS RUN</td>
@@ -1755,7 +1176,6 @@
 <td>2</td>
 <td>15 km/h</td>
 </tr>
-
 <tr>
 <td>259</td>
 <td>P POWER</td>
@@ -1765,7 +1185,6 @@
 <td>3</td>
 <td>25 km/h</td>
 </tr>
-
 <tr>
 <td>260</td>
 <td>PTN APPROACH</td>
@@ -1775,7 +1194,6 @@
 <td>4</td>
 <td>45 km/h</td>
 </tr>
-
 <tr>
 <td>261</td>
 <td>BRAKE RELEASE</td>
@@ -1785,7 +1203,6 @@
 <td>5</td>
 <td>55 km/h</td>
 </tr>
-
 <tr>
 <td>262</td>
 <td>BRAKE APPLY</td>
@@ -1795,7 +1212,6 @@
 <td>6</td>
 <td>65 km/h</td>
 </tr>
-
 <tr>
 <td>263</td>
 <td>ATS P</td>
@@ -1805,7 +1221,6 @@
 <td>7</td>
 <td>75 km/h</td>
 </tr>
-
 <tr>
 <td>264</td>
 <td>FAILURE</td>
@@ -1815,7 +1230,6 @@
 <td>8</td>
 <td>90 km/h</td>
 </tr>
-
 <tr>
 <td>265</td>
 <td>ATC</td>
@@ -1825,7 +1239,6 @@
 <td>9</td>
 <td>100 km/h</td>
 </tr>
-
 <tr>
 <td>266</td>
 <td>ATC POWER</td>
@@ -1835,7 +1248,6 @@
 <td>10</td>
 <td>110 km/h</td>
 </tr>
-
 <tr>
 <td>267</td>
 <td>ATC SRV</td>
@@ -1845,7 +1257,6 @@
 <td>11</td>
 <td>120 km/h</td>
 </tr>
-
 <tr>
 <td>268</td>
 <td>ATC EMG</td>
@@ -1855,7 +1266,6 @@
 <td>12</td>
 <td>ATS is active</td>
 </tr>
-
 <tr>
 <td>269</td>
 <td>CONST SPEED</td>
@@ -1865,7 +1275,6 @@
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
-
 <tr>
 <td>270</td>
 <td>EB</td>
@@ -1875,7 +1284,6 @@
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
-
 <tr>
 <td>271</td>
 <td>ATC speed indicator</td>
@@ -1887,11 +1295,7 @@
 </tr>
 </tbody>
 </table>
-
-
-<h5 id="suffixes">● Suffixes</h5>
-
-
+<h5 id="-suffixes">● Suffixes</h5>
 <table class='type0'>
 <thead>
 <tr>
@@ -1899,7 +1303,6 @@
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>d<em>i</em></td>
@@ -1907,8 +1310,6 @@
 </tr>
 </tbody>
 </table>
-
-
 <p><strong>Example:</strong> kmphd1 can be used to feed a <em>DigitalNumber</em> with the tens of the current speed of the train in kilometers per hour. The image used by the <em>DigitalNumber</em> will thus need to be composed of images from 0 to 10 in order to show all possible states kmphd1 can return, where images 0 through 9 correspond to the digits, and 10 corresponds to an image shown at the tens when the speed is below 10 km/h (e.g. another 0-digit, or blank space).</p>
 
 </div>

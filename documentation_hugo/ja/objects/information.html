@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../ja/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../ja/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../ja/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../ja/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,33 +430,23 @@
 
 
 <div id="content">
-  
-
-<p>このページでは、開発者が知っておくべき情報とオブジェクト作成のためのヒントを紹介します。</p>
-
-<h2 id="コマンド">■ コマンド</h2>
-
+  <p>このページでは、開発者が知っておくべき情報とオブジェクト作成のためのヒントを紹介します。</p>
+<h2 id="-コマンド">■ コマンド</h2>
 <ul>
 <li>Face (B3D)またはAddFace (CSV)コマンドでは、隣接する順に頂点を指定する必要があります。自己交差するポリゴンなどの複雑なポリゴンは、不安定な結果につながります。</li>
 <li>現在のopenBVEの実装では、Face2(B3D)またはAddFace2(CSV)によって作成された面の背面に誤った照明が生成されます。 この動作は、openBVEの将来のバージョンで変更され、両側が正しく照明されるようになる可能性があります。</li>
 </ul>
-
-<h2 id="形状">■ 形状</h2>
-
+<h2 id="-形状">■ 形状</h2>
 <ul>
 <li>最終的にはほとんど目立たないような過度に複雑な形状は避けましょう。 キューブ/シリンダーの一部が表示されない場合、CubeおよびCylinderコマンド(B3D / CSV)の使用は避けましょう。 シリンダーキャップが見えない限り、それを作成しないでください。</li>
 <li>滑らかに湾曲した形状を作成するには、多くの面を持つカスタム法線ではなく、面の少ないカスタム法線を使用します。</li>
 </ul>
-
-<h2 id="テクスチャ">■ テクスチャ</h2>
-
+<h2 id="-テクスチャ">■ テクスチャ</h2>
 <ul>
 <li>テクスチャ座標を適切に使用して、オブジェクトを包むテクスチャを作成してください。 これにより、コストのかかるレンダリング時のテクスチャ変更の必要性が、軽減または排除されます。</li>
 <li>1、2、4、8、16、32をはじめとする、2のべき乗の辺の長さを持つテクスチャのみを使用してください。 ただし、テクスチャは正方形である必要はありません。</li>
 </ul>
-
-<h2 id="透過">■ 透過</h2>
-
+<h2 id="-透過">■ 透過</h2>
 <ul>
 <li>最高の視覚品質を得るために使用する、すべての透過処理にはオーバーヘッドがあります。 同様の結果をもたらす複雑な実装や複雑な形状での代替が効く場合は、透過を使用しないでください。</li>
 <li>可能な限り、カラーキーの透明度設定を使用してください。 テクスチャでアルファチャンネルを使用したり、Colorコマンド(B3D)またはSetColorコマンド(CSV)で透過設定を使用したりすることは避けてください。</li>

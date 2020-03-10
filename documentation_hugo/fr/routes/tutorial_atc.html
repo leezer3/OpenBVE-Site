@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../fr/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../fr/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../fr/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../fr/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,123 +430,100 @@
 
 
 <div id="content">
-  
-
-<p>This tutorial is intended to guide you on how to properly set up the built-in Japanese safety system ATC in the case you want to make your route ready to use it. This page assumes that you are familiar with what ATC is. If not, please take a look at the following page first:</p>
-
-<p>➟ <a href="https://openbve-project.net/play-japanese/" target="_blank">How to drive - A quick overview on controls, ATS/ATC, signals and signs</a></p>
-
-<h2 id="setting-up-a-route-for-atc">■ Setting up a route for ATC</h2>
-
+  <p>This tutorial is intended to guide you on how to properly set up the built-in Japanese safety system ATC in the case you want to make your route ready to use it. This page assumes that you are familiar with what ATC is. If not, please take a look at the following page first:</p>
+<p>➟ <a href="https://openbve-project.net/play-japanese/">How to drive - A quick overview on controls, ATS/ATC, signals and signs</a></p>
+<h2 id="-setting-up-a-route-for-atc">■ Setting up a route for ATC</h2>
 <p>First of all, ATC needs to be enabled on a per-station basis. For every station for which ATC is enabled, the track from the beginning of that station until the end of the next station is ATC-equipped. The end of the ATC-enabled track is known in advance by the system, and then train will thus be braked down in time to prevent over-travel.</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>In order to enable ATC:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>Track.Sta STATION; ; ; ; ; ; 1
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>In order to enable ATC:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+Track.Sta STATION; ; ; ; ; ; 1
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>In order to disable ATC:</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>Track.Sta STATION; ; ; ; ; ; 0
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>In order to disable ATC:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+Track.Sta STATION; ; ; ; ; ; 0
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>In the following example, the track from station B until station C is ATC-equipped:</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>With Track<br />
-0000, .Sta A; ; ; ; ; ; 0<br />
-0120, .Stop<br />
-; start of ATC-equipped track at 800<br />
-0800, .Sta B; ; ; ; ; ; 1<br />
-0920, .Stop<br />
-1600, .Sta C; ; ; ; ; ; 0<br />
-1720, .Stop<br />
-; end of ATC-equipped track at 1720<br />
-2400, .Sta D; ; ; ; ; ; 0<br />
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+With Track<br>
+0000, .Sta A; ; ; ; ; ; 0<br>
+0120, .Stop<br>
+; start of ATC-equipped track at 800<br>
+0800, .Sta B; ; ; ; ; ; 1<br>
+0920, .Stop<br>
+1600, .Sta C; ; ; ; ; ; 0<br>
+1720, .Stop<br>
+; end of ATC-equipped track at 1720<br>
+2400, .Sta D; ; ; ; ; ; 0<br>
 2520, .Stop
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
-<h2 id="signalling-and-atc">■ Signalling and ATC</h2>
-
+<h2 id="-signalling-and-atc">■ Signalling and ATC</h2>
 <p>Technically, users may ignore any signals as long as the train operates in ATC. Of course you can demand otherwise on your route. In openBVE, instead of using signals, ATC receives the distance to the next train in blocks of 200m. Depending on the deceleration characteristics of the train, ATC then dictates a particular speed limit, which may be released at any time depending on the change of location of the preceding train. These 200m blocks are placed at track positions 0, 200, 400, 600, and so on.</p>
-
-<h2 id="speed-limits-and-atc">■ Speed limits and ATC</h2>
-
+<h2 id="-speed-limits-and-atc">■ Speed limits and ATC</h2>
 <p>When using the <strong>Track.Limit</strong> command, ATC knows the location of the immediately upcoming one in advance and automatically brakes the train before reaching that position. For example:</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>100, .Limit 100<br />
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+100, .Limit 100<br>
 800, .Limit 40 ,; is known in advance from track position 100
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>There is a way, however, to prevent this behavior. As ATC only knows the immediately upcoming speed limit in advance, repeating the old speed limit in close proximity to the new speed limit makes ATC only brake as soon as the repeating speed limit is reached. For example:</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>100, .Limit 100<br />
-799, .Limit 100<br />
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+100, .Limit 100<br>
+799, .Limit 100<br>
 800, .Limit 40 ,; is known in advance only from track position 799
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
 
 </div>

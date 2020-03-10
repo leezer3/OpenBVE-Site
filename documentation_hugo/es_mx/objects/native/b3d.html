@@ -8,7 +8,7 @@
     <link rel="icon" href="../../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -430,15 +430,11 @@
 
 
 <div id="content">
-  
-
-<h2 id="contenidos">■ Contenidos</h2>
-
+  <h2 id="-contenidos">■ Contenidos</h2>
 <ul class='contents'>
 <li><a href="#overview">1. Vista General</a></li>
 <li><a href="#syntax">2. Sintaxis</a></li>
 <li><a href="#commands">3. Comandos disponbiles</a>
-
 <ul class='contents'>
 <li><a href="#createmeshbuilder">[MeshBuilder]</a></li>
 <li><a href="#addvertex">Vertex</a></li>
@@ -457,437 +453,244 @@
 <li><a href="#loadtexture">Load</a></li>
 <li><a href="#setdecaltransparentcolor">Transparent</a></li>
 <li><a href="#settexturecoordinates">Coordinates</a></li>
-</ul></li>
 </ul>
-
-
-
-<h2 id="a-name-overview-a-1-vista-general"><a name="overview"></a>■ 1. Vista General</h2>
-
+</li>
+</ul>
+<h2 id="a-nameoverviewa-1-vista-general"><a name="overview"></a>■ 1. Vista General</h2>
 <p>Un objeto B3D permite crear un solo objeto usando instrucciones textuales. El objeto puede ser usado en rutas y trenes. El objeto descrito por el archivo puede contener cualquier cantidad de polígonos individuales. El formato del archivo permite agrupar múltiples polígonos en las secciones [MeshBuilder] en cual, estos atributos como color o la información de textura son asignadas a todos los polígonos creados en cada sección. Esto permite la creación de varios polígonos en la misma sección [MeshBuilder] los cuales comparten atributos comunes. Un polígono es denominado una cara (face) en este archivo de formato.</p>
-
-<p>El archivo es un texto plano codificado en cualquier tipo arbitrario de <a href="../../../es_mx/information/encodings.html" target="_blank">codificación</a>, Sin embargo, UTF-8 con un byte de orden marca es la opción preferida El <a href="../../../es_mx/information/numberformats.html" target="_blank">analizar de modelo</a> para los números es <strong>Loose</strong>, Sin embargo, le recomendamos que el resultado sea  <em>Strict</em> . El nombre del archivo es arbitrario, pero debe tener la extensión <strong>.b3d</strong>.  El archivo es interpretado línea por línea, de arriba hacia abajo.</p>
-
-<p>➟ <a href="../../../es_mx/objects/native/b3d_quick.html" target="_blank">Ver también una referencia rápida para el formato B3D&hellip;</a></p>
-
-<h2 id="a-name-syntax-a-2-sintaxis"><a name="syntax"></a>■ 2. Sintaxis</h2>
-
+<p>El archivo es un texto plano codificado en cualquier tipo arbitrario de <a href="../../../es_mx/information/encodings.html">codificación</a>, Sin embargo, UTF-8 con un byte de orden marca es la opción preferida El <a href="../../../es_mx/information/numberformats.html">analizar de modelo</a> para los números es <strong>Loose</strong>, Sin embargo, le recomendamos que el resultado sea  <em>Strict</em> . El nombre del archivo es arbitrario, pero debe tener la extensión <strong>.b3d</strong>.  El archivo es interpretado línea por línea, de arriba hacia abajo.</p>
+<p>➟ <a href="../../../es_mx/objects/native/b3d_quick.html">Ver también una referencia rápida para el formato B3D&hellip;</a></p>
+<h2 id="a-namesyntaxa-2-sintaxis"><a name="syntax"></a>■ 2. Sintaxis</h2>
 <p>Cada linea en el archivo se divide en el nombre del comando y en su argumento. La sintaxis para todos los comandos es la misma que a continuación:</p>
-
 <div id="command">
-<p><strong>NombreDelComando</strong> <em>Argumento<sub>1</sub></em>, <em>Argumento<sub>2</sub></em>, <em>Argumento<sub>3</sub></em>, &hellip;, <em>Argumento<sub>n</sub></em></p>
-
+<strong>NombreDelComando</strong> <em>Argumento<sub>1</sub></em>, <em>Argumento<sub>2</sub></em>, <em>Argumento<sub>3</sub></em>, &hellip;, <em>Argumento<sub>n</sub></em>
 </div>
-
-
-<p><em>NombreDelComando</em> no distingue entre minúsculas y mayúsculas. Si existen argumentos, <em>NombreDelComando</em> y <em>Argumento1</em> deben ser separados por al menos un espacio (U+0020).  Los Argumentos son separados por una coma (U+002C). <a href="../../../es_mx/information/whitespaces.html" target="_blank">Espacios en blanco</a> cerca de los argumentos, y bien al comienzo del final de cada linea, son ignorados. Líneas vacías o lineas solas consistente con espacios en blanco también son ignoradas.</p>
-
+<p><em>NombreDelComando</em> no distingue entre minúsculas y mayúsculas. Si existen argumentos, <em>NombreDelComando</em> y <em>Argumento1</em> deben ser separados por al menos un espacio (U+0020).  Los Argumentos son separados por una coma (U+002C). <a href="../../../es_mx/information/whitespaces.html">Espacios en blanco</a> cerca de los argumentos, y bien al comienzo del final de cada linea, son ignorados. Líneas vacías o lineas solas consistente con espacios en blanco también son ignoradas.</p>
 <p>Los argumentos también pueden ser omitidos dejando el texto a cada <em>Argumento<sub>i</sub></em> en blanco. Un valor predeterminado también puede ser aplicado en este caso, el cual es específico para el comando a ser usado. Todos los valores predeterminados son especificados en la sección disponible de comandos. Nota sin embargo que que el primer argumento no puede ser omitido si otros argumentos son proporcionados.</p>
-
 <p>Puedes usar comentarios en cualquier lado al final de una línea. Un comentario comienza por punto y coma (U+003B). Si los comentarios estan presentes, son quitados de las líneas después de ser procesados.</p>
-
-<h2 id="a-name-commands-a-3-comandos-disponbles"><a name="commands"></a>■ 3. Comandos disponbles</h2>
-
+<h2 id="a-namecommandsa-3-comandos-disponbles"><a name="commands"></a>■ 3. Comandos disponbles</h2>
 <p><a name="createmeshbuilder"></a></p>
-
 <div id="command">
-<p><strong>[MeshBuilder]</strong></p>
-
+<strong>[MeshBuilder]</strong>
 </div>
-
-
 <p>Este comando marca el principio de una nueva sección o caracas. Debe preceder de cualquier de los siguientes comandos. Puede haber tantas secciones [MeshBuilder] como sean deseadas en  el archivo del objeto. Los comandos subsecuentes relacionarse hasta la última sección abierta de [MeshBuilder].</p>
-
-<hr />
-
+<hr>
 <p><a name="addvertex"></a></p>
-
 <div id="command">
-<p><strong>Vertex</strong> <em>vX</em>, <em>vY</em>, <em>vZ</em>, <em>nX</em>, <em>nY</em>, <em>nZ</em></p>
-
+<strong>Vertex</strong> <em>vX</em>, <em>vY</em>, <em>vZ</em>, <em>nX</em>, <em>nY</em>, <em>nZ</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>vX</em></strong>: La coordenada-x del vértice en metros. Valores negativos hacia izquierda, los positivos hacia la derecha. El valor predeterminado es 0.
-<strong><em>vY</em></strong>: La coordenada-y del vértice en metros. Valores negativos hacia abajo, los positivos hacia arriba. El valor predeterminado es 0.
-<strong><em>vZ</em></strong>: La coordenada-z del vértice en metros. Valores negativos hacia atrás, los positivos hacia adelante. El valor predeterminado es 0.
-<strong><em>nX</em></strong>: La coordenada-x del normal de este vértice. El valor predeterminado es 0.
-<strong><em>nY</em></strong>: La coordenada-y del normal de este vértice. El valor predeterminado es 0.
-<strong><em>nZ</em></strong>: La coordenada-z del normal de este vértice. El valor predeterminado es 0.</p>
-
+<em><strong>vX</strong></em>: La coordenada-x del vértice en metros. Valores negativos hacia izquierda, los positivos hacia la derecha. El valor predeterminado es 0.
+<em><strong>vY</strong></em>: La coordenada-y del vértice en metros. Valores negativos hacia abajo, los positivos hacia arriba. El valor predeterminado es 0.
+<em><strong>vZ</strong></em>: La coordenada-z del vértice en metros. Valores negativos hacia atrás, los positivos hacia adelante. El valor predeterminado es 0.
+<em><strong>nX</strong></em>: La coordenada-x del normal de este vértice. El valor predeterminado es 0.
+<em><strong>nY</strong></em>: La coordenada-y del normal de este vértice. El valor predeterminado es 0.
+<em><strong>nZ</strong></em>: La coordenada-z del normal de este vértice. El valor predeterminado es 0.
 </div>
-
-
 <p>Este comando crea un nuevo vértice el cual puede ser usado para crear caras a través de los comandos Face o Face2. Puede haber tantos comandos Vertex como sean deseados dentro de la  sección [MeshBuilder]. Sin embargo, el orden de los vértices es muy importante para otros comandos. El primer vértice otorgado tiene índice 0, y los siguientes vértices tendrán índices 1,2,3 y así en adelante.</p>
-
 <p>El normal es la dirección perpendicular a la cara en un punto en específico. Si todos los vértices en la cara tienen el mismo normal, la cara se verá plana. Si es usado apropiadamente, podrás dar la ilusión de una cara curva a través de especificar diferentes normal por cada vértice, pero usando el mismo normal en todos los vértices que comparten la misma coordenada espacial - a través de múltiples caras. Si todo el lado izquierdo es igual a cero, el normal será calculado automáticamente.</p>
-
-<hr />
-
+<hr>
 <p><a name="addface"></a></p>
-
 <div id="command">
-<p><strong>Face</strong> <em>v<sub>1</sub></em>, <em>v<sub>2</sub></em>, <em>v<sub>3</sub></em>, &hellip;, <em>v<sub>max</sub></em></p>
-
+<strong>Face</strong> <em>v<sub>1</sub></em>, <em>v<sub>2</sub></em>, <em>v<sub>3</sub></em>, &hellip;, <em>v<sub>max</sub></em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>v<sub>i</sub></em></strong>: Corresponde al indice del vértice para incluir en esta cara. Los valores permitidos son 0 hasta <em>n</em>-1, donde <em>n</em> es el numero de comandos de vertices usados.</p>
-
+<em><strong>v<sub>i</sub></strong></em>: Corresponde al indice del vértice para incluir en esta cara. Los valores permitidos son 0 hasta <em>n</em>-1, donde <em>n</em> es el numero de comandos de vertices usados.
 </div>
-
-
 <p>Este comando crea una cara dada en una lista arbitraría larga de índices de vértices. El índice corresponde al orden en el cual los vértices han sido creados por el comando Vertex, por consiguiente el comando Face necesitará iniciar después del comando Vertex correspondiente. El primer comando Vertex usado crea un índice 0, y los comandos Vertex siguientes crearán indice 1,2,3 en adelante. El orden en el cual el índice del vértice aparece es importante. Estos necesitan ser dados en orden hacia las agujas del reloj cuando se vean hacia al frente de la cara. La cara posterior no será visible. Sin embargo, el comando Face2 puede ser usado para crear una cara que sea visible de ambos lados. Solo polígonos convexos están soportados.</p>
-
-<hr />
-
+<hr>
 <p><a name="addface2"></a></p>
-
 <div id="command">
-<p><strong>Face2</strong> <em>v<sub>1</sub></em>, <em>v<sub>2</sub></em>, <em>v<sub>3</sub></em>, &hellip;, <em>v<sub>max</sub></em></p>
-
+<strong>Face2</strong> <em>v<sub>1</sub></em>, <em>v<sub>2</sub></em>, <em>v<sub>3</sub></em>, &hellip;, <em>v<sub>max</sub></em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>v1<sub>i</sub></em></strong>: Corresponde al indice del vértice para incluir en esta cara. Los valores permitidos son 0 hasta <em>n</em>-1, donde <em>n</em> es el numero de comandos de vertices usados.</p>
-
+<em><strong>v1<sub>i</sub></strong></em>: Corresponde al indice del vértice para incluir en esta cara. Los valores permitidos son 0 hasta <em>n</em>-1, donde <em>n</em> es el numero de comandos de vertices usados.
 </div>
-
-
 <p>Este comando crea una cara dada en una lista arbitraría larga de índices de vértices. El índice corresponde al orden en el cual los vértices han sido creados por el comando Vertex, por consiguiente el comando Face necesitará iniciar después del comando Vertex correspondiente. El primer comando Vertex usado crea un índice 0, y los comandos Vertex siguientes crearán indice 1,2,3 en adelante. El orden en el cual el índice del vértice aparece es importante. Estos necesitan ser dados en orden hacia las agujas del reloj cuando se vean hacia al frente de la cara. La cara posterior también será visible, sin embargo, la iluminación de la cara posterior será del mismo resultado que la cara frontal. Solo polígonos convexos están soportados.</p>
-
-<hr />
-
+<hr>
 <p><a name="cube"></a></p>
-
 <div id="command">
-<p><strong>Cube</strong> <em>MitadDeAncho</em>, <em>MitadDeAlto</em>, <em>MitadDeLongitud</em></p>
-
+<strong>Cube</strong> <em>MitadDeAncho</em>, <em>MitadDeAlto</em>, <em>MitadDeLongitud</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>MitadAncho</em></strong>: A un número de coma flotante representando la mitad del ancho del cubo en <strong>metros</strong>.<br />
-<strong><em>MitadAlto</em></strong>:  A un número de coma flotante representando la mitad del alto del cubo en <strong>metros</strong>.<br />
-<strong><em>MitadLongitud</em></strong>:  A un número de coma flotante representando la mitad de la longitud del cubo en <strong>metros</strong>.</p>
-
+<em><strong>MitadAncho</strong></em>: A un número de coma flotante representando la mitad del ancho del cubo en <strong>metros</strong>.<br>
+<em><strong>MitadAlto</strong></em>:  A un número de coma flotante representando la mitad del alto del cubo en <strong>metros</strong>.<br>
+<em><strong>MitadLongitud</strong></em>:  A un número de coma flotante representando la mitad de la longitud del cubo en <strong>metros</strong>.
 </div>
-
-
 <p>Este comando crea un cubo teniendo dimensiones especificadas por <em>MitadAncho</em>, <em>MitadAlto</em> y <em>MitadLongitud</em>. El cubo será centrado al origen (0,0,0). Por consiguiente, en el eje-x, el cubo extenderá desde -<em>MitadAncho</em> hasta <em>MitadAncho</em>, en el eje-y desde -<em>MitadAlto</em> hasta <em>MitadAlto</em> y en el eje-z desde -<em>MitadLongitud</em> hasta <em>MitadLongitud</em>. El cubo siempre tendrá 8 vértices y 6 caras.</p>
-
 <div id="notice">
 <h4 id="representación-del-cubo">Representación del cubo</h4>
-
-<p>El comando Cube es equivalente a una serie comandos Vertex y Face, en lo cual necesitarás darte cuenta para cuando son usados otros comandos en la misma sección [MeshBuilder]. Los detalles en lo que hace el comando Cube esta disponible <a href="../../../es_mx/objects/native/cubecylinder.html">aquí</a>.</p>
-
+<p>El comando Cube es equivalente a una serie comandos Vertex y Face, en lo cual necesitarás darte cuenta para cuando son usados otros comandos en la misma sección [MeshBuilder]. Los detalles en lo que hace el comando Cube esta disponible <a href="../../../es_mx/objects/native/cubecylinder.html">aquí</a>.
 </div>
-
-
-<hr />
-
+<hr>
 <p><a name="cylinder"></a></p>
-
 <div id="command">
-<p><strong>Cylinder</strong> <em>lados</em>, <em>RadioSuperior</em>, <em>RadioInferior</em>, <em>Altura</em></p>
-
+<strong>Cylinder</strong> <em>lados</em>, <em>RadioSuperior</em>, <em>RadioInferior</em>, <em>Altura</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>lados</em></strong>:  Un entero representado el número de vértices para ser usado en la base del tronco.<br />
-<strong><em>RadioSuperior</em></strong>: Un número de coma flotante representando el radio de la base superior del tronco en <strong>metros</strong>. Puede ser negativo para indicar que la tapa superior será omitida.<br />
-<strong><em>RadioInferior</em></strong>: Un número de coma flotante representando el radio de la base inferior del tronco en <strong>metros</strong>. Puede ser negativo para indicar que la tapa inferior será omitida.
-<strong><em>Altura</em></strong>: Un número de coma flotante representando la altura del prisma en <strong>metros</strong>. Puede ser negativo, en el cual invertirá el tronco verticalmente y mostrándose hacia adentro.</p>
-
+<em><strong>lados</strong></em>:  Un entero representado el número de vértices para ser usado en la base del tronco.<br>
+<em><strong>RadioSuperior</strong></em>: Un número de coma flotante representando el radio de la base superior del tronco en <strong>metros</strong>. Puede ser negativo para indicar que la tapa superior será omitida.<br>
+<em><strong>RadioInferior</strong></em>: Un número de coma flotante representando el radio de la base inferior del tronco en <strong>metros</strong>. Puede ser negativo para indicar que la tapa inferior será omitida.
+<em><strong>Altura</strong></em>: Un número de coma flotante representando la altura del prisma en <strong>metros</strong>. Puede ser negativo, en el cual invertirá el tronco verticalmente y mostrándose hacia adentro.
 </div>
-
-
-<p>Este comando crea un <a href="https://es.wikipedia.org/wiki/Tronco" target="_blank">tronco</a>. Si <em>RadioInferior</em> y el <em>RadioSuperior</em> son iguales, el objeto generado se reducirá a un <a href="https://es.wikipedia.org/wiki/Prisma_(geometría)" target="_blank">prisma</a>, el cual puede ser usado como una aproximación del cilindro. Si alguno de <em>RadioInferior</em> o <em>RadioSuperior</em> son cero. El objeto generado se reducirá a una  <a href="https://es.wikipedia.org/wiki/Pirámide_(geometría)" target="_blank">pirámide</a>. El tronco será centrado al origen (0,0,0). En los ejes X y Z, el tronco se extiende desde el -<em>RadioInferior</em> al <em>RadioSuperior</em> para la base mas baja y desde -<em>RadioSuperior</em> hasta <em>RadioSuperior</em> para la base mas alta. En el eje Y, el tronco se extiende desde -½*<em>Altura</em> hasta ½*<em>Altura</em>.</p>
-
-<p>El número de vértices <em>lados</em> por lo general entre 6 o 8 puede satisfacer cuando un radio pequeño es usado, por ejemplo para crear un poste. Sin importar los valores de <em>RadioSuperior</em>,<em>RadioInferior</em> y <em>lados</em>, el tronco siempre tendrá 2*<em>n</em> vértices, y usualmente <em>n</em>+2 caras a menos que cualquiera de los topes o tapas sean omitidas. Si el <em>RadioSuperior</em> o el <em>RadioInferior</em>  son negativos, el valor absoluto será tomado, pero las tapas no serán creadas. Si la <em>Altura</em> es negativa, los roles de arriba y abajo serán invertidos y las caras serán visibles desde adentro, mientras que de otra manera, serán visibles desde afuera.</p>
-
+<p>Este comando crea un <a href="https://es.wikipedia.org/wiki/Tronco">tronco</a>. Si <em>RadioInferior</em> y el <em>RadioSuperior</em> son iguales, el objeto generado se reducirá a un <a href="https://es.wikipedia.org/wiki/Prisma_(geometr%C3%ADa)">prisma</a>, el cual puede ser usado como una aproximación del cilindro. Si alguno de <em>RadioInferior</em> o <em>RadioSuperior</em> son cero. El objeto generado se reducirá a una  <a href="https://es.wikipedia.org/wiki/Pir%C3%A1mide_(geometr%C3%ADa)">pirámide</a>. El tronco será centrado al origen (0,0,0). En los ejes X y Z, el tronco se extiende desde el -<em>RadioInferior</em> al <em>RadioSuperior</em> para la base mas baja y desde -<em>RadioSuperior</em> hasta <em>RadioSuperior</em> para la base mas alta. En el eje Y, el tronco se extiende desde -½*<em>Altura</em> hasta ½*<em>Altura</em>.</p>
+<p>El número de vértices <em>lados</em> por lo general entre 6 o 8 puede satisfacer cuando un radio pequeño es usado, por ejemplo para crear un poste. Sin importar los valores de <em>RadioSuperior</em>,<em>RadioInferior</em> y <em>lados</em>, el tronco siempre tendrá 2**n* vértices, y usualmente <em>n</em>+2 caras a menos que cualquiera de los topes o tapas sean omitidas. Si el <em>RadioSuperior</em> o el <em>RadioInferior</em>  son negativos, el valor absoluto será tomado, pero las tapas no serán creadas. Si la <em>Altura</em> es negativa, los roles de arriba y abajo serán invertidos y las caras serán visibles desde adentro, mientras que de otra manera, serán visibles desde afuera.</p>
 <div id="notice">
 <h4 id="representación-del-cilindro">Representación del cilindro</h4>
-
-<p>El comando Cylinder es equivalente a una serie de comandos Vertex y Face, que deberás tener en cuenta para cuando uses otro comando en el misma sección [MeshBuilder]. Los detalles en lo que respecta a la funcionalidad del comando Cylinder están disponibles <a href="../../../es_mx/objects/native/cubecylinder.html">aquí</a>.</p>
-
+<p>El comando Cylinder es equivalente a una serie de comandos Vertex y Face, que deberás tener en cuenta para cuando uses otro comando en el misma sección [MeshBuilder]. Los detalles en lo que respecta a la funcionalidad del comando Cylinder están disponibles <a href="../../../es_mx/objects/native/cubecylinder.html">aquí</a>.
 </div>
-
-
-<hr />
-
+<hr>
 <div id="command">
-<p><font color=#555555>Textura</font></p>
-
+<font color=#555555>Textura</font>
 </div>
-
-
 <p><em><font color=#555555>Este comando es ignorado por openBVE.</font></em></p>
-
-<hr />
-
+<hr>
 <p><a name="translate"></a></p>
-
 <div id="command">
-<p><strong>Translate</strong> <em>X</em>, <em>Y</em>, <em>Z</em><br />
-<strong>TranslateAll</strong> <em>X</em>, <em>Y</em>, <em>Z</em></p>
-
+<strong>Translate</strong> <em>X</em>, <em>Y</em>, <em>Z</em><br>
+<strong>TranslateAll</strong> <em>X</em>, <em>Y</em>, <em>Z</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>X</em></strong>: Un número de coma flotante representando la traslación de la coordenada-x en <strong>metros</strong>. Valores negativos trasladan hacia izquierda, los positivos hacia derecha. El valor predeterminado es 0.
-<strong><em>Y</em></strong>: Un número de coma flotante representando la traslación de la coordenada-y en <strong>metros</strong>. Valores negativos trasladan hacia abajo, los positivos hacia arriba. El valor predeterminado es 0.
-<strong><em>Z</em></strong>: Un número de coma flotante representando la traslación de la coordenada-z en <strong>metros</strong>. Valores negativos trasladan hacia atrás, los positivos hacia adelante. El valor predeterminado es 0.</p>
-
+<em><strong>X</strong></em>: Un número de coma flotante representando la traslación de la coordenada-x en <strong>metros</strong>. Valores negativos trasladan hacia izquierda, los positivos hacia derecha. El valor predeterminado es 0.
+<em><strong>Y</strong></em>: Un número de coma flotante representando la traslación de la coordenada-y en <strong>metros</strong>. Valores negativos trasladan hacia abajo, los positivos hacia arriba. El valor predeterminado es 0.
+<em><strong>Z</strong></em>: Un número de coma flotante representando la traslación de la coordenada-z en <strong>metros</strong>. Valores negativos trasladan hacia atrás, los positivos hacia adelante. El valor predeterminado es 0.
 </div>
-
-
 <p>El comando <strong>Translate</strong> mueve todos los vértices que han sidos creados hasta ahora en la sección [MeshBuilder] a través de los comandos, Vertex,Cube o Cylinder. Los vértices subsiguientes no son afectados. Puedes usar tantos comandos Translate como desees en una sección de [MeshBuilder]. El comando <strong>TranslateALL</strong> no solo afecta a los vértices generados en la sección actual [MeshBuilder], sino también a aquellos previamente creados en la secciones [MeshBuilder]. Esto es útil para insertar al final del archivo en orden de trasladar todo el objeto.</p>
-
-<hr />
-
+<hr>
 <p><a name="scale"></a></p>
-
 <div id="command">
-<p><strong>Scale</strong> <em>X</em>, <em>Y</em>, <em>Z</em><br />
-<strong>ScaleAll</strong> <em>X</em>, <em>Y</em>, <em>Z</em></p>
-
+<strong>Scale</strong> <em>X</em>, <em>Y</em>, <em>Z</em><br>
+<strong>ScaleAll</strong> <em>X</em>, <em>Y</em>, <em>Z</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>X</em></strong>: Un número no cero de coma flotante representando la el factor de escala en la coordenada-x. El valor predeterminado es 1.
-<strong><em>Y</em></strong>: Un número no cero de coma flotante representando la el factor de escala en la coordenada-y. El valor predeterminado es 1.
-<strong><em>Z</em></strong>: Un número no cero de coma flotante representando la el factor de escala en la coordenada-z. El valor predeterminado es 1.</p>
-
+<em><strong>X</strong></em>: Un número no cero de coma flotante representando la el factor de escala en la coordenada-x. El valor predeterminado es 1.
+<em><strong>Y</strong></em>: Un número no cero de coma flotante representando la el factor de escala en la coordenada-y. El valor predeterminado es 1.
+<em><strong>Z</strong></em>: Un número no cero de coma flotante representando la el factor de escala en la coordenada-z. El valor predeterminado es 1.
 </div>
-
-
 <p>El comando <strong>Scale</strong> escala todos los vértices que han sido creados hasta ahora en la sección de [MeshBuilder] a través de los comandos Vertex,Cube o Cylinder. Los vértices subsiguientes no serán afectados. Puedes usar tantos comandos Scale como desees en una sección de [MeshBuilder]. El comando <strong>ScaleAll</strong> no solo afecta a los vértices generados en la sección actual [MeshBuilder], sino también a todos aquellos que han sido creados previamente en las secciones [MeshBuilder]. Esto es útil para insertar al final del archivo en orden de escalar todo el objeto.</p>
-
-<hr />
-
+<hr>
 <p><a name="rotate"></a></p>
-
 <div id="command">
-<p><strong>Rotate</strong> <em>X</em>, <em>Y</em>, <em>Z</em>, <em>Ángulo</em><br />
-<strong>RotateAll</strong> <em>X</em>, <em>Y</em>, <em>Z</em>, <em>Ángulo</em></p>
-
+<strong>Rotate</strong> <em>X</em>, <em>Y</em>, <em>Z</em>, <em>Ángulo</em><br>
+<strong>RotateAll</strong> <em>X</em>, <em>Y</em>, <em>Z</em>, <em>Ángulo</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>X</em></strong>:  La dirección-x del eje de rotación. Valores negativos apuntan hacia izquierda, positivos hacia derecha. El valor predeterminado es 0.
-<strong><em>Y</em></strong>: La dirección-y del eje de rotación. Valores negativos apuntan hacia abajo, positivos hacia arriba. El valor predeterminado es 0.
-<strong><em>Z</em></strong>: La dirección-z del eje de rotación. Valores negativos apuntan hacia atrás, positivos hacia adelante. El valor predeterminado es 0.
-<strong><em>Ángulo</em></strong>: El ángulo de la rotación en grados. Valores negativos rotan hacia en contra sentido de las agujas del reloj, positivos en sentido de las agujas del reloj. El valor predeterminado es 0.</p>
-
+<em><strong>X</strong></em>:  La dirección-x del eje de rotación. Valores negativos apuntan hacia izquierda, positivos hacia derecha. El valor predeterminado es 0.
+<em><strong>Y</strong></em>: La dirección-y del eje de rotación. Valores negativos apuntan hacia abajo, positivos hacia arriba. El valor predeterminado es 0.
+<em><strong>Z</strong></em>: La dirección-z del eje de rotación. Valores negativos apuntan hacia atrás, positivos hacia adelante. El valor predeterminado es 0.
+<em><strong>Ángulo</strong></em>: El ángulo de la rotación en grados. Valores negativos rotan hacia en contra sentido de las agujas del reloj, positivos en sentido de las agujas del reloj. El valor predeterminado es 0.
 </div>
-
-
 <p>El comando <strong>Rotate</strong> gira todos los vértices que han sido creados hasta ahora en la sección de [MeshBuilder] a través de los comandos Vertex,Cube o Cylinder. Los vértices subsiguientes no serán afectados. El eje de rotación es específicado por los valores <em>X</em>, <em>Y</em> y <em>Z</em>. La rotación ocurrirá en el plano perpendicular a esa dirección. Un vector cero para este eje es tratado como (1,0,0). Todas las otras direcciones son normalizadas. Puedes causar tantas rotaciones como desees en una sección [MeshBuilder]. El comando <strong>RotateAll</strong> no solo afecta a los vertices que han sido generados en la sección actual [MeshBuilder], sino también a aquellos creados en las secciónes [MeshBuilder] anteriores. Esto es útil al insertar al final del archivo en orden de rotar todo el objeto.</p>
-
-<hr />
-
+<hr>
 <p><a name="shear"></a></p>
-
 <div id="command">
-<p><strong>Shear</strong> <em>dX</em>, <em>dY</em>, <em>dZ</em>, <em>sX</em>, <em>sY</em>, <em>sZ</em>, <em>Cantidad</em><br />
-<strong>ShearAll</strong> <em>dX</em>, <em>dY</em>, <em>dZ</em>, <em>sX</em>, <em>sY</em>, <em>sZ</em>, <em>Cantidad</em></p>
-
+<strong>Shear</strong> <em>dX</em>, <em>dY</em>, <em>dZ</em>, <em>sX</em>, <em>sY</em>, <em>sZ</em>, <em>Cantidad</em><br>
+<strong>ShearAll</strong> <em>dX</em>, <em>dY</em>, <em>dZ</em>, <em>sX</em>, <em>sY</em>, <em>sZ</em>, <em>Cantidad</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>dX</em></strong>: La coordenada-x del vector D. El valor predeterminado es 0.<br />
-<strong><em>dY</em></strong>: La coordenada-y del vector D. El valor predeterminado es 0.
-<strong><em>dZ</em></strong>: La coordenada-z del vector D. El valor predeterminado es 0.
-<strong><em>sX</em></strong>: La coordenada-x del vector S. El valor predeterminado es 0.
-<strong><em>sY</em></strong>: La coordenada-y del vector S. El valor predeterminado es 0.
-<strong><em>sZ</em></strong>: La coordenada-z del vector S. El valor predeterminado es 0.
-<strong><em>r</em></strong>: La cantidad que indica cuanto se desplazará los vectores. El valor predeterminado es 0.</p>
-
+<em><strong>dX</strong></em>: La coordenada-x del vector D. El valor predeterminado es 0.<br>
+<em><strong>dY</strong></em>: La coordenada-y del vector D. El valor predeterminado es 0.
+<em><strong>dZ</strong></em>: La coordenada-z del vector D. El valor predeterminado es 0.
+<em><strong>sX</strong></em>: La coordenada-x del vector S. El valor predeterminado es 0.
+<em><strong>sY</strong></em>: La coordenada-y del vector S. El valor predeterminado es 0.
+<em><strong>sZ</strong></em>: La coordenada-z del vector S. El valor predeterminado es 0.
+<em><strong>r</strong></em>: La cantidad que indica cuanto se desplazará los vectores. El valor predeterminado es 0.
 </div>
-
-
-<p>El comando <strong>Shear</strong> logra un <a href="http://en.wikipedia.org/wiki/Shear_mapping" target="_blank">cambio de mapeo</a> para todos los vértices que han sido creados hasta ahora en la actual sección [MeshBuilder]. El comando <strong>ShearAll</strong> no solo afecta a los vértices generados en la sección actual [MeshBuilder], sino también a aquellos que han sido creados anteriormente en las secciones [MeshBuilder]. Esto es útil al instertar al final del archivo en orden de cambiar todo el objeto.</p>
-
-<p><img src="../../../images/illustration_shear.png" alt="illustration_shear" /></p>
-
+<p>El comando <strong>Shear</strong> logra un [cambio de mapeo] (<a href="http://en.wikipedia.org/wiki/Shear_mapping">http://en.wikipedia.org/wiki/Shear_mapping</a>) para todos los vértices que han sido creados hasta ahora en la actual sección [MeshBuilder]. El comando <strong>ShearAll</strong> no solo afecta a los vértices generados en la sección actual [MeshBuilder], sino también a aquellos que han sido creados anteriormente en las secciones [MeshBuilder]. Esto es útil al instertar al final del archivo en orden de cambiar todo el objeto.</p>
+<p><img src="../../../images/illustration_shear.png" alt="illustration_shear"></p>
 <p>El mapeado de cambio es hecho sobre el origen. Pobremente hablando, el objeto es cortado en planos sobre la dirección D y después desplazada a lo largo de la dirección S. Típicamente, D y S son perpendicular. D y S siempre són normalizados. Si la <em>Cantidad</em> es 0, ninguna transformación es aplicada. Si D y S son perpendicular, y una <em>Cantidad</em> de 1 corresponde a una pendiente de 45 grados.</p>
-
-<hr />
-
+<hr>
 <p><a name="mirror"></a></p>
-
 <div id="command">
-<p><strong>Mirror</strong>, <em>X</em>, <em>Y</em>, <em>Z</em><br />
-<strong>MirrorAll</strong>, <em>X</em>, <em>Y</em>, <em>Z</em></p>
-
+<strong>Mirror</strong>, <em>X</em>, <em>Y</em>, <em>Z</em><br>
+<strong>MirrorAll</strong>, <em>X</em>, <em>Y</em>, <em>Z</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>X</em></strong>: Donde el eje-x  debe ser invertido. El valor predeterminado es 0 (falso).<br />
-<strong><em>Y</em></strong>: Donde el eje-y debe ser invertido. El valor predeterminado es 0 (falso).
-<strong><em>Z</em></strong>: Donde el eje-z debe ser invertido. El valor predeterminado es 0 (falso).</p>
-
+<em><strong>X</strong></em>: Donde el eje-x  debe ser invertido. El valor predeterminado es 0 (falso).<br>
+<em><strong>Y</strong></em>: Donde el eje-y debe ser invertido. El valor predeterminado es 0 (falso).
+<em><strong>Z</strong></em>: Donde el eje-z debe ser invertido. El valor predeterminado es 0 (falso).
 </div>
-
-
 <p>The <strong>Mirror</strong> command mirrors all vertices that have been created so far in the current CreateMeshBuilder section via the AddVertex, Cube or Cylinder commands. Subsequent vertices are not affected. The direction(s) to mirror are specified via the <em>X</em>, <em>Y</em> and <em>Z</em> values. You can use as many Mirror commands as desired in a CreateMeshBuilder section.<br><br> The <strong>MirrorAll</strong> command not only affects the vertices generated in the current CreateMeshBuilder section, but also those created in previous CreateMeshBuilder sections. This is useful to insert at the end of the file in order to mirror the whole object.</p>
-
-<hr />
-
+<hr>
 <p><a name="setcolor"></a></p>
-
 <div id="command">
-<p><strong>Color</strong> <em>Rojo</em>, <em>Verde</em>, <em>Azul</em>, <em>Alfa</em></p>
-
+<strong>Color</strong> <em>Rojo</em>, <em>Verde</em>, <em>Azul</em>, <em>Alfa</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Rojo</em></strong>: El componente rojo del color. Medido desde 0 (negro) a 255 (rojo). El valor predeterminado es 255.
-<strong><em>Verde</em></strong>: El componente verde del color. Medido desde 0 (negro) a 255 (verde). El valor predeterminado es 255.
-<strong><em>Azul</em></strong>: El componente azul del color. Medido desde 0 (negro) a 255 (azul). El valor predeterminado es 255.
-<strong><em>Alfa</em></strong>: El componente alfa del color. Medido desde 0 (transparente) a 255 (opaco). El valor predeterminado es 255.</p>
-
+<em><strong>Rojo</strong></em>: El componente rojo del color. Medido desde 0 (negro) a 255 (rojo). El valor predeterminado es 255.
+<em><strong>Verde</strong></em>: El componente verde del color. Medido desde 0 (negro) a 255 (verde). El valor predeterminado es 255.
+<em><strong>Azul</strong></em>: El componente azul del color. Medido desde 0 (negro) a 255 (azul). El valor predeterminado es 255.
+<em><strong>Alfa</strong></em>: El componente alfa del color. Medido desde 0 (transparente) a 255 (opaco). El valor predeterminado es 255.
 </div>
-
-
 <p>This command sets the color for all faces that were already created in the current [MeshBuilder] section. If no texture is used, the faces will be colored using the color data as specified by <em>Red</em>, <em>Green</em> and <em>Blue</em>. If a texture is used, the pixels in the texture will be multiplied by the color, where multiplying with black results in black and multiplying with white does not change the color of the texture pixels. Values in-between make the texture pixels darker. When lighting is used in the route, the actual color can change depending on the lighting conditions, but will usually become darker.</p>
-
-<hr />
-
+<hr>
 <p><a name="setemissivecolor"></a></p>
-
 <div id="command">
-<p><strong>EmissiveColor</strong> <em>Rojo</em>, <em>Verde</em>, <em>Azul</em></p>
-
+<strong>EmissiveColor</strong> <em>Rojo</em>, <em>Verde</em>, <em>Azul</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Rojo</em></strong>: El componente rojo del color. Medido desde 0 (negro) a 255 (rojo). El valor predeterminado es 0.
-<strong><em>Verde</em></strong>: El componente verde del color. Medido desde 0 (negro) a 255 (verde). El valor predeterminado es 0.
-<strong><em>Azul</em></strong>: El componente azul del color. Medido desde 0 (negro) a 255 (azul). El valor predeterminado es 0.</p>
-
+<em><strong>Rojo</strong></em>: El componente rojo del color. Medido desde 0 (negro) a 255 (rojo). El valor predeterminado es 0.
+<em><strong>Verde</strong></em>: El componente verde del color. Medido desde 0 (negro) a 255 (verde). El valor predeterminado es 0.
+<em><strong>Azul</strong></em>: El componente azul del color. Medido desde 0 (negro) a 255 (azul). El valor predeterminado es 0.
 </div>
-
-
 <p>This command sets the emissive color for all faces that were already created in the current [MeshBuilder] section. The difference between the Color command and the EmissiveColor command is that the Color command is affected by lighting, while the EmissiveColor command is not. Thus, the EmissiveColor command should be used for faces which would emit light themselves, including signals, lamps, windows and the like. The actual color contribution to the faces will be the sum of the light-affected color data and the static emissive color data.</p>
-
-<hr />
-
+<hr>
 <p><a name="setblendmode"></a></p>
-
 <div id="command">
-<p><strong>BlendMode</strong> <em>ModoCombinar</em>, <em>BrilloMitadDistancia</em>, <em>ModoAtenuaciónBrillo</em></p>
-
+<strong>BlendMode</strong> <em>ModoCombinar</em>, <em>BrilloMitadDistancia</em>, <em>ModoAtenuaciónBrillo</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>BlendMode</em></strong>: The blend mode to use. The default is Normal.<br />
-<strong><em>GlowHalfDistance</em></strong>: The distance at which the glow is at 50% of its intensity, measured in meters. The value must be an integer in the range from 1 to 4095, or 0 to disable glow attenuation. The default value is 0.<br />
-<strong><em>GlowAttenuationMode</em></strong>: The glow attenuation mode to use. The default is DivideExponent4.</p>
-
+<em><strong>BlendMode</strong></em>: The blend mode to use. The default is Normal.<br>
+<em><strong>GlowHalfDistance</strong></em>: The distance at which the glow is at 50% of its intensity, measured in meters. The value must be an integer in the range from 1 to 4095, or 0 to disable glow attenuation. The default value is 0.<br>
+<em><strong>GlowAttenuationMode</strong></em>: The glow attenuation mode to use. The default is DivideExponent4.
 </div>
-
-
 <p>▸ Opciones disponibles para <em>ModoCombinar</em>:</p>
-
 <div id="command-arguments">
-<p><strong>Normal</strong>: Las caras se renderizarán normalmente.<br />
-<strong>Additive</strong>: Las caras se renderizarán aditivamente.</p>
-
+<strong>Normal</strong>: Las caras se renderizarán normalmente.<br>
+<strong>Additive</strong>: Las caras se renderizarán aditivamente.
 </div>
-
-
 <p>▸ Opciones disponibles para <em>ModoAtenuaciónBrillo</em>:</p>
-
 <div id="command-arguments">
-<p><strong>DivideExponente2</strong>: La intensidad del brillo es determinada por la función <em>x</em><sup>2</sup> / (<em>x</em><sup>2</sup> + <em>BrilloMitadDistancia</em><sup>2</sup>), donde <em>x</em> es la distancia desde la cámara al objeto en metros.
-<strong>DivideExponente4</strong>: La intensidad del brillo es determinada por la función <em>x</em><sup>4</sup> / (<em>x</em><sup>4</sup> + <em>BrilloMitadDistancia</em><sup>4</sup>), donde <em>x</em> es la distancia desde la cámara al objeto en metros.</p>
-
+<strong>DivideExponente2</strong>: La intensidad del brillo es determinada por la función <em>x</em><sup>2</sup> / (<em>x</em><sup>2</sup> + <em>BrilloMitadDistancia</em><sup>2</sup>), donde <em>x</em> es la distancia desde la cámara al objeto en metros.
+<strong>DivideExponente4</strong>: La intensidad del brillo es determinada por la función <em>x</em><sup>4</sup> / (<em>x</em><sup>4</sup> + <em>BrilloMitadDistancia</em><sup>4</sup>), donde <em>x</em> es la distancia desde la cámara al objeto en metros.
 </div>
-
-
 <p>This command sets the blend mode for all faces in the current [MeshBuilder] section. The <em>Normal</em> mode replaces screen pixels with texture pixels. The <em>Additive</em> mode adds the color of texture pixels to the color of screen pixels, where adding black does not change the screen pixel, while adding white results in white. If <em>GlowHalfDistance</em> is 0, glow attenuation will be disabled, which is the default. If glow attenuation is to be used, <em>GlowHalfDistance</em> represents the distance in meters at which the glow is exactly at 50% of its intensity. When the camera approaches the face, the face will gradually fade out (become transparent). The function used to determine the exact intensity for a given distance can be influenced with the setting of <em>GlowAttenuationMode</em>. DivideExponent2 creates a smoother transition, but will converge to the maximum intensity very slowly, while DivideExponent4 creates a sharper transition which converges more quickly.</p>
-
 <div id="warning">
 <h4 id="nota-de-compatibilidad-con-openbve-2">Nota de compatibilidad con openBVE 2</h4>
-
-<p>En openBVE 2, sólo brillo aditivo será soportado y el <em>ModoAtenuaciónBrillo</em> parámetros es posible que quede en obsoleto. Por favor evite usar combinado en modo normal en conjunto con brillo.</p>
-
+<p>En openBVE 2, sólo brillo aditivo será soportado y el <em>ModoAtenuaciónBrillo</em> parámetros es posible que quede en obsoleto. Por favor evite usar combinado en modo normal en conjunto con brillo.
 </div>
-
-
-<hr />
-
+<hr>
 <p><a name="loadtexture"></a></p>
-
 <div id="command">
-<p><strong>Load</strong> <em>TexturaDeDia</em>, <em>TexturaDeNoche</em></p>
-
+<strong>Load</strong> <em>TexturaDeDia</em>, <em>TexturaDeNoche</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>DaytimeTexture</em></strong>: The file name of the daytime version of the texture to load, relative to the directory the object file is stored in.<br />
-<strong><em>NighttimeTexture</em></strong>: The file name of the daytime version of the texture to load, relative to the directory the object file is stored in.</p>
-
+<em><strong>DaytimeTexture</strong></em>: The file name of the daytime version of the texture to load, relative to the directory the object file is stored in.<br>
+<em><strong>NighttimeTexture</strong></em>: The file name of the daytime version of the texture to load, relative to the directory the object file is stored in.
 </div>
-
-
 <p>This command loads a texture and uses it for all faces in the current CreateMeshBuilder section. The file name is relative to the directory the object file is stored in. You can use PNG, which supports full alpha channels, but use the alpha channel only if absolutely required as it reduces performance. Prefer using a texture without an alpha channel in conjunction with the SetDecalTransparentColor command in order to use color-key transparency.</p>
-
 <p>If <em>NighttimeTexture</em> is used, it specifies the texture to be used on nighttime lighting conditions, while <em>DaytimeTexture</em> then specifies the texture to be used on daytime lighting conditions. The textures might blend into each other and should be designed accordingly. If <em>NighttimeTexture</em> is used, <em>DaytimeTexture</em> must also be specified. If <em>NighttimeTexture</em> is not used, low lighting conditions will make the daytime version darker. Nighttime textures are meant for use with train interior/exterior objects.</p>
-
-<hr />
-
+<hr>
 <p><a name="setdecaltransparentcolor"></a></p>
-
 <div id="command">
-<p><strong>Transparent</strong> <em>Rojo</em>, <em>Verde</em>, <em>Azul</em></p>
-
+<strong>Transparent</strong> <em>Rojo</em>, <em>Verde</em>, <em>Azul</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>Rojo</em></strong>: El componente rojo del color. Medido desde 0 (negro) a 255 (rojo). El valor predeterminado es 0.
-<strong><em>Verde</em></strong>: El componente verde del color. Medido desde 0 (negro) a 255 (verde). El valor predeterminado es 0.
-<strong><em>Azul</em></strong>: El componente azul del color. Medido desde 0 (negro) a 255 (azul). El valor predeterminado es 0.</p>
-
+<em><strong>Rojo</strong></em>: El componente rojo del color. Medido desde 0 (negro) a 255 (rojo). El valor predeterminado es 0.
+<em><strong>Verde</strong></em>: El componente verde del color. Medido desde 0 (negro) a 255 (verde). El valor predeterminado es 0.
+<em><strong>Azul</strong></em>: El componente azul del color. Medido desde 0 (negro) a 255 (azul). El valor predeterminado es 0.
 </div>
-
-
 <p>This command sets the color used for screendoor transparency for all faces that were already created. The texture loaded via the Load command will become transparent for all pixels which match exactly with the color specified via the <em>Red</em>, <em>Green</em> and <em>Blue</em> parameters. The use of screendoor transparency is much more efficient than using a full alpha channel, so prefer using a texture without an alpha channel and use this command instead to make parts of the texture transparent. You need to specify texture coordinates via the Coordinate command in order for the texture to correctly appear on the faces.</p>
-
-<hr />
-
+<hr>
 <p><a name="settexturecoordinates"></a></p>
-
 <div id="command">
-<p><strong>Coordinates</strong> <em>IndiceVertice</em>, <em>X</em>, <em>Y</em></p>
-
+<strong>Coordinates</strong> <em>IndiceVertice</em>, <em>X</em>, <em>Y</em>
 </div>
-
-
 <div id="command-arguments">
-<p><strong><em>VertexIndex</em></strong>: The vertex index the coordinate is referring to. Allowed values are 0 through <em>n</em>-1, where <em>n</em> is the number of Vertex commands used.<br />
-<strong><em>X</em></strong>: The x-coordinate of the texture. Integer values correspond to the left/right edge of the texture. If only values between 0 and 1 are to be considered, 0 corresponds to the left and 1 to the right.<br />
-<strong><em>Y</em></strong>: The y-coordinate of the texture. Integer values correspond to the top/bottom edge of the texture. If only values between 0 and 1 are to be considered, 0 corresponds to the top and 1 to the bottom.</p>
-
+<em><strong>VertexIndex</strong></em>: The vertex index the coordinate is referring to. Allowed values are 0 through <em>n</em>-1, where <em>n</em> is the number of Vertex commands used.<br>
+<em><strong>X</strong></em>: The x-coordinate of the texture. Integer values correspond to the left/right edge of the texture. If only values between 0 and 1 are to be considered, 0 corresponds to the left and 1 to the right.<br>
+<em><strong>Y</strong></em>: The y-coordinate of the texture. Integer values correspond to the top/bottom edge of the texture. If only values between 0 and 1 are to be considered, 0 corresponds to the top and 1 to the bottom.
 </div>
-
-
 <p>Este comando asocia una coordenada en la textura al vértices especificado por <em>IndiceVertice</em>. El indice corresponde al orden en el cual los vértices han sido creados por el comando Vertex, de esta manera el comando Coordinates necesita estar presente después del los correspondientes comandos Vertex. Los valores <em>X</em> y <em>Y</em> no necesariamente necesitan estar en un rango entre 0 (izquierda o arriba) a 1 (derecha o abajo), pero también puede tener otro valor. Esta asumido que en este caso que las texturas son repetidas en una malla infinita donde el valor entero para <em>X</em> y <em>Y</em> corresponden a las esquinas de las texturas</p>
 
 </div>

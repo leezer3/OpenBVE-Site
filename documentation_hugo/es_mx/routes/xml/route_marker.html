@@ -8,7 +8,7 @@
     <link rel="icon" href="../../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -430,25 +430,17 @@
 
 
 <div id="content">
-  
-
-<p>This page describes the principles and implementation of the XML based marker system.</p>
-
-<h2 id="markers-basic-principles">■ Markers: Basic Principles</h2>
-
+  <p>This page describes the principles and implementation of the XML based marker system.</p>
+<h2 id="-markers-basic-principles">■ Markers: Basic Principles</h2>
 <p>openBVE supports two distinct types of markers:</p>
-
 <ol>
 <li>&lsquo;Texture&rsquo; based markers. This displays an image in the top right-hand corner of the screen.</li>
 <li>&lsquo;Text&rsquo; based markers. These add a textual message above the list of game messages in the upper left of the screen.</li>
 </ol>
-
 <p>Each individual marker should be setup using a custom XML file, as per the examples below.</p>
-
 <p><strong>Image Based Markers:</strong></p>
-
 <textarea rows="17" cols="110" style="border:2;">
-    
+  
 &lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
 &lt;openBVE xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xsd=&#34;http://www.w3.org/2001/XMLSchema&#34;&gt;
   &lt;ImageMarker&gt;
@@ -469,11 +461,9 @@
 &lt;/openBVE&gt;  
 
 </textarea>
-
 <p><strong>Text Based Markers:</strong></p>
-
 <textarea rows="17" cols="110" style="border:2;">
-    
+  
 &lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
 &lt;openBVE xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xsd=&#34;http://www.w3.org/2001/XMLSchema&#34;&gt;
   &lt;TextMarker&gt;
@@ -494,107 +484,56 @@
 &lt;/openBVE&gt;  
 
 </textarea>
-
 <p>As you can see, the file is made up of either a <strong>&lt;ImageMarker&gt;</strong> section or a <strong>&lt;TextMarker&gt;</strong> section, which defines the properties of the marker itself.</p>
-
 <p>If required, the base marker and / or the early &amp; late markers may be omitted.</p>
-
-<h2 id="common-attributes">■ Common Attributes</h2>
-
+<h2 id="-common-attributes">■ Common Attributes</h2>
 <p>The following attributes are supported by both image and text markers:</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;Early&gt;</strong> <em>&hellip;.</em> <strong>&lt;/Early&gt;</strong></p>
-
+<strong>&lt;Early&gt;</strong> <em>&hellip;.</em> <strong>&lt;/Early&gt;</strong>
 </div>
-
-
 <p>Defines the marker used when the player is early.</p>
-
 <p>This must contain a <strong>time</strong> and either an <strong>image</strong> or a <strong>textual string</strong> (See below).</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;OnTime&gt;</strong> <em>&hellip;.</em> <strong>&lt;/OnTime&gt;</strong></p>
-
+<strong>&lt;OnTime&gt;</strong> <em>&hellip;.</em> <strong>&lt;/OnTime&gt;</strong>
 </div>
-
-
 <p>Defines the marker used when the player is early.</p>
-
 <p>This must contain an <strong>image</strong> or a <strong>textual string</strong> (See below).</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;Late&gt;</strong> <em>&hellip;.</em> <strong>&lt;/Late&gt;</strong></p>
-
+<strong>&lt;Late&gt;</strong> <em>&hellip;.</em> <strong>&lt;/Late&gt;</strong>
 </div>
-
-
 <p>Defines the marker used when the player is late.</p>
-
 <p>This must contain a <strong>time</strong> and either an <strong>image</strong> or a <strong>textual string</strong> (See below).</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;Distance&gt;</strong> <em>MarkerLength</em> <strong>&lt;/Distance&gt;</strong></p>
-
+<strong>&lt;Distance&gt;</strong> <em>MarkerLength</em> <strong>&lt;/Distance&gt;</strong>
 </div>
-
-
 <p>Defines the distance for which this marker will show.</p>
-
 <p><strong>MarkerLength</strong> represents the distance in meters for which to show the marker. Positive values will be displayed FROM where this marker is placed in the routefile. Negative values will be displayed BEFORE where this marker is placed in the routefile.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;Timeout&gt;</strong> <em>TotalTime</em> <strong>&lt;/Timeout&gt;</strong></p>
-
+<strong>&lt;Timeout&gt;</strong> <em>TotalTime</em> <strong>&lt;/Timeout&gt;</strong>
 </div>
-
-
 <p>Defines the total time for which this marker will show.</p>
-
 <p><strong>TotalTime</strong> represents the maximum time in milliseconds for which this marker will be visible <em>Note:</em> This overrides <strong>Distance</strong> if it has not been reached.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;Trains&gt;</strong> <em>TrainList</em> <strong>&lt;/Trains&gt;</strong></p>
-
+<strong>&lt;Trains&gt;</strong> <em>TrainList</em> <strong>&lt;/Trains&gt;</strong>
 </div>
-
-
 <p>Defines the list of trains for which this marker will show.</p>
-
 <p><strong>TrainList</strong> must contain a semi-colon deliminated list of trains for which you wish to display this marker.</p>
-
-<h2 id="textual-marker-attributes">■ Textual Marker Attributes</h2>
-
+<h2 id="-textual-marker-attributes">■ Textual Marker Attributes</h2>
 <div id="command">
-<p><strong>&lt;Text&gt;</strong> <em>DisplayText</em> <strong>&lt;/Text&gt;</strong></p>
-
+<strong>&lt;Text&gt;</strong> <em>DisplayText</em> <strong>&lt;/Text&gt;</strong>
 </div>
-
-
 <p><strong>DisplayText</strong> is the text which will be displayed on-screen.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;Color&gt;</strong> <em>TextColor</em> <strong>&lt;/Color&gt;</strong></p>
-
+<strong>&lt;Color&gt;</strong> <em>TextColor</em> <strong>&lt;/Color&gt;</strong>
 </div>
-
-
 <p><strong>TextColor</strong> controls the color in which the message is renderered. The following colors are supported:</p>
-
 <ul>
 <li>Black</li>
 <li>Gray</li>
@@ -605,15 +544,10 @@
 <li>Blue</li>
 <li>Magenta</li>
 </ul>
-
-<h2 id="image-marker-attributes">■ Image Marker Attributes</h2>
-
+<h2 id="-image-marker-attributes">■ Image Marker Attributes</h2>
 <div id="command">
-<p><strong>&lt;Image&gt;</strong> <em>RelativePath</em> <strong>&lt;/Image&gt;</strong></p>
-
+<strong>&lt;Image&gt;</strong> <em>RelativePath</em> <strong>&lt;/Image&gt;</strong>
 </div>
-
-
 <p><strong>RelativePath</strong> is the relative on-disk path to the marker image.</p>
 
 </div>

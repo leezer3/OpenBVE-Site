@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../hu/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../hu/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../hu/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../hu/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,29 +430,16 @@
 
 
 <div id="content">
-  
-
-<p>On a few occasions in route and train development, you will need to coordinate your efforts with other developers in order to allow easy exchange of trains across routes. Otherwise, trains might not work on a route or might not sound correctly.</p>
-
+  <p>On a few occasions in route and train development, you will need to coordinate your efforts with other developers in order to allow easy exchange of trains across routes. Otherwise, trains might not work on a route or might not sound correctly.</p>
 <p>For example, the run i.wav sounds are played whenever the train moves along the rails, where i is a number identifying the rail type. If developer A used run1.wav to represent a continuously elded rail, but another developer B used run1.wav as the sound to represent jointed rails on concrete leepers, both trains might not be suited for use on the same route. This makes exchange of trains across routes difficult, even if a train would be used on that route in reality.</p>
-
 <p>As such, if you know of standards that have been created and are actually employed by enough developers, give your feedback, and these standards might be listed here.</p>
-
-<h2 id="train-run-i-wav-sounds">■ Train run<em>i</em>.wav sounds</h2>
-
-<p>The only attempt currently known is the <a href="http://www.railsimroutes.net/bvetss/index.php" target="_blank">BVE Track Sound Standard</a>. It should be noted that it is not widely used outside the UK, and also not necessarily suited for all kinds of railways.</p>
-
-<h2 id="train-flange-i-wav-sounds">■ Train flange<em>i</em>.wav sounds</h2>
-
+<h2 id="-train-runiwav-sounds">■ Train run<em>i</em>.wav sounds</h2>
+<p>The only attempt currently known is the <a href="http://www.railsimroutes.net/bvetss/index.php">BVE Track Sound Standard</a>. It should be noted that it is not widely used outside the UK, and also not necessarily suited for all kinds of railways.</p>
+<h2 id="-train-flangeiwav-sounds">■ Train flange<em>i</em>.wav sounds</h2>
 <p>No attempts are currently known to standardize the meanings of flange<em>i</em>.wav sounds.</p>
-
-<h2 id="beacons">■ Beacons</h2>
-
+<h2 id="-beacons">■ Beacons</h2>
 <p>No attempts are currently known to standardize the meanings of beacons.</p>
-
 <p>However, the following is a list of beacons reserved for the built-in safety systems ATS-SN and ATS-P. These should only be used by route/train developers if the meaning of the beacons are (nearly) identical:</p>
-
-
 <table class='type0'>
 <thead>
 <tr>
@@ -461,32 +448,27 @@
 <th>Meaning</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>0</td>
 <td><em>SwitchSystem</em></td>
 <td>S-type transponder for ATS-SN. Placed about 600m in front of a signal. Raises an alarm the driver has to acknowledge whenever the referenced signal is red.<br /><br />Values for <em>SwitchSystem</em>:<br />-1: The train should not switch the safety system.<br />0: The train should automatically switch from ATS-P to ATS-SN when passing this beacon.</td>
 </tr>
-
 <tr>
 <td>1</td>
 <td><em>SwitchSystem</em></td>
 <td>SN-type transponder for ATS-SN. Placed about 20m in front of a signal. Triggers the emergency brakes whenever the referenced signal is red.<br /><br />Values for <em>SwitchSystem</em>:<br />-1: The train should not switch the safety system.<br />0: The train should automatically switch from ATS-P to ATS-SN when passing this beacon.</td>
 </tr>
-
 <tr>
 <td>2</td>
 <td><em>Cars</em></td>
 <td>Immediate stop transponder for ATS-SN and ATS-P. Placed after stops. Applies the emergency brakes whenever the referenced signal is red and the number of cars corresponds to the optional data.<br /><br />Values for <em>Cars</em>:<br />0: The transponder triggers regardless of the amount of cars.<br /><em>Positive integer</em>: The transponder triggers only if <em>Cars</em> is greater than or equal to the number of cars the train has.</td>
 </tr>
-
 <tr>
 <td>3</td>
 <td><em>SwitchSystem</em></td>
 <td>Pattern renewal transponder for ATS-P. Multiple of these are placed in front of a signal. Informs the train about the distance to the referenced signal and whether it is red or not. The train then calculates a brake curve to the referenced signal if it is red.<br /><br />Values for <em>SwitchSystem</em>:<br />-1: The train should not switch the safety system.<br />0: The train should automatically switch from ATS-SN to ATS-P when passing this beacon.</td>
 </tr>
-
 <tr>
 <td>4</td>
 <td><em>SwitchSystem</em></td>
@@ -494,7 +476,6 @@
 </tr>
 </tbody>
 </table>
-
 
 </div>
 

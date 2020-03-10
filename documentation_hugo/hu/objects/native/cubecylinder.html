@@ -8,7 +8,7 @@
     <link rel="icon" href="../../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../../hu/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../../hu/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../../hu/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../../hu/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,161 +430,132 @@
 
 
 <div id="content">
-  
-
-<h2 id="the-cube-command">■ The Cube command</h2>
-
+  <h2 id="-the-cube-command">■ The Cube command</h2>
 <p>The Cube command in B3D and CSV objects is equivalent to a series of Vertex/AddVertex and Face/AddFace commands.</p>
-
 <p>Given the following code (B3D style):</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>Cube <em>x</em>, <em>y</em>, <em>z</em>
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+Cube <em>x</em>, <em>y</em>, <em>z</em>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>The Cube command corresponds to these instructions (B3D style):</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>Vertex <em>x</em>, <em>y</em>, -<em>z</em><br />
-Vertex <em>x</em>, -<em>y</em>, -<em>z</em><br />
-Vertex -<em>x</em>, -<em>y</em>, -<em>z</em><br />
-Vertex -<em>x</em>, <em>y</em>, -<em>z</em><br />
-Vertex <em>x</em>, <em>y</em>, <em>z</em><br />
-Vertex <em>x</em>, -<em>y</em>, <em>z</em><br />
-Vertex -<em>x</em>, -<em>y</em>, <em>z</em><br />
-Vertex -<em>x</em>, <em>y</em>, <em>z</em><br />
-Face <em>v</em>+0, <em>v</em>+1, <em>v</em>+2, <em>v</em>+3<br />
-Face <em>v</em>+0, <em>v</em>+4, <em>v</em>+5, <em>v</em>+1<br />
-Face <em>v</em>+0, <em>v</em>+3, <em>v</em>+7, <em>v</em>+4<br />
-Face <em>v</em>+6, <em>v</em>+5, <em>v</em>+4, <em>v</em>+7<br />
-Face <em>v</em>+6, <em>v</em>+7, <em>v</em>+3, <em>v</em>+2<br />
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+Vertex <em>x</em>, <em>y</em>, -<em>z</em><br>
+Vertex <em>x</em>, -<em>y</em>, -<em>z</em><br>
+Vertex -<em>x</em>, -<em>y</em>, -<em>z</em><br>
+Vertex -<em>x</em>, <em>y</em>, -<em>z</em><br>
+Vertex <em>x</em>, <em>y</em>, <em>z</em><br>
+Vertex <em>x</em>, -<em>y</em>, <em>z</em><br>
+Vertex -<em>x</em>, -<em>y</em>, <em>z</em><br>
+Vertex -<em>x</em>, <em>y</em>, <em>z</em><br>
+Face <em>v</em>+0, <em>v</em>+1, <em>v</em>+2, <em>v</em>+3<br>
+Face <em>v</em>+0, <em>v</em>+4, <em>v</em>+5, <em>v</em>+1<br>
+Face <em>v</em>+0, <em>v</em>+3, <em>v</em>+7, <em>v</em>+4<br>
+Face <em>v</em>+6, <em>v</em>+5, <em>v</em>+4, <em>v</em>+7<br>
+Face <em>v</em>+6, <em>v</em>+7, <em>v</em>+3, <em>v</em>+2<br>
 Face <em>v</em>+6, <em>v</em>+2, <em>v</em>+1, <em>v</em>+5
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>where <em>v</em> is the number of vertices that have already been created before the Cube command was used.</p>
-
 <p>If you want to texture the cube, you need to add appropriate Coordinate/SetTextureCoordinate commands manually.</p>
-
-<h2 id="the-cylinder-command">■ The Cylinder command</h2>
-
+<h2 id="-the-cylinder-command">■ The Cylinder command</h2>
 <p>The Cylinder command in B3D and CSV objects is equivalent to a series of Vertex/AddVertex and Face/AddFace commands.</p>
-
 <p>Given the following code (B3D style):</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>Cylinder <em>n</em>, <em>r1</em>, <em>r2</em>, <em>h</em>
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+Cylinder <em>n</em>, <em>r1</em>, <em>r2</em>, <em>h</em>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>The Cylinder command first corresponds to <em>n</em> pairs of two vertex instructions (B3D style):</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>Vertex cos[2*pi*<strong><font color="red">0</font></strong>/n]*<em>r1</em>,  <em>h</em>/2, sin[2*pi*<strong><font color="red">0</font></strong>/n]*<em>r1</em><br />
-Vertex cos[2*pi*<strong><font color="red">0</font></strong>/n]*<em>r2</em>, -<em>h</em>/2, sin[2*pi*<strong><font color="red">0</font></strong>/n]*<em>r2</em><br />
-Vertex cos[2*pi*<strong><font color=#E0A000>1</font></strong>/n]*<em>r1</em>,  <em>h</em>/2, sin[2*pi*<strong><font color=#E0A000>1</font></strong>/n]*<em>r1</em><br />
-Vertex cos[2*pi*<strong><font color=#E0A000>1</font></strong>/n]*<em>r2</em>, -<em>h</em>/2, sin[2*pi*<strong><font color=#E0A000>1</font></strong>/n]*<em>r2</em><br />
-Vertex cos[2*pi*<strong><font color="green">2</font></strong>/n]*<em>r1</em>,  <em>h</em>/2, sin[2*pi*<strong><font color="green">2</font></strong>/n]*<em>r1</em><br />
-Vertex cos[2*pi*<strong><font color="green">2</font></strong>/n]*<em>r2</em>, -<em>h</em>/2, sin[2*pi*<strong><font color="green">2</font></strong>/n]*<em>r2</em><br />
-&hellip;<br />
-Vertex cos[2*pi*<strong><font color="blue">(n-1)</font></strong>/n]*<em>r1</em>,  <em>h</em>/2, sin[2*pi*<strong><font color="blue">(n-1)</font></strong>/n]*<em>r1</em><br />
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+Vertex cos[2*pi*<strong><font color="red">0</font></strong>/n]*<em>r1</em>,  <em>h</em>/2, sin[2*pi*<strong><font color="red">0</font></strong>/n]*<em>r1</em><br>
+Vertex cos[2*pi*<strong><font color="red">0</font></strong>/n]*<em>r2</em>, -<em>h</em>/2, sin[2*pi*<strong><font color="red">0</font></strong>/n]*<em>r2</em><br>
+Vertex cos[2*pi*<strong><font color=#E0A000>1</font></strong>/n]*<em>r1</em>,  <em>h</em>/2, sin[2*pi*<strong><font color=#E0A000>1</font></strong>/n]*<em>r1</em><br>
+Vertex cos[2*pi*<strong><font color=#E0A000>1</font></strong>/n]*<em>r2</em>, -<em>h</em>/2, sin[2*pi*<strong><font color=#E0A000>1</font></strong>/n]*<em>r2</em><br>
+Vertex cos[2*pi*<strong><font color="green">2</font></strong>/n]*<em>r1</em>,  <em>h</em>/2, sin[2*pi*<strong><font color="green">2</font></strong>/n]*<em>r1</em><br>
+Vertex cos[2*pi*<strong><font color="green">2</font></strong>/n]*<em>r2</em>, -<em>h</em>/2, sin[2*pi*<strong><font color="green">2</font></strong>/n]*<em>r2</em><br>
+&hellip;<br>
+Vertex cos[2*pi*<strong><font color="blue">(n-1)</font></strong>/n]*<em>r1</em>,  <em>h</em>/2, sin[2*pi*<strong><font color="blue">(n-1)</font></strong>/n]*<em>r1</em><br>
 Vertex cos[2*pi*<strong><font color="blue">(n-1)</font></strong>/n]*<em>r2</em>, -<em>h</em>/2, sin[2*pi*<strong><font color="blue">(n-1)</font></strong>/n]*<em>r2</em>
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>Then, <em>n</em> faces are added to form the side walls (B3D style):</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>Face <strong><font color=#E0A000>2</font></strong>, <strong><font color=#E0A000>3</font></strong>, <strong><font color="red">1</font></strong>, <strong><font color="red">0</font></strong><br />
-Face <strong><font color="green">4</font></strong>, <strong><font color="green">5</font></strong>, <strong><font color=#E0A000>3</font></strong>, <strong><font color=#E0A000>2</font></strong><br />
-Face <strong><font color="blue">6</font></strong>, <strong><font color="blue">7</font></strong>, <strong><font color="green">5</font></strong>, <strong><font color="green">4</font></strong><br />
-Face <strong><font color="fuchsia">8</font></strong>, <strong><font color="fuchsia">9</font></strong>, <strong><font color="blue">7</font></strong>, <strong><font color="blue">6</font></strong><br />
-&hellip;<br />
-Face <strong><font color="blue">2*n-6</font></strong>, <strong><font color="blue">2*n-5</font></strong>, <strong><font color="fuchsia">2*n-7</font></strong>, <strong><font color="fuchsia">2*n-8</font></strong><br />
-Face <strong><font color="green">2*n-4</font></strong>, <strong><font color="green">2*n-3</font></strong>, <strong><font color="blue">2*n-5</font></strong>, <strong><font color="blue">2*n-6</font></strong><br />
-Face <strong><font color=#E0A000>2*n-2</font></strong>, <strong><font color=#E0A000>2*n-1</font></strong>, <strong><font color="green">2*n-3</font></strong>, <strong><font color="green">2*n-4</font></strong><br />
-Face <strong><font color="red">0</font></strong>,&nbsp; &nbsp; &nbsp;<strong><font color="red">1</font></strong>, &nbsp; &nbsp; &nbsp;<strong><font color=#E0A000>2*n-1</font></strong>, <strong><font color=#E0A000>2*n-2</font></strong>
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+Face <strong><font color=#E0A000>2</font></strong>, <strong><font color=#E0A000>3</font></strong>, <strong><font color="red">1</font></strong>, <strong><font color="red">0</font></strong><br>
+Face <strong><font color="green">4</font></strong>, <strong><font color="green">5</font></strong>, <strong><font color=#E0A000>3</font></strong>, <strong><font color=#E0A000>2</font></strong><br>
+Face <strong><font color="blue">6</font></strong>, <strong><font color="blue">7</font></strong>, <strong><font color="green">5</font></strong>, <strong><font color="green">4</font></strong><br>
+Face <strong><font color="fuchsia">8</font></strong>, <strong><font color="fuchsia">9</font></strong>, <strong><font color="blue">7</font></strong>, <strong><font color="blue">6</font></strong><br>
+&hellip;<br>
+Face <strong><font color="blue">2*n-6</font></strong>, <strong><font color="blue">2*n-5</font></strong>, <strong><font color="fuchsia">2*n-7</font></strong>, <strong><font color="fuchsia">2*n-8</font></strong><br>
+Face <strong><font color="green">2*n-4</font></strong>, <strong><font color="green">2*n-3</font></strong>, <strong><font color="blue">2*n-5</font></strong>, <strong><font color="blue">2*n-6</font></strong><br>
+Face <strong><font color=#E0A000>2*n-2</font></strong>, <strong><font color=#E0A000>2*n-1</font></strong>, <strong><font color="green">2*n-3</font></strong>, <strong><font color="green">2*n-4</font></strong><br>
+Face <strong><font color="red">0</font></strong>,     <strong><font color="red">1</font></strong>,      <strong><font color=#E0A000>2*n-1</font></strong>, <strong><font color=#E0A000>2*n-2</font></strong>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>If <em>r2</em>&gt;0, a lower cap is then added (B3D style):</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>Face <strong><font color="red">2*n-2</font></strong>, <strong><font color="fuchsia">2*n-4</font></strong>, <strong><font color="blue">2*n-6</font></strong>, &hellip;, <strong><font color="green">4</font></strong>, <strong><font color=#E0A000>2</font></strong>, <strong><font color="red">0</font></strong>
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+Face <strong><font color="red">2*n-2</font></strong>, <strong><font color="fuchsia">2*n-4</font></strong>, <strong><font color="blue">2*n-6</font></strong>, &hellip;, <strong><font color="green">4</font></strong>, <strong><font color=#E0A000>2</font></strong>, <strong><font color="red">0</font></strong>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>If <em>r1</em>&gt;0, an upper cap is then added (B3D style):</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>Face <strong><font color="red">1</font></strong>, <strong><font color=#E0A000>3</font></strong>, <strong><font color="green">5</font></strong>, &hellip;, <strong><font color="blue">2*n-5</font></strong>, <strong><font color="fuchsia">2*n-3</font></strong>, <strong><font color="red">2*n-1</font></strong>
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+Face <strong><font color="red">1</font></strong>, <strong><font color=#E0A000>3</font></strong>, <strong><font color="green">5</font></strong>, &hellip;, <strong><font color="blue">2*n-5</font></strong>, <strong><font color="fuchsia">2*n-3</font></strong>, <strong><font color="red">2*n-1</font></strong>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>If you want to texture the cylinder, you need to add appropriate Coordinate/SetTextureCoordinate commands manually.</p>
 
 </div>

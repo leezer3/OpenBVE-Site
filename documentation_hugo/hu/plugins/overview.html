@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../hu/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../hu/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../hu/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../hu/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,52 +430,29 @@
 
 
 <div id="content">
-  
-
-<p>Plugins allow to offer functionality that openBVE does not provide out of the box. At the moment, only train plugins are supported which are mainly intended for the simulation of safety equipment.</p>
-
-<h5 id="train-plugins">● Train plugins</h5>
-
+  <p>Plugins allow to offer functionality that openBVE does not provide out of the box. At the moment, only train plugins are supported which are mainly intended for the simulation of safety equipment.</p>
+<h5 id="-train-plugins">● Train plugins</h5>
 <p>Train plugins allow to change the runtime behavior of trains to some degree. Things you can do include displaying custom indicators in the panels, playing custom sounds and overriding the handles the driver originally set. Plugins can be used to simulate safety equipment such as ATS or ATC, among other things.</p>
-
-<h2 id="contents">■ Contents</h2>
-
+<h2 id="-contents">■ Contents</h2>
 <ul class='contents'>
 <li><a href="#guidelines">1. Guidelines on developing plugins</a></li>
 <li><a href="#howto">2. How to develop a plugin</a></li>
 <li><a href="#documentation">3. API Documentation</a></li>
 <li><a href="#templates">4. Template projects</a></li>
 </ul>
-
-
-
-<h2 id="a-name-guidelines-a-guidelines-on-developing-plugins"><a name="guidelines"></a>■ Guidelines on developing plugins</h2>
-
+<h2 id="a-nameguidelinesa-guidelines-on-developing-plugins"><a name="guidelines"></a>■ Guidelines on developing plugins</h2>
 <p>All .NET assembly plugins are intended to run on all platforms without recompilation. In order to achieve this goal, you as the programmer have to follow a certain set of rules which will be explained right here from the start.</p>
-
-<h5 id="plugins-should-target-the-net-framework-2-0">● Plugins should target the .NET Framework 2.0</h5>
-
+<h5 id="-plugins-should-target-the-net-framework-20">● Plugins should target the .NET Framework 2.0</h5>
 <p>A whole variety of new .NET Framework versions comes out every so often. In order for plugins to not have stricter requirements on external dependencies than openBVE itself, plugins should target the .NET Framework 2.0, not any later version. This means that users do not have to upgrade their .NET Framework just in order to run your plugin. It also helps ensuring that all plugins run both on Microsoft .NET as well as on Mono, which is used on Linux and Mac OS X primarily.</p>
-
 <p>This also means that you must not use CLI-specific features such as Mono.Simd, among other things.</p>
-
-<h5 id="plugins-must-be-compiled-against-any-cpu">● Plugins must be compiled against any CPU</h5>
-
+<h5 id="-plugins-must-be-compiled-against-any-cpu">● Plugins must be compiled against any CPU</h5>
 <p>Even though openBVE itself currently runs in 32-bit mode (on Windows anyway), plugins must not exhibit this behavior - they must run on all CPU architectures. Be sure to set AnyCPU as the target processor in your development tool of choice. In Visual Studio and SharpDevelop, for example, the default target processor is x86, not AnyCPU. Be sure to change that.</p>
-
-<h5 id="plugins-must-not-use-p-invoke">● Plugins must not use P/Invoke</h5>
-
+<h5 id="-plugins-must-not-use-pinvoke">● Plugins must not use P/Invoke</h5>
 <p>The .NET Framework has the great advantage of running plugins on all platforms if plugins are designed right. Platform invokation can destroy this advantage, so do not call platform-specific libraries from within your plugin. Use only what the .NET Framework has to offer.</p>
-
-<h5 id="plugins-must-make-file-system-calls-in-a-cross-platform-compatible-way">● Plugins must make file system calls in a cross-platform-compatible way</h5>
-
+<h5 id="-plugins-must-make-file-system-calls-in-a-cross-platform-compatible-way">● Plugins must make file system calls in a cross-platform-compatible way</h5>
 <p>There are differences in how file systems work on different platforms, and you have to incorporate them in your plugin if you make calls to external files. For example, Linux generally uses case-sensitive file systems, and both Linux and Mac OS X use the slash as the directory separator, while Windows uses the backslash.</p>
-
 <p>Furthermore, accessing files from the current working directory can lead to unreproducible results across platforms. Therefore, you must always use a fully qualified (absolute) path when accessing files. Train plugins are given both the path to the train folder and the path to folder they are stored in. This is intended to assist them in finding files from the expected locations.</p>
-
 <p>For this reason, you must never construct file names in any of the following ways:</p>
-
-
 <table class='type1'>
 <thead>
 <tr>
@@ -484,7 +461,6 @@
 <th>This is a relative path that uses the current working directory. Prone to failure across platforms.</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><font color="Red">✗</font></td>
@@ -493,12 +469,7 @@
 </tr>
 </tbody>
 </table>
-
-
-
 <p>The way you should construct file names:</p>
-
-
 <table class='type1'>
 <thead>
 <tr>
@@ -507,7 +478,6 @@
 <th>This works perfectly on all platforms.</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><font color="Green">✓</font></td>
@@ -516,18 +486,10 @@
 </tr>
 </tbody>
 </table>
-
-
-
 <p>However, mind that Linux and Mac OS X are case-sensitive platforms. If you hardwire <em>configuration.ini</em>, then you must call the file that way when creating it, and not, for example, <em>Configuration.ini</em>. Be sure to check this.</p>
-
-<h5 id="plugins-must-read-from-text-files-with-specified-encodings-and-in-a-culture-insensitive-way">● Plugins must read from text files with specified encodings and in a culture-insensitive way</h5>
-
+<h5 id="-plugins-must-read-from-text-files-with-specified-encodings-and-in-a-culture-insensitive-way">● Plugins must read from text files with specified encodings and in a culture-insensitive way</h5>
 <p>When you read textual data from a file, always specify an explicit encoding such as UTF-8. Never read text files with the computer&rsquo;s default encoding. Also, when you interpret numbers, always specify an explicit culture. Never interpret numbers with the computer&rsquo;s default culture.</p>
-
 <p>For this reason, you must never read from text files or interpret them in any of the following ways:</p>
-
-
 <table class='type1'>
 <thead>
 <tr>
@@ -536,7 +498,6 @@
 <th>Uses an unspecified encoding.</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><font color="Red">✗</font></td>
@@ -545,12 +506,7 @@
 </tr>
 </tbody>
 </table>
-
-
-
 <p>The way you should read from files and interpret them:</p>
-
-
 <table class='type1'>
 <thead>
 <tr>
@@ -559,14 +515,12 @@
 <th>Uses an explicit encoding.</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><font color="Green">✓</font></td>
 <td>int number;<BR>double.TryParse(lines[0], System.Globalization.NumberStyles.Integer, System.Globalization.CultureInfo.InvariantCulture, out number);</td>
 <td>Uses the invariant culture.</td>
 </tr>
-
 <tr>
 <td><font color="Green">✓</font></td>
 <td>System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;<BR>int number = double.Parse(lines[0]);</td>
@@ -574,22 +528,12 @@
 </tr>
 </tbody>
 </table>
-
-
-
-<h5 id="plugins-must-allow-running-multiple-instances">● Plugins must allow running multiple instances</h5>
-
+<h5 id="-plugins-must-allow-running-multiple-instances">● Plugins must allow running multiple instances</h5>
 <p>The classes the plugins export may be instantiated by openBVE multiple times. In case of train plugins, one instance may be created per train. The instances may even be run in different threads. Plugins must be designed with behavior this in mind.</p>
-
-<h2 id="a-name-howto-a-how-to-develop-a-plugin"><a name="howto"></a>■ How to develop a plugin</h2>
-
-<p>In order to create a train plugin, first choose a programming language (for example C# or Visual Basic.NET) and a suitable development tool (for example <a href="https://www.monodevelop.com/" target="_blank">MonoDevelop</a> or <a href="http://www.icsharpcode.net/opensource/sd/" target="_blank">SharpDevelop</a>). Then create a new <strong>Class Library</strong> and reference <strong>OpenBveApi.dll</strong> (which comes with openBVE). Now, create a public class that inherits the interface you want to implement (see the API documentation below).</p>
-
+<h2 id="a-namehowtoa-how-to-develop-a-plugin"><a name="howto"></a>■ How to develop a plugin</h2>
+<p>In order to create a train plugin, first choose a programming language (for example C# or Visual Basic.NET) and a suitable development tool (for example <a href="https://www.monodevelop.com/">MonoDevelop</a> or <a href="http://www.icsharpcode.net/opensource/sd/">SharpDevelop</a>). Then create a new <strong>Class Library</strong> and reference <strong>OpenBveApi.dll</strong> (which comes with openBVE). Now, create a public class that inherits the interface you want to implement (see the API documentation below).</p>
 <p>Be sure to compile against AnyCPU, to enable CLS-compliance checks and to remove references that are not actually needed. Mind to <strong>not</strong> ship OpenBveApi.dll with your plugin.</p>
-
-<h2 id="a-name-documentation-a-documentation"><a name="documentation"></a>■ Documentation</h2>
-
-
+<h2 id="a-namedocumentationa-documentation"><a name="documentation"></a>■ Documentation</h2>
 <table class='type0'>
 <thead>
 <tr>
@@ -598,7 +542,6 @@
 <th>Documentation</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>IRuntime</td>
@@ -607,12 +550,8 @@
 </tr>
 </tbody>
 </table>
-
-
-<h2 id="a-name-templates-a-template-projects"><a name="templates"></a>■ Template projects</h2>
-
+<h2 id="a-nametemplatesa-template-projects"><a name="templates"></a>■ Template projects</h2>
 <p>In the directory <strong>Examples\Sample Plugins</strong>, you can find template projects targeting different programming languages. In these templates, almost everything has been prepared for you. The only thing you have to do is to include a reference to OpenBveApi.dll which comes with openBVE.</p>
-
 <p>For those who use SharpDevelop, reference OpenBveApi.dll by clicking the <em>Project</em> menu and selecting <em>Add reference</em>, then go to the <em>.NET Assembly Browser</em> tab and click on <em>Browse</em>. Now browse to your openBVE directory and select <em>OpenBveApi.dll</em>. Confirm with <em>OK</em>. Now select <em>OpenBveApi</em> from the <em>Projects</em> window and set <em>Local copy</em> to <strong>False</strong>. Also be sure that <em>Specific Version</em> is set to <strong>False</strong>.</p>
 
 </div>

@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../en/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../en/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../en/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../en/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,45 +430,29 @@
 
 
 <div id="content">
-  
-
-<p>Trains consist of a series of individual configuration files accompanied by bitmaps and sounds. The following is an overview on which files are required and what they represent.</p>
-
-<h2 id="characteristics">■ Characteristics</h2>
-
-<p><a href="../../en/trains/train_dat.html" target="_blank"><strong>train.dat:</strong></a><br />
+  <p>Trains consist of a series of individual configuration files accompanied by bitmaps and sounds. The following is an overview on which files are required and what they represent.</p>
+<h2 id="-characteristics">■ Characteristics</h2>
+<p><a href="../../en/trains/train_dat.html"><strong>train.dat:</strong></a><br>
 This is the core configuration file for the train&rsquo;s characteristics, and is mandatory.</p>
-
-<h2 id="panels">■ Panels</h2>
-
-<p><a href="../../en/trains/panel_animated.html" target="_blank"><strong>panel.animated:</strong></a><br />
+<h2 id="-panels">■ Panels</h2>
+<p><a href="../../en/trains/panel_animated.html"><strong>panel.animated:</strong></a><br>
 This file allows to create a fully 3D cab. If present in the train folder, this file has precedence over the panel2.cfg and panel.cfg files.</p>
-
-<p><a href="../../en/trains/panel2_cfg.html" target="_blank"><strong>panel2.cfg:</strong></a><br />
+<p><a href="../../en/trains/panel2_cfg.html"><strong>panel2.cfg:</strong></a><br>
 This file allows to create a limited 2D cab. If present in the train folder, this file has precedence over the panel.cfg. The panel2.cfg has fully superseded the panel.cfg as it offers greater functionality.</p>
-
-<p><a href="../../en/trains/panel_cfg.html" target="_blank"><strong>panel.cfg:</strong></a><br />
+<p><a href="../../en/trains/panel_cfg.html"><strong>panel.cfg:</strong></a><br>
 This file is outdated, and allows to create a limited 2D cab. It has been fully superseded by the panel2.cfg file, which should be used instead.</p>
-
-<h2 id="sounds">■ Sounds</h2>
-
-<p><a href="../../en/trains/default_sounds.html" target="_blank"><strong>Default sounds:</strong></a><br />
+<h2 id="-sounds">■ Sounds</h2>
+<p><a href="../../en/trains/default_sounds.html"><strong>Default sounds:</strong></a><br>
 If no <em>sound.cfg</em> is present, these are the default sound files that are being looked for in the train folder.</p>
-
-<p><a href="../../en/trains/sound_cfg.html" target="_blank"><strong>sound.cfg:</strong></a><br />
+<p><a href="../../en/trains/sound_cfg.html"><strong>sound.cfg:</strong></a><br>
 This defines the names of the sound files to use. The file is required if plugin-specific sounds are to be made available.</p>
-
-<h2 id="safety-systems">■ Safety systems</h2>
-
-<p><a href="../../en/trains/openbveats.html" target="_blank"><strong>Built-in systems:</strong></a><br />
+<h2 id="-safety-systems">■ Safety systems</h2>
+<p><a href="../../en/trains/openbveats.html"><strong>Built-in systems:</strong></a><br>
 The built-in safety systems ATS-SN, ATS-P and ATC are only used if no <em>ats.cfg</em> file is present, and if the <em>train.dat</em> is configured to define which of these systems should be available.</p>
-
-<p><a href="../../en/trains/ats_cfg.html" target="_blank"><strong>ats.cfg:</strong></a><br />
-This file defines which external train plugin to use. For information on how to create plugins, see <a href="../../en/trains/plugins.html" target="_blank">here</a>.</p>
-
-<h2 id="miscellaneous">■ Miscellaneous</h2>
-
-<p><a href="../../en/trains/extensions_cfg.html" target="_blank"><strong>extensions.cfg:</strong></a><br />
+<p><a href="../../en/trains/ats_cfg.html"><strong>ats.cfg:</strong></a><br>
+This file defines which external train plugin to use. For information on how to create plugins, see <a href="../../en/trains/plugins.html">here</a>.</p>
+<h2 id="-miscellaneous">■ Miscellaneous</h2>
+<p><a href="../../en/trains/extensions_cfg.html"><strong>extensions.cfg:</strong></a><br>
 This defines additional characteristics that are not covered by the other files.</p>
 
 </div>

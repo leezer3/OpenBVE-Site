@@ -8,7 +8,7 @@
     <link rel="icon" href="../../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../../zh_cn/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../../zh_cn/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../../zh_cn/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../../zh_cn/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,28 +430,20 @@
 
 
 <div id="content">
-  
-
-<p>本页说明了openBVE v1.6.0或更高版本中支持的基于XML的轨道循迹物件 TFO 的原理和实现。</p>
-
+  <p>本页说明了openBVE v1.6.0或更高版本中支持的基于XML的轨道循迹物件 TFO 的原理和实现。</p>
 <h2 id="基本原则">■基本原则</h2>
-
 <p>轨道循迹物件可在主轨道以外的其他轨道上自由运动。</p>
-
 <p>为此，必须为每一个物件使用XML文件设置其运动方式。 一个例子如下所示。</p>
-
 <p>在此示例中，这一物件以下述方式运动：</p>
-
-<ol>
+<ol start="0">
 <li>当游戏内时间到达00:01:00之后，且该物件位于游戏中玩家位置前方50 m至100 m之内时，该物件就会出现，并在显示5分钟后消失。 这一物件的外观是7节编组列车，在对应的extensions.cfg中定义。</li>
 <li>游戏中距离为200 m，右门打开20秒，然后该物体在 ** Rail2 ** 上以1.71km / h / s的加速度加速至30 km / h。</li>
 <li>它在 <strong>Rail2</strong> 上以60 km / h的速度行驶400 m。</li>
 <li>在 <strong>Rail2</strong> 上，该物体以1.71 km / h / s的速度减速至30 km / h，当它在游戏中达到1000 m的距离时，这一列车物件会停止并打开两侧的门。 停止10秒钟后，它在 Rail1 上以1.71 km / h / s的速度反向加速至30 km / h。</li>
 <li>该物体在 <strong>Rail1</strong> 处以1.71 km / h / s的速度减速至30 km / h，停止并在主轨道位置200 m处打开右门。</li>
 </ol>
-
 <textarea rows="17" cols="110" style="border:2;">
-    
+  
 &lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
 &lt;openBVE xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xsd=&#34;http://www.w3.org/2001/XMLSchema&#34;&gt;
   &lt;TrackFollowingObject&gt;
@@ -526,166 +518,90 @@
 &lt;/openBVE&gt;
 
 </textarea>
-
 <p>如您所见，该文件由一个 <strong>&lt;Definition&gt;</strong> 部分，一个 <strong>&lt;Car&gt;</strong> 部分和一个 <strong>&lt;Stops&gt;</strong> 部分组成。  <strong>&lt;Stops&gt;</strong> 部分由两个或多个 <strong>&lt;Stop&gt;</strong> 部分组成。</p>
-
 <h2 id="定义属性">■定义属性</h2>
-
 <div id="command">
-<p><strong>&lt;AppearanceTime&gt;</strong> <em>时间</em> <strong>&lt;/AppearanceTime&gt;</strong></p>
-
+<strong>&lt;AppearanceTime&gt;</strong> <em>时间</em> <strong>&lt;/AppearanceTime&gt;</strong>
 </div>
-
-
 <p><strong>时间</strong> 设置物件出现在游戏中的时间。</p>
-
 <p><em>注意：</em> 如果省略此参数，则该物件将从游戏开始时出现。</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;AppearanceStartPosition&gt;</strong> <em>位置</em> <strong>&lt;/AppearanceStartPosition&gt;</strong></p>
-
+<strong>&lt;AppearanceStartPosition&gt;</strong> <em>位置</em> <strong>&lt;/AppearanceStartPosition&gt;</strong>
 </div>
-
-
 <p><strong>位置</strong> 设置物件出现区域的起点的游戏内距离。 当玩家的列车经过此点时，该物件将出现。 单位是 <strong>米</strong> 。</p>
-
 <p><em>注意：</em> 如果省略此参数，则该物件将从游戏开始时出现。</p>
-
-<hr />
-
+<hr>
 <div id="command">
 ** \ <AppearanceEndPosition> ** <em>位置</em> ** \ </AppearanceEndPosition> **
 </div>
-
-
 <p><strong>位置</strong> 设置物件出现区域的终点的游戏内距离。当玩家的摄像机位置超过该点时，该对象将被隐藏。它也必须大于被 <strong>&lt;AppearanceStartPosition&gt;</strong> 指定的值。单位是 <strong>米</strong> 。</p>
-
 <p>*注意：*如果省略此参数，则该物件将从游戏开始时出现。</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;LeaveTime&gt;</strong> <em>时间</em> <strong>&lt;/LeaveTime&gt;</strong></p>
-
+<strong>&lt;LeaveTime&gt;</strong> <em>时间</em> <strong>&lt;/LeaveTime&gt;</strong>
 </div>
-
-
 <p><strong>时间</strong>设置从物体出现在游戏中到消失为止的持续时间。 此时间之后该对象将不可见。 此值不是游戏时间。</p>
-
 <p><em>注意：</em> 如果省略此参数，则该物件将保持可见状态，直到游戏结束或被 <strong>\ <AppearanceEndPosition></strong> 隐藏为止</p>
-
 <h2 id="列车属性">■列车属性</h2>
-
 <div id="command">
-<p><strong>&lt;Directory&gt;</strong> <em>路径</em> <strong>&lt;/Directory&gt;</strong></p>
-
+<strong>&lt;Directory&gt;</strong> <em>路径</em> <strong>&lt;/Directory&gt;</strong>
 </div>
-
-
 <p><strong>Path</strong> 设置包含物件列车的train.dat，sound.cfg和extensions.cfg的目录的相对路径。</p>
-
-<p><em>注意：</em> 如果列车文件夹仅供AI使用，则** train.dat **文件可以被命名为 <strong>train.ai</strong>。</p>
-
+<p><em>注意：</em> 如果列车文件夹仅供AI使用，则** train.dat **文件可以被命名为 **train.ai**。</p>
 <div id="command">
-<p><strong>&lt;Reversed&gt;</strong> <em>是否反转</em> <strong>&lt;/Reversed&gt;</strong></p>
-
+<strong>&lt;Reversed&gt;</strong> <em>是否反转</em> <strong>&lt;/Reversed&gt;</strong>
 </div>
-
-
 <p>如果将此属性设置为** true **，那么列车的编组将被反转。</p>
-
-<h2 id="stop-停站-属性">■ Stop (停站) 属性</h2>
-
+<h2 id="-stop-停站-属性">■ Stop (停站) 属性</h2>
 <div id="command">
-<p><strong>&lt;Decelerate&gt;</strong> <em>减速度</em> <strong>&lt;/Decelerate&gt;</strong></p>
-
+<strong>&lt;Decelerate&gt;</strong> <em>减速度</em> <strong>&lt;/Decelerate&gt;</strong>
 </div>
-
-
 <p><strong>减速度</strong>设置物件的减速度。 单位是 <strong>km/h/s</strong> 。</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;StopPosition&gt;</strong> <em>位置</em> <strong>&lt;/StopPosition&gt;</strong></p>
-
+<strong>&lt;StopPosition&gt;</strong> <em>位置</em> <strong>&lt;/StopPosition&gt;</strong>
 </div>
-
-
 <p><strong>位置</strong> 设置物件停止位置的游戏距离。单位是 <strong>米</strong> 。</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;Doors&gt;</strong> <em>开门方向</em> <strong>&lt;/Doors&gt;</strong></p>
-
+<strong>&lt;Doors&gt;</strong> <em>开门方向</em> <strong>&lt;/Doors&gt;</strong>
 </div>
-
-
 <p><strong>开门方向</strong>设置物件列车打开的车门。 有效值为：</p>
-
 <ul>
 <li><strong>L</strong> 或 **-1 ** ：左门打开。</li>
 <li><strong>N</strong> 或 <strong>0</strong> ：两扇门均不打开。</li>
 <li><strong>R</strong> 或 <strong>1</strong> ：右门打开。</li>
 <li><strong>B</strong> ：两扇门都会打开。</li>
 </ul>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;StopTime&gt;</strong> <em>停车时间</em> <strong>&lt;/StopTime&gt;</strong></p>
-
+<strong>&lt;StopTime&gt;</strong> <em>停车时间</em> <strong>&lt;/StopTime&gt;</strong>
 </div>
-
-
 <p><strong>停车时间</strong> 设置物件停车的时间。 此值不是游戏时间。</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;Accelerate&gt;</strong> <em>加速度</em> <strong>&lt;/Accelerate&gt;</strong></p>
-
+<strong>&lt;Accelerate&gt;</strong> <em>加速度</em> <strong>&lt;/Accelerate&gt;</strong>
 </div>
-
-
 <p><strong>加速度</strong> 设置物件的加速度。 单位是 <strong>km/h/s</strong> 。</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;TargetSpeed&gt;</strong> <em>目标速度</em> <strong>&lt;/TargetSpeed&gt;</strong></p>
-
+<strong>&lt;TargetSpeed&gt;</strong> <em>目标速度</em> <strong>&lt;/TargetSpeed&gt;</strong>
 </div>
-
-
 <p><strong>目标速度</strong>设置物件加速后保持的速度。单位是 <strong>km/h</strong> 。</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;Direction&gt;</strong> <em>行进方向</em> <strong>&lt;/Direction&gt;</strong></p>
-
+<strong>&lt;Direction&gt;</strong> <em>行进方向</em> <strong>&lt;/Direction&gt;</strong>
 </div>
-
-
 <p><strong>行进方向</strong> 设置物件行进的方向。 有效值如下。</p>
-
 <ul>
 <li><strong>F</strong> 或 <strong>1</strong> ：物件将向前运动。</li>
 <li><strong>R</strong> 或 **-1 ** ：物件向后运动。</li>
 </ul>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;Rail&gt;</strong> <em>轨道编号</em> <strong>&lt;/Rail&gt;</strong></p>
-
+<strong>&lt;Rail&gt;</strong> <em>轨道编号</em> <strong>&lt;/Rail&gt;</strong>
 </div>
-
-
 <p><strong>轨道编号</strong> 设置物件运动所在的轨道。 必须通过路线文件的 <strong>Track.Rail</strong> 命令先定义这一条轨道。</p>
 
 </div>

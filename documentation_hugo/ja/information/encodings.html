@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../ja/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../ja/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../ja/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../ja/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,81 +430,57 @@
 
 
 <div id="content">
-  
-
-<p><font color="Gray">このページでは、文字エンコーディングの概要と使用方法について説明します。</font></p>
-
+  <p><font color="Gray">このページでは、文字エンコーディングの概要と使用方法について説明します。</font></p>
 <p>■ 概要</p>
-
 <p>文字エンコードは、文字をハードドライブに保存できるバイトに変換する方法です。 最初は、1バイト(256状態)を使用して1文字をエンコードしました。 世界中のさまざまな書記体系では文字のエンコード要件が異なるため、世界中でさまざまなエンコーディングが使用されています。 問題は、テキストファイルのエンコーディングが事前にわからない場合、エンコーディングを誤って解釈すると、文字が無意味になる(意味のない文字列になる)ことです。</p>
-
 <p>Shift_JISでエンコードされた日本語テキストの例(適切なフォントが必要です):</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>ひらがなカタカナ漢字
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+ひらがなカタカナ漢字
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>前の例から生成されたShift_JISバイト列:</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>82 D0 82 E7 82 AA 82 C8 83 4A 83 5E 83 4A 83 69 8A BF 8E 9A
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+82 D0 82 E7 82 AA 82 C8 83 4A 83 5E 83 4A 83 69 8A BF 8E 9A
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>バイト列がShift_JISではなくISO 8859-1(Latin-1)であると誤って解釈されると、次のようになります。</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>‚Ð‚ç‚ª‚ÈƒJƒ^ƒJƒiŠ¿Žš
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+‚Ð‚ç‚ª‚ÈƒJƒ^ƒJƒiŠ¿Žš
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>通常、ある特定のエンコーディングでは、それが設計された書記体系のみを使用できます。 世界中の書記体系で使用されている基本的にすべての文字をカバーする標準であるUnicodeは、ここで解決策を提供します。</p>
-
 <p>今日、Unicodeは広く普及していますが、まだいくつかの問題があります。 まず第一に、Unicodeは直接文字エンコーディングではありません。 代わりに、いわゆるUnicode Transformation Formats (UTF)が特定の文字をエンコードする手段を提供します。 頻繁に使用される変換形式は、UTF-8およびUTF-16です。</p>
-
 <p>ルートおよびトレインファイルは、通常、互換性の理由から、任意のエンコーディングでエンコードすることが許可されています。 エンコーディングは事前にわからないため、ユーザーはメインメニューの 設定 タブでルートと列車の正しいエンコーディングを選択する必要があります。 もちろんこれは迷惑であり、どうにかして避けるべきです。</p>
-
-<h2 id="バイトオーダー">■ バイトオーダー</h2>
-
+<h2 id="-バイトオーダー">■ バイトオーダー</h2>
 <p>UTF-16は、1つの文字をエンコードするために常に2バイトを使用した文字エンコーディング(UTC-2)から派生しています。 そのため、これらの2バイトの順序が重要です。 バイトがどの順序で表示されるかを知るために、いわゆるバイトオーダーマークがテキストに頻繁に追加されます。通常は、テキストエディターによって自動的かつ透過的に行われます。 バイトオーダーマークは、デコーダーにファイルが保存されたバイトオーダーを検出する手段を提供します。さらに、バイトオーダーマークは、テキストファイルが最初にUnicodeで保存されていることを検出するかなり安全な方法を提供します。</p>
-
 <p>技術的には必要ではありませんが、バイトオーダーマークはUTF-8でも頻繁に使用されます。 UTF-8にはバイトオーダーの問題がないため、UTF-8でバイトオーダーマークを使用する唯一の目的は、ファイルにUTF-8でエンコードされているというフラグを立てる手段を提供することです。</p>
-
 <p>前述のように、Unicodeは世界中のすべての書記体系で使用され、事実上すべての文字をエンコードできますが、使用するエンコーディングが合意されていない場合、必ずしもテキストファイルの操作が容易になるとは限りません。</p>
-
 <p>バイトオーダーマークを使用すると、openBVEは個々のファイルのエンコーディングを自動的に検出できます。 優れたテキストエディタがあれば、エンコードを手動で選択できるだけでなく、バイトオーダーマークを付けて保存するかどうかも選択できます。 ファイルを保存するときに文字エンコードとしてUTF-8が選択されている場合、メモ帳(Windows)は常にバイトオーダーマークを付けて保存します。</p>
-
 <p>技術的には、バイトオーダーマークは特定のテキストファイルの最初のバイトです。 openBVEによって自動的に検出できるバイトオーダーマークは次のとおりです。</p>
-
-
 <table class='type0'>
 <thead>
 <tr>
@@ -512,36 +488,29 @@
 <th>16進表現</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>UTF-8</td>
 <td>EF BB BF</td>
 </tr>
-
 <tr>
 <td>UTF-16 (ビッグエンディアン)</td>
 <td>FE FF</td>
 </tr>
-
 <tr>
 <td>UTF-16 (リトルエンディアン)</td>
 <td>FF FE</td>
 </tr>
-
 <tr>
 <td>UTF-32 (ビッグエンディアン)</td>
 <td>00 00 FE FF</td>
 </tr>
-
 <tr>
 <td>UTF-32 (リトルエンディアン)</td>
 <td>FF FE 00 00</td>
 </tr>
 </tbody>
 </table>
-
-
 <p>openBVEが、使用されているエンコーディングを自動的に検出できるように、常にBOM付きのエンコーディングのいずれかでテキストファイルを保存することをお勧めします。</p>
 
 </div>

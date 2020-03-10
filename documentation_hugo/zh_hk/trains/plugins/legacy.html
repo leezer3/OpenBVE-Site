@@ -8,7 +8,7 @@
     <link rel="icon" href="../../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -430,40 +430,26 @@
 
 
 <div id="content">
-  
-
-<hr />
-
-<p><font size="+2">Win32 train plugins are not available on operating systems other than Microsoft Windows. Therefore, these plugins are officially deprecated. Please use <a href="../../../zh_hk/plugins/overview.html" target="_blank">.NET assemblies</a> from now on.</font></p>
-
-<hr />
-
+  <hr>
+<p><font size="+2">Win32 train plugins are not available on operating systems other than Microsoft Windows. Therefore, these plugins are officially deprecated. Please use <a href="../../../zh_hk/plugins/overview.html">.NET assemblies</a> from now on.</font></p>
+<hr>
 <p>The header and code files for the C/C++ programming languages are available to download here:</p>
-
-
 <table class='type1'>
 <thead>
 <tr>
 <th><a href="../../../images/plugin_h.txt">plugin.h</a></th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><a href="../../../images/plugin_cpp.txt">plugin.cpp</a></td>
 </tr>
-
 <tr>
 <td><a href="../../../images/plugin_def.txt">plugin.def</a></td>
 </tr>
 </tbody>
 </table>
-
-
-
 <p><strong>Data types:</strong></p>
-
-
 <table class='type1'>
 <thead>
 <tr>
@@ -471,26 +457,19 @@
 <th>32-bit signed integer ranging from -2147483648 to 2147483647</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>float</td>
 <td>32-bit floating point number according to the IEEE 754 binary32 standard</td>
 </tr>
-
 <tr>
 <td>double</td>
 <td>64-bit floating point number according to the IEEE 754 binary64 standard</td>
 </tr>
 </tbody>
 </table>
-
-
-
-<h2 id="overview">■ Overview</h2>
-
+<h2 id="-overview">■ Overview</h2>
 <p>The following functions are called in this order when the plugin is loaded:</p>
-
 <ul>
 <li>Load</li>
 <li>GetPluginVersion</li>
@@ -501,9 +480,7 @@
 <li>SetReverser</li>
 <li>SetSignal</li>
 </ul>
-
 <p>The following functions are called whenever their respective events occur:</p>
-
 <ul>
 <li>SetPower</li>
 <li>SetBrake</li>
@@ -516,34 +493,20 @@
 <li>SetSignal</li>
 <li>SetBeaconData</li>
 </ul>
-
 <p>The following function is called when the plugin is unloaded:</p>
-
 <ul>
 <li>Dispose</li>
 </ul>
-
-<h2 id="descriptions">■ Descriptions</h2>
-
+<h2 id="-descriptions">■ Descriptions</h2>
 <p><strong>ATS_API void WINAPI Load()</strong></p>
-
 <p>This function is the first to be called after the plugin has been loaded. When this function triggers inside the plugin, a matching Dispose() call will be made when the plugin is unloaded.</p>
-
-<hr />
-
+<hr>
 <p><strong>ATS_API void WINAPI Dispose()</strong></p>
-
 <p>This function is the last to be called before the plugin is unloaded.</p>
-
-<hr />
-
+<hr>
 <p><strong>ATS_API int WINAPI GetPluginVersion()</strong></p>
-
 <p>This function is called after Load() in order to query the version of the API to use for the plugin. Currently, there is only one version available. If the version returned does not match the expected value, Dispose() will be called and the plugin is unloaded.</p>
-
 <p><em>Return value:</em></p>
-
-
 <table class='type1'>
 <thead>
 <tr>
@@ -552,27 +515,15 @@
 <th>Valid plugin version</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-
-
-
 </tr>
 </tbody>
 </table>
-
-
-
-<hr />
-
+<hr>
 <p><strong>ATS_API void WINAPI SetVehicleSpec (ATS_VEHICLESPEC vehicleSpec)</strong></p>
-
 <p>This function is called after GetPluginVersion() is called and informs the plugin about the specifications of the train.</p>
-
 <p><em>struct ATS_VEHICLESPEC:</em></p>
-
-
 <table class='type1'>
 <thead>
 <tr>
@@ -580,41 +531,29 @@
 <th>The amount of brake notches the train has. This does not include the emergency brake, but it does include the hold brake if the train has one. For trains with automatic air brakes, 2 is returned.</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><span style="white-space: nowrap;">int PowerNotches</span></td>
 <td>The amount of power notches the train has.</td>
 </tr>
-
 <tr>
 <td><span style="white-space: nowrap;">int AtsNotch</span></td>
 <td>The brake notch index corresponding to the first real brake notch. For trains with automatic air brakes, this returns 1. For other trains, this returns 2 if the train has a hold brake, and 1 otherwise.</td>
 </tr>
-
 <tr>
 <td><span style="white-space: nowrap;">int B67Notch</span></td>
 <td>The brake notch index corresponding to 70% of the brake notches, i.e. round(0.7 * BrakeNotches).</td>
 </tr>
-
 <tr>
 <td><span style="white-space: nowrap;">int Cars</span></td>
 <td>The number of cars the train has.</td>
 </tr>
 </tbody>
 </table>
-
-
-
-<hr />
-
+<hr>
 <p><strong>ATS_API void WINAPI Initialize(int brake)</strong></p>
-
 <p>This function is called after SetVehicleSpec() is called and informs the plugin about the mode the safety system should start in. If the safety system in your plugin can be activated or deactivated, you should initialize the state of the plugin accordingly. When the user selects a <em>Jump to station target</em>, this function is also called prior to moving the train to its new location.</p>
-
 <p><em>brake:</em></p>
-
-
 <table class='type1'>
 <thead>
 <tr>
@@ -623,14 +562,12 @@
 <th>The plugin should start in an <strong>active</strong> state. The <em>service</em> brakes are applied on startup.</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>ATS_INIT_ON_EMG</td>
 <td>0</td>
 <td>The plugin should start in an <strong>active</strong> state. The <strong>emergency</strong> brakes are applied on startup.</td>
 </tr>
-
 <tr>
 <td>ATS_INIT_OFF_EMG</td>
 <td>1</td>
@@ -638,18 +575,10 @@
 </tr>
 </tbody>
 </table>
-
-
-
-<hr />
-
+<hr>
 <p><strong>ATS_API ATS_HANDLES WINAPI Elapse(ATS_VEHICLESTATE vehicleState, int[] panel, int[] sound)</strong></p>
-
 <p>This function is called every frame, informs the plugin about the current state of the train, and expects the handles as overwritten by the safety system in return. The state of plugin-specific panel elements can also be set, as well as instructions to play plugin-specific sounds.</p>
-
 <p><em>struct ATS_VEHICLESTATE:</em></p>
-
-
 <table class='type1'>
 <thead>
 <tr>
@@ -657,59 +586,45 @@
 <th>The current track position of the front of the train in meters.</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><span style="white-space: nowrap;">float Speed</span></td>
 <td>The current signed speed of the train in km/h. Negative values represent a backward movement, positive ones a forward movement.</td>
 </tr>
-
 <tr>
 <td><span style="white-space: nowrap;">int Time</span></td>
 <td>The current time in milliseconds since midnight of day one. Please note that the time wraps round after 24 days, thus values are between 0 and 2073599999.</td>
 </tr>
-
 <tr>
 <td><span style="white-space: nowrap;">float BcPressure</span></td>
 <td>The current pressure in the brake cylinder in pascal.</td>
 </tr>
-
 <tr>
 <td><span style="white-space: nowrap;">float MrPressure</span></td>
 <td>The current pressure in the main reservoir in pascal.</td>
 </tr>
-
 <tr>
 <td><span style="white-space: nowrap;">float ErPressure</span></td>
 <td>The current pressure in the equalizing reservoir in pascal.</td>
 </tr>
-
 <tr>
 <td><span style="white-space: nowrap;">float BpPressure</span></td>
 <td>The current pressure in the brake pipe in pascal.</td>
 </tr>
-
 <tr>
 <td><span style="white-space: nowrap;">float SapPressure</span></td>
 <td>The current pressure in the straight air brake in pascal.</td>
 </tr>
-
 <tr>
 <td><span style="white-space: nowrap;">float Current</span></td>
 <td>This value always returns 0 and should be ignored.</td>
 </tr>
 </tbody>
 </table>
-
-
-
-<p><em>int[] panel:</em><br />
+<p><em>int[] panel:</em><br>
 An array with 256 elements (0 through 255) which can be set to any value. The values in the array are preserved between successive Elapse() calls. At the beginning of the simulation, all elements are initialized to 0. Panel developers can query values of this array via the ats<em>i</em> subject, while developers of animated objects can query values via the pluginstate[<em>i</em>] variable. You should coordinate your efforts with panel/object developers and release a specification that tells which element in the array has what purpose.</p>
-
-<p><em>int[] sound:</em><br />
+<p><em>int[] sound:</em><br>
 An array with 256 elements (0 through 255) which can be set to any sound instruction. The values in the array are preserved between successive Elapse() calls. At the beginning of the simulation, all elements are initialized to ATS_SOUND_PLAYLOOPING (0). Train developers can reference sounds in the sound.cfg file. You should coordinate your efforts with train developers and release a specification that tells which sound index plays what kind of sound. The sound instructions that can be used are:</p>
-
-
 <table class='type1'>
 <thead>
 <tr>
@@ -718,26 +633,21 @@ An array with 256 elements (0 through 255) which can be set to any sound instruc
 <th>Stops the sound.</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-
 <td>-9999 through -1</td>
 <td>Plays the sound in a loop with a given volume. -9999 corresponds to 0.01% volume and -1 corresponds to 99.99% volume. If the sound is already playing (looping or not), only the volume is changed.</td>
 </tr>
-
 <tr>
 <td>ATS_SOUND_PLAYLOOPING</td>
 <td>0</td>
 <td>Plays the sound in a loop with 100% volume. If the sound is already playing (looping or not), only the volume is changed.</td>
 </tr>
-
 <tr>
 <td>ATS_SOUND_PLAY</td>
 <td>1</td>
 <td>Plays the sound once. If the sound is already playing, a new instance of the sound starts playing. Subsequently, stopping or changing volume only affects the new sound. The host application will set the sound instruction to ATS_SOUND_CONTINUE after having processed it.</td>
 </tr>
-
 <tr>
 <td>ATS_SOUND_CONTINUE</td>
 <td>2</td>
@@ -745,12 +655,7 @@ An array with 256 elements (0 through 255) which can be set to any sound instruc
 </tr>
 </tbody>
 </table>
-
-
-
 <p><em>Return value struct ATS_HANDLES:</em></p>
-
-
 <table class='type1'>
 <thead>
 <tr>
@@ -758,81 +663,48 @@ An array with 256 elements (0 through 255) which can be set to any sound instruc
 <th>The brake notch to apply. See SetBrake() below for more information.</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><span style="white-space: nowrap;">int Power</span></td>
 <td>The power notch to apply. Must be within the range from 0 to <em>PowerNotches</em>.</td>
 </tr>
-
 <tr>
 <td><span style="white-space: nowrap;">int Reverser</span></td>
 <td>The reverser to apply. -1 is backward, 0 is neutral and 1 is forward.</td>
 </tr>
-
 <tr>
 <td><span style="white-space: nowrap;">int ConstantSpeed</span></td>
 <td>The operation mode of the constant speed system. ATS_CONSTANTSPEED_CONTINUE (0) uses the driver&rsquo;s setting,  ATS_CONSTANTSPEED_ENABLE (1) forces the system on and  ATS_CONSTANTSPEED_DISABLE (2) forces the system off.</td>
 </tr>
 </tbody>
 </table>
-
-
-
-<p><br/></p>
-
+<br/>
 <div id="warning">
 <span>⚠</span>
 <p>Please note that if you want the driver&rsquo;s settings to take effect, you need to respond to the SetPower(), SetBrake() and SetReverse() calls, save the values that are passed in this those calls, and reapply them here.</p>
-
 </div>
-
-
-<hr />
-
+<hr>
 <p><strong>ATS_API void WINAPI SetPower(int notch)</strong></p>
-
 <p>This function is called when the driver changes the power notch. The value passed can range from 0 to <em>PowerNotches</em>.</p>
-
-<hr />
-
+<hr>
 <p><strong>ATS_API void WINAPI SetBrake(int notch)</strong></p>
-
 <p>This function is called when the driver changes the brake notch. For trains with automatic air brake, 0 is RELEASE, 1 is LAP, 2 is SERVICE and 3 is EMERGENCY.</p>
-
 <p>For other trains that do not have a hold brake, 0 is released brakes, 1 is brake notch 1, 2 is brake notch 2, etc., <em>BrakeNotches</em> is the maximum brake notch, and <em>BrakeNotches</em>+1 is the emergency brake.</p>
-
 <p>For other trains that have a hold brake, 0 is released brakes, 1 is the hold brake, 2 is brake notch 1, 3 is brake notch 2, etc., <em>BrakeNotches</em> is the maximum brake notch, and <em>BrakeNotches</em>+1 is the emergency brake.</p>
-
 <p>Generally, for trains without the automatic air brake, <em>AtsNotch</em> is the first brake notch and <em>BrakeNotches</em> is the maximum brake notch. For all types of trains, <em>BrakeNotches</em>+1 is the emergency brake.</p>
-
-<hr />
-
+<hr>
 <p><strong>ATS_API void WINAPI SetReverser(int pos)</strong></p>
-
 <p>This function is called when the driver changes the reverser position. The value of -1 corresponds to backward, 0 to neutral and 1 to forward.</p>
-
-<hr />
-
+<hr>
 <p><strong>ATS_API void WINAPI KeyDown(int atsKeyCode)</strong></p>
-
 <p>This function is called when a plugin-specific key is pressed down. The passed value <em>atsKeyCode</em> corresponds to any value between ATS_KEY_S (0) and ATS_KEY_L (15). When you make use of plugin-specific keys, release a specification that gives the official name of the key (e.g. SECURITY_S, SECURITY_A1, SECURITY_B2, etc.) or their shorthands (S, A1, B2, etc.) along with the meaning.</p>
-
-<hr />
-
+<hr>
 <p><strong>ATS_API void WINAPI KeyUp(int atsKeyCode)</strong></p>
-
 <p>This function is called when a plugin-specific key is released. The passed value <em>atsKeyCode</em> corresponds to any value between ATS_KEY_S (0) and ATS_KEY_L (15). When you make use of plugin-specific keys, release a specification that gives the official name of the key (e.g. SECURITY_S, SECURITY_A1, SECURITY_B2, etc.) or their shorthands (S, A1, B2, etc.) along with the meaning.</p>
-
-<hr />
-
+<hr>
 <p><strong>ATS_API void WINAPI HornBlow(int hornType)</strong></p>
-
 <p>This function is called when any of the horn starts or stops playing.</p>
-
 <p><em>hornType:</em></p>
-
-
 <table class='type1'>
 <thead>
 <tr>
@@ -841,14 +713,12 @@ An array with 256 elements (0 through 255) which can be set to any sound instruc
 <th>The function is called only when the horn starts playing.</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>ATS_HORN_SECONDARY</td>
 <td>1</td>
 <td>The function is called only when the horn starts playing.</td>
 </tr>
-
 <tr>
 <td>ATS_HORN_MUSIC</td>
 <td>2</td>
@@ -856,43 +726,23 @@ An array with 256 elements (0 through 255) which can be set to any sound instruc
 </tr>
 </tbody>
 </table>
-
-
-
-<hr />
-
+<hr>
 <p><strong>ATS_API void WINAPI DoorOpen()</strong></p>
-
 <p>This function is called when the doors start opening.</p>
-
-<hr />
-
+<hr>
 <p><strong>ATS_API void WINAPI DoorClose()</strong></p>
-
 <p>This function is called when the doors have finished closing.</p>
-
-<hr />
-
+<hr>
 <p><strong>ATS_API void WINAPI SetSignal(int signal)</strong></p>
-
 <p>This function is called whenever the current signalling section would change its aspect assuming the player&rsquo;s train is not inside. This can occur when passing section boundaries, but only if the newly entered section has a different aspect than the previous one. It can also occur when a preceding train clears any upcoming block and the current section would change its aspect as a consequence of that. Thus, the SetSignal call can occur at any time. The passed value <em>signal</em> represents the section value (the aspect number).</p>
-
 <div id="warning">
 <span>⚠</span>
 <p>Please note that the SetSignal call assumes that the player&rsquo;s train is not inside the section for which the SetSignal call is raised. Otherwise, the reported aspect would always be red, which would not be very meaningful to work with.</p>
-
 </div>
-
-
-<hr />
-
+<hr>
 <p><strong>ATS_API void WINAPI SetBeaconData(ATS_BEACONDATA beaconData)</strong></p>
-
 <p>This function is called when a beacon is passed.</p>
-
 <p><em>struct ATS_BEACONDATA:</em></p>
-
-
 <table class='type1'>
 <thead>
 <tr>
@@ -900,28 +750,22 @@ An array with 256 elements (0 through 255) which can be set to any sound instruc
 <th>The type of the beacon. In CSV routes, this corresponds to <em>Type</em> in Track.Beacon(<em>Type</em>; <em>BeaconStructureIndex</em>; <em>Section</em>; <em>Data</em>).</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><span style="white-space: nowrap;">int Signal</span></td>
 <td>The aspect number currently shown on the associated section. In CSV routes, this corresponds to any of the values in Track.Section(<em>Aspect0</em>, <em>Aspect1</em>, &hellip;, <em>Aspectn</em>)</td>
 </tr>
-
 <tr>
 <td><span style="white-space: nowrap;">float Distance</span></td>
 <td>The distance from the front of the train to the signal in meters. This can be negative if the associated section is behind the front of the train.</td>
 </tr>
-
 <tr>
 <td><span style="white-space: nowrap;">int Data</span></td>
 <td>The data of the beacon. In CSV routes, this corresponds to <em>Data</em> in Track.Beacon(<em>Type</em>; <em>BeaconStructureIndex</em>; <em>Section</em>; <em>Data</em>).</td>
 </tr>
 </tbody>
 </table>
-
-
-
-<p><em>Type</em> can be in the range from 0 to 2147483647, while <em>Data</em> can be in the range from 2147483648 to 2147483647. Please see the page about <a href="../../../zh_hk/information/standards.html" target="_blank">standards</a> to learn more about assigning beacon types.</p>
+<p><em>Type</em> can be in the range from 0 to 2147483647, while <em>Data</em> can be in the range from 2147483648 to 2147483647. Please see the page about <a href="../../../zh_hk/information/standards.html">standards</a> to learn more about assigning beacon types.</p>
 
 </div>
 

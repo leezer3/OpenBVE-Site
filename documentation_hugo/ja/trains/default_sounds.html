@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../ja/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../ja/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../ja/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../ja/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,13 +430,8 @@
 
 
 <div id="content">
-  
-
-<p>Without using a sound.cfg file, openBVE looks for a series of optional sound files within the train folder.</p>
-
-<h2 id="sounds-played-whilst-only-in-the-cab">■ Sounds played whilst only in the cab</h2>
-
-
+  <p>Without using a sound.cfg file, openBVE looks for a series of optional sound files within the train folder.</p>
+<h2 id="-sounds-played-whilst-only-in-the-cab">■ Sounds played whilst only in the cab</h2>
 <table class='type0'>
 <thead>
 <tr>
@@ -444,79 +439,62 @@
 <th>Effect</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>adjust.wav</td>
 <td>Played once when the train stops at a station, but needs to correct its stop position.</td>
 </tr>
-
 <tr>
 <td>ats.wav</td>
 <td>Played in a loop when the built-in security system ATS rings its bell. This happens when passing certain transponders or when the security system is deactivated but power is applied.</td>
 </tr>
-
 <tr>
 <td>atscnt.wav</td>
 <td>Played in a loop when the built-in security system ATS rings its chime. This happens after acknowledging the bell when passing S-type transponders.</td>
 </tr>
-
 <tr>
 <td>brake.wav</td>
 <td>For trains with automatic air brake, is played when the handle is moved into the SRV or EMG position. For other trains, is played when the brake notch is decreased.</td>
 </tr>
-
 <tr>
 <td>ding.wav</td>
 <td>Played once when the built-in security systems ATS-P or ATC change some states, e.g. when ATS-P activates the PTN APPROACH lamp, or when ATC changes the current speed restriction.</td>
 </tr>
-
 <tr>
 <td>eb.wav</td>
 <td>Played in a loop when the built-in EB system rings.</td>
 </tr>
-
 <tr>
 <td>halt.wav</td>
 <td>Played once or in a loop (depending on the train.dat setting) when the pass alarm system warns about an approaching station stop.</td>
 </tr>
-
 <tr>
 <td>klaxon.wav</td>
 <td>Played once when the primary horn is applied.</td>
 </tr>
-
 <tr>
 <td>klaxon0.wav</td>
 <td>Played once when the primary horn is applied. Has precedence over klaxon.wav.</td>
 </tr>
-
 <tr>
 <td>klaxon1.wav</td>
 <td>Played once when the secondary horn is applied.</td>
 </tr>
-
 <tr>
 <td>klaxon2.wav</td>
 <td>Played in a loop when the music horn is applied.</td>
 </tr>
-
 <tr>
 <td>toats.wav</td>
 <td>Played once when the built-in security system is switched from ATC to ATS.</td>
 </tr>
-
 <tr>
 <td>toatc.wav</td>
 <td>Played once when the built-in security system is switched from ATS to ATC.</td>
 </tr>
 </tbody>
 </table>
-
-
-<h2 id="sounds-played-on-all-cars-when-applicable">■ Sounds played on all cars (when applicable)</h2>
-
-
+<h2 id="-sounds-played-on-all-cars-when-applicable">■ Sounds played on all cars (when applicable)</h2>
 <table class='type0'>
 <thead>
 <tr>
@@ -524,115 +502,93 @@
 <th>Effect</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>air.wav   Played occasionally when the pressure in the brake cylinder is decreased from a non-high value to a non-zero value.</td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
-
 <tr>
 <td>airhigh.wav   Played occasionally when the pressure in the brake cylinder is decreased from a high value.</td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
-
 <tr>
 <td>airzero.wav   Played occasionally when the pressure in the brake cylinder is decreased to zero value.</td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
-
 <tr>
 <td>cpstart.wav   Played once when the air compressor is activated.</td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
-
 <tr>
 <td>cploop.wav    Played in a loop for the duration the air compressor is active.</td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
-
 <tr>
 <td>cpend.wav Played once when the air compressor is deactivated.</td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
-
 <tr>
 <td>doorcls.wav   Played once when the doors close.</td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
-
 <tr>
 <td>doorclsl.wav  Played once when the left doors close. Has precedence over doorscls.wav.</td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
-
 <tr>
 <td>doorclsr.wav  Played once when the right doors close. Has precedence over doorscls.wav.</td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
-
 <tr>
 <td>dooropn.wav   Played once when the doors open.</td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
-
 <tr>
 <td>dooropnl.wav  Played once when the left doors open. Has precedence over doorscls.wav.</td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
-
 <tr>
 <td>dooropnr.wav  Played once when the right doors open. Has precedence over doorscls.wav.</td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
-
 <tr>
 <td>emrbrake.wav  Played once when the emergency brakes are activated.</td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
-
 <tr>
 <td>flangei.wav   Defines a set of sounds played in a loop when the flange of the wheels rub against the rails. The sounds are played at a pitch proportional to the speed. The recordings should correspond to a speed of 45 km/h. The non-negative integer i corresponds to the Train.Flange command in CSV routes where route developers can select which of the flangei.wav sounds to play for a certain type of rail.</td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
-
 <tr>
 <td>loop.wav  Played in a loop all the time for the duration of the simulation.</td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
-
 <tr>
 <td>point.wav Played once per axle when the train crosses a pointwork.</td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
-
 <tr>
 <td>rub.wav   Played in a loop when the brake shoe rubs against the wheels. The sound is played at a pitch inversely proportional to the speed, and the volume of the sound decreases with increasing speeds.</td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
-
 <tr>
 <td>runi.wav  Defines a set of sounds played in a loop for the duration the train moves. The sounds are played at a pitch proportional to the speed. The recordings should correspond to a speed of 90 km/h. The non-negative integer i corresponds to the Train.Run command in CSV routes where route developers can select which of the runi.wav sounds to play for a certain type of rail.</td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
-
 <tr>
 <td>springl.wav   Played once when the train sways to the left side.</td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
-
 <tr>
 <td>springr.wav   Played once when the train sways to the right side.</td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
-
 <tr>
 <td>motori.wav    Defines a set of sounds played in a loop as instructed by the train.dat. The pitch, volume and index i are defined in the #MOTOR_Xn sections in the train.dat, and the sounds should be developed in conjunction with the train.dat.</td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
 </tbody>
 </table>
-
 
 </div>
 

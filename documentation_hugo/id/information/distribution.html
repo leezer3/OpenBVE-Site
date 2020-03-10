@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -430,17 +430,10 @@
 
 
 <div id="content">
-  
-
-<p>Saat anda membuat rute, kereta, atau plugin, banyak yang perlu diperhatikan. Seperti, memastikan bahwa add-on anda harus bisa dipakai di OpenBVE pada semua Sistem Operasi.</p>
-
-<h2 id="file-teks-dan-enkoding">■ File teks dan enkoding</h2>
-
+  <p>Saat anda membuat rute, kereta, atau plugin, banyak yang perlu diperhatikan. Seperti, memastikan bahwa add-on anda harus bisa dipakai di OpenBVE pada semua Sistem Operasi.</p>
+<h2 id="-file-teks-dan-enkoding">■ File teks dan enkoding</h2>
 <p>Apapun teks yang akan anda tulis dalam add-on, termasuk readme, pastikan file ini bisa dibuka di semua OS secara internasional. Enkoding default untuk semua file yang diproses di OpenBVE adalah UTF-8. Tenang saja, karena Bahasa Indonesia sudah menggunakan format ini, maka biasanya tidak perlu khawatir filenya tidak dapat terbaca di komputer lain di seluruh dunia. Hanya saja, jika ingin menambahkan bahasa yang membutuhkan karakter khusus, seperti bahasa cina, jepang, india, atau bahasa daerah yang tidak ada di 26 Alfabet standar, maka pastikan gunakan enkode UTF-8.</p>
-
 <p>Yang diperbolehkan dan tidak:</p>
-
-
 <table class='type1'>
 <thead>
 <tr>
@@ -448,34 +441,24 @@
 <th>Simpan file anda dengan format UTF-8.</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><font color="Green">✓</font></td>
 <td>Menyimpan teks anda dengan format Unicode dan byte order mark.</td>
 </tr>
-
 <tr>
 <td><font color="Red">✗</font></td>
 <td>Menyimpan teks anda dengan format selain Unicode.</td>
 </tr>
-
 <tr>
 <td><font color="Red">✗</font></td>
 <td>Menggunakan enkoding yang berbeda di berbagai file dalam 1 add-on</td>
 </tr>
 </tbody>
 </table>
-
-
-
-<h2 id="archive-x-installer">■ Archive x Installer</h2>
-
+<h2 id="-archive-x-installer">■ Archive x Installer</h2>
 <p>Saat membuat archive add-on,  buat 1 file archive saja daripada membuat banyak file archive yang lebih kecil, kecuali jika sizenya terlalu besar. Jangan gunakan installer yang hanya bisa digunakan oleh 1 OS saja (kecuali jika anda ingin menyediakan installer untuk semua OS). Misalnya format EXE untuk Windows, RPM untuk Linux, dan DMG untuk Mac.</p>
-
 <p>Yang diperbolehkan dan tidak:</p>
-
-
 <table class='type1'>
 <thead>
 <tr>
@@ -483,7 +466,6 @@
 <th>Menggunakan format 7Z, ZIP, TAR.GZ, dll.</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><font color="Red">✗</font></td>
@@ -491,16 +473,9 @@
 </tr>
 </tbody>
 </table>
-
-
-
-<h2 id="nama-file-dan-archive">■ Nama file dan archive</h2>
-
-<p>Biasanya, anda bebas membuat nama file dalam karakter apapun seperti huruf latin, mandarin, jepang, dsb. Tapi pastikan format nama yang dipakai bisa dibaca oleh software. Jika tidak, mungkin pengguna konten anda akan kesulitan menggunakannya. Sayangnya, format ZIP tidak support Unicode sedangkan format lain seperti <a href="https://www.7-zip.org/" target="_blank">7Z</a> bisa. Mungkin anda bisa menggunakan format ASCII seperti huruf A-Z, a-z, 0-9.</p>
-
+<h2 id="-nama-file-dan-archive">■ Nama file dan archive</h2>
+<p>Biasanya, anda bebas membuat nama file dalam karakter apapun seperti huruf latin, mandarin, jepang, dsb. Tapi pastikan format nama yang dipakai bisa dibaca oleh software. Jika tidak, mungkin pengguna konten anda akan kesulitan menggunakannya. Sayangnya, format ZIP tidak support Unicode sedangkan format lain seperti <a href="https://www.7-zip.org/">7Z</a> bisa. Mungkin anda bisa menggunakan format ASCII seperti huruf A-Z, a-z, 0-9.</p>
 <p>Yang dibolehkan dan tidak:</p>
-
-
 <table class='type1'>
 <thead>
 <tr>
@@ -508,29 +483,20 @@
 <th>Menggunakan archive yang berformat Unicode (misal 7Z)</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><font color="Green">✓</font></td>
 <td>Menggunakan archive format yang tidak didukung oleh Unicode dan memakai format bahasa anda sendiri.</td>
 </tr>
-
 <tr>
 <td><font color="Red">✗</font></td>
 <td>Menggunakan archive yang tidak memakai Unicode tetapi memakai nama Unicode.</td>
 </tr>
 </tbody>
 </table>
-
-
-
-<h2 id="archive-dan-susunan-folder">■ Archive dan susunan folder</h2>
-
+<h2 id="-archive-dan-susunan-folder">■ Archive dan susunan folder</h2>
 <p>Anda harus selalu menambahkan semua susunan folder, seperti <strong>Railway</strong> dan <strong>Train</strong>, saat membuat archive dan menyebarkan add-ons. Hal ini dapat membantu user untuk menentukan di mana mereka harus meng-ekstrak archivenya. Jangan pernah membiarkan isi archive anda hanya folder <em>NamaFolder</em> yang seharusnya disimpan di folder Railway\Sound, sebagai contoh. Hanya user yang sudah berpengalaman yang bisa mengatasi masalah ini.</p>
-
 <p>Yang dibolehkan dan tidak:</p>
-
-
 <table class='type1'>
 <thead>
 <tr>
@@ -538,7 +504,6 @@
 <th>Menambahkan folder <strong>Railway</strong> atau <strong>Train</strong>, lebih baik tambahkan keduanya.</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><font color="Red">✗</font></td>
@@ -546,16 +511,9 @@
 </tr>
 </tbody>
 </table>
-
-
-
-<h2 id="error-dan-peringatan">■ Error dan peringatan</h2>
-
+<h2 id="-error-dan-peringatan">■ Error dan peringatan</h2>
 <p>Rute anda harus bebas dari ERROR. Ingat, OpenBVE membedakan pesan ERROR dan pesan PERINGATAN. Pesan ERROR menunjukkan sesuatu yang KESALAHAN tulisan yang sudah jelas dan harus langsung diperbaiki. Sedangkan pesan PERINGATAN hanya menunjukkan informasih tambahan yang bisa saja menjadi error atau mungkin menghasilkan kode yang ambigu, atau yang tidak sengaja tertulis. Untuk melihat pesan error dan pesan peringatan, buka Pengaturan OpenBVE dan aktifkan pilihan ini. RouteViewer dan ObjectViewer akan selalu menampilkan pesan ini. Caatan, mungkin OpenBVE dan aplikasi Viewer lainnya menampilkan jumlah error yang berbeda, karena tidak semua perintah di aplikasi Viewer bisa dibaca.</p>
-
 <p>Yang dibolehkan dan tidak:</p>
-
-
 <table class='type1'>
 <thead>
 <tr>
@@ -563,33 +521,24 @@
 <th>Mengaktifkan laporkan error dan peringatan pada menu <em>Pengaturan</em> dan cek add-ons anda.</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><font color="Green">✓</font></td>
 <td>Menyebarkan add-on yang tidak ada errornya (warning tidak apa-apa).</td>
 </tr>
-
 <tr>
 <td><font color="Red">✗</font></td>
 <td>Jangan mengecek error pada add-on dengan mematikan laporan error atau abaikan pesan.</td>
 </tr>
-
 <tr>
 <td><font color="Red">✗</font></td>
 <td>Membagikan add-on yang masih mempunyai error.</td>
 </tr>
 </tbody>
 </table>
-
-
-
-<h2 id="rute-dan-kereta-yang-menggunakan-plugin-khusus">■ Rute dan kereta yang menggunakan plugin khusus.</h2>
-
+<h2 id="-rute-dan-kereta-yang-menggunakan-plugin-khusus">■ Rute dan kereta yang menggunakan plugin khusus.</h2>
 <p>Jika anda ingin menambahkan plugin, pastikan hanya berformat .NET. Plugin jadul yang hanya bisa dipakai di OS Windows sudah tidak bisa dipakai lagi, dan harusnya sudah tidak dipakai. Jika anda masih sangat membutuhkan plugin jadul, setidaknya pastikan add-on anda bisa dipakai tanpa menggunakan plugin itu. Silakan tes dengan menghapus file ats.cfg (atau rename aja file ats ini sementara).</p>
-
-<h2 id="panduan-operasional">■ Panduan operasional</h2>
-
+<h2 id="-panduan-operasional">■ Panduan operasional</h2>
 <p>Penjelasan tentang persinyalan dan semboyan, dan juga cara menggunakan kereta, sebaiknya ditambahkan sebagai file readme, atau file tutorial. Jangan sampai pengguna menebak-nebak apa yang harus dilakukan saat mengoperaskan kereta anda. Lebih baik lagi cantumkan tutorial bahasa inggris supaya lebih banyak orang yang mengerti.</p>
 
 </div>

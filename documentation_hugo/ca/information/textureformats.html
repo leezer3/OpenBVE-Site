@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -430,11 +430,7 @@
 
 
 <div id="content">
-  
-
-<p>This is a list of officially supported texture formats. Generally, the PNG format is the preferred choice due to its lossless compression.</p>
-
-
+  <p>This is a list of officially supported texture formats. Generally, the PNG format is the preferred choice due to its lossless compression.</p>
 <table class='type0'>
 <thead>
 <tr>
@@ -443,26 +439,22 @@
 <th>Remarks</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>PNG</td>
 <td>.png</td>
 <td>Preferred. Please be aware of the fact that using alpha channels significantly reduces performance when used in scenery objects and train exteriors.</td>
 </tr>
-
 <tr>
 <td>Windows BMP</td>
 <td>.bmp</td>
 <td>Not recommended due to large file size.</td>
 </tr>
-
 <tr>
 <td>JPEG</td>
 <td>.jpg, .jpeg</td>
 <td>Not recommended due to lossy compression (unless not noticable even on large magnification).</td>
 </tr>
-
 <tr>
 <td>GIF</td>
 <td>.gif</td>
@@ -470,15 +462,10 @@
 </tr>
 </tbody>
 </table>
-
-
-<h5 id="mida-de-les-textures">● Mida de les textures</h5>
-
+<h5 id="-mida-de-les-textures">● Mida de les textures</h5>
 <p>The widths and heights of textures should be a power of two, e.g. 1, 2, 4, 8, 16, 32, 64, 128, 256, and so on. While this is not a requirement, having textures whose sizes are not power-of-two increases loading times, increases storage requirements and introduces blurriness, because these textures have to be converted to a power-of-two size by openBVE.</p>
-
-<h5 id="optimització-de-fitxers-png">● Optimització de fitxers PNG</h5>
-
-<p>PNG is a lossless image compression format. As with many other compression formats, the encoder can make a wide range of choices to result in different outcomes - some encoders can produce smaller files, others larger files. Normally, image editing software do not produce the smallest PNG files, which is why there are a number of tools with the sole purpose of squeezing every last bit out of PNG files. You are invited to use such tools in order to further reduce storage requirements. Windows users can use the convenient <a href="http://brh.numbera.com/software/pnggauntlet/" target="_blank">PNGGauntlet</a> , while others can find a list of tools <a href="http://optipng.sourceforge.net/pngtech/optipng.html" target="_blank">here</a>  (scroll down to 3. PNG (lossless) optimization programs).</p>
+<h5 id="-optimització-de-fitxers-png">● Optimització de fitxers PNG</h5>
+<p>PNG is a lossless image compression format. As with many other compression formats, the encoder can make a wide range of choices to result in different outcomes - some encoders can produce smaller files, others larger files. Normally, image editing software do not produce the smallest PNG files, which is why there are a number of tools with the sole purpose of squeezing every last bit out of PNG files. You are invited to use such tools in order to further reduce storage requirements. Windows users can use the convenient <a href="http://brh.numbera.com/software/pnggauntlet/">PNGGauntlet</a> , while others can find a list of tools <a href="http://optipng.sourceforge.net/pngtech/optipng.html">here</a>  (scroll down to 3. PNG (lossless) optimization programs).</p>
 
 </div>
 

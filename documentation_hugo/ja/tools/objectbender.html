@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../ja/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../ja/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../ja/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../ja/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,28 +430,17 @@
 
 
 <div id="content">
-  
-
-<p><img src="../../images/tool_objectbender_screenshot_1.png" alt="img" /></p>
-
-<h2 id="概要">■ 概要</h2>
-
+  <p><img src="../../images/tool_objectbender_screenshot_1.png" alt="img"></p>
+<h2 id="-概要">■ 概要</h2>
 <p>このツールはオブジェクトのセグメントを結合して、メッシュを曲げることができます。 これはレールや壁、堤防など、曲がった形状のオブジェクトを作るのに有用です。 セグメントは B3D か CSV フォーマットでなければなりません。 あなたはセグメントをこれらで用意しなければならず、 B3DかCSVのオブジェクトのファイルフォーマットの基本的な作成の知識が必要なことを意味します。 詳しくはそれぞれのドキュメントをご覧ください。</p>
-
 <p>Object Bender はGUIとコマンドライン双方のインターフェースを備えます。 コマンドライン引数を省略して起動すると、GUIが起動します。 GUIは本プログラムの独習と慣れるのに有用です。 長期的に見た場合、コマンドラインに変更されるほうが良いとでしょう。 目的別のコマンドライン引数のリストは下記のとおりです。</p>
-
 <p>バイトオーダーマーク (BOM) が異なるUnicodeエンコーディングが示されない限り、Object Benderは常にUTF-8として解釈することに注意してください。非Unicodeのエンコーディングはサポートされません。</p>
-
 <p>サポートされるオブジェクトのファイルフォーマット:</p>
-
 <ul>
 <li>B3D</li>
 <li>CSV</li>
 </ul>
-
-<h2 id="コマンドライン引数">■ コマンドライン引数</h2>
-
-
+<h2 id="-コマンドライン引数">■ コマンドライン引数</h2>
 <table class='type0'>
 <thead>
 <tr>
@@ -459,90 +448,70 @@
 <th>意味</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>/?</td>
 <td>コマンドライン引数の一覧を表示します。</td>
 </tr>
-
 <tr>
 <td><em>入力ファイル</em></td>
 <td>入力ファイルのパスを指定します。 B3D もしくは CSV ファイルを指定します。</td>
 </tr>
-
 <tr>
 <td><em>出力ファイル</em></td>
 <td>出力先ファイルのパスを指定します。 ファイルフォーマットは入力ファイルのフォーマットと同一です。</td>
 </tr>
-
 <tr>
 <td>/n=<em>セグメント</em></td>
 <td>セグメントの個数。</td>
 </tr>
-
 <tr>
 <td>/s=<em>セグメント長</em></td>
 <td>各セグメントの長さを、メートル単位で指定します。</td>
 </tr>
-
 <tr>
 <td>/b=<em>ブロック長</em></td>
 <td>ブロックの長さをメートルで指定します。レールオブジェクトなどに用いる場合など、ゼロが指定された場合は回転しません。</td>
 </tr>
-
 <tr>
 <td>/r=<em>半径</em></td>
 <td>半径をメートルで指定します。 負の値は左側、正の値は右側です。ゼロの場合はカーブを生成しません。</td>
 </tr>
-
 <tr>
 <td>/g=<em>レール幅</em></td>
 <td>レールのゲージ幅をミリメートルで指定します。カントが適用される場合は必ず指定しなければなりません。</td>
 </tr>
-
 <tr>
 <td>/u=<em>始点のカント</em></td>
 <td>オブジェクトの始まりの時点のカントをミリメートルで指定します。</td>
 </tr>
-
 <tr>
 <td>/v=<em>終点のカント</em></td>
 <td>オブジェクトの終点のカントをミリメートルで指定します。</td>
 </tr>
-
 <tr>
 <td>/a</td>
 <td>出力先のファイルを上書きせずに追記します。</td>
 </tr>
 </tbody>
 </table>
-
-
 <p>例:</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>ObjectBender input.csv output.csv /n=25 /s=1 /b=25 /r=600
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+ObjectBender input.csv output.csv /n=25 /s=1 /b=25 /r=600
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
-<h2 id="object-benderの振る舞い">■ Object Benderの振る舞い</h2>
-
-<p>Object Bender はZ軸方向に向かってセグメントのコピーを生成します。 各々のコピーはGUIもしくはコマンドラインで指定されたセグメントの長さに従ってオフセットされます。 はじめのセグメントは何も修正されず残され、二番目のセグメントはセグメント長に従ってZ軸方向にシフトされます。 三番目のセグメントは 2*セグメント長、4番目は 3*セグメント長、という具合です。</p>
-
+<h2 id="-object-benderの振る舞い">■ Object Benderの振る舞い</h2>
+<p>Object Bender はZ軸方向に向かってセグメントのコピーを生成します。 各々のコピーはGUIもしくはコマンドラインで指定されたセグメントの長さに従ってオフセットされます。 はじめのセグメントは何も修正されず残され、二番目のセグメントはセグメント長に従ってZ軸方向にシフトされます。 三番目のセグメントは 2<em>セグメント長、4番目は 3</em>セグメント長、という具合です。</p>
 <p>コピーが生成されると、 Object Bender は極座標変換を行います。 簡単に言うと、Z軸は円の中心座標(Radius,0,0)のある方に向かって曲がります。 言い換えると、右側は正の値、左側は負の値です。 ブロック長が指定された場合、 最後のオブジェクトは回転します。それ故レールオブジェクトの生成に有用です。</p>
-
 <p>Object Bender ではSetTextureCoordinates (CSV) と Coordinates (B3D) コマンドにおいて、コメントとして特別なマークアップを受け入れます。これらは Object Bender がテクスチャを張る座標を各々のセグメントにおいてシフトさせる機能に用いられます。</p>
-
 <table class='type2'>
 <thead>
 <tr>
@@ -550,7 +519,6 @@
 <th>各セグメントにおいて <em>値</em> の数値分、テクスチャをX軸の方向にシフトさせます。</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>{Y=<em>値</em>}</td>
@@ -558,311 +526,262 @@
 </tr>
 </tbody>
 </table>
-
-
-
 <p>このマークアップはSetTextureCoordinates/Coordinates commandと同一の行におけるコメント内のどこにでも記述できます。 詳細はチュートリアルを参照してください。</p>
-
-<h2 id="チュートリアル">■ チュートリアル</h2>
-
+<h2 id="-チュートリアル">■ チュートリアル</h2>
 <p>こちらではどの様に Object Bender を用いてカーブレールを生成するか簡単なチュートリアルを示します。
 基本的なことはさておきまして、こちらのチュートリアルではテクスチャの座標を適切に取り扱いどのように働くのか、また、コマンドラインのインターフェースで効率的に動作させる方法も示します。</p>
-
-<h5 id="基礎">● 基礎</h5>
-
+<h5 id="-基礎">● 基礎</h5>
 <p>私達はこれから25mのブロック長、軌間1435mm、半径600mで、右方向に曲がるカーブレールオブジェクトを作ろうと思います。最初に必要なものは5mの長さの短いレールのセグメントです。</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>segment.csv</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>; 左側のレール<br />
-CreateMeshBuilder<br />
-AddVertex,-0.7775,0,0<br />
-AddVertex,-0.7775,0,5<br />
-AddVertex,-0.7175,0,5<br />
-AddVertex,-0.7175,0,0<br />
-AddFace,0,1,2,3<br />
-<br/>; 右側のレール<br />
-CreateMeshBuilder<br />
-AddVertex,0.7775,0,0<br />
-AddVertex,0.7775,0,5<br />
-AddVertex,0.7175,0,5<br />
-AddVertex,0.7175,0,0<br />
-AddFace,3,2,1,0<br />
-<br/>; バラスト<br />
-CreateMeshBuilder<br />
-AddVertex,-1,-0.2,0<br />
-AddVertex,-1,-0.2,5<br />
-AddVertex,1,-0.2,5<br />
-AddVertex,1,-0.2,0<br />
-AddFace,0,1,2,3<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>segment.csv</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+; 左側のレール<br>
+CreateMeshBuilder<br>
+AddVertex,-0.7775,0,0<br>
+AddVertex,-0.7775,0,5<br>
+AddVertex,-0.7175,0,5<br>
+AddVertex,-0.7175,0,0<br>
+AddFace,0,1,2,3<br>
+<br/>; 右側のレール<br>
+CreateMeshBuilder<br>
+AddVertex,0.7775,0,0<br>
+AddVertex,0.7775,0,5<br>
+AddVertex,0.7175,0,5<br>
+AddVertex,0.7175,0,0<br>
+AddFace,3,2,1,0<br>
+<br/>; バラスト<br>
+CreateMeshBuilder<br>
+AddVertex,-1,-0.2,0<br>
+AddVertex,-1,-0.2,5<br>
+AddVertex,1,-0.2,5<br>
+AddVertex,1,-0.2,0<br>
+AddFace,0,1,2,3<br>
 SetColor,150,125,100
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>今必要なものとして、上記のコードはテクスチャを用いず、簡単なものを作りました。 GUIとして起動した後、 この入力ファイル(segment.csv)を選択し、 必要に応じてパラメータを入力していきます。 私達は今5mの長さのセグメントを持ち、ブロック長は25mですから、それ故にブロックを埋めるためには5つのセグメントのコピーが必要となります。</p>
-
-<p>Number of segments: 5<br />
-Segment length: 5<br />
-Block length: 25<br />
+<p>Number of segments: 5<br>
+Segment length: 5<br>
+Block length: 25<br>
 Radius: 600</p>
-
 <p>レール幅は設定する必要はありません。なぜなら今回私達はカントを生成しないからです。 いま私達は出力先のファイルを例えば <em>right_curve_600.csv</em> として選び、Startボタンを押下します。 すると Object Bender はシンプルに <em>Done!</em> とメッセージを出力します。 半径を-600と設定し、出力先ファイルを例えば <em>left_curve_600.csv</em> と変更し、Startボタンをもう一度押すだけで、同様の設定を持った左カーブを追加で生成できます。</p>
-
-<h5 id="テクスチャの座標設定を伴う動作">● テクスチャの座標設定を伴う動作</h5>
-
+<h5 id="-テクスチャの座標設定を伴う動作">● テクスチャの座標設定を伴う動作</h5>
 <p>今回は単色ではなく、適切なテクスチャが設定されるものとしましょう。 例:</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>segment.csv</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>; バラスト<br />
-CreateMeshBuilder<br />
-AddVertex,-1,-0.2,0<br />
-AddVertex,-1,-0.2,5<br />
-AddVertex,1,-0.2,5<br />
-AddVertex,1,-0.2,0<br />
-AddFace,0,1,2,3<br />
-LoadTexture,ballast.png<br />
-SetTextureCoordinates,0,0,0<br />
-SetTextureCoordinates,1,0,1<br />
-SetTextureCoordinates,2,1,1<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>segment.csv</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+; バラスト<br>
+CreateMeshBuilder<br>
+AddVertex,-1,-0.2,0<br>
+AddVertex,-1,-0.2,5<br>
+AddVertex,1,-0.2,5<br>
+AddVertex,1,-0.2,0<br>
+AddFace,0,1,2,3<br>
+LoadTexture,ballast.png<br>
+SetTextureCoordinates,0,0,0<br>
+SetTextureCoordinates,1,0,1<br>
+SetTextureCoordinates,2,1,1<br>
 SetTextureCoordinates,3,1,0
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
-<p>注意すべき点として、上記のコードにおけるテクスチャのy軸 は特別なz軸に対応していることです。  もし今、画像データがオブジェクトのz軸方向に向かってコピーされているとすると、各セグメントでは1つのコピーしか得られないことになります。 例えば5m毎に1つのコピーです。 これは望ましいことかもしれませんが、 例えばテクスチャを25メートルのブロック全体で1つのテクスチャを用いるようにデザインしたとしましょう。 このケースでは、ひとつのセグメントでは全てのテクスチャを表示しない上に表示せず、しかしながらちょうど <sup>1</sup>&frasl;<sub>5</sub> です。 こうしたケースの目的のために、 最初にセグメントを正しく表示しなければなりません:</p>
-
+<p>注意すべき点として、上記のコードにおけるテクスチャのy軸 は特別なz軸に対応していることです。  もし今、画像データがオブジェクトのz軸方向に向かってコピーされているとすると、各セグメントでは1つのコピーしか得られないことになります。 例えば5m毎に1つのコピーです。 これは望ましいことかもしれませんが、 例えばテクスチャを25メートルのブロック全体で1つのテクスチャを用いるようにデザインしたとしましょう。 このケースでは、ひとつのセグメントでは全てのテクスチャを表示しない上に表示せず、しかしながらちょうど 1/5 です。 こうしたケースの目的のために、 最初にセグメントを正しく表示しなければなりません:</p>
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>segment.csv</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>; バラスト<br />
-CreateMeshBuilder<br />
-AddVertex,-1,-0.2,0<br />
-AddVertex,-1,-0.2,5<br />
-AddVertex,1,-0.2,5<br />
-AddVertex,1,-0.2,0<br />
-AddFace,0,1,2,3<br />
-LoadTexture,ballast.png<br />
-SetTextureCoordinates,0,0,0.0<br />
-SetTextureCoordinates,1,0,0.2<br />
-SetTextureCoordinates,2,1,0.2<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>segment.csv</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+; バラスト<br>
+CreateMeshBuilder<br>
+AddVertex,-1,-0.2,0<br>
+AddVertex,-1,-0.2,5<br>
+AddVertex,1,-0.2,5<br>
+AddVertex,1,-0.2,0<br>
+AddFace,0,1,2,3<br>
+LoadTexture,ballast.png<br>
+SetTextureCoordinates,0,0,0.0<br>
+SetTextureCoordinates,1,0,0.2<br>
+SetTextureCoordinates,2,1,0.2<br>
 SetTextureCoordinates,3,1,0.0
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
-<p>上記のコードにおいて、テクスチャは <sup>1</sup>&frasl;<sub>5</sub> (=0.2)しか表示されていません。 もしいま私達がObject Bender で複数のセグメントを持つ長いオブジェクトを結合するために用いる場合、 其々のセグメントは結果としてテクスチャの最初の5分の一の部分だけで全て表示します。 この結果はもちろん望ましいものではありません。 私達が望むのは各セグメントにおいて0.2づつY軸に沿ってシフトするものです。 Object Bender はこのために SetTextureCoordinates コマンドのコメント欄において特別なマークアップを受け入れます。 ですので追加してみてください。</p>
-
+<p>上記のコードにおいて、テクスチャは 1/5 (=0.2)しか表示されていません。 もしいま私達がObject Bender で複数のセグメントを持つ長いオブジェクトを結合するために用いる場合、 其々のセグメントは結果としてテクスチャの最初の5分の一の部分だけで全て表示します。 この結果はもちろん望ましいものではありません。 私達が望むのは各セグメントにおいて0.2づつY軸に沿ってシフトするものです。 Object Bender はこのために SetTextureCoordinates コマンドのコメント欄において特別なマークアップを受け入れます。 ですので追加してみてください。</p>
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>segment.csv</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>; バラスト<br />
-CreateMeshBuilder<br />
-AddVertex,-1,-0.2,0<br />
-AddVertex,-1,-0.2,5<br />
-AddVertex,1,-0.2,5<br />
-AddVertex,1,-0.2,0<br />
-AddFace,0,1,2,3<br />
-LoadTexture,ballast.png<br />
-SetTextureCoordinates,0,0,0.0 ; {Y=0.2}<br />
-SetTextureCoordinates,1,0,0.2 ; {Y=0.2}<br />
-SetTextureCoordinates,2,1,0.2 ; {Y=0.2}<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>segment.csv</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+; バラスト<br>
+CreateMeshBuilder<br>
+AddVertex,-1,-0.2,0<br>
+AddVertex,-1,-0.2,5<br>
+AddVertex,1,-0.2,5<br>
+AddVertex,1,-0.2,0<br>
+AddFace,0,1,2,3<br>
+LoadTexture,ballast.png<br>
+SetTextureCoordinates,0,0,0.0 ; {Y=0.2}<br>
+SetTextureCoordinates,1,0,0.2 ; {Y=0.2}<br>
+SetTextureCoordinates,2,1,0.2 ; {Y=0.2}<br>
 SetTextureCoordinates,3,1,0.0 ; {Y=0.2}
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>現段階で、Object Bender は上記のサンプルのうちSetTextureCoordinatesの4行について、各セグメントでyの値に都度0.2追加しなければならないことを認識しています。 それ故に最初のセグメントは未修正で、2番めのセグメントは0.2から0.4に変更するよう指示に従い、三番目のセグメントは0.4から0.6に、4番めのセグメントは0.6から0.8に、そして最後のセグメントは0.8から1.0に変更されます。 これにより、テクスチャは毎回5セグメントごとに繰り返されます。 セグメント長は5メートルで、毎回25m毎に繰り返されますが、それはすなわちブロック長と同じです。</p>
-
-<h5 id="コマンドラインインターフェースを用いる">● コマンドラインインターフェースを用いる</h5>
-
+<h5 id="-コマンドラインインターフェースを用いる">● コマンドラインインターフェースを用いる</h5>
 <p>それでは、架線付きのカーブレールオブジェクトを作ってみましょう。 架線は曲がってはいません。それ故に25m長の長いワイヤーです。 私達はこれをひとつのステップで行うことはできません。 なぜならもし架線をsegment.csvに含めてしまうと、コピーされた上に曲がってしまうからです。 その代わりに、双方のオブジェクトを分割して生成し、後に結合します。 コマンドラインインターフェースを通じてカーブレールを生成しようとした場合、端末から以下のコードを入力します。</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Terminal</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>ObjectBender segment.csv right_curve_600.csv /n=5 /s=5 /b=25 /r=600
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Terminal</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+ObjectBender segment.csv right_curve_600.csv /n=5 /s=5 /b=25 /r=600
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>では次に、ファイルに組み込むために架線を作ってみましょう。</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>wire.csv</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>AddVertex,-0.03,5,0<br />
-AddVertex,-0.03,5,25<br />
-AddVertex,0.03,5,25<br />
-AddVertex,0.03,5,0<br />
-AddFace,3,2,1,0<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>wire.csv</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+AddVertex,-0.03,5,0<br>
+AddVertex,-0.03,5,25<br>
+AddVertex,0.03,5,25<br>
+AddVertex,0.03,5,0<br>
+AddFace,3,2,1,0<br>
 SetColor,0,0,0
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>上記のコードは単線の25m長のワイヤーです。 最初からオブジェクト長は25m長を与えてあり、 私達は追加のコピーを生成する必要がなく、ちょうど一つのセグメントで済みます。 これをright_curve_600.csv に追加します。 この場合以下の方法で行います:</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>Terminal</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>ObjectBender wire.csv right_curve_600.csv /n=1 /s=25 /b=25 /r=600 /a
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Terminal</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+ObjectBender wire.csv right_curve_600.csv /n=1 /s=25 /b=25 /r=600 /a
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>最後の /a のスイッチは Object Bender がターゲットファイルの生成結果の末尾に架線を追加するためのもので上書きしません。 バッチファイルに記述し、結合してみましょう。 このバッチファイルは Windows上で呼び出すことができます。</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>start.bat</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>ObjectBender segment.csv right_curve_600.csv /n=5 /s=5 /b=25 /r=600<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>start.bat</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+ObjectBender segment.csv right_curve_600.csv /n=5 /s=5 /b=25 /r=600<br>
 ObjectBender wire.csv right_curve_600.csv /n=1 /s=25 /b=25 /r=600 /a
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>もしあなたがセグメントや架線のオブジェクトに変更を加えようとしたいなら、好きなときにバッチファイルを実行するだけで生成結果を更新することができます。 同様により長いバッチファイルで左右の違う半径のカーブレールを以下の方法で生成することができます:</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-      <td width="16" valign="top"></td>
-      <td>
-      <em>start.bat</em>
-      </td>
-    </tr>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>; 左向きでR300m<br />
-ObjectBender segment.csv left_curve_300.csv /n=5 /s=5 /b=25 /r=-300<br />
-ObjectBender wire.csv left_curve_300.csv /n=1 /s=25 /b=25 /r=-300 /a<br />
-; 右向きでR300m<br />
-ObjectBender segment.csv right_curve_300.csv /n=5 /s=5 /b=25 /r=300<br />
-ObjectBender wire.csv right_curve_300.csv /n=1 /s=25 /b=25 /r=300 /a<br />
-; 左向きでR600m<br />
-ObjectBender segment.csv left_curve_600.csv /n=5 /s=5 /b=25 /r=-600<br />
-ObjectBender wire.csv left_curve_600.csv /n=1 /s=25 /b=25 /r=-600 /a<br />
-; 右向きでR600m<br />
-ObjectBender segment.csv right_curve_600.csv /n=5 /s=5 /b=25 /r=600<br />
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>start.bat</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+; 左向きでR300m<br>
+ObjectBender segment.csv left_curve_300.csv /n=5 /s=5 /b=25 /r=-300<br>
+ObjectBender wire.csv left_curve_300.csv /n=1 /s=25 /b=25 /r=-300 /a<br>
+; 右向きでR300m<br>
+ObjectBender segment.csv right_curve_300.csv /n=5 /s=5 /b=25 /r=300<br>
+ObjectBender wire.csv right_curve_300.csv /n=1 /s=25 /b=25 /r=300 /a<br>
+; 左向きでR600m<br>
+ObjectBender segment.csv left_curve_600.csv /n=5 /s=5 /b=25 /r=-600<br>
+ObjectBender wire.csv left_curve_600.csv /n=1 /s=25 /b=25 /r=-600 /a<br>
+; 右向きでR600m<br>
+ObjectBender segment.csv right_curve_600.csv /n=5 /s=5 /b=25 /r=600<br>
 ObjectBender wire.csv right_curve_600.csv /n=1 /s=25 /b=25 /r=600 /a
-         </font>
-       </td>
-    </tr>
-  </tbody>
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>あなたがなにかのアイデアを得られるよう期待しています。</p>
 
 </div>

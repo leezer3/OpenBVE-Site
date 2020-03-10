@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../fr/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../fr/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../fr/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../fr/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,58 +430,51 @@
 
 
 <div id="content">
-  <p><font color="red">[Panel]</font><br />
+  <p><font color="red">[Panel]</font><br>
 <strong>Background</strong> = FileName</p>
-
-<p><font color="red">[View]</font><br />
-<strong>Yaw</strong> = ValueInDegrees<br />
+<p><font color="red">[View]</font><br>
+<strong>Yaw</strong> = ValueInDegrees<br>
 <strong>Pitch</strong> = ValueInDegrees</p>
-
-<p><font color="red">[PressureIndicator]</font><br />
-<strong>Type</strong> = { <strong>0</strong> = gauge | <strong>1</strong> = LED }<br />
-<strong>LowerNeedle</strong> = Subject, RedValue, GreenValue, BlueValue<br />
-<strong>UpperNeedle</strong> = Subject, RedValue, GreenValue, BlueValue<br />
-<strong>Center</strong> = X, Y<br />
-<strong>Radius</strong> = ValueInPixels<br />
-<strong>Background</strong> = FileName<br />
-<strong>Cover</strong> = FileName<br />
-<strong>Unit</strong> = { <strong>0</strong> = <strong>kpa</strong> | <strong>1</strong> = <strong>kgf/cm2</strong> }<br />
-<strong>Minimum</strong> = PressureValue<br />
-<strong>Maximum</strong> = PressureValue<br />
+<p><font color="red">[PressureIndicator]</font><br>
+<strong>Type</strong> = { <strong>0</strong> = gauge | <strong>1</strong> = LED }<br>
+<strong>LowerNeedle</strong> = Subject, RedValue, GreenValue, BlueValue<br>
+<strong>UpperNeedle</strong> = Subject, RedValue, GreenValue, BlueValue<br>
+<strong>Center</strong> = X, Y<br>
+<strong>Radius</strong> = ValueInPixels<br>
+<strong>Background</strong> = FileName<br>
+<strong>Cover</strong> = FileName<br>
+<strong>Unit</strong> = { <strong>0</strong> = <strong>kpa</strong> | <strong>1</strong> = <strong>kgf/cm2</strong> }<br>
+<strong>Minimum</strong> = PressureValue<br>
+<strong>Maximum</strong> = PressureValue<br>
 <strong>Angle</strong> = ValueInDegrees</p>
-
-<p><font color="red">[SpeedIndicator]</font><br />
-<strong>Type</strong> = { <strong>0</strong> = gauge | <strong>1</strong> = LED }<br />
-<strong>Needle</strong> = RedValue, GreenValue, BlueValue<br />
-<strong>Center</strong> = X, Y<br />
-<strong>Radius</strong> = ValueInPixels<br />
-<strong>Background</strong> = FileName<br />
-<strong>Cover</strong> = FileName<br />
-<strong>Minimum</strong> = SpeedValue<br />
-<strong>Maximum</strong> = SpeedValue<br />
-<strong>Atc</strong> = FileName<br />
+<p><font color="red">[SpeedIndicator]</font><br>
+<strong>Type</strong> = { <strong>0</strong> = gauge | <strong>1</strong> = LED }<br>
+<strong>Needle</strong> = RedValue, GreenValue, BlueValue<br>
+<strong>Center</strong> = X, Y<br>
+<strong>Radius</strong> = ValueInPixels<br>
+<strong>Background</strong> = FileName<br>
+<strong>Cover</strong> = FileName<br>
+<strong>Minimum</strong> = SpeedValue<br>
+<strong>Maximum</strong> = SpeedValue<br>
+<strong>Atc</strong> = FileName<br>
 <strong>AtcRadius</strong> = ValueInPixels</p>
-
-<p><font color="red">[DigitalIndicator]</font><br />
-<strong>Number</strong> = FileName<br />
-<strong>Corner</strong> = Left, Top<br />
-<strong>Size</strong> = Width, Height<br />
+<p><font color="red">[DigitalIndicator]</font><br>
+<strong>Number</strong> = FileName<br>
+<strong>Corner</strong> = Left, Top<br>
+<strong>Size</strong> = Width, Height<br>
 <strong>Unit</strong> = { <strong>0</strong> = <strong>km/h</strong> | <strong>1</strong> = <strong>mph</strong> | <strong>2</strong> = <strong>m/s</strong> }</p>
-
-<p><font color="red">[PilotLamp]</font><br />
-<strong>TurnOn</strong> = FileName<br />
-<strong>TurnOff</strong> = FileName<br />
+<p><font color="red">[PilotLamp]</font><br>
+<strong>TurnOn</strong> = FileName<br>
+<strong>TurnOff</strong> = FileName<br>
 <strong>Corner</strong> = Left, Top</p>
-
-<p><font color="red">[Watch]</font><br />
-<strong>Background</strong> = FileName<br />
-<strong>Center</strong> = X, Y<br />
-<strong>Radius</strong> = ValueInPixels<br />
+<p><font color="red">[Watch]</font><br>
+<strong>Background</strong> = FileName<br>
+<strong>Center</strong> = X, Y<br>
+<strong>Radius</strong> = ValueInPixels<br>
 <strong>Needle</strong> = RedValue, GreenValue, BlueValue</p>
-
-<p><font color="red">[BrakeIndicator]</font><br />
-<strong>Image</strong> = FileName<br />
-<strong>Corner</strong> = Left, Top<br />
+<p><font color="red">[BrakeIndicator]</font><br>
+<strong>Image</strong> = FileName<br>
+<strong>Corner</strong> = Left, Top<br>
 <strong>Width</strong> = ValueInPixels</p>
 
 </div>

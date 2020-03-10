@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -430,81 +430,57 @@
 
 
 <div id="content">
-  
-
-<p><font color="Gray">Esta página describe que es codificación de caracteres y como debería ser utilizado</font></p>
-
-<h2 id="vista-general">■ Vista general</h2>
-
+  <p><font color="Gray">Esta página describe que es codificación de caracteres y como debería ser utilizado</font></p>
+<h2 id="-vista-general">■ Vista general</h2>
 <p>Una codificación de caracteres es una manera de traducir caracteres en bytes para que así puedan ser almacenados en el disco duro. En el comienzo, un byte (256 estados) eran usados para codificar un caracter. Debido a que existen distintos sistemas de escritura alrededor del mundo con diferentes requisitos para los caracteres sean codificados, hay un montón de codificadores diferentes que son de uso alrededor del mundo. Problemáticamente, en la codificación de un archivo de texto no es conocido en ventaja, malinterpretando la codificación puede resultar en un mojibake (secuencia de caracteres sin significado).</p>
-
 <p>Ejemplo de la codificación Japonesa en Shift_JIS (requiere unas fuentes apropiadas disponibles):</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>ひらがなカタカナ漢字
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+ひらがなカタカナ漢字
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>La secuencia de byte generado por el previo ejemplo en Shift_JIS:</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>82 D0 82 E7 82 AA 82 C8 83 4A 83 5E 83 4A 83 69 8A BF 8E 9A
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+82 D0 82 E7 82 AA 82 C8 83 4A 83 5E 83 4A 83 69 8A BF 8E 9A
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>Que ocurre si la secuencia de byte es mal interpretado usando ISO 8859-1  (Latin-1) en vez de Shift_JIS:</p>
-
 <table style="border: none;">
-  <tbody>
-  
-    <tr>
-       <td width="16" valign="top">▶</td>
-       <td bgcolor="#D4D8FF" style="border: 1px dashed;">
-         <font style="font-family: monospace">
-         <p style='display:inline;'>‚Ð‚ç‚ª‚ÈƒJƒ^ƒJƒiŠ¿Žš
-         </font>
-       </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+‚Ð‚ç‚ª‚ÈƒJƒ^ƒJƒiŠ¿Žš
+</font>
+</td>
+</tr>
+</tbody>
 </table>
-
 <p>Por lo general, una codificación particular solo permite usar el sistema de escritura para el cual fue diseñado. Unicode, un estandard el cual cubre básicamente todos los caracteres y ha sido usado en sistemas de escritura a través del mundo, otorgando una solución a esto.</p>
-
 <p>Mientras que Unicode es una amplia gama hoy en día, tiene sus pequeños inconvenientes. Primero que todo, Unicode no usa codificación de caracter directo. En vez de esto, la así llamada Unicode Transformation Formats (UTF) provee el significado particular de caracteres. los formatos de transformación frecuentemente usados son UTF-8 y UTF-16.</p>
-
 <p>Las rutas y los trenes por lo general, debido a razones de compatibilidad, esta permitido de codificarse en cualquier codificación arbitraria. Como la codificación no es conocida en adelante, el usuario necesitará seleccionar la codificación correcta para la ruta y el tren en la pestaña configuración en el menú principal. Por supuesto, esto es molesto y debe ser evitado de cualquier forma.</p>
-
-<h2 id="el-byte-de-orden-marca">■ El byte de orden marca</h2>
-
+<h2 id="-el-byte-de-orden-marca">■ El byte de orden marca</h2>
 <p>UTF-16 es descendente de la codificación de caracter (UTC-2), el cual siempre ha usado dos bytes para codificar un caracter. Como tal, el orden de esos dos bytes importan. En orden de conocer en qué orden los bytes aparecen, el así llamado byte de orden marca es predispuesto frecuentemente en el texto, por lo general automáticamente y transparentemente en el editor de texto. El byte de orden marca provee a los decodificadores el significado detectando en qué orden de byte el archivo fue guardado. Adicionalmente, el bye de orden marca provee una manera bastante segura de detectar que el archivo fue guardado en Unicode en primer lugar.</p>
-
 <p>Mientras que esto no es técnicamente necesario, el byte de orden marca es también frecuentemente usado por UTF-8. Así como UTF-8 no tiene problema para ordenar byte, el hecho del propósito de usar un byte de orden marca con UTF-8 es para proveer significado de identidad al archivo como codificado en UTF-8.</p>
-
 <p>Así como se ha dicho, mientras que Unicode permite codificar virtualmente todos los caracteres usados en todos los sistemas de escritura alrededor del mundo, esto no necesariamente haga funcionar con todos los archivos de texto más facilmente si el codificador a ser utilizado no fue acordado.</p>
-
 <p>Usar un byte de orden marca provee a openBVE la habilidad de automáticamente detectar la codificación para cada archivo. Si usted tiene un buen editor de texto, no solamente estarás disponible a seleccionar la codificación manualmente, pero también si deseas guardar con un byte de orden marca o no. Notepad (Windows) siempre guarda con un byte de orden de marca si UTF-8 es seleccionado como la codificación de caracter al guardar el archivo, para así hacer un ejemplo aceptable.</p>
-
 <p>Tecnicamente, el byte de orden de marca son los primeros bytes de un archivo particular de texto. El byte de orden marca, el cual puede ser detectado por openBVE son los siguientes:</p>
-
-
 <table class='type0'>
 <thead>
 <tr>
@@ -512,36 +488,29 @@
 <th>Representación hexadecimal</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>UTF-8</td>
 <td>EF BB BF</td>
 </tr>
-
 <tr>
 <td>UTF-16 (big endian)</td>
 <td>FE FF</td>
 </tr>
-
 <tr>
 <td>UTF-16 (little endian)</td>
 <td>FF FE</td>
 </tr>
-
 <tr>
 <td>UTF-32 (big endian)</td>
 <td>00 00 FE FF</td>
 </tr>
-
 <tr>
 <td>UTF-32 (little endian)</td>
 <td>FF FE 00 00</td>
 </tr>
 </tbody>
 </table>
-
-
 <p>Estas invitado a siempre guardar los archivos de texto en una de estas codificaciones con un byte de orden de marca para openBVE para así automáticamente detectar la codificación usada.</p>
 
 </div>

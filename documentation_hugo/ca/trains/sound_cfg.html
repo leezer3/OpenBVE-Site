@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -430,478 +430,270 @@
 
 
 <div id="content">
-  
-
-<h2 id="continguts">■ Continguts</h2>
-
+  <h2 id="-continguts">■ Continguts</h2>
 <ul class='contents'>
 <li><a href="#overview">1. Descripció</a></li>
 <li><a href="#syntax">2. Sintaxi</a></li>
 <li><a href="#content">3. Contingut del fitxer</a></li>
 </ul>
-
-
-
-<h2 id="a-name-overview-a-1-descripció"><a name="overview"></a>■ 1. Descripció</h2>
-
+<h2 id="a-nameoverviewa-1-descripció"><a name="overview"></a>■ 1. Descripció</h2>
 <p>The sound.cfg file allows to reference which sound files should be used, how they are called and where they are located relative to the train folder.</p>
-
-<p>The sound.cfg file is a plain text file encoded in any arbitrary  <a href="../../ca/information/encodings.html" target="_blank">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../ca/information/numberformats.html" target="_blank">parsing model</a> for numbers is <strong>Strict</strong>. The file is required to be located inside the train folder and is expected to be named <strong>sound.cfg</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
-
-<p>➟ <a href="../../ca/trains/sound_cfg_quick.html" target="_blank">See also the quick reference for the sound.cfg&hellip;</a></p>
-
-<h2 id="a-name-syntax-a-2-sintaxi"><a name="syntax"></a>■ 2. Sintaxi</h2>
-
+<p>The sound.cfg file is a plain text file encoded in any arbitrary  <a href="../../ca/information/encodings.html">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../ca/information/numberformats.html">parsing model</a> for numbers is <strong>Strict</strong>. The file is required to be located inside the train folder and is expected to be named <strong>sound.cfg</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
+<p>➟ <a href="../../ca/trains/sound_cfg_quick.html">See also the quick reference for the sound.cfg&hellip;</a></p>
+<h2 id="a-namesyntaxa-2-sintaxi"><a name="syntax"></a>■ 2. Sintaxi</h2>
 <p>Each line in the file can be empty (or solely consist of white spaces) and will be ignored, can mark the beginning of a new section or contain key-value pairs inside a section. All key-value pairs relate to the last section opened.</p>
-
 <p>A new section is opened by starting the line with an opening bracket (U+005B) and ending it with a closing bracket (U+005D). The text in-between the brackets indicates the name of the section and is case-insensitive. White spaces at the beginning and the end of the line are ignored, as well as at the beginning and the end of the name of the section. Thus, the beginning of the section has the following form:</p>
-
 <div id="command">
-<p>[NameOfTheSection]</p>
-
+[NameOfTheSection]
 </div>
-
-
 <p>A key-value pair is indicated by giving the key, an equals sign (U+003D) and then the value. The key is case-insensitive. White spaces at the beginning and the end of the line are ignored, as well as in front and after the equals sign. Alternatively, white spaces surrounding the key and the value are ignored. Thus, a key-value pair as the following form:</p>
-
 <div id="command">
-<p>NameOfTheKey = Value</p>
-
+NameOfTheKey = Value
 </div>
-
-
 <p>You can use comments anywhere at the end of a line. A comment is started by a semicolon (U+003B). Comments, if present, are stripped away from all lines before these are processed.</p>
-
-<h2 id="a-name-content-a-3-contingut-del-fitxer"><a name="content"></a> ■ 3. Contingut del fitxer</h2>
-
+<h2 id="a-namecontenta--3-contingut-del-fitxer"><a name="content"></a> ■ 3. Contingut del fitxer</h2>
 <p>The first line in the file is required to be the following:</p>
-
 <div id="command">
-<p>Versió 1.0</p>
-
+Versió 1.0
 </div>
-
-
 <p>Following the version line, these are the sections that can be used and their key-value pairs. In all key-value pairs, the parameter <em>FileName</em> corresponds to the file name of the sound to reference, relative to the train folder.</p>
-
-<hr />
-
-<h5 id="run">● [Run]</h5>
-
-<p><div id="command">
-<p><em>Index</em> = <em>FileName</em></p>
-
+<hr>
+<h5 id="-run">● [Run]</h5>
+<div id="command">
+<em>Index</em> = <em>FileName</em>
 </div>
-<br />
-Assigns a run sound. The non-negative integer <em>Index</em> represents the type of run sound to use. Route developers can choose which run sound to play for a given piece of track. Please see the page about <a href="../../ca/information/standards.html" target="_blank">standards</a> for further information.</p>
-
+<p>Assigns a run sound. The non-negative integer <em>Index</em> represents the type of run sound to use. Route developers can choose which run sound to play for a given piece of track. Please see the page about <a href="../../ca/information/standards.html">standards</a> for further information.</p>
 <p>The sound is played at a pitch proportional to the speed. The recording should correspond to a speed of 90 km/h.</p>
-
-<hr />
-
-<h5 id="flange">● [Flange]</h5>
-
-<p><div id="command">
-<p>Index = <em>FileName</em></p>
-
+<hr>
+<h5 id="-flange">● [Flange]</h5>
+<div id="command">
+Index = <em>FileName</em>
 </div>
-<br />
-Assigns a flange sound. The non-negative integer <em>Index</em> represents the type of flange sound to use. Route developers can choose which flange sound to play for a given piece of track. Please see the page about <a href="../../ca/information/standards.html" target="_blank">standards</a> for further information.</p>
-
+<p>Assigns a flange sound. The non-negative integer <em>Index</em> represents the type of flange sound to use. Route developers can choose which flange sound to play for a given piece of track. Please see the page about <a href="../../ca/information/standards.html">standards</a> for further information.</p>
 <p>The sound is played at a pitch proportional to the speed. The recording should correspond to a speed of 45 km/h.</p>
-
-<hr />
-
-<h5 id="motor">● [Motor]</h5>
-
-<p><div id="command">
-<p>Index = <em>FileName</em></p>
-
+<hr>
+<h5 id="-motor">● [Motor]</h5>
+<div id="command">
+Index = <em>FileName</em>
 </div>
-<br />
-Assigns a motor sound. The non-negative integer <em>Index</em> represents the index of the motor sound that can be referenced in the #MOTOR_<em>Xn</em> sections of the train.dat. Please see the documentation for the <a href="../../ca/trains/train_dat.html" target="_blank">train.dat</a>  for more information.</p>
-
-<hr />
-
-<h5 id="switch">● [Switch]</h5>
-
-<p><div id="command">
-<p>Index = <em>FileName</em></p>
-
+<p>Assigns a motor sound. The non-negative integer <em>Index</em> represents the index of the motor sound that can be referenced in the #MOTOR_<em>Xn</em> sections of the train.dat. Please see the documentation for the <a href="../../ca/trains/train_dat.html">train.dat</a>  for more information.</p>
+<hr>
+<h5 id="-switch">● [Switch]</h5>
+<div id="command">
+Index = <em>FileName</em>
 </div>
-<br />
-Assigns a switch sound- These are played once per axle when the train crosses a block containing pointwork. The non-negative integer <em>Index</em> represents the type of switch sound to use. Route developers can choose which flange sound to play for a given piece of track. Please see the page about <a href="../../ca/information/standards.html" target="_blank">standards</a> for further information.</p>
-
-<hr />
-
-<h5 id="brake">● [Brake]</h5>
-
-<p><div id="command">
-<p>BC Release High = <em>FileName</em></p>
-
+<p>Assigns a switch sound- These are played once per axle when the train crosses a block containing pointwork. The non-negative integer <em>Index</em> represents the type of switch sound to use. Route developers can choose which flange sound to play for a given piece of track. Please see the page about <a href="../../ca/information/standards.html">standards</a> for further information.</p>
+<hr>
+<h5 id="-brake">● [Brake]</h5>
+<div id="command">
+BC Release High = <em>FileName</em>
 </div>
-<br />
-Played occasionally when the pressure in the brake cylinder is decreased from a high value.</p>
-
-<p><div id="command">
-<p>BC Release = <em>FileName</em></p>
-
+<p>Played occasionally when the pressure in the brake cylinder is decreased from a high value.</p>
+<div id="command">
+BC Release = <em>FileName</em>
 </div>
-<br />
-Played occasionally when the pressure in the brake cylinder is decreased from a non-high value to a non-zero value.</p>
-
-<p><div id="command">
-<p>BC Release Full = <em>FileName</em></p>
-
+<p>Played occasionally when the pressure in the brake cylinder is decreased from a non-high value to a non-zero value.</p>
+<div id="command">
+BC Release Full = <em>FileName</em>
 </div>
-<br />
-Played occasionally when the pressure in the brake cylinder is decreased to zero value.</p>
-
-<p><div id="command">
-<p>Emergency = <em>FileName</em></p>
-
+<p>Played occasionally when the pressure in the brake cylinder is decreased to zero value.</p>
+<div id="command">
+Emergency = <em>FileName</em>
 </div>
-<br />
-Played once when the emergency brakes are activated.</p>
-
-<p><div id="command">
-<p>BP Decomp = <em>FileName</em></p>
-
+<p>Played once when the emergency brakes are activated.</p>
+<div id="command">
+BP Decomp = <em>FileName</em>
 </div>
-<br />
-For trains with automatic air brake, is played when the handle is moved into the SRV or EMG position. For other trains, is played when the brake notch is decreased.</p>
-
-<hr />
-
-<h5 id="compressor">● [Compressor]</h5>
-
-<p><div id="command">
-<p>Attack = <em>FileName</em></p>
-
+<p>For trains with automatic air brake, is played when the handle is moved into the SRV or EMG position. For other trains, is played when the brake notch is decreased.</p>
+<hr>
+<h5 id="-compressor">● [Compressor]</h5>
+<div id="command">
+Attack = <em>FileName</em>
 </div>
-<br />
-Played once when the air compressor is activated.</p>
-
-<p><div id="command">
-<p>Loop = <em>FileName</em></p>
-
+<p>Played once when the air compressor is activated.</p>
+<div id="command">
+Loop = <em>FileName</em>
 </div>
-<br />
-Played in a loop for the duration the air compressor is active.</p>
-
-<p><div id="command">
-<p>Release = <em>FileName</em></p>
-
+<p>Played in a loop for the duration the air compressor is active.</p>
+<div id="command">
+Release = <em>FileName</em>
 </div>
-<br />
-Played once when the air compressor is deactivated.</p>
-
-<hr />
-
-<h5 id="suspension">● [Suspension]</h5>
-
-<p><div id="command">
-<p>Left = <em>FileName</em></p>
-
+<p>Played once when the air compressor is deactivated.</p>
+<hr>
+<h5 id="-suspension">● [Suspension]</h5>
+<div id="command">
+Left = <em>FileName</em>
 </div>
-<br />
-Played occasionally when the train sways to the left side.</p>
-
-<p><div id="command">
-<p>Right = <em>FileName</em></p>
-
+<p>Played occasionally when the train sways to the left side.</p>
+<div id="command">
+Right = <em>FileName</em>
 </div>
-<br />
-Played occasionally when the train sways to the right side.</p>
-
-<hr />
-
-<h5 id="horn">● [Horn]</h5>
-
+<p>Played occasionally when the train sways to the right side.</p>
+<hr>
+<h5 id="-horn">● [Horn]</h5>
 <p>There are two possible types of horn which may be defined via a <em>[Horn]</em> section- &lsquo;Looped Horns&rsquo; and &lsquo;Legacy Horns&rsquo;</p>
-
-<p><font color="gray"><strong><em>Looped Horns</em></strong></font></p>
-
-<p>A looped horn is made up of three components:<br />
-A start sound, a loop sound and an end sound.<br />
+<p><font color="gray"><em><strong>Looped Horns</strong></em></font></p>
+<p>A looped horn is made up of three components:<br>
+A start sound, a loop sound and an end sound.<br>
 The start sound is played once, followed by the loop sound for the duration of the keypress. When the horn key is released, the end sound will be played once.</p>
-
-<p><div id="command">
-<p>PrimaryStart = <em>FileName</em><br />
-SecondaryStart = <em>FileName</em><br />
-MusicStart = <em>FileName</em></p>
-
+<div id="command">
+PrimaryStart = <em>FileName</em><br>
+SecondaryStart = <em>FileName</em><br>
+MusicStart = <em>FileName</em>
 </div>
-<br />
-Played once when the given horn is applied.</p>
-
-<p><div id="command">
-<p>PrimaryLoop = <em>FileName</em><br />
-SecondaryLoop = <em>FileName</em><br />
-MusicLoop = <em>FileName</em></p>
-
+<p>Played once when the given horn is applied.</p>
+<div id="command">
+PrimaryLoop = <em>FileName</em><br>
+SecondaryLoop = <em>FileName</em><br>
+MusicLoop = <em>FileName</em>
 </div>
-<br />
-Played in a loop whilst the given horn is active.</p>
-
-<p><div id="command">
-<p>PrimaryEnd = <em>FileName</em><br />
-SecondaryEnd = <em>FileName</em><br />
-MusicEnd = <em>FileName</em></p>
-
+<p>Played in a loop whilst the given horn is active.</p>
+<div id="command">
+PrimaryEnd = <em>FileName</em><br>
+SecondaryEnd = <em>FileName</em><br>
+MusicEnd = <em>FileName</em>
 </div>
-<br />
-Played once when the given horn is released.​</p>
-
-<p><font color="gray"> <strong><em>Legacy Horns</em></strong></font></p>
-
+<p>Played once when the given horn is released.​</p>
+<p><font color="gray"> <em><strong>Legacy Horns</strong></em></font></p>
 <p>A legacy horn is made up of a single sound.</p>
-
-<p><div id="command">
-<p>Primary = <em>FileName</em></p>
-
+<div id="command">
+Primary = <em>FileName</em>
 </div>
-<br />
-Played once whilst the primary horn is active.</p>
-
-<p><div id="command">
-<p>Secondary = <em>FileName</em></p>
-
+<p>Played once whilst the primary horn is active.</p>
+<div id="command">
+Secondary = <em>FileName</em>
 </div>
-<br />
-Played once whilst the secondary horn is active.</p>
-
-<p><div id="command">
-<p>Music = <em>FileName</em></p>
-
+<p>Played once whilst the secondary horn is active.</p>
+<div id="command">
+Music = <em>FileName</em>
 </div>
-<br />
-Played in a continuous loop whilst the music horn is active.</p>
-
-<hr />
-
-<h5 id="door">● [Door]</h5>
-
-<p><div id="command">
-<p>Open Left = <em>FileName</em></p>
-
+<p>Played in a continuous loop whilst the music horn is active.</p>
+<hr>
+<h5 id="-door">● [Door]</h5>
+<div id="command">
+Open Left = <em>FileName</em>
 </div>
-<br />
-Played once when the left doors open.</p>
-
-<p><div id="command">
-<p>Open Right = <em>FileName</em></p>
-
+<p>Played once when the left doors open.</p>
+<div id="command">
+Open Right = <em>FileName</em>
 </div>
-<br />
-Played once when the right doors open.</p>
-
-<p><div id="command">
-<p>Close Left = <em>FileName</em></p>
-
+<p>Played once when the right doors open.</p>
+<div id="command">
+Close Left = <em>FileName</em>
 </div>
-<br />
-Played once when the left doors close.</p>
-
-<p><div id="command">
-<p>Close Right = <em>FileName</em></p>
-
+<p>Played once when the left doors close.</p>
+<div id="command">
+Close Right = <em>FileName</em>
 </div>
-<br />
-Played once when the right doors close.</p>
-
-<hr />
-
-<h5 id="ats">● [Ats]</h5>
-
-<p><div id="command">
-<p><em>Index</em> = <em>FileName</em></p>
-
+<p>Played once when the right doors close.</p>
+<hr>
+<h5 id="-ats">● [Ats]</h5>
+<div id="command">
+<em>Index</em> = <em>FileName</em>
 </div>
-<br />
-Assigns a plugin sound. The non-negative integer <em>Index</em> represents the sound index. Train plugin developers can choose which sound to play. The assignment of sounds needs to be coordinated with the plugin developer.</p>
-
-<hr />
-
-<h5 id="buzzer">● [Buzzer]</h5>
-
-<p><div id="command">
-<p>Correct = <em>FileName</em></p>
-
+<p>Assigns a plugin sound. The non-negative integer <em>Index</em> represents the sound index. Train plugin developers can choose which sound to play. The assignment of sounds needs to be coordinated with the plugin developer.</p>
+<hr>
+<h5 id="-buzzer">● [Buzzer]</h5>
+<div id="command">
+Correct = <em>FileName</em>
 </div>
-<br />
-Played once when the train stops at a station, but needs to correct its stop position.</p>
-
-<hr />
-
-<h5 id="pilot-lamp">● [Pilot Lamp]</h5>
-
-<p><div id="command">
-<p>On = <em>FileName</em></p>
-
+<p>Played once when the train stops at a station, but needs to correct its stop position.</p>
+<hr>
+<h5 id="-pilot-lamp">● [Pilot Lamp]</h5>
+<div id="command">
+On = <em>FileName</em>
 </div>
-<br />
-Played once as soon as the doors have closed and the train is ready for departure.</p>
-
-<p><div id="command">
-<p>Off = <em>FileName</em></p>
-
+<p>Played once as soon as the doors have closed and the train is ready for departure.</p>
+<div id="command">
+Off = <em>FileName</em>
 </div>
-<br />
-Played once as soon as the doors start to open.</p>
-
-<hr />
-
-<h5 id="brake-handle">● [Brake Handle]</h5>
-
-<p><div id="command">
-<p>Apply = <em>FileName</em></p>
-
+<p>Played once as soon as the doors start to open.</p>
+<hr>
+<h5 id="-brake-handle">● [Brake Handle]</h5>
+<div id="command">
+Apply = <em>FileName</em>
 </div>
-<br />
-Played once when the brake notch is increased to any value below the emergency brake position.</p>
-
-<p><div id="command">
-<p>ApplyFast = <em>FileName</em></p>
-
+<p>Played once when the brake notch is increased to any value below the emergency brake position.</p>
+<div id="command">
+ApplyFast = <em>FileName</em>
 </div>
-<br />
-Played once for each notch when the brake notch is increased in a continuous motion to any value below the emergency brake position.</p>
-
-<p><div id="command">
-<p>Release = <em>FileName</em></p>
-
+<p>Played once for each notch when the brake notch is increased in a continuous motion to any value below the emergency brake position.</p>
+<div id="command">
+Release = <em>FileName</em>
 </div>
-<br />
-Played once when the brake notch is increased in a continuous motion to any value below the emergency brake position.</p>
-
-<p><div id="command">
-<p>ReleaseFast = <em>FileName</em></p>
-
+<p>Played once when the brake notch is increased in a continuous motion to any value below the emergency brake position.</p>
+<div id="command">
+ReleaseFast = <em>FileName</em>
 </div>
-<br />
-Played once for each notch when the brake notch is decreased in a continuous motion to any value above brake notch zero.</p>
-
-<p><div id="command">
-<p>Min = <em>FileName</em></p>
-
+<p>Played once for each notch when the brake notch is decreased in a continuous motion to any value above brake notch zero.</p>
+<div id="command">
+Min = <em>FileName</em>
 </div>
-<br />
-Played once when the brake notch is decreased to brake notch zero.</p>
-
-<p><div id="command">
-<p>Max = <em>FileName</em></p>
-
+<p>Played once when the brake notch is decreased to brake notch zero.</p>
+<div id="command">
+Max = <em>FileName</em>
 </div>
-<br />
-Played once when the emergency brakes are applied.</p>
-
-<hr />
-
-<h5 id="master-controller">● [Master Controller]</h5>
-
-<p><div id="command">
-<p>Up = <em>FileName</em></p>
-
+<p>Played once when the emergency brakes are applied.</p>
+<hr>
+<h5 id="-master-controller">● [Master Controller]</h5>
+<div id="command">
+Up = <em>FileName</em>
 </div>
-<br />
-Played once when the power notch is increased to any value below the maximum power notch.</p>
-
-<p><div id="command">
-<p>UpFast = <em>FileName</em></p>
-
+<p>Played once when the power notch is increased to any value below the maximum power notch.</p>
+<div id="command">
+UpFast = <em>FileName</em>
 </div>
-<br />
-Played once for each notch when the power notch is increased in a single continuous motion to any value below the maximum power notch.</p>
-
-<p><div id="command">
-<p>Down = <em>FileName</em></p>
-
+<p>Played once for each notch when the power notch is increased in a single continuous motion to any value below the maximum power notch.</p>
+<div id="command">
+Down = <em>FileName</em>
 </div>
-<br />
-Played once when the power notch is decreased to any value above power notch 0.</p>
-
-<p><div id="command">
-<p>DownFast = <em>FileName</em></p>
-
+<p>Played once when the power notch is decreased to any value above power notch 0.</p>
+<div id="command">
+DownFast = <em>FileName</em>
 </div>
-<br />
-Played once for each notch when the power notch is decreased in a single continuous motion to any value above power notch 0.</p>
-
-<p><div id="command">
-<p>Min = <em>FileName</em></p>
-
+<p>Played once for each notch when the power notch is decreased in a single continuous motion to any value above power notch 0.</p>
+<div id="command">
+Min = <em>FileName</em>
 </div>
-<br />
-Played once when the power notch is decreased to brake notch zero.</p>
-
-<p><div id="command">
-<p>Max = <em>FileName</em></p>
-
+<p>Played once when the power notch is decreased to brake notch zero.</p>
+<div id="command">
+Max = <em>FileName</em>
 </div>
-<br />
-Played once when the power notch is increased to the maximum power notch.</p>
-
-<hr />
-
-<h5 id="reverser">● [Reverser]</h5>
-
-<p><div id="command">
-<p>On = <em>FileName</em></p>
-
+<p>Played once when the power notch is increased to the maximum power notch.</p>
+<hr>
+<h5 id="-reverser">● [Reverser]</h5>
+<div id="command">
+On = <em>FileName</em>
 </div>
-<br />
-Played once when the reverser is moved into any non-neutral position.</p>
-
-<p><div id="command">
-<p>Off = <em>FileName</em></p>
-
+<p>Played once when the reverser is moved into any non-neutral position.</p>
+<div id="command">
+Off = <em>FileName</em>
 </div>
-<br />
-Played once when the reverser is moved into the neutral position.</p>
-
-<hr />
-
-<h5 id="breaker">● [Breaker]</h5>
-
-<p><div id="command">
-<p>On = <em>FileName</em></p>
-
+<p>Played once when the reverser is moved into the neutral position.</p>
+<hr>
+<h5 id="-breaker">● [Breaker]</h5>
+<div id="command">
+On = <em>FileName</em>
 </div>
-<br />
-Played once when power is resumed (was interrupted before). There is a series of circumstances when that can happen, for example when moving from power notch zero to power notch one, assuming the reverser is non-neutral and the brakes are released. It can also happen when the power notch is already non-zero, but the reverser or brakes previously interrupted the power. The safety systems can also interrupt power.</p>
-
-<p><div id="command">
-<p>Off = <em>FileName</em></p>
-
+<p>Played once when power is resumed (was interrupted before). There is a series of circumstances when that can happen, for example when moving from power notch zero to power notch one, assuming the reverser is non-neutral and the brakes are released. It can also happen when the power notch is already non-zero, but the reverser or brakes previously interrupted the power. The safety systems can also interrupt power.</p>
+<div id="command">
+Off = <em>FileName</em>
 </div>
-<br />
-Played once when power is interrupted or resumed. There is a series of circumstances when that can happen, for example when moving from power notch zero to power notch one, or vice versa, assuming the reverser is non-neutral and the brakes are released. The safety systems can also interrupt power.</p>
-
-<hr />
-
-<h5 id="others">● [Others]</h5>
-
-<p><div id="command">
-<p>Noise = <em>FileName</em></p>
-
+<p>Played once when power is interrupted or resumed. There is a series of circumstances when that can happen, for example when moving from power notch zero to power notch one, or vice versa, assuming the reverser is non-neutral and the brakes are released. The safety systems can also interrupt power.</p>
+<hr>
+<h5 id="-others">● [Others]</h5>
+<div id="command">
+Noise = <em>FileName</em>
 </div>
-<br />
-Played in a loop all the time for the duration of the simulation.</p>
-
-<p><div id="command">
-<p>Shoe = <em>FileName</em></p>
-
+<p>Played in a loop all the time for the duration of the simulation.</p>
+<div id="command">
+Shoe = <em>FileName</em>
 </div>
-<br />
-Played in a loop when the brake shoe rubs against the wheels. The sound is played at a pitch inversely proportional to the speed, and the volume of the sound decreases with increasing speeds.</p>
-
-<p><div id="command">
-<p>Halt = <em>FileName</em></p>
-
+<p>Played in a loop when the brake shoe rubs against the wheels. The sound is played at a pitch inversely proportional to the speed, and the volume of the sound decreases with increasing speeds.</p>
+<div id="command">
+Halt = <em>FileName</em>
 </div>
-<br />
-Played once or in a loop (depending on the train.dat setting) when the pass alarm system warns about an approaching station stop.</p>
+<p>Played once or in a loop (depending on the train.dat setting) when the pass alarm system warns about an approaching station stop.</p>
 
 </div>
 

@@ -8,7 +8,7 @@
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../zh_cn/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../zh_cn/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../zh_cn/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../zh_cn/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,33 +430,23 @@
 
 
 <div id="content">
-  
-
-<p>本页内容概括了开发者制作时需要了解的资料，以及物件制作的通用提示。</p>
-
-<h2 id="指令相关">■ 指令相关</h2>
-
+  <p>本页内容概括了开发者制作时需要了解的资料，以及物件制作的通用提示。</p>
+<h2 id="-指令相关">■ 指令相关</h2>
 <ul>
 <li>在 Face (B3D) 或 AddFace (CSV) 指令中，顶点必须以彼此相邻的顺序给出。复杂多边形，即自相交的多边形，无法被正确渲染。</li>
 <li>目前的openBVE在渲染由 Face2 (B3D) 或 AddFace2 (CSV) 指令创建的双向面的背面时会错误计算光照情况。可能会在以后修复这一问题，使两边的光照都能正确显示。译注：所以请不要使用 AddFace2，而是使用两次 AddFace 来做双向的表面。</li>
 </ul>
-
-<h2 id="几何形态">■ 几何形态</h2>
-
+<h2 id="-几何形态">■ 几何形态</h2>
 <ul>
 <li>在最终效果不明显的细节处不要使用过于复杂的几何模型。如果一个立方体或柱体的部分在最终线路中不可见，建议不要使用Cube或Cylinder指令。如果一个圆柱的顶面或底面在最后是不可见的，就不要给这个圆柱盖上盖儿。</li>
 <li>如果想要做平滑的曲面，请在较少的面上自定义法线向量来模拟曲面效果，而不是用一大堆的面来拟合。译注：总之，您应使用各种奇淫巧技来尽量减少面数，以优化性能。</li>
 </ul>
-
-<h2 id="材质设定">■ 材质设定</h2>
-
+<h2 id="-材质设定">■ 材质设定</h2>
 <ul>
 <li>请尽量将物件的各面都放到一张材质图片上，然后使用UV坐标来将相应部分贴到相应表面上。如果使用许多图片，渲染时就需要反复切换加载材质，这就带来了很大的性能开销。</li>
 <li>调整材质大小，使其边长像素值为2的整数次幂。如1, 2, 4, 8, 16, 32, 诸如此类。不过材质只需要每边的边长都是一个整次幂即可，并不需要是方的。译注：如果您给出的材质不符合这一要求，openBVE就要在加载线路时重新缩放材质。这就使加载变慢，并可能导致渲染上的微小差距。</li>
 </ul>
-
-<h2 id="透明用法">■ 透明用法</h2>
-
+<h2 id="-透明用法">■ 透明用法</h2>
 <ul>
 <li>为了获得最佳的视觉效果，渲染透明表面开销都不小。只要能通过类似的、不太复杂的几何建模来替代，就尽量不要使用透明面。</li>
 <li>如果要使用透明面，就使用色键透明 (SetDecalTransparentColor)。您要不惜一切代价地避免使用带有Alpha通道透明的材质，避免使用带Alpha参数的 Color (B3D) 或 SetColor (CSV) 创建半透明表面。</li>

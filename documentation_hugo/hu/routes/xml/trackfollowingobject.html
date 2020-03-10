@@ -8,7 +8,7 @@
     <link rel="icon" href="../../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
@@ -205,11 +205,11 @@
           
         </li>
         
-        <li><a href="../../../hu/trains/openbveats.html">The OpenBveAts Plugin</a>
+        <li><a href="../../../hu/trains/ats_cfg.html">The ats.cfg file</a>
           
         </li>
         
-        <li><a href="../../../hu/trains/ats_cfg.html">The ats.cfg file</a>
+        <li><a href="../../../hu/trains/openbveats.html">The OpenBveAts Plugin</a>
           
         </li>
         
@@ -430,28 +430,20 @@
 
 
 <div id="content">
-  
-
-<p>This page explains the principle and implementation of the XML-based Track Following Object, which is supported in openBVE v1.6.0 or later.</p>
-
-<h2 id="basic-principles">■ Basic Principles</h2>
-
+  <p>This page explains the principle and implementation of the XML-based Track Following Object, which is supported in openBVE v1.6.0 or later.</p>
+<h2 id="-basic-principles">■ Basic Principles</h2>
 <p>openBVE can freely run a Track Following Object on other tracks.</p>
-
 <p>In order to do this, it is necessary to setup each object that you want to run using Track Following Object XML files. An example is shown below.</p>
-
 <p>In this example the object runs as follows.</p>
-
-<ol>
+<ol start="0">
 <li>It is displayed when the in-game time 00:01:00 has elapsed and the object exists within 50 m to 100 m of the player&rsquo;s camera position in game. It becomes invisible after 5 minutes have elapsed since being displayed. The appearance is defined in extensions.cfg in 7-car formation.</li>
 <li>The in-game distance is 200 m and the right door is opened for 20 seconds and then the object accelerates to 30 km/h at an acceleration of 1.71km/h/s on <strong>Rail2</strong>.</li>
 <li>It travels at 60 km/h on <strong>Rail2</strong> for 400 m.</li>
 <li>The object decelerates to 30km/h at 1.71 km/h/s on <strong>Rail2</strong>, when it reaches a distance of 1000 m within the game, it stops and opens the doors on both sides. After stopping for 10 seconds, it accelerates in reverse to 30 km/h with an acceleration of 1.71 km/h/s on Rail1.</li>
 <li>The object decelerates to 30 km/h at 1.71 km/h/s on <strong>Rail1</strong>, stops and opens the right door at an in-game distance of 200 m.</li>
 </ol>
-
 <textarea rows="17" cols="110" style="border:2;">
-    
+  
 &lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
 &lt;openBVE xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xsd=&#34;http://www.w3.org/2001/XMLSchema&#34;&gt;
   &lt;TrackFollowingObject&gt;
@@ -526,167 +518,90 @@
 &lt;/openBVE&gt;
 
 </textarea>
-
 <p>As you can see, the file consists of one <strong>&lt;Definition&gt;</strong> section, one <strong>&lt;Car&gt;</strong> section and one <strong>&lt;Stops&gt;</strong> section. The <strong>&lt;Stops&gt;</strong> section consists of two or more <strong>&lt;Stop&gt;</strong> sections.</p>
-
-<h2 id="definition-attribute">■ Definition attribute</h2>
-
+<h2 id="-definition-attribute">■ Definition attribute</h2>
 <div id="command">
-<p><strong>&lt;AppearanceTime&gt;</strong> <em>Time</em> <strong>&lt;/AppearanceTime&gt;</strong></p>
-
+<strong>&lt;AppearanceTime&gt;</strong> <em>Time</em> <strong>&lt;/AppearanceTime&gt;</strong>
 </div>
-
-
 <p><strong>Time</strong> sets the time when the object appears in the game.</p>
-
 <p><em>Note:</em> If this parameter is omitted, the object will emerge from the start of the game.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;AppearanceStartPosition&gt;</strong> <em>Position</em> <strong>&lt;/AppearanceStartPosition&gt;</strong></p>
-
+<strong>&lt;AppearanceStartPosition&gt;</strong> <em>Position</em> <strong>&lt;/AppearanceStartPosition&gt;</strong>
 </div>
-
-
 <p><strong>Position</strong> sets the in-game distance at which the object starts appearing. The object will appear when the player&rsquo;s train passes this point. The unit is <strong>meter</strong>.</p>
-
 <p><em>Note:</em> If this parameter is omitted, the object will emerge from the start of the game.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;AppearanceEndPosition&gt;</strong> <em>Position</em> <strong>&lt;/AppearanceEndPosition&gt;</strong></p>
-
+<strong>&lt;AppearanceEndPosition&gt;</strong> <em>Position</em> <strong>&lt;/AppearanceEndPosition&gt;</strong>
 </div>
-
-
 <p><strong>Position</strong> sets the in-game distance at the end point where the object appears. The object will be hidden when the player&rsquo;s camera position passes this point. It must also be greater than the value specified for <strong>&lt;AppearanceStartPosition&gt;</strong>. The unit is <strong>meter</strong>.</p>
-
 <p><em>Note:</em> If this parameter is omitted, the object will emerge from the start of the game.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;LeaveTime&gt;</strong> <em>Time</em> <strong>&lt;/LeaveTime&gt;</strong></p>
-
+<strong>&lt;LeaveTime&gt;</strong> <em>Time</em> <strong>&lt;/LeaveTime&gt;</strong>
 </div>
-
-
 <p><strong>Time</strong> sets the duration from when the object appears in the game until it disappears. The object will not be visible after this time. This value is not an in-game time.</p>
-
 <p><em>Note:</em> If this parameter is omitted, the object will remain visible until the end of the game, or until it is hidden by <strong>&lt;AppearanceEndPosition&gt;</strong></p>
-
-<h2 id="train-attribute">■ Train attribute</h2>
-
+<h2 id="-train-attribute">■ Train attribute</h2>
 <div id="command">
-<p><strong>&lt;Directory&gt;</strong> <em>Path</em> <strong>&lt;/Directory&gt;</strong></p>
-
+<strong>&lt;Directory&gt;</strong> <em>Path</em> <strong>&lt;/Directory&gt;</strong>
 </div>
-
-
 <p><strong>Path</strong> sets the relative path to the directory containing the object&rsquo;s train.dat, sound.cfg and extensions.cfg.</p>
-
 <p><em>Note:</em> If a train folder is intended solely for AI use, then the <strong>train.dat</strong> file may be renamed <strong>train.ai</strong></p>
-
 <div id="command">
-<p><strong>&lt;Reversed&gt;</strong> <em>true</em> <strong>&lt;/Reversed&gt;</strong></p>
-
+<strong>&lt;Reversed&gt;</strong> <em>true</em> <strong>&lt;/Reversed&gt;</strong>
 </div>
-
-
 <p>If this attribute is set to <strong>true</strong>  then the consist of the train will be reversed.</p>
-
-<h2 id="stop-attribute">■ Stop attribute</h2>
-
+<h2 id="-stop-attribute">■ Stop attribute</h2>
 <div id="command">
-<p><strong>&lt;Decelerate&gt;</strong> <em>Value</em> <strong>&lt;/Decelerate&gt;</strong></p>
-
+<strong>&lt;Decelerate&gt;</strong> <em>Value</em> <strong>&lt;/Decelerate&gt;</strong>
 </div>
-
-
 <p><strong>Value</strong> sets the deceleration of the object. The unit is <strong>km/h/s</strong>.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;StopPosition&gt;</strong> <em>Position</em> <strong>&lt;/StopPosition&gt;</strong></p>
-
+<strong>&lt;StopPosition&gt;</strong> <em>Position</em> <strong>&lt;/StopPosition&gt;</strong>
 </div>
-
-
 <p><strong>Position</strong> sets the in-game distance where the object stops. The unit is <strong>meter</strong>.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;Doors&gt;</strong> <em>Value</em> <strong>&lt;/Doors&gt;</strong></p>
-
+<strong>&lt;Doors&gt;</strong> <em>Value</em> <strong>&lt;/Doors&gt;</strong>
 </div>
-
-
 <p><strong>Value</strong> sets the open door of the object. The valid values are:</p>
-
 <ul>
 <li><strong>L</strong> or <strong>-1</strong>: The left door opens.</li>
 <li><strong>N</strong> or <strong>0</strong>: Neither door opens.</li>
 <li><strong>R</strong> or <strong>1</strong>: The right door opens.</li>
 <li><strong>B</strong>: Both doors open.</li>
 </ul>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;StopTime&gt;</strong> <em>Time</em> <strong>&lt;/StopTime&gt;</strong></p>
-
+<strong>&lt;StopTime&gt;</strong> <em>Time</em> <strong>&lt;/StopTime&gt;</strong>
 </div>
-
-
 <p><strong>Time</strong> sets the duration of the stop of the object. This value is not an in-game time.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;Accelerate&gt;</strong> <em>Value</em> <strong>&lt;/Accelerate&gt;</strong></p>
-
+<strong>&lt;Accelerate&gt;</strong> <em>Value</em> <strong>&lt;/Accelerate&gt;</strong>
 </div>
-
-
 <p><strong>Value</strong> sets the acceleration of the object. The unit is <strong>km/h/s</strong>.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;TargetSpeed&gt;</strong> <em>Value</em> <strong>&lt;/TargetSpeed&gt;</strong></p>
-
+<strong>&lt;TargetSpeed&gt;</strong> <em>Value</em> <strong>&lt;/TargetSpeed&gt;</strong>
 </div>
-
-
 <p><strong>Value</strong> sets the speed after the acceleration of the object. The unit is <strong>km/h</strong>.</p>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;Direction&gt;</strong> <em>Value</em> <strong>&lt;/Direction&gt;</strong></p>
-
+<strong>&lt;Direction&gt;</strong> <em>Value</em> <strong>&lt;/Direction&gt;</strong>
 </div>
-
-
 <p><strong>Value</strong> sets the direction of travel of the object. Valid values are as follows.</p>
-
 <ul>
 <li><strong>F</strong> or <strong>1</strong> : The object will move forward.</li>
 <li><strong>R</strong> or <strong>-1</strong> : The object goes backward.</li>
 </ul>
-
-<hr />
-
+<hr>
 <div id="command">
-<p><strong>&lt;Rail&gt;</strong> <em>RailIndex</em> <strong>&lt;/Rail&gt;</strong></p>
-
+<strong>&lt;Rail&gt;</strong> <em>RailIndex</em> <strong>&lt;/Rail&gt;</strong>
 </div>
-
-
 <p><strong>RailIndex</strong> sets the trajectory on which the object will run. It is necessary to define the trajectory by the <strong>Track.Rail</strong> command of the route file.</p>
 
 </div>
