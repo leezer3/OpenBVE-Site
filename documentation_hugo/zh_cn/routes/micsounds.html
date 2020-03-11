@@ -133,7 +133,7 @@
           
         </li>
         
-        <li><a href="../../zh_cn/routes/micsounds.html">Playing Sounds from a Microphone Input</a>
+        <li><a href="../../zh_cn/routes/micsounds.html">播放麦克风声音</a>
           
         </li>
         
@@ -421,7 +421,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>Playing Sounds from a Microphone Input</h1>
+          <h1>播放麦克风声音</h1>
         </div>
 
         
@@ -430,22 +430,22 @@
 
 
 <div id="content">
-  <p>openBVE 1.5.4.0 introduces the ability to play sounds from the microphone or line-in input to a specified position within the game world.</p>
+  <p>openBVE 1.5.4.0 添加了将从麦克风或声卡线路输入录制的声音在游戏世界中特定位置播放的特性。可以用来进行广播等。</p>
 <hr>
 <div id="command">
-<strong>Track.MicSound</strong> <em>X</em> ; <em>Y</em> ; <em>ForwardsTolerance</em> ; <em>BackwardsTolerance</em>
+<strong>Track.MicSound</strong> <em>X</em> ; <em>Y</em> ; <em>后方容差</em> ; <em>前方容差</em>
 </div>
 <div id="command-arguments">
-<em><strong>X</strong></em>: The X position of the sound.<br>
-<em><strong>Y</strong></em>: The Y position of the sound.<br>
-<em><strong>ForwardsTolerance</strong></em>: The distance in meters at which the sound becomes audible as the train approaches it&rsquo;s position.<br>
-<em><strong>BackwardsTolerance</strong></em>: The distance in meters at which the sound is inaudible after the train passes it&rsquo;s position.
+<em><strong>X</strong></em>: 声音的水平位置。<br>
+<em><strong>Y</strong></em>: 声音的垂直位置。<br>
+<em><strong>后方容差</strong></em>: 当列车接近到这一距离时，声音就可听到。<br>
+<em><strong>前方容差</strong></em>: 当列车远离到这一距离时，声音就不再可听到。
 </div>
-<p><strong><strong>Implementation Notes</strong></strong>:</p>
+<p><strong><strong>程序实现备注</strong></strong>:</p>
 <ul>
-<li>Microphone input must be activated using the <strong>PLAY_MIC_SOUNDS</strong> key, which is assigned to <strong>W</strong> by default.</li>
-<li>The microphone input will be routed to all <strong>Track.MicSound</strong> sound sources within the camera range.</li>
-<li>Only the first available openAL microphone input is supported at present.</li>
+<li>按下 <strong>PLAY_MIC_SOUNDS</strong> 按键才会打开麦克风的录音功能。这一按键默认是 <strong>W</strong> 。</li>
+<li>麦克风的录音将被转发到摄像机渲染距离中所有的 <strong>Track.MicSound</strong> 声源。</li>
+<li>现在只支持第一个 OpenAL 麦克风输入。</li>
 </ul>
 
 </div>
