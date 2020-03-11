@@ -433,16 +433,16 @@
   <p>➟ <a href="../../zh_cn/routes/csv_quick.html">快速查阅&hellip;</a></p>
 <h2 id="-内容目录">■ 内容目录</h2>
 <ul class='contents'>
-<li>[<a href="#overview">1. 综述</a>  ](#overview)</li>
-<li>[<a href="#syntax">2. 语法</a>  ](#syntax)</li>
-<li>[<a href="#preprocessing">3. 预处理</a>  ](#preprocessing)</li>
-<li>[<a href="#options">4. Options (配置) 命名空间</a>  ](#options)</li>
-<li>[<a href="#route">5. Route (路线) 命名空间</a>  ](#route)</li>
-<li>[<a href="#train">6. Train (列车) 命名空间</a>  ](#train)</li>
-<li>[<a href="#structure">7. Structure (结构) 命名空间</a>  ](#structure)</li>
-<li>[<a href="#texture">8. Texture (材质) 命名空间</a>  ](#texture)</li>
-<li>[<a href="#cycle">9. Cycle (循环) 命名空间</a>  ](#cycle)</li>
-<li>[<a href="#signal">10. Signal (信号) 命名空间</a>  ](#signal)</li>
+<li><a href="#overview">1. 综述</a></li>
+<li><a href="#syntax">2. 语法</a></li>
+<li><a href="#preprocessing">3. 预处理</a></li>
+<li><a href="#options">4. Options (配置) 命名空间</a></li>
+<li><a href="#route">5. Route (路线) 命名空间</a></li>
+<li><a href="#train">6. Train (列车) 命名空间</a></li>
+<li><a href="#structure">7. Structure (结构) 命名空间</a></li>
+<li><a href="#texture">8. Texture (材质) 命名空间</a>  ](#texture)</li>
+<li><a href="#cycle">9. Cycle (循环) 命名空间</a>  ](#cycle)</li>
+<li><a href="#signal">10. Signal (信号) 命名空间</a></li>
 <li><a href="#track">11. Track (轨道) 命名空间</a>
 <ul class='contents'>
 <li><a href="#track_rails">11.1. 轨道</a></li>
@@ -457,9 +457,9 @@
 </ul>
 <h2 id="a-nameoverviewa-1-综述"><a name="overview"></a>■ 1. 综述</h2>
 <p>CSV格式线路是以纯文本形式编辑的线路。</p>
-<p>线路文件是纯文本，且可以使用任意<a href="../../zh_cn/information/encodings.html">字符编码</a>，但是，我们推荐线路作者们使用UTF8-BOM编码格式。游戏在解析数字数据时，使用的<a href="../../zh_cn/information/numberformats.html">解析方法</a>是<strong>宽松</strong>的(特别指出处除外)，但是，我们推荐线路作者们<em>严格规范</em>地编写线路文件。 这个文件一般来说可以被放在<em>Train</em>或<em>Railway</em>文件夹下的任何地方。文件名可以随意，但扩展名必须是**.csv**。线路文件被从头到尾逐行解析，每行被分割并被从左到右解析。</p>
-<p>线路文件包括一系列指令，用来导入线路中用到的模型（Structure（结构）命名空间*)，线路的属性信息（说明线路使用的默认列车和背景等信息），文件的其余部分是Track（轨道）命名空间* 在这一部分中，主轨道位置（一般以米为单位）被用来描述轨道在哪里转弯，车站的位置在哪里，墙壁应当在哪里开始、哪里结束，以此类推。说得明白一点儿，Track（轨道）命名空间的指令是要放在最后的。</p>
-<p>The format assumes an implicit rail 0 which cannot be explicitly started or ended. Instead, it is present from the beginning of the route to the end, and it marks the rail the player&rsquo;s train drives on. rail 0 and the other rails are not only for used for visual, and also use for  <a href="../../zh_cn/routes/xml/trackfollowingobject.html">Track Following Object</a>.</p>
+<p>线路文件是纯文本，且可以使用任意<a href="../../zh_cn/information/encodings.html">字符编码</a>，但是，我们推荐线路作者们使用UTF8-BOM编码格式。游戏在解析数字数据时，使用的<a href="../../zh_cn/information/numberformats.html">解析方法</a>是<strong>宽松</strong>的(特别指出处除外)，但是，我们推荐线路作者们<em>严格规范</em>地编写线路文件。 这个文件一般来说可以被放在<em>Train</em>或<em>Railway</em>文件夹下的任何地方。文件名可以随意，但扩展名必须是 <strong>.csv</strong> 。线路文件被从头到尾逐行解析，每行被分割并被从左到右解析。</p>
+<p>线路文件包括一系列指令，用来导入线路中用到的模型（Structure（结构）命名空间），线路的属性信息（说明线路使用的默认列车和背景等信息），文件的其余部分是Track（轨道）命名空间。在这一部分中，主轨道位置（一般以米为单位）被用来描述轨道在哪里转弯，车站的位置在哪里，墙壁应当在哪里开始、哪里结束，以此类推。说得明白一点儿，Track（轨道）命名空间的指令是要放在最后的。</p>
+<p>这个格式预设了一条游戏默认的主轨道（0号轨道），不可以指定它开始的位置，也不能结束它。和游戏中其他轨道不同的是，它从线路的开始一直延续到线路的终点，代表着玩家驾驶的列车行驶的轨道。除此之外，游戏中定义的其他轨道都是只供装饰，不能行驶的。不过可以使用 <a href="../../zh_cn/routes/xml/trackfollowingobject.html">轨道循迹物件</a> 来让AI列车在其它轨道上行驶。</p>
 <p>可以几何意义上地弯曲和抬升默认的主轨道，而其他轨道都是相对于主轨道定义的，并随主轨道弯曲起伏。除非特别修改定义，线路中每25米划分为一个区间块，特定的命令只有在区间块的边界位置（整25米位置）才能发挥作用。物体的放置（尤其是在弯道上）总是基于一个坐标系，它的轴并不随轨道弯曲，而是直直地指向邻近的下一个区间块。</p>
 <p>➟ <a href="../../zh_cn/routes/csv_quick.html">还可查阅这份CSV格式的快速参考手册&hellip;</a></p>
 <h2 id="a-namesyntaxa-2-语法"><a name="syntax"></a>■ 2. 语法</h2>
@@ -1163,7 +1163,7 @@ Track.FreeObj 1; 42 <br>
 <p>该指令可以定义玩家进入游戏时的时间。</p>
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
-<p>*注意：*如果开始时间没有用这一指令特意设定或设定的值不正确，游戏将自动采用第一站的到达时间。</p>
+<p>如果开始时间没有用这一指令特意设定或设定的值不正确，游戏将自动采用第一站的到达时间。</p>
 </div>
 <hr>
 <div id="command">
@@ -1381,7 +1381,7 @@ Train.File <em>文件夹名</em>
 <p>这个命名空间里的指令用来载入在后面的其他指令中要用到的物体模型。总体来说，像Track.Rail、Track.FreeObj之类的命令通过<em>结构编号</em>来指定要使用的物体。这个<em>结构编号</em>对于这个指令是特定的，所以应当先载入要使用的模型。要使用哪个指令，要使用哪个模型，就把它们载入，不需要的就不用载入。</p>
 <p>这个命名空间中的指令基本上都是以下这个结构：</p>
 <div id="command">
-<strong>Structure.Command</strong>(<em>StructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em>
+<strong>Structure.类型</strong> (<em>结构编号</em>)<font color="gray">.Load</font> <em>文件名</em>
 </div>
 <p><em>结构编号</em>是一个非负整数。<em>文件名</em>是一个相对于<strong>Object</strong>文件夹的路径，指向要加载的模型文件。<em>类型</em>是以下几种之一：</p>
 <table class='type0'>
@@ -1470,7 +1470,7 @@ Train.File <em>文件夹名</em>
 <p>➟ <a href="../../zh_cn/routes/formroofcrack.html">关于Forms, Roofs, Cracks的更详尽说明&hellip;</a></p>
 <p>还有一个特殊的Structure.Pole指令，用法稍有不同：</p>
 <div id="command">
-<strong>Structure.Pole</strong>(<em>NumberOfAdditionalRails</em>; <em>PoleStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em>
+<strong>Structure.Pole</strong>( <em>额外轨道跨度值</em> ; <em>架线柱模型编号</em> )<font color="gray">.Load</font> <em>文件名</em>
 </div>
 <div id="command-arguments">
 <em><strong>额外轨道跨度值</strong></em>：一个非负整数，代表这个架线柱模型跨过的额外轨道数量。0代表跨度为1组轨道的架线柱，1代表2组轨道，以此类推。<br>
@@ -1489,7 +1489,7 @@ Train.File <em>文件夹名</em>
 <p><a href="../../zh_cn/routes/xml/dynamicbackground.html">动态和基于模型的背景</a></p>
 <hr>
 <div id="command">
-<strong>Texture.Background</strong>(<em>BackgroundTextureIndex</em>)<font color="gray">.Load</font> <em>FileName</em>
+<strong>Texture.Background</strong>( <em>背景材质编号</em> )<font color="gray">.Load</font> <em>文件名</em>
 </div>
 <div id="command-arguments">
 <em><strong>文件名</strong></em>：一个相对于<strong>Object</strong>文件夹的路径，指向要加载的模型文件或动态XML配置文件。
@@ -1497,11 +1497,11 @@ Train.File <em>文件夹名</em>
 <p>该指令加载用于Track.Back指令的背景图像。</p>
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
-<p>**注意：**如果要使用动态或基于模型的背景，请把它指向需要的XML配置文件。</p>
+<p>如果要使用动态或基于模型的背景，请把它指向需要的XML配置文件。</p>
 </div>
 <hr>
 <div id="command">
-<strong>Texture.Background</strong>(<em>BackgroundTextureIndex</em>)<strong>.X</strong> <em>RepetitionCount</em>
+<strong>Texture.Background</strong>( <em>背景材质编号</em> )<strong>.X</strong> <em>重复次数</em>
 </div>
 <div id="command-arguments">
 <em><strong>重复次数</strong></em>：这张图像一圈中重复的次数。默认值是6。
@@ -1512,7 +1512,7 @@ Train.File <em>文件夹名</em>
 </div>
 <hr>
 <div id="command">
-<strong>Texture.Background</strong>(<em>BackgroundTextureIndex</em>)<strong>.Aspect</strong> <em>Mode</em>
+<strong>Texture.Background</strong>( <em>背景材质编号</em> )<strong>.Aspect</strong> <em>模式</em>
 </div>
 <div id="command-arguments">
 <em><strong>模式</strong></em>：宽高比的处理模式。默认值是0（固定高度）。
@@ -1657,7 +1657,7 @@ With Track <br>
 <p>这个命名空间中的指令定义了轨道的布局。这个命名空间内的指令应该出现在所有其他指令之后，一般位于线路文件的最后部分，且代码量基本都要远超其他部分。</p>
 <div id="notice">
 <h4 id="使用主轨道位置">使用主轨道位置</h4>
-<p>Track命名空间内的所有指令都需要和一个主轨道位置联系起来，这表示该指令执行的位置。一旦出现一个主轨道位置表达式，它后面的Track指令都会在这个位置执行，直到一个新的主轨道位置表达式指定一个新的位置。在主轨道位置表达式出现前写出的Track指令默认会在0位置执行。由于指令会被自动地排序和执行，所以并不一定需要把主轨道位置按照固定顺序写（虽然按照顺序写可以使结构更加清晰）。虽然主轨道位置可以是任意非负浮点数，有一些指令是**只可以在区间块开始位置（默认为25m的整倍数位置）**被使用的。默认情况下这意味着它们必须被放在0、25、50、75、100、125、以此类推的位置上。下面有这个特别限制的指令都会被标注出来。
+<p>Track命名空间内的所有指令都需要和一个主轨道位置联系起来，这表示该指令执行的位置。一旦出现一个主轨道位置表达式，它后面的Track指令都会在这个位置执行，直到一个新的主轨道位置表达式指定一个新的位置。在主轨道位置表达式出现前写出的Track指令默认会在0位置执行。由于指令会被自动地排序和执行，所以并不一定需要把主轨道位置按照固定顺序写（虽然按照顺序写可以使结构更加清晰）。虽然主轨道位置可以是任意非负浮点数，有一些指令是 <strong>只可以在区间块开始位置（默认为25m的整倍数位置）</strong> 被使用的。默认情况下这意味着它们必须被放在0、25、50、75、100、125、以此类推的位置上。下面有这个特别限制的指令都会被标注出来。
 </div>
 <h5 id="a-nametrack_railsa-111-轨道"><a name="track_rails"></a>● 11.1. 轨道</h5>
 <hr>
@@ -2070,10 +2070,10 @@ With Track <br>
 </div>
 <p>▸ <em>开门方向</em>的可选项：</p>
 <div id="command-arguments">
-<strong>L</strong>或**-1**：开左侧门。<br>
-**N**或**0**：不开门。即列车只需要临时停车。<br>
-**R**或**1**：开右侧门。<br>
-**B**：开两侧门。
+<strong>L</strong> 或 <strong>-1</strong> ：开左侧门。<br>
+<strong>N</strong> 或 <strong>0</strong> ：不开门。即列车只需要临时停车。<br>
+<strong>R</strong> 或 <strong>1</strong> ：开右侧门。<br>
+<strong>B</strong> ：开两侧门。
 </div>
 <p>▸ <em>强制红灯</em>的可选项：</p>
 <div id="command-arguments">
@@ -2235,9 +2235,9 @@ With Track<br>
 <strong>Track.Limit</strong> <font color="blue"><em>限速</em></font>; <em>标牌位置</em>; <em>方向</em>
 </div>
 <div id="command-arguments">
-<strong><font color="blue"><em>限速</em></font></strong>：一个正浮点数，代表速度。** 默认的**单位是**km/h**。0代表解除限速。默认值是0。<br>
-***标牌位置***：放置一个默认日式限速标牌的位置。默认值是0。<br>
-***方向***：在道岔限速情况下，标识限速起效的方向。
+<strong><font color="blue"><em>限速</em></font></strong>：一个正浮点数，代表速度。 <strong>默认的</strong> 单位是 <strong>km/h</strong> 。0代表解除限速。默认值是0。<br>
+<em><strong>标牌位置</strong></em> ：放置一个默认日式限速标牌的位置。默认值是0。<br>
+<em><strong>方向</strong></em> ：在道岔限速情况下，标识限速起效的方向。
 </div>
 <p><img src="../../images/illustration_limit.png" alt="_限速示意图"></p>
 <p>▸ <em>标牌位置</em>的可选项：</p>
