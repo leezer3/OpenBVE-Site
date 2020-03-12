@@ -509,7 +509,8 @@
 <div id="command">
 With <em>命名空间前缀</em>
 </div>
-<p>All subsequent commands that start with a period (U+002E) are prepended by <em>Prefix</em>. For example:</p>
+<p>不严谨地来说，在CSV路线中，“命名空间”的意思和“章节”、“部分”差不多。<br>
+其后所有直接以点号 (U+002E，英文半角) 开头的指令都被自动加上 <em>命名空间前缀</em> 。 例如：</p>
 <table style="border: none;">
 <tbody>
 <tr>
@@ -539,7 +540,7 @@ Route.Timetable 1157_M
 </tbody>
 </table>
 <h2 id="a-namepreprocessinga-3-预处理"><a name="preprocessing"></a>■ 3. 预处理</h2>
-<p>在游戏开始解析线路文件之前，预处理指令将会被预先处理替换。预处理器会按照正常顺序分析这些以$开头的预处理命令。$Chr、$Rnd和$Sub指令可以随便嵌套，$If、$Else和$EndIf不能出现在另一个指令的括号里。</p>
+<p>在游戏开始解析线路文件之前，预处理指令将会被预先处理替换。预处理器会按照正常顺序分析这些以$开头的预处理命令。$Chr、$Rnd和$Sub指令可以随便嵌套，$Include、$If、$Else和$EndIf不能出现在另一个指令的括号里。</p>
 <div id="warning">
 <span>⚠</span>
 <p>预处理指令的语法不可以随意使用，必须以下面给出的形式出现。</p>
@@ -551,7 +552,7 @@ $Include(<em>文件</em>:<em>主轨道位置偏移量</em>) <br>
 $Include(<em>文件<sub>1</sub></em>; <em>权值<sub>1</sub></em>; <em>文件<sub>2</sub></em>; <em>权值<sub>2</sub></em>; &hellip;)
 </div>
 <div id="command-arguments">
-<em><strong>文件<sub>i</sub></strong></em>: 要被导入本线路的另一个文件。<br>
+<em><strong>文件<sub>i</sub></strong></em>: 要被导入本线路的另一个同格式线路文件 (CSV/RW)。<br>
 <em><strong>权值<sub>i</sub></strong></em>: 一个正浮点数，表示对应的这个文件被使用的可能性大小。数越大，这个文件就越可能被随机选中。
 </div>
 <p>该指令按照权值随机选出一个线路文件，再将其内容导入本线路中。因为该文件内容会被不加修改直接在该指令的位置插入，可能需要照顾一下With指令等，不要让它们出现冲突。如果参数中最后一个文件没有给出权值，它会被按1处理。</p>
