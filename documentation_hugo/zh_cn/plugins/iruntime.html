@@ -4,25 +4,66 @@
     <meta charset="utf-8"/>
     <title>openBVE Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css">
-    <link rel="stylesheet" href="../../css/bulma.custom.css">
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta name="langmeta-current" content="zh_cn" />
+    
+    <meta name="langmeta-translation" content="ca" />
+    <meta name="langmeta-translation" content="en" />
+    <meta name="langmeta-translation" content="es_mx" />
+    <meta name="langmeta-translation" content="fr" />
+    <meta name="langmeta-translation" content="hu" />
+    <meta name="langmeta-translation" content="id" />
+    <meta name="langmeta-translation" content="ja" />
+    <meta name="langmeta-translation" content="ko" />
+    <meta name="langmeta-translation" content="zh_hk" />
+    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../../script/script.js"></script>
+    <script defer src="https://cdn.staticfile.org/font-awesome/5.3.1/js/all.js"></script>
     <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
 
-    <div id="sidebar">
+    <div id="sidebar" class="responsive-menu responsive-hide">
 
       
       <div id="site-logo">
           <img alt="Site logo" src="../../images/logo.png">
       </div>
       
+      <div class="menu-entries sidebar-language-list">
+        <ul class="first" style="padding-bottom:10px">
+        <li style="color:black; cursor:pointer" onclick="javascript:toggleLanguageMenu()"><span class="icon">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>Language</li>
+        <ul class="third" style="padding-top:0" id="sidebar-language-menu">
+          <li><a href="../../zh_cn/plugins/iruntime.html">中文 (大陆简体)</a></li>
+          <hr style="margin:0.2em 0" />
+          
+          <li><a href="../../ca/plugins/iruntime.html">Català</a></li>
+          
+          <li><a href="../../en/plugins/iruntime.html">English</a></li>
+          
+          <li><a href="../../es_mx/plugins/iruntime.html">Español (México)</a></li>
+          
+          <li><a href="../../fr/plugins/iruntime.html">Français</a></li>
+          
+          <li><a href="../../hu/plugins/iruntime.html">Magyar</a></li>
+          
+          <li><a href="../../id/plugins/iruntime.html">Bahasa Indonesia</a></li>
+          
+          <li><a href="../../ja/plugins/iruntime.html">日本語</a></li>
+          
+          <li><a href="../../ko/plugins/iruntime.html">한국어</a></li>
+          
+          <li><a href="../../zh_hk/plugins/iruntime.html">中文 (港澳繁體)</a></li>
+          
+        </ul>
+        </ul>
+      </div>
 
       <nav>
-<input type="checkbox" id="burger-toggle" class="burger-toggle" hidden>
 
 <div id="menu-entries">
   <ul class="first">
@@ -351,72 +392,9 @@
 
     </div>
 
-    <div id="language-menu">
-<div class="dropdown is-hoverable">
-  <div class="dropdown-trigger">
-    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-      <span>Language</span>
-      <span class="icon is-small">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </button>
-  </div>
-  <div class="dropdown-menu" id="dropdown-menu" role="menu">
-    <div class="dropdown-content">
-      <a href="../../zh_cn/plugins/iruntime.html" class="dropdown-item">
-        中文 (大陆简体)
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../ca/plugins/iruntime.html" class="dropdown-item">
-        Català
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../en/plugins/iruntime.html" class="dropdown-item">
-        English
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../es_mx/plugins/iruntime.html" class="dropdown-item">
-        Español (México)
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../fr/plugins/iruntime.html" class="dropdown-item">
-        Français
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../hu/plugins/iruntime.html" class="dropdown-item">
-        Magyar
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../id/plugins/iruntime.html" class="dropdown-item">
-        Bahasa Indonesia
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../ja/plugins/iruntime.html" class="dropdown-item">
-        日本語
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../ko/plugins/iruntime.html" class="dropdown-item">
-        한국어
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../zh_hk/plugins/iruntime.html" class="dropdown-item">
-        中文 (港澳繁體)
-      </a>
-      
+    <div class="floating-action-button responsive-show" role="button" onclick="javascript:toggleMenu()">
+        <i class="fas fa-bars" aria-hidden="true"></i>
     </div>
-  </div>
-</div>
-</div>
-
 
     <div id="container">
 
@@ -472,6 +450,7 @@
 <p><strong>bool Load(LoadProperties properties)</strong></p>
 <p>This function is the first to be called after the plugin has been loaded. When this function triggers inside the plugin, a matching call to <em>Unload</em> will be made when the plugin is unloaded.</p>
 <p>Arguments:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -485,7 +464,9 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>LoadProperties (class):</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -522,9 +503,11 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>PlaySound (function):<br>
 See the section on <a href="#sound">playing sounds</a>.</p>
 <p>AISupport (enumeration):</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -541,7 +524,9 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>Return value:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -554,6 +539,7 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>If your plugin uses external configuration files, open files relative to the <em>properties.PluginFolder</em> or <em>properties.TrainFolder</em>. The difference between the two can be best visualized when the plugin is in a shared folder: Files relative to the plugin folder are common for all trains that use the plugin, while files relative to the train folder are specific to each train. The plugin folder is simply the folder in which the plugin is stored.</p>
 <p>Initialize the <em>properties.Panel</em> array to any size and with any startup values you need. The array is processed after every call to <em>Elapse</em> by the host application in order to update custom panel indicators. Developers of the panel2.cfg file can query these values with the <em>ats</em>i variable, while developers of the panel.animated file can query these values with the <em>pluginState[<em>i</em>]</em> variable.</p>
 <p>The <em>properties.PlaySound</em> function can be used at any time to play sounds. This callback function returns a handle that you can use to track if the sound is still playing, to change its volume and pitch, or to stop it. Please also see the section on <a href="#sound">playing sounds</a>.</p>
@@ -566,6 +552,7 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 <p><strong>void SetVehicleSpecs(VehicleSpecs specs)</strong></p>
 <p>This function is called after <em>Load</em> to inform the plugin about the specifications of the train.</p>
 <p>Arguments:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -579,7 +566,9 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>VehicleSpecs (class):</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -621,7 +610,9 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>BrakeTypes (enumeration):</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -643,11 +634,13 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>For more information about the meanings of the notches, see the sections on SetReverser, SetPower and SetBrake.</p>
 <hr>
 <p><strong>void Initialize(InitializationModes mode)</strong></p>
 <p>This function is called after <em>SetVehicleSpecs</em> and informs the plugin about the mode the safety system should start in. If the safety system in your plugin can be activated or deactivated, you should initialize the state of the plugin accordingly. When the user selects a <em>Jump to station</em> target, this function is also called prior to moving the train to its new location.</p>
 <p>Arguments:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -661,7 +654,9 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>InitializationModes (enumeration):</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -683,11 +678,13 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>The initialization mode is set in CSV/RW routes via the Route.Change command. Please note that any value between -2147483648 and 2147483647 can be conveyed to the plugin - the enumeration members are simply meant to standardize the meanings of the initialization modes.</p>
 <hr>
 <p><strong>void Elapse(ElapseData data)</strong></p>
 <p>This function is called every frame. It informs the plugin about the current state of the train and allows to set the virtual handles.</p>
 <p>Arguments:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -701,7 +698,9 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>ElapseData (class):</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -738,7 +737,9 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>VehicleState (class):</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -780,7 +781,9 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>PrecedingVehicleState (class):</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -802,7 +805,9 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>Speed (structure):</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -824,7 +829,9 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>Time (structure):</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -841,7 +848,9 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>Handles (class):</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -868,11 +877,13 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>The meanings of the notches are explained in the sections on SetReverser, SetPower and SetBrake.</p>
 <hr>
 <p><strong>void SetReverser(int reverser)</strong></p>
 <p>This function is called when the driver changes the reverser position.</p>
 <p>Arguments:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -886,11 +897,13 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>For <em>reverser</em>, the value of -1 corresponds to backward, 0 to neutral and 1 to forward.</p>
 <hr>
 <p><strong>void SetPower(int powerNotch)</strong></p>
 <p>This function is called when the driver changes the power notch.</p>
 <p>Arguments:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -904,11 +917,13 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>For <em>powerNotch</em>, the value passed can range from 0 to <em>specs.PowerNotches</em>.</p>
 <hr>
 <p><strong>void SetBrake(int brakeNotch)</strong></p>
 <p>This function is called when the driver changes the brake notch.</p>
 <p>Arguments:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -922,6 +937,7 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>For trains with the <strong>automatic air brake</strong>, 0 is RELEASE, 1 is LAP, 2 is SERVICE and 3 is EMERGENCY.</p>
 <p>For all other trains <strong>without a hold brake</strong>, 0 is released brakes, 1 is brake notch B1, 2 is brake notch B2, etc., <em>specs.BrakeNotches</em> is the maximum brake notch, and <em>specs.BrakeNotches</em>+1 is the emergency brake.</p>
 <p>For all other trains <strong>with a hold brake</strong>, 0 is released brakes, 1 is the hold brake, 2 is brake notch B1, 3 is brake notch B2, etc., <em>specs.BrakeNotches</em> is the maximum brake notch, and <em>specs.BrakeNotches</em>+1 is the emergency brake.</p>
@@ -930,6 +946,7 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 <p><strong>void KeyDown(VirtualKeys key)</strong></p>
 <p>This function is called when a plugin-specific key is pressed.</p>
 <p>Arguments:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -943,7 +960,9 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>VirtualKeys (enumeration):</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -1030,11 +1049,13 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>When making use of plugin-specific keys in your plugin, be sure to release a documentation that includes the virtual names of the keys along with their plugin-specific meanings.</p>
 <hr>
 <p><strong>void KeyUp(VirtualKeys key)</strong></p>
 <p>This function is called when a plugin-specific key is released.</p>
 <p>Arguments:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -1048,7 +1069,9 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>VirtualKeys (enumeration):</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -1135,11 +1158,13 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>When making use of plugin-specific keys in your plugin, be sure to release a documentation that includes the virtual names of the keys along with their plugin-specific meanings.</p>
 <hr>
 <p><strong>void HornBlow(HornTypes type)</strong></p>
 <p>This function is called when a horn starts playing. In case of the musical horn, this function is also called when the horn stops playing.</p>
 <p>Arguments:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -1153,7 +1178,9 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>HornTypes (enumeration):</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -1175,10 +1202,12 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <hr>
 <p><strong>void DoorChange(DoorStates oldState, DoorStates newState)</strong></p>
 <p>This function is called when the state of the doors change.</p>
 <p>Arguments:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -1195,7 +1224,9 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>DoorStates (enumeration):</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -1222,10 +1253,12 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <hr>
 <p><strong>void SetSignal(SignalData[] data)</strong></p>
 <p>This function is called when the aspect in the current or in any of the upcoming section changes, or when passing section boundaries. For the current section, it is assumed that no train is currently inside. Only sections until the first red section are reported.</p>
 <p>Arguments:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -1239,7 +1272,9 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>SignalData (class):</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -1256,6 +1291,7 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>The <em>data</em> array contains one entry per section, where <em>data[0]</em> is the current section, <em>data[1]</em> the upcoming section, and so on. You can inspect the aspect and the distance to each section reported.</p>
 <p>Please note that the length of the <em>data</em> array is dynamic. Only sections until the first red section are reported. This means that you need to check the size of the array before querying a particular section.</p>
 <p>Please also note that the last section in the <em>data</em> array does not have to be red necessarily. For example at the end of the track, the last section might be green.</p>
@@ -1264,6 +1300,7 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 <p><strong>void SetBeacon(BeaconData data)</strong></p>
 <p>This function is called when a beacon is passed by the front of the train.</p>
 <p>Arguments:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -1277,7 +1314,9 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>BeaconData (class):</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -1299,7 +1338,9 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>SignalData (class):</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -1316,12 +1357,14 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>In CSV/RW routes, the Track.Beacon (CSV) or @Beacon (RW) command is used to install beacons on the route. Both the beacon type and the optional data set by this command is transmitted to the train plugin along with the distance to the attached section.</p>
 <p>Please note that plugins may receive beacon types less than 0. These beacon types are reserved for future use and must be ignored by current plugins.</p>
 <hr>
 <p><strong>void PerformAI(AIData data)</strong></p>
 <p>This function is called when the AI is performed.</p>
 <p>Arguments:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -1335,7 +1378,9 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>AIData (class):</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -1352,11 +1397,13 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>Whenever you let the AI perform something, set <em>data.Response</em> to a value other than <em>AIResponse.None</em>. Please also see the section on <a href="#ai">supporting the AI</a>.</p>
 <h2 id="a-namesounda-playing-sounds"><a name="sound"></a>■ Playing sounds</h2>
 <p>You can play custom sounds from within your plugin. Custom sounds need to be configured inside the <em>sound.cfg</em> file before they can be used by the plugin. In order to play such sounds, keep a reference to the <em>PlaySound</em> function that is passed in the Load call. You can then start playing sounds at any time by calling this function:</p>
 <p><strong>SoundHandle PlaySound(int index, double volume, double pitch, bool looped)</strong></p>
 <p>Arguments:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -1383,7 +1430,9 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>Return value:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -1396,8 +1445,10 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>When you call the PlaySound function, a handle will be returned that you can use to later check if the sound is still playing, in order to change the volume or pitch, or to stop playing the sound. If you play a sound in a loop, you <strong>must</strong> keep the handle in order to subsequently stop the sound - otherwise it would play indefinately. The handle returned by PlaySound is of the following form:</p>
 <p>SoundHandle (class):</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -1429,6 +1480,7 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>Please note that depending on the implementation by the host application, sounds that are not in audible range may not be played at all.</p>
 <p>Please also note that the handle returned might be a null reference in the case the host application could not play the sound, for example because the file could not be found.</p>
 <h2 id="a-nameaia-supporting-the-ai"><a name="ai"></a>■ Supporting the AI</h2>
@@ -1437,6 +1489,7 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 <p>It is important to understand that unless your plugin also simulates a full ATO with automatic stopping at stations, you must let the host application perform the AI for most of the time and only intervene if absolutely necessary, for example in order to start the engine, to acknowledge a vigilance device, etc. Whenever this is the case, react to the PerformAI call appropriately:</p>
 <p><strong>void PerformAI(AIData data)</strong></p>
 <p>Arguments:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -1450,7 +1503,9 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>AIData (class):</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -1467,7 +1522,9 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>Handles (class):</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -1494,8 +1551,10 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>The meanings of the notches are explained in the sections on SetReverser, SetPower and SetBrake.</p>
 <p>AIResponse (enumeration):</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -1518,9 +1577,11 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>You can directly control the driver handles with the <em>data.Handles</em> member, for example if you want to cut power or apply a certain brake notch. For plugin-specific actions, you should only simulate key presses, for example by calling KeyDown or KeyUp. This will prevent you from letting the AI cheat in any way. If you let the AI operate the handles, you should only change by one notch at a time with a short response time.</p>
 <p>If you decide to let the AI do something, you must set the <em>data.Response</em> member to a meaningful value. For operating the handles, best use a short response time, while for other actions like turning a switch not directly accessible, use a long response time. Note that the actual timings are at the whim of the host application.</p>
 <p>Example:</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -1558,6 +1619,7 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
+</div>
 
 </div>
 

@@ -4,25 +4,66 @@
     <meta charset="utf-8"/>
     <title>openBVE Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css">
-    <link rel="stylesheet" href="../../css/bulma.custom.css">
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta name="langmeta-current" content="es_mx" />
+    
+    <meta name="langmeta-translation" content="ca" />
+    <meta name="langmeta-translation" content="en" />
+    <meta name="langmeta-translation" content="fr" />
+    <meta name="langmeta-translation" content="hu" />
+    <meta name="langmeta-translation" content="id" />
+    <meta name="langmeta-translation" content="ja" />
+    <meta name="langmeta-translation" content="ko" />
+    <meta name="langmeta-translation" content="zh_cn" />
+    <meta name="langmeta-translation" content="zh_hk" />
+    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../../script/script.js"></script>
+    <script defer src="https://cdn.staticfile.org/font-awesome/5.3.1/js/all.js"></script>
     <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
 
-    <div id="sidebar">
+    <div id="sidebar" class="responsive-menu responsive-hide">
 
       
       <div id="site-logo">
           <img alt="Site logo" src="../../images/logo.png">
       </div>
       
+      <div class="menu-entries sidebar-language-list">
+        <ul class="first" style="padding-bottom:10px">
+        <li style="color:black; cursor:pointer" onclick="javascript:toggleLanguageMenu()"><span class="icon">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>Language</li>
+        <ul class="third" style="padding-top:0" id="sidebar-language-menu">
+          <li><a href="../../es_mx/information/numberformats.html">Español (México)</a></li>
+          <hr style="margin:0.2em 0" />
+          
+          <li><a href="../../ca/information/numberformats.html">Català</a></li>
+          
+          <li><a href="../../en/information/numberformats.html">English</a></li>
+          
+          <li><a href="../../fr/information/numberformats.html">Français</a></li>
+          
+          <li><a href="../../hu/information/numberformats.html">Magyar</a></li>
+          
+          <li><a href="../../id/information/numberformats.html">Bahasa Indonesia</a></li>
+          
+          <li><a href="../../ja/information/numberformats.html">日本語</a></li>
+          
+          <li><a href="../../ko/information/numberformats.html">한국어</a></li>
+          
+          <li><a href="../../zh_cn/information/numberformats.html">中文 (大陆简体)</a></li>
+          
+          <li><a href="../../zh_hk/information/numberformats.html">中文 (港澳繁體)</a></li>
+          
+        </ul>
+        </ul>
+      </div>
 
       <nav>
-<input type="checkbox" id="burger-toggle" class="burger-toggle" hidden>
 
 <div id="menu-entries">
   <ul class="first">
@@ -351,72 +392,9 @@
 
     </div>
 
-    <div id="language-menu">
-<div class="dropdown is-hoverable">
-  <div class="dropdown-trigger">
-    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-      <span>Language</span>
-      <span class="icon is-small">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </button>
-  </div>
-  <div class="dropdown-menu" id="dropdown-menu" role="menu">
-    <div class="dropdown-content">
-      <a href="../../es_mx/information/numberformats.html" class="dropdown-item">
-        Español (México)
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../ca/information/numberformats.html" class="dropdown-item">
-        Català
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../en/information/numberformats.html" class="dropdown-item">
-        English
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../fr/information/numberformats.html" class="dropdown-item">
-        Français
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../hu/information/numberformats.html" class="dropdown-item">
-        Magyar
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../id/information/numberformats.html" class="dropdown-item">
-        Bahasa Indonesia
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../ja/information/numberformats.html" class="dropdown-item">
-        日本語
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../ko/information/numberformats.html" class="dropdown-item">
-        한국어
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../zh_cn/information/numberformats.html" class="dropdown-item">
-        中文 (大陆简体)
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../zh_hk/information/numberformats.html" class="dropdown-item">
-        中文 (港澳繁體)
-      </a>
-      
+    <div class="floating-action-button responsive-show" role="button" onclick="javascript:toggleMenu()">
+        <i class="fas fa-bars" aria-hidden="true"></i>
     </div>
-  </div>
-</div>
-</div>
-
 
     <div id="container">
 
@@ -444,6 +422,7 @@
 <p>Existen dos métodos de análisis para los números: <strong>Strict</strong> y <strong>Loose</strong> . El método Strict posee una especificación muy apretada, el cual no permite dejar espacios para hacer equivocaciones tipográficas. Este método es usado en todos los nuevos tipos de formatos. El método Loose es anticuado y es requerido para compatibilidad con el viejo material. Los diferentes archivos que están presentados en las páginas de <em>Desarrollando para openBVE</em> indican qué modelo esta siendo usado. Ten en cuenta que ya sea que el método <em>Loose</em> este permitido, también puedes usar el formato <em>Strict</em> como <em>Strict</em> en un sub-derivado de <em>Loose</em>.</p>
 <h2 id="a-nameintegersa-2-enteros"><a name="integers"></a>■ 2. Enteros</h2>
 <p><strong>Strict:</strong> Permitido en cualquier secuencia al menos un dígito decimal en el rango de 0 a 9 (U+0030 - U+0039), opcionalmente como prefijo de un símbolo negativo (U+002D). La cadena de caracteres resultante puede incluir antes o después espacios en blanco.</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -464,7 +443,9 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p><strong>Loose:</strong> Todos los espacios en blanco son removidos desde la primera secuencia de caracteres. Entonces, la cadena de caracteres restante (<em>abcde</em>) es interpretada de acuerdo al modelo <em>Strict</em>. Si esto falla en crear un número válido, el último carácter es quitado de la secuencia (<em>abcd</em>) y así, la secuencia es probada otra vez. Esto continúa hasta que un número valido es producido o hasta que no quede ningún carácter, después es determinado si la secuencia de es un número inválido.</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -485,6 +466,8 @@
 </tr>
 </tbody>
 </table>
+</div>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -505,8 +488,10 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="a-namefloatinga-3-números-de-coma-flotante"><a name="floating"></a>■ 3. Números de coma flotante</h2>
 <p><strong>Strict:</strong> Permitido si cualquier secuencia o al menos un dígito en decimal en el rango del 0 al 9 (U+0030 - U+0039), opcionalmente intermediado por exactamente un separador decimal en forma de punto (U+002E), opcionalmente como prefijo por un símbolo negativo (U+002D). La cadena resultante de la secuencia puede incluir antes o después espacios en blanco.</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -530,8 +515,10 @@
 </td>
 </tr>
 </tbody>
-</table> 
+</table>
+</div> 
 <p><strong>Loose:</strong> Todos los espacios en blanco son quitados desde la secuencia de carácter primero. Entonces, la secuencia de carácter restante (<em>abcde</em>) es interpretada de acuerdo al modelo <em>Strict</em> . Si esto falla al crear un número valido, el ultimo carácter es quitado de la ultima secuencia (<em>abcd</em>) y así , la secuencia es probada. Esto continua hasta que un número valido es producido o hasta que ningún carácter quede, en caso contrario es determinado que no es un número valido.</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -550,7 +537,9 @@
 </td>
 </tr>
 </tbody>
-</table>  
+</table>
+</div>  
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -570,8 +559,10 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="a-nametimesa-4-tiempos"><a name="times"></a>■ 4. Tiempos</h2>
 <p><strong>Obsoleto:</strong> Permitido por cualquier de las siguientes secuencias:</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -588,6 +579,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>En estas secuencias, <em>hhh</em> denota cualquier secuencia de al menos un dígito decimal para indicar la hora, <em>mm</em> denota la parte minuto con dos dígitos <em>m</em> denota un dígito de minuto <em>ss</em> denota la parte de segundos con dos dígitos, <em>s</em> denota la parte segundo con un dígito, y el carácter para separar las horas de los minutos es una coma (U+002E). Todos los dígitos necesitan ser caracteres desde el 0 al 9 (U+0030 - U+0039). Espacios en blanco al comienzo o al final son ignorados. El tiempo total es determinado por la siguiente formula, resultado en segundos desde la media noche:</p>
 <table style="border: none;">
 <tbody>
@@ -608,6 +600,7 @@
 </tbody>
 </table>
 <p>Si los minutos o segundos no están indicados, estos se asumen que son iguales a cero. Usted puede usar cualquier hora que no sea negativa, incluyendo valores mayores o iguales que 24. Si por ejemplo, el tiempo de llegada de una estación es a las 23:59:00 (día 1), y el tiempo de llegada de la siguiente estación es 00:02:15 (día 2), entonces usa la siguientes secuencias para representar estos tiempos en orden para asegurar un orden cronológico:</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -627,8 +620,10 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="a-namecolorsa-5-valores-de-color"><a name="colors"></a>■ 5. Valores de color</h2>
 <p><strong>Color hexadecimal:</strong> Un número de seis dígitos en hexadecimal precedido por el símbolo numeral (U+0023). Un dígito individual hexadecimal puede ser contenido de los dígitos decimales del 0 al 9 (U+0030 - U+0039), las letras minúsculas de la a a la f (U+0061 - U+0066) y las letras mayúsculas desde la A a la F (U+0041 - U+0046). El color hexadecimal tiene la siguiente forma:</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -641,8 +636,10 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>En esta secuencia, RR representa el componente rojo, GG el componente verde y BB el componente azul. Cada componente tiene un rango del 00 al FF (0 - 255), donde 00 representa no contribución para ese canal y  FF contribución total.</p>
 <p>Colores comúnmente usados (para indicar transparencias) incluye:</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -662,6 +659,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 
       <div id="footer">

@@ -4,25 +4,66 @@
     <meta charset="utf-8"/>
     <title>openBVE Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css">
-    <link rel="stylesheet" href="../../css/bulma.custom.css">
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta name="langmeta-current" content="en" />
+    
+    <meta name="langmeta-translation" content="ca" />
+    <meta name="langmeta-translation" content="es_mx" />
+    <meta name="langmeta-translation" content="fr" />
+    <meta name="langmeta-translation" content="hu" />
+    <meta name="langmeta-translation" content="id" />
+    <meta name="langmeta-translation" content="ja" />
+    <meta name="langmeta-translation" content="ko" />
+    <meta name="langmeta-translation" content="zh_cn" />
+    <meta name="langmeta-translation" content="zh_hk" />
+    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../../script/script.js"></script>
+    <script defer src="https://cdn.staticfile.org/font-awesome/5.3.1/js/all.js"></script>
     <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
 
-    <div id="sidebar">
+    <div id="sidebar" class="responsive-menu responsive-hide">
 
       
       <div id="site-logo">
           <img alt="Site logo" src="../../images/logo.png">
       </div>
       
+      <div class="menu-entries sidebar-language-list">
+        <ul class="first" style="padding-bottom:10px">
+        <li style="color:black; cursor:pointer" onclick="javascript:toggleLanguageMenu()"><span class="icon">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>Language</li>
+        <ul class="third" style="padding-top:0" id="sidebar-language-menu">
+          <li><a href="../../en/trains/panel2_cfg.html">English</a></li>
+          <hr style="margin:0.2em 0" />
+          
+          <li><a href="../../ca/trains/panel2_cfg.html">Català</a></li>
+          
+          <li><a href="../../es_mx/trains/panel2_cfg.html">Español (México)</a></li>
+          
+          <li><a href="../../fr/trains/panel2_cfg.html">Français</a></li>
+          
+          <li><a href="../../hu/trains/panel2_cfg.html">Magyar</a></li>
+          
+          <li><a href="../../id/trains/panel2_cfg.html">Bahasa Indonesia</a></li>
+          
+          <li><a href="../../ja/trains/panel2_cfg.html">日本語</a></li>
+          
+          <li><a href="../../ko/trains/panel2_cfg.html">한국어</a></li>
+          
+          <li><a href="../../zh_cn/trains/panel2_cfg.html">中文 (大陆简体)</a></li>
+          
+          <li><a href="../../zh_hk/trains/panel2_cfg.html">中文 (港澳繁體)</a></li>
+          
+        </ul>
+        </ul>
+      </div>
 
       <nav>
-<input type="checkbox" id="burger-toggle" class="burger-toggle" hidden>
 
 <div id="menu-entries">
   <ul class="first">
@@ -351,72 +392,9 @@
 
     </div>
 
-    <div id="language-menu">
-<div class="dropdown is-hoverable">
-  <div class="dropdown-trigger">
-    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-      <span>Language</span>
-      <span class="icon is-small">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </button>
-  </div>
-  <div class="dropdown-menu" id="dropdown-menu" role="menu">
-    <div class="dropdown-content">
-      <a href="../../en/trains/panel2_cfg.html" class="dropdown-item">
-        English
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../ca/trains/panel2_cfg.html" class="dropdown-item">
-        Català
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../es_mx/trains/panel2_cfg.html" class="dropdown-item">
-        Español (México)
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../fr/trains/panel2_cfg.html" class="dropdown-item">
-        Français
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../hu/trains/panel2_cfg.html" class="dropdown-item">
-        Magyar
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../id/trains/panel2_cfg.html" class="dropdown-item">
-        Bahasa Indonesia
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../ja/trains/panel2_cfg.html" class="dropdown-item">
-        日本語
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../ko/trains/panel2_cfg.html" class="dropdown-item">
-        한국어
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../zh_cn/trains/panel2_cfg.html" class="dropdown-item">
-        中文 (大陆简体)
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../zh_hk/trains/panel2_cfg.html" class="dropdown-item">
-        中文 (港澳繁體)
-      </a>
-      
+    <div class="floating-action-button responsive-show" role="button" onclick="javascript:toggleMenu()">
+        <i class="fas fa-bars" aria-hidden="true"></i>
     </div>
-  </div>
-</div>
-</div>
-
 
     <div id="container">
 
@@ -835,9 +813,8 @@ InitialAngle = <em>ValueInDegrees</em>
 <div id="command-arguments">
 <em><strong>ValueInDegrees</strong></em>: A floating-point number representing the angle <strong>in degrees</strong> that corresponds to the <em>Minimum</em> value. The angle is measured clock-wise from the 12 o&rsquo;clock position. The default value is -120.
 </div>
-<div id="warning">
-<span>⚠</span>
-<p>The absolute difference between <em>InitialAngle</em> and <em>LastAngle</em> may not exceed 360 degrees.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>The absolute difference between <em>InitialAngle</em> and <em>LastAngle</em> may not exceed 360 degrees.</p>
 </div>
 <hr>
 <div id="command">
@@ -846,9 +823,8 @@ LastAngle = <em>ValueInDegrees</em>
 <div id="command-arguments">
 <em><strong>ValueInDegrees</strong></em>: A floating-point number representing the angle <strong>in degrees</strong> that corresponds to the <em>Maximum</em> value. The angle is measured clock-wise from the 12 o&rsquo;clock position. The default value is 120.
 </div>
-<div id="warning">
-<span>⚠</span>
-<p>The absolute difference between <em>InitialAngle</em> and <em>LastAngle</em> may not exceed 360 degrees.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>The absolute difference between <em>InitialAngle</em> and <em>LastAngle</em> may not exceed 360 degrees.</p>
 </div>
 <hr>
 <div id="command">
@@ -985,6 +961,7 @@ Layer = <em>LayerIndex</em>
 <h2 id="a-namesubjectsa-10-available-subjects"><a name="subjects"></a>■ 10. Available subjects</h2>
 <p>A subject is composed of a base subject and an optional subject suffix. The subject controls what information is fed to the element that uses the subject. For example, a <em>Needle</em> can use the subject <em>kmph</em> to be fed with the current speed of the train in kilometers per hour, or with the <em>mr</em> subject to show the main reservoir pressure.</p>
 <h5 id="-base-subjects">● Base subjects</h5>
+<div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
@@ -1135,7 +1112,9 @@ Layer = <em>LayerIndex</em>
 </tr>
 </tbody>
 </table>
+</div>
 <p>If ats<em>i</em> is used with the built-in safety systems ATS and ATC, the following mapping for <em>i</em> applies:</p>
+<div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
@@ -1295,7 +1274,9 @@ Layer = <em>LayerIndex</em>
 </tr>
 </tbody>
 </table>
+</div>
 <h5 id="-suffixes">● Suffixes</h5>
+<div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
@@ -1310,6 +1291,7 @@ Layer = <em>LayerIndex</em>
 </tr>
 </tbody>
 </table>
+</div>
 <p><strong>Example:</strong> kmphd1 can be used to feed a <em>DigitalNumber</em> with the tens of the current speed of the train in kilometers per hour. The image used by the <em>DigitalNumber</em> will thus need to be composed of images from 0 to 10 in order to show all possible states kmphd1 can return, where images 0 through 9 correspond to the digits, and 10 corresponds to an image shown at the tens when the speed is below 10 km/h (e.g. another 0-digit, or blank space).</p>
 
 </div>

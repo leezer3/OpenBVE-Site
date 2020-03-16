@@ -4,25 +4,66 @@
     <meta charset="utf-8"/>
     <title>openBVE Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css">
-    <link rel="stylesheet" href="../../css/bulma.custom.css">
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta name="langmeta-current" content="en" />
+    
+    <meta name="langmeta-translation" content="ca" />
+    <meta name="langmeta-translation" content="es_mx" />
+    <meta name="langmeta-translation" content="fr" />
+    <meta name="langmeta-translation" content="hu" />
+    <meta name="langmeta-translation" content="id" />
+    <meta name="langmeta-translation" content="ja" />
+    <meta name="langmeta-translation" content="ko" />
+    <meta name="langmeta-translation" content="zh_cn" />
+    <meta name="langmeta-translation" content="zh_hk" />
+    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../../script/script.js"></script>
+    <script defer src="https://cdn.staticfile.org/font-awesome/5.3.1/js/all.js"></script>
     <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
 
-    <div id="sidebar">
+    <div id="sidebar" class="responsive-menu responsive-hide">
 
       
       <div id="site-logo">
           <img alt="Site logo" src="../../images/logo.png">
       </div>
       
+      <div class="menu-entries sidebar-language-list">
+        <ul class="first" style="padding-bottom:10px">
+        <li style="color:black; cursor:pointer" onclick="javascript:toggleLanguageMenu()"><span class="icon">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>Language</li>
+        <ul class="third" style="padding-top:0" id="sidebar-language-menu">
+          <li><a href="../../en/routes/csv.html">English</a></li>
+          <hr style="margin:0.2em 0" />
+          
+          <li><a href="../../ca/routes/csv.html">Català</a></li>
+          
+          <li><a href="../../es_mx/routes/csv.html">Español (México)</a></li>
+          
+          <li><a href="../../fr/routes/csv.html">Français</a></li>
+          
+          <li><a href="../../hu/routes/csv.html">Magyar</a></li>
+          
+          <li><a href="../../id/routes/csv.html">Bahasa Indonesia</a></li>
+          
+          <li><a href="../../ja/routes/csv.html">日本語</a></li>
+          
+          <li><a href="../../ko/routes/csv.html">한국어</a></li>
+          
+          <li><a href="../../zh_cn/routes/csv.html">中文 (大陆简体)</a></li>
+          
+          <li><a href="../../zh_hk/routes/csv.html">中文 (港澳繁體)</a></li>
+          
+        </ul>
+        </ul>
+      </div>
 
       <nav>
-<input type="checkbox" id="burger-toggle" class="burger-toggle" hidden>
 
 <div id="menu-entries">
   <ul class="first">
@@ -351,72 +392,9 @@
 
     </div>
 
-    <div id="language-menu">
-<div class="dropdown is-hoverable">
-  <div class="dropdown-trigger">
-    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-      <span>Language</span>
-      <span class="icon is-small">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </button>
-  </div>
-  <div class="dropdown-menu" id="dropdown-menu" role="menu">
-    <div class="dropdown-content">
-      <a href="../../en/routes/csv.html" class="dropdown-item">
-        English
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../ca/routes/csv.html" class="dropdown-item">
-        Català
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../es_mx/routes/csv.html" class="dropdown-item">
-        Español (México)
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../fr/routes/csv.html" class="dropdown-item">
-        Français
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../hu/routes/csv.html" class="dropdown-item">
-        Magyar
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../id/routes/csv.html" class="dropdown-item">
-        Bahasa Indonesia
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../ja/routes/csv.html" class="dropdown-item">
-        日本語
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../ko/routes/csv.html" class="dropdown-item">
-        한국어
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../zh_cn/routes/csv.html" class="dropdown-item">
-        中文 (大陆简体)
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../zh_hk/routes/csv.html" class="dropdown-item">
-        中文 (港澳繁體)
-      </a>
-      
+    <div class="floating-action-button responsive-show" role="button" onclick="javascript:toggleMenu()">
+        <i class="fas fa-bars" aria-hidden="true"></i>
     </div>
-  </div>
-</div>
-</div>
-
 
     <div id="container">
 
@@ -507,6 +485,7 @@
 With <em>Prefix</em>
 </div>
 <p>All subsequent commands that start with a period (U+002E) are prepended by <em>Prefix</em>. For example:</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -521,7 +500,9 @@ With Route<br>
 </tr>
 </tbody>
 </table>
+</div>
 <p>Is equivalent to:</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -535,11 +516,11 @@ Route.Timetable 1157_M
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="a-namepreprocessinga-3-preprocessing"><a name="preprocessing"></a>■ 3. Preprocessing</h2>
 <p>Before any of the commands in the route file are actually interpreted, the expressions are preprocessed. The first thing done is to replace any occurrences of the $-directives within an expression from right to left. The $Chr, $Rnd and $Sub directives may be nested in any way, while $Include, $If, $Else and $EndIf must not appear inside another directive.</p>
-<div id="warning">
-<span>⚠</span>
-<p>The syntax for the $-directives cannot be freely chosen, but must adhere to the forms presented below.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>The syntax for the $-directives cannot be freely chosen, but must adhere to the forms presented below.</p>
 </div>
 <hr>
 <div id="command">
@@ -554,9 +535,8 @@ $Include(<em>File<sub>1</sub></em>; <em>Weight<sub>1</sub></em>; <em>File<sub>2<
 <p>This directive chooses randomly from the specified files based on their associated probabilities and includes the content from one selected file into the main file. The content is copied into the place of the $Include directive, meaning that you need to take care of track positions and the last used With statement, for example. If the last weight in the argument sequence is omitted, it is treated as 1.</p>
 <p>The $Include directive is useful for splitting up a large file into smaller files, for sharing common sections of code between multiple routes, and for choosing randomly from a larger block of code. Please note that the included files may themselves include other files, but you need to make sure that there are no circular dependencies, e.g. file A including file B, and file B including file A, etc. You should use a file extension different from .csv for included files so that users cannot accidentally select them in the main menu (except where this is desired).</p>
 <p>If any of the <em>File<sub>i</sub></em> is followed by :<em>TrackPositionOffset</em>, then all expressions in the included file are offset by the specified track position <strong>in meters</strong>. For example, $Include(stations.include:2000) shifts all track positions in the part.include file by 2000 meters before including them. It is important to understand that &ldquo;track positions&rdquo; are not actually understood until after the $-directives have been processed, so all expressions in the included file are simply flagged to be offset later should they form track positions then. This means that if the included file contains expressions such as 1$Rnd(2;8)00, these are offset, too, even though at this stage, they do not form track positions yet.</p>
-<div id="warning">
-<span>⚠</span>
-<p>The track position offset feature is only available in the development release 1.2.11 and above.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>The track position offset feature is only available in the development release 1.2.11 and above.</p>
 </div>
 <hr>
 <div id="command">
@@ -566,6 +546,7 @@ $Chr(<em>Ascii</em>)
 <em><strong>Ascii</strong></em>: An integer in the range from 20 to 127, or 10 or 13, corresponding to an ASCII character of the same code.
 </div>
 <p>This directive is replaced by the ASCII character represented by <em>Ascii</em>. This is useful if you want to include characters that are part of syntax rules or would be stripped away. A list of relevant characters:</p>
+<div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
@@ -612,6 +593,7 @@ $Chr(<em>Ascii</em>)
 </tr>
 </tbody>
 </table>
+</div>
 <p>The sequence $Chr(13)$Chr(10) is handled as a single newline. Inserting $Chr(59) can be interpreted as a comment starter or as an argument separator, depending on where it is used.</p>
 <hr>
 <div id="command">
@@ -622,6 +604,7 @@ $Rnd(<em>Start</em>; <em>End</em>)
 <em><strong>End</strong></em>: An integer representing the upper bound.
 </div>
 <p>This directive is replaced by a random integer in the range from <em>Start</em> to <em>End</em>. It is useful to add randomness to a route.</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -640,6 +623,8 @@ $Rnd(<em>Start</em>; <em>End</em>)
 </tr>
 </tbody>
 </table>
+</div>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -660,6 +645,7 @@ $Rnd(<em>Start</em>; <em>End</em>)
 </tr>
 </tbody>
 </table>
+</div>
 <hr>
 <div id="command">
 $Sub(<em>Index</em>) = <em>Expression</em>
@@ -681,6 +667,7 @@ $Sub(<em>Index</em>)
 <em><strong>Index</strong></em>: A non-negative integer representing the index of the variable to retrieve.
 </div>
 <p>This directive is replaced by the content of the variable <em>Index</em>. The variable must have been assigned prior to retrieving it.</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -702,6 +689,7 @@ $Sub(0) = $Rnd(3; 5)<br>
 </tr>
 </tbody>
 </table>
+</div>
 <p>In the previous example, all three Track.FreeObj commands are guaranteed to use the same randomly-generated value in order to place a free object on the same rail. If you inserted the $Rnd(3;5) directive in each of the three lines individually, the objects could be placed on different rails each time.</p>
 <hr>
 <div id="command">
@@ -721,6 +709,7 @@ $Else()
 $EndIf()
 </div>
 <p>The $EndIf directive marks the end of an $If block that was started previously.</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -746,6 +735,8 @@ $EndIf()
 </tr>
 </tbody>
 </table>
+</div>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -766,9 +757,11 @@ $If($Rnd(0;1)), .FreeObj 0; 4, $Else(), .FreeObj 0; 5, $EndIf()
 </tr>
 </tbody>
 </table>
+</div>
 <p>It is possible to nest $If blocks. If you place $If/$Else/$EndIf on separate lines, you may want to employ indentation to improve readability of the block structure (as in the first example).</p>
 <hr>
 <p><strong>Finally</strong>, after the $-directives have been processed, all expressions in the route file are sorted according to their associated track positions.</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -790,6 +783,8 @@ Track.FreeObj 1; 42
 </tr>
 </tbody>
 </table>
+</div>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -811,6 +806,8 @@ Track.FreeObj 1; 42
 </tr>
 </tbody>
 </table>
+</div>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -832,6 +829,7 @@ Track.FreeObj 1; 42<br>
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="a-nameoptionsa-4-the-options-namespace"><a name="options"></a>■ 4. The Options namespace</h2>
 <p>Commands from this namespace provide generic options that affect the way other commands are processed. You should make use of commands from this namespace before making use of commands from other namespaces.</p>
 <hr>
@@ -843,6 +841,7 @@ Track.FreeObj 1; 42<br>
 </div>
 <p>This command can be used to specify the unit of length to be used in other commands. When entering a generic track position of the form <em>Part<sub>1</sub></em>:<em>Part<sub>2</sub></em>:&hellip;:<em>Part<sub>n</sub></em>, each of the <em>Part<sub>i</sub></em> will be multiplied with the corresponding <em>FactorInMeters<sub>i</sub></em>, then all of these products are added to form a single track position represented in meters. Ideally, you should set the block length to an integer multiple of any of the units you use via Options.BlockLength.</p>
 <p>Examples of conversion factors:</p>
+<div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
@@ -873,6 +872,7 @@ Track.FreeObj 1; 42<br>
 </tr>
 </tbody>
 </table>
+</div>
 <p>In the following, all arguments of all commands are highlighted in <font color="green">green</font> whenever they are affected by Options.UnitOfLength.</p>
 <hr>
 <div id="command">
@@ -882,6 +882,7 @@ Track.FreeObj 1; 42<br>
 <em><strong>FactorInKmph</strong></em>: A floating-point number representing how many kilometers per hour the desired unit has. The default value is 1.
 </div>
 <p>This command can be used to specify the unit of speed to be used in other commands. Examples of conversion factors:</p>
+<div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
@@ -904,6 +905,7 @@ Track.FreeObj 1; 42<br>
 </tr>
 </tbody>
 </table>
+</div>
 <p>In the following, all arguments of all commands are highlighted in <font color="blue">blue</font> whenever they are affected by Options.UnitOfSpeed.</p>
 <hr>
 <div id="command">
@@ -994,9 +996,8 @@ Track.FreeObj 1; 42<br>
 <div id="command-arguments">
 <em><strong>Text</strong></em>: The route comments which appear in the route selection dialog.
 </div>
-<div id="warning">
-<span>⚠</span>
-<p>You need to use $Chr directives if you want to include newlines, commas and the like in the text.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>You need to use $Chr directives if you want to include newlines, commas and the like in the text.</p>
 </div>
 <hr>
 <div id="command">
@@ -1012,9 +1013,8 @@ Track.FreeObj 1; 42<br>
 <div id="command-arguments">
 <em><strong>Text</strong></em>: The text which appears at the top of the default timetable.
 </div>
-<div id="warning">
-<span>⚠</span>
-<p>You need to use $Chr directives if you want to include newlines, commas and the like in the text.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>You need to use $Chr directives if you want to include newlines, commas and the like in the text.</p>
 </div>
 <hr>
 <div id="command">
@@ -1049,6 +1049,7 @@ Track.FreeObj 1; 42<br>
 <em><strong><font color="blue">Speed</font></strong></em>: A non-negative floating-point number representing the allowed speed for this aspect, <strong>by default</strong> measured in <strong>kilometers per hour</strong> (km/h).
 </div>
 <p>Use this command to associate speed limits to signal aspects. Aspect 0 represents a red signal, higher values represent more permissive aspects. The default values (for the included Japanese signals) are:</p>
+<div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
@@ -1090,6 +1091,7 @@ Track.FreeObj 1; 42<br>
 </tr>
 </tbody>
 </table>
+</div>
 <hr>
 <div id="command">
 <strong>Route.RunInterval</strong> <em>Interval<sub>0</sub></em>; <em>Interval<sub>1</sub></em>; &hellip;; <em>Interval<sub>n-1</sub></em>
@@ -1368,6 +1370,7 @@ Train.File <em>FolderName</em>
 <strong>Structure.Command</strong>(<em>StructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em>
 </div>
 <p><em>StructureIndex</em> is a non-negative integer. <em>FileName</em> is the object file to load, relative to the <strong>Object</strong> folder. <em>Command</em> is any of the following commands:</p>
+<div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
@@ -1450,6 +1453,7 @@ Train.File <em>FolderName</em>
 </tr>
 </tbody>
 </table>
+</div>
 <p>Generally, supported objects are B3D, CSV, X and ANIMATED. However, the FormCL, FormCR, RoofCL, RoofCR, CrackL and CrackR commands only accept B3D, CSV and X objects.</p>
 <p>➟ <a href="../../en/routes/formroofcrack.html">More information about forms, roofs and cracks&hellip;</a></p>
 <p>Additionally, there is the Structure.Pole command, which has a slightly different syntax:</p>
@@ -1527,6 +1531,7 @@ Train.File <em>FolderName</em>
 <em><strong>RailStructureIndex<sub>i</sub></strong></em>: A non-negative integer indicating a rail structure that has been previously loaded via Structure.Rail.
 </div>
 <p>Consider the following definition:</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -1542,7 +1547,9 @@ With Structure<br>
 </tr>
 </tbody>
 </table>
+</div>
 <p>The following two codes will produce the same output:</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -1562,6 +1569,8 @@ With Track<br>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -1582,6 +1591,7 @@ With Track<br>
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="a-namesignala-10-the-signal-namespace"><a name="signal"></a>■ 10. The Signal namespace</h2>
 <p>Commands from this namespace define custom signals.</p>
 <hr>
@@ -1612,6 +1622,7 @@ With Track<br>
 <p>The aspect indices from 0 through <em>n</em> represent successively more permissive aspects, where 0 is red. The built-in signals, for example, use the indices 0 (<font color="#C00000">●</font>), 1 (<font color="#FFC000">●●</font>), 2 (<font color="#FFC000">●</font>), 3 (<font color="#00C000">●</font><font color="#FFC000">●</font>), 4 (<font color="#00C000">●</font>) and 5 (<font color="#00C000">●●</font>). You can use as many as required.</p>
 <p>All faces in the object will be applied the currently active aspect texture. This means that you cannot use any other texture in the object, but still have to assign texture coordinates appropriately. For the glow object, the above rules also apply. The glow object is usually a rectangle placed clearly in front of the signal, although you can also use different shapes.</p>
 <p>The glow textures deserve special attention. All glow textures are pre-processed in the following way:</p>
+<div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
@@ -1634,6 +1645,7 @@ With Track<br>
 </tr>
 </tbody>
 </table>
+</div>
 <p>The texture you start with should have a sharp shape, usually oval. The shape should be fully saturated in the core and blend into pure white at its outer rim. The surroundings of the shape can be either pure black (A) or pure white (B).</p>
 <p>When openBVE loads the glow texture, it will replace all purely black pixels with purely white pixels, thus arriving at (B). From there, the image is inverted (C), then hue-shifted by 180 degrees (D). Compared to (B), this has the overall effect of inverting the lightness of the image, i.e. fully saturated pixels will be left unchanged (e.g. the core), while bright pixels (such as the outer rim of the shape) will become dark, and vice versa. Then, the image is gamma-corrected to further darken the dark parts (E), and finally, the image is blurred slightly (F).</p>
 <p>The resulting texture is always additively blended. This means that instead of directly drawing the texture onto the screen, the pixels of the texture are added to the screen pixels. Here, adding black (0) does not change the screen pixels, while adding a fully satured color channel (1) will result in a fully satured color channel, e.g. adding white produces white. Keep in mind that when designing the textures, you will have to follow the inverse rules, e.g. design the image as depicted in (A) or (B), while having in mind how it will be processed afterward.</p>
@@ -1655,9 +1667,8 @@ With Track<br>
 <em><strong>RailType</strong></em>: A non-negative integer referencing the rail type to use as defined by either a Structure.Rail or a Structure.Cycle command.
 </div>
 <p>This command starts a new rail represented by the index <em>RailIndex</em>. Upon the point where this command is used, a rail of the same <em>RailIndex</em> must either not have been used so far in the route, or must have been ended via a Track.RailEnd command. If a rail of the same <em>RailIndex</em> was already used in the route, the default values of <em>X</em>, <em>Y</em> and <em>RailType</em> are the values last used by that rail, otherwise 0. If the rail is to be updated, use the Track.Rail command. If it is to be ended, use the Track.RailEnd command. You can end a rail of a given <em>RailIndex</em> and start a new rail of the same <em>RailIndex</em> at the same track position provided that the old rail is first ended and the new rail started afterward. For every block, a structure, determined by <em>RailType</em>, is automatically placed.</p>
-<div id="warning">
-<span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>This command can only be used at the beginning of a block.</p>
 </div>
 <hr>
 <div id="command">
@@ -1670,13 +1681,11 @@ With Track<br>
 <em><strong>RailType</strong></em>: A non-negative integer referencing the rail type to use as defined by either a Structure.Rail or a Structure.Cycle command.
 </div>
 <p>This command starts a new rail or updates an existing rail. The rail is represented by the index <em>RailIndex</em>. If a rail of the same <em>RailIndex</em> was already used in the route, the default values of <em>X</em>, <em>Y</em> and <em>RailType</em> are the values last used by that rail, otherwise 0. If the rail is to be ended, use the Track.RailEnd command. You can end a rail of a given <em>RailIndex</em> and start a new rail of the same <em>RailIndex</em> at the same track position provided that the old rail is first ended and the new rail started afterward. In each block, the <em>X</em> and <em>Y</em> values are repeated if a Track.Rail command is not used for that block. As a consequence, updating the <em>X</em> or <em>Y</em> values affects the layout of the rail from the preceding block only. Changing the <em>RailType</em> will affect the rail from the point on where this command is used. If this command is used multiple times on the same track position for the same rail, then the first instance of the command takes effect, while subsequent ones are ignored.</p>
-<div id="warning">
-<span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>This command can only be used at the beginning of a block.</p>
 </div>
-<div id="warning">
-<span>⚠</span>
-<p>Using a RailIndex value of 0 is not valid for this command: <a href="https://github.com/leezer3/OpenBVE/wiki/Errata#rail-and-railend-commands-with-an-index-of-zero">Errata Note</a></p>
+<div id="warning-nontitle">
+<span>⚠</span><p>Using a RailIndex value of 0 is not valid for this command: <a href="https://github.com/leezer3/OpenBVE/wiki/Errata#rail-and-railend-commands-with-an-index-of-zero">Errata Note</a></p>
 </div>
 <div id="notice">
 <h4 id="trackrailstart-vs-trackrail">Track.RailStart vs. Track.Rail</h4>
@@ -1691,9 +1700,8 @@ With Track<br>
 <em><strong>RailType</strong></em>: A non-negative integer referencing the rail type to use as defined by either a Structure.Rail or a Structure.Cycle command. The default value is 0.
 </div>
 <p>This command changes the rail type for an existing rail, represented by <em>RailIndex</em>. The rail must have been started with a Track.RailStart or Track.Rail command and must not have been ended by a Track.RailEnd command. Changing the <em>RailType</em> will affect the rail from the point on where this command is used.</p>
-<div id="warning">
-<span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>This command can only be used at the beginning of a block.</p>
 </div>
 <hr>
 <div id="command">
@@ -1705,14 +1713,13 @@ With Track<br>
 <em><strong><font color="green">Y</font></strong></em>: A floating-point number representing the vertical distance from the player&rsquo;s rail, <strong>by default</strong> measured in <strong>meters</strong>. Negative values indicate below, positive ones above.
 </div>
 <p>This command ends an existing rail, represented by the index <em>RailIndex</em>. The default values of <em>X</em> and <em>Y</em> are the ones last used by the rail. Once this command is used for a specific <em>RailIndex</em>, the corresponding rail is considered to be non-existing afterward.</p>
-<div id="warning">
-<span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>This command can only be used at the beginning of a block.</p>
 </div>
-<div id="warning">
-<span>⚠</span>
-<p>Using a RailIndex value of 0 is not valid for this command: <a href="https://github.com/leezer3/OpenBVE/wiki/Errata#rail-and-railend-commands-with-an-index-of-zero">Errata Note</a></p>
+<div id="warning-nontitle">
+<span>⚠</span><p>Using a RailIndex value of 0 is not valid for this command: <a href="https://github.com/leezer3/OpenBVE/wiki/Errata#rail-and-railend-commands-with-an-index-of-zero">Errata Note</a></p>
 </div>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -1735,6 +1742,7 @@ With Track<br>
 </tr>
 </tbody>
 </table>
+</div>
 <p>In the preceding example, rail 1 starts with an x-value of 3.8 and bears a rail index which corresponds to an object intended to depict a straight rail. The rail keeps the x-value of 3.8 at track position 1025, where the rail type is changed to correspond to an object intended to depict an s-shaped curve. At track position 1050, the rail is redefined to have an x-value of 1.9, after which the rail is straight again until 1075, where it is ended, still having an x-value of 1.9.</p>
 <hr>
 <div id="command">
@@ -1779,9 +1787,8 @@ With Track<br>
 </tr>
 </tbody>
 </table>
-<div id="warning">
-<span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>This command can only be used at the beginning of a block.</p>
 </div>
 <hr>
 <div id="command">
@@ -1792,9 +1799,8 @@ With Track<br>
 <em><strong>CantInMillimeters</strong></em>: A floating-point number which represents the superelevation of a banked curve, <strong>always</strong> measured in <strong>millimeters</strong> (0.001 meters). The default value is 0. See also Options.CantBehavior.
 </div>
 <p>This command defines the radius of the curve for the player&rsquo;s rail from this point on. Negative values for <em>Radius</em> indicate a curve to the left, positive ones to the right. The value of 0 represents straight track. The <em>CantInMillimeters</em> parameter defines the cant (superelevation) in millimeters. If Options.CantBehavior is 0 (default), only the absolute value of <em>CantInMillimeters</em> is considered, and the superelevation is always towards the curve center (inward). Also, cant cannot be applied on straight track. If Options.CantBehavior is 1, <em>CantInMillimeters</em> is signed, i.e. negative values bank outward and positive ones inward on curved track. Also, cant can be applied on straight track, where negative values bank toward the left and positive ones toward the right.</p>
-<div id="warning">
-<span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>This command can only be used at the beginning of a block.</p>
 </div>
 <hr>
 <div id="command">
@@ -1817,13 +1823,11 @@ With Track<br>
 </tbody>
 </table>
 <p>A negative ratio represents a turn to the left, a positive one to the right. The value of 0 represents a straight track.</p>
-<div id="warning">
-<span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>This command can only be used at the beginning of a block.</p>
 </div>
-<div id="warning">
-<span>⚠</span>
-<p>This command is deprecated - use Track.Curve instead.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>This command is deprecated - use Track.Curve instead.</p>
 </div>
 <hr>
 <div id="command">
@@ -1833,6 +1837,7 @@ With Track<br>
 <em><strong><font color=green>Y</font></strong></em>: A floating-point number representing the height of the player&rsquo;s rail, <strong>by default</strong> measured in <strong>meters</strong>.
 </div>
 <p>This command defines the height of the player&rsquo;s rail above the ground at the point of insertion. It influences the placement of the ground objects defined via Structure.Ground and changed via Track.Ground. The height is interpolated between adjacent Track.Height commands. For example, the following two codes produce equivalent results:</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -1852,6 +1857,8 @@ With Track<br>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -1873,9 +1880,9 @@ With Track<br>
 </tr>
 </tbody>
 </table>
-<div id="warning">
-<span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+</div>
+<div id="warning-nontitle">
+<span>⚠</span><p>This command can only be used at the beginning of a block.</p>
 </div>
 <h5 id="a-nametrack_objectsa-113-objects"><a name="track_objects"></a>● 11.3. Objects</h5>
 <hr>
@@ -1908,9 +1915,8 @@ With Track<br>
 <strong>1</strong>: The WallR object (right wall) is used.
 </div>
 <p>This starts or updates a wall on a specified rail. The object must have been loaded via Structure.WallL(<em>WallObjectIndex</em>) or Structure.WallR(<em>WallObjectIndex</em>) prior to using this command. The walls are placed at the beginning of every block until a corresponding Track.WallEnd ends the wall for this rail. Please note that walls are resurrected if a rail is ended via Track.RailEnd and then started again via Track.RailStart or Track.Rail unless the wall was also ended via Track.WallEnd.</p>
-<div id="warning">
-<span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>This command can only be used at the beginning of a block.</p>
 </div>
 <hr>
 <div id="command">
@@ -1920,9 +1926,8 @@ With Track<br>
 <em><strong>RailIndex</strong></em>: A non-negative integer representing the rail on which to end an existing wall.
 </div>
 <p>This ends an existing wall that was previously started via Track.Wall on a specified rail. The wall is not placed for the block in which this command is used.</p>
-<div id="warning">
-<span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>This command can only be used at the beginning of a block.</p>
 </div>
 <hr>
 <div id="command">
@@ -1940,9 +1945,8 @@ With Track<br>
 <strong>1</strong>: The DikeR object (right dike) is used.
 </div>
 <p>This starts or updates a dike on a specified rail. The object must have been loaded via Structure.DikeL(<em>DikeObjectIndex</em>) or Structure.DikeR(<em>DikeObjectIndex</em>) prior to using this command. The dikes are placed at the beginning of every block until a corresponding Track.DikeEnd ends the dike for this rail. Please note that dikes are resurrected if a rail is ended via Track.RailEnd and then started again via Track.RailStart or Track.Rail unless the dike was also ended via Track.DikeEnd.</p>
-<div id="warning">
-<span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>This command can only be used at the beginning of a block.</p>
 </div>
 <hr>
 <div id="command">
@@ -1952,9 +1956,8 @@ With Track<br>
 <em><strong>RailIndex</strong></em>: A non-negative integer representing the rail on which to end an existing dike.
 </div>
 <p>This ends an existing dike that was previously started via Track.Dike on a specified rail. The dike is not placed for the block in which this command is used.</p>
-<div id="warning">
-<span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>This command can only be used at the beginning of a block.</p>
 </div>
 <hr>
 <div id="command">
@@ -1968,9 +1971,8 @@ With Track<br>
 <em><strong>PoleStructureIndex</strong></em>: A non-negative integer representing the object to place as defined via Structure.Pole. The default value is 0.
 </div>
 <p>This starts or updates a pole on a specified rail. The object must have been loaded via Structure.Pole(<em>NumberOfAdditionalRails</em>; <em>PoleStructureIndex</em>) prior to using this command. The poles are placed at the beginning of every block whose track positions are an integer multiple of the <em>Interval</em> (that is not necessarily at the same location this command is placed). If <em>NumberOfAdditionalRails</em> is 0, <em>Location</em>indicates the side of the rail on which the pole is placed. If <em>Location</em> is less than or equal to 0, the pole is placed as-is (corresponding to the left side). If <em>Location</em> is greater than 0, the object is mirrored on the x-axis and then placed (corresponding to the right side). If <em>NumberOfAdditionalRails</em> is greater than or equal to 1, <em>Location</em> specifies the x-offset in multiples of 3.8 meters. Please note that poles are resurrected if a rail is ended via Track.RailEnd and then started again via Track.RailStart or Track.Rail unless the pole was also ended via Track.PoleEnd.</p>
-<div id="warning">
-<span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>This command can only be used at the beginning of a block.</p>
 </div>
 <hr>
 <div id="command">
@@ -1980,9 +1982,8 @@ With Track<br>
 <em><strong>RailIndex</strong></em>: A non-negative integer representing the rail on which to end an existing pole.
 </div>
 <p>This ends an existing pole that was previously started via Track.Pole on a specified rail. The pole is not placed for the block in which this command is used.</p>
-<div id="warning">
-<span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>This command can only be used at the beginning of a block.</p>
 </div>
 <hr>
 <div id="command">
@@ -2005,9 +2006,8 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 <em><strong>CycleIndex</strong></em>: A non-negative integer representing the cycle of ground objects to place as defined via Structure.Ground or Cycle.Ground.
 </div>
 <p>This defines which ground objects to place from this point on. Ground objects are always placed at the beginning of a block at a certain height below the player&rsquo;s rail (as defined via Track.Height). If no cycle was defined for <em>CycleIndex</em>, then the object loaded into Structure.Ground(<em>CycleIndex</em>) is placed. Otherwise, the cycle of ground objects as defined via Cycle.Ground(<em>CycleIndex</em>) is used.</p>
-<div id="warning">
-<span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>This command can only be used at the beginning of a block.</p>
 </div>
 <h5 id="a-nametrack_stationsa-114-stations"><a name="track_stations"></a>● 11.4. Stations</h5>
 <hr>
@@ -2074,9 +2074,8 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 <p><strong>Special Features:</strong></p>
 <p>Stations can be marked as &ldquo;changing ends&rdquo; in the departure time. At such stations, when the departure time has been reached, the train will automatically jump to the next station. This feature is intended to fake a reverse of traveling direction without the need to jump to stations manually from the menu.</p>
 <p>Similarly, stations can be marked as a &ldquo;jump point&rdquo; in the departure time. At such stations, when the departure time has been reached, the train will automatically jump to the specified station index.</p>
-<div id="warning">
-<span>⚠</span>
-<p>The &ldquo;changing ends&rdquo; feature is only available in the development release 1.2.11 and above.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>The &ldquo;changing ends&rdquo; feature is only available in the development release 1.2.11 and above.</p>
 </div>
 <hr>
 <div id="command">
@@ -2119,6 +2118,7 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 <strong>ATC</strong> or <strong>1</strong>: ATC should be used from this station on. The following track is equipped with ATC.
 </div>
 <p>This command initializes a new station. Prefer using the Track.Sta command, which includes more options. For the options of Track.Sta which are not offered by Track.Station, the following values apply:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -2149,11 +2149,11 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>The command should be placed at the beginning of the station platform. In order to finalize the creation of a station, use the Track.Stop command to place stop points following this command. All following Track.Stop commands will be associated to this station. At least one Track.Stop command must follow if trains are expected to stop at this station.</p>
 <p>Stations can be marked as &ldquo;changing ends&rdquo; in the departure time. At such stations, when the departure time has been reached, the train will automatically jump to the next station. This feature is intended to fake a reverse of traveling direction without the need to jump to stations manually from the menu.</p>
-<div id="warning">
-<span>⚠</span>
-<p>The &ldquo;changing ends&rdquo; feature is only available in the development release 1.2.11 and above.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>The &ldquo;changing ends&rdquo; feature is only available in the development release 1.2.11 and above.</p>
 </div>
 <hr>
 <div id="command">
@@ -2172,6 +2172,7 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 <strong>1</strong>: A stop post is created on the right side.
 </div>
 <p>This command places a stop point for the last created station. If there is more than one stop defined for a station, a train is expected to stop at the first Track.Stop command for which <em>Cars</em> is greater than or equal to the number of cars the train has, where a value for <em>Cars</em> of 0 indicates a stop point regardless of the amount of cars to be used as the last stop point for a station.</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -2195,6 +2196,7 @@ With Track<br>
 </tr>
 </tbody>
 </table>
+</div>
 <hr>
 <div id="command">
 <font color="gray"><strong>Track.Form</strong> <em>RailIndex<sub>1</sub></em>; <em>RailIndex<sub>2</sub></em>; <em>RoofStructureIndex</em>; <em>FormStructureIndex</em></font>
@@ -2262,6 +2264,7 @@ The <em>a<sub>i</sub></em> terms specify the aspect the section should bear depe
 <p>In the case more sections ahead are clear than indicated by the <em>a<sub>i</sub></em> terms, the section will bear the aspect of <em>a<sub>n</sub></em>.</p>
 <p><strong>Simplified behavior:</strong><br>
 The <em>a<sub>i</sub></em> terms specify the repertoire of aspects the section can have. A section will bear the smallest of the <em>a<sub>i</sub></em> which is greater than the current aspect of the upcoming section. If no such <em>a<sub>i</sub></em> exists, the section will bear the aspect of <em>an</em>. The order of the <em>a<sub>i</sub></em> is irrelevant. If the same aspect occurs multiple times, this has no effect.</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -2281,6 +2284,7 @@ With Track<br>
 </tr>
 </tbody>
 </table>
+</div>
 <hr>
 <div id="command">
 <strong>Track.SigF</strong> <em>SignalIndex</em>; <em>Section</em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>
@@ -2330,6 +2334,7 @@ With Track<br>
 <strong>6</strong>: A six-aspect signal having aspects <font color="#C00000">●</font>red, <font color="#FFC000">●●</font>yellow-yellow, <font color="#FFC000">●</font>yellow, <font color="#FFC000">●</font><font color="#00C000">●</font>yellow-green, <font color="#00C000">●</font>green and <font color="#00C000">●●</font>green-green.
 </div>
 <p>This command creates a functional signal. You can choose from the available options for <em>Aspect</em> to create any of the default Japanese signals. Setting <em>X</em> to 0 creates a functional but invisible signal similar to Track.Section. Setting <em>X</em> to a non-zero number and <em>Y</em> to a negative number resets the y-coordinate to 4.8 meters and attaches a default signal post.</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -2348,6 +2353,8 @@ With Track<br>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -2366,6 +2373,7 @@ With Track<br>
 </tr>
 </tbody>
 </table>
+</div>
 <p>Track.Signal is similar to using Track.Section and Track.SigF in one command.</p>
 <hr>
 <div id="command">
@@ -2479,9 +2487,8 @@ With Track<br>
 <em><strong>BackgroundTextureIndex</strong></em>: A non-negative integer representing the background image to be displayed as defined via Texture.Background(<em>BackgroundTextureIndex</em>).
 </div>
 <p>This command defines which background image to show from now on.</p>
-<div id="warning">
-<span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>This command can only be used at the beginning of a block.</p>
 </div>
 <hr>
 <div id="command">
@@ -2497,9 +2504,8 @@ With Track<br>
 <p>This command defines the fog from this point on, or deactivates fog. If fog is to be enabled, <em>StartingDistance</em> must be less than <em>EndingDistance</em>. If fog is to be disabled, <em>StartingDistance</em> must be greater than or equal to <em>EndingDistance</em>.</p>
 <p>Fog affects the coloring of objects. Objects before the starting distance appear as-is, objects after the ending distance appear in the fog color, and objects in-between blend linearly between those. The background image is affected by fog as well. For the fog calculations, the background image is assumed to be at 600 meters distance from the camera, regardless of the actual viewing distance.</p>
 <p>Depending on Options.FogBehavior, there are two options how this command affects fog from this point on. In block-wise mode, the current fog blends from the beginning of this block to the new settings at the end of this block. The new setting is kept for following blocks. This is the default behavior. In interpolation mode, each Track.Fog command defines a control point for fog, where all of the settings (distances and colors) are interpolated linearly between the control points.</p>
-<div id="warning">
-<span>⚠</span>
-<p>This command can only be used at the beginning of a block.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>This command can only be used at the beginning of a block.</p>
 </div>
 <hr>
 <div id="command">
@@ -2509,6 +2515,7 @@ With Track<br>
 <em><strong>Value</strong></em>: A non-negative integer within the range from 0 to 255. The default value is 255.
 </div>
 <p>This command marks a point which affects the brightness in the cab. <em>Value</em> is measured from 0 (dark) to 255 (light), and is linearly interpolated between successive Track.Brightness commands for any given point on the track. This command should be used for tunnels, bridges, station roofs, or anything else that would affect the brightness as perceived inside the cab.</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -2530,6 +2537,7 @@ With Track<br>
 </tr>
 </tbody>
 </table>
+</div>
 <hr>
 <div id="command">
 <strong>Track.Marker</strong> <em>FileName</em>; <em><font color="green">Distance</font></em>

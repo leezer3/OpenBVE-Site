@@ -4,25 +4,66 @@
     <meta charset="utf-8"/>
     <title>openBVE Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css">
-    <link rel="stylesheet" href="../../css/bulma.custom.css">
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta name="langmeta-current" content="hu" />
+    
+    <meta name="langmeta-translation" content="ca" />
+    <meta name="langmeta-translation" content="en" />
+    <meta name="langmeta-translation" content="es_mx" />
+    <meta name="langmeta-translation" content="fr" />
+    <meta name="langmeta-translation" content="id" />
+    <meta name="langmeta-translation" content="ja" />
+    <meta name="langmeta-translation" content="ko" />
+    <meta name="langmeta-translation" content="zh_cn" />
+    <meta name="langmeta-translation" content="zh_hk" />
+    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../../script/script.js"></script>
+    <script defer src="https://cdn.staticfile.org/font-awesome/5.3.1/js/all.js"></script>
     <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
 
-    <div id="sidebar">
+    <div id="sidebar" class="responsive-menu responsive-hide">
 
       
       <div id="site-logo">
           <img alt="Site logo" src="../../images/logo.png">
       </div>
       
+      <div class="menu-entries sidebar-language-list">
+        <ul class="first" style="padding-bottom:10px">
+        <li style="color:black; cursor:pointer" onclick="javascript:toggleLanguageMenu()"><span class="icon">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>Language</li>
+        <ul class="third" style="padding-top:0" id="sidebar-language-menu">
+          <li><a href="../../hu/trains/train_dat_version.html">Magyar</a></li>
+          <hr style="margin:0.2em 0" />
+          
+          <li><a href="../../ca/trains/train_dat_version.html">Català</a></li>
+          
+          <li><a href="../../en/trains/train_dat_version.html">English</a></li>
+          
+          <li><a href="../../es_mx/trains/train_dat_version.html">Español (México)</a></li>
+          
+          <li><a href="../../fr/trains/train_dat_version.html">Français</a></li>
+          
+          <li><a href="../../id/trains/train_dat_version.html">Bahasa Indonesia</a></li>
+          
+          <li><a href="../../ja/trains/train_dat_version.html">日本語</a></li>
+          
+          <li><a href="../../ko/trains/train_dat_version.html">한국어</a></li>
+          
+          <li><a href="../../zh_cn/trains/train_dat_version.html">中文 (大陆简体)</a></li>
+          
+          <li><a href="../../zh_hk/trains/train_dat_version.html">中文 (港澳繁體)</a></li>
+          
+        </ul>
+        </ul>
+      </div>
 
       <nav>
-<input type="checkbox" id="burger-toggle" class="burger-toggle" hidden>
 
 <div id="menu-entries">
   <ul class="first">
@@ -351,72 +392,9 @@
 
     </div>
 
-    <div id="language-menu">
-<div class="dropdown is-hoverable">
-  <div class="dropdown-trigger">
-    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-      <span>Language</span>
-      <span class="icon is-small">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </button>
-  </div>
-  <div class="dropdown-menu" id="dropdown-menu" role="menu">
-    <div class="dropdown-content">
-      <a href="../../hu/trains/train_dat_version.html" class="dropdown-item">
-        Magyar
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../ca/trains/train_dat_version.html" class="dropdown-item">
-        Català
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../en/trains/train_dat_version.html" class="dropdown-item">
-        English
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../es_mx/trains/train_dat_version.html" class="dropdown-item">
-        Español (México)
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../fr/trains/train_dat_version.html" class="dropdown-item">
-        Français
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../id/trains/train_dat_version.html" class="dropdown-item">
-        Bahasa Indonesia
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../ja/trains/train_dat_version.html" class="dropdown-item">
-        日本語
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../ko/trains/train_dat_version.html" class="dropdown-item">
-        한국어
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../zh_cn/trains/train_dat_version.html" class="dropdown-item">
-        中文 (大陆简体)
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../zh_hk/trains/train_dat_version.html" class="dropdown-item">
-        中文 (港澳繁體)
-      </a>
-      
+    <div class="floating-action-button responsive-show" role="button" onclick="javascript:toggleMenu()">
+        <i class="fas fa-bars" aria-hidden="true"></i>
     </div>
-  </div>
-</div>
-</div>
-
 
     <div id="container">
 
@@ -438,6 +416,7 @@
 </ul>
 <h2 id="a-namebve1a-1-bve1"><a name="bve1"></a>■ 1. BVE1</h2>
 <p>The following BVE1 version strings are recognised:</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -452,8 +431,10 @@ BVE1220000
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="a-namebve2a-2-bve2"><a name="bve2"></a>■ 2. BVE2</h2>
 <p>The following BVE2 version strings are recognised:</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -467,9 +448,11 @@ OPENBVE
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="a-nameopenbvea-3-openbve"><a name="openbve"></a>■ 3. openBVE</h2>
 <p>From openBVE 1.5.3.0 onwards, the <em><strong>OPENBVE</strong></em> identifier may be optionally followed by a version string.</p>
 <p>The changes for each version are described below:</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -484,6 +467,8 @@ OPENBVE1530
 </tr>
 </tbody>
 </table>
+</div>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -498,6 +483,8 @@ OPENBVE1534
 </tr>
 </tbody>
 </table>
+</div>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -512,6 +499,7 @@ OPENBVE1535
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 
       <div id="footer">

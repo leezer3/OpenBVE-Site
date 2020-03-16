@@ -4,25 +4,66 @@
     <meta charset="utf-8"/>
     <title>openBVE Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css">
-    <link rel="stylesheet" href="../../css/bulma.custom.css">
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta name="langmeta-current" content="zh_cn" />
+    
+    <meta name="langmeta-translation" content="ca" />
+    <meta name="langmeta-translation" content="en" />
+    <meta name="langmeta-translation" content="es_mx" />
+    <meta name="langmeta-translation" content="fr" />
+    <meta name="langmeta-translation" content="hu" />
+    <meta name="langmeta-translation" content="id" />
+    <meta name="langmeta-translation" content="ja" />
+    <meta name="langmeta-translation" content="ko" />
+    <meta name="langmeta-translation" content="zh_hk" />
+    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../../script/script.js"></script>
+    <script defer src="https://cdn.staticfile.org/font-awesome/5.3.1/js/all.js"></script>
     <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
 
-    <div id="sidebar">
+    <div id="sidebar" class="responsive-menu responsive-hide">
 
       
       <div id="site-logo">
           <img alt="Site logo" src="../../images/logo.png">
       </div>
       
+      <div class="menu-entries sidebar-language-list">
+        <ul class="first" style="padding-bottom:10px">
+        <li style="color:black; cursor:pointer" onclick="javascript:toggleLanguageMenu()"><span class="icon">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>Language</li>
+        <ul class="third" style="padding-top:0" id="sidebar-language-menu">
+          <li><a href="../../zh_cn/routes/tutorial_atc.html">中文 (大陆简体)</a></li>
+          <hr style="margin:0.2em 0" />
+          
+          <li><a href="../../ca/routes/tutorial_atc.html">Català</a></li>
+          
+          <li><a href="../../en/routes/tutorial_atc.html">English</a></li>
+          
+          <li><a href="../../es_mx/routes/tutorial_atc.html">Español (México)</a></li>
+          
+          <li><a href="../../fr/routes/tutorial_atc.html">Français</a></li>
+          
+          <li><a href="../../hu/routes/tutorial_atc.html">Magyar</a></li>
+          
+          <li><a href="../../id/routes/tutorial_atc.html">Bahasa Indonesia</a></li>
+          
+          <li><a href="../../ja/routes/tutorial_atc.html">日本語</a></li>
+          
+          <li><a href="../../ko/routes/tutorial_atc.html">한국어</a></li>
+          
+          <li><a href="../../zh_hk/routes/tutorial_atc.html">中文 (港澳繁體)</a></li>
+          
+        </ul>
+        </ul>
+      </div>
 
       <nav>
-<input type="checkbox" id="burger-toggle" class="burger-toggle" hidden>
 
 <div id="menu-entries">
   <ul class="first">
@@ -351,72 +392,9 @@
 
     </div>
 
-    <div id="language-menu">
-<div class="dropdown is-hoverable">
-  <div class="dropdown-trigger">
-    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-      <span>Language</span>
-      <span class="icon is-small">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </button>
-  </div>
-  <div class="dropdown-menu" id="dropdown-menu" role="menu">
-    <div class="dropdown-content">
-      <a href="../../zh_cn/routes/tutorial_atc.html" class="dropdown-item">
-        中文 (大陆简体)
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../ca/routes/tutorial_atc.html" class="dropdown-item">
-        Català
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../en/routes/tutorial_atc.html" class="dropdown-item">
-        English
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../es_mx/routes/tutorial_atc.html" class="dropdown-item">
-        Español (México)
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../fr/routes/tutorial_atc.html" class="dropdown-item">
-        Français
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../hu/routes/tutorial_atc.html" class="dropdown-item">
-        Magyar
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../id/routes/tutorial_atc.html" class="dropdown-item">
-        Bahasa Indonesia
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../ja/routes/tutorial_atc.html" class="dropdown-item">
-        日本語
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../ko/routes/tutorial_atc.html" class="dropdown-item">
-        한국어
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../zh_hk/routes/tutorial_atc.html" class="dropdown-item">
-        中文 (港澳繁體)
-      </a>
-      
+    <div class="floating-action-button responsive-show" role="button" onclick="javascript:toggleMenu()">
+        <i class="fas fa-bars" aria-hidden="true"></i>
     </div>
-  </div>
-</div>
-</div>
-
 
     <div id="container">
 
@@ -435,6 +413,7 @@
 <h2 id="-在路线上安装atc">■ 在路线上安装ATC</h2>
 <p>首先，ATC是按照车站为单位启用的。对于每一个被设置为启用ATC的车站，从该车站起始到下一站的末端的轨道都被视为安装了ATC。游戏系统会余弦知道ATC安装的轨道区域末端，并会自动在此之前刹停列车，以防止冲灯。</p>
 <p>这样启用一站到下一站的ATC：</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -453,7 +432,9 @@ Track.Sta STATION; ; ; ; ; ; 1
 </tr>
 </tbody>
 </table>
+</div>
 <p>这样停用一站到下一站的ATC：</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -472,7 +453,9 @@ Track.Sta STATION; ; ; ; ; ; 0
 </tr>
 </tbody>
 </table>
+</div>
 <p>在以下示例中，B站与C站之间的轨道是安装了ATC的：</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -495,10 +478,12 @@ With Track<br>
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="-atc与信号">■ ATC与信号</h2>
 <p>从技术层面上来说，只要列车运行在ATC系统下，就可以忽略任何的信号机显示。你当然也可以在你的线路中让玩家遵守信号。在openBVE中，ATC以200米长的闭塞区间来获取与前车之间的距离，而不通过信号机。ATC随后根据列车的制动特性确定一个限速，该限速也会根据前车位置的改变而解除。这些200米长的闭塞区间被放在主轨道位置0, 200, 400, 600上，以此类推。</p>
 <h2 id="-atc与限速">■ ATC与限速</h2>
 <p>当您使用 <strong>Track.Limit</strong> 指令设置了路线限速后，ATC就会自动了解前方的第一个限速，并在到达这一位置前提前减速。例如：</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -512,7 +497,9 @@ With Track<br>
 </tr>
 </tbody>
 </table>
+</div>
 <p>也有方法让ATC不提前减速。因为ATC只会考虑下一个限速，因此在接近新限速的位置重复一遍旧限速，就能让ATC在那个重复的位置才开始减速了。例如：</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -527,6 +514,7 @@ With Track<br>
 </tr>
 </tbody>
 </table>
+</div>
 
 </div>
 

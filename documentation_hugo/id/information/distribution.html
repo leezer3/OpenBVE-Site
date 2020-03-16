@@ -4,25 +4,66 @@
     <meta charset="utf-8"/>
     <title>openBVE Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css">
-    <link rel="stylesheet" href="../../css/bulma.custom.css">
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta name="langmeta-current" content="id" />
+    
+    <meta name="langmeta-translation" content="ca" />
+    <meta name="langmeta-translation" content="en" />
+    <meta name="langmeta-translation" content="es_mx" />
+    <meta name="langmeta-translation" content="fr" />
+    <meta name="langmeta-translation" content="hu" />
+    <meta name="langmeta-translation" content="ja" />
+    <meta name="langmeta-translation" content="ko" />
+    <meta name="langmeta-translation" content="zh_cn" />
+    <meta name="langmeta-translation" content="zh_hk" />
+    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../../script/script.js"></script>
+    <script defer src="https://cdn.staticfile.org/font-awesome/5.3.1/js/all.js"></script>
     <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
 
-    <div id="sidebar">
+    <div id="sidebar" class="responsive-menu responsive-hide">
 
       
       <div id="site-logo">
           <img alt="Site logo" src="../../images/logo.png">
       </div>
       
+      <div class="menu-entries sidebar-language-list">
+        <ul class="first" style="padding-bottom:10px">
+        <li style="color:black; cursor:pointer" onclick="javascript:toggleLanguageMenu()"><span class="icon">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>Language</li>
+        <ul class="third" style="padding-top:0" id="sidebar-language-menu">
+          <li><a href="../../id/information/distribution.html">Bahasa Indonesia</a></li>
+          <hr style="margin:0.2em 0" />
+          
+          <li><a href="../../ca/information/distribution.html">Català</a></li>
+          
+          <li><a href="../../en/information/distribution.html">English</a></li>
+          
+          <li><a href="../../es_mx/information/distribution.html">Español (México)</a></li>
+          
+          <li><a href="../../fr/information/distribution.html">Français</a></li>
+          
+          <li><a href="../../hu/information/distribution.html">Magyar</a></li>
+          
+          <li><a href="../../ja/information/distribution.html">日本語</a></li>
+          
+          <li><a href="../../ko/information/distribution.html">한국어</a></li>
+          
+          <li><a href="../../zh_cn/information/distribution.html">中文 (大陆简体)</a></li>
+          
+          <li><a href="../../zh_hk/information/distribution.html">中文 (港澳繁體)</a></li>
+          
+        </ul>
+        </ul>
+      </div>
 
       <nav>
-<input type="checkbox" id="burger-toggle" class="burger-toggle" hidden>
 
 <div id="menu-entries">
   <ul class="first">
@@ -351,72 +392,9 @@
 
     </div>
 
-    <div id="language-menu">
-<div class="dropdown is-hoverable">
-  <div class="dropdown-trigger">
-    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-      <span>Language</span>
-      <span class="icon is-small">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </button>
-  </div>
-  <div class="dropdown-menu" id="dropdown-menu" role="menu">
-    <div class="dropdown-content">
-      <a href="../../id/information/distribution.html" class="dropdown-item">
-        Bahasa Indonesia
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../ca/information/distribution.html" class="dropdown-item">
-        Català
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../en/information/distribution.html" class="dropdown-item">
-        English
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../es_mx/information/distribution.html" class="dropdown-item">
-        Español (México)
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../fr/information/distribution.html" class="dropdown-item">
-        Français
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../hu/information/distribution.html" class="dropdown-item">
-        Magyar
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../ja/information/distribution.html" class="dropdown-item">
-        日本語
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../ko/information/distribution.html" class="dropdown-item">
-        한국어
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../zh_cn/information/distribution.html" class="dropdown-item">
-        中文 (大陆简体)
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../zh_hk/information/distribution.html" class="dropdown-item">
-        中文 (港澳繁體)
-      </a>
-      
+    <div class="floating-action-button responsive-show" role="button" onclick="javascript:toggleMenu()">
+        <i class="fas fa-bars" aria-hidden="true"></i>
     </div>
-  </div>
-</div>
-</div>
-
 
     <div id="container">
 
@@ -434,6 +412,7 @@
 <h2 id="-file-teks-dan-enkoding">■ File teks dan enkoding</h2>
 <p>Apapun teks yang akan anda tulis dalam add-on, termasuk readme, pastikan file ini bisa dibuka di semua OS secara internasional. Enkoding default untuk semua file yang diproses di OpenBVE adalah UTF-8. Tenang saja, karena Bahasa Indonesia sudah menggunakan format ini, maka biasanya tidak perlu khawatir filenya tidak dapat terbaca di komputer lain di seluruh dunia. Hanya saja, jika ingin menambahkan bahasa yang membutuhkan karakter khusus, seperti bahasa cina, jepang, india, atau bahasa daerah yang tidak ada di 26 Alfabet standar, maka pastikan gunakan enkode UTF-8.</p>
 <p>Yang diperbolehkan dan tidak:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -456,9 +435,11 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="-archive-x-installer">■ Archive x Installer</h2>
 <p>Saat membuat archive add-on,  buat 1 file archive saja daripada membuat banyak file archive yang lebih kecil, kecuali jika sizenya terlalu besar. Jangan gunakan installer yang hanya bisa digunakan oleh 1 OS saja (kecuali jika anda ingin menyediakan installer untuk semua OS). Misalnya format EXE untuk Windows, RPM untuk Linux, dan DMG untuk Mac.</p>
 <p>Yang diperbolehkan dan tidak:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -473,9 +454,11 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="-nama-file-dan-archive">■ Nama file dan archive</h2>
 <p>Biasanya, anda bebas membuat nama file dalam karakter apapun seperti huruf latin, mandarin, jepang, dsb. Tapi pastikan format nama yang dipakai bisa dibaca oleh software. Jika tidak, mungkin pengguna konten anda akan kesulitan menggunakannya. Sayangnya, format ZIP tidak support Unicode sedangkan format lain seperti <a href="https://www.7-zip.org/">7Z</a> bisa. Mungkin anda bisa menggunakan format ASCII seperti huruf A-Z, a-z, 0-9.</p>
 <p>Yang dibolehkan dan tidak:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -494,9 +477,11 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="-archive-dan-susunan-folder">■ Archive dan susunan folder</h2>
 <p>Anda harus selalu menambahkan semua susunan folder, seperti <strong>Railway</strong> dan <strong>Train</strong>, saat membuat archive dan menyebarkan add-ons. Hal ini dapat membantu user untuk menentukan di mana mereka harus meng-ekstrak archivenya. Jangan pernah membiarkan isi archive anda hanya folder <em>NamaFolder</em> yang seharusnya disimpan di folder Railway\Sound, sebagai contoh. Hanya user yang sudah berpengalaman yang bisa mengatasi masalah ini.</p>
 <p>Yang dibolehkan dan tidak:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -511,9 +496,11 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="-error-dan-peringatan">■ Error dan peringatan</h2>
 <p>Rute anda harus bebas dari ERROR. Ingat, OpenBVE membedakan pesan ERROR dan pesan PERINGATAN. Pesan ERROR menunjukkan sesuatu yang KESALAHAN tulisan yang sudah jelas dan harus langsung diperbaiki. Sedangkan pesan PERINGATAN hanya menunjukkan informasih tambahan yang bisa saja menjadi error atau mungkin menghasilkan kode yang ambigu, atau yang tidak sengaja tertulis. Untuk melihat pesan error dan pesan peringatan, buka Pengaturan OpenBVE dan aktifkan pilihan ini. RouteViewer dan ObjectViewer akan selalu menampilkan pesan ini. Caatan, mungkin OpenBVE dan aplikasi Viewer lainnya menampilkan jumlah error yang berbeda, karena tidak semua perintah di aplikasi Viewer bisa dibaca.</p>
 <p>Yang dibolehkan dan tidak:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -536,6 +523,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="-rute-dan-kereta-yang-menggunakan-plugin-khusus">■ Rute dan kereta yang menggunakan plugin khusus.</h2>
 <p>Jika anda ingin menambahkan plugin, pastikan hanya berformat .NET. Plugin jadul yang hanya bisa dipakai di OS Windows sudah tidak bisa dipakai lagi, dan harusnya sudah tidak dipakai. Jika anda masih sangat membutuhkan plugin jadul, setidaknya pastikan add-on anda bisa dipakai tanpa menggunakan plugin itu. Silakan tes dengan menghapus file ats.cfg (atau rename aja file ats ini sementara).</p>
 <h2 id="-panduan-operasional">■ Panduan operasional</h2>

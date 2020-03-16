@@ -4,25 +4,66 @@
     <meta charset="utf-8"/>
     <title>openBVE Documentation</title>
     <link rel="stylesheet" href="../../../css/theme.css">
-    <link rel="stylesheet" href="../../../css/bulma.custom.css">
     <link rel="icon" href="../../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta name="langmeta-current" content="zh_hk" />
+    
+    <meta name="langmeta-translation" content="ca" />
+    <meta name="langmeta-translation" content="en" />
+    <meta name="langmeta-translation" content="es_mx" />
+    <meta name="langmeta-translation" content="fr" />
+    <meta name="langmeta-translation" content="hu" />
+    <meta name="langmeta-translation" content="id" />
+    <meta name="langmeta-translation" content="ja" />
+    <meta name="langmeta-translation" content="ko" />
+    <meta name="langmeta-translation" content="zh_cn" />
+    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../../../script/script.js"></script>
+    <script defer src="https://cdn.staticfile.org/font-awesome/5.3.1/js/all.js"></script>
     <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
 
-    <div id="sidebar">
+    <div id="sidebar" class="responsive-menu responsive-hide">
 
       
       <div id="site-logo">
           <img alt="Site logo" src="../../../images/logo.png">
       </div>
       
+      <div class="menu-entries sidebar-language-list">
+        <ul class="first" style="padding-bottom:10px">
+        <li style="color:black; cursor:pointer" onclick="javascript:toggleLanguageMenu()"><span class="icon">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>Language</li>
+        <ul class="third" style="padding-top:0" id="sidebar-language-menu">
+          <li><a href="../../../zh_hk/trains/plugins/legacy.html">中文 (港澳繁體)</a></li>
+          <hr style="margin:0.2em 0" />
+          
+          <li><a href="../../../ca/trains/plugins/legacy.html">Català</a></li>
+          
+          <li><a href="../../../en/trains/plugins/legacy.html">English</a></li>
+          
+          <li><a href="../../../es_mx/trains/plugins/legacy.html">Español (México)</a></li>
+          
+          <li><a href="../../../fr/trains/plugins/legacy.html">Français</a></li>
+          
+          <li><a href="../../../hu/trains/plugins/legacy.html">Magyar</a></li>
+          
+          <li><a href="../../../id/trains/plugins/legacy.html">Bahasa Indonesia</a></li>
+          
+          <li><a href="../../../ja/trains/plugins/legacy.html">日本語</a></li>
+          
+          <li><a href="../../../ko/trains/plugins/legacy.html">한국어</a></li>
+          
+          <li><a href="../../../zh_cn/trains/plugins/legacy.html">中文 (大陆简体)</a></li>
+          
+        </ul>
+        </ul>
+      </div>
 
       <nav>
-<input type="checkbox" id="burger-toggle" class="burger-toggle" hidden>
 
 <div id="menu-entries">
   <ul class="first">
@@ -351,72 +392,9 @@
 
     </div>
 
-    <div id="language-menu">
-<div class="dropdown is-hoverable">
-  <div class="dropdown-trigger">
-    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-      <span>Language</span>
-      <span class="icon is-small">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </button>
-  </div>
-  <div class="dropdown-menu" id="dropdown-menu" role="menu">
-    <div class="dropdown-content">
-      <a href="../../../zh_hk/trains/plugins/legacy.html" class="dropdown-item">
-        中文 (港澳繁體)
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../../ca/trains/plugins/legacy.html" class="dropdown-item">
-        Català
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../../en/trains/plugins/legacy.html" class="dropdown-item">
-        English
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../../es_mx/trains/plugins/legacy.html" class="dropdown-item">
-        Español (México)
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../../fr/trains/plugins/legacy.html" class="dropdown-item">
-        Français
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../../hu/trains/plugins/legacy.html" class="dropdown-item">
-        Magyar
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../../id/trains/plugins/legacy.html" class="dropdown-item">
-        Bahasa Indonesia
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../../ja/trains/plugins/legacy.html" class="dropdown-item">
-        日本語
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../../ko/trains/plugins/legacy.html" class="dropdown-item">
-        한국어
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../../zh_cn/trains/plugins/legacy.html" class="dropdown-item">
-        中文 (大陆简体)
-      </a>
-      
+    <div class="floating-action-button responsive-show" role="button" onclick="javascript:toggleMenu()">
+        <i class="fas fa-bars" aria-hidden="true"></i>
     </div>
-  </div>
-</div>
-</div>
-
 
     <div id="container">
 
@@ -434,6 +412,7 @@
 <p><font size="+2">Win32 train plugins are not available on operating systems other than Microsoft Windows. Therefore, these plugins are officially deprecated. Please use <a href="../../../zh_hk/plugins/overview.html">.NET assemblies</a> from now on.</font></p>
 <hr>
 <p>The header and code files for the C/C++ programming languages are available to download here:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -449,7 +428,9 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p><strong>Data types:</strong></p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -468,6 +449,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="-overview">■ Overview</h2>
 <p>The following functions are called in this order when the plugin is loaded:</p>
 <ul>
@@ -507,6 +489,7 @@
 <p><strong>ATS_API int WINAPI GetPluginVersion()</strong></p>
 <p>This function is called after Load() in order to query the version of the API to use for the plugin. Currently, there is only one version available. If the version returned does not match the expected value, Dispose() will be called and the plugin is unloaded.</p>
 <p><em>Return value:</em></p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -520,10 +503,12 @@
 </tr>
 </tbody>
 </table>
+</div>
 <hr>
 <p><strong>ATS_API void WINAPI SetVehicleSpec (ATS_VEHICLESPEC vehicleSpec)</strong></p>
 <p>This function is called after GetPluginVersion() is called and informs the plugin about the specifications of the train.</p>
 <p><em>struct ATS_VEHICLESPEC:</em></p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -550,10 +535,12 @@
 </tr>
 </tbody>
 </table>
+</div>
 <hr>
 <p><strong>ATS_API void WINAPI Initialize(int brake)</strong></p>
 <p>This function is called after SetVehicleSpec() is called and informs the plugin about the mode the safety system should start in. If the safety system in your plugin can be activated or deactivated, you should initialize the state of the plugin accordingly. When the user selects a <em>Jump to station target</em>, this function is also called prior to moving the train to its new location.</p>
 <p><em>brake:</em></p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -575,10 +562,12 @@
 </tr>
 </tbody>
 </table>
+</div>  
 <hr>
 <p><strong>ATS_API ATS_HANDLES WINAPI Elapse(ATS_VEHICLESTATE vehicleState, int[] panel, int[] sound)</strong></p>
 <p>This function is called every frame, informs the plugin about the current state of the train, and expects the handles as overwritten by the safety system in return. The state of plugin-specific panel elements can also be set, as well as instructions to play plugin-specific sounds.</p>
 <p><em>struct ATS_VEHICLESTATE:</em></p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -621,10 +610,12 @@
 </tr>
 </tbody>
 </table>
+</div>  
 <p><em>int[] panel:</em><br>
 An array with 256 elements (0 through 255) which can be set to any value. The values in the array are preserved between successive Elapse() calls. At the beginning of the simulation, all elements are initialized to 0. Panel developers can query values of this array via the ats<em>i</em> subject, while developers of animated objects can query values via the pluginstate[<em>i</em>] variable. You should coordinate your efforts with panel/object developers and release a specification that tells which element in the array has what purpose.</p>
 <p><em>int[] sound:</em><br>
 An array with 256 elements (0 through 255) which can be set to any sound instruction. The values in the array are preserved between successive Elapse() calls. At the beginning of the simulation, all elements are initialized to ATS_SOUND_PLAYLOOPING (0). Train developers can reference sounds in the sound.cfg file. You should coordinate your efforts with train developers and release a specification that tells which sound index plays what kind of sound. The sound instructions that can be used are:</p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -655,7 +646,9 @@ An array with 256 elements (0 through 255) which can be set to any sound instruc
 </tr>
 </tbody>
 </table>
+</div>  
 <p><em>Return value struct ATS_HANDLES:</em></p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -678,10 +671,10 @@ An array with 256 elements (0 through 255) which can be set to any sound instruc
 </tr>
 </tbody>
 </table>
+</div>
 <br/>
-<div id="warning">
-<span>⚠</span>
-<p>Please note that if you want the driver&rsquo;s settings to take effect, you need to respond to the SetPower(), SetBrake() and SetReverse() calls, save the values that are passed in this those calls, and reapply them here.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>Please note that if you want the driver&rsquo;s settings to take effect, you need to respond to the SetPower(), SetBrake() and SetReverse() calls, save the values that are passed in this those calls, and reapply them here.</p>
 </div>
 <hr>
 <p><strong>ATS_API void WINAPI SetPower(int notch)</strong></p>
@@ -705,6 +698,7 @@ An array with 256 elements (0 through 255) which can be set to any sound instruc
 <p><strong>ATS_API void WINAPI HornBlow(int hornType)</strong></p>
 <p>This function is called when any of the horn starts or stops playing.</p>
 <p><em>hornType:</em></p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -726,6 +720,7 @@ An array with 256 elements (0 through 255) which can be set to any sound instruc
 </tr>
 </tbody>
 </table>
+</div> 
 <hr>
 <p><strong>ATS_API void WINAPI DoorOpen()</strong></p>
 <p>This function is called when the doors start opening.</p>
@@ -735,14 +730,14 @@ An array with 256 elements (0 through 255) which can be set to any sound instruc
 <hr>
 <p><strong>ATS_API void WINAPI SetSignal(int signal)</strong></p>
 <p>This function is called whenever the current signalling section would change its aspect assuming the player&rsquo;s train is not inside. This can occur when passing section boundaries, but only if the newly entered section has a different aspect than the previous one. It can also occur when a preceding train clears any upcoming block and the current section would change its aspect as a consequence of that. Thus, the SetSignal call can occur at any time. The passed value <em>signal</em> represents the section value (the aspect number).</p>
-<div id="warning">
-<span>⚠</span>
-<p>Please note that the SetSignal call assumes that the player&rsquo;s train is not inside the section for which the SetSignal call is raised. Otherwise, the reported aspect would always be red, which would not be very meaningful to work with.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>Please note that the SetSignal call assumes that the player&rsquo;s train is not inside the section for which the SetSignal call is raised. Otherwise, the reported aspect would always be red, which would not be very meaningful to work with.</p>
 </div>
 <hr>
 <p><strong>ATS_API void WINAPI SetBeaconData(ATS_BEACONDATA beaconData)</strong></p>
 <p>This function is called when a beacon is passed.</p>
 <p><em>struct ATS_BEACONDATA:</em></p>
+<div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
@@ -765,6 +760,7 @@ An array with 256 elements (0 through 255) which can be set to any sound instruc
 </tr>
 </tbody>
 </table>
+</div> 
 <p><em>Type</em> can be in the range from 0 to 2147483647, while <em>Data</em> can be in the range from 2147483648 to 2147483647. Please see the page about <a href="../../../zh_hk/information/standards.html">standards</a> to learn more about assigning beacon types.</p>
 
 </div>

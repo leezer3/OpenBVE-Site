@@ -4,25 +4,66 @@
     <meta charset="utf-8"/>
     <title>openBVE Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css">
-    <link rel="stylesheet" href="../../css/bulma.custom.css">
     <link rel="icon" href="../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta name="langmeta-current" content="ja" />
+    
+    <meta name="langmeta-translation" content="ca" />
+    <meta name="langmeta-translation" content="en" />
+    <meta name="langmeta-translation" content="es_mx" />
+    <meta name="langmeta-translation" content="fr" />
+    <meta name="langmeta-translation" content="hu" />
+    <meta name="langmeta-translation" content="id" />
+    <meta name="langmeta-translation" content="ko" />
+    <meta name="langmeta-translation" content="zh_cn" />
+    <meta name="langmeta-translation" content="zh_hk" />
+    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../../script/script.js"></script>
+    <script defer src="https://cdn.staticfile.org/font-awesome/5.3.1/js/all.js"></script>
     <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
 
-    <div id="sidebar">
+    <div id="sidebar" class="responsive-menu responsive-hide">
 
       
       <div id="site-logo">
           <img alt="Site logo" src="../../images/logo.png">
       </div>
       
+      <div class="menu-entries sidebar-language-list">
+        <ul class="first" style="padding-bottom:10px">
+        <li style="color:black; cursor:pointer" onclick="javascript:toggleLanguageMenu()"><span class="icon">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>Language</li>
+        <ul class="third" style="padding-top:0" id="sidebar-language-menu">
+          <li><a href="../../ja/tools/objectbender.html">日本語</a></li>
+          <hr style="margin:0.2em 0" />
+          
+          <li><a href="../../ca/tools/objectbender.html">Català</a></li>
+          
+          <li><a href="../../en/tools/objectbender.html">English</a></li>
+          
+          <li><a href="../../es_mx/tools/objectbender.html">Español (México)</a></li>
+          
+          <li><a href="../../fr/tools/objectbender.html">Français</a></li>
+          
+          <li><a href="../../hu/tools/objectbender.html">Magyar</a></li>
+          
+          <li><a href="../../id/tools/objectbender.html">Bahasa Indonesia</a></li>
+          
+          <li><a href="../../ko/tools/objectbender.html">한국어</a></li>
+          
+          <li><a href="../../zh_cn/tools/objectbender.html">中文 (大陆简体)</a></li>
+          
+          <li><a href="../../zh_hk/tools/objectbender.html">中文 (港澳繁體)</a></li>
+          
+        </ul>
+        </ul>
+      </div>
 
       <nav>
-<input type="checkbox" id="burger-toggle" class="burger-toggle" hidden>
 
 <div id="menu-entries">
   <ul class="first">
@@ -351,72 +392,9 @@
 
     </div>
 
-    <div id="language-menu">
-<div class="dropdown is-hoverable">
-  <div class="dropdown-trigger">
-    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-      <span>Language</span>
-      <span class="icon is-small">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </button>
-  </div>
-  <div class="dropdown-menu" id="dropdown-menu" role="menu">
-    <div class="dropdown-content">
-      <a href="../../ja/tools/objectbender.html" class="dropdown-item">
-        日本語
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../ca/tools/objectbender.html" class="dropdown-item">
-        Català
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../en/tools/objectbender.html" class="dropdown-item">
-        English
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../es_mx/tools/objectbender.html" class="dropdown-item">
-        Español (México)
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../fr/tools/objectbender.html" class="dropdown-item">
-        Français
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../hu/tools/objectbender.html" class="dropdown-item">
-        Magyar
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../id/tools/objectbender.html" class="dropdown-item">
-        Bahasa Indonesia
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../ko/tools/objectbender.html" class="dropdown-item">
-        한국어
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../zh_cn/tools/objectbender.html" class="dropdown-item">
-        中文 (大陆简体)
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../zh_hk/tools/objectbender.html" class="dropdown-item">
-        中文 (港澳繁體)
-      </a>
-      
+    <div class="floating-action-button responsive-show" role="button" onclick="javascript:toggleMenu()">
+        <i class="fas fa-bars" aria-hidden="true"></i>
     </div>
-  </div>
-</div>
-</div>
-
 
     <div id="container">
 
@@ -441,6 +419,7 @@
 <li>CSV</li>
 </ul>
 <h2 id="-コマンドライン引数">■ コマンドライン引数</h2>
+<div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
@@ -495,7 +474,9 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>例:</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -508,10 +489,12 @@ ObjectBender input.csv output.csv /n=25 /s=1 /b=25 /r=600
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="-object-benderの振る舞い">■ Object Benderの振る舞い</h2>
 <p>Object Bender はZ軸方向に向かってセグメントのコピーを生成します。 各々のコピーはGUIもしくはコマンドラインで指定されたセグメントの長さに従ってオフセットされます。 はじめのセグメントは何も修正されず残され、二番目のセグメントはセグメント長に従ってZ軸方向にシフトされます。 三番目のセグメントは 2<em>セグメント長、4番目は 3</em>セグメント長、という具合です。</p>
 <p>コピーが生成されると、 Object Bender は極座標変換を行います。 簡単に言うと、Z軸は円の中心座標(Radius,0,0)のある方に向かって曲がります。 言い換えると、右側は正の値、左側は負の値です。 ブロック長が指定された場合、 最後のオブジェクトは回転します。それ故レールオブジェクトの生成に有用です。</p>
 <p>Object Bender ではSetTextureCoordinates (CSV) と Coordinates (B3D) コマンドにおいて、コメントとして特別なマークアップを受け入れます。これらは Object Bender がテクスチャを張る座標を各々のセグメントにおいてシフトさせる機能に用いられます。</p>
+<div class="overflow-container">
 <table class='type2'>
 <thead>
 <tr>
@@ -526,12 +509,14 @@ ObjectBender input.csv output.csv /n=25 /s=1 /b=25 /r=600
 </tr>
 </tbody>
 </table>
+</div>
 <p>このマークアップはSetTextureCoordinates/Coordinates commandと同一の行におけるコメント内のどこにでも記述できます。 詳細はチュートリアルを参照してください。</p>
 <h2 id="-チュートリアル">■ チュートリアル</h2>
 <p>こちらではどの様に Object Bender を用いてカーブレールを生成するか簡単なチュートリアルを示します。
 基本的なことはさておきまして、こちらのチュートリアルではテクスチャの座標を適切に取り扱いどのように働くのか、また、コマンドラインのインターフェースで効率的に動作させる方法も示します。</p>
 <h5 id="-基礎">● 基礎</h5>
 <p>私達はこれから25mのブロック長、軌間1435mm、半径600mで、右方向に曲がるカーブレールオブジェクトを作ろうと思います。最初に必要なものは5mの長さの短いレールのセグメントです。</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -571,6 +556,7 @@ SetColor,150,125,100
 </tr>
 </tbody>
 </table>
+</div>
 <p>今必要なものとして、上記のコードはテクスチャを用いず、簡単なものを作りました。 GUIとして起動した後、 この入力ファイル(segment.csv)を選択し、 必要に応じてパラメータを入力していきます。 私達は今5mの長さのセグメントを持ち、ブロック長は25mですから、それ故にブロックを埋めるためには5つのセグメントのコピーが必要となります。</p>
 <p>Number of segments: 5<br>
 Segment length: 5<br>
@@ -579,6 +565,7 @@ Radius: 600</p>
 <p>レール幅は設定する必要はありません。なぜなら今回私達はカントを生成しないからです。 いま私達は出力先のファイルを例えば <em>right_curve_600.csv</em> として選び、Startボタンを押下します。 すると Object Bender はシンプルに <em>Done!</em> とメッセージを出力します。 半径を-600と設定し、出力先ファイルを例えば <em>left_curve_600.csv</em> と変更し、Startボタンをもう一度押すだけで、同様の設定を持った左カーブを追加で生成できます。</p>
 <h5 id="-テクスチャの座標設定を伴う動作">● テクスチャの座標設定を伴う動作</h5>
 <p>今回は単色ではなく、適切なテクスチャが設定されるものとしましょう。 例:</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -608,7 +595,9 @@ SetTextureCoordinates,3,1,0
 </tr>
 </tbody>
 </table>
+</div>
 <p>注意すべき点として、上記のコードにおけるテクスチャのy軸 は特別なz軸に対応していることです。  もし今、画像データがオブジェクトのz軸方向に向かってコピーされているとすると、各セグメントでは1つのコピーしか得られないことになります。 例えば5m毎に1つのコピーです。 これは望ましいことかもしれませんが、 例えばテクスチャを25メートルのブロック全体で1つのテクスチャを用いるようにデザインしたとしましょう。 このケースでは、ひとつのセグメントでは全てのテクスチャを表示しない上に表示せず、しかしながらちょうど 1/5 です。 こうしたケースの目的のために、 最初にセグメントを正しく表示しなければなりません:</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -638,7 +627,9 @@ SetTextureCoordinates,3,1,0.0
 </tr>
 </tbody>
 </table>
+</div>
 <p>上記のコードにおいて、テクスチャは 1/5 (=0.2)しか表示されていません。 もしいま私達がObject Bender で複数のセグメントを持つ長いオブジェクトを結合するために用いる場合、 其々のセグメントは結果としてテクスチャの最初の5分の一の部分だけで全て表示します。 この結果はもちろん望ましいものではありません。 私達が望むのは各セグメントにおいて0.2づつY軸に沿ってシフトするものです。 Object Bender はこのために SetTextureCoordinates コマンドのコメント欄において特別なマークアップを受け入れます。 ですので追加してみてください。</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -668,9 +659,11 @@ SetTextureCoordinates,3,1,0.0 ; {Y=0.2}
 </tr>
 </tbody>
 </table>
+</div>
 <p>現段階で、Object Bender は上記のサンプルのうちSetTextureCoordinatesの4行について、各セグメントでyの値に都度0.2追加しなければならないことを認識しています。 それ故に最初のセグメントは未修正で、2番めのセグメントは0.2から0.4に変更するよう指示に従い、三番目のセグメントは0.4から0.6に、4番めのセグメントは0.6から0.8に、そして最後のセグメントは0.8から1.0に変更されます。 これにより、テクスチャは毎回5セグメントごとに繰り返されます。 セグメント長は5メートルで、毎回25m毎に繰り返されますが、それはすなわちブロック長と同じです。</p>
 <h5 id="-コマンドラインインターフェースを用いる">● コマンドラインインターフェースを用いる</h5>
 <p>それでは、架線付きのカーブレールオブジェクトを作ってみましょう。 架線は曲がってはいません。それ故に25m長の長いワイヤーです。 私達はこれをひとつのステップで行うことはできません。 なぜならもし架線をsegment.csvに含めてしまうと、コピーされた上に曲がってしまうからです。 その代わりに、双方のオブジェクトを分割して生成し、後に結合します。 コマンドラインインターフェースを通じてカーブレールを生成しようとした場合、端末から以下のコードを入力します。</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -689,7 +682,9 @@ ObjectBender segment.csv right_curve_600.csv /n=5 /s=5 /b=25 /r=600
 </tr>
 </tbody>
 </table>
+</div>
 <p>では次に、ファイルに組み込むために架線を作ってみましょう。</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -713,7 +708,9 @@ SetColor,0,0,0
 </tr>
 </tbody>
 </table>
+</div>
 <p>上記のコードは単線の25m長のワイヤーです。 最初からオブジェクト長は25m長を与えてあり、 私達は追加のコピーを生成する必要がなく、ちょうど一つのセグメントで済みます。 これをright_curve_600.csv に追加します。 この場合以下の方法で行います:</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -732,7 +729,9 @@ ObjectBender wire.csv right_curve_600.csv /n=1 /s=25 /b=25 /r=600 /a
 </tr>
 </tbody>
 </table>
+</div>
 <p>最後の /a のスイッチは Object Bender がターゲットファイルの生成結果の末尾に架線を追加するためのもので上書きしません。 バッチファイルに記述し、結合してみましょう。 このバッチファイルは Windows上で呼び出すことができます。</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -752,7 +751,9 @@ ObjectBender wire.csv right_curve_600.csv /n=1 /s=25 /b=25 /r=600 /a
 </tr>
 </tbody>
 </table>
+</div>
 <p>もしあなたがセグメントや架線のオブジェクトに変更を加えようとしたいなら、好きなときにバッチファイルを実行するだけで生成結果を更新することができます。 同様により長いバッチファイルで左右の違う半径のカーブレールを以下の方法で生成することができます:</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -782,6 +783,7 @@ ObjectBender wire.csv right_curve_600.csv /n=1 /s=25 /b=25 /r=600 /a
 </tr>
 </tbody>
 </table>
+</div>
 <p>あなたがなにかのアイデアを得られるよう期待しています。</p>
 
 </div>

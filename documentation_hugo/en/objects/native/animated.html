@@ -4,25 +4,66 @@
     <meta charset="utf-8"/>
     <title>openBVE Documentation</title>
     <link rel="stylesheet" href="../../../css/theme.css">
-    <link rel="stylesheet" href="../../../css/bulma.custom.css">
     <link rel="icon" href="../../../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta name="langmeta-current" content="en" />
+    
+    <meta name="langmeta-translation" content="ca" />
+    <meta name="langmeta-translation" content="es_mx" />
+    <meta name="langmeta-translation" content="fr" />
+    <meta name="langmeta-translation" content="hu" />
+    <meta name="langmeta-translation" content="id" />
+    <meta name="langmeta-translation" content="ja" />
+    <meta name="langmeta-translation" content="ko" />
+    <meta name="langmeta-translation" content="zh_cn" />
+    <meta name="langmeta-translation" content="zh_hk" />
+    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../../../script/script.js"></script>
+    <script defer src="https://cdn.staticfile.org/font-awesome/5.3.1/js/all.js"></script>
     <meta name="generator" content="Hugo 0.66.0" />
 
   </head>
   <body>
 
-    <div id="sidebar">
+    <div id="sidebar" class="responsive-menu responsive-hide">
 
       
       <div id="site-logo">
           <img alt="Site logo" src="../../../images/logo.png">
       </div>
       
+      <div class="menu-entries sidebar-language-list">
+        <ul class="first" style="padding-bottom:10px">
+        <li style="color:black; cursor:pointer" onclick="javascript:toggleLanguageMenu()"><span class="icon">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>Language</li>
+        <ul class="third" style="padding-top:0" id="sidebar-language-menu">
+          <li><a href="../../../en/objects/native/animated.html">English</a></li>
+          <hr style="margin:0.2em 0" />
+          
+          <li><a href="../../../ca/objects/native/animated.html">Català</a></li>
+          
+          <li><a href="../../../es_mx/objects/native/animated.html">Español (México)</a></li>
+          
+          <li><a href="../../../fr/objects/native/animated.html">Français</a></li>
+          
+          <li><a href="../../../hu/objects/native/animated.html">Magyar</a></li>
+          
+          <li><a href="../../../id/objects/native/animated.html">Bahasa Indonesia</a></li>
+          
+          <li><a href="../../../ja/objects/native/animated.html">日本語</a></li>
+          
+          <li><a href="../../../ko/objects/native/animated.html">한국어</a></li>
+          
+          <li><a href="../../../zh_cn/objects/native/animated.html">中文 (大陆简体)</a></li>
+          
+          <li><a href="../../../zh_hk/objects/native/animated.html">中文 (港澳繁體)</a></li>
+          
+        </ul>
+        </ul>
+      </div>
 
       <nav>
-<input type="checkbox" id="burger-toggle" class="burger-toggle" hidden>
 
 <div id="menu-entries">
   <ul class="first">
@@ -351,72 +392,9 @@
 
     </div>
 
-    <div id="language-menu">
-<div class="dropdown is-hoverable">
-  <div class="dropdown-trigger">
-    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-      <span>Language</span>
-      <span class="icon is-small">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </button>
-  </div>
-  <div class="dropdown-menu" id="dropdown-menu" role="menu">
-    <div class="dropdown-content">
-      <a href="../../../en/objects/native/animated.html" class="dropdown-item">
-        English
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../../ca/objects/native/animated.html" class="dropdown-item">
-        Català
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../../es_mx/objects/native/animated.html" class="dropdown-item">
-        Español (México)
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../../fr/objects/native/animated.html" class="dropdown-item">
-        Français
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../../hu/objects/native/animated.html" class="dropdown-item">
-        Magyar
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../../id/objects/native/animated.html" class="dropdown-item">
-        Bahasa Indonesia
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../../ja/objects/native/animated.html" class="dropdown-item">
-        日本語
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../../ko/objects/native/animated.html" class="dropdown-item">
-        한국어
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../../zh_cn/objects/native/animated.html" class="dropdown-item">
-        中文 (大陆简体)
-      </a>
-      
-      <hr class="dropdown-divider">
-      <a href="../../../zh_hk/objects/native/animated.html" class="dropdown-item">
-        中文 (港澳繁體)
-      </a>
-      
+    <div class="floating-action-button responsive-show" role="button" onclick="javascript:toggleMenu()">
+        <i class="fas fa-bars" aria-hidden="true"></i>
     </div>
-  </div>
-</div>
-</div>
-
 
     <div id="container">
 
@@ -647,12 +625,12 @@ If a state is to have no sound effect, the list entry should be left blank.</p>
 <hr>
 <h5 id="-about-the-formulas">● About the formulas</h5>
 <p>First of all, infix notation, which is what you can enter for <em>Formula</em>, is converted into functional notation. Thus for every infix notation, there is a corresponding functional notation. Some functions do not have an infix operator and can thus only be entered in functional notation. For operators, precedence plays an important role. You can use parantheses to override the order of precedence just as in any usual mathematical formula. Names of functions are case-insensitive.</p>
-<div id="warning">
-<span>⚠</span>
-<p>Please note that if the result of any mathematical operation or function would be infinity, indeterminate or non-real, 0 is returned. Numeric overflow is not prevented, so you need to take that into account yourself.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>Please note that if the result of any mathematical operation or function would be infinity, indeterminate or non-real, 0 is returned. Numeric overflow is not prevented, so you need to take that into account yourself.</p>
 </div>
 <h2 id="a-nameoperatorsa-3-list-of-infix-notation-operators"><a name="operators"></a>■ 3. List of infix notation operators</h2>
 <h5 id="-basic-arithmetics">● Basic arithmetics</h5>
+<div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
@@ -689,8 +667,10 @@ If a state is to have no sound effect, the list entry should be left blank.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <h5 id="-comparisons">● Comparisons</h5>
 <p>All comparisons return 1 for true and 0 for false.</p>
+<div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
@@ -732,8 +712,10 @@ If a state is to have no sound effect, the list entry should be left blank.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <h5 id="-logical-operations">● Logical operations</h5>
 <p>All operations treat 0 as false and any other value as true, and return 1 for true and 0 for false.</p>
+<div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
@@ -765,8 +747,10 @@ If a state is to have no sound effect, the list entry should be left blank.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <h5 id="-operator-precedence">● Operator precedence</h5>
 <p>From highest precedence to lowest. Operators of same precedence are evaluated either left to right or right to left, depending on if they share a precedence with another operator.</p>
+<div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
@@ -839,15 +823,16 @@ If a state is to have no sound effect, the list entry should be left blank.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <br>
-<div id="warning">
-<span>⚠</span>
-<p>The logical not and multiplication operator are not at the same precedence level as a lot of other languages. For example <code>!a + !b</code> is <code>!(!a + !(b))</code> <strong>not</strong> <code>(!a) + (!b)</code> as expected, similarly <code>1 * 2 / 3</code> is <code>1 * (2 / 3)</code> <strong>not</strong> <code>(1 * 2) / 3</code><br>
+<div id="warning-nontitle">
+<span>⚠</span><p>The logical not and multiplication operator are not at the same precedence level as a lot of other languages. For example <code>!a + !b</code> is <code>!(!a + !(b))</code> <strong>not</strong> <code>(!a) + (!b)</code> as expected, similarly <code>1 * 2 / 3</code> is <code>1 * (2 / 3)</code> <strong>not</strong> <code>(1 * 2) / 3</code><br>
 Please also note that some combinations of prefix and infix operators are not recognised. For example <code>a*-b</code> is not accepted. Use <code>a*(-b)</code> or <code>-a*b</code> instead.</p>
 </div>
 <h2 id="a-namefunctionsa-4-list-of-functions"><a name="functions"></a>■ 4. List of functions</h2>
-<h5 id="-basic-arithmetics">● Basic arithmetics</h5>
-<table class='type0'>
+<h5 id="-basic-arithmetics-1">● Basic arithmetics</h5>
+<div class="overflow-container">
+<table class='type0 responsive-table-2col'>
 <thead>
 <tr>
 <th>Function</th>
@@ -865,8 +850,10 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 </tbody>
 </table>
+</div>
 <h5 id="-numeric-functions">● Numeric functions</h5>
-<table class='type0'>
+<div class="overflow-container">
+<table class='type0 responsive-table-2col'>
 <thead>
 <tr>
 <th>Function</th>
@@ -920,8 +907,10 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 </tbody>
 </table>
+</div>
 <h5 id="-elementary-functions">● Elementary functions</h5>
-<table class='type0'>
+<div class="overflow-container">
+<table class='type0 responsive-table-2col'>
 <thead>
 <tr>
 <th>Function</th>
@@ -959,8 +948,10 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 </tbody>
 </table>
+</div>
 <h5 id="-conditionals">● Conditionals</h5>
-<table class='type0'>
+<div class="overflow-container">
+<table class='type0 responsive-table-2col'>
 <thead>
 <tr>
 <th>Function</th>
@@ -974,9 +965,11 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="a-namevariablesa-5-list-of-variables"><a name="variables"></a>■ 5. List of variables</h2>
 <h5 id="-primitives">● Primitives</h5>
-<table class='type0'>
+<div class="overflow-container">
+<table class='type0 responsive-table-2col'>
 <thead>
 <tr>
 <th>Variable</th>
@@ -998,8 +991,10 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 </tbody>
 </table>
+</div>
 <h5 id="-time-and-camera">● Time and camera</h5>
-<table class='type0'>
+<div class="overflow-container">
+<table class='type0 responsive-table-2col'>
 <thead>
 <tr>
 <th>Variable</th>
@@ -1021,11 +1016,13 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 </tbody>
 </table>
+</div>
 <h5 id="-trains">● Trains</h5>
 <p>Generally, objects attached to a particular train and car return values for that train and car, unless stated otherwise. For scenery objects, the reference is the driver&rsquo;s car of the nearest train (not necessarily the player&rsquo;s train).</p>
 <p>In some of the following variables, <em>carIndex</em> has the following meaning: 0 is the 1<sup>st</sup> car from the front, 1 is the 2<sup>nd</sup> car from the front, etc., while -1 is the 1<sup>st</sup> car from the rear, -2 is the 2<sup>nd</sup> car from the rear, etc. In general, car indices from -<em>cars</em> to <em>cars</em>-1 represent existing cars, where <em>cars</em> is the number of cars the train has, while values outside of this range represent non-existing cars. As all trains have at least 1 car, indices -1 and 0 are guaranteed to exist for any train.</p>
 <h5 id="-trains-general">● Trains (general)</h5>
-<table class='type0'>
+<div class="overflow-container">
+<table class='type0 responsive-table-2col'>
 <thead>
 <tr>
 <th>Variable</th>
@@ -1115,8 +1112,10 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 </tbody>
 </table>
+</div>
 <h5 id="-trains-brake">● Trains (brake)</h5>
-<table class='type0'>
+<div class="overflow-container">
+<table class='type0 responsive-table-2col'>
 <thead>
 <tr>
 <th>Variable</th>
@@ -1166,8 +1165,10 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 </tbody>
 </table>
+</div>
 <h5 id="-trains-doors">● Trains (doors)</h5>
-<table class='type0'>
+<div class="overflow-container">
+<table class='type0 responsive-table-2col'>
 <thead>
 <tr>
 <th>Variable</th>
@@ -1229,8 +1230,10 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 </tbody>
 </table>
+</div>
 <h5 id="-trains-miscellaneous">● Trains (miscellaneous)</h5>
-<table class='type0'>
+<div class="overflow-container">
+<table class='type0 responsive-table-2col'>
 <thead>
 <tr>
 <th>Variable</th>
@@ -1356,7 +1359,9 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 </tbody>
 </table>
+</div>
 <p>If <em>pluginState[i]</em> is used with the built-in safety systems ATS and ATC, the following mappings for <em>i</em> apply:</p>
+<div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
@@ -1516,9 +1521,11 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 </tbody>
 </table>
+</div>
 <h5 id="-sections-signalling">● Sections (signalling)</h5>
 <p>The section context is defined when the object is placed using Track.SigF.</p>
-<table class='type0'>
+<div class="overflow-container">
+<table class='type0 responsive-table-2col'>
 <thead>
 <tr>
 <th>Variable</th>
@@ -1532,8 +1539,10 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="a-nameperformancea-6-performance"><a name="performance"></a>■ 6. Performance</h2>
 <p>There are certain kinds of animation which are less expensive, and others which are more. Also, the underlying object plays a significant role. If you want to design your animated objects with as best performance as possible <strong>for future releases of openBVE</strong>, take a look at the following performance table:</p>
+<div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
@@ -1585,6 +1594,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 </tbody>
 </table>
+</div>
 <p>Performance is generally better if the result of a function only infrequently changes. So, even if you set the <em>RefreshRate</em> parameter to zero, performance is generally better if the outcome of your formula is constant over longer periods of time. On the other hand, if it changes every frame, performance is generally worse.</p>
 <p>Generally, you should avoid using animation with partially transparent faces and stick to opaque faces when possible. Also, try to avoid texture shifts, and consider using state changes or translation where possible.</p>
 <h2 id="a-nametipsa-7-tips"><a name="tips"></a>■ 7. Tips</h2>
@@ -1599,6 +1609,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </ul>
 <h2 id="a-nameexamplesa-8-example-functions"><a name="examples"></a>■ 8. Example functions</h2>
 <h5 id="-blinking-light">● Blinking light</h5>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -1619,7 +1630,9 @@ RefreshRate = SECONDS
 </tr>
 </tbody>
 </table>
+</div>
 <h5 id="-rotating-wheel">● Rotating wheel</h5>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -1639,7 +1652,9 @@ RotateXFunction = value + delta * speedometer / RADIUS_OF_THE_WHEEL
 </tr>
 </tbody>
 </table>
+</div>
 <h5 id="-cycling-through-a-list-of-objects">● Cycling through a list of objects</h5>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -1660,7 +1675,9 @@ RefreshRate = TIME_PER_OBJECT
 </tr>
 </tbody>
 </table>
+</div>
 <h5 id="-signal-3-aspect-for-tracksection0-2-4">● Signal (3-aspect) for Track.Section(0; 2; 4)</h5>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -1674,8 +1691,10 @@ StateFunction = section / 2
 </tr>
 </tbody>
 </table>
+</div>
 <h5 id="-employing-an-approach-controlled-delay-in-signals">● Employing an approach-controlled delay in signals</h5>
 <p>If you want to create a signal that keeps being red until the train approaches it to some distance, then counts down a timer before it changes aspect to green, please refer to <a href="http://openbve.freeforums.org/delay-in-approach-controlled-signals-t1195.html#p5378">this post</a> on the forum for a detailed explanation. Once you understand the concepts, you can use this code template:</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -1695,6 +1714,8 @@ StateFunction = if[trackDistance&gt;DISTANCE | section==0, 0, min[value + 0.5*de
 </tr>
 </tbody>
 </table>
+</div>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -1714,8 +1735,10 @@ StateFunction = if[trackDistance&gt;DISTANCE | section==0, 0, if[value&lt;0.5, v
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="a-namegrammara-9-formal-grammar"><a name="grammar"></a>■ 9. Formal Grammar</h2>
 <p>The formal grammar for the language may not match up perfectly with the implimentation included in OpenBVE. An example is a*-b which is valid under the grammar but the parser rejects it.</p>
+<div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -1747,7 +1770,7 @@ StateFunction = if[trackDistance&gt;DISTANCE | section==0, 0, if[value&lt;0.5, v
 </tr>
 </tbody>
 </table>
-
+</div>
 </div>
 
       <div id="footer">
