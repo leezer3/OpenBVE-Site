@@ -82,7 +82,7 @@
               
             </li>
             
-            <li><a href="../../../zh_cn/objects/native/csv.html">The CSV object</a>
+            <li><a href="../../../zh_cn/objects/native/csv.html">CSV对象物件</a>
               
             </li>
             
@@ -338,7 +338,7 @@
           
         </li>
         
-        <li><a href="../../../zh_cn/information/forking.html">分叉准则</a>
+        <li><a href="../../../zh_cn/information/forking.html">复刻 (Fork) 准则</a>
           
         </li>
         
@@ -399,7 +399,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>The <strong>.csv</strong> object format</h1>
+          <h1>**。csv **对象格式</h1>
         </div>
 
         
@@ -408,11 +408,11 @@
 
 
 <div id="content">
-  <h2 id="-contents">■ Contents</h2>
+  <h2 id="-内容目录">■ 内容目录</h2>
 <ul class='contents'>
-<li><a href="#overview">1. Overview</a></li>
-<li><a href="#syntax">2. Syntax</a></li>
-<li><a href="#commands">3. Available commands</a>
+<li><a href="#overview">1.概述</a></li>
+<li><a href="#syntax">2.语法</a></li>
+<li><a href="#commands">3.预处理指令</a>
 <ul class='contents'>
 <li><a href="#createmeshbuilder">CreateMeshBuilder</a></li>
 <li><a href="#addvertex">AddVertex</a></li>
@@ -421,21 +421,21 @@
 <li><a href="#cube">Cube</a></li>
 <li><a href="#cylinder">Cylinder</a></li>
 <li><a href="#translate">Translate, TranslateAll</a></li>
-<li><a href="#scale">Scale, ScaleAll</a></li>
-<li><a href="#rotate">Rotate, RotateAll</a></li>
+<li><a href="#scale">缩放，缩放全部</a></li>
+<li><a href="#rotate">旋转，旋转全部</a></li>
 <li><a href="#shear">Shear, ShearAll</a></li>
-<li><a href="#mirror">Mirror, MirrorAll</a></li>
-<li><a href="#setcolor">SetColor</a></li>
-<li><a href="#setemissivecolor">SetEmissiveColor</a></li>
-<li><a href="#setblendmode">SetBlendMode</a></li>
-<li><a href="#loadtexture">LoadTexture</a></li>
-<li><a href="#setdecaltransparentcolor">SetDecalTransparentColor</a></li>
-<li><a href="#settexturecoordinates">SetCoordinates</a></li>
+<li><a href="#mirror">镜面反转，镜面反转全部</a></li>
+<li><a href="#setcolor">设定颜色</a></li>
+<li><a href="#setemissivecolor">设置自发光颜色</a></li>
+<li><a href="#setblendmode">设置混合模式</a></li>
+<li><a href="#loadtexture">设置材质文件</a></li>
+<li><a href="#setdecaltransparentcolor">设置透明色</a></li>
+<li><a href="#settexturecoordinates">设置材质坐标</a></li>
 </ul>
 </li>
 </ul>
 <h2 id="a-nameoverviewa-1-overview"><a name="overview"></a>■ 1. Overview</h2>
-<p>A CSV object allows to create a single object by using textual instructions. The object can be used in routes or in trains. The object described by the file can contain any number of individual polygons. The file format allows to group multiple polygons in CreateMeshBuilder sections in which attributes like color or texture information is assigned to all polygons created in each section. This allows for the creation of many polygons in the same CreateMeshBuilder section which share common attributes. A polygon is called a face in this file format.</p>
+<p>一个CSV对象允许使用文本指令创建单个对象。这个物体可以用在路线上，也可以用在列车中。文件描述的对象可以包含任意数量的单个多边形。文件格式允许在CreateMeshBuilder包含的部分中对多个多边形进行分组，其中颜色或纹理信息等属性被指定给在每个区域中创建的所有多边形。这允许在同一个CreateMeshBuilder区域中创建许多共享公共属性的多边形。在此文件格式中，多边形称为面。</p>
 <p>The file is a plain text file encoded in any arbitrary <a href="../../../zh_cn/information/encodings.html">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../../zh_cn/information/numberformats.html">parsing model</a> for numbers is <strong>Loose</strong>, however, you are encouraged to produce <em>Strict</em> output nonetheless. The file name is arbitrary, but must have the extension <strong>.csv</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
 <p>➟ <a href="../../../zh_cn/objects/native/b3d_quick.html">See also the quick reference for the CSV format&hellip;</a></p>
 <h2 id="a-namesyntaxa-2-syntax"><a name="syntax"></a>■ 2. Syntax</h2>

@@ -420,8 +420,8 @@
 </ul>
 <h2 id="a-nameguidelinesa-guidelines-on-developing-plugins"><a name="guidelines"></a>■ Guidelines on developing plugins</h2>
 <p>All .NET assembly plugins are intended to run on all platforms without recompilation. In order to achieve this goal, you as the programmer have to follow a certain set of rules which will be explained right here from the start.</p>
-<h5 id="-plugins-should-target-the-net-framework-20">● Plugins should target the .NET Framework 2.0</h5>
-<p>A whole variety of new .NET Framework versions comes out every so often. In order for plugins to not have stricter requirements on external dependencies than openBVE itself, plugins should target the .NET Framework 2.0, not any later version. This means that users do not have to upgrade their .NET Framework just in order to run your plugin. It also helps ensuring that all plugins run both on Microsoft .NET as well as on Mono, which is used on Linux and Mac OS X primarily.</p>
+<h5 id="-plugins-should-target-the-net-framework-461">● Plugins should target the .NET Framework 4.6.1</h5>
+<p>A whole variety of new .NET Framework versions comes out every so often. In order for plugins to not have stricter requirements on external dependencies than openBVE itself, plugins should target the .NET Framework 4.6.1, not any later version. This means that users do not have to upgrade their .NET Framework just in order to run your plugin. It also helps ensuring that all plugins run both on Microsoft .NET as well as on Mono, which is used on Linux and Mac OS X primarily.</p>
 <p>This also means that you must not use CLI-specific features such as Mono.Simd, among other things.</p>
 <h5 id="-plugins-must-be-compiled-against-any-cpu">● Plugins must be compiled against any CPU</h5>
 <p>Even though openBVE itself currently runs in 32-bit mode (on Windows anyway), plugins must not exhibit this behavior - they must run on all CPU architectures. Be sure to set AnyCPU as the target processor in your development tool of choice. In Visual Studio and SharpDevelop, for example, the default target processor is x86, not AnyCPU. Be sure to change that.</p>
