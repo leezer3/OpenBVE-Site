@@ -925,6 +925,57 @@ e<sub>2.0</sub> = min(1 - v<sub>2</sub> * log(e<sub>1.22</sub>) / log(9/4), 4)
 </div>
 <p>A positive floating-point number measured in <strong>kilopascal</strong> (kPa) indicating the pressure in the main reservoir at which the air compressor is deactivated. As a consequence, no pressure in either of the brake components can exceed this value. The default value is 780.</p>
 <hr>
+<h4 id="default-flow-rates-for-other-brake-system-components">Default flow rates for other brake system components</h4>
+<p>When using a <strong>train.dat</strong> file the following default flow rates appply between the other components of the brake system:</p>
+<div class="overflow-container">
+<table class='type0'>
+<thead>
+<tr>
+<th></th>
+<th>Main Compressor</th>
+<th>Equalizing Reservoir</th>
+<th>Auxiliary Reservoir</th>
+<th>Brake Pipe</th>
+<th>Straight Air Pipe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Charge rate</td>
+<td>5kPa /s</td>
+<td>20kPa /s</td>
+<td>200kPa /s</td>
+<td>1000kPa /s</td>
+<td bgcolor='#D0D0D0'></td>
+</tr>
+<tr>
+<td>Normal flow rate</td>
+<td bgcolor='#D0D0D0'></td>
+<td>5kPa /s</td>
+<td bgcolor='#D0D0D0'></td>
+<td>1500kPa /s</td>
+<td>3000kPa /s</td>
+</tr>
+<tr>
+<td>Emergency flow rate</td>
+<td bgcolor='#D0D0D0'></td>
+<td>25kPa /s</td>
+<td bgcolor='#D0D0D0'></td>
+<td>5000kPa /s</td>
+<td>4000kPa /s</td>
+</tr>
+<tr>
+<td>Release rate</td>
+<td bgcolor='#D0D0D0'></td>
+<td bgcolor='#D0D0D0'></td>
+<td bgcolor='#D0D0D0'></td>
+<td bgcolor='#D0D0D0'></td>
+<td>2000kPa /s</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Further control over these may be obtained by using the <strong>train.xml</strong> format.</p>
 <div id="notice">
 <h4 id="brake-cylinder-and-main-reservoir">Brake cylinder and main reservoir</h4>
 <p>Note that for all brake systems, the pressure in the brake cylinder can never exceed the highest pressure that can be produced in the main reservoir. As such, setting <em>BrakeCylinderEmergencyMaximumPressure</em> to a higher value than <em>MainReservoirMaximumPressure</em> will result in lower deceleration than set by <em>Deceleration</em> in the Pressure or Deceleration section. If <em>BrakeCylinderEmergencyMaximumPressure</em> is greater than <em>MainReservoirMinimumPressure</em>, there might not be enough pressure available in the main reservoir to obtain a full service or emergency brake application, and also, the brake cylinder might not be exhausted immediately with the automatic air brake and the electromagnetic straight air brake.
