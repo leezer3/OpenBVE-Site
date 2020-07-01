@@ -78,7 +78,7 @@
           
           <ul class="third">
             
-            <li><a href="../../zh_hk/objects/native/b3d.html">The B3D object</a>
+            <li><a href="../../zh_hk/objects/native/b3d.html">B3D 物件</a>
               
             </li>
             
@@ -178,7 +178,7 @@
           
         </li>
         
-        <li><a href="../../zh_hk/routes/rw.html">The RW route</a>
+        <li><a href="../../zh_hk/routes/rw.html">RW 路線</a>
           
         </li>
         
@@ -186,7 +186,7 @@
           
         </li>
         
-        <li><a href="../../zh_hk/routes/tutorial_atc.html">Tutorial: Using ATC</a>
+        <li><a href="../../zh_hk/routes/tutorial_atc.html">教學：使用ATC</a>
           
         </li>
         
@@ -210,7 +210,7 @@
       
       <ul class="second">
         
-        <li><a href="../../zh_hk/trains/overview.html">Overview</a>
+        <li><a href="../../zh_hk/trains/overview.html">總概</a>
           
         </li>
         
@@ -222,7 +222,7 @@
           
         </li>
         
-        <li><a href="../../zh_hk/trains/extensions_cfg.html">The extensions.cfg file</a>
+        <li><a href="../../zh_hk/trains/extensions_cfg.html">extensions.cfg 檔案</a>
           
         </li>
         
@@ -435,9 +435,9 @@
 </ul>
 <h2 id="a-nameoverviewa-1-縂概"><a name="overview"></a>■ 1. 縂概</h2>
 <p>一個CSV格式嘅路線可以由文本檔案建立成路線。</p>
-<p>呢個檔案係純文本，並且可以用任意[字符編碼]（/zh_hk/information/encodings.html），但係，我哋推薦作者用UTF-8編碼格式。解析數字數據時，使用[解析方法]（/zh_hk/information/numberformats.html）係非常<strong>寬鬆</strong>嘅（特別指出嘅地方除外），我哋推薦呢個文件一般嚟講可以放喺 <em>LegacyContent</em> 文件夾（或一個內部包含* Railway *同* Train *目錄嘅文件夾）下嘅任何地方。文件名可以隨意，但擴展名(file extension)一定要係**。csv **。路線文件被從頭到尾逐行解析，每行被分割並被從左到右解析。</p>
+<p>呢個檔案係純文本，並且可以用任意[字符編碼]（/zh_hk/information/encodings.html），但係，我哋推薦作者用UTF-8編碼格式。解析數字數據時，使用[解析方法]（/zh_hk/information/numberformats.html）係非常<strong>寬鬆</strong>嘅（特別指出嘅地方除外），我哋推薦呢個文件一般嚟講可以放喺 <em>LegacyContent</em> 文件夾（或一個內部包含* Railway *同* Train *目錄嘅文件夾）下嘅任何地方。文件名可以隨意，但擴展名(file extension)一定要係**.csv **。路線文件被從頭到尾逐行解析，每行被分割並被從左到右解析。</p>
 <p>路線文件包括一系列指令, 用黎導入線路中用到的模型(Structure)結構命名空間 * 有 D 唔嚴謹地說, 在 csv 路線中同 &ldquo;章節&rdquo; &ldquo;部分&rdquo; 差不多。 ), 線路的屬性信息 (說明線路使用默認既列車同背景等信息), 文件的其餘部分係 track (軌道) 命名空間 (唔係好嚴謹咁講, 意思和段落差不多) 係一部分中, 主軌道位置 (一般以米為單位) 被用來描述軌道喺邊度轉彎, 車站嘅位置喺邊, 牆壁應當喺邊度開始、邊收檔, 以此類推。 講得明少少, track (軌道) 命名空間的指令是要放在最後嘅。</p>
-<p>The format assumes an implicit rail 0 which cannot be explicitly started or ended. Instead, it is present from the beginning of the route to the end, and it marks the rail the player&rsquo;s train drives on. rail 0 and the other rails are not only for used for visual, and also use for  <a href="../../zh_hk/routes/xml/trackfollowingobject.html">Track Following Object</a>.</p>
+<p>呢個格式默認咗一條遊戲默認的主軌道 (0号軌道), 唔可以指定它開始的位置, 都唔可以完佢。 遊戲中其他軌道同唔同嘅係, 佢由線路嘅開始一直延續到線路的終點, 代表住玩家駕駛嘅列車行駛的軌道。 除此之外, 遊戲中定義的其他軌道都係只供裝飾, 不能行駛嘅。 不過可以使用 [軌道循跡對象]/zh_hk/routes/xml/trackfollowingobject.html 嚟俾 AI 列車喺其它軌道上行駛。</p>
 <p>可以幾何意義上咁曲同抬升默認的主軌道, 而其他軌道都系相對于主軌道定義的, 並隨主軌道曲起伏。 除非特別修改定義, 線路中每25米劃分為一個區間蚊, 特定的命令只有在區間蚊嘅邊界位置 (成25米位置) 才能發揮作用。 物體嘅放置 (尤其是在彎道上) 成日基於一個坐標係, 它的軸並不隨軌道彎曲, 而是掂掂地指向鄰近嘅下一個區間蚊。</p>
 <p>➟ [仲可以查閱呢份 csv 格式嘅快速參考手冊。]
 (/zh_hk/routes/csv_quick.html)</p>
@@ -880,77 +880,77 @@ Track.FreeObj 1; 42<br>
 <strong>Options.UnitOfSpeed</strong> <em>與千米每時的換算係數</em>
 </div>
 <div id="command-arguments">
-<em><strong>FactorInKmph</strong></em>: A floating-point number representing how many kilometers per hour the desired unit has. The default value is 1.
+<em><strong>FactorInKmph</strong></em>同千米每时嘅換算系數: 一個浮點數, 表示一個單位等於幾多千米每时。 默認值是1。
 </div>
-<p>This command can be used to specify the unit of speed to be used in other commands. Examples of conversion factors:</p>
+<p>這個指令可以被用來改變其他指令使用嘅速度單位。 換算系數的幾個示例:</p>
 <div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
-<th>Desired unit</th>
-<th>Conversion factor</th>
+<th>單位</th>
+<th>換算係數</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>meters/second</td>
+<td>米每秒</td>
 <td>3.6</td>
 </tr>
 <tr>
-<td>miles/hour</td>
+<td>英里每小時</td>
 <td>1.609344</td>
 </tr>
 <tr>
-<td>kilometers/hour</td>
+<td>千米每小時</td>
 <td>1</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>In the following, all arguments of all commands are highlighted in <font color="blue">blue</font> whenever they are affected by Options.UnitOfSpeed.</p>
+<p>在下面的示例中, 會被 Options.UnitOfSpeed 影響嘅指令參數會被用<font color="blue">藍色</font>表示。</p>
 <hr>
 <div id="command">
-<strong>Options.BlockLength</strong> <em><font color="green">Length</font></em>
+<strong>Options.BlockLength</strong> <em><font color="green">長度</font></em>
 </div>
 <div id="command-arguments">
-<em><strong>Length</strong></em>: A positive floating-point number representing the length of a block, <strong>by default</strong> measured in <strong>meters</strong>. The default is 25 meters.
+<em><strong>長度</strong></em>: 一個正浮點數, 表示區間蚊嘅長度, <strong>默認</strong> 嘅單位係 <strong>米</strong>。 默認值係25米。
 </div>
-<p>This command can be used to specify the length of a block. This is an overall setting and cannot be changed in the middle of the route. <em>Length</em> is only expressed in the unit specified by Options.UnitOfLength if Options.UnitOfLength is used before Options.BlockLength.</p>
+<p>此指令可以設置隔蚊嘅長度。 係一個全局設置, 一旦設置, 唔可以來回更改。 如果在此指令之前調用了選項. 單位長度, <em>長度</em> 將使用選項. 單位長度作為單位。</p>
 <hr>
 <div id="command">
-<strong>Options.ObjectVisibility</strong> <em>Mode</em>
+<strong>Options.ObjectVisibility</strong> <em>模式</em>
 </div>
 <div id="command-arguments">
-<em><strong>Mode</strong></em>: The mode determining how objects appear and disappear. The default value is 0 (legacy).
+<em><strong>模式</strong></em>: 遊戲判斷一個物體是否可視採用的算法。 默認值係 0 (原版)。
 </div>
-<p>▸ Available options for <em>Mode</em>:</p>
+<p>▸ <em>模式</em> 嘅選項:</p>
 <div id="command-arguments">
-<strong>0</strong>: Legacy: An object is made invisible as soon as the end of the block which it resides in has been passed by the camera. This does not work well when turning the camera around. Self-intersecting track (e.g. loops) is not possible.<br>
-<strong>1</strong>: Track-based: An object is made invisible as soon as its end has been passed by the camera. This is measured in track positions. Self-intersecting track (e.g. loops) is not possible.
-</div>
-<hr>
-<div id="command">
-<strong>Options.SectionBehavior</strong> <em>Mode</em>
-</div>
-<div id="command-arguments">
-<em><strong>Mode</strong></em>: The mode determining how the Track.Section command is processed. The default value is 0 (default)
-</div>
-<p>▸ Available options for <em>Mode</em>:</p>
-<div id="command-arguments">
-<strong>0</strong>: Default: In Track.Section <em>Aspect<sub>0</sub></em>; <em>Aspect<sub>1</sub></em>; &hellip;; <em>Aspect<sub>n</sub></em>, any of the <em>Aspect<sub>i</sub></em> refer to the aspect the section should have if <em>i</em> following sections are clear.<br>
-<strong>1</strong>: Simplified: In Track.Section <em>Aspect<sub>0</sub></em>; <em>Aspect<sub>1</sub></em>; &hellip;; <em>Aspect<sub>n</sub></em>, the section bears the smallest aspect which is higher than that of the following section.
+<strong>0</strong>: 原版: 當該物體所在的區間舊已經被玩家通過, 遊戲就認為呢個物體不再可見, 都唔再加载顯示呢個物體。 遊戲不會顯示任何玩家後方嘅物體。 在朝前睇時唔會有任何問題, 但當向後看時所有物體都會消失, 且沒有任何途徑可解決。 自相交的軌道 (例如環綫) 唔會畀正確顯示。 該設置會造成唔正確且無法解決的視覺效果, 保留且默認採取該設置只係為咗兼容一些老線路。 請唔好喺新線路中採用這個設置。
+<strong>1</strong>: 基於軌道: 遊戲仍然會加载列車後方可視範圍內嘅物體。 係按照軌道位置計算嘅。 可惜自相交的軌道 (例如環綫) 都係唔會俾正確顯示。 推薦添加這個設置。
 </div>
 <hr>
 <div id="command">
-<strong>Options.CantBehavior</strong> <em>Mode</em>
+<strong>Options.SectionBehavior</strong> <em>模式</em>
 </div>
 <div id="command-arguments">
-<em><strong>Mode</strong></em>: The mode determining how cant in the Track.Curve command is processed. The default is 0 (unsigned).
+<em><strong>模式</strong></em>:track.section 指令應當被如何理解。 默認值係 0 (默認)。
 </div>
-<p>▸ Available options for <em>Mode</em>:</p>
+<p>▸ <em>模式</em> 嘅選項:</p>
 <div id="command-arguments">
-<strong>0</strong>: Unsigned: The <em>CantInMillimeters</em> parameter in Track.Curve is unsigned, i.e. the sign is ignored and the superelevation is always towards the curve center (inward). Cant cannot be applied on straight track.<br>
-<strong>1</strong>: Signed: The <em>CantInMillimeters</em> parameter in Track.Curve is signed, i.e. negative values bank outward and positive ones inward on curved track. Cant can be applied on straight track, where negative values bank toward the left and positive ones toward the right.
+<strong>0</strong>: 默認: track.section * 緊狀態 <sub>0</sub>*; * 狀態 <sub>1</sub>*; &hellip;; * 狀態<sub>n</sub>* 中, 任何一個 * 狀態<sub>i</sub>* 都代表當一個閉塞區間的前方有 *i* 個閉塞區間清空時要傳達畀信號機嘅信號狀態。
+**1**: 簡化: track.section * 緊狀態 <sub>0</sub>*; * 狀態 <sub>1</sub>*; &hellip;; * 狀態<sub>n</sub>* 中, 每個閉塞區間的信號狀態都係比佢前面一個閉塞區間嘅狀態值要高嘅最小值。
+</div>
+<hr>
+<div id="command">
+<strong>Options.CantBehavior</strong> <em>模式</em>
+</div>
+<div id="command-arguments">
+<em><strong>模式</strong></em>:Track.Curve 指令應當被如何理解。 默認值係 0 (忽略符號)
+</div>
+<p>▸ <em>模式</em> 嘅選項:</p>
+<div id="command-arguments">
+<strong>0</strong>: 忽略符號: Track.Curve 中 <em>cantinmillimeters</em> 參數係冇符號嘅, 符號會被忽略, 軌道總是會向彎道中心傾斜嚟提供彎道嚮心力。 軌道唔會喺直路段斜。
+<strong>1</strong>: 保留符號: Track.Curve 中 <em>cantinmillimeters</em> 參數是有符號嘅, 正值會使軌道向彎道中心傾斜, 負值會使軌道向彎道外側傾斜。 軌道會喺直路段斜, 正值使軌道右傾, 負值使軌道左傾。
 </div>
 <hr>
 <div id="command">

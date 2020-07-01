@@ -618,80 +618,80 @@
 <p>这定义了在隐藏相关状态时是否应播放上面定义的声音效果。</p>
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
-<p><strong>PlayOnShow</strong> and <strong>PlayOnHide</strong> will be ignored when using multiple state sounds.</p>
+<p>当使用多种状态声音时，** PlayOnShow **和** PlayOnHide **将被忽略。</p>
 </div>
 <hr>
 <div id="warning">
-<h4 id="openbve-2-compatibility-note">openBVE 2 compatibility note</h4>
-<p>During the development of openBVE (v0.9) and during the development of the animated object format, there were certain commands in existance ending in <em>RPN</em>, such as <em>TranslateXFunctionRPN</em>. These commands never made it into any official release (v1.0) and were thus never meant to be used outside of development environments. While they are still available undocumentedly, they will be removed for openBVE 2. If you are using these commands, please get rid of them as soon as possible.
+<h4 id="openbve-2兼容性说明">openBVE 2兼容性说明</h4>
+<p>在openBVE（v0.9）的开发过程中以及动画对象格式的开发过程中，存在以* RPN *结尾的某些命令，例如* TranslateXFunctionRPN *。 这些命令从未将其放入任何正式版本（v1.0）中，因此决不打算在开发环境之外使用。 尽管它们仍然可以无证地使用，但是它们将被openBVE 2删除。如果您正在使用这些命令，请尽快将其删除。
 </div>
 <hr>
-<h5 id="-about-the-formulas">● About the formulas</h5>
-<p>First of all, infix notation, which is what you can enter for <em>Formula</em>, is converted into functional notation. Thus for every infix notation, there is a corresponding functional notation. Some functions do not have an infix operator and can thus only be entered in functional notation. For operators, precedence plays an important role. You can use parantheses to override the order of precedence just as in any usual mathematical formula. Names of functions are case-insensitive.</p>
+<h5 id="关于代码">●关于代码</h5>
+<p>首先，您在 <em>式子</em> 中输入的中缀表示法，是被转换为函数来处理的。 因此，对于每个中缀符号，都有相应的函数。 某些函数没有中缀运算符，因此只能以函数符号输入。 对于运算符而言，优先级起着重要作用。 您可以像使用任何通常的数学公式一样，使用括号来指定优先级顺序。 函数名称不区分大小写。</p>
 <div id="warning-nontitle">
-<span>⚠</span><p>Please note that if the result of any mathematical operation or function would be infinity, indeterminate or non-real, 0 is returned. Numeric overflow is not prevented, so you need to take that into account yourself.</p>
+<span>⚠</span><p>请注意，如果任何数学运算或函数的结果为无穷大，不确定或非实数，则返回0。 不会处理数字的溢出，因此您需要自己考虑这一点。</p>
 </div>
-<h2 id="a-nameoperatorsa-3-list-of-infix-notation-operators"><a name="operators"></a>■ 3. List of infix notation operators</h2>
-<h5 id="-basic-arithmetics">● Basic arithmetics</h5>
+<h2 id="a-nameoperatorsa3中缀符号运算符列表"><a name="operators"></a>■3.中缀符号运算符列表</h2>
+<h5 id="基本算术">●基本算术</h5>
 <div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
-<th align="left">Infix</th>
-<th align="left">Functional</th>
-<th align="left">Description</th>
+<th align="left">中缀</th>
+<th align="left">功能</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="left"><code>a + b</code></td>
 <td align="left"><code>Plus[a,b, ...]</code></td>
-<td align="left">Represents addition</td>
+<td align="left">代表加法</td>
 </tr>
 <tr>
 <td align="left"><code>a - b</code></td>
 <td align="left"><code>Subtract[a,b]</code></td>
-<td align="left">Represents subtraction</td>
+<td align="left">代表减法</td>
 </tr>
 <tr>
 <td align="left"><code>-a</code></td>
 <td align="left"><code>Minus[a]</code></td>
-<td align="left">Negates the number</td>
+<td align="left">取相反数</td>
 </tr>
 <tr>
 <td align="left"><code>a * b</code></td>
 <td align="left"><code>Times[a,b,...]</code></td>
-<td align="left">Represents multiplication</td>
+<td align="left">代表乘法</td>
 </tr>
 <tr>
 <td align="left"><code>a / b</code></td>
 <td align="left"><code>Divide[a,b]</code></td>
-<td align="left">Represents division</td>
+<td align="left">代表除法</td>
 </tr>
 </tbody>
 </table>
 </div>
-<h5 id="-comparisons">● Comparisons</h5>
-<p>All comparisons return 1 for true and 0 for false.</p>
+<h5 id="比较运算符">●比较运算符</h5>
+<p>所有比较均返回1（真, True）和0（假, False）。</p>
 <div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
-<th align="left">Infix</th>
-<th>Functional</th>
-<th>Description</th>
+<th align="left">中缀</th>
+<th>功能</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="left"><code>a == b</code></td>
 <td><code>Equal[a,b]</code></td>
-<td>True (1) if <em>a</em> equals <em>b</em></td>
+<td>如果 <em>a</em> 等于 <em>b</em> 则为真（1）</td>
 </tr>
 <tr>
 <td align="left"><code>a != b</code></td>
 <td><code>Unequal[a,b]</code></td>
-<td>True (1) if <em>a</em> does not equal <em>b</em></td>
+<td>如果 <em>a</em> 不等于 <em>b</em> 则为真（1）</td>
 </tr>
 <tr>
 <td align="left"><code>a &lt; b</code></td>
@@ -833,7 +833,7 @@
 Please also note that some combinations of prefix and infix operators are not recognised. For example <code>a*-b</code> is not accepted. Use <code>a*(-b)</code> or <code>-a*b</code> instead.</p>
 </div>
 <h2 id="a-namefunctionsa-4-list-of-functions"><a name="functions"></a>■ 4. List of functions</h2>
-<h5 id="-basic-arithmetics-1">● Basic arithmetics</h5>
+<h5 id="-basic-arithmetics">● Basic arithmetics</h5>
 <div class="overflow-container">
 <table class='type0 responsive-table-2col'>
 <thead>
@@ -1112,6 +1112,10 @@ Please also note that some combinations of prefix and infix operators are not re
 <tr>
 <td><code>nextStationStop</code></td>
 <td>The index of the next station where the train must stop.</td>
+</tr>
+<tr>
+<td><code>terminalStation</code></td>
+<td>The index of the terminal station for this train.</td>
 </tr>
 </tbody>
 </table>

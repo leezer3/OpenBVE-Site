@@ -78,7 +78,7 @@
           
           <ul class="third">
             
-            <li><a href="../../zh_hk/objects/native/b3d.html">The B3D object</a>
+            <li><a href="../../zh_hk/objects/native/b3d.html">B3D 物件</a>
               
             </li>
             
@@ -178,7 +178,7 @@
           
         </li>
         
-        <li><a href="../../zh_hk/routes/rw.html">The RW route</a>
+        <li><a href="../../zh_hk/routes/rw.html">RW 路線</a>
           
         </li>
         
@@ -186,7 +186,7 @@
           
         </li>
         
-        <li><a href="../../zh_hk/routes/tutorial_atc.html">Tutorial: Using ATC</a>
+        <li><a href="../../zh_hk/routes/tutorial_atc.html">教學：使用ATC</a>
           
         </li>
         
@@ -210,7 +210,7 @@
       
       <ul class="second">
         
-        <li><a href="../../zh_hk/trains/overview.html">Overview</a>
+        <li><a href="../../zh_hk/trains/overview.html">總概</a>
           
         </li>
         
@@ -222,7 +222,7 @@
           
         </li>
         
-        <li><a href="../../zh_hk/trains/extensions_cfg.html">The extensions.cfg file</a>
+        <li><a href="../../zh_hk/trains/extensions_cfg.html">extensions.cfg 檔案</a>
           
         </li>
         
@@ -399,7 +399,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>The <strong>.rw</strong> route format</h1>
+          <h1><strong>.rw</strong> 路線格式</h1>
         </div>
 
         
@@ -408,12 +408,12 @@
 
 
 <div id="content">
-  <p>The RW route format is functionally equivalent to the CSV route format, but differs in syntax, structure and choice of words. Given that the RW route format is not frequently used any longer, it is recommended to use the CSV route format instead.</p>
+  <p>RW路線格式嘅功能同CSV差唔多, 但使用唔同嘅句法, 結構同指令名稱。因RW路線格式已經唔再常用, 建議使用CSV路線格式。</p>
 <p>There is no full documentation on RW routes, only the quick reference which illustrates the available commands and syntax:</p>
 <p>➟ <a href="../../zh_hk/routes/rw_quick.html">Quick reference&hellip;</a></p>
 <p>Please refer to the documentation for CSV routes for the behavior of the various commands, but mind that choice of words and syntax differ in CSV. You can also compare against the <a href="../../zh_hk/routes/csv_quick.html">quick reference for CSV routes</a> to work out the differences between the formats.</p>
 <hr>
-<p><strong>Behavioral differences between CSV and RW</strong></p>
+<p><strong>RW同CSV唔同嘅特性</strong></p>
 <p>In RW, comments starting with a semicolon can only be used at the end of a line inside the [Railway] section. Outside of the [Railway] section, comments must appear on their own line.</p>
 <p>In RW, every piece of text before the first [Section] is considered part of the route description, which is Route.Comment in CSV.</p>
 <p>In RW, the default @Height at the beginning of the route is 0.3 meters, while in CSV, the default Track.Height is 0.0 meters. Additionally, every value passed to @Height is added an additional 0.3 meters in RW.</p>

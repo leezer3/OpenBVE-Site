@@ -437,7 +437,7 @@
 <p>CSVルートは、テキストファイルに記述することで路線データを作成できます。</p>
 <p>ファイルは任意のエンコードで記述されたプレーンテキストですが <a href="../../ja/information/encodings.html">encoding</a>、好ましい選択としてはバイトオーダー付きのUTF-8です。 <a href="../../ja/information/numberformats.html">parsing model</a> に用いる数字は <strong>ルーズ</strong>（特に明記しない限りは）ですが、 それでも出力にあたっては <em>厳密な</em> 出力をすることが望ましいです。  ファイルは任意のフォルダに格納できますが、カレントフォルダもしくは相対パスは <em>Railway</em> と <em>Train</em> フォルダ 以下に存在しなければなりません。 ファイル名は任意ですが、 拡張子は必ず <strong>.csv</strong> を用います。 ファイルは基本的に上から下に向かって解釈されていき、各行は式ごとに分割され、左から右に向かって解釈されていきます。</p>
 <p>ルートファイルは、(Structure 名前空間)で定義された一連の命令セットにより、ルートデータ内で一貫して共通で利用されます 。 路線データ向けの追加のプロパティ、路線側が定義した既定の列車、沿線の背景のイメージファイルも同様に定義することができます。 最後に、ルートファイルは Track 名前空間でのコマンドにより指示します。 ここでは、 線路の座標 (殆どの場合、単位はメートル) を指定することにより、線路をカーブさせるタイミングや駅を設置したり、 壁や土手などを開始したり終わらせたりします。一般的には、 Track 名前空間はその他の名前空間を予め記述し、定義した後に記述する必要があります。</p>
-<p>The format assumes an implicit rail 0 which cannot be explicitly started or ended. Instead, it is present from the beginning of the route to the end, and it marks the rail the player&rsquo;s train drives on. rail 0 and the other rails are not only for used for visual, and also use for  <a href="../../ja/routes/xml/trackfollowingobject.html">Track Following Object</a>.</p>
+<p>このフォーマットには、暗黙の規定として明示的に開始、または終了することが出来ない rail 0 があり、 それは路線の始端から終端まで常に存在します。 そしてそれはプレイヤーが走行するレールを示します。 rail 0 とその他の レールは 視覚的表示に用いられるだけでなく、 同様に <a href="../../ja/routes/xml/trackfollowingobject.html">Track Following Object</a> にも用いられます。</p>
 <p>幾何学的に、カーブや勾配は暗黙の ｒａｉｌ ０ に対して作用しますが、 その他のすべてのレールは rail 0 に相対的に連動して定義され、 rail 0 のカーブや勾配に従って追従します。 オーバーライドされない限りファイルフォーマットではブロック長は25mの固定長で構築され、 特定のコマンドは25mのブロック単位でしか用いることができません。 オブジェクトの配置は、常に直線的に接続する非曲線座標系を想定しています。</p>
 <p>➟ <a href="../../ja/routes/csv_quick.html">CSV ルートフォーマットのクイックリファレンスも参照して下さい&hellip;</a></p>
 <h2 id="a-namesyntaxa-2-文法"><a name="syntax"></a>■ 2. 文法</h2>
@@ -845,8 +845,8 @@ Track.FreeObj 1; 42<br>
 <table class='type0'>
 <thead>
 <tr>
-<th>Desired unit</th>
-<th>Conversion factor</th>
+<th>希望するユニットの単位</th>
+<th>閑散係数</th>
 </tr>
 </thead>
 <tbody>
@@ -873,21 +873,21 @@ Track.FreeObj 1; 42<br>
 </tbody>
 </table>
 </div>
-<p>In the following, all arguments of all commands are highlighted in <font color="green">green</font> whenever they are affected by Options.UnitOfLength.</p>
+<p>以下においては、 Options.UnitOfLengthの影響を受ける時はいつも、全てのコマンドの全ての引数は <font color="green">緑</font> にハイライトされます。</p>
 <hr>
 <div id="command">
 <strong>Options.UnitOfSpeed</strong> <em>FactorInKmph</em>
 </div>
 <div id="command-arguments">
-<em><strong>FactorInKmph</strong></em>: A floating-point number representing how many kilometers per hour the desired unit has. The default value is 1.
+<em><strong>FactorInKmph</strong></em>: 希望のユニットが持つ、一時間あたりのキロメートルの数を表す浮動小数点数。 デフォルト値は 1 です。
 </div>
-<p>This command can be used to specify the unit of speed to be used in other commands. Examples of conversion factors:</p>
+<p>このコマンドは他のコマンドで使用する速度の単位をを指定して使用することが出来ます。閑散係数の例:</p>
 <div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
-<th>Desired unit</th>
-<th>Conversion factor</th>
+<th>希望の単位</th>
+<th>換算係数</th>
 </tr>
 </thead>
 <tbody>
@@ -906,35 +906,35 @@ Track.FreeObj 1; 42<br>
 </tbody>
 </table>
 </div>
-<p>In the following, all arguments of all commands are highlighted in <font color="blue">blue</font> whenever they are affected by Options.UnitOfSpeed.</p>
+<p>以下においては、 Options.UnitOfLengthの影響を受ける時はいつも、全てのコマンドの全ての引数は <font color="blue">青</font> にハイライトされます。</p>
 <hr>
 <div id="command">
 <strong>Options.BlockLength</strong> <em><font color="green">Length</font></em>
 </div>
 <div id="command-arguments">
-<em><strong>Length</strong></em>: A positive floating-point number representing the length of a block, <strong>by default</strong> measured in <strong>meters</strong>. The default is 25 meters.
+<em><strong>Length</strong></em>: ブロック長を表す正の浮動小数点数。 <strong>by default</strong> デフォルトの単位は <strong>メートル</strong> です。 デフォルト値は 25 メートルです。
 </div>
-<p>This command can be used to specify the length of a block. This is an overall setting and cannot be changed in the middle of the route. <em>Length</em> is only expressed in the unit specified by Options.UnitOfLength if Options.UnitOfLength is used before Options.BlockLength.</p>
+<p>このコマンドを用いることで、ブロック長を指定できます。 これは路線全体の設定であり、途中で変更をすることは出来ません。 <em>Length</em> は、 Options.UnitOfLength が Options.BlockLength より前で使用されている場合、 Options.UnitOfLength で指定された単位でのみ表されます。</p>
 <hr>
 <div id="command">
 <strong>Options.ObjectVisibility</strong> <em>Mode</em>
 </div>
 <div id="command-arguments">
-<em><strong>Mode</strong></em>: The mode determining how objects appear and disappear. The default value is 0 (legacy).
+<em><strong>Mode</strong></em>: オブジェクトの表示方法と非表示の方法を決定するモード。デフォルト値は0 (レガシー)です。
 </div>
-<p>▸ Available options for <em>Mode</em>:</p>
+<p>▸  <em>Mode</em> で使用可能なオプション:</p>
 <div id="command-arguments">
-<strong>0</strong>: Legacy: An object is made invisible as soon as the end of the block which it resides in has been passed by the camera. This does not work well when turning the camera around. Self-intersecting track (e.g. loops) is not possible.<br>
-<strong>1</strong>: Track-based: An object is made invisible as soon as its end has been passed by the camera. This is measured in track positions. Self-intersecting track (e.g. loops) is not possible.
+<strong>0</strong>: レガシーモード: オブジェクトが存在するブロックの最後の座標がカメラによって通過するとすぐに、オブジェクトが非表示になります。 これは、カメラを回転させるとうまく機能しません。 自己交差トラック (ループなど) は出来ません。<br>
+<strong>1</strong>: 線路ベース: カメラがオブジェクトの終わりを通過するとすぐに、オブジェクトは非表示になります。 これは線路の位置ベースで測定されます。 自己交差トラック (ループなど) は出来ません。
 </div>
 <hr>
 <div id="command">
 <strong>Options.SectionBehavior</strong> <em>Mode</em>
 </div>
 <div id="command-arguments">
-<em><strong>Mode</strong></em>: The mode determining how the Track.Section command is processed. The default value is 0 (default)
+<em><strong>Mode</strong></em>: Track.Section コマンドの処理方法を決定するモード。デフォルト値は0 (デフォルト) です。
 </div>
-<p>▸ Available options for <em>Mode</em>:</p>
+<p>▸ <em>Mode</em> で使用可能なオプション:</p>
 <div id="command-arguments">
 <strong>0</strong>: Default: In Track.Section <em>Aspect<sub>0</sub></em>; <em>Aspect<sub>1</sub></em>; &hellip;; <em>Aspect<sub>n</sub></em>, any of the <em>Aspect<sub>i</sub></em> refer to the aspect the section should have if <em>i</em> following sections are clear.<br>
 <strong>1</strong>: Simplified: In Track.Section <em>Aspect<sub>0</sub></em>; <em>Aspect<sub>1</sub></em>; &hellip;; <em>Aspect<sub>n</sub></em>, the section bears the smallest aspect which is higher than that of the following section.
@@ -946,7 +946,7 @@ Track.FreeObj 1; 42<br>
 <div id="command-arguments">
 <em><strong>Mode</strong></em>: The mode determining how cant in the Track.Curve command is processed. The default is 0 (unsigned).
 </div>
-<p>▸ Available options for <em>Mode</em>:</p>
+<p>▸ <em>Mode</em> で使用可能なオプション:</p>
 <div id="command-arguments">
 <strong>0</strong>: Unsigned: The <em>CantInMillimeters</em> parameter in Track.Curve is unsigned, i.e. the sign is ignored and the superelevation is always towards the curve center (inward). Cant cannot be applied on straight track.<br>
 <strong>1</strong>: Signed: The <em>CantInMillimeters</em> parameter in Track.Curve is signed, i.e. negative values bank outward and positive ones inward on curved track. Cant can be applied on straight track, where negative values bank toward the left and positive ones toward the right.
@@ -956,106 +956,106 @@ Track.FreeObj 1; 42<br>
 <strong>Options.FogBehavior</strong> <em>Mode</em>
 </div>
 <div id="command-arguments">
-<em><strong>Mode</strong></em>: The mode determining how the Track.Fog command is processed. The default value is 0 (Block-based).
+<em><strong>Mode</strong></em>: Track.Fog コマンドの処理方法を決定するモード。デフォルト値は0 (ブロックベース) です。
 </div>
-<p>▸ Available options for <em>Mode</em>:</p>
+<p>▸ <em>Mode</em> で使用可能なオプション:</p>
 <div id="command-arguments">
-<strong>0</strong>: Block-based: Fog color and ranges are interpolated from the beginning of the block where Track.Fog is used with the old settings to the end of the block with the new settings.<br>
-<strong>1</strong>: Interpolated: Fog color and ranges are interpolated between adjacent Track.Fog commands. This behavior mimicks Track.Brightness.
+<strong>0</strong>: ブロックベース: 霧の色と範囲は Track.Fog が古い設定で使用されているブロックの最初から、新しい設定のブロックの最後まで補完されます。<br>
+<strong>1</strong>: 補間: 霧の色と範囲は、隣接する Track.Fog コマンドの間で補間されます。 この動作は Track.Brightness を模倣しています。
 </div>
 <hr>
 <div id="command">
 <strong>Options.CompatibleTransparencyMode</strong> <em>Mode</em>
 </div>
 <div id="command-arguments">
-<em><strong>Mode</strong></em>: The mode determining how transparencies are processed in BVE2/ BVE4 objects which use a restricted color pallet. This may be used on a per-route basis to override the value set in &lsquo;Options&rsquo;.
+<em><strong>Mode</strong></em>: カラーパレットの制限がある場合のBVE2/4のオブジェクトでの透明度の処理方法を決定するモード。 これは &lsquo;Options&rsquo; で設定された値を上書きするために路線ごとに使用できます。
 </div>
-<p>▸ Available options for <em>Mode</em>:</p>
+<p>▸ <em>Mode</em> で使用可能なオプション:</p>
 <div id="command-arguments">
-<strong>0</strong>: Off: Colors are matched specifically. If the specified transparent color does not exist within the color pallet, no transparency will be added.<br>
-<strong>1</strong>: On: Fuzzy matching. If the texture uses a restricted color pallet, the transparent color will be clamped to the nearest available color in the pallet.
+<strong>0</strong>: Off: 指定の色と明示的に一致させます。 指定された透明色がカラーパレット内に存在しない場合、透明度は追加されません。<br>
+<strong>1</strong>: On: ファジー選択。. テクスチャが制限されたカラーパレットを使用している場合、透明色はパレットで最も近い使用可能な色に自動的に設定されます。
 </div>
 <hr>
 <div id="command">
 <strong>Options.EnableBveTsHacks</strong> <em>Mode</em>
 </div>
 <div id="command-arguments">
-<em><strong>Mode</strong></em>: The mode determining whether various hacks are applied in order to fix BVE2 / BVE4 content. This may be used on a per-route basis to override the value set in &lsquo;Options&rsquo;.
+<em><strong>Mode</strong></em>: BVE2/4の路線データを修正するための様々な'ハック'が適用されるかどうかを指定するモード。 これは &lsquo;Options&rsquo; で設定された値を上書きするために路線ごとに使用できます。
 </div>
-<p>▸ Available options for <em>Mode</em>:</p>
+<p>▸ <em>Mode</em> で使用可能なオプション:</p>
 <div id="command-arguments">
-<strong>0</strong>: Off: Hacks are disabled.<br>
-<strong>1</strong>: On: Hacks are enabled.
+<strong>0</strong>: Off: &lsquo;ハック&rsquo; を無効にします。<br>
+<strong>1</strong>: On: &lsquo;ハック&rsquo; を有効にします。
 </div>
-<h2 id="a-nameroutea-5-the-route-namespace"><a name="route"></a>■ 5. The Route namespace</h2>
-<p>Commands from this namespace define general properties of the route.</p>
+<h2 id="a-nameroutea-5-route-名前空間"><a name="route"></a>■ 5. Route 名前空間</h2>
+<p>この名前空間のコマンドは、路線の一般的なプロパティを定義します。</p>
 <hr>
 <div id="command">
 <strong>Route.Comment</strong> <em>Text</em>
 </div>
 <div id="command-arguments">
-<em><strong>Text</strong></em>: The route comments which appear in the route selection dialog.
+<em><strong>Text</strong></em>: メインメニューのダイアログで路線が選択された時に表示されるコメント。
 </div>
 <div id="warning-nontitle">
-<span>⚠</span><p>You need to use $Chr directives if you want to include newlines, commas and the like in the text.</p>
+<span>⚠</span><p>テキストに改行やコンマ等を含めたい場合は $Chr ディレクティブを使用する必要があります。</p>
 </div>
 <hr>
 <div id="command">
 <strong>Route.Image</strong> <em>File</em>
 </div>
 <div id="command-arguments">
-<em><strong>File</strong></em>: The file name of the image which appears in the route selection dialog, relative to the route&rsquo;s folder.
+<em><strong>File</strong></em>: メインメニューの路線選択ダイアログで路線が選択された時に表示される画像。 路線フォルダを基準としたファイルのパス。
 </div>
 <hr>
 <div id="command">
 <strong>Route.Timetable</strong> <em>Text</em>
 </div>
 <div id="command-arguments">
-<em><strong>Text</strong></em>: The text which appears at the top of the default timetable.
+<em><strong>Text</strong></em>: デフォルトの時刻表の上部に表示されるテキスト。
 </div>
 <div id="warning-nontitle">
-<span>⚠</span><p>You need to use $Chr directives if you want to include newlines, commas and the like in the text.</p>
+<span>⚠</span><p>テキストに改行やコンマ等を含めたい場合は $Chr ディレクティブを使用する必要があります。</p>
 </div>
 <hr>
 <div id="command">
 <strong>Route.Change</strong> <em>Mode</em>
 </div>
 <div id="command-arguments">
-<em><strong>Mode</strong></em>: The mode for the train&rsquo;s safety system to start in. The default value is implementation-specific.
+<em><strong>Mode</strong></em>: 路線の開始時に列車の保安装置を起動させるモード。デフォルトは実装固有です。
 </div>
-<p>▸ Available options for <em>Mode</em>:</p>
+<p>▸ <em>Mode</em> で使用可能なオプション:</p>
 <div id="command-arguments">
-<strong>-1</strong>: The safety system is <strong>activated</strong> and the <em>service</em> brakes are applied.<br>
-<strong>0</strong>: The safety system is <strong>activated</strong> and the <strong>emergency</strong> brakes are applied.<br>
-<strong>1</strong>: The safety system is <em>deactivated</em> and the <strong>emergency</strong> brakes are applied.
+<strong>-1</strong>: 保安装置を <strong>有効</strong> にし、かつ <em>常用最大</em> ブレーキが適用されます。<br>
+<strong>0</strong>: 保安装置を <strong>有効</strong> にし、かつ <strong>非常</strong> ブレーキが適用されます。<br>
+<strong>1</strong>: 保安装置を <em>無効</em> にし、かつ <strong>非常</strong> ブレーキが適用されます。
 </div>
 <hr>
 <div id="command">
 <strong>Route.Gauge</strong> <em>ValueInMillimeters</em>
 </div>
 <div id="command-arguments">
-<em><strong>ValueInMillimeters</strong></em>: A floating-point number representing the rail gauge, measured in <strong>millimeters</strong> (0.001 meters). The default value is 1435.
+<em><strong>ValueInMillimeters</strong></em>: <strong>ミリメートル</strong> (0.001 meters)単位の、線路の幅を設定します。 デフォルト値は 1435です。
 </div>
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
-<p>Train.Gauge is the same as Route.Gauge.</p>
+<p>Train.Gauge は Route.Gauge と同じ意味を持ちます。</p>
 </div>
 <hr>
 <div id="command">
 <strong>Route.Signal</strong>(<em>AspectIndex</em>)<font color="gray">.Set</font> <em><font color="blue">Speed</font></em>
 </div>
 <div id="command-arguments">
-<em><strong>AspectIndex</strong></em>: A non-negative integer representing the signal aspect. The aspect 0 corresponds to red.<br>
-<em><strong><font color="blue">Speed</font></strong></em>: A non-negative floating-point number representing the allowed speed for this aspect, <strong>by default</strong> measured in <strong>kilometers per hour</strong> (km/h).
+<em><strong>AspectIndex</strong></em>: 信号が指し示す状態「アスペクト」を表す、負でない整数。 アスペクト 0 は赤を示します。<br>
+<em><strong><font color="blue">Speed</font></strong></em>: 対応するアスペクトが許容する速度を定義する浮動小数点数。 <strong>デフォルト</strong> の単位は <strong>キロメートル毎時</strong> (km/h) です。
 </div>
-<p>Use this command to associate speed limits to signal aspects. Aspect 0 represents a red signal, higher values represent more permissive aspects. The default values (for the included Japanese signals) are:</p>
+<p>このコマンドを使用して、速度制限を信号の現示「アスペクト」に関連付けます。 アスペクト 0 は赤信号を示し、 値が大きいほど速度の許容度が高いことを表します。デフォルトの値(日本の信号システム)は次のとおりです:</p>
 <div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
-<th><em>Index</em></th>
-<th>Aspect</th>
-<th>Speed</th>
+<th><em>インデックス番号</em></th>
+<th>アスペクト</th>
+<th>速度</th>
 </tr>
 </thead>
 <tbody>
@@ -1082,12 +1082,12 @@ Track.FreeObj 1; 42<br>
 <tr>
 <td>4</td>
 <td><font color="#00C000">●</font></td>
-<td><em>unlimited</em></td>
+<td><em>無制限</em></td>
 </tr>
 <tr>
 <td>5</td>
 <td><font color="#00C000">●●</font></td>
-<td><em>unlimited</em></td>
+<td><em>無制限</em></td>
 </tr>
 </tbody>
 </table>
@@ -1097,108 +1097,108 @@ Track.FreeObj 1; 42<br>
 <strong>Route.RunInterval</strong> <em>Interval<sub>0</sub></em>; <em>Interval<sub>1</sub></em>; &hellip;; <em>Interval<sub>n-1</sub></em>
 </div>
 <div id="command-arguments">
-<em><strong>Interval<sub>i</sub></strong></em>: A floating-point number representing the time interval between the player&rsquo;s train&rsquo;s timetable and that of another train to be created, measured in <strong>seconds</strong>. Positive values indicate an earlier train, negative numbers a later train.
+<em><strong>Interval<sub>i</sub></strong></em>: 運転する列車の時刻表とは別に作成される、別の列車の時刻表との間の時間間隔を表す浮動小数点数。 <strong>秒</strong> で表します。 正の値は運転する列車の前方の列車を示し、負の値は後方を示します。
 </div>
-<p>This command creates one or more preceding or following trains. These other trains are visible, fully operational, and use the same train as the player has. The other trains follow the same schedule as the player does, but are offset in time by <em>Intervali</em>. Via the Track.Sta command, you can also define stations where only the player or only the other trains should stop. Follow-up trains only appear once the section they are placed in has been cleared by other trains, but the player&rsquo;s train is introduced regardless of the current signalling section&rsquo;s state. Therefore, you should make sure that other trains have cleared the area where the player&rsquo;s train will appear when the scenario begins.</p>
+<p>このコマンドは、一つ以上の運転する列車の前後の列車を生成します。此等の列車は路線に表示され、完全に機能し、運転する列車と同じ外観を使用します。 他の列車は運転する列車と同じ時刻表に従いますが、 <em>Interval</em> によって時間的にオフセットされます。 Track.Sta コマンドにより、運転する列車のみ、または前後を走る列車のみが停止する駅を定義することが出来ます。 後続の列車は配置されたセクションが他の列車によってクリアされた後にのみ表示されますが、運転する列車は現在の信号セクションの状態に関係なく設置されます。 従って、路線の開始時に運転する列車が表示されるセクションを前後の列車がクリアしていることを確認する必要があります。</p>
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
-<p>Route.RunInterval is the same as Train.Interval.</p>
+<p>Route.RunInterval は Train.Interval と同じ意味を持ちます。</p>
 </div>
 <hr>
 <div id="command">
 <strong>Route.AccelerationDueToGravity</strong> <em>Value</em>
 </div>
 <div id="command-arguments">
-<strong>Value</strong>: A positive floating-point number representing the acceleration due to gravity in <strong>meters per second squared</strong> (m/s²). The default value is 9.80665.
+<strong>Value</strong>: <strong>メートル毎秒の二乗</strong> (m/s²) で重力による加速度を表す正の浮動小数点数。 デフォルト値は 9.80665 です。
 </div>
 <hr>
 <div id="command">
 <strong>Route.Elevation</strong> <em><font color="green">Height</font></em>
 </div>
 <div id="command-arguments">
-<em><strong><font color="green">Height</font></strong></em>: A floating-point number representing the initial height above sea level, <strong>by default</strong> measured in <strong>meters</strong> (m). The default value is 0.
+<em><strong><font color="green">Height</font></strong></em>:  <strong>メートル</strong> (m) で表される、海抜の初期の高さを表す浮動小数点数。  <strong>デフォルト値</strong> は0です。
 </div>
 <hr>
 <div id="command">
 <strong>Route.Temperature</strong> <em>ValueInCelsius</em>
 </div>
 <div id="command-arguments">
-<em><strong>Value</strong></em>: A floating-point number representing the initial temperature in <strong>Celsius</strong>. The default value is 20.
+<em><strong>Value</strong></em>:  <strong>摂氏</strong> の初期の温度を表す浮動小数点数。 デフォルト値は20です。
 </div>
 <hr>
 <div id="command">
 <strong>Route.Pressure</strong> <em>ValueInKPa</em>
 </div>
 <div id="command-arguments">
-<em><strong>ValueInKPa</strong></em>: A positive floating-point number representing the initial air pressure in <strong>kPa</strong> (1000 Pascal). The default value is 101.325.
+<em><strong>ValueInKPa</strong></em>:  <strong>kPa</strong> (1000 パスカル)の初期気圧を表す正の浮動小数点数。 デフォルト値は 101.325 です。
 </div>
 <hr>
 <div id="command">
 <strong>Route.DisplaySpeed</strong> <em>Unit; ConversionFactor</em>
 </div>
 <div id="command-arguments">
-<em><strong>Unit</strong></em>: The textual units in which speed-related messages are to be displayed.    <em><strong>ConversionFactor</strong></em>: The conversion factor between km/h and your custom unit of speed. For mph, this is 0.621371.
+<em><strong>Unit</strong></em>: 速度関連のメッセージが表示されるテキストの単位。 <em><strong>ConversionFactor</strong></em>: km/hに対するカスタム速度単位の間の変換係数。 mph の場合は 0.621371 になります。
 </div>
-<p>This command allows speed related messages (overspeed etc.) to be displayed in a custom unit, for example mph.</p>
+<p>このコマンドを使用すると、速度に関連するメッセージが表示された際(速度超過など)、カスタム速度単位、 mph等で表示することが出来ます。</p>
 <hr>
 <div id="command">
 <strong>Route.LoadingScreen</strong> <em>Image</em>
 </div>
 <div id="command-arguments">
-<em><strong>Image</strong></em>: A path to a supported image file.
+<em><strong>Image</strong></em>: サポートされている画像ファイルへのパス
 </div>
-<p>This command allows a custom image to be set as the loading screen background.</p>
+<p>このコマンドを使用すると、カスタム画像をロード画面の背景として使用することが出来ます。</p>
 <hr>
 <div id="command">
 <strong>Route.StartTime</strong> <em>Time</em>
 </div>
 <div id="command-arguments">
-<em><strong>Time</strong></em>: The time at which the simulation is to start.
+<em><strong>Time</strong></em>: シミュレーションを開始する時刻
 </div>
-<p>This command allows the start time of the simulation to be set.</p>
+<p>このコマンドを使用すると、シミュレーションの開始時刻を設定することが出来ます。</p>
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
-<p>If this is not set or is invalid, the simulation will start at the arrival time set at the first station.</p>
+<p>この値が設定されていないか無効な場合、シミュレーションは始発駅に設定された到着時間に開始されます。</p>
 </div>
 <hr>
 <div id="command">
 <strong>Route.DynamicLight</strong> <em>Dynamic.XML</em>
 </div>
 <div id="command-arguments">
-<em><strong>Dynamic.XML</strong></em>: A path to a Dynamic Lighting definition XML file.
+<em><strong>Dynamic.XML</strong></em>: ダイナミックライティングが定義されたXMLファイルへのパス
 </div>
-<p>This command may be used as an alternative to the <em>Route.AmbientLight</em> , <em>Route.DirectionalLight</em> and <em>Route.LightDirection</em> commands.</p>
-<p>It allows the lighting to be varied using a time-based model, and is described fully on the following page:</p>
-<p><a href="../../ja/routes/xml/dynamiclight.html">Dynamic Lighting</a></p>
+<p>このコマンドは、 <em>Route.AmbientLight</em> 、 <em>Route.DirectionalLight</em> および <em>Route.LightDirection</em> コマンドの代わりとして使用できます。</p>
+<p>これを用いることで、時間ベースのモデルを使用して照明を変化させることが出来ます。次のページで詳しく説明しています。</p>
+<p><a href="../../ja/routes/xml/dynamiclight.html">ダイナミックライティング</a></p>
 <hr>
 <div id="command">
 <strong>Route.AmbientLight</strong> <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em>
 </div>
 <div id="command-arguments">
-<em><strong>RedValue</strong></em>: An integer ranging from 0 to 255 representing the red component of the ambient light. The default value is 160.<br>
-<em><strong>GreenValue</strong></em>: An integer ranging from 0 to 255 representing the green component of the ambient light. The default value is 160.<br>
-<em><strong>BlueValue</strong></em>: An integer ranging from 0 to 255 representing the blue component of the ambient light. The default value is 160.
+<em><strong>RedValue</strong></em>: 環境光の赤の要素を表す0から255までの範囲の整数。 デフォルト値は 160 です。<br>
+<em><strong>GreenValue</strong></em>: 環境光の緑の要素を表す0から255までの範囲の整数。 デフォルト値は 160 です。<br>
+<em><strong>BlueValue</strong></em>: 環境光の青の要素を表す0から255までの範囲の整数。 デフォルト値は 160 です。
 </div>
-<p>This command defines the ambient light color to be used. All polygons in the scene are illuminated by the ambient light regardless of the light direction.</p>
+<p>このコマンドは、使用する環境光の色を定義します。 3D空間内の全てのポリゴンは、ライトの方向に関係なく、 環境光によって照らされます。</p>
 <hr>
 <div id="command">
 <strong>Route.DirectionalLight</strong> <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em>
 </div>
 <div id="command-arguments">
-<em><strong>RedValue</strong></em>: An integer ranging from 0 to 255 representing the red component of the directional light. The default value is 160.<br>
-<em><strong>GreenValue</strong></em>: An integer ranging from 0 to 255 representing the green component of the directional light. The default value is 160.<br>
-<em><strong>BlueValue</strong></em>: An integer ranging from 0 to 255 representing the blue component of the directional light. The default value is 160.
+<em><strong>RedValue</strong></em>: 指向性ライトの赤の要素を表す0から255までの範囲の整数。 デフォルト値は160です。<br>
+<em><strong>GreenValue</strong></em>: 指向性ライトの緑の要素を表す0から255までの範囲の整数。 デフォルト値は160です。<br>
+<em><strong>BlueValue</strong></em>: 指向性ライトの緑の要素を表す0から255までの範囲の整数。 デフォルト値は160です。
 </div>
-<p>This command defines the directional light to be used. The polygons in the scene are only fully illuminated by the directional light if the light direction points at the front faces. If pointing at back faces, no light is contributed. <em>Route.LightDirection</em> should be set to specify the light direction.</p>
+<p>このコマンドは、使用する指向性ライトを定義します。 3D空間内のポリゴンは、ライトの方向が前面に差している場合にのみ、指向性ライトによって完全に照らされます。 背面に差している場合、指向性ライトは効果を与えません。 <em>Route.LightDirection</em> を設定して、光の方向を指定する必要があります。</p>
 <hr>
 <div id="command">
 <strong>Route.LightDirection</strong> <em>Theta</em>; <em>Phi</em>
 </div>
 <div id="command-arguments">
-<em><strong>Theta</strong></em>: A floating-point number representing the angle in <strong>degrees</strong> which controls the pitch of the light direction. The default value is 60.<br>
-<em><strong>Phi</strong></em>: A floating-point number representing the angle in <strong>degrees</strong> which controls the planar rotation of the light direction. The default value is about -26.57.
+<em><strong>Theta</strong></em>: ライトの方向のピッチを制御する <strong>度</strong> の角度を表す浮動小数点数。 デフォルト値は 60 です。<br>
+<em><strong>Phi</strong></em>: ライトの方向の回転の面の <strong>度</strong> の角度を表す浮動小数点数。 デフォルト値は -26.57 です。
 </div>
-<p>This command defines the initial light direction for track position 0. This is the direction the light shines at, meaning the opposite direction the sun is located at. First, <em>Theta</em> determines the pitch. A value of 90 represents a downward direction, while a value of -90 represents an upward direction. With those extremes, the value of <em>Phi</em> is irrelevant. A value of 0 for <em>Theta</em> represents a forward direction originating at the horizon behind. Once the pitch is defined by <em>Theta</em>, <em>Phi</em> determines the rotation in the plane. A value of 0 does not rotate, a value of 90 rotates the direction to the right and a value of -90 rotates to the left. A backward direction can be both obtained by setting <em>Theta</em> and <em>Phi</em> to 180 and 0 or to 0 and 180, respectively. Values in-between allow for more precise control of the exact light direction.</p>
+<p>このコマンドは、 自線の距離程0における初期の光の方向を定義します。 これは光が当たる方向で、 太陽が位置する方向とは反対の方向であることを意味します。 まず最初に、 <em>Theta</em> がピッチを決定します。 90 は下の方向を示し、 -90 は上方向を示します。 此等の値が極端な場合、 <em>Phi</em> の値は無関係になります。 <em>Theta</em> の値が0の時、後ろの水平線から始まる順方向を示します。  ピッチが <em>Theta</em> によって決定されると、 <em>Phi</em> が平面の回転を決定します。 値が0のときは回転せず、 90 の時は右方向に回転し、 -90 の時は左方向に回転します。 <em>Theta</em> と <em>Phi</em> を 180 と 0 、または 0 と 180 に設定することで、 逆方向を両方とも取得できます。 中間の値を取ることで、正確な光の方向をより正確に制御できます。</p>
 <p><img src="../../images/illustration_light_direction.png" alt="illustration_light_direction"></p>
 <table style="border: none;">
 <tbody>

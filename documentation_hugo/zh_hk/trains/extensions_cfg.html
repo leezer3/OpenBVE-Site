@@ -78,7 +78,7 @@
           
           <ul class="third">
             
-            <li><a href="../../zh_hk/objects/native/b3d.html">The B3D object</a>
+            <li><a href="../../zh_hk/objects/native/b3d.html">B3D 物件</a>
               
             </li>
             
@@ -178,7 +178,7 @@
           
         </li>
         
-        <li><a href="../../zh_hk/routes/rw.html">The RW route</a>
+        <li><a href="../../zh_hk/routes/rw.html">RW 路線</a>
           
         </li>
         
@@ -186,7 +186,7 @@
           
         </li>
         
-        <li><a href="../../zh_hk/routes/tutorial_atc.html">Tutorial: Using ATC</a>
+        <li><a href="../../zh_hk/routes/tutorial_atc.html">教學：使用ATC</a>
           
         </li>
         
@@ -210,7 +210,7 @@
       
       <ul class="second">
         
-        <li><a href="../../zh_hk/trains/overview.html">Overview</a>
+        <li><a href="../../zh_hk/trains/overview.html">總概</a>
           
         </li>
         
@@ -222,7 +222,7 @@
           
         </li>
         
-        <li><a href="../../zh_hk/trains/extensions_cfg.html">The extensions.cfg file</a>
+        <li><a href="../../zh_hk/trains/extensions_cfg.html">extensions.cfg 檔案</a>
           
         </li>
         
@@ -399,7 +399,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>The <strong>extensions.cfg</strong> file format</h1>
+          <h1><strong>extensions.cfg</strong> 檔案格式</h1>
         </div>
 
         
@@ -408,22 +408,22 @@
 
 
 <div id="content">
-  <h2 id="-contents">■ Contents</h2>
+  <h2 id="目錄">目錄</h2>
 <ul class='contents'>
-<li><a href="#overview">1. Overview</a></li>
-<li><a href="#syntax">2. Syntax</a></li>
-<li><a href="#car">3. The Car<em>i</em> section</a></li>
-<li><a href="#coupler">4. The Coupler<em>i</em> section</a></li>
+<li><a href="#overview">1.總概</a></li>
+<li><a href="#syntax">2.句法</a></li>
+<li><a href="#car">3. Car<em>i</em> 部分</a></li>
+<li><a href="#coupler">4. Coupler<em>i</em> 部分</a></li>
 <li><a href="#exterior">5. The Exterior section (outdated)</a></li>
 </ul>
-<h2 id="a-nameoverviewa-1-overview"><a name="overview"></a>■ 1. Overview</h2>
+<h2 id="a-nameoverviewa-1-總概"><a name="overview"></a>■ 1. 總概</h2>
 <p>The extensions.cfg file allows to define properties for individual cars, like length, axle positions and exterior objects.</p>
 <p>The file is a plain text file encoded in any arbitrary <a href="../../zh_hk/information/encodings.html">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../zh_hk/information/numberformats.html">parsing model</a> for numbers is <strong>Strict</strong>. The file is required to be located inside the train folder and is expected to be named <strong>extensions.cfg</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
 <h5 id="-car-indices">● Car indices</h5>
 <p>All cars in the extensions.cfg are enumerated from 0 (front car) to <em>n</em>-1 (rear car), where <em>n</em> is the number of cars the train has in total, according to the <a href="../../zh_hk/trains/train_dat.html">train.dat</a> file. For example, on a train with 10 cars, the front car has index 0 and the rear car index 9.</p>
 <h5 id="-coupler-indices">● Coupler indices</h5>
 <p>A coupler in this document refers to the space between neighboring cars. All couplers in the extensions.cfg are enumerated from 0 (front-most coupler) to <em>n</em>-2 (rear-most coupler), where <em>n</em> is the number of cars the train has in total, according to the <a href="../../zh_hk/trains/train_dat.html">train.dat</a> file. Coupler index <em>i</em> corresponds to the coupler between the cars with indices <em>i</em> and <em>i+1</em>, so the coupler between the first two cars (0 and 1) in the train has index 0. Likewise, if a train has 10 cars, the coupler between the last two cars (8 and 9) would have index 8.</p>
-<h2 id="a-namesyntaxa-2-syntax"><a name="syntax"></a>■ 2. Syntax</h2>
+<h2 id="a-namesyntaxa-2-句法"><a name="syntax"></a>■ 2. 句法</h2>
 <p>Each line in the file can be empty (or solely consist of white spaces) and will be ignored, can mark the beginning of a new section or contain key-value pairs inside a section. All key-value pairs relate to the last section opened.</p>
 <p>A new section is opened by starting the line with an opening bracket (U+005B) and ending it with a closing bracket (U+005D). The text in-between the brackets indicates the name of the section and is case-insensitive. White spaces at the beginning and the end of the line are ignored, as well as at the beginning and the end of the name of the section. Thus, the beginning of the section has the following form:</p>
 <div id="command">
