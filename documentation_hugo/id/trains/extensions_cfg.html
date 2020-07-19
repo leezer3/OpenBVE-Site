@@ -518,6 +518,15 @@ Perintah = Nilai
 </div>
 <p>Dengan pengaturan ini, kereta bisa diatur apakah akan bergoyang saat naik turun penumpang atau tidak.</p>
 <hr>
+<div id="command">
+<strong>VisibleFromInterior</strong> = <em>Value</em>
+</div>
+<div id="command-arguments">
+<em><strong>Value</strong></em>: Either <strong>True</strong> or <strong>False</strong> to indicate whether this remains visible from an interior view of the driver car.
+</div>
+<p>With this setting, you can control which cars remain visible from the cab, for example if your cab is not in the front car of the train.
+<em>Note:</em> This does not apply to the current driver car.</p>
+<hr>
 <div class="overflow-container">
 <table style="border: none;">
 <tbody>
@@ -542,8 +551,8 @@ Reversed = False
 </tbody>
 </table>
 </div>
-<h2 id="a-namecouplera-4-bagian-coupleri"><a name="coupler"></a>■ 4. Bagian Coupler<em>i</em></h2>
-<p>Bagian Coupler<em>i</em> menentukan info sambungan kereta di posisi yang ditentukan.</p>
+<h2 id="a-namecouplera-4-the-coupleri-section"><a name="coupler"></a>■ 4. The Coupler<em>i</em> section</h2>
+<p>The Coupler<em>i</em> section allows to define properties specific to a certain coupler.</p>
 <hr>
 <div id="command">
 <strong>[Coupleri]</strong>
@@ -554,8 +563,8 @@ Reversed = False
 <strong>Distances</strong> = <em>Minimum</em>, <em>Maximum</em>
 </div>
 <div id="command-arguments">
-<em><strong>Minimum</strong></em>: Jarak minimum antar gerbong.<br>
-<em><strong>Maximum</strong></em>: Jarak maksimum antar gerbong.
+<em><strong>Minimum</strong></em>: A floating-point number indicating the minimum allowed distance between the cars.<br>
+<em><strong>Maximum</strong></em>: A floating-point number indicating the maximum allowed distance between the cars.
 </div>
 <p>This key-value pair defines the lowest and highest allowed distances between the cars, resembling a buffer and chain coupler. The condition <em>Minimum</em> ≤ <em>Maximum</em> must hold.</p>
 <hr>
@@ -580,13 +589,13 @@ Distances = 0.30, 0.35
 </tbody>
 </table>
 </div>
-<h2 id="a-nameexteriora-5-bagian-exterior-sudah-tidak-dipakai"><a name="exterior"></a>■ 5. Bagian Exterior (Sudah tidak dipakai)</h2>
+<h2 id="a-nameexteriora-5-the-exterior-section-outdated"><a name="exterior"></a>■ 5. The Exterior section (outdated)</h2>
 <p>The Exterior section provides an easy way of adding exterior objects to the particular train. For more control on the setting of axle positions and individual car lengths, the Car<em>i</em> section has been introduced and should be used instead.</p>
 <hr>
 <div id="command">
 <strong>[Exterior]</strong>
 </div>
-<p>Perintah ini memulai bagian exterior</p>
+<p>This starts the Exterior section.</p>
 <hr>
 <div id="command">
 <strong>i</strong> = <em>File</em>
