@@ -526,24 +526,24 @@
 <hr>
 <p><a name="translate"></a></p>
 <div id="command">
-<strong>Translate</strong> , <em>X</em> , <em>Y</em> , <em>Z</em>
+<strong>Translate</strong> , <em>X</em> , <em>Y</em> , <em>Z</em><br>
 <strong>TranslateAll</strong> , <em>X</em> , <em>Y</em> , <em>Z</em>
 </div>
 <div id="command-arguments">
-<em><strong>X</strong></em> ：一个表示顶点在x轴上移动距离的浮点数，以 <strong>米</strong> 为单位。负值向左平移，正值向右平移。默认值为0。
-<em><strong>Y</strong></em> ：一个表示顶点在y轴上移动距离的浮点数，以 <strong>米</strong> 为单位。负值向下平移，正值向上平移。默认值为0。
+<em><strong>X</strong></em> ：一个表示顶点在x轴上移动距离的浮点数，以 <strong>米</strong> 为单位。负值向左平移，正值向右平移。默认值为0。<br>
+<em><strong>Y</strong></em> ：一个表示顶点在y轴上移动距离的浮点数，以 <strong>米</strong> 为单位。负值向下平移，正值向上平移。默认值为0。<br>
 <em><strong>Z</strong></em> ：一个表示顶点在z轴上移动距离的浮点数，以 <strong>米</strong> 为单位。负值向后平移，正值向前平移。默认值为0。
 </div>
 <p><strong>Translate</strong> 命令将移动从CreateMeshBuilder到Translate之间创建的所有顶点，且后续顶点不受影响。您可以在CreateMeshBuilder部分中根据需要使用不限数量的Translate命令。 <strong>TranslateAll</strong> 不仅影响当前CreateMeshBuilder部分中创建的顶点，还会影响到之前所有CreateMeshBuilder部分中创建的顶点，这对于在文件末尾插入来平移整个物件很有用。</p>
 <hr>
 <p><a name="scale"></a></p>
 <div id="command">
-<strong>Scale</strong> , <em>X</em> , <em>Y</em> , <em>Z</em>
+<strong>Scale</strong> , <em>X</em> , <em>Y</em> , <em>Z</em><br>
 <strong>ScaleAll</strong> , <em>X</em> , <em>Y</em> , <em>Z</em>
 </div>
 <div id="command-arguments">
-<em><strong>X</strong></em> ：一个非零浮点数，表示x轴上的缩放比值，默认值为1。
-<em><strong>Y</strong></em> ：一个非零浮点数，表示y轴上的缩放比值，默认值为1。
+<em><strong>X</strong></em> ：一个非零浮点数，表示x轴上的缩放比值，默认值为1。<br>
+<em><strong>Y</strong></em> ：一个非零浮点数，表示y轴上的缩放比值，默认值为1。<br>
 <em><strong>Z</strong></em> ：一个非零浮点数，表示z轴上的缩放比值，默认值为1。
 </div>
 <p><strong>Scale</strong> 命令将缩放从CreateMeshBuilder到Scale之间创建的所有顶点，且后续顶点不受影响。您可以在CreateMeshBuilder部分中根据需要使用不限数量的Scale命令。 <strong>ScaleAll</strong> 不仅影响当前CreateMeshBuilder部分中创建的顶点，还会影响到之前所有CreateMeshBuilder部分中创建的顶点，这对于在文件末尾插入来缩放整个物件很有用。</p>
