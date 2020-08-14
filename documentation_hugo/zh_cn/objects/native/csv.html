@@ -558,13 +558,13 @@
 <em><strong>Y</strong></em> ：旋转轴的Y方向。负值指向下边，正值指向上边。默认值为0。<br>
 <em><strong>Z</strong></em> ：旋转轴的Z方向。负值指向后方，正值指向前方。默认值为0。
 </div>
-<p><strong>Rotate</strong> 命令将旋转从CreateMeshBuilder到Rotate之间创建的所有顶点，且后续顶点不受影响。旋转轴通过 *X * ， *Y * 和 *Z * 值指定。旋转将发生在垂直于该轴的平面中。该轴的零向量被视为（1,0,0），所有其他方向都被折算成单位向量。</p>
+<p><strong>Rotate</strong> 命令将旋转从CreateMeshBuilder到Rotate之间创建的所有顶点，且后续顶点不受影响。旋转轴通过 <em>X</em> ， <em>Y</em> 和 <em>Z</em> 值指定。旋转将发生在垂直于该轴的平面中。该轴的零向量被视为（1,0,0），所有其他方向都被折算成单位向量。</p>
 <p>您可以在CreateMeshBuilder部分中根据需要使用尽可能多的Rotate命令。 <strong>RotateAll</strong> 不仅影响当前CreateMeshBuilder部分中创建的顶点，还会影响到之前所有CreateMeshBuilder部分中创建的顶点，这对于在文件末尾插入来旋转整个物件很有用。</p>
 <p>※由于官方的说明文档原文有些晦涩，就算翻译过来也可能会看不懂，这里译者再开一段来讲讲本人是如何使用Rotate命令的。我倾向于“一对一”式的写法，即一个Rotate命令完成物件在一个坐标轴上的旋转，上文提到的X,Y,Z被我用来标记在该坐标轴上是否做出旋转动作，0代表否，1代表是。然后再用 角度 参数说明旋转的角度，正值为顺时针，负值为逆时针。例如 Rotate,0,1,0,180 表示将该物件以y轴为基准旋转180度。</p>
 <hr>
 <p><a name="shear"></a></p>
 <div id="command">
-<strong>Shear</strong> , <em>dX</em> , <em>dY</em> , <em>dZ</em> , <em>sX</em> , <em>sY</em> , <em>sZ</em> , <em>r</em>
+<strong>Shear</strong> , <em>dX</em> , <em>dY</em> , <em>dZ</em> , <em>sX</em> , <em>sY</em> , <em>sZ</em> , <em>r</em><br>
 <strong>ShearAll</strong> , <em>dX</em> , <em>dY</em> , <em>dZ</em> , <em>sX</em> , <em>sY</em> , <em>sZ</em> , <em>r</em>
 </div>
 <div id="command-arguments">
@@ -574,7 +574,7 @@
 <em><strong>sX</strong></em> ：向量S的x坐标，默认为0。
 <em><strong>sY</strong></em> ：向量S的y坐标，默认为0。
 <em><strong>sZ</strong></em> ：向量S的z坐标，默认为0。
-<em><strong>r</strong></em> ：表示取代载体的比例。默认为0。
+<em><strong>r</strong></em> ：表示矢量移位的比例。默认为0。
 </div>
 <p><strong>Shear</strong> 命令为当前CreateMeshBuilder部分中到目前为止创建的所有顶点执行<a href="http://en.wikipedia.org/wiki/Shear_mapping">剪切映射</a>。 <strong>ShearAll</strong> 不仅影响当前CreateMeshBuilder部分中创建的顶点，还会影响到之前所有CreateMeshBuilder部分中创建的顶点，这对于在文件末尾插入来剪切整个物件很有用。</p>
 <p><img src="../../../images/illustration_shear.png" alt="illustration_shear"></p>
