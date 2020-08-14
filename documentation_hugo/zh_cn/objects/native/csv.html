@@ -507,9 +507,9 @@
 <strong>Cylinder</strong> , <em>n</em> , <em>上底半径</em> , <em>下底半径</em> , <em>高</em>
 </div>
 <div id="command-arguments">
-<em><strong>n</strong></em> ：一个整数，表示顶底面正多边形的顶点数。
-<em><strong>上底半径</strong></em> ：顾名思义。以 <strong>米</strong> 为单位。如该值为负数，则上底面将不生成。
-<em><strong>下底半径</strong></em> ：顾名思义。以 <strong>米</strong> 为单位。如该值为负数，则下底面将不生成。
+<em><strong>n</strong></em> ：一个整数，表示顶底面正多边形的顶点数。<br>
+<em><strong>上底半径</strong></em> ：顾名思义。以 <strong>米</strong> 为单位。如该值为负数，则上底面将不生成。<br>
+<em><strong>下底半径</strong></em> ：顾名思义。以 <strong>米</strong> 为单位。如该值为负数，则下底面将不生成。<br>
 <em><strong>高</strong></em> ：一个表示该圆柱/圆锥/圆台高度的浮点数，以 <strong>米</strong> 为单位。如为负值，则该截锥体将上下倒转且显示面将朝内。
 </div>
 <p>该命令将创建一个<a href="http://en.wikipedia.org/wiki/Frustum">截锥体</a>。如果 <em>上底半径</em> 和 <em>下底半径</em> 是相等的，这个物件将变成<a href="http://en.wikipedia.org/wiki/Prism_(geometry)">棱柱</a>，并可用作近似的圆柱。如果 <em>下底半径</em> 或 *上底半径 * 为0，这个物件将变成<a href="http://en.wikipedia.org/wiki/Pyramid_(geometry)">棱锥</a>。创建的截椎体将以原点为中心。 即，在X和Z轴上，该截锥体下底面占据 -<em>下底半径</em> 到 <em>下底半径</em>，顶面占据 -<em>上底半径</em> 到 <em>上底半径</em>；在Y轴上，该截锥体占据 -½*<em>高</em> 到 ½*<em>高</em>。译注：以上三个链接需轻功。</p>
