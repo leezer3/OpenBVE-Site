@@ -696,52 +696,52 @@
 <tr>
 <td align="left"><code>a &lt; b</code></td>
 <td><code>Less[a,b]</code></td>
-<td>True (1) if <em>a</em> is less than <em>b</em></td>
+<td>如果* a *小于* b *为真（1）</td>
 </tr>
 <tr>
 <td align="left"><code>a &gt; b</code></td>
 <td><code>Greater[a,b]</code></td>
-<td>True (1) if <em>a</em> is greater than <em>b</em></td>
+<td>如果* a *大于* b *为真（1）</td>
 </tr>
 <tr>
 <td align="left"><code>a &lt;= b</code></td>
 <td><code>LessEqual[a,b]</code></td>
-<td>True (1) if <em>a</em> is less than or equal to <em>b</em></td>
+<td>如果* a *小于或等于* b *，则为真（1）</td>
 </tr>
 <tr>
 <td align="left"><code>a &gt;= b</code></td>
 <td><code>GreaterEqual[a,b]</code></td>
-<td>True (1) if <em>a</em> is greater than or equal to <em>b</em></td>
+<td>如果* a *大于或等于* b *，则为真（1）</td>
 </tr>
 </tbody>
 </table>
 </div>
-<h5 id="-logical-operations">● Logical operations</h5>
-<p>All operations treat 0 as false and any other value as true, and return 1 for true and 0 for false.</p>
+<h5 id="逻辑运算">●逻辑运算</h5>
+<p>所有操作将0视为false，将其他任何值视为true，然后返回1表示true，0表示false。</p>
 <div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
-<th align="left">Infix</th>
-<th>Functional</th>
-<th>Description</th>
+<th align="left">中缀</th>
+<th>功能</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="left"><code>!a</code></td>
 <td><code>Not[a]</code></td>
-<td>True (1) if <em>a</em> is false</td>
+<td>如果 <em>a</em> 为假，则为真（1）</td>
 </tr>
 <tr>
 <td align="left"><code>a &amp; b</code></td>
 <td><code>And[a,b]</code></td>
-<td>True (1) if both <em>a</em> and <em>b</em> are true</td>
+<td>如果 <em>a</em> 和 <em>b</em> 均为真，则为真（1）</td>
 </tr>
 <tr>
 <td align="left"><code>a</code> | <code>b</code></td>
 <td><code>Or[a,b]</code></td>
-<td>True (1) if any of <em>a</em> or <em>b</em> are true</td>
+<td>如果 <em>a</em> 或 <em>b</em> 中的任何一个为真，则为真（1）</td>
 </tr>
 <tr>
 <td align="left"><code>a ^ b</code></td>
@@ -1116,6 +1116,10 @@ Please also note that some combinations of prefix and infix operators are not re
 <tr>
 <td><code>terminalStation</code></td>
 <td>The index of the terminal station for this train.</td>
+</tr>
+<tr>
+<td><code>timeTable</code></td>
+<td>Returns 1 if the timetable is currently set as visible, 0 otherwise.</td>
 </tr>
 </tbody>
 </table>

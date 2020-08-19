@@ -166,7 +166,7 @@
               
             </li>
             
-            <li><a href="../../zh_hk/routes/xml/trackfollowingobject.html">Track Following Object</a>
+            <li><a href="../../zh_hk/routes/xml/trackfollowingobject.html">軌道跟隨物件</a>
               
             </li>
             
@@ -330,7 +330,7 @@
           
         </li>
         
-        <li><a href="../../zh_hk/information/standards.html">Standards</a>
+        <li><a href="../../zh_hk/information/standards.html">標準</a>
           
         </li>
         
@@ -954,24 +954,24 @@ Track.FreeObj 1; 42<br>
 </div>
 <hr>
 <div id="command">
-<strong>Options.FogBehavior</strong> <em>Mode</em>
+<strong>Options.FogBehavior</strong> <em>模式</em>
 </div>
 <div id="command-arguments">
 <em><strong>Mode</strong></em>: The mode determining how the Track.Fog command is processed. The default value is 0 (Block-based).
 </div>
-<p>▸ Available options for <em>Mode</em>:</p>
+<p>▸ <em>模式</em> 嘅選項:</p>
 <div id="command-arguments">
 <strong>0</strong>: Block-based: Fog color and ranges are interpolated from the beginning of the block where Track.Fog is used with the old settings to the end of the block with the new settings.<br>
 <strong>1</strong>: Interpolated: Fog color and ranges are interpolated between adjacent Track.Fog commands. This behavior mimicks Track.Brightness.
 </div>
 <hr>
 <div id="command">
-<strong>Options.CompatibleTransparencyMode</strong> <em>Mode</em>
+<strong>Options.CompatibleTransparencyMode</strong> <em>模式</em>
 </div>
 <div id="command-arguments">
 <em><strong>Mode</strong></em>: The mode determining how transparencies are processed in BVE2/ BVE4 objects which use a restricted color pallet. This may be used on a per-route basis to override the value set in &lsquo;Options&rsquo;.
 </div>
-<p>▸ Available options for <em>Mode</em>:</p>
+<p>▸ <em>模式</em> 嘅選項:</p>
 <div id="command-arguments">
 <strong>0</strong>: Off: Colors are matched specifically. If the specified transparent color does not exist within the color pallet, no transparency will be added.<br>
 <strong>1</strong>: On: Fuzzy matching. If the texture uses a restricted color pallet, the transparent color will be clamped to the nearest available color in the pallet.
@@ -983,7 +983,7 @@ Track.FreeObj 1; 42<br>
 <div id="command-arguments">
 <em><strong>Mode</strong></em>: The mode determining whether various hacks are applied in order to fix BVE2 / BVE4 content. This may be used on a per-route basis to override the value set in &lsquo;Options&rsquo;.
 </div>
-<p>▸ Available options for <em>Mode</em>:</p>
+<p>▸ <em>模式</em> 嘅選項:</p>
 <div id="command-arguments">
 <strong>0</strong>: Off: Hacks are disabled.<br>
 <strong>1</strong>: On: Hacks are enabled.
@@ -1024,7 +1024,7 @@ Track.FreeObj 1; 42<br>
 <div id="command-arguments">
 <em><strong>Mode</strong></em>: The mode for the train&rsquo;s safety system to start in. The default value is implementation-specific.
 </div>
-<p>▸ Available options for <em>Mode</em>:</p>
+<p>▸ <em>模式</em> 嘅選項:</p>
 <div id="command-arguments">
 <strong>-1</strong>: The safety system is <strong>activated</strong> and the <em>service</em> brakes are applied.<br>
 <strong>0</strong>: The safety system is <strong>activated</strong> and the <strong>emergency</strong> brakes are applied.<br>
@@ -1650,7 +1650,7 @@ With Track<br>
 <p>The texture you start with should have a sharp shape, usually oval. The shape should be fully saturated in the core and blend into pure white at its outer rim. The surroundings of the shape can be either pure black (A) or pure white (B).</p>
 <p>When openBVE loads the glow texture, it will replace all purely black pixels with purely white pixels, thus arriving at (B). From there, the image is inverted (C), then hue-shifted by 180 degrees (D). Compared to (B), this has the overall effect of inverting the lightness of the image, i.e. fully saturated pixels will be left unchanged (e.g. the core), while bright pixels (such as the outer rim of the shape) will become dark, and vice versa. Then, the image is gamma-corrected to further darken the dark parts (E), and finally, the image is blurred slightly (F).</p>
 <p>The resulting texture is always additively blended. This means that instead of directly drawing the texture onto the screen, the pixels of the texture are added to the screen pixels. Here, adding black (0) does not change the screen pixels, while adding a fully satured color channel (1) will result in a fully satured color channel, e.g. adding white produces white. Keep in mind that when designing the textures, you will have to follow the inverse rules, e.g. design the image as depicted in (A) or (B), while having in mind how it will be processed afterward.</p>
-<h2 id="a-nametracka-11-the-track-namespace"><a name="track"></a>■ 11. The Track namespace</h2>
+<h2 id="a-nametracka-11-track指令命名空間"><a name="track"></a>■ 11. Track指令命名空間</h2>
 <p>Commands from this namespace define the track layout. Commands from this namespace should appear after commands from any of the other namespaces, and they usually form the largest part of the route file.</p>
 <div id="notice">
 <h4 id="use-of-track-positions">Use of track positions</h4>
@@ -2029,7 +2029,7 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 <em><strong>DepartureSound</strong></em>: The sound file to be played before departure (departure time minus sound duration minus door closing time), relative to the <strong>Sound</strong> folder.<br>
 <em><strong>TimetableIndex</strong></em>: A non-negative integer representing the timetable to be shown from this station on as defined via Train.Timetable(<em>TimetableIndex</em>).
 </div>
-<p>▸ Available options for <em>ArrivalTime</em>:</p>
+<p>▸ <em>ArrivalTime</em> 嘅選項:</p>
 <div id="command-arguments">
 <em>time</em>: The train is expected to arrive at this particular time.<br>
 <em>omitted</em>: The train may arrive at any time.<br>
@@ -2038,7 +2038,7 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 <strong>S</strong>: The player&rsquo;s train is expected to stop at this station, while all other trains are expected to pass.<br>
 <strong>S:</strong><em>time</em>: The player&rsquo;s train is expected to arrive at this particular time, while all other trains are expected to pass.
 </div>
-<p>▸ Available options for <em>DepartureTime</em>:</p>
+<p>▸ <em>DepartureTime</em> 嘅選項:</p>
 <div id="command-arguments">
 <em>time</em>: The train is expected to depart at this particular time.<br>
 <em>omitted</em>: The train may depart at any time.<br>
@@ -2049,24 +2049,24 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 <strong>J:</strong><em>index</em>: This is a station at which the train is &ldquo;jumped&rdquo; to the station specified by <em>index</em>. See the description below.<br>
 <strong>J:</strong><em>index:<strong>Time</strong></em>: This is a station at which the train is &ldquo;jumped&rdquo; to the specified by <em>index</em>. Jumping will take place at the specified time unless <em>StopDuration</em> interfers. See the description below.
 </div>
-<p>▸ Available options for <em>PassAlarm</em>:</p>
+<p>▸ <em>PassAlarm</em> 嘅選項:</p>
 <div id="command-arguments">
 <strong>0</strong>: The pass alarm device does not remind the driver of stopping at this station.<br>
 <strong>1</strong>: The pass alarm device reminds the driver of stopping at this station.
 </div>
-<p>▸ Available options for <em>Doors</em>:</p>
+<p>▸ <em>Doors</em> 嘅選項:</p>
 <div id="command-arguments">
 <strong>L</strong> or <strong>-1</strong>: The left doors are expected to open at this station.<br>
 <strong>N</strong> or <strong>0</strong>: No doors are expected to open at this station, i.e. the train should simply come to a hold.<br>
 <strong>R</strong> or <strong>1</strong>: The right doors are expected to open at this station.<br>
 <strong>B</strong>: Both the left and right doors are expected to open at this station.
 </div>
-<p>▸ Available options for <em>ForcedRedSignal</em>:</p>
+<p>▸ <em>ForcedRedSignal</em> 嘅選項:</p>
 <div id="command-arguments">
 <strong>0</strong>: Signals are unaffected by this station.<br>
 <strong>1</strong>: The signal immediately following the last station stop is hold at red until the train reaches the stopping area and the departure time.
 </div>
-<p>▸ Available options for <em>System</em>:</p>
+<p>▸ <em>System</em> 嘅選項:</p>
 <div id="command-arguments">
 <strong>ATS</strong> or <strong>0</strong>: ATS should be used from this station on. The following track is not be equipped with ATC.<br>
 <strong>ATC</strong> or <strong>1</strong>: ATC should be used from this station on. The following track is equipped with ATC.
@@ -2090,7 +2090,7 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 <em><strong>System</strong></em>: Indicates which built-in safety system should apply until the next station. The default value is 0.<br>
 <em><strong>DepartureSound</strong></em>: The sound file to be played before departure (departure time minus sound duration minus door closing time), relative to the <strong>Sound</strong> folder.
 </div>
-<p>▸ Available options for <em>ArrivalTime</em>:</p>
+<p>▸ <em>ArrivalTime</em> 嘅選項:</p>
 <div id="command-arguments">
 <em>time</em>: The train is expected to arrive at this particular time.<br>
 <em>omitted</em>: The train may arrive at any time.<br>
@@ -2099,7 +2099,7 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 <strong>S</strong>: The player&rsquo;s train is expected to stop at this station, while all other trains are expected to pass.<br>
 <strong>S:</strong><em>time</em>: The player&rsquo;s train is expected to arrive at this particular time, while all other trains are expected to pass.
 </div>
-<p>▸ Available options for <em>DepartureTime</em>:</p>
+<p>▸ <em>DepartureTime</em> 嘅選項:</p>
 <div id="command-arguments">
 <em>time</em>: The train is expected to depart at this particular time.<br>
 <em>omitted</em>: The train may depart at any time.<br>
@@ -2108,12 +2108,12 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 <strong>C</strong>: This is a station at which to &ldquo;change ends&rdquo;. See the description below.<br>
 <strong>C:</strong><em>time</em>: This is a station at which to &ldquo;change ends&rdquo;. Changing ends will take place at the specified time unless <em>StopDuration</em> interferes. See the description below.
 </div>
-<p>▸ Available options for <em>ForcedRedSignal</em>:</p>
+<p>▸ <em>ForcedRedSignal</em> 嘅選項:</p>
 <div id="command-arguments">
 <strong>0</strong>: Signals are unaffected by this station.<br>
 <strong>1</strong>: The signal immediately following the last station stop is hold at red until the train reaches the stopping area and the departure time.
 </div>
-<p>▸ Available options for <em>System</em>:</p>
+<p>▸ <em>System</em> 嘅選項:</p>
 <div id="command-arguments">
 <strong>ATS</strong> or <strong>0</strong>: ATS should be used from this station on. The following track is not be equipped with ATC.<br>
 <strong>ATC</strong> or <strong>1</strong>: ATC should be used from this station on. The following track is equipped with ATC.
@@ -2166,7 +2166,7 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 <em><strong><font color="green">ForwardTolerance</font></strong></em>: A positive floating-point number indicating the allowed tolerance in the forward direction, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 5.<br>
 <em><strong>Cars</strong></em>: A non-negative integer indicating for how many cars this stop point applies, or 0 for all cars. The default value is 0.
 </div>
-<p>▸ Available options for <em>Direction</em>:</p>
+<p>▸ <em>Direction</em> 嘅選項:</p>
 <div id="command-arguments">
 <strong>-1</strong>: A stop post is created on the left side.<br>
 <strong>0</strong>: No stop post is created.<br>
@@ -2208,7 +2208,7 @@ With Track<br>
 <em><strong>RoofStructureIndex</strong></em>: A non-negative integer representing the object to be placed as defined via Structure.Roof<br>
 <em><strong>FormStructureIndex</strong></em>: A non-negative integer representing the object to be placed as defined via Structure.Form and Structure.FormC
 </div>
-<p>▸ Available options for <em>RailIndex<sub>2</sub></em>:</p>
+<p>▸ <em>RailIndex<sub>2</sub></em> 嘅選項:</p>
 <div id="command-arguments">
 <strong>Any current RailIndex</strong>: The form is deformed to meet the specified RailIndex.<br>
 <strong>L</strong>: The specified FormL, FormCL and RoofL objects are placed without deformation.<br>
@@ -2573,7 +2573,7 @@ With Track<br>
 <em>negative value</em>: The marker image starts to display at the Track.Marker command, and ends -<em>Distance</em> meters after the Track.Marker command.<br>
 <em>positive value</em>: The marker image starts to display <em>Distance</em> meters before the Track.Marker command, and ends at the Track.Marker command.
 </div>
-<p>▸ Available options for <em>FontColor</em>:</p>
+<p>▸ <em>FontColor</em> 嘅選項:</p>
 <div id="command-arguments">
 <em>1</em>: Black.<br>
 <em>2</em>: Gray.<br>
