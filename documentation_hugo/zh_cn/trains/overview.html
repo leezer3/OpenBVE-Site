@@ -210,7 +210,7 @@
       
       <ul class="second">
         
-        <li><a href="../../zh_cn/trains/overview.html">Overview</a>
+        <li><a href="../../zh_cn/trains/overview.html">概述</a>
           
         </li>
         
@@ -399,7 +399,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>Developing trains - Overview</h1>
+          <h1>车辆开发 - 概述</h1>
         </div>
 
         
@@ -408,30 +408,30 @@
 
 
 <div id="content">
-  <p>Trains consist of a series of individual configuration files accompanied by bitmaps and sounds. The following is an overview on which files are required and what they represent.</p>
-<h2 id="-characteristics">■ Characteristics</h2>
+  <p>车辆包含一系列独立的配置文件、位图和波形文件。下方列出了所有类型文件的概述及其作用。</p>
+<h2 id="-车辆特性">■ 车辆特性</h2>
 <p><a href="../../zh_cn/trains/train_dat.html"><strong>train.dat:</strong></a><br>
-This is the core configuration file for the train&rsquo;s characteristics, and is mandatory.</p>
-<h2 id="-panels">■ Panels</h2>
+这个是车辆特性的核心配置文件，必须存在于车辆文件夹中</p>
+<h2 id="-驾驶台">■ 驾驶台</h2>
 <p><a href="../../zh_cn/trains/panel_animated.html"><strong>panel.animated:</strong></a><br>
-This file allows to create a fully 3D cab. If present in the train folder, this file has precedence over the panel2.cfg and panel.cfg files.</p>
-<p><a href="../../zh_cn/trains/panel2_cfg.html"><strong>panel2.cfg:</strong></a><br>
-This file allows to create a limited 2D cab. If present in the train folder, this file has precedence over the panel.cfg. The panel2.cfg has fully superseded the panel.cfg as it offers greater functionality.</p>
+该文件允许创建一个全3D驾驶室。若它出现在车辆文件夹中，将优先于 panel2.cfg 与 panel.cfg 加载。</p>
+<p><a href="../../zh_cn/trains/panel_animated.html"><strong>panel.animated:</strong></a><br>
+该文件允许创建一个有视角限制的2D驾驶室。若它出现在车辆文件夹中，将优先于 panel.cfg 加载。由于具有更强大的功能，panel2.cfg 已完全替代 panel.cfg。</p>
 <p><a href="../../zh_cn/trains/panel_cfg.html"><strong>panel.cfg:</strong></a><br>
-This file is outdated, and allows to create a limited 2D cab. It has been fully superseded by the panel2.cfg file, which should be used instead.</p>
-<h2 id="-sounds">■ Sounds</h2>
-<p><a href="../../zh_cn/trains/default_sounds.html"><strong>Default sounds:</strong></a><br>
-If no <em>sound.cfg</em> is present, these are the default sound files that are being looked for in the train folder.</p>
+该文件已过时，它允许创建一个有视角限制的2D驾驶室。panel2.cfg 已完全替代 panel.cfg，您不应该使用此类文件。</p>
+<h2 id="-各种声音">■ 各种声音</h2>
+<p><a href="../../zh_cn/trains/default_sounds.html"><strong>默认声音：</strong></a><br>
+若车辆文件夹中无 <em>sound.cfg</em> 文件，openBVE会自动寻找使用默认文件名的波形文件与相应功能对应。</p>
 <p><a href="../../zh_cn/trains/sound_cfg.html"><strong>sound.cfg:</strong></a><br>
-This defines the names of the sound files to use. The file is required if plugin-specific sounds are to be made available.</p>
-<h2 id="-safety-systems">■ Safety systems</h2>
-<p><a href="../../zh_cn/trains/openbveats.html"><strong>Built-in systems:</strong></a><br>
-The built-in safety systems ATS-SN, ATS-P and ATC are only used if no <em>ats.cfg</em> file is present, and if the <em>train.dat</em> is configured to define which of these systems should be available.</p>
+该文件为所有即将被使用的波形文件制作索引。如果某些声音专供插件使用，需要编写该文件。</p>
+<h2 id="-保安系统">■ 保安系统</h2>
+<p><a href="../../zh_cn/trains/openbveats.html"><strong>内置保安系统：</strong></a><br>
+仅当车辆文件夹中没有 <em>ats.cfg</em> 文件，且在 <em>train.dat</em> 中手动设置，内置的 ATS-SN, ATS-P and ATC 保安系统才会被使用。</p>
 <p><a href="../../zh_cn/trains/ats_cfg.html"><strong>ats.cfg:</strong></a><br>
-This file defines which external train plugin to use. For information on how to create plugins, see <a href="../../zh_cn/trains/plugins.html">here</a>.</p>
-<h2 id="-miscellaneous">■ Miscellaneous</h2>
+该文件决定了车辆使用哪一个外部插件。请于<a href="../../zh_cn/trains/plugins.html">此处</a>参阅如何制作插件。</p>
+<h2 id="-杂项">■ 杂项</h2>
 <p><a href="../../zh_cn/trains/extensions_cfg.html"><strong>extensions.cfg:</strong></a><br>
-This defines additional characteristics that are not covered by the other files.</p>
+该文件对上述配置文件未涉及的额外特性做出定义（主要用与车辆编组与外观）。</p>
 
 </div>
 
