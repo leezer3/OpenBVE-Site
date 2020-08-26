@@ -9,13 +9,13 @@ The following set of pages describes the process for developing addons for **Ope
 
 ## Basic Setup for creating a new addon:
 
-In order to create OpenBVE addons, you should first download the **OpenBVE Developer's Tools** :
+Currently, the **OpenBVE Developer's Tools** are distributed with the main program.
 
-<a href="http://vps.bvecornwall.co.uk/OpenBVE/Stable/developerTools_1.4.4.0.7z" class="btn btn-info">Developer's Tools 1.4.4 (2016-04-01)</a>
+Therefore, no additional downloads are required.
 
-This consists of two major tools- *Object Viewer* and *Route Viewer* , and two minor tools *Train Editor* and *Object Bender*
+They are located in the installation directory of the main program.
 
-These should be extracted into your route OpenBVE folder, as they require data from the main download.
+They consist of two major tools- *Object Viewer* and *Route Viewer* , and two minor tools *Train Editor* and *Object Bender*.
 
 ---
 
