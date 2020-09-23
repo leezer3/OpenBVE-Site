@@ -1258,33 +1258,33 @@ phi = 0
 </tr>
 </tbody>
 </table>
-<p>In the formulas above, <a href="http://functions.wolfram.com/ElementaryFunctions/Cos/02"><em>cos(x)</em></a> represents the cosine, <a href="http://functions.wolfram.com/ElementaryFunctions/Sin/02"><em>sin(x)</em></a> the sine, <a href="http://functions.wolfram.com/ElementaryFunctions/ArcTan/02"><em>arctan(x)</em></a> the inverse tangent, <a href="http://functions.wolfram.com/ElementaryFunctions/ArcTan2/02"><em>arctan(x,y)</em></a> the two-argument inverse tangent and <a href="http://functions.wolfram.com/ElementaryFunctions/Sqrt/02"><em>sqrt(x)</em></a> the square root. The formulas can be used to convert between spherical and cartesian coordinates if working with either one seems more intuitive than working with the other one. The formulas also serve as the official documentation on how the light direction is mathematically defined (using radians for the trigonometric functions).</p>
+<p>上記の数式では、 <a href="http://functions.wolfram.com/ElementaryFunctions/Cos/02"><em>cos(x)</em></a> はコサインを表し、 <a href="http://functions.wolfram.com/ElementaryFunctions/Sin/02"><em>sin(x)</em></a> は正弦、 <a href="http://functions.wolfram.com/ElementaryFunctions/ArcTan/02"><em>arctan(x)</em></a> は逆正接、 <a href="http://functions.wolfram.com/ElementaryFunctions/ArcTan2/02"><em>arctan(x,y)</em></a> は2つの引数の逆正接、 <a href="http://functions.wolfram.com/ElementaryFunctions/Sqrt/02"><em>sqrt(x)</em></a> は平方根を表します。 どちらか一方を使用するほうが、もう一方を使用するよりも直感的に見える場合、数式を用いると、球座標とデカルト座標を変換することが出来ます。数式は、光の方向が数学的に定義される公式文書として機能します (ラジアンを三角関数として用いる場合)。</p>
 <hr>
 <div id="command">
 <strong>Route.InitialViewpoint</strong> <em>Value</em>
 </div>
 <div id="command-arguments">
-<em><strong>Value</strong></em>: An integer defining the initial camera viewpoint mode. The following values are valid:<br>
-<em>0</em> : The camera will be placed in the cab. (Default)<br>
-<em>1</em> : The camera will be placed in &lsquo;Track Camera&rsquo; mode.<br>
-<em>2</em> : The camera will be placed in &lsquo;Flyby Camera&rsquo; mode.<br>
-<em>3</em> : The camera will be placed in &lsquo;Flyby Zooming Camera&rsquo; mode.
+<em><strong>Value</strong></em>: 初期のカメラ視点モードを定義する整数。以下の値が有効です:<br>
+<em>0</em> : カメラは運転台視点になります。 (デフォルト)<br>
+<em>1</em> : カメラは &lsquo;車外カメラ&rsquo; モードになります。<br>
+<em>2</em> : カメラは &lsquo;路線カメラ&rsquo; モードになります。<br>
+<em>3</em> : カメラは &lsquo;フライバイズームカメラ&rsquo; モードになります。
 </div>
-<p>This command allows the route developer to place the initial camera in one of the alternate camera modes.</p>
+<p>このコマンドを使用すると、路線作成者は初期カメラを代替のカメラモードの一つへ設定することが出来ます。</p>
 <hr>
 <div id="command">
 <strong><font color=#555555>Route.DeveloperID</font></strong>
 </div>
-<p><font color=#555555>This command is ignored by openBVE.</font></p>
-<h2 id="a-nametraina-6-the-train-namespace"><a name="train"></a>■ 6. The Train namespace</h2>
-<p>Commands from this namespace define route-train associations.</p>
+<p><font color=#555555>このコマンドはOpenBVEによって無視されます。</font></p>
+<h2 id="a-nametraina-6--train-名前空間"><a name="train"></a>■ 6.  Train 名前空間</h2>
+<p>この名前空間のコマンドは、路線と列車の関連付けを定義します。</p>
 <hr>
 <div id="command">
 Train.Folder <em>FolderName</em><br>
 Train.File <em>FolderName</em>
 </div>
 <div id="command-arguments">
-<em><strong>FolderName</strong></em>: The folder name of the default train to use on this route.
+<em><strong>FolderName</strong></em>: この路線で使用するデフォルトの車両のフォルダ名。
 </div>
 <hr>
 <div id="command">
@@ -1292,10 +1292,10 @@ Train.File <em>FolderName</em>
 <strong>Train.Rail</strong>(<em>RailTypeIndex</em>)<font color="gray">.Set</font> <em>RunSoundIndex</em>
 </div>
 <div id="command-arguments">
-<em><strong>RailTypeIndex</strong></em>: A non-negative integer representing the rail type as defined via Structure.Rail and used via Track.RailType.<br>
-<em><strong>RunSoundIndex</strong></em>: A non-negative integer representing the train&rsquo;s run sound to associate to the rail type.
+<em><strong>RailTypeIndex</strong></em>: Structure.Railで定義され、Track.RailTypeで使用される、レールの種類を表す非負の整数。
+<em><strong>RunSoundIndex</strong></em>: レールの種類に関連付ける、列車の走行音を表す非負の整数。
 </div>
-<p>The train developer provides a repertoire of different run sounds. Use this command to associate these run sounds to the rail types you use in your route. In order for the correct run sounds to be played on any of your rail types, you need to coordinate your efforts with the train developer. Please see the page about <a href="../../ja/information/standards.html">standards</a> for further information.</p>
+<p>列車の作成者は様々な走行音のレパートリーを提供します。 このコマンドを用いることで、それらの走行音を路線で使用するレールの種類に関連付けます。 どのレールでも正しい走行音を鳴らすには、列車の開発者と作業を調整する必要があります。詳細については <a href="../../ja/information/standards.html">standards</a> に関するページをご覧下さい。</p>
 <hr>
 <div id="command">
 <strong>Train.Flange</strong>(<em>RailTypeIndex</em>)<font color="gray">.Set</font> <em>FlangeSoundIndex</em>

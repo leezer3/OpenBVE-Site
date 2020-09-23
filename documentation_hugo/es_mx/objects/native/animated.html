@@ -535,26 +535,26 @@
 </div>
 <p>Esto defina la mínima cantidad de tiempo que necesita transcurrir para que la función sea actualizada. Un valor de 0 obliga a la función a ser actualizada cada cuadro por segundo. Por favor tenga en cuenta que los objetos fuera del rango visual puedan ser actualizados menos frecuentemente sin importar este parámetro. Usa RefreshRate cuando no necesites una animación suave (en orden de optimizar los recursos), o cuando deliberadamente quieras que el objeto este actualizado con un intervalo personalizado.</p>
 <hr>
-<h5 id="-the-sound-section">● The [Sound] section</h5>
-<p>You can use the [Sound] section to add standalone sound effects to animated objects.</p>
+<h5 id="-la-sección-sound">● La sección [Sound]</h5>
+<p>Puedes usar la sección [Sound] para agregar efectos de sonidos independientes a objetos animados.</p>
 <div id="command">
 [Sound]
 </div>
-<p>This starts the section.</p>
+<p>Esto inicia la sección</p>
 <div id="command">
 <strong>FileName = File</strong>
 </div>
-<p>This loads the sound effect to play.</p>
+<p>Esto añade el efecto de sonido a ser reproducido.</p>
 <div id="command">
-<strong>Position = X, Y, Z</strong>
+<strong>Posición = X, Y, Z</strong>
 </div>
-<p>Defines the position of the sound, relative to the center of the animated file.</p>
+<p>Esto define la posición del sonido, relativo al centro del archivo animated.</p>
 <div id="command">
-<strong>Volume = Value</strong>
+<strong>Volume = Valor</strong>
 </div>
-<p>This defines the initial volume of the sound at the source position. A value of <strong>1.0</strong> represents the nominal unchanged volume of the sound file.</p>
+<p>Esto define el volumen inicial del sonido a la posición de origen. A valor de <strong>1.0</strong> representa el volumen nominal sin cambio del archivo de sonido.</p>
 <div id="command">
-<strong>Pitch = Value</strong>
+<strong>Pitch = Valor</strong>
 </div>
 <p>This defines the initial pitch of the sound at the source position. A value of <strong>1.0</strong> represents the nominal unchanged pitch of the sound file.</p>
 <div id="command">
@@ -594,7 +594,7 @@ If a state is to have no sound effect, the list entry should be left blank.</p>
 </div>
 <p>Defines the position of the sound, relative to the center of the animated file.</p>
 <div id="command">
-<strong>Volume = Value</strong>
+<strong>Volume = Valor</strong>
 </div>
 <p>This defines the volume of the sound at the source position. A value of <strong>1.0</strong> represents the nominal unchanged volume of the sound file.</p>
 <div id="command">
@@ -737,7 +737,7 @@ If a state is to have no sound effect, the list entry should be left blank.</p>
 <tr>
 <td align="left"><code>a &amp; b</code></td>
 <td><code>And[a,b]</code></td>
-<td>True (1) if both <em>a</em> and <em>b</em> are true</td>
+<td>Verdadero (1) si ambos <em>a</em> y <em>b</em> son verdad</td>
 </tr>
 <tr>
 <td align="left"><code>a</code> | <code>b</code></td>
@@ -809,7 +809,7 @@ If a state is to have no sound effect, the list entry should be left blank.</p>
 </tr>
 <tr>
 <td><code>&amp;</code></td>
-<td>right-to-left</td>
+<td>derecha-a-izquierda</td>
 <td>1 &amp; 2 &amp; 3</td>
 <td>(1 &amp; (2 &amp; 3))</td>
 </tr>
@@ -932,7 +932,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>Sqrt[x]</code></td>
-<td>The square root.</td>
+<td>La raíz cuadrada.</td>
 </tr>
 <tr>
 <td><code>Sin[x]</code></td>
@@ -970,7 +970,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tbody>
 </table>
 </div>
-<h2 id="a-namevariablesa-5-list-of-variables"><a name="variables"></a>■ 5. List of variables</h2>
+<h2 id="a-namevariablesa-5-lista-de-variables"><a name="variables"></a>■ 5. Lista de variables</h2>
 <h5 id="-primitives">● Primitives</h5>
 <div class="overflow-container">
 <table class='type0 responsive-table-2col'>
@@ -987,7 +987,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>delta</code></td>
-<td>The time difference since the last evaluation of the function in seconds. Please note that there is no guaranteed time that elapses between successive function calls.</td>
+<td>La diferencia de tiempo desde la última evaluación de la función en segundos. Por favor ten en cuenta que no hay tiempo garantizado desde que transcurre entre los llamados de función sucesivos.</td>
 </tr>
 <tr>
 <td><code>currentState</code></td>
@@ -1023,7 +1023,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </div>
 <h5 id="-trains">● Trains</h5>
 <p>Generally, objects attached to a particular train and car return values for that train and car, unless stated otherwise. For scenery objects, the reference is the driver&rsquo;s car of the nearest train (not necessarily the player&rsquo;s train).</p>
-<p>In some of the following variables, <em>carIndex</em> has the following meaning: 0 is the 1<sup>st</sup> car from the front, 1 is the 2<sup>nd</sup> car from the front, etc., while -1 is the 1<sup>st</sup> car from the rear, -2 is the 2<sup>nd</sup> car from the rear, etc. In general, car indices from -<em>cars</em> to <em>cars</em>-1 represent existing cars, where <em>cars</em> is the number of cars the train has, while values outside of this range represent non-existing cars. As all trains have at least 1 car, indices -1 and 0 are guaranteed to exist for any train.</p>
+<p>En algunos casos de las siguientes variables , <em>carIndex</em> tiene el siguiente significado: 0 es el 1<sup>er</sup> carro  del frente, 1 es el 2<sup>do</sup> carro del frente, etc., mientras que -1 es el 1<sup>er</sup> carro desde la parte posterior, -2 es el 2<sup>do</sup> carro desde la parte posterior, etc. En general los indices de los carros desde -<em>cars</em> hasta <em>cars</em>-1 representan carros existentes, donde <em>cars</em> es el numero de carros que el tren posee, mientras que valores que estén fuera de este rango representan carros que no existen. Todos los trenes tienen al menos 1 carro, indices -1 y 0 están garantizados que existan para cualquier tren.</p>
 <h5 id="-trains-general">● Trains (general)</h5>
 <div class="overflow-container">
 <table class='type0 responsive-table-2col'>
@@ -1036,7 +1036,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <tbody>
 <tr>
 <td><code>cars</code></td>
-<td>The number of cars the train has.</td>
+<td>El número de carros que el tren tiene.</td>
 </tr>
 <tr>
 <td><code>speed</code></td>
@@ -1125,7 +1125,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tbody>
 </table>
 </div>
-<h5 id="-trains-brake">● Trains (brake)</h5>
+<h5 id="-trenes-freno">● Trenes (freno)</h5>
 <div class="overflow-container">
 <table class='type0 responsive-table-2col'>
 <thead>
@@ -1145,7 +1145,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>emergencyReservoir</code></td>
-<td>The current pressure in the emergency reservoir in this car, measured in Pa.</td>
+<td>La presión actual de la reserva de emergencia en este carro, medido en Pa.</td>
 </tr>
 <tr>
 <td><code>emergencyReservoir[carIndex]</code></td>
@@ -1173,7 +1173,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>straightAirPipe[carIndex]</code></td>
-<td>The current pressure in the straight air pipe in car <em>carIndex</em>, measured in Pa.</td>
+<td>La presión actual de la valvula directa de aire en el carro <em>carIndex</em>, medido en Pa.</td>
 </tr>
 </tbody>
 </table>
@@ -1249,7 +1249,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <thead>
 <tr>
 <th>Variable</th>
-<th>Description</th>
+<th>Descripción</th>
 </tr>
 </thead>
 <tbody>
@@ -1379,11 +1379,11 @@ Please also note that some combinations of prefix and infix operators are not re
 <tr>
 <th><em>i</em></th>
 <th>English</th>
-<th>日本語</th>
+<th>日本語 - Japonés</th>
 <th>Return values</th>
 <th></th>
 <th>pluginState[271]</th>
-<th>Meaning</th>
+<th>Significado</th>
 </tr>
 </thead>
 <tbody>
@@ -1394,7 +1394,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <td>0 (unlit) or 1 (lit)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>0</td>
-<td>ATC not available</td>
+<td>ATC no disponible</td>
 </tr>
 <tr>
 <td>257</td>
@@ -1461,7 +1461,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td>264</td>
-<td>FAILURE</td>
+<td>FALLA</td>
 <td>故障</td>
 <td>0 (unlit) or 1 (lit)</td>
 <td bgcolor='#D0D0D0'></td>

@@ -78,7 +78,7 @@
           
           <ul class="third">
             
-            <li><a href="../../../zh_cn/objects/native/b3d.html">The B3D object</a>
+            <li><a href="../../../zh_cn/objects/native/b3d.html">B3D 物件</a>
               
             </li>
             
@@ -222,7 +222,7 @@
           
         </li>
         
-        <li><a href="../../../zh_cn/trains/extensions_cfg.html">The extensions.cfg file</a>
+        <li><a href="../../../zh_cn/trains/extensions_cfg.html">extensions.cfg 文件</a>
           
         </li>
         
@@ -661,17 +661,33 @@
 </div>
 <p>这条指令为已经创建的所有面指定一个蒙版式的透明色（例如屏蔽门和车窗）。刚刚加载的材质中与指定的 <em>红</em>、<em>绿</em>、<em>蓝</em> 颜色完全相同的像素都会变为透明的。这种蒙版式的透明色比起使用含透明部分的PNG性能高，所以最好绘制全不透明的材质，然后将材质中要透明的部分填为固定颜色，再使用此指令将这些部分“挖空”，而不是使用半透明的PNG。必须使用SetTextureCoordinates指令设定好材质与各顶点的关系，材质才能被正常显示。</p>
 <hr>
-<p><a name="settexturecoordinates"></a></p>
+<p><a name="enablecrossfading"></a></p>
 <div id="command">
-<strong>SetTextureCoordinates</strong> , <em>顶点索引</em> , <em>水平偏移量(U)</em> , <em>垂直偏移量(V)</em>
+<strong>EnableCrossfading</strong>, <em>value</em>
 </div>
 <div id="command-arguments">
-<em><strong>顶点索引</strong></em> ：这个材质坐标匹配的模型顶点。范围是0到 <em>n</em> -1， <em>n</em> 为 AddVertex指令创建的顶点数量。<br>
-<em><strong>水平偏移量(U)</strong></em> ：这个材质坐标相对于模型左边缘的位置。一个0~1之间的数字，0代表最左边，1代表最右边。<br>
-<em><strong>垂直偏移量(V)</strong></em> ：这个材质坐标相对于模型上边缘的位置。一个0~1之间的数字，0代表最上边，1代表最下边。
+<strong>value</strong>: Either true to enable cross-fading, or false (default) to disable.
 </div>
-<p>这条指令为 <em>顶点索引</em> 指定的顶点匹配一个材质坐标。由于这个索引是要匹配一个已经创建了的顶点的，所以这条指令要放在AddVertex指令的后面。 当 <em>U</em> 或 <em>V</em> 的值大于0小于1时，如下图所示（应该解释得很清楚了），当指定顶点上的 <em>U</em> 或 <em>V</em> 值大于1，材质横纵向无限平铺（就是无数张图片组成的一个格子状的二维平面），U值“2”对应在该平面中所有左起第二列图片的右边线，V值“5”对应在该平面中所有第五行图片的下边线，而“2,5”则对应该平面中第二列第五行的那张图片的右下角（也就是前面所述两条垂直直线的交点）。使用大于1的U和V值，您可以将材质以平铺的方式在面上重复多次地贴图。</p>
-<p><img src="https://s1.ax1x.com/2020/07/21/U5zEPx.png" alt=""></p>
+<p>This command controls the blending mode when both a daytime and a nighttime texture are specified.</p>
+<p>When this is set to <strong>false</strong> the behavior is as follows:</p>
+<ol>
+<li>The daytime texture is drawn.</li>
+<li>The opacity level for the nighttime texture is calculated from the <strong>Track.Brightness</strong> value, where a value of <strong>255</strong> produces a fully opaque texture, and a value of <strong>0</strong> produces a fully transparent texture.</li>
+<li>The nighttime texture is drawn.</li>
+</ol>
+<p>When this is set to <strong>true</strong> the behaviour is as follows:</p>
+<p>The opacity level for each texture is blended proportionately, so that for example, a <strong>Track.Brightness</strong> value of <strong>128</strong> would produce an (approximately) 50% blend of each texture and so-on.</p>
+<hr>
+<p><a name="settexturecoordinates"></a></p>
+<div id="command">
+<strong>SetTextureCoordinates</strong>, <em>VertexIndex</em>, <em>X</em>, <em>Y</em>
+</div>
+<div id="command-arguments">
+<em><strong>VertexIndex</strong></em>: The vertex index the coordinate is referring to. Allowed values are 0 through <em>n</em>-1, where <em>n</em> is the number of AddVertex commands used.<br>
+<em><strong>X</strong></em>: The x-coordinate of the texture. Integer values correspond to the left/right edge of the texture. If only values between 0 and 1 are to be considered, 0 corresponds to the left and 1 to the right.<br>
+<em><strong>Y</strong></em>: The y-coordinate of the texture. Integer values correspond to the top/bottom edge of the texture. If only values between 0 and 1 are to be considered, 0 corresponds to the top and 1 to the bottom.
+</div>
+<p>This command associates a coordinate in the texture to the vertex specified by <em>VertexIndex</em>. The index corresponds to the order in which the vertices have been created by the AddVertex command, thus the Coordinates command needs to be stated after the corresponding AddVertex command. The <em>X</em> and <em>Y</em> values do not necessarily need to be in the range between 0 (left or top) to 1 (right or bottom), but can have any other value. It is assumed in this case that the texture is repeated on an infinite grid where integer values for <em>X</em> and <em>Y</em> correspond to the corners of the texture.</p>
 
 </div>
 
