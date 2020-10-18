@@ -174,7 +174,7 @@
           
         </li>
         
-        <li><a href="../../zh_hk/routes/micsounds.html">Playing Sounds from a Microphone Input</a>
+        <li><a href="../../zh_hk/routes/micsounds.html">播放麥克風聲音</a>
           
         </li>
         
@@ -399,7 +399,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>Playing Sounds from a Microphone Input</h1>
+          <h1>播放麥克風聲音</h1>
         </div>
 
         
@@ -408,22 +408,22 @@
 
 
 <div id="content">
-  <p>openBVE 1.5.4.0 introduces the ability to play sounds from the microphone or line-in input to a specified position within the game world.</p>
+  <p>OpenBVE 1.5.4.0添加咗由咪輸入錄製把聲喺遊戲世界中特定位置播放嘅特性。 可以用嚟進行廣播等。</p>
 <hr>
 <div id="command">
-<strong>Track.MicSound</strong> <em>X</em> ; <em>Y</em> ; <em>ForwardsTolerance</em> ; <em>BackwardsTolerance</em>
+<strong>Track.MicSound</strong> <em>X</em> ; <em>Y</em> ; <em>後方容差</em> ; <em>前方容差</em>
 </div>
 <div id="command-arguments">
-<em><strong>X</strong></em>: The X position of the sound.<br>
-<em><strong>Y</strong></em>: The Y position of the sound.<br>
-<em><strong>ForwardsTolerance</strong></em>: The distance in meters at which the sound becomes audible as the train approaches it&rsquo;s position.<br>
-<em><strong>BackwardsTolerance</strong></em>: The distance in meters at which the sound is inaudible after the train passes it&rsquo;s position.
+<em><strong>X</strong></em>:聲音的水平位置。
+<em><strong>Y</strong></em>:聲音的垂直位置。
+<em><strong>後方容差</strong></em>:當列車接近到這一距離時,聲音就可聽到。
+<em><strong>前方容差</strong></em>:當列車遠離到這一距離時,聲音就不再可聽到。
 </div>
-<p><strong><strong>Implementation Notes</strong></strong>:</p>
+<p><strong><strong>程序實現備註</strong></strong>:</p>
 <ul>
-<li>Microphone input must be activated using the <strong>PLAY_MIC_SOUNDS</strong> key, which is assigned to <strong>W</strong> by default.</li>
-<li>The microphone input will be routed to all <strong>Track.MicSound</strong> sound sources within the camera range.</li>
-<li>Only the first available openAL microphone input is supported at present.</li>
+<li>按下 <strong>PLAY_MIC_SOUNDS</strong> 按鍵先會打開麥克風嘅錄音功能。默認係 <strong>W</strong>鍵。</li>
+<li>麥克風嘅錄音將被轉發到攝錄機渲染距離中所有嘅<strong>Track.MicSound</strong>聲源。</li>
+<li>而家只支持第一個 OpenAL 咪。</li>
 </ul>
 
 </div>
