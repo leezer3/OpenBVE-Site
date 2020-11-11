@@ -33,3 +33,17 @@ Homepage:
 <a href="http://rm.rp.com.tw/">http://rm.rp.com.tw/</a>
 
 This is a custom joystick, and requires the SanYingInput plugin to be activated and configured under the Options menu to work correctly.
+
+## Densha De Go! Cab Controllers (Various)
+
+<img src="/images/Densha.jpg" alt="Densha De Go! Cab Controller">
+
+OpenBVE supports various controllers from the Densha De Go! series:
+
+* Classic controller- Sony PlayStation, Nintendo64, Sega Saturn, Sega Dreamcast (connected via PC USB adaptor)
+
+* Unbalance single handle USB controller
+
+* Unbalance twin handle USB controller
+
+These are handled by the Densha De Go! input plugin, which must be activated and configured under the Options menu.
