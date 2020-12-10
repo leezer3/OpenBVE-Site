@@ -86,7 +86,7 @@
               
             </li>
             
-            <li><a href="../../ko/objects/native/animated.html">The ANIMATED object</a>
+            <li><a href="../../ko/objects/native/animated.html">.animated 오브젝트</a>
               
             </li>
             
@@ -142,7 +142,7 @@
       
       <ul class="second">
         
-        <li><a href="../../ko/routes/csv.html">The CSV route</a>
+        <li><a href="../../ko/routes/csv.html">CSV 루트</a>
           
         </li>
         
@@ -310,7 +310,7 @@
       
       <ul class="second">
         
-        <li><a href="../../ko/information/encodings.html">Character encodings</a>
+        <li><a href="../../ko/information/encodings.html">글자 인코딩</a>
           
         </li>
         
@@ -399,7 +399,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>The <strong>.csv</strong> route format</h1>
+          <h1><strong>.csv</strong> 루트 형식</h1>
         </div>
 
         
@@ -408,33 +408,33 @@
 
 
 <div id="content">
-  <p>➟ <a href="../../ko/routes/csv_quick.html">Quick reference&hellip;</a></p>
-<h2 id="-contents">■ Contents</h2>
+  <p>➟ <a href="../../ko/routes/csv_quick.html">빠른 참조&hellip;</a></p>
+<h2 id="-목차">■ 목차</h2>
 <ul class='contents'>
-<li><a href="#overview">1. Overview</a></li>
+<li><a href="#overview">1. 개요</a></li>
 <li><a href="#syntax">2. Syntax</a></li>
 <li><a href="#preprocessing">3. Preprocessing</a></li>
-<li><a href="#options">4. The Options namespace</a></li>
-<li><a href="#route">5. The Route namespace</a></li>
-<li><a href="#train">6. The Train namespace</a></li>
-<li><a href="#structure">7. The Structure namespace</a></li>
-<li><a href="#texture">8. The Texture namespace</a></li>
-<li><a href="#cycle">9. The Cycle namespace</a></li>
-<li><a href="#signal">10. The Signal namespace</a></li>
-<li><a href="#track">11. The Track namespace</a>
+<li><a href="#options">4. Options 이름공간</a></li>
+<li><a href="#route">5. Route 이름공간</a></li>
+<li><a href="#train">6. Train 이름공간</a></li>
+<li><a href="#structure">7. Structure 이름공간</a></li>
+<li><a href="#texture">8. Texture 이름공간</a></li>
+<li><a href="#cycle">9. Cycle 이름공간</a></li>
+<li><a href="#signal">10. Signal 이름공간</a></li>
+<li><a href="#track">11. Track 이름공간</a>
 <ul class='contents'>
-<li><a href="#track_rails">11.1. Rails</a></li>
+<li><a href="#track_rails">11.1. 선로</a></li>
 <li><a href="#track_geometry">11.2. Geometry</a></li>
 <li><a href="#track_objects">11.3. Objects</a></li>
-<li><a href="#track_stations">11.4. Stations</a></li>
-<li><a href="#track_signalling">11.5. Signalling and speed limits</a></li>
-<li><a href="#track_safety">11.6. Safety systems</a></li>
+<li><a href="#track_stations">11.4. 역</a></li>
+<li><a href="#track_signalling">11.5. 신호와 속도 제한</a></li>
+<li><a href="#track_safety">11.6. 안전 장치</a></li>
 <li><a href="#track_misc">11.7. Miscellaneous</a></li>
 </ul>
 </li>
 </ul>
-<h2 id="a-nameoverviewa-1-overview"><a name="overview"></a>■ 1. Overview</h2>
-<p>A CSV route allows to create a route in a text file.</p>
+<h2 id="a-nameoverviewa-1-개요"><a name="overview"></a>■ 1. 개요</h2>
+<p>CSV 루트는 텍스트 파일로 노선을 만들 수 있도록 해준다.</p>
 <p>The file is a plain text file encoded in any arbitrary <a href="../../ko/information/encodings.html">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../ko/information/numberformats.html">parsing model</a> for numbers is <strong>Loose</strong> (unless otherwise stated), however, you are encouraged to produce <em>Strict</em> output nonetheless. The file is required to be located inside any folder whose current or parent folder includes the <em>Railway</em> and <em>Train</em> folders. The file name is arbitrary, but must have the extension <strong>.csv</strong>. The file is interpreted on a per-line basis, from top to bottom, where each line is split into expressions, which are interpreted from left to right.</p>
 <p>The route file consists of a series of commands to define the objects which are used throughout the route (Structure namespace). Additional properties for the route, for the default train to be used and for the background images to be used can also be defined. At last, the route file will contain instructions from the Track namespace. Here, track positions (usually in meters) are used to define when the track should curve, when stations are to be placed, when a wall should start and end, and so on. Generally speaking, instructions from the Track namespace should be used after using instructions from any of the other namespaces.</p>
 <p>The format assumes an implicit rail 0 which cannot be explicitly started or ended. Instead, it is present from the beginning of the route to the end, and it marks the rail the player&rsquo;s train drives on. rail 0 and the other rails are not only for used for visual, and also use for  <a href="../../ko/routes/xml/trackfollowingobject.html">Track Following Object</a>.</p>
@@ -2648,6 +2648,21 @@ With Track<br>
 <em><strong>Roll</strong></em>: The angle in degrees by which the object is rotated in the XY-plane in clock-wise order when viewed from behind. The default value is 0.
 </div>
 <p>This command places a special beacon, which sets the destination variable, available for use by plugins and animated objects. The object must have been loaded via Structure.Beacon(<em>BeaconStructureIndex</em>) prior to using this command.</p>
+<hr>
+<div id="command">
+<strong>Track.HornBlow</strong> <em>Type</em>; <em>BeaconStructureIndex</em>; <em>TriggerOnce</em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>
+</div>
+<div id="command-arguments">
+<em><strong>Type</strong></em>: Defines the type of horn to play: <em>0</em> for the primary horn, <em>1</em> for the secondary horn and <em>2</em> for the music horn.<br>
+<em><strong>BeaconStructureIndex</strong></em>: A non-negative integer representing the object to be placed as defined via Structure.Beacon, or -1 to not place any object.<br>
+<em><strong>TriggerOnce</strong></em>: If set to <em>0</em>, this beacon will be triggered by all valid trains which pass over it. If set to <em>1</em>, it will be triggered by the first valid train only.<br>
+<em><strong><font color="green">X</font></strong></em>: The X-coordinate at which to place the object, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br>
+<em><strong><font color="green">Y</font></strong></em>: The Y-coordinate at which to place the object, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br>
+<em><strong>Yaw</strong></em>: The angle in degrees by which the object is rotated in the XZ-plane in clock-wise order when viewed from above. The default value is 0.<br>
+<em><strong>Pitch</strong></em>: The angle in degrees by which the object is rotated in the YZ-plane in clock-wise order when viewed from the left. The default value is 0.<br>
+<em><strong>Roll</strong></em>: The angle in degrees by which the object is rotated in the XY-plane in clock-wise order when viewed from behind. The default value is 0.
+</div>
+<p>This command places a special beacon, which commands an AI driver to play the horn. Both an AI controlled player train and pure AI trains will trigger this beacon, unless <strong>TriggerOnce</strong> is set. The object must have been loaded via Structure.Beacon(<em>BeaconStructureIndex</em>) prior to using this command.</p>
 
 </div>
 

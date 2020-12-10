@@ -2648,6 +2648,21 @@ With Track<br>
 <em><strong>Roll</strong></em>: The angle in degrees by which the object is rotated in the XY-plane in clock-wise order when viewed from behind. The default value is 0.
 </div>
 <p>This command places a special beacon, which sets the destination variable, available for use by plugins and animated objects. The object must have been loaded via Structure.Beacon(<em>BeaconStructureIndex</em>) prior to using this command.</p>
+<hr>
+<div id="command">
+<strong>Track.HornBlow</strong> <em>Type</em>; <em>BeaconStructureIndex</em>; <em>TriggerOnce</em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>
+</div>
+<div id="command-arguments">
+<em><strong>Type</strong></em>: Defines the type of horn to play: <em>0</em> for the primary horn, <em>1</em> for the secondary horn and <em>2</em> for the music horn.<br>
+<em><strong>BeaconStructureIndex</strong></em>: A non-negative integer representing the object to be placed as defined via Structure.Beacon, or -1 to not place any object.<br>
+<em><strong>TriggerOnce</strong></em>: If set to <em>0</em>, this beacon will be triggered by all valid trains which pass over it. If set to <em>1</em>, it will be triggered by the first valid train only.<br>
+<em><strong><font color="green">X</font></strong></em>: The X-coordinate at which to place the object, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br>
+<em><strong><font color="green">Y</font></strong></em>: The Y-coordinate at which to place the object, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 0.<br>
+<em><strong>Yaw</strong></em>: The angle in degrees by which the object is rotated in the XZ-plane in clock-wise order when viewed from above. The default value is 0.<br>
+<em><strong>Pitch</strong></em>: The angle in degrees by which the object is rotated in the YZ-plane in clock-wise order when viewed from the left. The default value is 0.<br>
+<em><strong>Roll</strong></em>: The angle in degrees by which the object is rotated in the XY-plane in clock-wise order when viewed from behind. The default value is 0.
+</div>
+<p>This command places a special beacon, which commands an AI driver to play the horn. Both an AI controlled player train and pure AI trains will trigger this beacon, unless <strong>TriggerOnce</strong> is set. The object must have been loaded via Structure.Beacon(<em>BeaconStructureIndex</em>) prior to using this command.</p>
 
 </div>
 

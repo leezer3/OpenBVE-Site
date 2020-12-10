@@ -86,7 +86,7 @@
               
             </li>
             
-            <li><a href="../../../ko/objects/native/animated.html">The ANIMATED object</a>
+            <li><a href="../../../ko/objects/native/animated.html">.animated 오브젝트</a>
               
             </li>
             
@@ -142,7 +142,7 @@
       
       <ul class="second">
         
-        <li><a href="../../../ko/routes/csv.html">The CSV route</a>
+        <li><a href="../../../ko/routes/csv.html">CSV 루트</a>
           
         </li>
         
@@ -310,7 +310,7 @@
       
       <ul class="second">
         
-        <li><a href="../../../ko/information/encodings.html">Character encodings</a>
+        <li><a href="../../../ko/information/encodings.html">글자 인코딩</a>
           
         </li>
         
@@ -399,7 +399,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>The <strong>.animated</strong> object format</h1>
+          <h1><strong>.animated</strong> 오브젝트 영역</h1>
         </div>
 
         
@@ -408,64 +408,64 @@
 
 
 <div id="content">
-  <h2 id="-contents">■ Contents</h2>
+  <h2 id="-목차">■ 목차</h2>
 <ul class='contents'>
-<li><a href="#overview">1. Overview</a></li>
-<li><a href="#description">2. Sections</a></li>
-<li><a href="#operators">3. List of infix notation operators</a></li>
-<li><a href="#functions">4. List of functions</a></li>
-<li><a href="#variables">5. List of variables</a></li>
-<li><a href="#performance">6. Performance</a></li>
-<li><a href="#tips">7. Tips</a></li>
-<li><a href="#examples">8. Example functions</a></li>
-<li><a href="#grammar">9. Formal Grammar</a></li>
+<li><a href="#overview">1. 개요</a></li>
+<li><a href="#description">2. 구역</a></li>
+<li><a href="#operators">3. infix 표기법 운영자 명단</a></li>
+<li><a href="#functions">4. 기능의 목록</a></li>
+<li><a href="#variables">5. 변수목록</a></li>
+<li><a href="#performance">6. 퍼포먼스</a></li>
+<li><a href="#tips">7. 유용한 팁</a></li>
+<li><a href="#examples">8. 예문</a></li>
+<li><a href="#grammar">9. 문법</a></li>
 </ul>
-<h2 id="a-nameoverviewa-1-overview"><a name="overview"></a>■ 1. Overview</h2>
-<p>The ANIMATED object format is a container format allowing you to reference other objects (B3D/CSV/X) and to apply animation to them. It also allows to just group other objects (including other ANIMATED objects) without animating them.</p>
-<p>Animated objects can be used in CSV/RW routes (unless explicitly disallowed by some commands), as train exterior objects via the <em>extensions.cfg</em>, and as 3D cabs via the <em>panel.animated</em> file.</p>
-<h5 id="-basics">● Basics</h5>
+<h2 id="a-nameoverviewa-1-개요"><a name="overview"></a>■ 1. 개요</h2>
+<p>애니메이션 개체 형식은 다른 개체(B3D/CSV/X)를 참조하고 애니메이션을 적용할 수 있는 컨테이너 형식입니다. 또한 다른 개체(다른 애니메이션 개체 포함)를 애니메이션화하지 않고 그룹화할 수 있습니다.</p>
+<p>.animated 오브젝트는 .CSV/RW 루트(일부 구문 제외)에 이용될 수 있고,  <em>extensions.cfg</em> 파일을 통해 차량의 외부시점 오브젝트 또는 <em>panel.animated</em> 파일을 통해 3D 캡뷰로도 이용될 수 있다.</p>
+<h5 id="-기본">● 기본</h5>
 <p>Animation is performed via the following primitives:</p>
 <ul>
-<li>State changes - basically allowing to switch between different objects at any time</li>
-<li>Translation - moving objects in three independent directions</li>
-<li>Rotation - rotating objects around three independent axes</li>
-<li>Texture shifts - allowing to shift the texture coordinates of objects in two independent directions</li>
+<li>상태 변경 - 기본적으로 다른 개체 간에 언제든지 전환할 수 있음</li>
+<li>이동 - 물체를 세 개의 독립된 방향으로 이동</li>
+<li>회전 - 세 개의 독립된 축을 중심으로 물체가 회전합니다.</li>
+<li>텍스처 이동 - 물체의 텍스처 좌표를 두 개의 독립된 방향으로 이동할 수 있습니다</li>
 </ul>
-<h5 id="-a-little-formality">● A little formality</h5>
-<p>The file is a plain text file encoded in any arbitrary <a href="../../../ko/information/encodings.html">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../../ko/information/numberformats.html">parsing model</a> for numbers is <strong>Strict</strong>. The file name is arbitrary, but must have the extension <strong>.animated</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
-<h2 id="a-namedescriptiona-2-sections"><a name="description"></a>■ 2. Sections</h2>
-<h5 id="-the-include-section">● The [Include] section</h5>
-<p>You can use the [Include] section to just include other objects, but without animating them. This allows you to use the ANIMATED object file as a container to group other objects. There can be any number of [Include] sections within the file.</p>
+<h5 id="-약간의-형식">● 약간의 형식</h5>
+<p>파일은 임의로 인코딩된 일반 텍스트 파일이다. <a href="../../../ko/information/encodings.html">인코딩</a>, 하지만, UTF-8바이트 순서 표시를 선호한다. <a href="../../../ko/information/numberformats.html">파싱모델</a> 숫자<strong>Strict</strong> 있다. 파일 이름, 하지만 연장 <strong>.animated</strong>이 있어야 한다는 자의적이야. 파일per-line 기초 위에 위에서 아래로 해석됩니다.</p>
+<h2 id="a-namedescriptiona-2-구역"><a name="description"></a>■ 2. 구역</h2>
+<h5 id="-include-영역">● [Include] 영역</h5>
+<p>다른 물체를 포함하고 있으나 이들의 움직임을 계산하지 않고[포함]섹션을 사용할 수 있다. 이 용기가 다른 개체 그룹화하는 것은 ANIMATED 개체 파일을 사용할 수 있습니다. 파일 내에[포함]의 섹션이 있을 수 있는 번호입니다.</p>
 <div id="command">
 [Include]
 </div>
-<p>This starts the section.</p>
+<p>이것은 구문을 시작합니다</p>
 <div id="command">
-<em>FileName<sub>0</sub></em><br>
-<em>FileName<sub>1</sub></em><br>
-<em>FileName<sub>2</sub></em><br>
+<em>파일이름<sub>0</sub></em><br>
+<em>파일이름<sub>1</sub></em><br>
+<em>파일이름<sub>2</sub></em><br>
 &hellip;
 </div>
-<p>Defines a series of B3D/CSV/X/ANIMATED objects that should be included as-is.</p>
+<p>현재 상태로 포함되어야 하는 일련의 B3D/CSV/X/ANIMITED 객체를 정의합니다.</p>
 <div id="command">
-<strong>Position = X, Y, Z</strong>
+<strong>위치 = X, Y, Z</strong>
 </div>
-<p>This defines the position of the objects, basically allowing you to offset them with respect to the rest of the ANIMATED object file.</p>
+<p>이것은 개체의 위치를 정의하며, 기본적으로 나머지 애니메이션 개체 파일에 대해 개체를 상쇄할 수 있다.</p>
 <hr>
-<h5 id="-the-object-section">● The [Object] section</h5>
-<p>You can use the [Object] section to create a single animation. This requires to set up at least one state via the <em>States</em> parameter, and to use any combination of functions you want, which provide control over the animation. There can be any number of [Object] sections within the file.</p>
+<h5 id="-object-영역">● [Object] 영역</h5>
+<p>[Object] 섹션을 사용하여 단일 애니메이션을 만들 수 있다. 이를 위해서는 <em>States</em> 파라미터를 통해 적어도 하나의 상태를 설정하고 원하는 기능의 조합을 사용하여 애니메이션을 제어해야 한다. 파일 내에 [Object] 섹션이 얼마든지 있을 수 있다.</p>
 <div id="command">
 [Object]
 </div>
-<p>This starts the section.</p>
+<p>이것은 구문을 시작합니다</p>
 <div id="command">
 <strong>Position = X, Y, Z</strong>
 </div>
-<p>Defines the position of the object. This basically corresponds to a final TranslateAll command in the respective CSV/B3D file, but is performed after any of the functions are performed. For example, if you want to use rotation, then keep in mind that rotation is done around the origin (0,0,0). The <em>Position</em> command allows you to reposition the object after the rotation is performed.</p>
+<p>개체의 위치를 정의합니다. 기본적으로 이것은 각각의 독특한 CSV/B3D 파일에서 최종 TranslateAll 명령 통해 수행되는 기능의 수행된다 해당합니다. 만약 당신이 회전을 사용하고 싶어 예를 들어, 의식은 그 회전은 기원(0,0,0)에 끝나지 않고 있다. 그 <em>Position</em> 명령 후 회전을 수행하기가 당신이 개체를 확보할 수 있습니다.</p>
 <div id="command">
 <strong>States = File<sub>0</sub>, File<sub>1</sub>, &hellip;, File<sub>n-1</sub></strong>
 </div>
-<p>Loads <em>n</em> objects of CSV/B3D/X extension. Please note that the first file indicated has state index 0. Use multiple files only if you want to use state changes.</p>
+<p>CSV/B3D/X 확장의 <em>n</em> 개체를 로드합니다. 표시된 첫 번째 파일에 상태 인덱스가 0입니다. 상태 변경을 사용할 경우에만 여러 파일을 사용하십시오.</p>
 <div id="command">
 <strong>StateFunction = Formula</strong>
 </div>
