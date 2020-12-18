@@ -266,7 +266,7 @@
           
         </li>
         
-        <li><a href="../../zh_hk/trains/information.html">Information and tips</a>
+        <li><a href="../../zh_hk/trains/information.html">資料和貼士</a>
           
         </li>
         
@@ -1761,6 +1761,17 @@ With Track<br>
 <em><strong>Rate</strong></em>: A non-negative floating-point number measured in percent representing the adhesion of the track. The default value is 100.
 </div>
 <p>This command sets the adhesion of the track from this point on. As a reference, the value of 135 represents dry conditions, 85 represents frost and 50 represents snowy conditions. With a value of 0, the train will not be able to move at all.</p>
+<hr>
+<div id="command">
+<strong>Track.Rain</strong> <em>Intensity</em>
+</div>
+<div id="command-arguments">
+<em><strong>Rate</strong></em>: A non-negative floating-point number measured in percent representing the intensity of the current rainfall. The default value is 0.
+</div>
+<p>This command sets the intensity of the current rainfall.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>It is also possible to set the rain intensity using the legacy BVE4 beacon based method. If these commands are present in the route, all Rain commands will be ignored.</p>
+</div>
 <h5 id="a-nametrack_geometrya-112-geometry"><a name="track_geometry"></a>● 11.2. Geometry</h5>
 <hr>
 <div id="command">
@@ -2029,7 +2040,7 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 <em><strong>DepartureSound</strong></em>: The sound file to be played before departure (departure time minus sound duration minus door closing time), relative to the <strong>Sound</strong> folder.<br>
 <em><strong>TimetableIndex</strong></em>: A non-negative integer representing the timetable to be shown from this station on as defined via Train.Timetable(<em>TimetableIndex</em>).
 </div>
-<p>▸ <em>ArrivalTime</em> 的選項:</p>
+<p>▸ Available options for <em>ArrivalTime</em>:</p>
 <div id="command-arguments">
 <em>time</em>: The train is expected to arrive at this particular time.<br>
 <em>omitted</em>: The train may arrive at any time.<br>
@@ -2038,7 +2049,7 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 <strong>S</strong>: The player&rsquo;s train is expected to stop at this station, while all other trains are expected to pass.<br>
 <strong>S:</strong><em>time</em>: The player&rsquo;s train is expected to arrive at this particular time, while all other trains are expected to pass.
 </div>
-<p>▸ <em>DepartureTime</em> 的選項:</p>
+<p>▸ Available options for <em>DepartureTime</em>:</p>
 <div id="command-arguments">
 <em>time</em>: The train is expected to depart at this particular time.<br>
 <em>omitted</em>: The train may depart at any time.<br>
@@ -2049,24 +2060,24 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 <strong>J:</strong><em>index</em>: This is a station at which the train is &ldquo;jumped&rdquo; to the station specified by <em>index</em>. See the description below.<br>
 <strong>J:</strong><em>index:<strong>Time</strong></em>: This is a station at which the train is &ldquo;jumped&rdquo; to the specified by <em>index</em>. Jumping will take place at the specified time unless <em>StopDuration</em> interfers. See the description below.
 </div>
-<p>▸ <em>PassAlarm</em> 的選項:</p>
+<p>▸ Available options for <em>PassAlarm</em>:</p>
 <div id="command-arguments">
 <strong>0</strong>: The pass alarm device does not remind the driver of stopping at this station.<br>
 <strong>1</strong>: The pass alarm device reminds the driver of stopping at this station.
 </div>
-<p>▸ <em>Doors</em> 的選項:</p>
+<p>▸ Available options for <em>Doors</em>:</p>
 <div id="command-arguments">
 <strong>L</strong> or <strong>-1</strong>: The left doors are expected to open at this station.<br>
 <strong>N</strong> or <strong>0</strong>: No doors are expected to open at this station, i.e. the train should simply come to a hold.<br>
 <strong>R</strong> or <strong>1</strong>: The right doors are expected to open at this station.<br>
 <strong>B</strong>: Both the left and right doors are expected to open at this station.
 </div>
-<p>▸ <em>ForcedRedSignal</em> 的選項:</p>
+<p>▸ Available options for <em>ForcedRedSignal</em>:</p>
 <div id="command-arguments">
 <strong>0</strong>: Signals are unaffected by this station.<br>
 <strong>1</strong>: The signal immediately following the last station stop is hold at red until the train reaches the stopping area and the departure time.
 </div>
-<p>▸ <em>System</em> 的選項:</p>
+<p>▸ Available options for <em>System</em>:</p>
 <div id="command-arguments">
 <strong>ATS</strong> or <strong>0</strong>: ATS should be used from this station on. The following track is not be equipped with ATC.<br>
 <strong>ATC</strong> or <strong>1</strong>: ATC should be used from this station on. The following track is equipped with ATC.
@@ -2090,7 +2101,7 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 <em><strong>System</strong></em>: Indicates which built-in safety system should apply until the next station. The default value is 0.<br>
 <em><strong>DepartureSound</strong></em>: The sound file to be played before departure (departure time minus sound duration minus door closing time), relative to the <strong>Sound</strong> folder.
 </div>
-<p>▸ <em>ArrivalTime</em> 的選項:</p>
+<p>▸ Available options for <em>ArrivalTime</em>:</p>
 <div id="command-arguments">
 <em>time</em>: The train is expected to arrive at this particular time.<br>
 <em>omitted</em>: The train may arrive at any time.<br>
@@ -2099,7 +2110,7 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 <strong>S</strong>: The player&rsquo;s train is expected to stop at this station, while all other trains are expected to pass.<br>
 <strong>S:</strong><em>time</em>: The player&rsquo;s train is expected to arrive at this particular time, while all other trains are expected to pass.
 </div>
-<p>▸ <em>DepartureTime</em> 的選項:</p>
+<p>▸ Available options for <em>DepartureTime</em>:</p>
 <div id="command-arguments">
 <em>time</em>: The train is expected to depart at this particular time.<br>
 <em>omitted</em>: The train may depart at any time.<br>
@@ -2108,12 +2119,12 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 <strong>C</strong>: This is a station at which to &ldquo;change ends&rdquo;. See the description below.<br>
 <strong>C:</strong><em>time</em>: This is a station at which to &ldquo;change ends&rdquo;. Changing ends will take place at the specified time unless <em>StopDuration</em> interferes. See the description below.
 </div>
-<p>▸ <em>ForcedRedSignal</em> 的選項:</p>
+<p>▸ Available options for <em>ForcedRedSignal</em>:</p>
 <div id="command-arguments">
 <strong>0</strong>: Signals are unaffected by this station.<br>
 <strong>1</strong>: The signal immediately following the last station stop is hold at red until the train reaches the stopping area and the departure time.
 </div>
-<p>▸ <em>System</em> 的選項:</p>
+<p>▸ Available options for <em>System</em>:</p>
 <div id="command-arguments">
 <strong>ATS</strong> or <strong>0</strong>: ATS should be used from this station on. The following track is not be equipped with ATC.<br>
 <strong>ATC</strong> or <strong>1</strong>: ATC should be used from this station on. The following track is equipped with ATC.
@@ -2166,7 +2177,7 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 <em><strong><font color="green">ForwardTolerance</font></strong></em>: A positive floating-point number indicating the allowed tolerance in the forward direction, <strong>by default</strong> measured in <strong>meters</strong>. The default value is 5.<br>
 <em><strong>Cars</strong></em>: A non-negative integer indicating for how many cars this stop point applies, or 0 for all cars. The default value is 0.
 </div>
-<p>▸ <em>Direction</em> 的選項:</p>
+<p>▸ Available options for <em>Direction</em>:</p>
 <div id="command-arguments">
 <strong>-1</strong>: A stop post is created on the left side.<br>
 <strong>0</strong>: No stop post is created.<br>
@@ -2208,7 +2219,7 @@ With Track<br>
 <em><strong>RoofStructureIndex</strong></em>: A non-negative integer representing the object to be placed as defined via Structure.Roof<br>
 <em><strong>FormStructureIndex</strong></em>: A non-negative integer representing the object to be placed as defined via Structure.Form and Structure.FormC
 </div>
-<p>▸ <em>RailIndex<sub>2</sub></em> 的選項:</p>
+<p>▸ Available options for <em>RailIndex<sub>2</sub></em>:</p>
 <div id="command-arguments">
 <strong>Any current RailIndex</strong>: The form is deformed to meet the specified RailIndex.<br>
 <strong>L</strong>: The specified FormL, FormCL and RoofL objects are placed without deformation.<br>
@@ -2573,7 +2584,7 @@ With Track<br>
 <em>negative value</em>: The marker image starts to display at the Track.Marker command, and ends -<em>Distance</em> meters after the Track.Marker command.<br>
 <em>positive value</em>: The marker image starts to display <em>Distance</em> meters before the Track.Marker command, and ends at the Track.Marker command.
 </div>
-<p>▸ <em>FontColor</em> 的選項:</p>
+<p>▸ Available options for <em>FontColor</em>:</p>
 <div id="command-arguments">
 <em>1</em>: Black.<br>
 <em>2</em>: Gray.<br>

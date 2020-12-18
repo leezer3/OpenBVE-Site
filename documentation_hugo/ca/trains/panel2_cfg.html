@@ -958,7 +958,93 @@ Layer = <em>LayerIndex</em>
 <div id="command-arguments">
 <em><strong>LayerIndex</strong></em>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.
 </div>
-<h2 id="a-namesubjectsa-10-available-subjects"><a name="subjects"></a>■ 10. Available subjects</h2>
+<h2 id="a-namewindscreena-10-the-windscreen-section"><a name="windscreen"></a>■ 10. The Windscreen section</h2>
+<p>The Windscreen section defines a set of animated raindrops and windscreen wipers.</p>
+<hr>
+<div id="command">
+[Windscreen]
+</div>
+<p>This starts the section.</p>
+<hr>
+<div id="command">
+TopLeft = <em>X</em>, <em>Y</em>
+</div>
+<div id="command-arguments">
+<em><strong>X</strong></em>: The X of the top left co-ordinate on the panel texture in which drops should appear. The default value is 0.
+<em><strong>Y</strong></em>: The Y of the top left co-ordinate on the panel texture in which drops should appear. The default value is 0.
+</div>
+<hr>
+<div id="command">
+BottomRight = <em>X</em>, <em>Y</em>
+</div>
+<div id="command-arguments">
+<em><strong>X</strong></em>: The X of the bottom right co-ordinate on the panel texture in which drops should appear. The default value is the width of the panel texture.
+<em><strong>X</strong></em>: The Y of the bottom right co-ordinate on the panel texture in which drops should appear. The default value is height of the panel texture.
+</div>
+<hr>
+<div id="command">
+NumberOfDrops = <em>TotalDrops</em>
+</div>
+<div id="command-arguments">
+<em><strong>TotalDrops</strong></em>: An integer controlling the total number of drops to be generated randomly at game start. The default value is 32.
+</div>
+<hr>
+<div id="command">
+DropSize = <em>Pixels</em>
+</div>
+<div id="command-arguments">
+<em><strong>Pixels</strong></em>: An integer controlling the size of a drop on the panel image in pixels. The default value is 16.
+</div>
+<hr>
+<div id="command">
+RestPosition = <em>Position</em>
+</div>
+<div id="command-arguments">
+<em><strong>Position</strong></em>: <strong>Left or -1</strong> : The wipers rest on the left-hand side of the windscreen. <strong>Right or 1</strong> : The wipers rest on the right-hand side of the windscreen. The default value is Left.
+</div>
+<hr>
+<div id="command">
+HoldPosition = <em>Position</em>
+</div>
+<div id="command-arguments">
+<em><strong>Position</strong></em>: <strong>Left or -1</strong> : When using intermittant wiping, the wipers hold on the left-hand side of the windscreen. <strong>Right or 1</strong> : When using intermittant wiping, the wipers hold on the right-hand side of the windscreen. The default value is Left.
+</div>
+<hr>
+<div id="command">
+WipeSpeed = <em>Speed</em>
+</div>
+<div id="command-arguments">
+<em><strong>Speed</strong></em>: The speed in seconds for one pass of the wiper from left to right. The default value is 1.
+</div>
+<hr>
+<div id="command">
+HoldTime = <em>Time</em>
+</div>
+<div id="command-arguments">
+<em><strong>Time</strong></em>: The time in seconds for which the wiper is stationary at the hold position whilst using intermittant wiping. The default value is 1.
+</div>
+<hr>
+<div id="command">
+DaytimeDrops = <em>Drops</em>
+</div>
+<div id="command-arguments">
+<em><strong>Drops</strong></em>: A comma-separated list of drop image files relative to the train path to be used in the day. If not specified, built-in images will be used.
+</div>
+<hr>
+<div id="command">
+NightTimeDrops = <em>Drops</em>
+</div>
+<div id="command-arguments">
+<em><strong>Drops</strong></em>: A comma-separated list of drop image files relative to the train path to be used at night. If not specified, built-in images will be used.
+</div>
+<hr>
+<div id="command">
+Layer = <em>LayerIndex</em>
+</div>
+<div id="command-arguments">
+<em><strong>LayerIndex</strong></em>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.
+</div>
+<h2 id="a-namesubjectsa-11-available-subjects"><a name="subjects"></a>■ 11. Available subjects</h2>
 <p>A subject is composed of a base subject and an optional subject suffix. The subject controls what information is fed to the element that uses the subject. For example, a <em>Needle</em> can use the subject <em>kmph</em> to be fed with the current speed of the train in kilometers per hour, or with the <em>mr</em> subject to show the main reservoir pressure.</p>
 <h5 id="-base-subjects">● Base subjects</h5>
 <div class="overflow-container">
@@ -1109,6 +1195,10 @@ Layer = <em>LayerIndex</em>
 <tr>
 <td>stationAdjustAlarm</td>
 <td>Whether the station adjust alarm has been activated. Returns either 0 (inactive) or 1 (active).</td>
+</tr>
+<tr>
+<td>wiperPosition</td>
+<td>The current position of the wiper blade on the panel. Ranges from 0 (left) to 100 (right)</td>
 </tr>
 </tbody>
 </table>
@@ -1275,13 +1365,13 @@ Layer = <em>LayerIndex</em>
 </tbody>
 </table>
 </div>
-<h5 id="-sufixos">● Sufixos</h5>
+<h5 id="-suffixes">● Suffixes</h5>
 <div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
 <th>Subject suffix</th>
-<th>Descripció</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
