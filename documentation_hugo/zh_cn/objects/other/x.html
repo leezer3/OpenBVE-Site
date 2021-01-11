@@ -411,7 +411,12 @@
   <p><img src="../../../images/construction_64.png" alt="construction_64"></p>
 <p>当在设置中选择 NewXParser 或者 Assimp 时，openBVE能够支持除动画之外DirectX模型文件的大多数特性。</p>
 <p>原有的解析器只支持较有限范围的DirectX物件，例如基于BVE4物件查看器生成的。</p>
-<p>DirectX模型文件的完整文档在此尚未列出，但还是可以让您概览openBVE所支持的特性。</p>
+<div id="notice">
+<h4 id="color-key-transparencies-in-textures">Color key transparencies in textures</h4>
+<p>For legacy reasons, the color of <strong>pure black (0,0,0)</strong> is reserved when used in a texture.
+If a texture contains this color, then these pixels will be rendered as transparent.
+</div>
+<p>Full support &amp; documentation of the X object format is not yet available from this site, but the following is an overview of the supported templates, unstructured.</p>
 <ul>
 <li>Frame</li>
 <li>FrameRoot</li>

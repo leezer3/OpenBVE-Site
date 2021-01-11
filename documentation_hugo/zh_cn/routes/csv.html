@@ -1779,14 +1779,32 @@ With Track <br>
 <p>该指令设定之后轨道的附着系数。这会影响车轮打滑等物理计算。作为参考，干燥轨面大约是135，湿滑轨面大约是70，降雪轨面大约是50。如果附着系数是0，意味着轨面完全理想光滑，列车车轮将一直打滑，根本不可能移动。</p>
 <hr>
 <div id="command">
-<strong>Track.Rain</strong> <em>Intensity</em>
+<strong>Track.Rain</strong> <em>Intensity</em>; <em>WeatherType</em>
 </div>
 <div id="command-arguments">
-<em><strong>Rate</strong></em>: A non-negative floating-point number measured in percent representing the intensity of the current rainfall. The default value is 0.
+<em><strong>Rate</strong></em>: A non-negative floating-point number measured in percent representing the intensity of the current rainfall. The default value is 0.<br>
+<em><strong>WeatherType</strong></em>: A non-negative integer referencing the weather type to use as defined by Structure.Weather from this point onwards.
 </div>
-<p>This command sets the intensity of the current rainfall.</p>
+<p>This command sets the intensity of the current rainfall, and the weather object to be shown.</p>
 <div id="warning-nontitle">
 <span>⚠</span><p>It is also possible to set the rain intensity using the legacy BVE4 beacon based method. If these commands are present in the route, all Rain commands will be ignored.</p>
+</div>
+<hr>
+<div id="command">
+<strong>Track.Snow</strong> <em>Intensity</em>; <em>WeatherType</em>
+</div>
+<div id="command-arguments">
+<em><strong>Rate</strong></em>: A non-negative floating-point number measured in percent representing the intensity of the current snowfall. The default value is 0.<br>
+<em><strong>WeatherType</strong></em>: A non-negative integer referencing the weather type to use as defined by Structure.Weather from this point onwards.
+</div>
+<p>This command sets the intensity of the current snowfall, and the weather object to be shown.</p>
+<div id="notice">
+<h4 id="combining-rain-and-snow">Combining rain and snow</h4>
+<p>Rain and snow may be combined, and the simulation will show an appropriate random raindrop or snowflake on the windscreen, based upon the following probabilities:</p>
+<p>The base probability for a drop / flake to appear is the greater of the rainfall and snowfall intensities.<br>
+The snowfall intensity is then used as the probability that this is a snowflake. <br>
+For example, with rainfall at 50 and snowfall at 40, there is a 50% chance for a drop to be added to the windscreen on each tick. <br>
+Of this, there is a 40% chance that this will be a snowflake.</p>
 </div>
 <h5 id="a-nametrack_geometrya-112-geometry"><a name="track_geometry"></a>● 11.2. Geometry</h5>
 <hr>
@@ -1816,7 +1834,7 @@ With Track <br>
 </tbody>
 </table>
 <div id="warning-nontitle">
-<span>⚠</span><p>该指令只能在区间块开始位置使用。</p>
+<span>⚠</span><p>This command can only be used at the beginning of a block.</p>
 </div>
 <hr>
 <div id="command">
@@ -1944,7 +1962,7 @@ With Track <br>
 </div>
 <p>This starts or updates a wall on a specified rail. The object must have been loaded via Structure.WallL(<em>WallObjectIndex</em>) or Structure.WallR(<em>WallObjectIndex</em>) prior to using this command. The walls are placed at the beginning of every block until a corresponding Track.WallEnd ends the wall for this rail. Please note that walls are resurrected if a rail is ended via Track.RailEnd and then started again via Track.RailStart or Track.Rail unless the wall was also ended via Track.WallEnd.</p>
 <div id="warning-nontitle">
-<span>⚠</span><p>该指令只能在区间块开始位置使用。</p>
+<span>⚠</span><p>This command can only be used at the beginning of a block.</p>
 </div>
 <hr>
 <div id="command">
@@ -1955,7 +1973,7 @@ With Track <br>
 </div>
 <p>This ends an existing wall that was previously started via Track.Wall on a specified rail. The wall is not placed for the block in which this command is used.</p>
 <div id="warning-nontitle">
-<span>⚠</span><p>This command can only be used at the beginning of a block.</p>
+<span>⚠</span><p>该指令只能在区间块开始位置使用。</p>
 </div>
 <hr>
 <div id="command">
@@ -1974,7 +1992,7 @@ With Track <br>
 </div>
 <p>This starts or updates a dike on a specified rail. The object must have been loaded via Structure.DikeL(<em>DikeObjectIndex</em>) or Structure.DikeR(<em>DikeObjectIndex</em>) prior to using this command. The dikes are placed at the beginning of every block until a corresponding Track.DikeEnd ends the dike for this rail. Please note that dikes are resurrected if a rail is ended via Track.RailEnd and then started again via Track.RailStart or Track.Rail unless the dike was also ended via Track.DikeEnd.</p>
 <div id="warning-nontitle">
-<span>⚠</span><p>该指令只能在区间块开始位置使用。</p>
+<span>⚠</span><p>This command can only be used at the beginning of a block.</p>
 </div>
 <hr>
 <div id="command">
@@ -1985,7 +2003,7 @@ With Track <br>
 </div>
 <p>This ends an existing dike that was previously started via Track.Dike on a specified rail. The dike is not placed for the block in which this command is used.</p>
 <div id="warning-nontitle">
-<span>⚠</span><p>该指令只能在区间块开始位置使用。</p>
+<span>⚠</span><p>This command can only be used at the beginning of a block.</p>
 </div>
 <hr>
 <div id="command">
@@ -2000,7 +2018,7 @@ With Track <br>
 </div>
 <p>This starts or updates a pole on a specified rail. The object must have been loaded via Structure.Pole(<em>NumberOfAdditionalRails</em>; <em>PoleStructureIndex</em>) prior to using this command. The poles are placed at the beginning of every block whose track positions are an integer multiple of the <em>Interval</em> (that is not necessarily at the same location this command is placed). If <em>NumberOfAdditionalRails</em> is 0, <em>Location</em>indicates the side of the rail on which the pole is placed. If <em>Location</em> is less than or equal to 0, the pole is placed as-is (corresponding to the left side). If <em>Location</em> is greater than 0, the object is mirrored on the x-axis and then placed (corresponding to the right side). If <em>NumberOfAdditionalRails</em> is greater than or equal to 1, <em>Location</em> specifies the x-offset in multiples of 3.8 meters. Please note that poles are resurrected if a rail is ended via Track.RailEnd and then started again via Track.RailStart or Track.Rail unless the pole was also ended via Track.PoleEnd.</p>
 <div id="warning-nontitle">
-<span>⚠</span><p>该指令只能在区间块开始位置使用。</p>
+<span>⚠</span><p>This command can only be used at the beginning of a block.</p>
 </div>
 <hr>
 <div id="command">
