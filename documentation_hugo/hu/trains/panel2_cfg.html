@@ -959,7 +959,7 @@ Layer = <em>LayerIndex</em>
 <em><strong>LayerIndex</strong></em>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.
 </div>
 <h2 id="a-namewindscreena-10-the-windscreen-section"><a name="windscreen"></a>■ 10. The Windscreen section</h2>
-<p>The Windscreen section defines a set of animated raindrops and windscreen wipers.</p>
+<p>The Windscreen section defines a set of animated raindrops / snowflakes and windscreen wipers.</p>
 <hr>
 <div id="command">
 [Windscreen]
@@ -1036,6 +1036,20 @@ NightTimeDrops = <em>Drops</em>
 </div>
 <div id="command-arguments">
 <em><strong>Drops</strong></em>: A comma-separated list of drop image files relative to the train path to be used at night. If not specified, built-in images will be used.
+</div>
+<hr>
+<div id="command">
+DaytimeFlakes = <em>Flakes</em>
+</div>
+<div id="command-arguments">
+<em><strong>Drops</strong></em>: A comma-separated list of snowflake image files relative to the train path to be used in the day. If not specified, built-in images will be used.
+</div>
+<hr>
+<div id="command">
+NightTimeFlakes = <em>Flakes</em>
+</div>
+<div id="command-arguments">
+<em><strong>Drops</strong></em>: A comma-separated list of snowflake image files relative to the train path to be used at night. If not specified, built-in images will be used.
 </div>
 <hr>
 <div id="command">

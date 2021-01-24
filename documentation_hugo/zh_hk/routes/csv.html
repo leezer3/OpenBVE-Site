@@ -1452,6 +1452,10 @@ Train.File <em>FolderName</em>
 <td>Beacon</td>
 <td>Defines objects for Track.Beacon.</td>
 </tr>
+<tr>
+<td>Weather</td>
+<td>Defines objects for weather generated using Track.Rain and Track.Snow.</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -1650,7 +1654,7 @@ With Track<br>
 <p>The texture you start with should have a sharp shape, usually oval. The shape should be fully saturated in the core and blend into pure white at its outer rim. The surroundings of the shape can be either pure black (A) or pure white (B).</p>
 <p>When openBVE loads the glow texture, it will replace all purely black pixels with purely white pixels, thus arriving at (B). From there, the image is inverted (C), then hue-shifted by 180 degrees (D). Compared to (B), this has the overall effect of inverting the lightness of the image, i.e. fully saturated pixels will be left unchanged (e.g. the core), while bright pixels (such as the outer rim of the shape) will become dark, and vice versa. Then, the image is gamma-corrected to further darken the dark parts (E), and finally, the image is blurred slightly (F).</p>
 <p>The resulting texture is always additively blended. This means that instead of directly drawing the texture onto the screen, the pixels of the texture are added to the screen pixels. Here, adding black (0) does not change the screen pixels, while adding a fully satured color channel (1) will result in a fully satured color channel, e.g. adding white produces white. Keep in mind that when designing the textures, you will have to follow the inverse rules, e.g. design the image as depicted in (A) or (B), while having in mind how it will be processed afterward.</p>
-<h2 id="a-nametracka-11-track指令命名空間"><a name="track"></a>■ 11. Track指令命名空間</h2>
+<h2 id="a-nametracka-11-the-track-namespace"><a name="track"></a>■ 11. The Track namespace</h2>
 <p>Commands from this namespace define the track layout. Commands from this namespace should appear after commands from any of the other namespaces, and they usually form the largest part of the route file.</p>
 <div id="notice">
 <h4 id="use-of-track-positions">Use of track positions</h4>
