@@ -314,7 +314,7 @@
           
         </li>
         
-        <li><a href="../../zh_hk/information/numberformats.html">Number formats</a>
+        <li><a href="../../zh_hk/information/numberformats.html">數字格式</a>
           
         </li>
         
@@ -411,7 +411,7 @@
   <p>➟ <a href="../../zh_hk/routes/csv_quick.html">快速進行瀏覽&hellip;</a></p>
 <h2 id="目錄">目錄</h2>
 <ul class='contents'>
-<li><a href="#overview">1. 縂概</a></li>
+<li><a href="#overview">1. 總概</a></li>
 <li><a href="#syntax">2. 句法</a></li>
 <li><a href="#preprocessing">3. 提前準備</a></li>
 <li><a href="#options">4. Options指令命名空間</a></li>
@@ -461,7 +461,7 @@
 <p>在任何參數中使用距離的命令中，這個冒號表示法就可以被使用，到時我們會用<font color="green">綠色</font>標示呢種情況。</p>
 <p>當 <em>n</em> 個單位系數被使用 Options.UnitOflength 定義, 但是使用冒號表示法時輸入的部分卻少了, 咁呢啲系數將會被嚮右匹配, 在左邊的會被忽略。 因此, 幾種表示方法是等傚的: <em>0:0:2</em>,<em>0:2</em>, 同 <em>2</em>.</p>
 <h5 id="-指令">● 指令</h5>
-<p>冇參數的指令：</p>
+<p>無參數的指令：</p>
 <div id="command">
 <em>指令的名稱</em>
 </div>
@@ -521,7 +521,7 @@ Route.Timetable 1157_M
 <h2 id="a-namepreprocessinga-3-preprocessing"><a name="preprocessing"></a>■ 3. Preprocessing</h2>
 <p>在遊戲開始解析線路文件之前, 預處理指令將會被處理定替換。 預処理器會按照正常柯打分析呢啲以 $ 開頭的預処理命令。 $chr、$rnd 和 $sub 指令可以由嵌套, $if、$else 和 $endif 不能出現在另一個指令的括號入面。</p>
 <div id="warning-nontitle">
-<span>⚠</span><p>預處理指令的語法不可以隨意使用, 必須以下面畀出的形式出現。</p>
+<span>⚠</span><p>預處理指令的語法不可以隨意使用, 必須遵循以下面的形式。</p>
 </div>
 <hr>
 <div id="command">
@@ -1005,30 +1005,30 @@ Track.FreeObj 1; 42<br>
 <strong>Route.Image</strong> <em>File</em>
 </div>
 <div id="command-arguments">
-<em><strong>File</strong></em>: The file name of the image which appears in the route selection dialog, relative to the route&rsquo;s folder.
+<em><strong>文件</strong></em>: 相對於路線文件夾，出現在路線選擇對話框中的圖檔的文件名。
 </div>
 <hr>
 <div id="command">
 <strong>Route.Timetable</strong> <em>Text</em>
 </div>
 <div id="command-arguments">
-<em><strong>Text</strong></em>: The text which appears at the top of the default timetable.
+<em><strong>Text</strong></em>：顯示在默認時間表頂部的文字。
 </div>
 <div id="warning-nontitle">
 <span>⚠</span><p>如果需要插入換行、逗號之類的字符，必須使用$Chr。</p>
 </div>
 <hr>
 <div id="command">
-<strong>Route.Change</strong> <em>Mode</em>
+<strong>Route.Change</strong> <em>模式</em>
 </div>
 <div id="command-arguments">
-<em><strong>Mode</strong></em>: The mode for the train&rsquo;s safety system to start in. The default value is implementation-specific.
+<em><strong>模式</strong></em>: 列車安全系統啟動的模式。默認值是特定於實現的。
 </div>
 <p>▸ <em>模式</em> 的選項:</p>
 <div id="command-arguments">
-<strong>-1</strong>: The safety system is <strong>activated</strong> and the <em>service</em> brakes are applied.<br>
-<strong>0</strong>: The safety system is <strong>activated</strong> and the <strong>emergency</strong> brakes are applied.<br>
-<strong>1</strong>: The safety system is <em>deactivated</em> and the <strong>emergency</strong> brakes are applied.
+**-1 **：安全系統已 <strong>啟動</strong>，並且已應用了 <em>服務</em> 制動器。
+<strong>0</strong>: 安全系統已 <strong>啟動</strong>，並且已應用了 <strong>緊急</strong> 制動器。<br>
+<strong>1</strong>: 安全系統 <em>未啟動</em>，並且已應用了 <strong>緊急</strong> 制動器。
 </div>
 <hr>
 <div id="command">
