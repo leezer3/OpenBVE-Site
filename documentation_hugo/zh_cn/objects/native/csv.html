@@ -428,238 +428,251 @@
 <li><a href="#setcolor">SetColor</a></li>
 <li><a href="#setemissivecolor">SetEmissiveColor</a></li>
 <li><a href="#setblendmode">SetBlendMode</a></li>
+<li><a href="#setwrapmode">SetWrapMode</a></li>
 <li><a href="#loadtexture">LoadTexture</a></li>
 <li><a href="#setdecaltransparentcolor">SetDecalTransparentColor</a></li>
 <li><a href="#settexturecoordinates">SetCoordinates</a></li>
 </ul>
 </li>
 </ul>
-<h2 id="a-nameoverviewa-1-综述"><a name="overview"></a>■ 1. 综述</h2>
-<p>一个CSV文件允许使用纯文本命令来创造单个物件。该物件可以在线路或列车中使用。文件描述的物件可以包含任意数量的多边形。文件格式允许在CreatMeshBuilder部分中对多个多边形进行分组，并将颜色或纹理（也就是贴图）信息等属性分配给在每个部分中创建的多边形。这允许在同一个CreateMeshBuilder当中创建多个多边形，这些多边形共享公共属性。多边形在这里称为面（Face）。</p>
-<p>该文件是以任意<a href="../../../zh_cn/information/encodings.html">编码</a>编码的纯文本文件，但是，带字节顺序标记的UTF-8是更好的选择。数字的<a href="../../../zh_cn/information/numberformats.html">解析方式</a> 是 <strong>宽松的</strong> ，尽管如此，编写时建议您必须写一些 <em>严格正确的</em> 数字。文件名是任意的，但必须有扩展名 <strong>.csv</strong> 。该文件将从上到下按照每行进行解析。</p>
-<p>→ <a href="../../../zh_cn/objects/native/b3d_quick.html">另请参阅CSV格式的快速参考&hellip;</a></p>
-<h2 id="a-namesyntaxa-2-语法"><a name="syntax"></a>■ 2. 语法</h2>
-<p>文件中的每一行都分为命令名称及其参数。所有命令的语法都是相同的：</p>
+<h2 id="a-nameoverviewa-1-overview"><a name="overview"></a>■ 1. Overview</h2>
+<p>A CSV object allows to create a single object by using textual instructions. The object can be used in routes or in trains. The object described by the file can contain any number of individual polygons. The file format allows to group multiple polygons in CreateMeshBuilder sections in which attributes like color or texture information is assigned to all polygons created in each section. This allows for the creation of many polygons in the same CreateMeshBuilder section which share common attributes. A polygon is called a face in this file format.</p>
+<p>The file is a plain text file encoded in any arbitrary <a href="../../../zh_cn/information/encodings.html">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../../zh_cn/information/numberformats.html">parsing model</a> for numbers is <strong>Loose</strong>, however, you are encouraged to produce <em>Strict</em> output nonetheless. The file name is arbitrary, but must have the extension <strong>.csv</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
+<p>➟ <a href="../../../zh_cn/objects/native/b3d_quick.html">See also the quick reference for the CSV format&hellip;</a></p>
+<h2 id="a-namesyntaxa-2-syntax"><a name="syntax"></a>■ 2. Syntax</h2>
+<p>Each line in the file is split into the name of a command and its arguments. The syntax for all commands is the same:</p>
 <div id="command">
-<strong>命令名称</strong> , <em>参数<sub>1</sub></em> , <em>参数<sub>2</sub></em> , <em>参数<sub>3</sub></em> ，&hellip;， <em>参数<sub>n</sub></em>
+<strong>NameOfTheCommand</strong>, <em>Argument<sub>1</sub></em>, <em>Argument<sub>2</sub></em>, <em>Argument<sub>3</sub></em>, &hellip;, <em>Argument<sub>n</sub></em>
 </div>
-<p><em>命令名称</em> 不区分大小写。如果有参数，则 <em>命令名称</em> 和 <em>参数1</em> 用逗号（U+002C）来分隔。同样，参数也用逗号分隔。<em>命令名称</em> 和参数周围，及行的开头和结尾的 <a href="../../../zh_cn/information/whitespaces.html">空格</a> 都会被忽略。仅由空格组成的行或空行也被忽略。</p>
-<p>在 <em>参数<sub>i</sub></em> 处留空，也可以省略该参数。在省略时会应用特定的默认值。所有默认值都在下方有列出。</p>
-<p>您可以在一行的末尾添加注释。注释由分号（U+003B，英文半角）开始。所有注释在开始解析文件之前就将被自动排除。</p>
-<h2 id="a-namecommandsa-3-可用命令"><a name="commands"></a>■ 3. 可用命令</h2>
+<p><em>NameOfTheCommand</em> is case-insensitive. If there are arguments, <em>NameOfTheCommand</em> and <em>Argument1</em> are separated by a comma (U+002C). Likewise, arguments are also separated by a comma (U+002C). <a href="../../../zh_cn/information/whitespaces.html">White spaces</a> around the arguments and around the <em>NameOfTheCommand</em>, and well as at the beginning and the end of the line, are ignored. Empty lines or lines solely consisting of white spaces are also ignored.</p>
+<p>Arguments may also be omitted by leaving the text at each of the <em>Argumenti</em> blank. A default value will usually apply in this case, which is specific to the command used. All default values are specified in the section of available commands.</p>
+<p>You can use comments anywhere at the end of a line. A comment is started by a semicolon (U+003B). Comments, if present, are stripped away from all lines before these are processed.</p>
+<h2 id="a-namecommandsa-3-available-commands"><a name="commands"></a>■ 3. Available commands</h2>
 <p><a name="createmeshbuilder"></a></p>
 <div id="command">
 <strong>CreateMeshBuilder</strong>
 </div>
-<p>这个命令标志着新一组面（多边形）的开始。它必须位于以下任何命令之前。在文件中可以根据需要添加任意数量的该指令。后续的所有命令将与前一个CreateMeshBuilder关联。</p>
+<p>This command marks the beginning of a new section of faces. It must precede any of the following commands. There might be as many CreateMeshBuilder sections as desired in the object file. All subsequent commands will then relate to the last CreateMeshBuilder section opened.</p>
 <hr>
 <p><a name="addvertex"></a></p>
 <div id="command">
 <strong>AddVertex</strong>, <em>vX</em>, <em>vY</em>, <em>vZ</em>, <em>nX</em>, <em>nY</em>, <em>nZ</em>
 </div>
 <div id="command-arguments">
-<em><strong>vX</strong></em> ：顶点的x坐标，以米为单位，负值向左，正值向右，默认值为0。<br>
-<em><strong>vY</strong></em> ：顶点的y坐标，以米为单位，负值向下，正值向上，默认值为0。<br>
-<em><strong>vZ</strong></em> ：顶点的z坐标，以米为单位，负值向后，正值向前，默认值为0。<br>
-<em><strong>nX</strong></em> ：顶点法线的x坐标，默认值为0。<br>
-<em><strong>nY</strong></em> ：顶点法线的y坐标，默认值为0。<br>
-<em><strong>nZ</strong></em> ：顶点法线的z坐标，默认值为0。
+<em><strong>vX</strong></em>: The x-coordinate for the vertex in meters. Negative values are left, positive ones right. The default value is 0.<br>
+<em><strong>vY</strong></em>: The y-coordinate for the vertex in meters. Negative values are down, positive ones up. The default value is 0.<br>
+<em><strong>vZ</strong></em>: The z-coordinate for the vertex in meters. Negative values are backward, positive ones forward. The default value is 0.<br>
+<em><strong>nX</strong></em>: The x-coordinate for the normal of this vertex. The default value is 0.<br>
+<em><strong>nY</strong></em>: The y-coordinate for the normal of this vertex. The default value is 0.<br>
+<em><strong>nZ</strong></em>: The z-coordinate for the normal of this vertex. The default value is 0.
 </div>
-<p>这个命令将创建一个新顶点，然后可以将此顶点用于AddFace或AddFace2命令来创建面。在CreateMeshBuilder部分中可以根据需要添加任意数量的该指令。但是，给出顶点的顺序对后续的命令很重要。给定的第一个顶点具有索引编号0，后续顶点具有索引1,2,3等等。</p>
-<p>法线是在特定点垂直于面的方向。如果面里的所有顶点具有相同的法线，那么面将看起来平坦。如果使用得当，您可以通过为每个顶点指定不同的法线来造成曲面的错觉 - 跨多个面在所有顶点上使用相同法线除外。 <strong>请尽量使用简单的面和复杂的法线而不是复杂的面来达成曲面或凹凸效果。这能节省性能开支。</strong> 如果全部为0或不给出，法线将被自动计算。</p>
+<p>This command creates a new vertex which can then be used to create faces via the AddFace or AddFace2 commands. There can be as many AddVertex commands as desired within a CreateMeshBuilder section. However, the order of the vertices given is important for other commands. The first vertex given has index 0, and subsequent vertices have indices 1, 2, 3 and so on.</p>
+<p>The normal is the direction perpendicular to the face at a particular point. If all vertices in a face have the same normal, the face will look flat. If used appropriately, you can give the illusion of a curved face by specifying different normals per vertex, but using the same normal on all vertices that share the same spatial coordinate - across multiple faces. If left all zero, the normal will be calculated automatically.</p>
 <hr>
 <p><a name="addface"></a></p>
 <div id="command">
-<strong>AddFace</strong> , <em>v<sub>1</sub></em> , <em>v<sub>2</sub></em> , <em>v<sub>3</sub></em> , &hellip;, <em>v<sub>max</sub></em>
+<strong>AddFace</strong>, <em>v<sub>1</sub></em>, <em>v<sub>2</sub></em>, <em>v<sub>3</sub></em>, &hellip;, <em>v<sub>max</sub></em>
 </div>
 <div id="command-arguments">
-<em><strong>v<sub>i</sub></strong></em> ：此数值为将要包含在此面中的顶点索引。允许的数值为0到 <em>n</em> -1， <em>n</em> 是所使用的AddVertex命令数量。
+<em><strong>v<sub>i</sub></strong></em>: The vertex index to include in this face. Allowed values are 0 through <em>n</em>-1, where <em>n</em> is the number of AddVertex commands used.
 </div>
-<p>此命令将创建一个以所有给出v点为顶点的面。i的值（索引值）对应于AddVertex中创建顶点的顺序，因此该命令须在AddVertex命令之后使用。顶点索引出现的顺序很重要，必须以从面的正面来看的顺时针顺序给出。面的背面不可见。在相邻位置出现的顶点的连线不可以是该多边形的对角线。 仅支持凸多边形，凹多边形需要被拆成多个凸多边形。</p>
-<p><img src="https://s1.ax1x.com/2020/07/21/UIpAgK.png" alt=""></p>
+<p>This command creates a face given an arbitrary long list of vertex indices. The index corresponds to the order in which the vertices have been created by the AddVertex command, thus the AddFace command needs to be stated after the corresponding AddVertex commands. The first AddVertex command used creates index 0, and subsequent AddVertex commands create indices 1, 2, 3 and so on. The order in which the vertex indices appear is important. They need to be given in clockwise order when looking at the front of the face. The back of the face will not be visible. However, the AddFace2 command can be used to create a face which is visible from both sides. Only convex polygons are supported.</p>
 <hr>
 <p><a name="addface2"></a></p>
 <div id="command">
-<strong>AddFace2</strong> , <em>v<sub>1</sub></em> , <em>v<sub>2</sub></em> , <em>v<sub>3</sub></em> , &hellip;, <em>v<sub>max</sub></em>
+<strong>AddFace2</strong>, <em>v<sub>1</sub></em>, <em>v<sub>2</sub></em>, <em>v<sub>3</sub></em>, &hellip;, <em>v<sub>max</sub></em>
 </div>
 <div id="command-arguments">
-<em><strong>v<sub>i</sub></strong></em> ：此数值为将要包含在此面中的顶点索引。允许的数值为0到 <em>n</em> -1， <em>n</em> 是所使用的AddVertex命令数量。
+<em><strong>v<sub>i</sub></strong></em>: The vertex index to include in this face. Allowed values are 0 through <em>n</em>-1, where <em>n</em> is the number of AddVertex commands used.
 </div>
-<p>此命令将创建一个以所有给出v点为顶点的面。i的值（索引值）对应于AddVertex中创建顶点的顺序，因此该命令须在AddVertex命令之后使用。顶点索引出现的顺序很重要，必须以从面的正面来看的顺时针顺序给出。在相邻位置出现的顶点的连线不可以是该多边形的对角线。 仅支持凸多边形，凹多边形需要被拆成多个凸多边形。面的两边都可见，但在目前的openBVE版本里背面的光照计算会有错误。</p>
+<p>This command creates a face given an arbitrary long list of vertex indices. The index corresponds to the order in which the vertices have been created by the Vertex command, thus the Face command needs to be stated after the corresponding Vertex commands. The first Vertex command used creates index 0, and subsequent Vertex commands create indices 1, 2, 3 and so on. The order in which the vertex indices appear is important. They need to be given in clockwise order when looking at the front of the face. The back of the face will also be visible, however, lighting on the back face might be the same as on the front face. Only convex polygons are supported.</p>
 <hr>
 <p><a name="cube"></a></p>
 <div id="command">
-<strong>Cube</strong> , <em>半宽</em> , <em>半高</em> , <em>半深</em>
+<strong>Cube</strong>, <em>HalfWidth</em>, <em>HalfHeight</em>, <em>HalfDepth</em>
 </div>
 <div id="command-arguments">
-<em><strong>半宽</strong></em> ：一个表示此立方体一半宽度（X轴向，左右）的浮点数，以 <strong>米</strong> 为单位。<br>
-<em><strong>半高</strong></em> ：一个表示此立方体一半高度（Y轴向，上下）的浮点数，以 <strong>米</strong> 为单位。<br>
-<em><strong>半深</strong></em> ：一个表示此立方体一半深度（Z轴向，前后）的浮点数，以 <strong>米</strong> 为单位。
+<em><strong>HalfWidth</strong></em>: A floating-point number representing half the width of the cube in <strong>meters</strong>.<br>
+<em><strong>HalfHeight</strong></em>: A floating-point number representing half the height of the cube in <strong>meters</strong>.<br>
+<em><strong>HalfDepth</strong></em>: A floating-point number representing half the depth of the cube in <strong>meters</strong>.
 </div>
-<p>此命令将以原点（0,0,0）为中心创建一个以 <em>两倍的半宽</em> ， <em>两倍的半高</em> 和 <em>两倍的半深</em> 为尺寸的立方体。即，在X轴上它占据 -<em>半宽</em> 到 <em>半宽</em> 的范围，在Y轴上它占据 -<em>半高</em> 到 <em>半高</em> 的范围，在Z轴上它占据 -<em>半深</em> 到 <em>半深</em> 的范围。立方体总有8个顶点和6个面。</p>
+<p>This command creates a cube having dimensions as specified by <em>HalfWidth</em>, <em>HalfHeight</em> and <em>HalfDepth</em>. The cube will be centered on the origin (0,0,0). Thus, on the x-axis, the cube extends from -<em>HalfWidth</em> to <em>HalfWidth</em>, on the y-axis from -<em>HalfHeight</em> to <em>HalfHeight</em> and on the z-axis from -<em>HalfDepth</em> to <em>HalfDepth</em>. The cube always has 8 vertices and 6 faces.</p>
 <div id="notice">
-<h4 id="立方体指令表示">立方体指令表示</h4>
-<p>Cube命令相当于一系列的AddVertex和AddFace命令，会影响顶点索引，所以在同一CreateMeshBuilder部分中使用其他命令时需要考虑这些命令。<a href="../../../zh_cn/objects/native/cubecylinder.html">此处</a>提供了Cube命令的详细信息。
+<h4 id="cube-representation">Cube representation</h4>
+<p>The Cube command is equivalent to a series of AddVertex and AddFace commands, which you need to account for when using other commands in the same CreateMeshBuilder section. The details on what the Cube command does are available <a href="../../../zh_cn/objects/native/cubecylinder.html">here</a>.
 </div>
 <hr>
 <p><a name="cylinder"></a></p>
 <div id="command">
-<strong>Cylinder</strong> , <em>n</em> , <em>上底半径</em> , <em>下底半径</em> , <em>高</em>
+<strong>Cylinder</strong>, <em>n</em>, <em>UpperRadius</em>, <em>LowerRadius</em>, <em>Height</em>
 </div>
 <div id="command-arguments">
-<em><strong>n</strong></em> ：一个整数，表示顶底面正多边形的顶点数。<br>
-<em><strong>上底半径</strong></em> ：顾名思义。以 <strong>米</strong> 为单位。如该值为负数，则上底面将不生成。<br>
-<em><strong>下底半径</strong></em> ：顾名思义。以 <strong>米</strong> 为单位。如该值为负数，则下底面将不生成。<br>
-<em><strong>高</strong></em> ：一个表示该圆柱/圆锥/圆台高度的浮点数，以 <strong>米</strong> 为单位。如为负值，则该截锥体将上下倒转且显示面将朝内。
+<em><strong>n</strong></em>: An integer representing the number of vertices to be used for the base of the frustum.<br>
+<em><strong>UpperRadius</strong></em>: A floating-point number representing the radius for the upper base of the frustum in <strong>meters</strong>. Can be negative to indicate that the top cap is to be omitted.<br>
+<em><strong>LowerRadius</strong></em>: A floating-point number representing the radius for the lower base of the frustum in <strong>meters</strong>. Can be negative to indicate that the bottom cap is to be omitted.<br>
+<em><strong>Height</strong></em>: A floating-point number representing the height of the prism in <strong>meters</strong>. Can be negative, which will flip the frustum vertically and display it inside-out.
 </div>
-<p>该命令将创建一个<a href="http://en.wikipedia.org/wiki/Frustum">截锥体</a>。如果 <em>上底半径</em> 和 <em>下底半径</em> 是相等的，这个物件将变成<a href="http://en.wikipedia.org/wiki/Prism_(geometry)">棱柱</a>，并可用作近似的圆柱。如果 <em>下底半径</em> 或 <em>上底半径</em> 为0，这个物件将变成<a href="http://en.wikipedia.org/wiki/Pyramid_(geometry)">棱锥</a>。创建的截椎体将以原点为中心。 即，在X和Z轴上，该截锥体下底面占据 -<em>下底半径</em> 到 <em>下底半径</em>，顶面占据 -<em>上底半径</em> 到 <em>上底半径</em>；在Y轴上，该截锥体占据 -½*<em>高</em> 到 ½*<em>高</em>。译注：以上三个链接需轻功。</p>
-<p>当半径的值较小时， 如线杆或扶手，顶点数 <em>n</em> 为6或8就足够了。无论 <em>上底半径</em> ， <em>下底半径</em> 和 <em>n</em> 的值如何，该多面体将始终有 2*<em>n</em> 个顶点和 <em>n</em> +2个面，除非省略上下底面。若 <em>上底半径</em> 或 <em>下底半径</em> 为负数，则采用其绝对值，同时不创建相应的底面（没有盖儿）。若 <em>高</em> 为负数，则上下底面会倒转（上底在下，下底在上），同时所有面都会变为内部可见（默认情况是外部可见） 。</p>
+<p>This command creates a <a href="http://en.wikipedia.org/wiki/Frustum">frustum</a>. If <em>LowerRadius</em> and <em>UpperRadius</em> are equal, the object generated will reduce to a <a href="http://en.wikipedia.org/wiki/Prism_(geometry)">prism</a>, which can be used as an approximation to the cylinder. If either <em>LowerRadius</em> or <em>UpperRadius</em> are zero, the object generated will reduce to a <a href="http://en.wikipedia.org/wiki/Pyramid_(geometry)">pyramid</a>. The frustum will be centered on the origin (0,0,0). On the x- and z-axes, the frustum extends from -<em>LowerRadius</em> to <em>LowerRadius</em> for the lower base and from -<em>UpperRadius</em> to <em>UpperRadius</em> for the upper base. On the y-axis, the frustum extends from -½*<em>Height</em> to ½*<em>Height</em>.</p>
+<p>The number of vertices <em>n</em> will usually suffice to be 6 or 8 when only small radii are used, for example to create a pole. Regardless of the values of <em>UpperRadius</em>, <em>LowerRadius</em> and <em>n</em>, the frustum will always have 2*<em>n</em> vertices, and usually <em>n</em>+2 faces unless any of the caps are omitted. If <em>UpperRadius</em> or <em>LowerRadius</em> are negative, the absolute value is being taken, but the respective caps are not created. If <em>Height</em> is negative, the roles of top and bottom are reversed and the faces will be visible from the inside, while otherwise, they will be visible from the outside.</p>
 <div id="notice">
-<h4 id="截锥体命令表示">截锥体命令表示</h4>
-<p>Cylinder命令相当于一系列的AddVertex和AddFace命令，在同一CreateMeshBuilder部分中使用其他命令时需要考虑这些命令。<a href="../../../zh_cn/objects/native/cubecylinder.html">此处</a>提供了Cylinder命令的详细信息。
+<h4 id="cylinder-representation">Cylinder representation</h4>
+<p>The Cylinder command is equivalent to a series of AddVertex and AddFace commands, which you need to account for when using other commands in the same CreateMeshBuilder section. The details on what the Cylinder command does are available <a href="../../../zh_cn/objects/native/cubecylinder.html">here</a>.
 </div>
 <hr>
 <div id="command">
-<font color=#555555>GenerateNormals </font>
+<font color=#555555>GenerateNormals</font>
 </div>
-<p><em><font color=#555555>未给出的情况下，openBVE会自动计算法线坐标。该命令被openBVE忽略。</font></em></p>
+<p><em><font color=#555555>This command is ignored by openBVE.</font></em></p>
 <hr>
 <p><a name="translate"></a></p>
 <div id="command">
-<strong>Translate</strong> , <em>X</em> , <em>Y</em> , <em>Z</em><br>
-<strong>TranslateAll</strong> , <em>X</em> , <em>Y</em> , <em>Z</em>
+<strong>Translate</strong>, <em>X</em>, <em>Y</em>, <em>Z</em><br>
+<strong>TranslateAll</strong>, <em>X</em>, <em>Y</em>, <em>Z</em>
 </div>
 <div id="command-arguments">
-<em><strong>X</strong></em> ：一个表示顶点在x轴上移动距离的浮点数，以 <strong>米</strong> 为单位。负值向左平移，正值向右平移。默认值为0。<br>
-<em><strong>Y</strong></em> ：一个表示顶点在y轴上移动距离的浮点数，以 <strong>米</strong> 为单位。负值向下平移，正值向上平移。默认值为0。<br>
-<em><strong>Z</strong></em> ：一个表示顶点在z轴上移动距离的浮点数，以 <strong>米</strong> 为单位。负值向后平移，正值向前平移。默认值为0。
+<em><strong>X</strong></em>: A floating-point number representing the translation on the x-coordinate in <strong>meters</strong>. Negative values translate to the left, positive ones right. The default value is 0.<br>
+<em><strong>Y</strong></em>: A floating-point number representing the translation on the y-coordinate in <strong>meters</strong>. Negative values translate down, positive ones up. The default value is 0.<br>
+<em><strong>Z</strong></em>: A floating-point number representing the translation on the z-coordinate in <strong>meters</strong>. Negative values translate backward, positive ones forward. The default value is 0.
 </div>
-<p><strong>Translate</strong> 命令将移动从CreateMeshBuilder到Translate之间创建的所有顶点，且后续顶点不受影响。您可以在CreateMeshBuilder部分中根据需要使用不限数量的Translate命令。 <strong>TranslateAll</strong> 不仅影响当前CreateMeshBuilder部分中创建的顶点，还会影响到之前所有CreateMeshBuilder部分中创建的顶点，这对于在文件末尾插入来平移整个物件很有用。</p>
+<p>The <strong>Translate</strong> command moves all vertices that have been created so far in the CreateMeshBuilder section via the AddVertex, Cube or Cylinder commands. Subsequent vertices are not affected. You can use as many Translate commands as desired in a CreateMeshBuilder section. The <strong>TranslateAll</strong> command not only affects the vertices generated in the current CreateMeshBuilder section, but also those created in previous CreateMeshBuilder sections. This is useful to insert at the end of the file in order to translate the whole object.</p>
 <hr>
 <p><a name="scale"></a></p>
 <div id="command">
-<strong>Scale</strong> , <em>X</em> , <em>Y</em> , <em>Z</em><br>
-<strong>ScaleAll</strong> , <em>X</em> , <em>Y</em> , <em>Z</em>
+<strong>Scale</strong>, <em>X</em>, <em>Y</em>, <em>Z</em><br>
+<strong>ScaleAll</strong>, <em>X</em>, <em>Y</em>, <em>Z</em>
 </div>
 <div id="command-arguments">
-<em><strong>X</strong></em> ：一个非零浮点数，表示x轴上的缩放比值，默认值为1。<br>
-<em><strong>Y</strong></em> ：一个非零浮点数，表示y轴上的缩放比值，默认值为1。<br>
-<em><strong>Z</strong></em> ：一个非零浮点数，表示z轴上的缩放比值，默认值为1。
+<em><strong>X</strong></em>: A non-zero floating-point number representing the scale factor on the x-coordinate. The default value is 1.<br>
+<em><strong>Y</strong></em>: A non-zero floating-point number representing the scale factor on the y-coordinate. The default value is 1.<br>
+<em><strong>Z</strong></em>: non-zero A floating-point number representing the scale factor on the z-coordinate. The default value is 1.
 </div>
-<p><strong>Scale</strong> 命令将缩放从CreateMeshBuilder到Scale之间创建的所有顶点，且后续顶点不受影响。您可以在CreateMeshBuilder部分中根据需要使用不限数量的Scale命令。 <strong>ScaleAll</strong> 不仅影响当前CreateMeshBuilder部分中创建的顶点，还会影响到之前所有CreateMeshBuilder部分中创建的顶点，这对于在文件末尾插入来缩放整个物件很有用。</p>
+<p>The <strong>Scale</strong> command scales all vertices that have been created so far in the CreateMeshBuilder section via the AddVertex, Cube or Cylinder commands. Subsequent vertices are not affected. You can use as many Scale commands as desired in a CreateMeshBuilder section. The <strong>ScaleAll</strong> command not only affects the vertices generated in the current CreateMeshBuilder section, but also those created in previous CreateMeshBuilder sections. This is useful to insert at the end of the file in order to scale the whole object.</p>
 <hr>
 <p><a name="rotate"></a></p>
 <div id="command">
-<strong>Rotate</strong> , <em>X</em> , <em>Y</em> , <em>Z</em> , <em>角度</em><br>
-<strong>RotateAll</strong> , <em>X</em> , <em>Y</em> , <em>Z</em> , <em>角度</em>
+<strong>Rotate</strong>, <em>X</em>, <em>Y</em>, <em>Z</em>, <em>Angle</em><br>
+<strong>RotateAll</strong>, <em>X</em>, <em>Y</em>, <em>Z</em>, <em>Angle</em>
 </div>
 <div id="command-arguments">
-<em><strong>X</strong></em> ：旋转轴的x方向。负值指向左侧，正值指向右侧。默认值为0。<br>
-<em><strong>Y</strong></em> ：旋转轴的Y方向。负值指向下边，正值指向上边。默认值为0。<br>
-<em><strong>Z</strong></em> ：旋转轴的Z方向。负值指向后方，正值指向前方。默认值为0。
+<em><strong>X</strong></em>: The x-direction of the rotational axis. Negative values point to the left, positive ones to the right. The default value is 0.<br>
+<em><strong>Y</strong></em>: The y-direction of the rotational axis. Negative values point down, positive ones up. The default value is 0.<br>
+<em><strong>Z</strong></em>: The z-direction of the rotational axis. Negative values point backward, positive ones forward. The default value is 0.
 </div>
-<p><strong>Rotate</strong> 命令将旋转从CreateMeshBuilder到Rotate之间创建的所有顶点，且后续顶点不受影响。旋转轴通过 <em>X</em> ， <em>Y</em> 和 <em>Z</em> 值指定。旋转将发生在垂直于该轴的平面中。该轴的零向量被视为（1,0,0），所有其他方向都被折算成单位向量。</p>
-<p>您可以在CreateMeshBuilder部分中根据需要使用尽可能多的Rotate命令。 <strong>RotateAll</strong> 不仅影响当前CreateMeshBuilder部分中创建的顶点，还会影响到之前所有CreateMeshBuilder部分中创建的顶点，这对于在文件末尾插入来旋转整个物件很有用。</p>
-<p>※由于官方的说明文档原文有些晦涩，就算翻译过来也可能会看不懂，这里译者再开一段来讲讲本人是如何使用Rotate命令的。我倾向于“一对一”式的写法，即一个Rotate命令完成物件在一个坐标轴上的旋转，上文提到的X,Y,Z被我用来标记在该坐标轴上是否做出旋转动作，0代表否，1代表是。然后再用 角度 参数说明旋转的角度，正值为顺时针，负值为逆时针。例如 Rotate,0,1,0,180 表示将该物件以y轴为基准旋转180度。</p>
+<p>The <strong>Rotate</strong> command rotates all vertices that have been created so far in the current CreateMeshBuilder section via the AddVertex, Cube or Cylinder commands. Subsequent vertices are not affected. The axis of rotation is specified via the <em>X</em>, <em>Y</em> and <em>Z</em> values. Rotation will occur in the plane perpendicular to that direction. A zero vector for this axis is treated as (1,0,0). All other directions are normalized.</p>
+<p>You can use as many Rotate commands as desired in a CreateMeshBuilder section. The <strong>RotateAll</strong> command not only affects the vertices generated in the current CreateMeshBuilder section, but also those created in previous CreateMeshBuilder sections. This is useful to insert at the end of the file in order to rotate the whole object.</p>
 <hr>
 <p><a name="shear"></a></p>
 <div id="command">
-<strong>Shear</strong> , <em>dX</em> , <em>dY</em> , <em>dZ</em> , <em>sX</em> , <em>sY</em> , <em>sZ</em> , <em>r</em><br>
-<strong>ShearAll</strong> , <em>dX</em> , <em>dY</em> , <em>dZ</em> , <em>sX</em> , <em>sY</em> , <em>sZ</em> , <em>r</em>
+<strong>Shear</strong>, <em>dX</em>, <em>dY</em>, <em>dZ</em>, <em>sX</em>, <em>sY</em>, <em>sZ</em>, <em>r</em><br>
+<strong>ShearAll</strong>, <em>dX</em>, <em>dY</em>, <em>dZ</em>, <em>sX</em>, <em>sY</em>, <em>sZ</em>, <em>r</em>
 </div>
 <div id="command-arguments">
-<em><strong>dX</strong></em> ：向量D的x坐标，默认为0。<br>
-<em><strong>dY</strong></em> ：向量D的y坐标，默认为0。<br>
-<em><strong>dZ</strong></em> ：向量D的z坐标，默认为0。<br>
-<em><strong>sX</strong></em> ：向量S的x坐标，默认为0。<br>
-<em><strong>sY</strong></em> ：向量S的y坐标，默认为0。<br>
-<em><strong>sZ</strong></em> ：向量S的z坐标，默认为0。<br>
-<em><strong>r</strong></em> ：表示矢量移位的比例。默认为0。
+<em><strong>dX</strong></em>: The x-coordinate of the vector D. The default value is 0.<br>
+<em><strong>dY</strong></em>: The y-coordinate of the vector D. The default value is 0.<br>
+<em><strong>dZ</strong></em>: The z-coordinate of the vector D. The default value is 0.<br>
+<em><strong>sX</strong></em>: The x-coordinate of the vector S. The default value is 0.<br>
+<em><strong>sY</strong></em>: The y-coordinate of the vector S. The default value is 0.<br>
+<em><strong>sZ</strong></em>: The z-coordinate of the vector S. The default value is 0.<br>
+<em><strong>r</strong></em>: The ratio that indicates how much to displace vectors. The default value is 0.
 </div>
-<p><strong>Shear</strong> 命令为当前CreateMeshBuilder部分中到目前为止创建的所有顶点执行<a href="http://en.wikipedia.org/wiki/Shear_mapping">剪切映射</a>。 <strong>ShearAll</strong> 不仅影响当前CreateMeshBuilder部分中创建的顶点，还会影响到之前所有CreateMeshBuilder部分中创建的顶点，这对于在文件末尾插入来剪切整个物件很有用。</p>
+<p>The <strong>Shear</strong> command performs a <a href="http://en.wikipedia.org/wiki/Shear_mapping">shear mapping</a> for all vertices that have been created so far in the current CreateMeshBuilder section. The <strong>ShearAll</strong> command not only affects the vertices generated in the current CreateMeshBuilder section, but also those created in previous CreateMeshBuilder sections. This is useful to insert at the end of the file in order to shear the whole object.</p>
 <p><img src="../../../images/illustration_shear.png" alt="illustration_shear"></p>
-<p>剪切映射以原点为中心进行。不严谨地说，将物体沿方向D切成平面，然后沿方向S移位。通常，D和S是垂直的。D和S都被折算为单位向量。如果 <em>r</em> 为0，则不执行转换。如果D和S垂直，则 <em>r</em> 的1值对应45度的斜率。</p>
+<p>The shear mapping is performed around the origin. Loosely speaking, the object is sliced into planes along the direction D and then displaced along the direction S. Typically, D and S are perpendicular. D and S are always normalized. If <em>Ratio</em> is 0, no transformation is performed. If D and S are perpendicular, a <em>Ratio</em> of 1 corresponds to a slope of 45 degrees.</p>
 <hr>
 <p><a name="mirror"></a></p>
 <div id="command">
-<strong>Mirror</strong> , <em>X</em> , <em>Y</em> , <em>Z</em><br>
-<strong>MirrorAll</strong> , <em>X</em> , <em>Y</em> , <em>Z</em>
+<strong>Mirror</strong>, <em>X</em>, <em>Y</em>, <em>Z</em><br>
+<strong>MirrorAll</strong>, <em>X</em>, <em>Y</em>, <em>Z</em>
 </div>
 <div id="command-arguments">
-<em><strong>X</strong></em> ：决定x轴是否被镜像。默认值为0（否）。<br>
-<em><strong>Y</strong></em> ：决定y轴是否被镜像。默认值为0（否）。<br>
-<em><strong>Z</strong></em> ：决定z轴是否被镜像。默认值为0（否）。
+<em><strong>X</strong></em>: Whether the x-axis should be mirrored. The default value is 0 (false).<br>
+<em><strong>Y</strong></em>: Whether the y-axis should be mirrored. The default value is 0 (false).<br>
+<em><strong>Z</strong></em>: Whether the z-axis should be mirrored. The default value is 0 (false).
 </div>
-<p><strong>Mirror</strong> 命令将镜像从CreateMeshBuilder到Mirror之间创建的所有顶点，且后续顶点不受影响。 镜像的方向通过 <em>X</em> ， <em>Y</em> 和 <em>Z</em> 值指定。您可以在CreateMeshBuilder部分中根据需要使用任意数量的Mirror命令。</p>
-<p><strong>MirrorAll</strong> 不仅影响当前CreateMeshBuilder部分中创建的顶点，还会影响到之前所有CreateMeshBuilder部分中创建的顶点，这对于在文件末尾插入来镜像整个物件很有用。</p>
+<p>The <strong>Mirror</strong> command mirrors all vertices that have been created so far in the current CreateMeshBuilder section via the AddVertex, Cube or Cylinder commands. Subsequent vertices are not affected. The direction(s) to mirror are specified via the <em>X</em>, <em>Y</em> and <em>Z</em> values. You can use as many Mirror commands as desired in a CreateMeshBuilder section.</p>
+<p>The <strong>MirrorAll</strong> command not only affects the vertices generated in the current CreateMeshBuilder section, but also those created in previous CreateMeshBuilder sections. This is useful to insert at the end of the file in order to mirror the whole object.</p>
 <hr>
 <p><a name="setcolor"></a></p>
 <div id="command">
-<strong>SetColor</strong> , <em>红色分量</em> , <em>绿色分量</em> , <em>蓝色分量</em> , <em>透明度</em>
+<strong>SetColor</strong>, <em>Red</em>, <em>Green</em>, <em>Blue</em>, <em>Alpha</em>
 </div>
 <div id="command-arguments">
-<em><strong>R</strong></em> ：该颜色的红色分量，范围为0（黑）~255（红），默认值为0。<br>
-<em><strong>G</strong></em> ：该颜色的绿色分量，范围为0（黑）~255（绿），默认值为0。<br>
-<em><strong>B</strong></em> ：该颜色的蓝色分量，范围为0（黑）~255（蓝），默认值为0。<br>
-<em><strong>透明度</strong></em> ：该颜色的透明度，范围为0（透明）~255（不透明），默认值为255。
+<em><strong>Red</strong></em>: The red component of the color. Measured from 0 (black) to 255 (red). The default value is 255.<br>
+<em><strong>Green</strong></em>: The green component of the color. Measured from 0 (black) to 255 (green). The default value is 255.<br>
+<em><strong>Blue</strong></em>: The blue component of the color. Measured from 0 (black) to 255 (blue). The default value is 255.<br>
+<em><strong>Alpha</strong></em>: The alpha component of the color. Measured from 0 (transparent) to 255 (opaque). The default value is 255.
 </div>
-<p>该命令将设置从当前CreateMeshBuilder到这一SetColor指令之间创建的所有面的颜色。如果未贴上材质，则将使用 <em>R</em> <em>G</em> <em>B</em> 值对该面进行着色。如果使用了材质，图片中每个像素的颜色会和上述四个值相乘（译者的理解是把两个数值相乘，然后再把结果除以255，即PS中的“正片叠底”混色），例如与白色相乘则不变色，如与黑色相乘则全部变为黑色。在路线中使用照明时，实际颜色可能会根据照明条件而变化，但通常会变暗。</p>
+<p>This command sets the color for all faces that were already created in the current CreateMeshBuilder section. If no texture is used, the faces will be colored using the color data as specified by <em>Red</em>, <em>Green</em>and <em>Blue</em>. If a texture is used, the pixels in the texture will be multiplied by the color, where multiplying with black results in black and multiplying with white does not change the color of the texture pixels. Values in-between make the texture pixels darker. When lighting is used in the route, the actual color can change depending on the lighting conditions, but will usually become darker.</p>
 <hr>
 <p><a name="setemissivecolor"></a></p>
 <div id="command">
-<strong>SetEmissiveColor</strong> , <em>红色分量</em> , <em>绿色分量</em> , <em>蓝色分量</em>
+<strong>SetEmissiveColor</strong>, <em>Red</em>, <em>Green</em>, <em>Blue</em>
 </div>
 <div id="command-arguments">
-<em><strong>R</strong></em> ：该颜色的红色分量，范围为0（黑）~255（红），默认值为0。<br>
-<em><strong>G</strong></em> ：该颜色的绿色分量，范围为0（黑）~255（绿），默认值为0。<br>
-<em><strong>B</strong></em> ：该颜色的蓝色分量，范围为0（黑）~255（蓝），默认值为0。
+<em><strong>Red</strong></em>: The red component of the color. Measured from 0 (black) to 255 (red). The default value is 0.<br>
+<em><strong>Green</strong></em>: The green component of the color. Measured from 0 (black) to 255 (green). The default value is 0.<br>
+<em><strong>Blue</strong></em>: The blue component of the color. Measured from 0 (black) to 255 (blue). The default value is 0.
 </div>
-<p>该命令将为已在当前CreateMeshBuilder部分中创建的所有面设置自发光颜色。SetColor命令受光照影响，而SetEmissiveColor不会，因此该命令应用于自身发光的面，例如信号灯的发光部分、灯光、窗户等。实际的颜色影响量是受光照影响产生的颜色数据和自发光颜色的总和。</p>
+<p>This command sets the emissive color for all faces that were already created in the current CreateMeshBuilder section. The difference between the SetColor command and the SetEmissiveColor command is that the SetColor command is affected by lighting, while the SetEmissiveColor command is not. Thus, the SetEmissiveColor command should be used for faces which would emit light themselves, including signals, lamps, windows and the like. The actual color contribution to the faces will be the sum of the light-affected color data and the static emissive color data.</p>
 <hr>
 <p><a name="setblendmode"></a></p>
 <div id="command">
-<strong>SetBlendMode</strong> , <em>混色模式</em> , <em>半发光距离</em> , <em>光衰减模式</em>
+<strong>SetBlendMode</strong>, <em>BlendMode</em>, <em>GlowHalfDistance</em>, <em>GlowAttenuationMode</em>
 </div>
 <div id="command-arguments">
-<em><strong>混色模式</strong></em> ：将要使用的混色模式，默认为正常。<br>
-<em><strong>半发光距离</strong></em> ：发光强度为50%时视点和物体的距离，以米为单位。该值必须是1到4095范围内的整数，或0表示禁用此功能。默认值为0。<br>
-<em><strong>光衰减模式</strong></em> ：将要使用的光衰减模式，默认为四次倒数。
+<em><strong>BlendMode</strong></em>: The blend mode to use. The default is Normal.<br>
+<em><strong>GlowHalfDistance</strong></em>: The distance at which the glow is at 50% of its intensity, measured in meters. The value must be an integer in the range from 1 to 4095, or 0 to disable glow attenuation. The default value is 0.<br>
+<em><strong>GlowAttenuationMode</strong></em>: The glow attenuation mode to use. The default is DivideExponent4.
 </div>
-<p>▸ <em>混色模式</em> 命令中的可用选项：</p>
+<p>▸ Available options for <em>BlendMode</em>:</p>
 <div id="command-arguments">
-<strong>Normal（正常）</strong> ：正常渲染物体。
-<strong>Additive（叠加）</strong> ：叠加渲染物体。
+<strong>Normal</strong>: The faces are rendered normally.<br>
+<strong>Additive</strong>: The faces are rendered additively.
 </div>
-<p>▸ <em>光衰减模式</em> 命令中的可用选项：</p>
-<p><strong>DivideExponent2（平方倒数）</strong> ：光的强度通过函数 <em>x</em> <sup>2</sup> / ( <em>x</em> <sup>2</sup> + <em>发光半距离</em> <sup>2</sup>) 来决定，其中 <em>x</em> 是视点到物体的距离，以米为单位。
-<strong>DivideExponent4（四次倒数）</strong> ：光的强度通过函数 <em>x</em> <sup>4</sup> / ( <em>x</em> <sup>4</sup> + <em>发光半距离</em> <sup>4</sup>) 来决定，其中 <em>x</em> 是视点到物体的距离，以米为单位。</p>
-<p>此命令为当前CreateMeshBuilder部分中的所有面设置混色模式。<em>普通</em> 模式用材质像素替换屏幕像素。<em>叠加</em> 模式将材质像素的颜色数值与屏幕像素颜色数值相加，例如加黑色（0,0,0）不会改变屏幕像素，添加白色（255,255,255）结果恒为白色。如果 <em>发光半距离</em> 为0，将默认不启用光照衰减。如果启用了光照衰减，<em>发光半距离</em> 是其强度为一半的距离。当视点接近物体时，物体会逐渐淡出（变得透明）。通过设置 <em>光衰减模式</em> 可以确定特定距离的精确光强度。平方倒数创建一个更平滑的过渡，但光汇合到最大强度的过程非常缓慢，而四次倒数创建更锐利的过渡，且光线汇合更快。</p>
+<p>▸ Available options for <em>GlowAttenuationMode</em>:</p>
+<div id="command-arguments">
+<strong>DivideExponent2</strong>: The glow intensity is determined via the function <em>x</em>2 / (<em>x</em>2 + <em>GlowHalfDistance</em>2), where <em>x</em> is the distance from the camera to the object in meters.<br>
+<strong>DivideExponent4</strong>: The glow intensity is determined via the function <em>x</em>4 / (<em>x</em>4 + <em>GlowHalfDistance</em>4), where <em>x</em> is the distance from the camera to the object in meters.
+</div>
+<p>This command sets the blend mode for all faces in the current CreateMeshBuilder section. The <em>Normal</em> mode replaces screen pixels with texture pixels. The <em>Additive</em> mode adds the color of texture pixels to the color of screen pixels, where adding black does not change the screen pixel, while adding white results in white. If <em>GlowHalfDistance</em> is 0, glow attenuation will be disabled, which is the default. If glow attenuation is to be used, <em>GlowHalfDistance</em> represents the distance in meters at which the glow is exactly at 50% of its intensity. When the camera approaches the face, the face will gradually fade out (become transparent). The function used to determine the exact intensity for a given distance can be influenced with the setting of <em>GlowAttenuationMode</em>. DivideExponent2 creates a smoother transition, but will converge to the maximum intensity very slowly, while DivideExponent4 creates a sharper transition which converges more quickly.</p>
 <div id="warning">
-<h4 id="openbve-2的未来兼容性说明">openBVE 2的未来兼容性说明</h4>
-<p>在openBVE的未来版本计划中，将只有叠加光照模式受支持，且有可能会不再使用 <em>光衰减模式</em> 这个参数。请避免在这条指令中使用正常模式。
+<hr>
+<p><a name="setwrapmode"></a></p>
+<div id="command">
+<strong>SetWrapMode</strong>, <em>WrapMode</em>
+</div>
+<div id="command-arguments">
+<em><strong>WrapMode</strong></em>: The openGL texture wrapping mode to use. If this is not specified, the game will attempt to auto-determine the most appropriate texture wrapping mde.
+</div>
+<p>▸ Available options for <em>WrapMode</em>:</p>
+<div id="command-arguments">
+<strong>ClampClamp</strong>: The texture is clamped to edge on both axes.
+<strong>ClampRepeat</strong>: The texture is clamped to edge on the x-axis and repeats on the y-axis.
+<strong>RepeatClamp</strong>: The texture repeats on the x-axis and is clamped to edge on the y-axis.
+<strong>RepeatRepeat</strong>: The texture repeats on both axes.
 </div>
 <hr>
 <p><a name="loadtexture"></a></p>
 <div id="command">
-<strong>LoadTexture</strong> , <em>日间材质</em> , <em>夜间材质</em>
+<strong>LoadTexture</strong>, <em>DaytimeTexture</em>, <em>NighttimeTexture</em>
 </div>
 <div id="command-arguments">
-<em><strong>日间材质</strong></em> ：将要加载的日间材质的文件路径，相对于CSV文件所在目录。<br>
-<em><strong>夜间材质</strong></em> ：将要加载的夜间材质的文件路径，相对于CSV文件所在目录。
+<em><strong>DaytimeTexture</strong></em>: The file name of the daytime version of the texture to load, relative to the directory the object file is stored in.<br>
+<em><strong>NighttimeTexture</strong></em>: The file name of the nighttime version of the texture to load, relative to the directory the object file is stored in.
 </div>
-<p>此命令将加载材质并将其用于当前CreateMeshBuilder部分中的所有面。文件路径相对于CSV文件所在路径。您也可以使用支持完整Alpha通道的PNG格式，但请尽量不要使用半透明的PNG，因为很吃性能。没有Alpha通道（全不透明）的材质可以与SetDecalTransparentColor命令配合使用来达到性能更好的透明效果。</p>
-<p>如果使用了 <em>夜间材质</em> ，它指定在夜间光照状态（.Brightness 0）下使用的材质，而 <em>日间材质</em> 指定在日间光照状态（.Brightness 255）下使用的材质。两个材质会根据光照状态互相混合（.Brightness 1~254），材质也需要以此来进行设计。如果指定了 <em>夜间材质</em> ，就必须同时指定 <em>日间材质</em> 。如果没有指定 <em>夜间材质</em> ，暗光照条件会使日间材质更黑。必须使用SetTextureCoordinates指令设定好材质与各顶点的关系，材质才能被正常显示。</p>
+<p>This command loads a texture and uses it for all faces in the current CreateMeshBuilder section. The file name is relative to the directory the object file is stored in. You can use PNG, which supports full alpha channels, but use the alpha channel only if absolutely required as it reduces performance. Prefer using a texture without an alpha channel in conjunction with the SetDecalTransparentColor command in order to use color-key transparency.</p>
+<p>If <em>NighttimeTexture</em> is used, it specifies the texture to be used on nighttime lighting conditions, while <em>DaytimeTexture</em> then specifies the texture to be used on daytime lighting conditions. The textures might blend into each other and should be designed accordingly. If <em>NighttimeTexture</em> is used, <em>DaytimeTexture</em> must also be specified. If <em>NighttimeTexture</em> is not used, low lighting conditions will make the daytime version darker. Nighttime textures are meant for use with train interior/exterior objects.</p>
 <hr>
 <p><a name="setdecaltransparentcolor"></a></p>
 <div id="command">
-<strong>SetDecalTransparentColor</strong> , <em>红色分量</em> , <em>绿色分量</em> , <em>蓝色分量</em>
+<strong>SetDecalTransparentColor</strong>, <em>Red</em>, <em>Green</em>, <em>Blue</em>
 </div>
 <div id="command-arguments">
-<em><strong>R</strong></em> ：该颜色的红色分量，范围为0（黑）~255（红），默认值为0。<br>
-<em><strong>G</strong></em> ：该颜色的绿色分量，范围为0（黑）~255（绿），默认值为0。<br>
-<em><strong>B</strong></em> ：该颜色的蓝色分量，范围为0（黑）~255（蓝），默认值为0。
+<em><strong>Red</strong></em>: The red component of the color. Measured from 0 (black) to 255 (red). The default value is 0.<br>
+<em><strong>Green</strong></em>: The green component of the color. Measured from 0 (black) to 255 (green). The default value is 0.<br>
+<em><strong>Blue</strong></em>: The blue component of the color. Measured from 0 (black) to 255 (blue). The default value is 0.
 </div>
-<p>这条指令为已经创建的所有面指定一个蒙版式的透明色（例如屏蔽门和车窗）。刚刚加载的材质中与指定的 <em>红</em>、<em>绿</em>、<em>蓝</em> 颜色完全相同的像素都会变为透明的。这种蒙版式的透明色比起使用含透明部分的PNG性能高，所以最好绘制全不透明的材质，然后将材质中要透明的部分填为固定颜色，再使用此指令将这些部分“挖空”，而不是使用半透明的PNG。必须使用SetTextureCoordinates指令设定好材质与各顶点的关系，材质才能被正常显示。</p>
+<p>This command sets the color used for screendoor transparency for all faces that were already created. The texture loaded via the Load command will become transparent for all pixels which match exactly with the color specified via the <em>Red</em>, <em>Green</em> and <em>Blue</em> parameters. The use of screendoor transparency is much more efficient than using a full alpha channel, so prefer using a texture without an alpha channel and use this command instead to make parts of the texture transparent. You need to specify texture coordinates via the Coordinate command in order for the texture to correctly appear on the faces.</p>
 <hr>
 <p><a name="enablecrossfading"></a></p>
 <div id="command">
@@ -688,6 +701,7 @@
 <em><strong>Y</strong></em>: The y-coordinate of the texture. Integer values correspond to the top/bottom edge of the texture. If only values between 0 and 1 are to be considered, 0 corresponds to the top and 1 to the bottom.
 </div>
 <p>This command associates a coordinate in the texture to the vertex specified by <em>VertexIndex</em>. The index corresponds to the order in which the vertices have been created by the AddVertex command, thus the Coordinates command needs to be stated after the corresponding AddVertex command. The <em>X</em> and <em>Y</em> values do not necessarily need to be in the range between 0 (left or top) to 1 (right or bottom), but can have any other value. It is assumed in this case that the texture is repeated on an infinite grid where integer values for <em>X</em> and <em>Y</em> correspond to the corners of the texture.</p>
+</div>
 
 </div>
 

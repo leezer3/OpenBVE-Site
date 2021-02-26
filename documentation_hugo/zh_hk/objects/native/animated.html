@@ -86,7 +86,7 @@
               
             </li>
             
-            <li><a href="../../../zh_hk/objects/native/animated.html">The ANIMATED object</a>
+            <li><a href="../../../zh_hk/objects/native/animated.html">ANIMATED 物件</a>
               
             </li>
             
@@ -322,7 +322,7 @@
           
         </li>
         
-        <li><a href="../../../zh_hk/information/textureformats.html">Texture formats</a>
+        <li><a href="../../../zh_hk/information/textureformats.html">材質格式</a>
           
         </li>
         
@@ -399,7 +399,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>The <strong>.animated</strong> object format</h1>
+          <h1><strong>.animated</strong> 物件格式</h1>
         </div>
 
         
@@ -408,9 +408,9 @@
 
 
 <div id="content">
-  <h2 id="-contents">■ Contents</h2>
+  <h2 id="-目錄">■ 目錄</h2>
 <ul class='contents'>
-<li><a href="#overview">1. Overview</a></li>
+<li><a href="#overview">1. 總概</a></li>
 <li><a href="#description">2. Sections</a></li>
 <li><a href="#operators">3. List of infix notation operators</a></li>
 <li><a href="#functions">4.功能列表</a></li>
@@ -420,7 +420,7 @@
 <li><a href="#examples">8. Example functions</a></li>
 <li><a href="#grammar">9. Formal Grammar</a></li>
 </ul>
-<h2 id="a-nameoverviewa-1-overview"><a name="overview"></a>■ 1. Overview</h2>
+<h2 id="a-nameoverviewa-1-總概"><a name="overview"></a>■ 1. 總概</h2>
 <p>The ANIMATED object format is a container format allowing you to reference other objects (B3D/CSV/X) and to apply animation to them. It also allows to just group other objects (including other ANIMATED objects) without animating them.</p>
 <p>Animated objects can be used in CSV/RW routes (unless explicitly disallowed by some commands), as train exterior objects via the <em>extensions.cfg</em>, and as 3D cabs via the <em>panel.animated</em> file.</p>
 <h5 id="-基本">● 基本</h5>
@@ -623,7 +623,7 @@ If a state is to have no sound effect, the list entry should be left blank.</p>
 </div>
 <hr>
 <div id="warning">
-<h4 id="openbve-2-compatibility-note">openBVE 2 compatibility note</h4>
+<h4 id="openbve-2兼容性">openBVE 2兼容性</h4>
 <p>During the development of openBVE (v0.9) and during the development of the animated object format, there were certain commands in existance ending in <em>RPN</em>, such as <em>TranslateXFunctionRPN</em>. These commands never made it into any official release (v1.0) and were thus never meant to be used outside of development environments. While they are still available undocumentedly, they will be removed for openBVE 2. If you are using these commands, please get rid of them as soon as possible.
 </div>
 <hr>
@@ -1036,7 +1036,11 @@ Please also note that some combinations of prefix and infix operators are not re
 <tbody>
 <tr>
 <td><code>playerTrain</code></td>
-<td>Returns 1 if the train is the player train, 0 otherwise.</td>
+<td>如果此物件是在玩家的列車，此變數會為1，否則此變數會為0。</td>
+</tr>
+<tr>
+<td>注: Route.RunInterval的列車並非玩家列車</td>
+<td bgcolor='#D0D0D0'></td>
 </tr>
 <tr>
 <td><code>cars</code></td>

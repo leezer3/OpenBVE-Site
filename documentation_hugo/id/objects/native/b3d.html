@@ -428,77 +428,78 @@
 <li><a href="#setcolor">Color</a></li>
 <li><a href="#setemissivecolor">EmissiveColor</a></li>
 <li><a href="#setblendmode">BlendMode</a></li>
+<li><a href="#setwrapmode">WrapMode</a></li>
 <li><a href="#loadtexture">Load</a></li>
 <li><a href="#setdecaltransparentcolor">Transparent</a></li>
 <li><a href="#settexturecoordinates">Coordinates</a></li>
 </ul>
 </li>
 </ul>
-<h2 id="a-nameoverviewa-1-penjelasan"><a name="overview"></a>■ 1. Penjelasan</h2>
-<p>Objek B3D berfungsi membuat objek dengan perintah teks. Objek ini dapat digunakan di rute atau kereta. Dalam file ini objek dapat dibuat sebanyak mungkin. File ini dapat membuat satu atau lebih polygon. Dalam satu bagian [MeshBuilder] memiliki warna dan tekstur yang sama untuk setiap mesh dan polygon dalam bagian yang sama. Polygon dalam file objek ini disebut dengan Face.</p>
+<h2 id="a-nameoverviewa-1-overview"><a name="overview"></a>■ 1. Overview</h2>
+<p>A B3D object allows to create a single object by using textual instructions. The object can be used in routes or in trains. The object described by the file can contain any number of individual polygons. The file format allows to group multiple polygons in [MeshBuilder] sections in which attributes like color or texture information is assigned to all polygons created in each section. This allows for the creation of many polygons in the same [MeshBuilder] section which share common attributes. A polygon is called a face in this file format.</p>
 <p>The file is a plain text file encoded in any arbitrary <a href="../../../id/information/encodings.html">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../../id/information/numberformats.html">parsing model</a> for numbers is <strong>Loose</strong>, however, you are encouraged to produce <em>Strict</em> output nonetheless. The file name is arbitrary, but must have the extension <strong>.b3d</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
-<p>➟ <a href="../../../id/objects/native/b3d_quick.html">Lihat juga rangkuman singkat daftar perintah B3D</a></p>
-<h2 id="a-namesyntaxa-2-format-penulisan"><a name="syntax"></a>■ 2. Format penulisan</h2>
-<p>Setiap baris dalam file ini adalah satu perintah beserta nilai argumennya. Semua sistem penulisan di file ini sama, sebagai berikut:</p>
+<p>➟ <a href="../../../id/objects/native/b3d_quick.html">See also the quick reference for the B3D format&hellip;</a></p>
+<h2 id="a-namesyntaxa-2-syntax"><a name="syntax"></a>■ 2. Syntax</h2>
+<p>Each line in the file is split into the name of a command and its arguments. The syntax for all commands is the same:</p>
 <div id="command">
-<strong>NamaPerintah</strong> <em>Argumen<sub>1</sub></em>, <em>Argumen<sub>2</sub></em>, <em>Argumen<sub>3</sub></em>, &hellip;, <em>Argumen<sub>n</sub></em>
+<strong>NameOfTheCommand</strong> <em>Argument<sub>1</sub></em>, <em>Argument<sub>2</sub></em>, <em>Argument<sub>3</sub></em>, &hellip;, <em>Argument<sub>n</sub></em>
 </div>
 <p><em>NameOfTheCommand</em> is case-insensitive. If there are arguments, <em>NameOfTheCommand</em> and <em>Argument1</em> are separated by at least one space space (U+0020). Arguments are separated by a comma (U+002C). <a href="../../../id/information/whitespaces.html">White spaces</a> around the arguments, and well as at the beginning and the end of the line, are ignored. Empty lines or lines solely consisting of white spaces are also ignored.</p>
-<p>Argumen dapat dibiarkan kosong, tanpa diisi nilai apapun. Jika kosong, maka nilai default akan dipakai sesuai perintah yang digunakan. Semua nilai default dijelaskan di setiap penjelasan perintah. Catatan: <em>Argumen <sub> 1 </sub></em> tidak boleh kosong jika ada argumen yang diisi di belakangnya.</p>
-<p>Anda bisa menambahkan komentar di mana saja pada akhir baris. Komentar ditambahkan dengan menulis karakter titik koma (U+003B) ( ; ) di depannya. Jika sistem menemukan karakter ini, semua karakter di belakangnya diabaikan dan tidak dianggap sebagai perintah.</p>
-<h2 id="a-namecommandsa-3-daftar-perintah"><a name="commands"></a>■ 3. Daftar perintah</h2>
+<p>Arguments may also be omitted by leaving the text at each of the <em>Argument<sub>i</sub></em> blank. A default value will usually apply in this case, which is specific to the command used. All default values are specified in the section of available commands. Note however that the first argument may not be omitted if other arguments are provided.</p>
+<p>You can use comments anywhere at the end of a line. A comment is started by a semicolon (U+003B). Comments, if present, are stripped away from all lines before these are processed.</p>
+<h2 id="a-namecommandsa-3-available-commands"><a name="commands"></a>■ 3. Available commands</h2>
 <p><a name="createmeshbuilder"></a></p>
 <div id="command">
 <strong>[MeshBuilder]</strong>
 </div>
-<p>Perintah ini membuat bagian mesh baru dalam 1 file. Anda bisa membuat [meshbuilder] sebanyak apapun yang diinginkan. Semua keterangan tentang gambar dan warna di bagian ini akan diterapkan ke semua mesh dan poligon ini juga.</p>
+<p>This command marks the beginning of a new section of faces. It must precede any of the following commands. There might be as many [MeshBuilder] sections as desired in the object file. All subsequent commands will then relate to the last [MeshBuilder] section opened.</p>
 <hr>
 <p><a name="addvertex"></a></p>
 <div id="command">
 <strong>Vertex</strong> <em>vX</em>, <em>vY</em>, <em>vZ</em>, <em>nX</em>, <em>nY</em>, <em>nZ</em>
 </div>
 <div id="command-arguments">
-<em><strong>vX</strong></em>: posisi x dalam meter. minus ke kiri, plus ke kanan. nilai defaultnya 0
-<em><strong>vY</strong></em>: posisi y dalam meter. minus ke bawah, plus ke atas. nilai defaultnya 0
-<em><strong>vZ</strong></em>: posisi z dalam meter. minus ke belakang, plus kedepan. nilai defaultnya 0
-<em><strong>nX</strong></em>: pencahayaan atau normals di posisi x. defaultnya 0
-<em><strong>nY</strong></em>: pencahayaan atau normals di posisi y. defaultnya 0
-<em><strong>nZ</strong></em>: pencahayaan atau normals di posisi z. defaultnya 0
+<em><strong>vX</strong></em>: The x-coordinate for the vertex in meters. Negative values are left, positive ones right. The default value is 0.<br>
+<em><strong>vY</strong></em>: The y-coordinate for the vertex in meters. Negative values are down, positive ones up. The default value is 0.<br>
+<em><strong>vZ</strong></em>: The z-coordinate for the vertex in meters. Negative values are backward, positive ones forward. The default value is 0.<br>
+<em><strong>nX</strong></em>: The x-coordinate for the normal of this vertex. The default value is 0.<br>
+<em><strong>nY</strong></em>: The y-coordinate for the normal of this vertex. The default value is 0.<br>
+<em><strong>nZ</strong></em>: The z-coordinate for the normal of this vertex. The default value is 0.
 </div>
-<p>Perintah ini berfungsi membuat titik sudut baru yang bisa dibentuk dari perintah Face atau Face2. Anda bisa membuat titik sudut sebanyak mungkin dalam 1 [meshbuilder]. Setiap 1 baris Vertex mempunyai nomor urut dimulai dari 0, yang pasti akan dipakai di perintah selanjutnya. Vertex paling atas nomor urut 0, sedangkan vertex di bawahnya bernomor 1, selanjutnya vertex ke-2, 3, 4, dan seterusnya.</p>
-<p>Normals, atau pencahayaan, berfungsi untuk menentukan arah datangnya cahaya ke mesh ini. Jika semuanya diabaikan atau ditulis 0, maka pengaturan cahaya akan dibuat otomatis. Jika anda menggunakan Normals ini, anda dapat mengatur cahaya yang datang di setiap titik sudut.</p>
+<p>This command creates a new vertex which can then be used to create faces via the Face or Face2 commands. There can be as many Vertex commands as desired within a [MeshBuilder] section. However, the order of the vertices given is important for other commands. The first vertex given has index 0, and subsequent vertices have indices 1, 2, 3 and so on.</p>
+<p>The normal is the direction perpendicular to the face at a particular point. If all vertices in a face have the same normal, the face will look flat. If used appropriately, you can give the illusion of a curved face by specifying different normals per vertex, but using the same normal on all vertices that share the same spatial coordinate - across multiple faces. If left all zero, the normal will be calculated automatically.</p>
 <hr>
 <p><a name="addface"></a></p>
 <div id="command">
 <strong>Face</strong> <em>v<sub>1</sub></em>, <em>v<sub>2</sub></em>, <em>v<sub>3</sub></em>, &hellip;, <em>v<sub>max</sub></em>
 </div>
 <div id="command-arguments">
-<em><strong>v<sub>i</sub></strong></em>: Vertex yang akan dibuat bidang datar. angka yang dibolehkan adalah dari 0 sampai dengan <em>n-1</em> , dimana <em>n</em> adalah jumlah total vertex yang ada dalam satu [meshbuilder].
+<em><strong>v<sub>i</sub></strong></em>: The vertex index to include in this face. Allowed values are 0 through <em>n</em>-1, where <em>n</em> is the number of Vertex commands used.
 </div>
-<p>Perintah ini membuat sebuah bangun datar yang terbentuk dari semua Vertex yang telah dimasukan. Urutan penulisan nomor vertex harus berurut sehingga bisa menjadi satu bangun datar. urutan penulisan nomor vertex sesuai arah jarum jam (misalnya kiri bawah, kiri atas, kanan atas, kanan bawah) akan menghasilkan bangun datar menghadap ke depan. Sebaliknya, akan mengarah ke belakang. Jika menggunakan Face2, bagian depan dan belakang bidang datar akan terlihat.</p>
+<p>This command creates a face given an arbitrary long list of vertex indices. The index corresponds to the order in which the vertices have been created by the Vertex command, thus the Face command needs to be stated after the corresponding Vertex commands. The first Vertex command used creates index 0, and subsequent Vertex commands create indices 1, 2, 3 and so on. The order in which the vertex indices appear is important. They need to be given in clockwise order when looking at the front of the face. The back of the face will not be visible. However, the Face2 command can be used to create a face which is visible from both sides. Only convex polygons are supported.</p>
 <hr>
 <p><a name="addface2"></a></p>
 <div id="command">
 <strong>Face2</strong> <em>v<sub>1</sub></em>, <em>v<sub>2</sub></em>, <em>v<sub>3</sub></em>, &hellip;, <em>v<sub>max</sub></em>
 </div>
 <div id="command-arguments">
-<em><strong>v<sub>i</sub></strong></em>: Vertex yang akan dibuat bidang datar. angka yang dibolehkan adalah dari 0 sampai dengan <em>n-1</em> , dimana <em>n</em> adalah jumlah total vertex yang ada dalam satu [meshbuilder].
+<em><strong>v<sub>i</sub></strong></em>: The vertex index to include in this face. Allowed values are 0 through <em>n</em>-1, where <em>n</em> is the number of Vertex commands used.
 </div>
-<p>Perintah ini membuat sebuah bangun datar yang terbentuk dari semua Vertex yang telah dimasukan. Urutan penulisan nomor vertex harus berurut sehingga bisa menjadi satu bangun datar. urutan penulisan nomor vertex sesuai arah jarum jam (misalnya kiri bawah, kiri atas, kanan atas, kanan bawah) akan menghasilkan bangun datar menghadap ke depan. bagian belakang bangun datar juga akan terlihat. Namun pada bagian belakang tidak akan terpengaruh oleh pencahayaan.</p>
+<p>This command creates a face given an arbitrary long list of vertex indices. The index corresponds to the order in which the vertices have been created by the Vertex command, thus the Face command needs to be stated after the corresponding Vertex commands. The first Vertex command used creates index 0, and subsequent Vertex commands create indices 1, 2, 3 and so on. The order in which the vertex indices appear is important. They need to be given in clockwise order when looking at the front of the face. The back of the face will also be visible, however, lighting on the back face might be the same as on the front face. Only convex polygons are supported.</p>
 <hr>
 <p><a name="cube"></a></p>
 <div id="command">
 <strong>Cube</strong> <em>HalfWidth</em>, <em>HalfHeight</em>, <em>HalfDepth</em>
 </div>
 <div id="command-arguments">
-<em><strong>HalfWidth</strong></em>: Setengah lebar kubus dalam <strong>meter</strong>.<br>
-<em><strong>HalfHeight</strong></em>: Setengah tinggi kubus dalam <strong>meter</strong>.<br>
-<em><strong>HalfDepth</strong></em>: Setengah panjang kubus dalam <strong>meter</strong>.
+<em><strong>HalfWidth</strong></em>: A floating-point number representing half the width of the cube in <strong>meters</strong>.<br>
+<em><strong>HalfHeight</strong></em>: A floating-point number representing half the height of the cube in <strong>meters</strong>.<br>
+<em><strong>HalfDepth</strong></em>: A floating-point number representing half the depth of the cube in <strong>meters</strong>.
 </div>
 <p>This command creates a cube having dimensions as specified by <em>HalfWidth</em>, <em>HalfHeight</em> and <em>HalfDepth</em>. The cube will be centered on the origin (0,0,0). Thus, on the x-axis, the cube extends from -<em>HalfWidth</em> to <em>HalfWidth</em>, on the y-axis from -<em>HalfHeight</em> to <em>HalfHeight</em> and on the z-axis from -<em>HalfDepth</em> to <em>HalfDepth</em>. The cube always has 8 vertices and 6 faces.</p>
 <div id="notice">
-<h4 id="penggambaran-perintah-cube">Penggambaran perintah Cube</h4>
-<p>Perintah Cube sama dengan kombinasi perintah Vertex dan Face. Detailnya dapat dilihat di <a href="../../../id/objects/native/cubecylinder.html">sini</a>.
+<h4 id="cube-representation">Cube representation</h4>
+<p>The Cube command is equivalent to a series of Vertex and Face commands, which you need to account for when using other commands in the same [MeshBuilder] section. The details on what the Cube command does are available <a href="../../../id/objects/native/cubecylinder.html">here</a>.
 </div>
 <hr>
 <p><a name="cylinder"></a></p>
@@ -506,22 +507,22 @@
 <strong>Cylinder</strong> <em>n</em>, <em>UpperRadius</em>, <em>LowerRadius</em>, <em>Height</em>
 </div>
 <div id="command-arguments">
-<em><strong>n</strong></em>: Jumlah sisi alas dan tutup tabung
-<em><strong>UpperRadius</strong></em>: jari-jari tutup tabung dalam satuan <strong>meter</strong>. Bisa negatif kalau ingin tutup prisma tidak terlihat.
-<em><strong>LowerRadius</strong></em>: jari-jari alas tabung dalam satuan <strong>meter</strong>. Bisa negatif kalau ingin alas prisma tidak terlihat.
-<em><strong>Height</strong></em>: tinggi tinggi dalam <strong>meter</strong>. Bisa negatif jika ingin tabung terlihat dari dalam saja.
+<em><strong>n</strong></em>: An integer representing the number of vertices to be used for the base of the frustum.<br>
+<em><strong>UpperRadius</strong></em>: A floating-point number representing the radius for the upper base of the frustum in <strong>meters</strong>. Can be negative to indicate that the top cap is to be omitted.<br>
+<em><strong>LowerRadius</strong></em>: A floating-point number representing the radius for the lower base of the frustum in <strong>meters</strong>. Can be negative to indicate that the bottom cap is to be omitted.<br>
+<em><strong>Height</strong></em>: A floating-point number representing the height of the prism in <strong>meters</strong>. Can be negative, which will flip the frustum vertically and display it inside-out.
 </div>
 <p>This command creates a <a href="http://en.wikipedia.org/wiki/Frustrum">frustrum</a>. If <em>LowerRadius</em> and <em>UpperRadius</em> are equal, the object generated will reduce to a <a href="http://en.wikipedia.org/wiki/Prism_(geometry)">prism</a>, which can be used as an approximation to the cylinder. If either <em>LowerRadius</em> or <em>UpperRadius</em> are zero, the object generated will reduce to a <a href="http://en.wikipedia.org/wiki/Pyramid_(geometry)">pyramid</a>. The frustum will be centered on the origin (0,0,0). On the x- and z-axes, the frustum extends from -<em>LowerRadius</em> to <em>LowerRadius</em> for the lower base and from -<em>UpperRadius</em> to <em>UpperRadius</em> for the upper base. On the y-axis, the frustum extends from -½*<em>Height</em> to ½*<em>Height</em>.</p>
 <p>The number of vertices <em>n</em> will usually suffice to be 6 or 8 when only small radii are used, for example to create a pole. Regardless of the values of <em>UpperRadius</em>, <em>LowerRadius</em> and <em>n</em>, the frustum will always have 2*<em>n</em> vertices, and usually <em>n</em>+2 faces unless any of the caps are omitted. If <em>UpperRadius</em> or <em>LowerRadius</em> are negative, the absolute value is being taken, but the respective caps are not created. If <em>Height</em> is negative, the roles of top and bottom are reversed and the faces will be visible from the inside, while otherwise, they will be visible from the outside.</p>
 <div id="notice">
-<h4 id="representasi-tabung">Representasi tabung</h4>
-<p>Cylinder adalah gabungan dari beberapa perintah Vertex dan Face. Info lebih lanjut bisa dilihat <a href="../../../id/objects/native/cubecylinder.html">di sini</a>.
+<h4 id="cylinder-representation">Cylinder representation</h4>
+<p>The Cylinder command is equivalent to a series of Vertex and Face commands, which you need to account for when using other commands in the same [MeshBuilder] section. The details on what the Cylinder command does are available <a href="../../../id/objects/native/cubecylinder.html">here</a>.
 </div>
 <hr>
 <div id="command">
 <font color=#555555>Texture</font>
 </div>
-<p><em><font color=#555555>Perintah ini tidak dipakai di openBVE.</font></em></p>
+<p><em><font color=#555555>This command is ignored by openBVE.</font></em></p>
 <hr>
 <p><a name="translate"></a></p>
 <div id="command">
@@ -529,11 +530,11 @@
 <strong>TranslateAll</strong> <em>X</em>, <em>Y</em>, <em>Z</em>
 </div>
 <div id="command-arguments">
-<em><strong>X</strong></em>: jarak perpindahan di sumbu x dalam <strong>meter</strong>. Negatif ke kiri, positif ke kanan. Nilai defaultnya 0.<br>
-<em><strong>Y</strong></em>: jarak perpindahan di sumbu y dalam <strong>meter</strong>. Negatif ke bawah, positif ke atas. Nilai defaultnya 0.
-<em><strong>Z</strong></em>: jarak perpindahan di sumbu z dalam <strong>meter</strong>. Negatif ke belakang, positif ke depan. Nilai defaultnya 0.
+<em><strong>X</strong></em>: A floating-point number representing the translation on the x-coordinate in <strong>meters</strong>. Negative values translate to the left, positive ones right. The default value is 0.<br>
+<em><strong>Y</strong></em>: A floating-point number representing the translation on the y-coordinate in <strong>meters</strong>. Negative values translate down, positive ones up. The default value is 0.<br>
+<em><strong>Z</strong></em>: A floating-point number representing the translation on the z-coordinate in <strong>meters</strong>. Negative values translate backward, positive ones forward. The default value is 0.
 </div>
-<p>Perintah <strong>Translate</strong> memindahkan semua mesh yang dibuat dari bagian [MeshBuilder] terakhir, baik Vertex, Cube, atau Cylinder. Semua tulisan yang ada di bawah perintah ini tidak akan berpindah. Anda bisa menggunakan perintah ini sebanyak yang diinginkan. Perintah <strong>TranslateAll</strong> akan memindahkan semua objek dan mesh yang ditulis dari [MeshBuilder] sampai tulisan di atas perintah ini. Perintah ini berguna pada akhir teks untuk memindahkan semua objek yang sudah ditulis.</p>
+<p>The <strong>Translate</strong> command moves all vertices that have been created so far in the [MeshBuilder] section via the Vertex, Cube or Cylinder commands. Subsequent vertices are not affected. You can use as many Translate commands as desired in a [MeshBuilder] section. The <strong>TranslateAll</strong> command not only affects the vertices generated in the current [MeshBuilder] section, but also those created in previous [MeshBuilder] sections. This is useful to insert at the end of the file in order to translate the whole object.</p>
 <hr>
 <p><a name="scale"></a></p>
 <div id="command">
@@ -545,7 +546,7 @@
 <em><strong>Y</strong></em>: A non-zero floating-point number representing the scale factor on the y-coordinate. The default value is 1.<br>
 <em><strong>Z</strong></em>: non-zero A floating-point number representing the scale factor on the z-coordinate. The default value is 1.
 </div>
-<p>Perintah <strong>Scale</strong> dapat dipakai untuk memperbesar atau memperkecil objek yang sudah dibuat dari [MeshBuilder] terakhir, termasuk Vertex, Cube, dan Cylinder. Tulisan di bawah perintah ini tidak akan terpengaruh. Tidak ada batasan jumlah untuk menggunakan perintah ini. Perintah <strong>ScaleAll</strong> akan memperbesar atau memperkecil semua mesh yang sudah ditulis dari [meshbuilder] paling atas sampai dengan tulisan di atas perintah ini. Berguna di akhir teks untuk memperbesar atau memperkecil semua objek dalam file. Angka antara 0-1 akan memperkecil, sedangkan lebih dari 1 akan diperbesar. Angka negatif akan menukar kanan-kiri, atas-bawah, atau depan-belakang objek.</p>
+<p>The <strong>Scale</strong> command scales all vertices that have been created so far in the [MeshBuilder] section via the Vertex, Cube or Cylinder commands. Subsequent vertices are not affected. You can use as many Scale commands as desired in a [MeshBuilder] section. The <strong>ScaleAll</strong> command not only affects the vertices generated in the current [MeshBuilder] section, but also those created in previous [MeshBuilder] sections. This is useful to insert at the end of the file in order to scale the whole object.</p>
 <hr>
 <p><a name="rotate"></a></p>
 <div id="command">
@@ -553,10 +554,10 @@
 <strong>RotateAll</strong> <em>X</em>, <em>Y</em>, <em>Z</em>, <em>Angle</em>
 </div>
 <div id="command-arguments">
-<em><strong>X</strong></em>: rotasi di sumbu-X. -1 artinya ke kiri, 1 artinya ke kanan. Nilai defaultnya 0.
-<em><strong>Y</strong></em>: rotasi di sumbu-Y. -1 artinya ke bawah, 1 artinya ke atas. Nilai defaultnya 0.
-<em><strong>Z</strong></em>: rotasi di sumbu-Z. -1 artinya ke belakang, 1 artinya ke depan. Nilai defaultnya 0.
-<em><strong>Angle</strong></em>: Besar rotasi dalam derajat (0-360). Negatif artinya berlawanan jarum jam, positif searah jarum jam. Nilai defaultnya 0
+<em><strong>X</strong></em>: The x-direction of the rotational axis. Negative values point to the left, positive ones to the right. The default value is 0.<br>
+<em><strong>Y</strong></em>: The y-direction of the rotational axis. Negative values point down, positive ones up. The default value is 0.<br>
+<em><strong>Z</strong></em>: The z-direction of the rotational axis. Negative values point backward, positive ones forward. The default value is 0.<br>
+<em><strong>Angle</strong></em>: The angle to rotate in degrees. Negative values rotate counter-clockwise, positive ones clock-wise. The default value is 0.
 </div>
 <p>The <strong>Rotate</strong> command rotates all vertices that have been created so far in the current [MeshBuilder] section via the Vertex, Cube or Cylinder commands. Subsequent vertices are not affected. The axis of rotation is specified via the <em>X</em>, <em>Y</em> and <em>Z</em> values. Rotation will occur in the plane perpendicular to that direction. A zero vector for this axis is treated as (1,0,0). All other directions are normalized. You can use as many Rotate commands as desired in a [MeshBuilder] section. The <strong>RotateAll</strong> command not only affects the vertices generated in the current [MeshBuilder] section, but also those created in previous [MeshBuilder] sections. This is useful to insert at the end of the file in order to rotate the whole object.</p>
 <hr>
@@ -595,47 +596,58 @@
 <strong>Color</strong> <em>Red</em>, <em>Green</em>, <em>Blue</em>, <em>Alpha</em>
 </div>
 <div id="command-arguments">
-<em><strong>Red</strong></em>: Komposisi merah, dari angka 0 (hitam) sampai 255 (merah). Angka defaultnya 255.<br>
-<em><strong>Green</strong></em>: Komposisi hijau, dari angka 0 (hitam) sampai 255 (hijau). Angka defaultnya 255.
-<em><strong>Blue</strong></em>: Komposisi biru, dari angka 0 (hitam) sampai 255 (biru). Angka defaultnya 255.
-<em><strong>Alpha</strong></em>: Komposisi alpha, dari angka 0 (transparen) sampai 255 (jelas). Angka defaultnya 255.
+<em><strong>Red</strong></em>: The red component of the color. Measured from 0 (black) to 255 (red). The default value is 255.<br>
+<em><strong>Green</strong></em>: The green component of the color. Measured from 0 (black) to 255 (green). The default value is 255.<br>
+<em><strong>Blue</strong></em>: The blue component of the color. Measured from 0 (black) to 255 (blue). The default value is 255.<br>
+<em><strong>Alpha</strong></em>: The alpha component of the color. Measured from 0 (transparent) to 255 (opaque). The default value is 255.
 </div>
-<p>Perintah ini mengatur warna untuk semua Face yang sudah dibuat di [Meshbuilder] terakhir. Jika tidak ada gambar yang dipakai sebagai tekstur, maka sistem akan menghasilkan warna yang dihasilkan dari kombinasi <em>Red</em>, <em>Green</em>, dan <em>Blue</em> . Jika ada teksturnya, maka keseluruhan gambar akan ditimpa dengan warna yang sudah ditulis di perintah ini, misalnya jika gambar ditimpa dengan warna hitam akan menghasilkan warna hitam, dan jika ditimpa dengan warna putih maka akan menghasilkan gambar itu sendiri. Jika ditimpa dengan warna antara hitam dan putih akan membuat setiap pixel dalam gambar lebih gelap. Jika pada rute ada skrip pencahayaan, maka hasil akhir warnanya dapat berubah, tapi biasanya yang akan terjadi adalah warnanya menjadi lebih gelap.</p>
+<p>This command sets the color for all faces that were already created in the current [MeshBuilder] section. If no texture is used, the faces will be colored using the color data as specified by <em>Red</em>, <em>Green</em> and <em>Blue</em>. If a texture is used, the pixels in the texture will be multiplied by the color, where multiplying with black results in black and multiplying with white does not change the color of the texture pixels. Values in-between make the texture pixels darker. When lighting is used in the route, the actual color can change depending on the lighting conditions, but will usually become darker.</p>
 <hr>
 <p><a name="setemissivecolor"></a></p>
 <div id="command">
 <strong>EmissiveColor</strong> <em>Red</em>, <em>Green</em>, <em>Blue</em>
 </div>
 <div id="command-arguments">
-<em><strong>Red</strong></em>: Komposisi merah, dari angka 0 (hitam) sampai 255 (merah). Angka defaultnya 255.<br>
-<em><strong>Green</strong></em>: Komposisi hijau, dari angka 0 (hitam) sampai 255 (hijau). Angka defaultnya 255.
-<em><strong>Blue</strong></em>: Komposisi biru, dari angka 0 (hitam) sampai 255 (biru). Angka defaultnya 255.
+<em><strong>Red</strong></em>: The red component of the color. Measured from 0 (black) to 255 (red). The default value is 0.<br>
+<em><strong>Green</strong></em>: The green component of the color. Measured from 0 (black) to 255 (green). The default value is 0.<br>
+<em><strong>Blue</strong></em>: The blue component of the color. Measured from 0 (black) to 255 (blue). The default value is 0.
 </div>
-<p>Perintah ini membuat warna yang memancar untuk semua Face yang sudah dibuat di [Meshbuilder] terakhir. Pada perintah Color, warna berpengaruh terhadap efek cahaya dari rute, sedangkan EmissiceColor tidak. Biasanya EmmisiveColor dipakai untuk mesh yang dapat memancarkan cahaya sendiri, seperti lampu, persinyalan, jendela, dan sebagainya.</p>
+<p>This command sets the emissive color for all faces that were already created in the current [MeshBuilder] section. The difference between the Color command and the EmissiveColor command is that the Color command is affected by lighting, while the EmissiveColor command is not. Thus, the EmissiveColor command should be used for faces which would emit light themselves, including signals, lamps, windows and the like. The actual color contribution to the faces will be the sum of the light-affected color data and the static emissive color data.</p>
 <hr>
 <p><a name="setblendmode"></a></p>
 <div id="command">
 <strong>BlendMode</strong> <em>BlendMode</em>, <em>GlowHalfDistance</em>, <em>GlowAttenuationMode</em>
 </div>
 <div id="command-arguments">
-<em><strong>BlendMode</strong></em>: Menentukan cara blending gambar, Defaultnya adalah Normal.<br>
-<em><strong>GlowHalfDistance</strong></em>: Jarak dimana mesh akan bersinar 50% . Nilainya harus antara 0 sampai 4095, atau 0 jika tidak ada peredaman cahaya.<br>
-<em><strong>GlowAttenuationMode</strong></em>: Cara cahaya meredup. Defaultnya adalah DivideExponent4.
+<em><strong>BlendMode</strong></em>: The blend mode to use. The default is Normal.<br>
+<em><strong>GlowHalfDistance</strong></em>: The distance at which the glow is at 50% of its intensity, measured in meters. The value must be an integer in the range from 1 to 4095, or 0 to disable glow attenuation. The default value is 0.<br>
+<em><strong>GlowAttenuationMode</strong></em>: The glow attenuation mode to use. The default is DivideExponent4.
 </div>
-<p>▸ Pilihan tersedia untuk <em>BlendMode</em>:</p>
+<p>▸ Available options for <em>BlendMode</em>:</p>
 <div id="command-arguments">
-<strong>Normal</strong>: Mesh akan di-render dengan normal.<br>
-<strong>Additive</strong>: Mesh akan di-render dengan tambahan setingan.
+<strong>Normal</strong>: The faces are rendered normally.<br>
+<strong>Additive</strong>: The faces are rendered additively.
 </div>
-<p>▸ Pilihan yang bisa dipakai pada <em>GlowAttenuationMode</em>:</p>
+<p>▸ Available options for <em>GlowAttenuationMode</em>:</p>
 <div id="command-arguments">
-<strong>DivideExponent2</strong>: Intensitas cahaya akan diatur dari rumus <em>x</em><sup>2</sup> / (<em>x</em><sup>2</sup> + <em>GlowHalfDistance</em><sup>2</sup>), di mana <em>x</em> adalah jarak dari kamera ke objek dalam meter.<br>
-<strong>DivideExponent4</strong>: Intensitas cahaya akan diatur dari rumus <em>x</em><sup>4</sup> / (<em>x</em><sup>4</sup> + <em>GlowHalfDistance</em><sup>4</sup>), di mana <em>x</em> adalah jarak dari kamera ke objek dalam meter.
+<strong>DivideExponent2</strong>: The glow intensity is determined via the function <em>x</em><sup>2</sup> / (<em>x</em><sup>2</sup> + <em>GlowHalfDistance</em><sup>2</sup>), where <em>x</em> is the distance from the camera to the object in meters.<br>
+<strong>DivideExponent4</strong>: The glow intensity is determined via the function <em>x</em><sup>4</sup> / (<em>x</em><sup>4</sup> + <em>GlowHalfDistance</em><sup>4</sup>), where <em>x</em> is the distance from the camera to the object in meters.
 </div>
 <p>This command sets the blend mode for all faces in the current [MeshBuilder] section. The <em>Normal</em> mode replaces screen pixels with texture pixels. The <em>Additive</em> mode adds the color of texture pixels to the color of screen pixels, where adding black does not change the screen pixel, while adding white results in white. If <em>GlowHalfDistance</em> is 0, glow attenuation will be disabled, which is the default. If glow attenuation is to be used, <em>GlowHalfDistance</em> represents the distance in meters at which the glow is exactly at 50% of its intensity. When the camera approaches the face, the face will gradually fade out (become transparent). The function used to determine the exact intensity for a given distance can be influenced with the setting of <em>GlowAttenuationMode</em>. DivideExponent2 creates a smoother transition, but will converge to the maximum intensity very slowly, while DivideExponent4 creates a sharper transition which converges more quickly.</p>
-<div id="warning">
-<h4 id="openbve-2-compatibility-note">openBVE 2 compatibility note</h4>
-<p>In openBVE 2, only additive glow will be supported and the <em>GlowAttenuationMode</em> parameter is likely going to be dropped. Please avoid using normal blending in conjunction with using glow.
+<hr>
+<p><a name="setwrapmode"></a></p>
+<div id="command">
+<strong>WrapMode</strong>, <em>WrapMode</em>
+</div>
+<div id="command-arguments">
+<em><strong>WrapMode</strong></em>: The openGL texture wrapping mode to use. If this is not specified, the game will attempt to auto-determine the most appropriate texture wrapping mde.
+</div>
+<p>▸ Available options for <em>WrapMode</em>:</p>
+<div id="command-arguments">
+<strong>ClampClamp</strong>: The texture is clamped to edge on both axes.
+<strong>ClampRepeat</strong>: The texture is clamped to edge on the x-axis and repeats on the y-axis.
+<strong>RepeatClamp</strong>: The texture repeats on the x-axis and is clamped to edge on the y-axis.
+<strong>RepeatRepeat</strong>: The texture repeats on both axes.
 </div>
 <hr>
 <p><a name="loadtexture"></a></p>
