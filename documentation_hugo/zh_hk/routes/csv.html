@@ -1124,7 +1124,7 @@ Track.FreeObj 1; 42<br>
 <strong>Route.Temperature</strong> <em>ValueInCelsius</em>
 </div>
 <div id="command-arguments">
-<em><strong>Value</strong></em>: A floating-point number representing the initial temperature in <strong>Celsius</strong>. The default value is 20.
+<em><strong>ValueInCelsius</strong></em>: A floating-point number representing the initial temperature in <strong>Celsius</strong>. The default value is 20.
 </div>
 <hr>
 <div id="command">
@@ -1304,7 +1304,7 @@ Train.File <em>FolderName</em>
 </div>
 <div id="command-arguments">
 <em><strong>RailTypeIndex</strong></em>: A non-negative integer representing the rail type as defined via Structure.Rail and used via Track.RailType.<br>
-<em><strong>RunSoundIndex</strong></em>: A non-negative integer representing the train&rsquo;s flange sound to associate to the rail type.
+<em><strong>FlangeSoundIndex</strong></em>: A non-negative integer representing the train&rsquo;s flange sound to associate to the rail type.
 </div>
 <p>The train developer provides a repertoire of different flange sounds. Use this command to associate these flange sounds to the rail types you use in your route. In order for the correct flange sounds to be played on any of your rail types, you need to coordinate your efforts with the train developer. Please see the page about <a href="../../zh_hk/information/standards.html">standards</a> for further information.</p>
 <hr>
@@ -1341,11 +1341,11 @@ Train.File <em>FolderName</em>
 <strong>Train.Interval</strong> <em>Interval<sub>0</sub></em>; <em>Interval<sub>1</sub></em>; &hellip;; <em>Interval<sub>n-1</sub></em>
 </div>
 <div id="command-arguments">
-<em><strong>ValueInSeconds</strong></em>: A floating-point number representing the time interval between the player&rsquo;s train and the preceding train, measured in <strong>seconds</strong>. The default value is 0.
+<em><strong>Interval<sub>i</sub></strong></em>: A floating-point number representing the time interval between the player&rsquo;s train and the preceding train, measured in <strong>seconds</strong>. The default value is 0.
 </div>
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
-<p>Train.ValueInSeconds 是同 Route.RunInterval 一樣</p>
+<p>Train.Interval is the same as Route.RunInterval.</p>
 </div>
 <hr>
 <div id="command">
@@ -1771,7 +1771,7 @@ With Track<br>
 <strong>Track.Rain</strong> <em>Intensity</em>; <em>WeatherType</em>
 </div>
 <div id="command-arguments">
-<em><strong>Rate</strong></em>: A non-negative floating-point number measured in percent representing the intensity of the current rainfall. The default value is 0.<br>
+<em><strong>Intensity</strong></em>: A non-negative floating-point number measured in percent representing the intensity of the current rainfall. The default value is 0.<br>
 <em><strong>WeatherType</strong></em>: A non-negative integer referencing the weather type to use as defined by Structure.Weather from this point onwards.
 </div>
 <p>This command sets the intensity of the current rainfall, and the weather object to be shown.</p>
@@ -1783,7 +1783,7 @@ With Track<br>
 <strong>Track.Snow</strong> <em>Intensity</em>; <em>WeatherType</em>
 </div>
 <div id="command-arguments">
-<em><strong>Rate</strong></em>: A non-negative floating-point number measured in percent representing the intensity of the current snowfall. The default value is 0.<br>
+<em><strong>Intensity</strong></em>: A non-negative floating-point number measured in percent representing the intensity of the current snowfall. The default value is 0.<br>
 <em><strong>WeatherType</strong></em>: A non-negative integer referencing the weather type to use as defined by Structure.Weather from this point onwards.
 </div>
 <p>This command sets the intensity of the current snowfall, and the weather object to be shown.</p>
@@ -1842,7 +1842,7 @@ Of this, there is a 40% chance that this will be a snowflake.</p>
 <strong>Track.Turn</strong> <em>Ratio</em>
 </div>
 <div id="command-arguments">
-<em><strong>Rate</strong></em>: A floating-point number representing a turn. The default value is 0.
+<em><strong>Ratio</strong></em>: A floating-point number representing a turn. The default value is 0.
 </div>
 <p>This command creates a point-based turn at the point of insertion. <em>Ratio</em> indicates the ratio between the length difference <em>Z</em> and the horizontal offset <em>X</em> in the following way:</p>
 <table style="border: none;">
