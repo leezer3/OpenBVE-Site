@@ -174,7 +174,7 @@
           
         </li>
         
-        <li><a href="../../ja/routes/micsounds.html">Playing Sounds from a Microphone Input</a>
+        <li><a href="../../ja/routes/micsounds.html">マイク入力からサウンドを再生する</a>
           
         </li>
         
@@ -399,7 +399,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>Playing Sounds from a Microphone Input</h1>
+          <h1>マイク入力からサウンドを再生する</h1>
         </div>
 
         
@@ -408,22 +408,22 @@
 
 
 <div id="content">
-  <p>openBVE 1.5.4.0 introduces the ability to play sounds from the microphone or line-in input to a specified position within the game world.</p>
+  <p>openBVE 1.5.4.0では、マイクまたはライン入力からゲーム内の指定された位置にサウンドを再生する機能が導入されています。</p>
 <hr>
 <div id="command">
 <strong>Track.MicSound</strong> <em>X</em> ; <em>Y</em> ; <em>ForwardsTolerance</em> ; <em>BackwardsTolerance</em>
 </div>
 <div id="command-arguments">
-<em><strong>X</strong></em>: The X position of the sound.<br>
-<em><strong>Y</strong></em>: The Y position of the sound.<br>
-<em><strong>ForwardsTolerance</strong></em>: The distance in meters at which the sound becomes audible as the train approaches it&rsquo;s position.<br>
-<em><strong>BackwardsTolerance</strong></em>: The distance in meters at which the sound is inaudible after the train passes it&rsquo;s position.
+<em><strong>X</strong></em>: サウンドのX位置。<br>
+<em><strong>Y</strong></em>: サウンドのY位置。<br>
+<em><strong>ForwardsTolerance</strong></em>: 列車がその位置に近づくにつれて音が聞こえるようになるメートル単位の距離。<br>
+<em><strong>BackwardsTolerance</strong></em>: 列車がその位置を通過した後、音が聞こえなくなるメートル単位の距離。
 </div>
-<p><strong><strong>Implementation Notes</strong></strong>:</p>
+<p><strong><strong>実装する際の注意</strong></strong>:</p>
 <ul>
-<li>Microphone input must be activated using the <strong>PLAY_MIC_SOUNDS</strong> key, which is assigned to <strong>W</strong> by default.</li>
-<li>The microphone input will be routed to all <strong>Track.MicSound</strong> sound sources within the camera range.</li>
-<li>Only the first available openAL microphone input is supported at present.</li>
+<li>マイク入力は、デフォルトで<strong>W</strong>に割り当てられている<strong>PLAY_MIC_SOUNDS</strong>キーを使用してアクティブ化する必要があります。</li>
+<li>マイク入力は、カメラ範囲内のすべての<strong>Track.MicSound</strong>音源にルーティングされます。</li>
+<li>現在、最初に利用可能なopenALマイク入力のみがサポートされています。</li>
 </ul>
 
 </div>
