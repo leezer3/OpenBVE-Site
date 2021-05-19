@@ -40,16 +40,16 @@ This is a custom joystick, and requires the SanYingInput plugin to be activated 
 
 OpenBVE supports various controllers from the Densha De Go! series:
 
-* Classic controller- Sony PlayStation, Nintendo64, Sega Saturn, Sega Dreamcast (connected via PC USB adaptor)
+* Classic controllers - Sony PlayStation, Nintendo 64, Sega Saturn, Sega Dreamcast (connected via PC USB adaptor)
 
-* Unbalance single handle USB controller
+* Unbalance one handle USB controller
 
-* Unbalance twin handle USB controller
+* Unbalance two handle USB controller
 
-* Type II Controller (Sony PlayStation 2, connected via PC USB adaptor)
+* Type II Controller (Sony PlayStation 2)
 
-* Shinkansen Controller (Sony PlayStation 2, connected via PC USB adaptor)
+* Shinkansen Controller (Sony PlayStation 2)
 
-* Multi-Train Controller with P5/B8 Cassette (Sony PlayStation 2, connected via PC USB adaptor)
+* Multi-Train Controller with P5/B8 Cassette (Sony PlayStation 2)
 
 These are handled by the Densha De Go! input plugin, which must be activated and configured under the Options menu.
