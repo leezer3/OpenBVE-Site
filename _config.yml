@@ -41,6 +41,8 @@ menu:
         url: '/play-british/'
       - title: 'Desktop Cab Controllers'
         url: '/play-cabcontrollers/'
+      - title: 'Accessibility'
+        url: '/play-accessibility/'
   - title: 'Developing Addons'
     url: '/creating-addons/'
     submenu:
