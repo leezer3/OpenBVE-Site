@@ -48,3 +48,17 @@ These are simply an archive containing two metadata files- **_package.xml_** and
 Use the *Package Management* tab of the main OpenBVE application to install these.
 
 They may also be extracted manually into the root OpenBVE addons folder.
+
+# Mechanik Addons:
+
+Recent versions of OpenBVE (nightly builds from 02/06/2021 onwards) also support routes created for the legacy DOS simulator Mechanik.
+
+Each Mechanik addon should be extracted into a dedicated folder, e.g.
+{% highlight bash %}
+OpenBVE Addons Folder
+└─── Mechanik			# The top-level directory for all Mechanik routes
+	 ├── First Route	# All files for the first route are in this folder
+	 └── Second Route	# All files for the second route are in this folder etc.
+{% endhighlight %}
+
+Mechanik routes are always provided as a single complete archive.
