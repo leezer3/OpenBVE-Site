@@ -42,14 +42,18 @@ OpenBVE supports various controllers from the Densha De Go! series:
 
 * Classic controllers - Sony PlayStation, Nintendo 64, Sega Saturn, Sega Dreamcast (connected via PC USB adaptor)
 
-* Unbalance one handle USB controller
+* Unbalance one handle controller (USB)
 
-* Unbalance two handle USB controller
+* Unbalance two handle controller (USB)
 
-* Type II Controller (Sony PlayStation 2)
+* Unbalance Ryojōhen controller (USB)
 
-* Shinkansen Controller (Sony PlayStation 2)
+* Type II controller (USB, Sony PlayStation 2)
 
-* Multi-Train Controller with P5/B8 Cassette (Sony PlayStation 2)
+* Shinkansen controller (USB, Sony PlayStation 2)
+
+* Ryojōhen controller (USB, Sony PlayStation)
+
+* Multi-Train Controller with P5/B8 Cassette (USB, Sony PlayStation 2)
 
 These are handled by the Densha De Go! input plugin, which must be activated and configured under the Options menu.
