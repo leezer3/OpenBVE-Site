@@ -409,74 +409,74 @@
 
 <div id="content">
   <p><img src="../../images/tool_routeviewer_screenshot_1.png" alt="img"></p>
-<h2 id="-overview">■ Overview</h2>
-<p>This tool allows to preview route files. The camera can be moved, rotated and zoomed, you can jump to stations and points of interest, and also enable a series of options. If routes contain errors, a report can be optionally displayed.</p>
+<h2 id="-總概">■ 總概</h2>
+<p>該工具允許預覽路由文件。 可以移動，旋轉和縮放鏡頭，可以跳到車站和位子點 (Point of Interest)，還可以啟用一系列選項。 如果路線包含錯誤，則可以選擇顯示報告。</p>
 <p>A file that is passed as a command line argument is automatically opened at startup. If a CSV file is determined to be a CSV object instead of a CSV route, <em>ObjectViewer.exe</em> will be started if present inside the same folder as <em>RouteViewer.exe</em>. This allows you to link CSV files against either Route Viewer or Object Viewer and still have the correct tool opening the file.</p>
 <p>Please note that Route Viewer always interprets files as UTF-8 unless a byte order mark indicates a different Unicode encoding. Non-Unicode encodings are not supported.</p>
 <p>For moving the camera, use the <em>WASD</em> keys, for rotating the <em>Arrow</em> keys. Jump to stations with the <em>PageUp</em> and <em>PageDown</em> keys, or jump to points of interests using the <em>Num1</em> and <em>Num7</em> keys. You can also enter a specific track position using the <em>number</em> keys, then confirm with the <em>Return</em> key or cancel with the <em>Escape</em> key. For relative offsets, the prefixes <em>Minus</em> and <em>Plus</em> are also accepted. There are other useful keys which are hinted at in RouteViewer&rsquo;s main window.</p>
-<p>Supported route file formats:</p>
+<p>支持的路線格式</p>
 <ul>
 <li>CSV</li>
 <li>RW</li>
 </ul>
-<p>This tool does not support the plugin API yet. This means that only the built-in texture formats (BMP, PNG, GIF, JPG, TIF) and the built-in sound formats (WAV) are supported.</p>
-<h2 id="-changelog">■ Changelog</h2>
-<p>Please also see the changelog of the main program.</p>
-<h5 id="-version-1440-2016-01-30">● Version 1.4.4.0 (2016-01-30)</h5>
+<p>此工具尚未支持插件API。 這意味著僅支持內置材質格式(BMP，PNG，GIF，JPG，TIF) 和內置聲音格式 (WAV)。</p>
+<h2 id="-更改日志">■ 更改日志</h2>
+<p>同時請參閱主程序的更改日志。</p>
+<h5 id="-版本-1440-2016-01-30">● 版本 1.4.4.0 (2016-01-30)</h5>
 <ul>
-<li>Added support for antialiasing and anisotropic filtering.</li>
-<li>Added support for different window sizes.</li>
+<li>支援對抗鋸齒 (antialiasing) 和各向異性過濾 (anisotropic filtering)。</li>
+<li>支援不同視窗的大小。</li>
 </ul>
-<h5 id="-version-1320-2011-11-30">● Version 1.3.2.0 (2011-11-30)</h5>
+<h5 id="-版本-1320-2011-11-30">● 版本 1.3.2.0 (2011-11-30)</h5>
 <ul>
-<li>Added support for managed content package references.</li>
+<li>支援對託管內容包(Managed content)引用。</li>
 </ul>
-<h5 id="-version-12110-2011-01-07">● Version 1.2.11.0 (2011-01-07)</h5>
+<h5 id="-版本-12110-2011-01-07">● 版本 1.2.11.0 (2011-01-07)</h5>
 <ul>
 <li>The file system organization has changed along with the openBVE main program. Route Viewer accepts the /filesystem=FILE switch.</li>
 </ul>
-<h5 id="-version-1272-2010-07-31">● Version 1.2.7.2 (2010-07-31)</h5>
+<h5 id="-版本-1272-2010-07-31">● 版本 1.2.7.2 (2010-07-31)</h5>
 <ul>
 <li>Animated objects were not updated immediately after loading or reloading routes, but only after <em>RefreshRate</em> seconds had passed.</li>
 </ul>
-<h5 id="-version-1260-2010-03-14">● Version 1.2.6.0 (2010-03-14)</h5>
+<h5 id="-版本-1260-2010-03-14">● 版本 1.2.6.0 (2010-03-14)</h5>
 <ul>
 <li>If a CSV file is passed as a command-line argument, Object Viewer is started if the file is determined to be a CSV object instead of a CSV route. The detection is now solely based on the presence of the <em>CreateMeshBuilder</em> string.</li>
 </ul>
-<h5 id="-version-1251-2010-02-14">● Version 1.2.5.1 (2010-02-14)</h5>
+<h5 id="-版本-1251-2010-02-14">● 版本 1.2.5.1 (2010-02-14)</h5>
 <ul>
 <li>You can now enter a track position using the number keys and jump to that position.</li>
 </ul>
-<h5 id="-version-1250-2010-01-24">● Version 1.2.5.0 (2010-01-24)</h5>
+<h5 id="-版本-1250-2010-01-24">● 版本 1.2.5.0 (2010-01-24)</h5>
 <ul>
 <li>Removed the dependency on specific versions of the Tao.OpenAL, Tao.OpenGL and Tao.SDL libraries, which could cause problems in recent Linux distributions.</li>
 </ul>
-<h5 id="-version-1230-2009-11-14">● Version 1.2.3.0 (2009-11-14)</h5>
+<h5 id="-版本-1230-2009-11-14">● 版本 1.2.3.0 (2009-11-14)</h5>
 <ul>
 <li>When loading a route via command line arguments, the wrong background image could show at the initial track position.</li>
 </ul>
-<h5 id="-version-1200-2009-07-26">● Version 1.2.0.0 (2009-07-26)</h5>
+<h5 id="-版本-1200-2009-07-26">● 版本 1.2.0.0 (2009-07-26)</h5>
 <ul>
 <li>The camera yaw, pitch and roll are now displayed along with the track position and offsets.</li>
 </ul>
-<h5 id="-version-1100-2009-06-28">● Version 1.1.0.0 (2009-06-28)</h5>
+<h5 id="-版本-1100-2009-06-28">● 版本 1.1.0.0 (2009-06-28)</h5>
 <ul>
 <li>The set of variables than can be used in functions of animated objects has been vastly extended. This matches with the corresponding version of openBVE.</li>
 </ul>
-<h5 id="-version-1071-2009-06-14">● Version 1.0.7.1 (2009-06-14)</h5>
+<h5 id="-版本-1071-2009-06-14">● 版本 1.0.7.1 (2009-06-14)</h5>
 <ul>
 <li>Support for new parameters in <em>ArrivalTime</em> in Track.Sta and Track.Station commands.</li>
 <li>Support for custom normals in AddVertex and Vertex commands (objects).</li>
 <li>Support for the Shear and ShearAll commands (objects).</li>
 <li>As for responsiveness, complex objects are not optimized any longer in order to improve loading times.</li>
 </ul>
-<h5 id="-version-1060-2009-05-24">● Version 1.0.6.0 (2009-05-24)</h5>
+<h5 id="-版本-1060-2009-05-24">● 版本 1.0.6.0 (2009-05-24)</h5>
 <ul>
-<li>Added the functionality to mute sound.</li>
+<li>添加了靜音功能。</li>
 </ul>
-<h5 id="-version-1040-2009-04-26">● Version 1.0.4.0 (2009-04-26)</h5>
+<h5 id="-版本-1040-2009-04-26">● 版本 1.0.4.0 (2009-04-26)</h5>
 <ul>
-<li>Changed some key assignments to be more memorable</li>
+<li>更改了一些按鍵分配，比較容易記</li>
 </ul>
 
 </div>
