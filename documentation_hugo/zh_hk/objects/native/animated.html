@@ -1015,6 +1015,18 @@ Please also note that some combinations of prefix and infix operators are not re
 <td>The non-negative cartesian distance measured from the object to the camera in meters.</td>
 </tr>
 <tr>
+<td><code>cameraXDistance</code></td>
+<td>The non-negative cartesian distance measured on the X axis from the object to the camera in meters</td>
+</tr>
+<tr>
+<td><code>cameraYDistance</code></td>
+<td>The non-negative cartesian distance measured on the Y axis from the object to the camera in meters</td>
+</tr>
+<tr>
+<td><code>cameraZDistance</code></td>
+<td>The non-negative cartesian distance measured on the Z axis from the object to the camera in meters</td>
+</tr>
+<tr>
 <td><code>cameraMode</code></td>
 <td>Returns 0 if the camera is currently in a 2D or 3D cab, 1 otherwise.</td>
 </tr>
@@ -1036,11 +1048,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <tbody>
 <tr>
 <td><code>playerTrain</code></td>
-<td>如果此物件是在玩家的列車，此變數會為1，否則此變數會為0。</td>
-</tr>
-<tr>
-<td>注: Route.RunInterval的列車並非玩家列車</td>
-<td bgcolor='#D0D0D0'></td>
+<td>Returns 1 if the train is the player train, 0 otherwise.</td>
 </tr>
 <tr>
 <td><code>cars</code></td>
@@ -1133,6 +1141,10 @@ Please also note that some combinations of prefix and infix operators are not re
 <tr>
 <td><code>brightness[carIndex]</code></td>
 <td>Returns the interpolated brightness value applying to this car.</td>
+</tr>
+<tr>
+<td><code>routeLimit</code></td>
+<td>Returns the current route speed limit applying to this train in km/h.</td>
 </tr>
 </tbody>
 </table>
@@ -1241,11 +1253,11 @@ Please also note that some combinations of prefix and infix operators are not re
 <td>The anticipated target state of the right doors of car <em>carIndex</em>. Returns either 0 (closed) or 1 (opened).</td>
 </tr>
 <tr>
-<td><code>leftDoorsButton</code></td>
+<td><code>leftDoorButton</code></td>
 <td>The state of the left doors button. Returns either 0 (released) or 1 (pressed).</td>
 </tr>
 <tr>
-<td><code>rightDoorsButton</code></td>
+<td><code>rightDoorButton</code></td>
 <td>The state of the right doors button. Returns either 0 (released) or 1 (pressed).</td>
 </tr>
 <tr>
@@ -1717,7 +1729,7 @@ StateFunction = section / 2
 </table>
 </div>
 <h5 id="-employing-an-approach-controlled-delay-in-signals">● Employing an approach-controlled delay in signals</h5>
-<p>If you want to create a signal that keeps being red until the train approaches it to some distance, then counts down a timer before it changes aspect to green, please refer to <a href="http://openbve.freeforums.org/delay-in-approach-controlled-signals-t1195.html#p5378">this post</a> on the forum for a detailed explanation. Once you understand the concepts, you can use this code template:</p>
+<p>If you want to create a signal that keeps being red until the train approaches it to some distance, then counts down a timer before it changes aspect to green, please refer to <a href="http://web.archive.org/web/20100902041536/http://openbve.freeforums.org/delay-in-approach-controlled-signals-t1195.html#p5378">this post</a> on the forum for a detailed explanation. Once you understand the concepts, you can use this code template:</p>
 <div class="overflow-container">
 <table style="border: none;">
 <tbody>
@@ -1754,6 +1766,30 @@ StateFunction = if[trackDistance&gt;DISTANCE | section==0, 0, min[value + 0.5*de
 <font style="font-family: monospace">
 States = RED_OBJECT, &hellip;, GREEN_OBJECT<br>
 StateFunction = if[trackDistance&gt;DISTANCE | section==0, 0, if[value&lt;0.5, value + 0.5*value/DELAY, section]]
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Using an approach controlled delay with a semaphore signal requires a slight variant on this technique.
+As the result of the StateFunction is rounded, whereas that of the RotateFunction is not, a combination of both is required to achieve the desired effect.</p>
+<div class="overflow-container">
+<table style="border: none;">
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Template for an approach-controlled delay in a semaphore signal:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+States = SIGNAL_ARM, SIGNAL_ARM<br>
+StateFunction = if[trackDistance&gt;DISTANCE | section==0, 0, min[value + 0.5*delta/DELAY, 1]]
+RotateYFunction = if[currentState == 0, 0, -0.7]
 </font>
 </td>
 </tr>

@@ -1015,6 +1015,18 @@ Please also note that some combinations of prefix and infix operators are not re
 <td>The non-negative cartesian distance measured from the object to the camera in meters.</td>
 </tr>
 <tr>
+<td><code>cameraXDistance</code></td>
+<td>The non-negative cartesian distance measured on the X axis from the object to the camera in meters</td>
+</tr>
+<tr>
+<td><code>cameraYDistance</code></td>
+<td>The non-negative cartesian distance measured on the Y axis from the object to the camera in meters</td>
+</tr>
+<tr>
+<td><code>cameraZDistance</code></td>
+<td>The non-negative cartesian distance measured on the Z axis from the object to the camera in meters</td>
+</tr>
+<tr>
 <td><code>cameraMode</code></td>
 <td>Returns 0 if the camera is currently in a 2D or 3D cab, 1 otherwise.</td>
 </tr>
@@ -1023,7 +1035,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </div>
 <h5 id="-trains">● Trains</h5>
 <p>Generally, objects attached to a particular train and car return values for that train and car, unless stated otherwise. For scenery objects, the reference is the driver&rsquo;s car of the nearest train (not necessarily the player&rsquo;s train).</p>
-<p>En algunos casos de las siguientes variables , <em>carIndex</em> tiene el siguiente significado: 0 es el 1<sup>er</sup> carro  del frente, 1 es el 2<sup>do</sup> carro del frente, etc., mientras que -1 es el 1<sup>er</sup> carro desde la parte posterior, -2 es el 2<sup>do</sup> carro desde la parte posterior, etc. En general los indices de los carros desde -<em>cars</em> hasta <em>cars</em>-1 representan carros existentes, donde <em>cars</em> es el numero de carros que el tren posee, mientras que valores que estén fuera de este rango representan carros que no existen. Todos los trenes tienen al menos 1 carro, indices -1 y 0 están garantizados que existan para cualquier tren.</p>
+<p>In some of the following variables, <em>carIndex</em> has the following meaning: 0 is the 1<sup>st</sup> car from the front, 1 is the 2<sup>nd</sup> car from the front, etc., while -1 is the 1<sup>st</sup> car from the rear, -2 is the 2<sup>nd</sup> car from the rear, etc. In general, car indices from -<em>cars</em> to <em>cars</em>-1 represent existing cars, where <em>cars</em> is the number of cars the train has, while values outside of this range represent non-existing cars. As all trains have at least 1 car, indices -1 and 0 are guaranteed to exist for any train.</p>
 <h5 id="-trains-general">● Trains (general)</h5>
 <div class="overflow-container">
 <table class='type0 responsive-table-2col'>
@@ -1129,6 +1141,10 @@ Please also note that some combinations of prefix and infix operators are not re
 <tr>
 <td><code>brightness[carIndex]</code></td>
 <td>Returns the interpolated brightness value applying to this car.</td>
+</tr>
+<tr>
+<td><code>routeLimit</code></td>
+<td>Returns the current route speed limit applying to this train in km/h.</td>
 </tr>
 </tbody>
 </table>
@@ -1237,11 +1253,11 @@ Please also note that some combinations of prefix and infix operators are not re
 <td>The anticipated target state of the right doors of car <em>carIndex</em>. Returns either 0 (closed) or 1 (opened).</td>
 </tr>
 <tr>
-<td><code>leftDoorsButton</code></td>
+<td><code>leftDoorButton</code></td>
 <td>The state of the left doors button. Returns either 0 (released) or 1 (pressed).</td>
 </tr>
 <tr>
-<td><code>rightDoorsButton</code></td>
+<td><code>rightDoorButton</code></td>
 <td>The state of the right doors button. Returns either 0 (released) or 1 (pressed).</td>
 </tr>
 <tr>
@@ -1713,7 +1729,7 @@ StateFunction = section / 2
 </table>
 </div>
 <h5 id="-employing-an-approach-controlled-delay-in-signals">● Employing an approach-controlled delay in signals</h5>
-<p>If you want to create a signal that keeps being red until the train approaches it to some distance, then counts down a timer before it changes aspect to green, please refer to <a href="http://openbve.freeforums.org/delay-in-approach-controlled-signals-t1195.html#p5378">this post</a> on the forum for a detailed explanation. Once you understand the concepts, you can use this code template:</p>
+<p>If you want to create a signal that keeps being red until the train approaches it to some distance, then counts down a timer before it changes aspect to green, please refer to <a href="http://web.archive.org/web/20100902041536/http://openbve.freeforums.org/delay-in-approach-controlled-signals-t1195.html#p5378">this post</a> on the forum for a detailed explanation. Once you understand the concepts, you can use this code template:</p>
 <div class="overflow-container">
 <table style="border: none;">
 <tbody>
@@ -1750,6 +1766,30 @@ StateFunction = if[trackDistance&gt;DISTANCE | section==0, 0, min[value + 0.5*de
 <font style="font-family: monospace">
 States = RED_OBJECT, &hellip;, GREEN_OBJECT<br>
 StateFunction = if[trackDistance&gt;DISTANCE | section==0, 0, if[value&lt;0.5, value + 0.5*value/DELAY, section]]
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Using an approach controlled delay with a semaphore signal requires a slight variant on this technique.
+As the result of the StateFunction is rounded, whereas that of the RotateFunction is not, a combination of both is required to achieve the desired effect.</p>
+<div class="overflow-container">
+<table style="border: none;">
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Template for an approach-controlled delay in a semaphore signal:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+States = SIGNAL_ARM, SIGNAL_ARM<br>
+StateFunction = if[trackDistance&gt;DISTANCE | section==0, 0, min[value + 0.5*delta/DELAY, 1]]
+RotateYFunction = if[currentState == 0, 0, -0.7]
 </font>
 </td>
 </tr>
