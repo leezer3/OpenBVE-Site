@@ -1713,7 +1713,7 @@ StateFunction = section / 2
 </table>
 </div>
 <h5 id="-employing-an-approach-controlled-delay-in-signals">● Employing an approach-controlled delay in signals</h5>
-<p>If you want to create a signal that keeps being red until the train approaches it to some distance, then counts down a timer before it changes aspect to green, please refer to <a href="http://openbve.freeforums.org/delay-in-approach-controlled-signals-t1195.html#p5378">this post</a> on the forum for a detailed explanation. Once you understand the concepts, you can use this code template:</p>
+<p>If you want to create a signal that keeps being red until the train approaches it to some distance, then counts down a timer before it changes aspect to green, please refer to <a href="http://web.archive.org/web/20100902041536/http://openbve.freeforums.org/delay-in-approach-controlled-signals-t1195.html#p5378">this post</a> on the forum for a detailed explanation. Once you understand the concepts, you can use this code template:</p>
 <div class="overflow-container">
 <table style="border: none;">
 <tbody>
@@ -1750,6 +1750,30 @@ StateFunction = if[trackDistance&gt;DISTANCE | section==0, 0, min[value + 0.5*de
 <font style="font-family: monospace">
 States = RED_OBJECT, &hellip;, GREEN_OBJECT<br>
 StateFunction = if[trackDistance&gt;DISTANCE | section==0, 0, if[value&lt;0.5, value + 0.5*value/DELAY, section]]
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Using an approach controlled delay with a semaphore signal requires a slight variant on this technique.
+As the result of the StateFunction is rounded, whereas that of the RotateFunction is not, a combination of both is required to achieve the desired effect.</p>
+<div class="overflow-container">
+<table style="border: none;">
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Template for an approach-controlled delay in a semaphore signal:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+States = SIGNAL_ARM, SIGNAL_ARM<br>
+StateFunction = if[trackDistance&gt;DISTANCE | section==0, 0, min[value + 0.5*delta/DELAY, 1]]
+RotateYFunction = if[currentState == 0, 0, -0.7]
 </font>
 </td>
 </tr>
