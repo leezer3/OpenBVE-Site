@@ -1456,6 +1456,10 @@ Train.File <em>FolderName</em>
 <td>Weather</td>
 <td>Defines objects for weather generated using Track.Rain and Track.Snow.</td>
 </tr>
+<tr>
+<td>DynamicLight</td>
+<td>Defines dynamic lighting sets.</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -2698,6 +2702,109 @@ With Track<br>
 <em><strong>Roll</strong></em>: The angle in degrees by which the object is rotated in the XY-plane in clock-wise order when viewed from behind. The default value is 0.
 </div>
 <p>This command places a special beacon, which commands an AI driver to play the horn. Both an AI controlled player train and pure AI trains will trigger this beacon, unless <strong>TriggerOnce</strong> is set. The object must have been loaded via Structure.Beacon(<em>BeaconStructureIndex</em>) prior to using this command.</p>
+<hr>
+<div id="command">
+<strong>Track.DynamicLight</strong> <em>DynamicLightIndex</em>
+</div>
+<div id="command-arguments">
+<em><strong>DynamicLightIndex</strong></em>: A non-negative integer, representing the Dynamic Lighting set to be used from this point onwards, as defined by Structure.DynamicLight
+</div>
+<p>This command may be used as an alternative to the <em>Route.AmbientLight</em> , <em>Route.DirectionalLight</em> and <em>Route.LightDirection</em> commands.</p>
+<p>It allows the lighting to be varied using a time-based model, and is described fully on the following page:</p>
+<p><a href="../../ja/routes/xml/dynamiclight.html">Dynamic Lighting</a></p>
+<hr>
+<div id="command">
+<strong>Track.AmbientLight</strong> <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em>
+</div>
+<div id="command-arguments">
+<em><strong>RedValue</strong></em>: An integer ranging from 0 to 255 representing the red component of the ambient light. The default value is 160.<br>
+<em><strong>GreenValue</strong></em>: An integer ranging from 0 to 255 representing the green component of the ambient light. The default value is 160.<br>
+<em><strong>BlueValue</strong></em>: An integer ranging from 0 to 255 representing the blue component of the ambient light. The default value is 160.
+</div>
+<p>This command defines the ambient light color to be used from this point onwards. All polygons in the scene are illuminated by the ambient light regardless of the light direction.</p>
+<hr>
+<div id="command">
+<strong>Track.DirectionalLight</strong> <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em>
+</div>
+<div id="command-arguments">
+<em><strong>RedValue</strong></em>: An integer ranging from 0 to 255 representing the red component of the directional light. The default value is 160.<br>
+<em><strong>GreenValue</strong></em>: An integer ranging from 0 to 255 representing the green component of the directional light. The default value is 160.<br>
+<em><strong>BlueValue</strong></em>: An integer ranging from 0 to 255 representing the blue component of the directional light. The default value is 160.
+</div>
+<p>This command defines the directional light to be used from this point onwards. The polygons in the scene are only fully illuminated by the directional light if the light direction points at the front faces. If pointing at back faces, no light is contributed. <em>Route.LightDirection</em> should be set to specify the light direction.</p>
+<hr>
+<div id="command">
+<strong>Track.LightDirection</strong> <em>Theta</em>; <em>Phi</em>
+</div>
+<div id="command-arguments">
+<em><strong>Theta</strong></em>: A floating-point number representing the angle in <strong>degrees</strong> which controls the pitch of the light direction. The default value is 60.<br>
+<em><strong>Phi</strong></em>: A floating-point number representing the angle in <strong>degrees</strong> which controls the planar rotation of the light direction. The default value is about -26.57.
+</div>
+<p>This command defines the light direction from this point onwards. This is the direction the light shines at, meaning the opposite direction the sun is located at. First, <em>Theta</em> determines the pitch. A value of 90 represents a downward direction, while a value of -90 represents an upward direction. With those extremes, the value of <em>Phi</em> is irrelevant. A value of 0 for <em>Theta</em> represents a forward direction originating at the horizon behind. Once the pitch is defined by <em>Theta</em>, <em>Phi</em> determines the rotation in the plane. A value of 0 does not rotate, a value of 90 rotates the direction to the right and a value of -90 rotates to the left. A backward direction can be both obtained by setting <em>Theta</em> and <em>Phi</em> to 180 and 0 or to 0 and 180, respectively. Values in-between allow for more precise control of the exact light direction.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>The direction of the light is relative to the initial direction at the zero-point of the route (e.g Track position <strong>0</strong>), not the current position.</p>
+</div>
+<p><img src="../../images/illustration_light_direction.png" alt="illustration_light_direction"></p>
+<table style="border: none;">
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Converting a spherical direction (theta,phi) into a cartesian direction (x,y,z):</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">ƒ</td>
+<td bgcolor="#FFD8C0" style="border: 1px dotted;">
+<font style="font-family: monospace;">
+x = cos(theta) * sin(phi)<br>
+y = -sin(theta)<br>
+z = cos(theta) * cos(phi)
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+<table style="border: none;">
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y²≠1:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">ƒ</td>
+<td bgcolor="#FFD8C0" style="border: 1px dotted;">
+<font style="font-family: monospace;">
+theta = -arctan(y/sqrt(x<sup>2</sup>+z<sup>2</sup>))<br>
+phi = arctan(z,x)
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+<table style="border: none;">
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y²=1:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">ƒ</td>
+<td bgcolor="#FFD8C0" style="border: 1px dotted;">
+<font style="font-family: monospace;">
+theta = -y * pi/2<br>
+phi = 0
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+<p>In the formulas above, <a href="http://functions.wolfram.com/ElementaryFunctions/Cos/02"><em>cos(x)</em></a> represents the cosine, <a href="http://functions.wolfram.com/ElementaryFunctions/Sin/02"><em>sin(x)</em></a> the sine, <a href="http://functions.wolfram.com/ElementaryFunctions/ArcTan/02"><em>arctan(x)</em></a> the inverse tangent, <a href="http://functions.wolfram.com/ElementaryFunctions/ArcTan2/02"><em>arctan(x,y)</em></a> the two-argument inverse tangent and <a href="http://functions.wolfram.com/ElementaryFunctions/Sqrt/02"><em>sqrt(x)</em></a> the square root. The formulas can be used to convert between spherical and cartesian coordinates if working with either one seems more intuitive than working with the other one. The formulas also serve as the official documentation on how the light direction is mathematically defined (using radians for the trigonometric functions).</p>
+<hr>
 
 </div>
 
