@@ -416,15 +416,14 @@
 <h2 id="-列車-flangeiwav-聲檔">■ 列車 flange<em>i</em>.wav 聲檔</h2>
 <p>No attempts are currently known to standardize the meanings of flange<em>i</em>.wav sounds.</p>
 <h2 id="-beacons">■ Beacons</h2>
-<p>No attempts are currently known to standardize the meanings of beacons.</p>
-<p>However, the following is a list of beacons reserved for the built-in safety systems ATS-SN and ATS-P. These should only be used by route/train developers if the meaning of the beacons are (nearly) identical:</p>
+<p>Beacons reserved for the built-in safety systems ATS-SN and ATS-P. These should only be used by route/train developers if the meaning of the beacons are (nearly) identical:</p>
 <div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
 <th>Beacon type</th>
 <th>Optional data</th>
-<th>意思</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
@@ -452,6 +451,64 @@
 <td>4</td>
 <td><em>SwitchSystem</em></td>
 <td>Immediate stop transponder for ATS-P. Placed about 25m/30m in front of a signal. Informs the train about the distance to the referenced signal and whether it is red or not. The train brakes immediately if the signal is red.<br /><br />Values for <em>SwitchSystem</em>:<br />-1: The train should not switch the safety system.<br />0: The train should automatically switch from ATS-SN to ATS-P when passing this beacon.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Beacons used by legacy train systems to simulate weather (Note- These will also be utilised by any train using the new Windscreen functionality):</p>
+<div class="overflow-container">
+<table class='type0'>
+<thead>
+<tr>
+<th>Beacon type</th>
+<th>Optional data</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>21</td>
+<td><em>Intensity</em></td>
+<td>Sets the intensity of the weather.<br /><br />Values for <em>Intensity</em> should be within the following range:<br />0: No weather.<br />100: Maximum weather intensity.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>UK Basic AWS / TPWS Beacons (Supported by OS_ATS, UKTrainSys, UKDT, UKMU &amp; UKEMU):</p>
+<div class="overflow-container">
+<table class='type0'>
+<thead>
+<tr>
+<th>Beacon type</th>
+<th>Optional data</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>44000</td>
+<td>0</td>
+<td>Permanent AWS signal approach magnet. Raises an alarm the driver has to acknowledge if the referenced signal is red.</td>
+</tr>
+<tr>
+<td>44001</td>
+<td>0</td>
+<td>AWS speed restriction magnet. Raises an alarm the driver has to acknowledge regardless.</td>
+</tr>
+<tr>
+<td>44003</td>
+<td>0</td>
+<td>TPWS inductor associated with a signal. Triggers a TPWS brake demand if the referenced section is occupied.</td>
+</tr>
+<tr>
+<td>44003</td>
+<td>0</td>
+<td>TPWS inductor associated with a signal. Triggers a TPWS brake demand if the referenced section is occupied. <br /> If you wish to issue a brake demand regardless (e.g. buffers), then the current section should be referenced.</td>
+</tr>
+<tr>
+<td>44004</td>
+<td><em>Speed</em></td>
+<td>TPWS overspeed inductor. Triggers a TPWS brake demand if the train&rsquo;s speed is greater than <em>Speed</em>.</td>
 </tr>
 </tbody>
 </table>
