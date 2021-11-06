@@ -15,7 +15,7 @@ OpenBVE is provided as a standard Windows Installer.
 
 The most recent stable version of OpenBVE is:
 
-<a href="https://github.com/leezer3/OpenBVE/releases/download/1.8.1.0/OpenBVE-1.8.1.0-setup.exe" class="btn btn-info">1.8.1.0 (2021-07-16)</a>
+<a href="https://github.com/leezer3/OpenBVE/releases/download/1.8.2.0/OpenBVE-1.8.2.0-setup.exe" class="btn btn-info">1.8.2.0 (2021-11-06)</a>
 
 ---
 
@@ -31,7 +31,7 @@ This is available by default in the current Debian stable (Buster), or alternati
 
 The most recent stable version of OpenBVE is:
 
-<a href="https://github.com/leezer3/OpenBVE/releases/download/1.8.1.0/OpenBVE-1.8.1.0.deb" class="btn btn-info">1.8.1.0 (2021-07-16)</a>
+<a href="https://github.com/leezer3/OpenBVE/releases/download/1.8.2.0/OpenBVE-1.8.2.0.deb" class="btn btn-info">1.8.2.0 (2021-11-06)</a>
 
 ---
 
@@ -44,7 +44,7 @@ OpenBVE is provided as a standard compressed archive.
 
 The most recent stable version of OpenBVE is:
 
-<a href="https://github.com/leezer3/OpenBVE/releases/download/1.8.1.0/OpenBVE-1.8.1.0.zip" class="btn btn-info">1.8.1.0 (2021-07-16)</a>
+<a href="https://github.com/leezer3/OpenBVE/releases/download/1.8.2.0/OpenBVE-1.8.2.0.zip" class="btn btn-info">1.8.2.0 (2021-11-06)</a>
 
 ---
 
@@ -52,14 +52,15 @@ The most recent stable version of OpenBVE is:
 
 <img src="/images/apple.png" alt="Apple Icon">
 
+Please note that on Catalina and higher, OpenBVE uses a more limited OpenGL based main menu. Please see the following issue for more details / discussion: <https://github.com/leezer3/OpenBVE/issues/384>
+Some testing has been done on Apple M1 based machines, and whilst these appear to work correctly, they are not officially supported.
 OpenBVE is provided as an installable .DMG file.
-Please note that unfortunately, OpenBVE is only compatible with Mojave and previous at the present time. Please see the following issue for more details: <https://github.com/leezer3/OpenBVE/issues/384>
 
 ### Stable Version:
 
 The most recent stable version of OpenBVE is:
 
-<a href="https://github.com/leezer3/OpenBVE/releases/download/1.8.1.0/OpenBVE-1.8.1.0.dmg" class="btn btn-info">1.8.1.0 (2021-07-16)</a>
+<a href="https://github.com/leezer3/OpenBVE/releases/download/1.8.2.0/OpenBVE-1.8.2.0.dmg" class="btn btn-info">1.8.2.0 (2021-11-06)</a>
 
 
 ---
