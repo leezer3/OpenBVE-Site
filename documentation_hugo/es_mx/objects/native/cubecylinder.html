@@ -409,8 +409,8 @@
 
 <div id="content">
   <h2 id="-el-comando-cube">■ El comando Cube</h2>
-<p>The Cube command in B3D and CSV objects is equivalent to a series of Vertex/AddVertex and Face/AddFace commands.</p>
-<p>Given the following code (B3D style):</p>
+<p>El comando de objetos Cube en B3D y CSV es equivalente a una serie de comandos Vertex/AddVertex y Face/AddFace.</p>
+<p>Dando el siguiente código (Estilo B3D):</p>
 <div class="overflow-container">
 <table style="border: none;">
 <tbody>
@@ -425,7 +425,7 @@ Cube <em>x</em>, <em>y</em>, <em>z</em>
 </tbody>
 </table>
 </div>
-<p>The Cube command corresponds to these instructions (B3D style):</p>
+<p>El comando Cube corresponde a estas instrucciones (estilo B3D):</p>
 <div class="overflow-container">
 <table style="border: none;">
 <tbody>
@@ -453,11 +453,11 @@ Face <em>v</em>+6, <em>v</em>+2, <em>v</em>+1, <em>v</em>+5
 </tbody>
 </table>
 </div>
-<p>where <em>v</em> is the number of vertices that have already been created before the Cube command was used.</p>
-<p>If you want to texture the cube, you need to add appropriate Coordinate/SetTextureCoordinate commands manually.</p>
-<h2 id="-the-cylinder-command">■ The Cylinder command</h2>
-<p>The Cylinder command in B3D and CSV objects is equivalent to a series of Vertex/AddVertex and Face/AddFace commands.</p>
-<p>Given the following code (B3D style):</p>
+<p>donde <em>v</em> es el número de vértices que posee actualmente creado antes que el comando Cube fuera usado.</p>
+<p>Si deseas agregar una textura al cubo, necesitas agregar apropiadamente los comandos Coordinate/SetTextureCoordinate manualmente.</p>
+<h2 id="-el-comando-cylinder">■ El comando Cylinder</h2>
+<p>El comando de objetos Cylinder en B3D y CSV es equivalente a una serie de comandos Vertex/AddVertex y Face/AddFace.</p>
+<p>Dando el siguiente código (Estilo B3D):</p>
 <div class="overflow-container">
 <table style="border: none;">
 <tbody>
@@ -472,7 +472,7 @@ Cylinder <em>n</em>, <em>r1</em>, <em>r2</em>, <em>h</em>
 </tbody>
 </table>
 </div>
-<p>The Cylinder command first corresponds to <em>n</em> pairs of two vertex instructions (B3D style):</p>
+<p>El comando Cylinder primero corresponde a instrucciones de <em>n</em> pares de dos vértices (estilo B3D):</p>
 <div class="overflow-container">
 <table style="border: none;">
 <tbody>
@@ -495,7 +495,7 @@ Vertex cos[2*pi*<strong><font color="blue">(n-1)</font></strong>/n]*<em>r2</em>,
 </tbody>
 </table>
 </div>
-<p>Then, <em>n</em> faces are added to form the side walls (B3D style):</p>
+<p>Entones, <em>n</em> caras son añadidas a la forma de las paredes laterales (Estilo B3D):</p>
 <div class="overflow-container">
 <table style="border: none;">
 <tbody>
@@ -518,7 +518,7 @@ Face <strong><font color="red">0</font></strong>,     <strong><font color="re
 </tbody>
 </table>
 </div>
-<p>If <em>r2</em>&gt;0, a lower cap is then added (B3D style):</p>
+<p>Si <em>r2</em>&gt;0, una tapa inferior es entonces agregada (Estilo B3D):</p>
 <div class="overflow-container">
 <table style="border: none;">
 <tbody>
@@ -533,7 +533,7 @@ Face <strong><font color="red">2*n-2</font></strong>, <strong><font color="fuchs
 </tbody>
 </table>
 </div>
-<p>If <em>r1</em>&gt;0, an upper cap is then added (B3D style):</p>
+<p>Si <em>r1</em>&gt;0, una tapa superior es entonces agregada (Estilo B3D):</p>
 <div class="overflow-container">
 <table style="border: none;">
 <tbody>
@@ -548,7 +548,7 @@ Face <strong><font color="red">1</font></strong>, <strong><font color=#E0A000>3<
 </tbody>
 </table>
 </div>
-<p>If you want to texture the cylinder, you need to add appropriate Coordinate/SetTextureCoordinate commands manually.</p>
+<p>Si deseas agregar una textura al cilindro, necesitas agregar apropiadamente los comandos Coordinate/SetTextureCoordinate manualmente.</p>
 
 </div>
 
