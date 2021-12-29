@@ -86,7 +86,7 @@
               
             </li>
             
-            <li><a href="../../es_mx/objects/native/animated.html">El objeto ANIMADO</a>
+            <li><a href="../../es_mx/objects/native/animated.html">El objeto .ANIMATED</a>
               
             </li>
             
@@ -214,11 +214,11 @@
           
         </li>
         
-        <li><a href="../../es_mx/trains/train_xml.html">El archivo train.xml</a>
+        <li><a href="../../es_mx/trains/train_dat.html">El archivo train.dat</a>
           
         </li>
         
-        <li><a href="../../es_mx/trains/train_dat.html">The train.dat file</a>
+        <li><a href="../../es_mx/trains/train_xml.html">El archivo train.xml</a>
           
         </li>
         
@@ -266,7 +266,7 @@
           
         </li>
         
-        <li><a href="../../es_mx/trains/information.html">Information and tips</a>
+        <li><a href="../../es_mx/trains/information.html">Información y sugerencias</a>
           
         </li>
         
@@ -399,7 +399,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>The <strong>.csv</strong> route format - Quick reference</h1>
+          <h1>El formato de objeto <strong>.csv</strong> - Referencia rápida</h1>
         </div>
 
         
@@ -408,7 +408,7 @@
 
 
 <div id="content">
-  <p><strong>Notes:</strong></p>
+  <p><strong>Notas:</strong></p>
 <ul>
 <li>Arguments highlighted in <strong><font color="green">green</font></strong> are affected by Options.UnitOfLength.</li>
 <li>Arguments highlighted in <strong><font color="blue">blue</font></strong> are affected by Options.UnitOfSpeed.</li>
@@ -522,11 +522,11 @@
 <strong>Track.PoleEnd</strong> <em>RailIndex</em><br>
 <strong>Track.Crack</strong> <em>RailIndex<sub>1</sub></em>; <em>RailIndex<sub>2</sub></em>; <em>CrackStructureIndex</em><br>
 <strong>Track.Ground</strong> <em>CycleIndex</em></p>
-<p><em>Stations:</em><br>
-<strong>Track.Sta</strong> <em>Name</em>; <em>ArrivalTime</em>; <em>DepartureTime</em>; <em>PassAlarm</em>; <em>Doors</em>; <em>ForcedRedSignal</em>; <em>System</em>; <em>ArrivalSound</em>; <em>StopDuration</em>; <em>PassengerRatio</em>; <em>DepartureSound</em>; <em>TimetableIndex</em><br>
-<strong>Track.Station</strong> <em>Name</em>; <em>ArrivalTime</em>; <em>DepartureTime</em>; <em>ForcedRedSignal</em>; <em>System</em>; <em>DepartureSound</em><br>
-<strong>Track.Stop</strong> <em>Direction</em>; <em><font color="green">BackwardTolerance</font></em>; <em><font color="green">ForwardTolerance</font></em>; <em>Cars</em><br>
-<strong>Track.Form</strong> <em>RailIndex<sub>1</sub></em>; <em>RailIndex<sub>2</sub></em>; <em>RoofStructureIndex</em>; <em>FormStructureIndex</em></p>
+<p><em>Estaciones:</em><br>
+<strong>Track.Sta</strong> <em>Nombre</em>; <em>TiempoLlegada</em>; <em>TiempoPartida</em>; <em>PassAlarm</em>; <em>Puertas</em>; <em>SeñalRojaForzada</em>; <em>Sistema</em>; <em>SonidoLlegada</em>; <em>DuraciónParada</em>; <em>TasaPasajeros</em>; <em>SonidoPartida</em>; <em>IndiceItinerario</em><br>
+<strong>Track.Station</strong> <em>Nombre</em>; <em>SonidoLlegada</em>; <em>TiempoPartida</em>; <em>SeñalRojaForzada</em>; <em>Sistema</em>; <em>SonidoPartida</em><br>
+<strong>Track.Stop</strong> <em>Dirección</em>; <em><font color="green">ToleranciaTrasera</font></em>; <em><font color="green">ToleranciaDelantera</font></em>; <em>Carros</em><br>
+<strong>Track.Form</strong> <em>IndiceVía<sub>1</sub></em>; <em>IndiceVía<sub>2</sub></em>; <em>IndiceEstructuraTecho</em>; <em>IndiceEstructuraForma</em></p>
 <p><em>Signalling and speed limits:</em><br>
 <strong>Track.Limit</strong> <em><font color="blue">Speed</font></em>; <em>Direction</em>; <em>Cource</em><br>
 <strong>Track.Section</strong> <em>Aspect<sub>0</sub></em>; <em>Aspect<sub>1</sub></em>; <em>&hellip;</em>; <em>Aspect<sub>n</sub></em><br>

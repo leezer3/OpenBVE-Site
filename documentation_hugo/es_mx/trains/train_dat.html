@@ -86,7 +86,7 @@
               
             </li>
             
-            <li><a href="../../es_mx/objects/native/animated.html">El objeto ANIMADO</a>
+            <li><a href="../../es_mx/objects/native/animated.html">El objeto .ANIMATED</a>
               
             </li>
             
@@ -214,11 +214,11 @@
           
         </li>
         
-        <li><a href="../../es_mx/trains/train_xml.html">El archivo train.xml</a>
+        <li><a href="../../es_mx/trains/train_dat.html">El archivo train.dat</a>
           
         </li>
         
-        <li><a href="../../es_mx/trains/train_dat.html">The train.dat file</a>
+        <li><a href="../../es_mx/trains/train_xml.html">El archivo train.xml</a>
           
         </li>
         
@@ -266,7 +266,7 @@
           
         </li>
         
-        <li><a href="../../es_mx/trains/information.html">Information and tips</a>
+        <li><a href="../../es_mx/trains/information.html">Información y sugerencias</a>
           
         </li>
         
@@ -399,7 +399,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>The <strong>train.dat</strong> file format</h1>
+          <h1>El formato de archivo <strong>train.dat</strong></h1>
         </div>
 
         
@@ -408,36 +408,36 @@
 
 
 <div id="content">
-  <h2 id="-contents">■ Contents</h2>
+  <h2 id="-contenidos">■ Contenidos</h2>
 <ul class='contents'>
-<li><a href="#overview">1. Overview</a></li>
-<li><a href="#identifier">2. The file identifier</a>
+<li><a href="#overview">1. Vista general</a></li>
+<li><a href="#identifier">2. El identificador del archivo</a>
 <ul class='contents'>
-<li><a href="../../es_mx/trains/train_dat_version.html">2a. Version history</a></li>
+<li><a href="../../es_mx/trains/train_dat_version.html">2a. Historial de versión</a></li>
 </ul>
 </li>
-<li><a href="#syntax">3. Syntax</a></li>
-<li><a href="#acceleration">4. The Acceleration section</a></li>
-<li><a href="#performance">5. The Performance section</a></li>
-<li><a href="#delay">6. The Delay section</a></li>
-<li><a href="#move">7. The Move section</a></li>
-<li><a href="#brake">8. The Brake section</a></li>
-<li><a href="#pressure">9. The Pressure section</a></li>
-<li><a href="#handle">10. The Handle section</a></li>
-<li><a href="#cab">11. The Cab section</a></li>
-<li><a href="#car">12. The Car section</a></li>
-<li><a href="#device">13. The Device section</a></li>
-<li><a href="#motor">14. The Motor sections</a></li>
+<li><a href="#syntax">3. Sintaxis</a></li>
+<li><a href="#acceleration">4. La Sección aceleración</a></li>
+<li><a href="#performance">5. La sección Rendimiento</a></li>
+<li><a href="#delay">6. La sección de Retardo</a></li>
+<li><a href="#move">7. La sección de Movimiento</a></li>
+<li><a href="#brake">8. La sección de Freno</a></li>
+<li><a href="#pressure">9. La sección de Presión</a></li>
+<li><a href="#handle">10. La sección de Palancas</a></li>
+<li><a href="#cab">11. La sección de Cabina</a></li>
+<li><a href="#car">12. La sección del Carro</a></li>
+<li><a href="#device">13. La sección de Dispositivo</a></li>
+<li><a href="#motor">14. La sección Motor</a></li>
 </ul>
 <h2 id="a-nameoverviewa-1-vista-general"><a name="overview"></a>■ 1. Vista general</h2>
-<p>The train.dat file describes the characteristics of trains including acceleration, brake behavior, installed equipment, speed-sound associations, and more.</p>
+<p>El archivo train.dat describe la característica de los trenes, incluyendo aceleración, comportamiento del freno, equipo instalado, asociaciones a la velocidad del sonido, y mas.</p>
 <div id="information">
-<h4 id="-tip-train-editor"><strong>☀</strong> Tip: Train Editor</h4>
-<p>You can use the <a href="../../es_mx/tools/traineditor.html">Train Editor</a> to more conveniently edit the train.dat. This page should still be used as a reference. However, you can also edit the train.dat manually if so desired.
+<h4 id="-consejo-train-editor"><strong>☀</strong> Consejo: Train Editor</h4>
+<p>Puedes usar el <a href="../../es_mx/tools/traineditor.html">Train Editor</a> para mas conveniente editar el train.dat. Esta pagina debe de ser usada como referencia. Sin embargo, puedes editar el train.dat manualmente si lo deseas.
 </div>
-<p>The file is a plain text file encoded in any arbitrary <a href="../../es_mx/information/encodings.html">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../es_mx/information/numberformats.html">parsing model</a> for numbers is <strong>Loose</strong>, however, you are encouraged to produce <em>Strict</em> output nonetheless. The file is required to be located inside the train folder and is expected to be named <strong>train.dat</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
-<h2 id="a-nameidentifiera-2-the-file-identifier"><a name="identifier"></a>■ 2. The file identifier</h2>
-<p>The first line in the train.dat is expected to be an identifier indicating the version of the file format. Allowed values are:</p>
+<p>El archivo es un texto plano codificado en cualquier tipo arbitrario de <a href="../../es_mx/information/encodings.html">codificación</a>, Sin embargo, UTF-8 con un byte de orden marca es la opción preferida El <a href="../../es_mx/information/numberformats.html">analizar de modelo</a> para los números es <strong>Loose</strong>, Sin embargo, le recomendamos que el resultado sea  <em>Strict</em> . El archivo requiere estar dentro de la carpeta del tren y el nombre es <strong>train.dat</strong>.  El archivo es interpretado línea por línea, de arriba hacia abajo.</p>
+<h2 id="a-nameidentifiera-2-el-identificador-del-archivo"><a name="identifier"></a>■ 2. El identificador del archivo</h2>
+<p>La primera lineal en el train.dat esta compuesto del identificador indicando la versión del formato del archivo. Los valores permitidos son:</p>
 <div class="overflow-container">
 <table style="border: none;">
 <tbody>
@@ -481,7 +481,7 @@ OPENBVE
 </tbody>
 </table>
 </div>
-<p>From Version <strong>1.5.3.3</strong> onwards, the <em>OPENBVE</em> identifier may optionally be followed by the minimum version number of openBVE required, e.g.</p>
+<p>Desde la Versión <strong>1.5.3.3</strong> en adelante, El identificador <em>OPENBVE</em> puede ser opcional seguido de la versión mínima de openBVE requerida, ej.</p>
 <div class="overflow-container">
 <table style="border: none;">
 <tbody>
@@ -502,9 +502,9 @@ OPENBVE1530
 </tbody>
 </table>
 </div>
-<p>Any other value will be reported as being non-supported and version 2.0 will be assumed. The selected version number affects the parsing of the #ACCELERATION section, which is explained later on.</p>
-<h2 id="a-namesyntaxa-3-syntax"><a name="syntax"></a>■ 3. Syntax</h2>
-<p>For each line in the file, <a href="../../es_mx/information/whitespaces.html">white spaces</a> at the beginning and the end of that line are ignored.</p>
+<p>Cualquier otro valor será reportado y además considerado como no-soportado y la versión 2.0 será asumida. El número de selección de versión afecta al análisis de la sección #ACELERACIÓN, que será explicada en adelante.</p>
+<h2 id="a-namesyntaxa-3-sintaxis"><a name="syntax"></a>■ 3. Sintaxis</h2>
+<p>Por cada lineal en el archivo, <a href="../../es_mx/information/whitespaces.html">espacios en blanco</a> al comienzo y al final de cada lineal son ignorados.</p>
 <p>Each line in the file after the identifier can mark the beginning of a new section or contain data entries for the last opened section. Empty lines or lines solely consisting of white spaces are <strong>not</strong> ignored.</p>
 <p>A new section is opened by starting the line with a number sign character (U+0023). The text which follows the number sign indicates the name of the section and is case-insensitive. The beginning of a section has thus the following form:</p>
 <div id="command">

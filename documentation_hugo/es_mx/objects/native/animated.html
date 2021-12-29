@@ -86,7 +86,7 @@
               
             </li>
             
-            <li><a href="../../../es_mx/objects/native/animated.html">El objeto ANIMADO</a>
+            <li><a href="../../../es_mx/objects/native/animated.html">El objeto .ANIMATED</a>
               
             </li>
             
@@ -214,11 +214,11 @@
           
         </li>
         
-        <li><a href="../../../es_mx/trains/train_xml.html">El archivo train.xml</a>
+        <li><a href="../../../es_mx/trains/train_dat.html">El archivo train.dat</a>
           
         </li>
         
-        <li><a href="../../../es_mx/trains/train_dat.html">The train.dat file</a>
+        <li><a href="../../../es_mx/trains/train_xml.html">El archivo train.xml</a>
           
         </li>
         
@@ -266,7 +266,7 @@
           
         </li>
         
-        <li><a href="../../../es_mx/trains/information.html">Information and tips</a>
+        <li><a href="../../../es_mx/trains/information.html">Información y sugerencias</a>
           
         </li>
         
@@ -410,20 +410,20 @@
 <div id="content">
   <h2 id="-contenidos">■ Contenidos</h2>
 <ul class='contents'>
-<li><a href="#overview">1. Overview</a></li>
-<li><a href="#description">2. Sections</a></li>
-<li><a href="#operators">3. List of infix notation operators</a></li>
-<li><a href="#functions">4. List of functions</a></li>
-<li><a href="#variables">5. List of variables</a></li>
-<li><a href="#performance">6. Performance</a></li>
-<li><a href="#tips">7. Tips</a></li>
-<li><a href="#examples">8. Example functions</a></li>
-<li><a href="#grammar">9. Formal Grammar</a></li>
+<li><a href="#overview">1. Vista general</a></li>
+<li><a href="#description">2. Secciones</a></li>
+<li><a href="#operators">3. Lista de operadores para notación aritmética</a></li>
+<li><a href="#functions">4. Lista de funciones</a></li>
+<li><a href="#variables">5. Lista de variables</a></li>
+<li><a href="#performance">6. Rendimiento</a></li>
+<li><a href="#tips">7. Consejos</a></li>
+<li><a href="#examples">8. Funciones de ejemplo</a></li>
+<li><a href="#grammar">9. Gramática Formal</a></li>
 </ul>
 <h2 id="a-nameoverviewa-1-vista-general"><a name="overview"></a>■ 1. Vista general</h2>
-<p>El formato ANIMADO de objeto es un formato contenido habilitandote de referir otros objetos (B3D/CSV/X) y de aplicar animación en ellos. Esto tambien permite agrupar otros objetos (incluyendo otros objetos ANIMADOS) sin animarlos.</p>
+<p>El formato .ANIMATED de objeto es un formato contenido habilitandote de referir otros objetos (B3D/CSV/X) y de aplicar animación en ellos. Esto también permite agrupar otros objetos (incluyendo otros objetos .ANIMATED) sin animarlos.</p>
 <p>Los objetos animados también pueden ser usados en rutas CSV/RW (a menos que este explicita mente deshabilitado por algunos comandos), así como los objetos externos del tren por <em>extensions.cfg</em>, y así como la cabina 3D por el archivo <em>panel.animated</em>.</p>
-<h5 id="-bases">● Bases</h5>
+<h5 id="-fundamento">● Fundamento</h5>
 <p>La animación es realizada por las siguientes directrices:</p>
 <ul>
 <li>Cambios de estado - básicamente habilitando de cambiar entre diferentes objetos en cualquier tiempo.</li>
@@ -556,66 +556,66 @@
 <div id="command">
 <strong>Pitch = Valor</strong>
 </div>
-<p>This defines the initial pitch of the sound at the source position. A value of <strong>1.0</strong> represents the nominal unchanged pitch of the sound file.</p>
+<p>Esto define la velocidad inicial del sonido a la posición de origen. A valor de <strong>1.0</strong> representa el velocidad nominal sin cambio de grado de el archivo de sonido.</p>
 <div id="command">
-<strong>Radius = Value</strong>
+<strong>Radius= Valor</strong>
 </div>
-<p>This defines the radius in meters from it&rsquo;s source at which the sound effect plays at full volume. The default value is <strong>30</strong>.</p>
+<p>Esto defina el radio en metros desde el origen al que el efecto de sonido se reproduce a máximo volumen. El valor predeterminado es <strong>30</strong>.</p>
 <div id="command">
 <strong>VolumeFunction = Formula</strong>
 </div>
-<p>This defines the function which controls the volume of the sound. <em>Formula</em> must return a number representing the desired volume, where <strong>1.0</strong> represents the nomimal unchanged volume of the sound file.</p>
+<p>Esto define la función que controla el volumen de el sonido. <em>Formula</em> debe retornar un numero representando el volumen deseado, donde <strong>1.0</strong> representa el volumen nominal sin cambio de el sonido del archivo.</p>
 <div id="command">
 <strong>PitchFunction = Formula</strong>
 </div>
-<p>This defines the function which controls the pitch of the sound. <em>Formula</em> must return a number representing the desired pitch, where <strong>1.0</strong> represents the nomimal unchanged pitch of the sound file.</p>
+<p>Esto define la función que controla la velocidad de el sonido. <em>Formula</em> debe retornar un numero representando el volumen deseado, donde <strong>1.0</strong> representa la velocidad nominal sin cambio de el sonido del archivo.</p>
 <div id="command">
 <strong>TrackFollowerFunction = Formula</strong>
 </div>
-<p>This defines the function which moves the source of the sound along the path of <strong>Rail 0</strong>. <em>Formula</em> must return a distance in meters, for which the object is then moved, respecting the curves and height changes of <strong>Rail 0</strong>.</p>
+<p>Esto defina la función el cual mueve el origen del sonido a lo largo de la vía de <strong>Rail 0</strong>. La <em>Formula</em> debe retornar la distancia en metros, para así el objeto sea movido, respetando las curvas y los cambios de altura de <strong>Rail 0</strong>.</p>
 <hr>
-<h5 id="-the-statechangesound-section">● The [StateChangeSound] section</h5>
-<p>You can use the [StateChangeSound] section to attach sound effects to the preceeding [Object] section.</p>
+<h5 id="-la-sección-statechangesound">● La sección [StateChangeSound]</h5>
+<p>Puedes usar la sección [StateChangeSound] para adjuntar efectos de sonidos a la sección de [Object] precedente.</p>
 <div id="command">
 [StateChangeSound]
 </div>
-<p>This starts the section- Must immediately follow an [Object] section.</p>
+<p>Esto inicia la sección - Seguido inmediatamente de la sección [Object].</p>
 <div id="command">
-<strong>FileName = File</strong>
+<strong>FileName = Archivo</strong>
 </div>
-<p>This loads the sound effect to play for all state changes. Alternatively, <strong>FileNames</strong> may be used, which is described below:</p>
+<p>Esto carga el efecto de sonido para ser reproducido en todos los estados de cambio. Otra alternativa como lo es <strong>FileNames</strong> puede ser usada, el cual se describe a continuación:</p>
 <div id="command">
-<strong>FileNames = File<sub>0</sub>, File<sub>1</sub>, &hellip;, File<sub>n-1</sub></strong>
+<strong>FileNames = Archivo<sub>0</sub>, Archivo<sub>1</sub>, &hellip;, Archivo<sub>n-1</sub></strong>
 </div>
-<p>Loads a list of <em>n</em> sounds, which correspond to the states in the [Object] section above.
-If a state is to have no sound effect, the list entry should be left blank.</p>
+<p>Carga una lista de <em>n</em> sonidos, el cual corresponde a los estados de el objeto en la sección [Object] debajo.
+Si un estado no tiene efecto de sonido, el ítem de la lista debe dejarse en blanco.</p>
 <div id="command">
 <strong>Position = X, Y, Z</strong>
 </div>
-<p>Defines the position of the sound, relative to the center of the animated file.</p>
+<p>Esto define la posición del sonido, relativo al centro del archivo animated.</p>
 <div id="command">
 <strong>Volume = Valor</strong>
 </div>
-<p>This defines the volume of the sound at the source position. A value of <strong>1.0</strong> represents the nominal unchanged volume of the sound file.</p>
+<p>Esto define el volumen del sonido a la posición de origen. A valor de <strong>1.0</strong> representa el volumen nominal sin cambio del archivo de sonido.</p>
 <div id="command">
-<strong>Pitch = Value</strong>
+<strong>Pitch = Valor</strong>
 </div>
-<p>This defines the pitch of the sound at the source position. A value of <strong>1.0</strong> represents the nominal unchanged pitch of the sound file.</p>
+<p>Esto define la velocidad del sonido a la posición de origen. A valor de <strong>1.0</strong> representa el velocidad nominal sin cambio de grado de el archivo de sonido.</p>
 <div id="command">
-<strong>Radius = Value</strong>
+<strong>Radius= Valor</strong>
 </div>
-<p>This defines the radius in meters from it&rsquo;s source at which the sound effect plays at full volume. The default value is <strong>30</strong>.</p>
+<p>Esto defina el radio en metros desde el origen al que el efecto de sonido se reproduce a máximo volumen. El valor predeterminado es <strong>30</strong>.</p>
 <div id="command">
-<strong>PlayOnShow = Value</strong>
+<strong>PlayOnShow = Valor</strong>
 </div>
-<p><em>Value</em> = <strong>0</strong>: The sound effect will not be played.
-<em>Value</em> = <strong>1</strong>: The sound effect will be played.</p>
+<p><em>Valor</em> = <strong>0</strong>: El efecto de sonido no será reproducido.
+<em>Valor</em> = <strong>1</strong>: El efecto de sonido será reproducido.</p>
 <p>This defines whether the sound effect defined above should be played when a the relevant state is shown.</p>
 <div id="command">
 <strong>PlayOnHide = Value</strong>
 </div>
-<p><em>Value</em> = <strong>0</strong>: The sound effect will not be played.
-<em>Value</em> = <strong>1</strong>: The sound effect will be played.</p>
+<p><em>Valor</em> = <strong>0</strong>: El efecto de sonido no será reproducido.
+<em>Valor</em> = <strong>1</strong>: El efecto de sonido será reproducido.</p>
 <p>This defines whether the sound effect defined above should be played when the relevant state is hidden.</p>
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
@@ -623,57 +623,57 @@ If a state is to have no sound effect, the list entry should be left blank.</p>
 </div>
 <hr>
 <div id="warning">
-<h4 id="openbve-2-compatibility-note">openBVE 2 compatibility note</h4>
-<p>During the development of openBVE (v0.9) and during the development of the animated object format, there were certain commands in existance ending in <em>RPN</em>, such as <em>TranslateXFunctionRPN</em>. These commands never made it into any official release (v1.0) and were thus never meant to be used outside of development environments. While they are still available undocumentedly, they will be removed for openBVE 2. If you are using these commands, please get rid of them as soon as possible.
+<h4 id="nota-de-compatibilidad-con-openbve-2">Nota de compatibilidad con openBVE 2</h4>
+<p>Durante el desarrollo de openBVE (v0.9) y durante el desarrollo del formato de objeto animado, hay algunos comandos en existencia que terminan en <em>RPN</em>, así como <em>TranslateXFunctionRPN</em>. Estos comandos nunca se han hecho en cualquier lanzamiento oficial (v1.0) y nunca fueron pensados en ser usados fuera del entorno de desarrollo. Mientras estos siguen aún disponibles sin documentación, serán quitados en openBVE 2. Si estas usando algunos de estos comandos, por favor deshágase de ellos lo mas posible.
 </div>
 <hr>
-<h5 id="-about-the-formulas">● About the formulas</h5>
-<p>First of all, infix notation, which is what you can enter for <em>Formula</em>, is converted into functional notation. Thus for every infix notation, there is a corresponding functional notation. Some functions do not have an infix operator and can thus only be entered in functional notation. For operators, precedence plays an important role. You can use parantheses to override the order of precedence just as in any usual mathematical formula. Names of functions are case-insensitive.</p>
+<h5 id="-sobre-las-formulas">● Sobre las formulas</h5>
+<p>Primero que todo, la notación aritmética, lo que puedes teclear dentro del parámetro <em>Formula</em>, es convertido en una notación funcional. Por cada notación aritmética, hay una notación funcional correspondiente. Algunas funciones no tienen un operador aritmético y solo pueden ser teclados en notación funcional. Para los operadores, la precedencia juega un rol importante. Puedes usar paréntesis para sobreponer el orden de precedencia así como generalmente en una fórmula matemática. Los nombres de las funciones no distinguen entre mayúsculas y minúsculas.</p>
 <div id="warning-nontitle">
-<span>⚠</span><p>Please note that if the result of any mathematical operation or function would be infinity, indeterminate or non-real, 0 is returned. Numeric overflow is not prevented, so you need to take that into account yourself.</p>
+<span>⚠</span><p>Por favor tenga en cuenta que el resultado de cualquier operación matemática o función pudiera ser infinito, intermediado o no real, 0 es retornado. Un error de desborde no puede ser prevenido, Así que debes tomar en cuenta esto.</p>
 </div>
-<h2 id="a-nameoperatorsa-3-list-of-infix-notation-operators"><a name="operators"></a>■ 3. List of infix notation operators</h2>
-<h5 id="-basic-arithmetics">● Basic arithmetics</h5>
+<h2 id="a-nameoperatorsa-3-lista-de-operadores-aritméticos-de-notación"><a name="operators"></a>■ 3. Lista de operadores aritméticos de notación</h2>
+<h5 id="-aritmética-básica">● Aritmética básica</h5>
 <div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
-<th align="left">Infix</th>
-<th align="left">Functional</th>
-<th align="left">Description</th>
+<th align="left">Aritmética</th>
+<th align="left">Funcionalidad</th>
+<th align="left">Descripción</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="left"><code>a + b</code></td>
-<td align="left"><code>Plus[a,b, ...]</code></td>
-<td align="left">Represents addition</td>
+<td align="left"><code>Suma[a,b, ...]</code></td>
+<td align="left">Representa adición</td>
 </tr>
 <tr>
 <td align="left"><code>a - b</code></td>
-<td align="left"><code>Subtract[a,b]</code></td>
-<td align="left">Represents subtraction</td>
+<td align="left"><code>Sustraer[a,b]</code></td>
+<td align="left">Representa sustracción</td>
 </tr>
 <tr>
 <td align="left"><code>-a</code></td>
-<td align="left"><code>Minus[a]</code></td>
-<td align="left">Negates the number</td>
+<td align="left"><code>Menos[a]</code></td>
+<td align="left">Convierte a negativo el número</td>
 </tr>
 <tr>
 <td align="left"><code>a * b</code></td>
-<td align="left"><code>Times[a,b,...]</code></td>
-<td align="left">Represents multiplication</td>
+<td align="left"><code>Por[a,b,...]</code></td>
+<td align="left">Representa multiplicación</td>
 </tr>
 <tr>
 <td align="left"><code>a / b</code></td>
-<td align="left"><code>Divide[a,b]</code></td>
-<td align="left">Represents division</td>
+<td align="left"><code>Dividir[a,b]</code></td>
+<td align="left">Representa división</td>
 </tr>
 </tbody>
 </table>
 </div>
-<h5 id="-comparisons">● Comparisons</h5>
-<p>All comparisons return 1 for true and 0 for false.</p>
+<h5 id="-comparaciones">● Comparaciones</h5>
+<p>Todas las comparaciones devuelven 1 para verdadero y 0 para falso.</p>
 <div class="overflow-container">
 <table class='type0'>
 <thead>
@@ -724,7 +724,7 @@ If a state is to have no sound effect, the list entry should be left blank.</p>
 <thead>
 <tr>
 <th align="left">Infix</th>
-<th>Functional</th>
+<th>Funcionalidad</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -732,7 +732,7 @@ If a state is to have no sound effect, the list entry should be left blank.</p>
 <tr>
 <td align="left"><code>!a</code></td>
 <td><code>Not[a]</code></td>
-<td>True (1) if <em>a</em> is false</td>
+<td>Verdadero (1) si <em>a</em> es falso</td>
 </tr>
 <tr>
 <td align="left"><code>a &amp; b</code></td>
@@ -741,7 +741,7 @@ If a state is to have no sound effect, the list entry should be left blank.</p>
 </tr>
 <tr>
 <td align="left"><code>a</code> | <code>b</code></td>
-<td><code>Or[a,b]</code></td>
+<td><code>O[a,b]</code></td>
 <td>True (1) if any of <em>a</em> or <em>b</em> are true</td>
 </tr>
 <tr>
@@ -760,7 +760,7 @@ If a state is to have no sound effect, the list entry should be left blank.</p>
 <tr>
 <th>Operator</th>
 <th>Associativity</th>
-<th>Unparenthesized</th>
+<th>Sin paréntesis.</th>
 <th>Equivilant</th>
 </tr>
 </thead>
@@ -815,7 +815,7 @@ If a state is to have no sound effect, the list entry should be left blank.</p>
 </tr>
 <tr>
 <td><code>^</code></td>
-<td>right-to-left</td>
+<td>derecha-a-izquierda</td>
 <td>1 ^ 2 ^ 3</td>
 <td>(1 ^ (2 ^ 3))</td>
 </tr>
@@ -834,7 +834,7 @@ If a state is to have no sound effect, the list entry should be left blank.</p>
 Please also note that some combinations of prefix and infix operators are not recognised. For example <code>a*-b</code> is not accepted. Use <code>a*(-b)</code> or <code>-a*b</code> instead.</p>
 </div>
 <h2 id="a-namefunctionsa-4-list-of-functions"><a name="functions"></a>■ 4. List of functions</h2>
-<h5 id="-basic-arithmetics-1">● Basic arithmetics</h5>
+<h5 id="-basic-arithmetics">● Basic arithmetics</h5>
 <div class="overflow-container">
 <table class='type0 responsive-table-2col'>
 <thead>
@@ -871,7 +871,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>Mod[a,b]</code></td>
-<td>Returns the remainder of dividing <em>a</em> by <em>b</em>, equal to <code>a-b*Floor[a/b]</code>.</td>
+<td>Retorna el residuo al dividir <em>a</em> entre <em>b</em>, igual a <code>a-b*Floor[a/b]</code>.</td>
 </tr>
 <tr>
 <td><code>Min[a,b,...]</code></td>
@@ -895,7 +895,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>Ceiling[x]</code></td>
-<td>Rounds up to the nearest integer.</td>
+<td>Redondea hacia arriba al entero más cercano.</td>
 </tr>
 <tr>
 <td><code>Round[x]</code></td>
@@ -965,7 +965,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <tbody>
 <tr>
 <td><code>If[cond,truevalue,falsevalue]</code></td>
-<td>If <em>cond</em> is != 0, returns <em>truevalue</em>, otherwise <em>falsevalue</em></td>
+<td>Si <em>condición</em> es != 0, retorna <em>valorverdadero</em>, en caso contrario <em>valorfalso</em></td>
 </tr>
 </tbody>
 </table>
@@ -1011,7 +1011,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <td>The current in-game time measured in seconds since midnight of the first day.</td>
 </tr>
 <tr>
-<td><code>hour</code></td>
+<td><code>hora</code></td>
 <td>The integer part of the current hour.</td>
 </tr>
 <tr>
@@ -1023,8 +1023,8 @@ Please also note that some combinations of prefix and infix operators are not re
 <td>The integer part of the current second.</td>
 </tr>
 <tr>
-<td><code>cameraDistance</code></td>
-<td>The non-negative cartesian distance measured from the object to the camera in meters.</td>
+<td><code>DistanciaCamara</code></td>
+<td>Una distancia cartesiana no negativa medida desde el objeto a la cámara en metros.</td>
 </tr>
 <tr>
 <td><code>cameraXDistance</code></td>
@@ -1032,7 +1032,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>cameraYDistance</code></td>
-<td>The non-negative cartesian distance measured on the Y axis from the object to the camera in meters</td>
+<td>Una distancia cartesiana no negativa medida desde el eje Y al objeto a la cámara en metros.</td>
 </tr>
 <tr>
 <td><code>cameraZDistance</code></td>
@@ -1047,8 +1047,8 @@ Please also note that some combinations of prefix and infix operators are not re
 </div>
 <h5 id="-trains">● Trains</h5>
 <p>Generally, objects attached to a particular train and car return values for that train and car, unless stated otherwise. For scenery objects, the reference is the driver&rsquo;s car of the nearest train (not necessarily the player&rsquo;s train).</p>
-<p>In some of the following variables, <em>carIndex</em> has the following meaning: 0 is the 1<sup>st</sup> car from the front, 1 is the 2<sup>nd</sup> car from the front, etc., while -1 is the 1<sup>st</sup> car from the rear, -2 is the 2<sup>nd</sup> car from the rear, etc. In general, car indices from -<em>cars</em> to <em>cars</em>-1 represent existing cars, where <em>cars</em> is the number of cars the train has, while values outside of this range represent non-existing cars. As all trains have at least 1 car, indices -1 and 0 are guaranteed to exist for any train.</p>
-<h5 id="-trains-general">● Trains (general)</h5>
+<p>En algunos casos de las siguientes variables , <em>IndiceCarro</em> tiene el siguiente significado: 0 es el 1<sup>er</sup> carro  del frente, 1 es el 2<sup>do</sup> carro del frente, etc., mientras que -1 es el 1<sup>er</sup> carro desde la parte posterior, -2 es el 2<sup>do</sup> carro desde la parte posterior, etc. En general los indices de los carros desde -<em>cars</em> hasta <em>cars</em>-1 representan carros existentes, donde <em>cars</em> es el numero de carros que el tren posee, mientras que valores que estén fuera de este rango representan carros que no existen. Todos los trenes tienen al menos 1 carro, indices -1 y 0 están garantizados que existan para cualquier tren.</p>
+<h5 id="-trenes-generalidades">● Trenes (generalidades)</h5>
 <div class="overflow-container">
 <table class='type0 responsive-table-2col'>
 <thead>
@@ -1059,12 +1059,12 @@ Please also note that some combinations of prefix and infix operators are not re
 </thead>
 <tbody>
 <tr>
-<td><code>playerTrain</code></td>
+<td><code>TrenJugador</code></td>
 <td>Returns 1 if the train is the player train, 0 otherwise.</td>
 </tr>
 <tr>
-<td><code>cars</code></td>
-<td>The number of cars the train has.</td>
+<td><code>carros</code></td>
+<td>El número de carros que el tren tiene.</td>
 </tr>
 <tr>
 <td><code>carNumber</code></td>
@@ -1087,7 +1087,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <td>The signed perceived speed of the car <em>carIndex</em> in m/s as it would appear to a speedometer on wheel slip and wheel lock.</td>
 </tr>
 <tr>
-<td><code>acceleration</code></td>
+<td><code>aceleración</code></td>
 <td>The actual acceleration of the current car in m/s².</td>
 </tr>
 <tr>
@@ -1096,7 +1096,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>accelerationMotor</code></td>
-<td>The acceleration which the motor of the first motor car currently generates in m/s².</td>
+<td>La aceleración actual la cual el motor del primer carro genera en m/s².</td>
 </tr>
 <tr>
 <td><code>accelerationMotor[carIndex]</code></td>
@@ -1116,7 +1116,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>trackDistance[carIndex]</code></td>
-<td>The signed track distance measured from the object to the car <em>carIndex</em> of the nearest train in meters. Is positive when the center of the car is in front of the object, and negative if behind. Returns 0 if the car does not exist. Only meaningful for scenery objects.</td>
+<td>La distancia de la vía desde el objeto al carro número <em>IndiceCarro</em> del tren mas próximo en metros. Es positivo cuando el centro del coche esté en frente del objeto, y negativo cuando esta por detrás, Retorna 0 si el coche no existe. Solamente es usado por objetos de escenario.</td>
 </tr>
 <tr>
 <td><code>destination</code></td>
@@ -1124,7 +1124,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>distanceNextStation</code></td>
-<td>The distance in m to the next station.</td>
+<td>La distancia en metros a la siguiente estación.</td>
 </tr>
 <tr>
 <td><code>distanceStation[stationIndex]</code></td>
@@ -1139,7 +1139,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <td>Whether the train stops at the station with <em>stationIndex</em></td>
 </tr>
 <tr>
-<td><code>nextStation</code></td>
+<td><code>siguienteEstación</code></td>
 <td>The index of the next station.</td>
 </tr>
 <tr>
@@ -1171,7 +1171,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <thead>
 <tr>
 <th>Variable</th>
-<th>Description</th>
+<th>Descripción</th>
 </tr>
 </thead>
 <tbody>
@@ -1185,7 +1185,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>equalizingReservoir</code></td>
-<td>The current pressure in the equalizing reservoir in this car, measured in Pa.</td>
+<td>La presión actual del depósito de compensación en este carro, medido en Pascal.</td>
 </tr>
 <tr>
 <td><code>equalizingReservoir[carIndex]</code></td>
@@ -1246,11 +1246,11 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>rightDoors</code></td>
-<td>The state of the right doors. Returns 0 if fully closed, 1 if fully opened, or any intermediate value, biasing doors that are in a more open state.</td>
+<td>El estado de las puertas del lado derecho. Retorna 0 si esta totalmente cerrada, 1 si esta totalmente abierta, o cualquier otro estado intermedio, las puertas están parciales en un estado abierto.</td>
 </tr>
 <tr>
-<td><code>rightDoors[carIndex]</code></td>
-<td>The state of the right doors of car <em>carIndex</em>. Returns a value between 0 and 1, biasing doors that are in a more open state, or -1 if the car does not exist.</td>
+<td><code>rightDoors[IndiceCarro]</code></td>
+<td>El estado de las puertas del lado derecho del carro <em>IndiceCarro</em>. Retorna un valor entre 0 y 1, en un estado parcial de puertas que están en un estado de apertura, o -1 si el carro no existe.</td>
 </tr>
 <tr>
 <td><code>leftDoorsTarget</code></td>
@@ -1258,7 +1258,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>leftDoorsTarget[carIndex]</code></td>
-<td>The anticipated target state of the left doors of car <em>carIndex</em>. Returns either 0 (closed) or 1 (opened).</td>
+<td>El estado de la trayectoria anticipada de las puertas izquierdas del carro <em>IndiceCarro</em>. Retorna 0 (cerrada) o 1 (abierta).</td>
 </tr>
 <tr>
 <td><code>rightDoorsTarget</code></td>
@@ -1266,7 +1266,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>rightDoorsTarget[carIndex]</code></td>
-<td>The anticipated target state of the right doors of car <em>carIndex</em>. Returns either 0 (closed) or 1 (opened).</td>
+<td>El estado de destino anticipado de las puertas derechas del carro <em>IndiceCarro</em>. Retorna cualquiera 0 (cerrado) ó 1 (abierto).</td>
 </tr>
 <tr>
 <td><code>leftDoorButton</code></td>
@@ -1283,7 +1283,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tbody>
 </table>
 </div>
-<h5 id="-trains-miscellaneous">● Trains (miscellaneous)</h5>
+<h5 id="-trenes-otros">● Trenes (otros)</h5>
 <div class="overflow-container">
 <table class='type0 responsive-table-2col'>
 <thead>
@@ -1350,7 +1350,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <td>Whether the const speed system is currently active (1) or not (0).</td>
 </tr>
 <tr>
-<td><code>hasConstSpeed</code></td>
+<td><code>tieneVelocidadConstante</code></td>
 <td>Whether the train has a const speed system (1) or not (0).</td>
 </tr>
 <tr>
@@ -1359,7 +1359,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>pluginState[i]</code></td>
-<td>The state of the i<sup>th</sup> plugin variable, returning an integer depending on the plugin. Is the same as ats<em>i</em> in the panel2.cfg.</td>
+<td>El estado de la i<sup>ava</sup> variable del plugin, retornando un entero dependiendo del plugin. Es lo mismo para ats<em>i</em> en el panel2.cfg.</td>
 </tr>
 <tr>
 <td><code>FrontAxleCurveRadius[carIndex]</code></td>
@@ -1379,7 +1379,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>Odometer</code></td>
-<td>Returns a signed number representing the distance in meters travelled by the current car.</td>
+<td>Retorna un numero representando la distancia en metros viajadas por el carro actual.</td>
 </tr>
 <tr>
 <td><code>Odometer[carIndex]</code></td>
@@ -1394,11 +1394,11 @@ Please also note that some combinations of prefix and infix operators are not re
 <td>Returns 1 if the primary horn is currently playing, 0 otherwise.</td>
 </tr>
 <tr>
-<td><code>SecondaryKlaxon</code></td>
+<td><code>KlaxonSecundario</code></td>
 <td>Returns 1 if the secondary horn is currently playing, 0 otherwise.</td>
 </tr>
 <tr>
-<td><code>MusicKlaxon</code></td>
+<td><code>KlaxonMusical</code></td>
 <td>Returns 1 if the music horn is currently playing, 0 otherwise.</td>
 </tr>
 <tr>
@@ -1420,7 +1420,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <th><em>i</em></th>
 <th>English</th>
 <th>日本語</th>
-<th>Return values</th>
+<th>Valores de retorno</th>
 <th></th>
 <th>pluginState[271]</th>
 <th>Meaning</th>
@@ -1431,7 +1431,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <td>256</td>
 <td>ATS</td>
 <td>ATS</td>
-<td>0 (unlit) or 1 (lit)</td>
+<td>0 (apagado) o 1 (encendido)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>0</td>
 <td>ATC not available</td>

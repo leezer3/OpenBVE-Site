@@ -408,7 +408,103 @@
 
 
 <div id="content">
-  <p>文档尚未编写完成</p>
+  <p><strong>NOTE:</strong></p>
+<p>This page is still under construction.</p>
+<ul class='contents'>
+<li><a href="#overview">1. Overview</a></li>
+<li><a href="#train">2. The Train section</a></li>
+<li><a href="#car">3. The Car section</a></li>
+</ul>
+<h2 id="a-nameoverviewa-1-overview"><a name="overview"></a>■ 1. Overview</h2>
+<p>The <strong>train.xml</strong> format is the native format for newer versions of OpenBVE, and is intended to replace the older train.dat format. It allows setting of many more properties, and is extensible.</p>
+<p>It may either be constructed as a single file containing the properties of the entire train, or as a single consist definition, along with child car files.</p>
+<h2 id="a-nametraina-2-the-train-section"><a name="train"></a>■ 2. The Train section</h2>
+<p>Whether using child car files, or a single file, the first node in each <strong>train.xml</strong> file must be the <strong><Train></strong> node.</p>
+<p>This supports the following properties:</p>
+<div id="command">
+<strong>&lt;Car&gt;</strong> <em>CarProperties</em> <strong>&lt;/Car&gt;</strong>
+</div>
+<p>This defines a car within the train.</p>
+<p><strong>CarProperties</strong> may either be a set of child nodes (if using the single file format) or a relative on-disk path to a child car file.</p>
+<div id="command">
+<strong>&lt;NotchDescriptions&gt;</strong> <em>Notch</em> <strong>&lt;/NotchDescriptions&gt;</strong>
+</div>
+<p>This overrides the in-game UI notch descriptions displayed.</p>
+<p><strong>Notch</strong> may be one or more child-nodes, with one of the following subjects: <em>Power, Brake, LocoBrake</em> or <em>Reverser</em></p>
+<p>A child-node must be of the following format:</p>
+<div id="command">
+<strong>&lt;Subject&gt;</strong> <em>Descriptions</em> <strong>&lt;/Subject&gt;</strong>
+</div>
+<p><strong>Descriptions</strong> should be a comma-separated list, equal to the number of notches the train has for the subject.</p>
+<h2 id="a-namecara-3-the-car-section"><a name="car"></a>■ 3. The Car section</h2>
+<div id="note">
+<span><font color="#C00000">☀</font> Note</span>
+<p>When using child car files, the <strong><Car></strong> node should be the first node in the file. All other details remain the same.</p>
+</div>
+<p>The <strong><Car></strong> node contains the properties for each induvidual train car.</p>
+<p>This supports the following properties:</p>
+<div id="command">
+<strong>&lt;CameraRestriction&gt;</strong> <em>Restrictions</em> <strong>&lt;/CameraRestriction&gt;</strong>
+</div>
+<p>This sets any camera restrictions within the cab (Generally used for 3D cabs).</p>
+<p><strong>Restrictions</strong> may be one or more child-nodes, with one of the following subjects: <em>Backwards, Forwards, Left, Right, Down</em> or <em>Up</em></p>
+<p>A child-node must be of the following format:</p>
+<div id="command">
+<strong>&lt;Subject&gt;</strong> <em>Distance</em> <strong>&lt;/Subject&gt;</strong>
+</div>
+<p><strong>Distance</strong> should be a distance in meters from the origin point <em>0,0,0</em> at the center of the cab object.</p>
+<div id="command">
+<strong>&lt;Length&gt;</strong> <em>LengthInMeters</em> <strong>&lt;/Length&gt;</strong>
+</div>
+<p><strong>LengthInMeters</strong> should be the length of the car in meters.</p>
+<div id="command">
+<strong>&lt;Width&gt;</strong> <em>WidthInMeters</em> <strong>&lt;/Width&gt;</strong>
+</div>
+<p><strong>WidthInMeters</strong> should be the width of the car in meters.</p>
+<div id="command">
+<strong>&lt;Height&gt;</strong> <em>HeightInMeters</em> <strong>&lt;/Height&gt;</strong>
+</div>
+<p><strong>HeightInMeters</strong> should be the length of the car in meters.</p>
+<div id="command">
+<strong>&lt;Mass&gt;</strong> <em>EmptyMass</em> <strong>&lt;/EmptyMass&gt;</strong>
+</div>
+<p><strong>EmptyMass</strong> should be the mass of an empty (unloaded) car in kilograms.</p>
+<div id="command">
+<strong>&lt;MotorCar&gt;</strong> <em>IsMotorCar</em> <strong>&lt;/MotorCar&gt;</strong>
+</div>
+<p><strong>IsMotorCar</strong> sets whether the car is a motor car- If <em>true</em>, this car is set as a motor car.</p>
+<div id="command">
+<strong>&lt;FrontAxle&gt;</strong> <em>Position</em> <strong>&lt;/FrontAxle&gt;</strong>
+</div>
+<p><strong>Position</strong> should be the position in meters of the axle from the center of the car.</p>
+<div id="command">
+<strong>&lt;RearAxle&gt;</strong> <em>Position</em> <strong>&lt;/RearAxle&gt;</strong>
+</div>
+<p><strong>Position</strong> should be the position in meters of the axle from the center of the car.</p>
+<div id="command">
+<strong>&lt;Object&gt;</strong> <em>ObjectFile</em> <strong>&lt;/Object&gt;</strong>
+</div>
+<p><strong>ObjectFile</strong> should be a relative on-disk path to the exterior 3D object to use.</p>
+<div id="command">
+<strong>&lt;Reversed&gt;</strong> <em>IsReversed</em> <strong>&lt;/IsReversed&gt;</strong>
+</div>
+<p><strong>IsReversed</strong> sets whether the 3D exterior object is reversed. If <em>true</em>, the object is reversed.</p>
+<div id="command">
+<strong>&lt;InteriorView&gt;</strong> <em>ObjectFile</em> <strong>&lt;/InteriorView&gt;</strong>
+</div>
+<p><strong>ObjectFile</strong> should be a relative on-disk path to the interior 3D object to use.</p>
+<div id="command">
+<strong>&lt;VisibleFromInterior&gt;</strong> <em>IsVisible</em> <strong>&lt;/VisibleFromInterior&gt;</strong>
+</div>
+<p><strong>IsVisible</strong> controls whether the exterior object(s) for this car are visible from the interior of other cars. If <em>true</em>, objects will be visible.</p>
+<div id="command">
+<strong>&lt;LoadingSway&gt;</strong> <em>Sways</em> <strong>&lt;/LoadingSway&gt;</strong>
+</div>
+<p><strong>Sways</strong> sets whether loading sway affects this specific car. If <em>true</em>, then whilst passengers are boarding at a station, the loading sway animation is used.</p>
+<div id="command">
+<strong>&lt;DriverPosition&gt;</strong> <em>Position</em> <strong>&lt;/DriverPosition&gt;</strong>
+</div>
+<p><strong>Position</strong> should contain a comma-separated 3D vector, defining the position of the driver&rsquo;s eyes within the car, relative to <em>0,0,0</em></p>
 
 </div>
 
