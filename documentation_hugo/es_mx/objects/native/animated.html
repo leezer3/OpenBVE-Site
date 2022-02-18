@@ -950,6 +950,10 @@ Please also note that some combinations of prefix and infix operators are not re
 <td><code>ArcTan[x]</code></td>
 <td>The inverse tangent (output in radians).</td>
 </tr>
+<tr>
+<td><code>Pi</code></td>
+<td>Returns the value of <em>Pi</em>.</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -965,12 +969,12 @@ Please also note that some combinations of prefix and infix operators are not re
 <tbody>
 <tr>
 <td><code>If[cond,truevalue,falsevalue]</code></td>
-<td>Si <em>condición</em> es != 0, retorna <em>valorverdadero</em>, en caso contrario <em>valorfalso</em></td>
+<td>If <em>cond</em> is != 0, returns <em>truevalue</em>, otherwise <em>falsevalue</em></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h2 id="a-namevariablesa-5-lista-de-variables"><a name="variables"></a>■ 5. Lista de variables</h2>
+<h2 id="a-namevariablesa-5-list-of-variables"><a name="variables"></a>■ 5. List of variables</h2>
 <h5 id="-primitives">● Primitives</h5>
 <div class="overflow-container">
 <table class='type0 responsive-table-2col'>
@@ -987,7 +991,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>delta</code></td>
-<td>La diferencia de tiempo desde la última evaluación de la función en segundos. Por favor ten en cuenta que no hay tiempo garantizado desde que transcurre entre los llamados de función sucesivos.</td>
+<td>The time difference since the last evaluation of the function in seconds. Please note that there is no guaranteed time that elapses between successive function calls.</td>
 </tr>
 <tr>
 <td><code>currentState</code></td>
@@ -1011,7 +1015,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <td>The current in-game time measured in seconds since midnight of the first day.</td>
 </tr>
 <tr>
-<td><code>hora</code></td>
+<td><code>hour</code></td>
 <td>The integer part of the current hour.</td>
 </tr>
 <tr>
@@ -1023,8 +1027,8 @@ Please also note that some combinations of prefix and infix operators are not re
 <td>The integer part of the current second.</td>
 </tr>
 <tr>
-<td><code>DistanciaCamara</code></td>
-<td>Una distancia cartesiana no negativa medida desde el objeto a la cámara en metros.</td>
+<td><code>cameraDistance</code></td>
+<td>The non-negative cartesian distance measured from the object to the camera in meters.</td>
 </tr>
 <tr>
 <td><code>cameraXDistance</code></td>
@@ -1032,7 +1036,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>cameraYDistance</code></td>
-<td>Una distancia cartesiana no negativa medida desde el eje Y al objeto a la cámara en metros.</td>
+<td>The non-negative cartesian distance measured on the Y axis from the object to the camera in meters</td>
 </tr>
 <tr>
 <td><code>cameraZDistance</code></td>
@@ -1047,8 +1051,8 @@ Please also note that some combinations of prefix and infix operators are not re
 </div>
 <h5 id="-trains">● Trains</h5>
 <p>Generally, objects attached to a particular train and car return values for that train and car, unless stated otherwise. For scenery objects, the reference is the driver&rsquo;s car of the nearest train (not necessarily the player&rsquo;s train).</p>
-<p>En algunos casos de las siguientes variables , <em>IndiceCarro</em> tiene el siguiente significado: 0 es el 1<sup>er</sup> carro  del frente, 1 es el 2<sup>do</sup> carro del frente, etc., mientras que -1 es el 1<sup>er</sup> carro desde la parte posterior, -2 es el 2<sup>do</sup> carro desde la parte posterior, etc. En general los indices de los carros desde -<em>cars</em> hasta <em>cars</em>-1 representan carros existentes, donde <em>cars</em> es el numero de carros que el tren posee, mientras que valores que estén fuera de este rango representan carros que no existen. Todos los trenes tienen al menos 1 carro, indices -1 y 0 están garantizados que existan para cualquier tren.</p>
-<h5 id="-trenes-generalidades">● Trenes (generalidades)</h5>
+<p>In some of the following variables, <em>carIndex</em> has the following meaning: 0 is the 1<sup>st</sup> car from the front, 1 is the 2<sup>nd</sup> car from the front, etc., while -1 is the 1<sup>st</sup> car from the rear, -2 is the 2<sup>nd</sup> car from the rear, etc. In general, car indices from -<em>cars</em> to <em>cars</em>-1 represent existing cars, where <em>cars</em> is the number of cars the train has, while values outside of this range represent non-existing cars. As all trains have at least 1 car, indices -1 and 0 are guaranteed to exist for any train.</p>
+<h5 id="-trains-general">● Trains (general)</h5>
 <div class="overflow-container">
 <table class='type0 responsive-table-2col'>
 <thead>
@@ -1059,12 +1063,12 @@ Please also note that some combinations of prefix and infix operators are not re
 </thead>
 <tbody>
 <tr>
-<td><code>TrenJugador</code></td>
+<td><code>playerTrain</code></td>
 <td>Returns 1 if the train is the player train, 0 otherwise.</td>
 </tr>
 <tr>
-<td><code>carros</code></td>
-<td>El número de carros que el tren tiene.</td>
+<td><code>cars</code></td>
+<td>The number of cars the train has.</td>
 </tr>
 <tr>
 <td><code>carNumber</code></td>
@@ -1087,20 +1091,20 @@ Please also note that some combinations of prefix and infix operators are not re
 <td>The signed perceived speed of the car <em>carIndex</em> in m/s as it would appear to a speedometer on wheel slip and wheel lock.</td>
 </tr>
 <tr>
-<td><code>aceleración</code></td>
-<td>The actual acceleration of the current car in m/s².</td>
+<td><code>acceleration</code></td>
+<td>The actual acceleration of the current car in m/s2.</td>
 </tr>
 <tr>
 <td><code>acceleration[carIndex]</code></td>
-<td>The actual acceleration of the car <em>carIndex</em> in m/s².</td>
+<td>The actual acceleration of the car <em>carIndex</em> in m/s2.</td>
 </tr>
 <tr>
 <td><code>accelerationMotor</code></td>
-<td>La aceleración actual la cual el motor del primer carro genera en m/s².</td>
+<td>The acceleration which the motor of the first motor car currently generates in m/s2.</td>
 </tr>
 <tr>
 <td><code>accelerationMotor[carIndex]</code></td>
-<td>The acceleration which the motor of the car <em>carIndex</em> currently generates in m/s².</td>
+<td>The acceleration which the motor of the car <em>carIndex</em> currently generates in m/s2.</td>
 </tr>
 <tr>
 <td><code>distance</code></td>
@@ -1116,7 +1120,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>trackDistance[carIndex]</code></td>
-<td>La distancia de la vía desde el objeto al carro número <em>IndiceCarro</em> del tren mas próximo en metros. Es positivo cuando el centro del coche esté en frente del objeto, y negativo cuando esta por detrás, Retorna 0 si el coche no existe. Solamente es usado por objetos de escenario.</td>
+<td>The signed track distance measured from the object to the car <em>carIndex</em> of the nearest train in meters. Is positive when the center of the car is in front of the object, and negative if behind. Returns 0 if the car does not exist. Only meaningful for scenery objects.</td>
 </tr>
 <tr>
 <td><code>destination</code></td>
@@ -1124,7 +1128,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>distanceNextStation</code></td>
-<td>La distancia en metros a la siguiente estación.</td>
+<td>The distance in m to the next station.</td>
 </tr>
 <tr>
 <td><code>distanceStation[stationIndex]</code></td>
@@ -1139,7 +1143,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <td>Whether the train stops at the station with <em>stationIndex</em></td>
 </tr>
 <tr>
-<td><code>siguienteEstación</code></td>
+<td><code>nextStation</code></td>
 <td>The index of the next station.</td>
 </tr>
 <tr>
@@ -1171,7 +1175,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <thead>
 <tr>
 <th>Variable</th>
-<th>Descripción</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1185,7 +1189,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>equalizingReservoir</code></td>
-<td>La presión actual del depósito de compensación en este carro, medido en Pascal.</td>
+<td>The current pressure in the equalizing reservoir in this car, measured in Pa.</td>
 </tr>
 <tr>
 <td><code>equalizingReservoir[carIndex]</code></td>
@@ -1246,11 +1250,11 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>rightDoors</code></td>
-<td>El estado de las puertas del lado derecho. Retorna 0 si esta totalmente cerrada, 1 si esta totalmente abierta, o cualquier otro estado intermedio, las puertas están parciales en un estado abierto.</td>
+<td>The state of the right doors. Returns 0 if fully closed, 1 if fully opened, or any intermediate value, biasing doors that are in a more open state.</td>
 </tr>
 <tr>
-<td><code>rightDoors[IndiceCarro]</code></td>
-<td>El estado de las puertas del lado derecho del carro <em>IndiceCarro</em>. Retorna un valor entre 0 y 1, en un estado parcial de puertas que están en un estado de apertura, o -1 si el carro no existe.</td>
+<td><code>rightDoors[carIndex]</code></td>
+<td>The state of the right doors of car <em>carIndex</em>. Returns a value between 0 and 1, biasing doors that are in a more open state, or -1 if the car does not exist.</td>
 </tr>
 <tr>
 <td><code>leftDoorsTarget</code></td>
@@ -1258,7 +1262,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>leftDoorsTarget[carIndex]</code></td>
-<td>El estado de la trayectoria anticipada de las puertas izquierdas del carro <em>IndiceCarro</em>. Retorna 0 (cerrada) o 1 (abierta).</td>
+<td>The anticipated target state of the left doors of car <em>carIndex</em>. Returns either 0 (closed) or 1 (opened).</td>
 </tr>
 <tr>
 <td><code>rightDoorsTarget</code></td>
@@ -1266,7 +1270,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>rightDoorsTarget[carIndex]</code></td>
-<td>El estado de destino anticipado de las puertas derechas del carro <em>IndiceCarro</em>. Retorna cualquiera 0 (cerrado) ó 1 (abierto).</td>
+<td>The anticipated target state of the right doors of car <em>carIndex</em>. Returns either 0 (closed) or 1 (opened).</td>
 </tr>
 <tr>
 <td><code>leftDoorButton</code></td>
@@ -1283,7 +1287,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tbody>
 </table>
 </div>
-<h5 id="-trenes-otros">● Trenes (otros)</h5>
+<h5 id="-trains-miscellaneous">● Trains (miscellaneous)</h5>
 <div class="overflow-container">
 <table class='type0 responsive-table-2col'>
 <thead>
@@ -1350,7 +1354,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <td>Whether the const speed system is currently active (1) or not (0).</td>
 </tr>
 <tr>
-<td><code>tieneVelocidadConstante</code></td>
+<td><code>hasConstSpeed</code></td>
 <td>Whether the train has a const speed system (1) or not (0).</td>
 </tr>
 <tr>
@@ -1359,7 +1363,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>pluginState[i]</code></td>
-<td>El estado de la i<sup>ava</sup> variable del plugin, retornando un entero dependiendo del plugin. Es lo mismo para ats<em>i</em> en el panel2.cfg.</td>
+<td>The state of the i<sup>th</sup> plugin variable, returning an integer depending on the plugin. Is the same as ats<em>i</em> in the panel2.cfg.</td>
 </tr>
 <tr>
 <td><code>FrontAxleCurveRadius[carIndex]</code></td>
@@ -1379,7 +1383,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tr>
 <tr>
 <td><code>Odometer</code></td>
-<td>Retorna un numero representando la distancia en metros viajadas por el carro actual.</td>
+<td>Returns a signed number representing the distance in meters travelled by the current car.</td>
 </tr>
 <tr>
 <td><code>Odometer[carIndex]</code></td>
@@ -1394,11 +1398,11 @@ Please also note that some combinations of prefix and infix operators are not re
 <td>Returns 1 if the primary horn is currently playing, 0 otherwise.</td>
 </tr>
 <tr>
-<td><code>KlaxonSecundario</code></td>
+<td><code>SecondaryKlaxon</code></td>
 <td>Returns 1 if the secondary horn is currently playing, 0 otherwise.</td>
 </tr>
 <tr>
-<td><code>KlaxonMusical</code></td>
+<td><code>MusicKlaxon</code></td>
 <td>Returns 1 if the music horn is currently playing, 0 otherwise.</td>
 </tr>
 <tr>
@@ -1420,7 +1424,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <th><em>i</em></th>
 <th>English</th>
 <th>日本語</th>
-<th>Valores de retorno</th>
+<th>Return values</th>
 <th></th>
 <th>pluginState[271]</th>
 <th>Meaning</th>
@@ -1431,7 +1435,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <td>256</td>
 <td>ATS</td>
 <td>ATS</td>
-<td>0 (apagado) o 1 (encendido)</td>
+<td>0 (unlit) or 1 (lit)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>0</td>
 <td>ATC not available</td>
