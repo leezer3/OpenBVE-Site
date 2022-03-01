@@ -426,6 +426,7 @@
 <li><a href="#overview">1. Overview</a></li>
 <li><a href="#train">2. The Train section</a></li>
 <li><a href="#car">3. The Car section</a></li>
+<li><a href="#coupler">4. The Coupler section</a></li>
 </ul>
 <h2 id="a-nameoverviewa-1-overview"><a name="overview"></a>■ 1. Overview</h2>
 <p>The <strong>train.xml</strong> format is the native format for newer versions of OpenBVE, and is intended to replace the older train.dat format. It allows setting of many more properties, and is extensible.</p>
@@ -517,6 +518,25 @@
 <strong>&lt;DriverPosition&gt;</strong> <em>Position</em> <strong>&lt;/DriverPosition&gt;</strong>
 </div>
 <p><strong>Position</strong> should contain a comma-separated 3D vector, defining the position of the driver&rsquo;s eyes within the car, relative to <em>0,0,0</em></p>
+<h2 id="a-namecouplera-4-the-coupler-section"><a name="coupler"></a>■ 4. The Coupler section</h2>
+<p>Car nodes (or child file references) may optionally be separated by a <strong>&lt;Coupler&gt;</strong> node.</p>
+<p>This defines the coupler between the two cars, and supports the following properties:</p>
+<div id="command">
+<strong>&lt;Minimum&gt;</strong> <em>Distance</em> <strong>&lt;/Distance&gt;</strong>
+</div>
+<p><strong>Distance</strong> sets the minimum distance between the two cars.</p>
+<div id="command">
+<strong>&lt;Maximum&gt;</strong> <em>Distance</em> <strong>&lt;/Maximum&gt;</strong>
+</div>
+<p><strong>Distance</strong> sets the maximum distance between the two cars.</p>
+<div id="command">
+<strong>&lt;Object&gt;</strong> <em>ObjectFile</em> <strong>&lt;/Object&gt;</strong>
+</div>
+<p><strong>ObjectFile</strong> should be a relative on-disk path to the exterior 3D object to use.</p>
+<div id="note">
+<span><font color="#C00000">☀</font> Note</span>
+<p>The coupler object is not deformed when the coupler stretches / compresses.</p>
+</div>
 
 </div>
 
