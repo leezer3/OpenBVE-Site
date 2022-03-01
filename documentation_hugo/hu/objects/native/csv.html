@@ -78,7 +78,7 @@
           
           <ul class="third">
             
-            <li><a href="../../../hu/objects/native/b3d.html">A B3D objektum</a>
+            <li><a href="../../../hu/objects/native/b3d.html">The B3D object</a>
               
             </li>
             
@@ -86,7 +86,7 @@
               
             </li>
             
-            <li><a href="../../../hu/objects/native/animated.html">Az ANIMATED objektum</a>
+            <li><a href="../../../hu/objects/native/animated.html">The ANIMATED object</a>
               
             </li>
             
@@ -411,7 +411,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>A <strong>.csv</strong> objektum formátum</h1>
+          <h1>A **. Csv ** objektum formátum</h1>
         </div>
 
         
@@ -422,9 +422,9 @@
 <div id="content">
   <h2 id="-tartalom">■ Tartalom</h2>
 <ul class='contents'>
-<li><a href="#overview">1. Áttekintés</a></li>
-<li><a href="#syntax">2. Szintaxis</a></li>
-<li><a href="#commands">3. Elérhető parancsok</a>
+<li><a href="#overview">1. Overview</a></li>
+<li><a href="#syntax">2. Syntax</a></li>
+<li><a href="#commands">3. Available commands</a>
 <ul class='contents'>
 <li><a href="#createmeshbuilder">CreateMeshBuilder</a></li>
 <li><a href="#addvertex">AddVertex</a></li>
@@ -447,11 +447,11 @@
 </ul>
 </li>
 </ul>
-<h2 id="a-nameoverviewa-1-áttekintés"><a name="overview"></a>■ 1. Áttekintés</h2>
+<h2 id="a-nameoverviewa-1-overview"><a name="overview"></a>■ 1. Overview</h2>
 <p>A CSV object allows to create a single object by using textual instructions. The object can be used in routes or in trains. The object described by the file can contain any number of individual polygons. The file format allows to group multiple polygons in CreateMeshBuilder sections in which attributes like color or texture information is assigned to all polygons created in each section. This allows for the creation of many polygons in the same CreateMeshBuilder section which share common attributes. A polygon is called a face in this file format.</p>
 <p>The file is a plain text file encoded in any arbitrary <a href="../../../hu/information/encodings.html">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../../hu/information/numberformats.html">parsing model</a> for numbers is <strong>Loose</strong>, however, you are encouraged to produce <em>Strict</em> output nonetheless. The file name is arbitrary, but must have the extension <strong>.csv</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
 <p>➟ <a href="../../../hu/objects/native/b3d_quick.html">See also the quick reference for the CSV format&hellip;</a></p>
-<h2 id="a-namesyntaxa-2-szintaxis"><a name="syntax"></a>■ 2. Szintaxis</h2>
+<h2 id="a-namesyntaxa-2-syntax"><a name="syntax"></a>■ 2. Syntax</h2>
 <p>Each line in the file is split into the name of a command and its arguments. The syntax for all commands is the same:</p>
 <div id="command">
 <strong>NameOfTheCommand</strong>, <em>Argument<sub>1</sub></em>, <em>Argument<sub>2</sub></em>, <em>Argument<sub>3</sub></em>, &hellip;, <em>Argument<sub>n</sub></em>
@@ -459,7 +459,7 @@
 <p><em>NameOfTheCommand</em> is case-insensitive. If there are arguments, <em>NameOfTheCommand</em> and <em>Argument1</em> are separated by a comma (U+002C). Likewise, arguments are also separated by a comma (U+002C). <a href="../../../hu/information/whitespaces.html">White spaces</a> around the arguments and around the <em>NameOfTheCommand</em>, and well as at the beginning and the end of the line, are ignored. Empty lines or lines solely consisting of white spaces are also ignored.</p>
 <p>Arguments may also be omitted by leaving the text at each of the <em>Argumenti</em> blank. A default value will usually apply in this case, which is specific to the command used. All default values are specified in the section of available commands.</p>
 <p>You can use comments anywhere at the end of a line. A comment is started by a semicolon (U+003B). Comments, if present, are stripped away from all lines before these are processed.</p>
-<h2 id="a-namecommandsa-3-elérhető-parancsok"><a name="commands"></a>■ 3. Elérhető parancsok</h2>
+<h2 id="a-namecommandsa-3-available-commands"><a name="commands"></a>■ 3. Available commands</h2>
 <p><a name="createmeshbuilder"></a></p>
 <div id="command">
 <strong>CreateMeshBuilder</strong>
