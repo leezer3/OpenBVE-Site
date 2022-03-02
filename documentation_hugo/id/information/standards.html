@@ -428,41 +428,41 @@
 <h2 id="-suara-kereta-flangeiwav">■ Suara kereta flange<em>i</em>.wav</h2>
 <p>Tidak ada aturan standar untuk file flange<em>i</em>.wav . Anda bisa membuatnya sendiri.</p>
 <h2 id="-beacon">■ Beacon</h2>
-<p>Beacon diperuntukan untuk sistem keamanan bawaan ATS-SN dan ATS-P. Ini hanya boleh digunakan oleh pengembang rute/kereta jika arti beacon (hampir) identik:</p>
+<p>Beacons reserved for the built-in safety systems ATS-SN and ATS-P. These should only be used by route/train developers if the meaning of the beacons are (nearly) identical:</p>
 <div class="overflow-container">
 <table class='type0'>
 <thead>
 <tr>
-<th>Tipe beacon</th>
-<th>Data opsional</th>
-<th>Arti</th>
+<th>Beacon type</th>
+<th>Optional data</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>0</td>
 <td><em>SwitchSystem</em></td>
-<td>Transponder tipe-S untuk ATS-SN. Ditempatkan sekitar 600m di depan sinyal. Mebunyikan alarm yang harus diketahui ole masinis setiap kali sinyal berwarna merah.<br /><br />Nilai untuk <em>SwitchSystem</em>:<br />-1: Kereta tidak boleh mengganti sistem keselamatan.<br />0: Kereta harus secara otomatis beralih dari ATS-P ke ATS-SN saat lewat beacon ini.</td>
+<td>S-type transponder for ATS-SN. Placed about 600m in front of a signal. Raises an alarm the driver has to acknowledge whenever the referenced signal is red.<br /><br />Values for <em>SwitchSystem</em>:<br />-1: The train should not switch the safety system.<br />0: The train should automatically switch from ATS-P to ATS-SN when passing this beacon.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><em>SwitchSystem</em></td>
-<td>Transponder tipe-SN untuk ATS-SN. Ditempatkan sekitar 20m di depan sinyal. Membunyikan alarm yang harus diketahui ole masinis setiap kali sinyal berwarna merah.<br /><br />Nilai untuk <em>SwitchSystem</em>:<br />-1: Kereta tidak boleh mengganti sistem keselamatan.<br />0: Kereta harus secara otomatis beralih dari ATS-P ke ATS-SN saat lewat beacon ini.</td>
+<td>SN-type transponder for ATS-SN. Placed about 20m in front of a signal. Triggers the emergency brakes whenever the referenced signal is red.<br /><br />Values for <em>SwitchSystem</em>:<br />-1: The train should not switch the safety system.<br />0: The train should automatically switch from ATS-P to ATS-SN when passing this beacon.</td>
 </tr>
 <tr>
 <td>2</td>
 <td><em>Cars</em></td>
-<td>Transponder berhenti darurat untuk ATS-SN dan ATS-P. Ditempatkan setelah pemberhentian. Menerapkan rem darurat setiap kali sinyal berwarna merah dan jumlah gerbong sesuai dengan data opsional.<br /><br />Nilai untuk <em>Cars</em>:<br />0: Transponder terpicu terlepas dari jumlah gerbong.<br /><em>Bilangan positif</em>: Transponder terpicu hanya jika * gerbong* lebih banyak dari atau sama dengan jumlah gerbong yang dimiliki kereta.</td>
+<td>Immediate stop transponder for ATS-SN and ATS-P. Placed after stops. Applies the emergency brakes whenever the referenced signal is red and the number of cars corresponds to the optional data.<br /><br />Values for <em>Cars</em>:<br />0: The transponder triggers regardless of the amount of cars.<br /><em>Positive integer</em>: The transponder triggers only if <em>Cars</em> is greater than or equal to the number of cars the train has.</td>
 </tr>
 <tr>
 <td>3</td>
 <td><em>SwitchSystem</em></td>
-<td>Transponder model baru untuk ATS-P. Beberapa disimpan di depan sinyal. Memberikan info kepada kereta tentang jarak sinyal terdekat dan aspek yang ditampilkan. Kereta akan mengerem bertahap jika sinyal merah.<br /><br />Nilai <em>SwitchSystem</em>:<br />-1: Kereta tidak akan mengganti sistem keamananan.<br />0: Kereta akan mengganti sistem dari ATS-SN menjadi ATS-P saat melewati beacon.</td>
+<td>Pattern renewal transponder for ATS-P. Multiple of these are placed in front of a signal. Informs the train about the distance to the referenced signal and whether it is red or not. The train then calculates a brake curve to the referenced signal if it is red.<br /><br />Values for <em>SwitchSystem</em>:<br />-1: The train should not switch the safety system.<br />0: The train should automatically switch from ATS-SN to ATS-P when passing this beacon.</td>
 </tr>
 <tr>
 <td>4</td>
 <td><em>SwitchSystem</em></td>
-<td>Stop transponder untuk ATS-P. Disimpan 25-30m di depan sinyal. MEmberikan informasi kepada kereta tentang jarak dan aspek sinyal. Kereta akan mengerem otomatis jika sinyal merah.<br /><br />Nilai <em>SwitchSystem</em>:<br />-1: Kereta tidak akan mengganti sistem keamanan.<br />0: Kereta akan mengganti sistem dari ATS-SN menjadi ATS-P.</td>
+<td>Immediate stop transponder for ATS-P. Placed about 25m/30m in front of a signal. Informs the train about the distance to the referenced signal and whether it is red or not. The train brakes immediately if the signal is red.<br /><br />Values for <em>SwitchSystem</em>:<br />-1: The train should not switch the safety system.<br />0: The train should automatically switch from ATS-SN to ATS-P when passing this beacon.</td>
 </tr>
 </tbody>
 </table>
@@ -472,16 +472,16 @@
 <table class='type0'>
 <thead>
 <tr>
-<th>Tipe beacon</th>
-<th>Data opsional</th>
-<th>Arti</th>
+<th>Beacon type</th>
+<th>Optional data</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>21</td>
 <td><em>Intensity</em></td>
-<td>Menyetel intensitas cuaca<br /><br />.Nilai untuk <em>Intensitas</em> harus dalam kisaran berikut:<br />0: Tidak ada cuaca.<br />100: Intensitas cuaca maksimum.</td>
+<td>Sets the intensity of the weather.<br /><br />Values for <em>Intensity</em> should be within the following range:<br />0: No weather.<br />100: Maximum weather intensity.</td>
 </tr>
 </tbody>
 </table>
@@ -491,9 +491,9 @@
 <table class='type0'>
 <thead>
 <tr>
-<th>Tipe beacon</th>
-<th>Data opsional</th>
-<th>Arti</th>
+<th>Beacon type</th>
+<th>Optional data</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
