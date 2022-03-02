@@ -422,7 +422,7 @@
 <div id="content">
   <h2 id="-内容">■ 内容</h2>
 <ul class='contents'>
-<li><a href="#overview">1. Overview</a></li>
+<li><a href="#overview">1. 概要</a></li>
 <li><a href="#identifier">2. The file identifier</a>
 <ul class='contents'>
 <li><a href="../../ja/trains/train_dat_version.html">2a. Version history</a></li>
@@ -523,14 +523,14 @@ OPENBVE1530
 #NameOfTheSection
 </div>
 <p>The order in which sections appear within the file is irrelevant. Each line following the opening of a new section is interpreted as a data entry. These data entries are not named, thus their order is important. When a data entry is expected but omitted because a new section was started, a default value will apply. The exact interpretation of each data entry is explained in the following sections, along with default values.</p>
-<p>You can use comments anywhere at the end of a line. A comment is started by a semicolon (U+003B). Comments, if present, are stripped away from all lines before these are processed.</p>
+<p>コメントは行末のどこでも使用可能です。 コメントはセミコロン (U+003B)で始まります。 コメントは存在する場合、処理される前に全ての行から削除されます。</p>
 <h2 id="a-nameaccelerationa-4-the-acceleration-section"><a name="acceleration"></a>■ 4. The Acceleration section</h2>
 <p>The Acceleration section defines the acceleration characteristics of the train for each individual power notch. The number of notches available in the train can be set inside the Handle section. For each notch, one data entry is expected, starting with the first notch.</p>
 <hr>
 <div id="command">
 #ACCELERATION
 </div>
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 <hr>
 <div id="command">
 <em>a<sub>0</sub></em>, <em>a<sub>1</sub></em>, <em>v<sub>1</sub></em>, <em>v<sub>2</sub></em>, <em>e</em>
@@ -654,7 +654,7 @@ e<sub>2.0</sub> = min(1 - v<sub>2</sub> * log(e<sub>1.22</sub>) / log(9/4), 4)
 <div id="command">
 #PERFORMANCE
 </div>
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 <div id="note">
 <h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
 <p>#PERFORMANCE, DECELERATION
@@ -716,7 +716,7 @@ e<sub>2.0</sub> = min(1 - v<sub>2</sub> * log(e<sub>1.22</sub>) / log(9/4), 4)
 <div id="command">
 #DELAY
 </div>
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 <hr>
 <div id="command">
 <em>DelayPowerUp</em>
@@ -773,7 +773,7 @@ e<sub>2.0</sub> = min(1 - v<sub>2</sub> * log(e<sub>1.22</sub>) / log(9/4), 4)
 <div id="command">
 #MOVE
 </div>
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 <hr>
 <div id="command">
 <em>JerkPowerUp</em>
@@ -838,7 +838,7 @@ e<sub>2.0</sub> = min(1 - v<sub>2</sub> * log(e<sub>1.22</sub>) / log(9/4), 4)
 <div id="command">
 #BRAKE
 </div>
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 <hr>
 <div id="command">
 <em>BrakeType</em>
@@ -915,7 +915,7 @@ e<sub>2.0</sub> = min(1 - v<sub>2</sub> * log(e<sub>1.22</sub>) / log(9/4), 4)
 <div id="command">
 #PRESSURE
 </div>
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 <hr>
 <div id="command">
 <em>BrakeCylinderServiceMaximumPressure</em>
@@ -1029,7 +1029,7 @@ e<sub>2.0</sub> = min(1 - v<sub>2</sub> * log(e<sub>1.22</sub>) / log(9/4), 4)
 <div id="command">
 #HANDLE
 </div>
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 <hr>
 <div id="command">
 <em>HandleType</em>
@@ -1121,7 +1121,7 @@ e<sub>2.0</sub> = min(1 - v<sub>2</sub> * log(e<sub>1.22</sub>) / log(9/4), 4)
 <div id="command">
 #CAB
 </div>
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 <div id="note">
 <h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
 <p>#CAB, #COCKPIT
@@ -1177,7 +1177,7 @@ Z
 <div id="command">
 #CAR
 </div>
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 <hr>
 <div id="command">
 <em>MotorCarMass</em>
@@ -1328,7 +1328,7 @@ Z
 <div id="command">
 #DEVICE
 </div>
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 <hr>
 <div id="command">
 Ats

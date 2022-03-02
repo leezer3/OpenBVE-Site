@@ -423,7 +423,7 @@
   <p>This is the documentation for train plugins. In order to create a train plugin, implement the IRuntime interface from the OpenBveApi.Runtime namespace. In the following, you will find a description of how this interface works.</p>
 <h2 id="-contenidos">■ Contenidos</h2>
 <ul class='contents'>
-<li><a href="#overview">1. Overview</a></li>
+<li><a href="#overview">1. Vista general</a></li>
 <li><a href="#functions">2. Function calls</a></li>
 <li><a href="#sound">3. Playing sounds</a></li>
 <li><a href="#ai">4. Supporting the AI</a></li>
@@ -563,7 +563,7 @@ Ve la sección en <a href="#sound">playing sounds</a>.</p>
 <hr>
 <p><strong>void SetVehicleSpecs(VehicleSpecs specs)</strong></p>
 <p>This function is called after <em>Load</em> to inform the plugin about the specifications of the train.</p>
-<p>Arguments:</p>
+<p>Argumentos:</p>
 <div class="overflow-container">
 <table class='type1'>
 <thead>
@@ -651,7 +651,7 @@ Ve la sección en <a href="#sound">playing sounds</a>.</p>
 <hr>
 <p><strong>void Initialize(InitializationModes mode)</strong></p>
 <p>This function is called after <em>SetVehicleSpecs</em> and informs the plugin about the mode the safety system should start in. If the safety system in your plugin can be activated or deactivated, you should initialize the state of the plugin accordingly. When the user selects a <em>Jump to station</em> target, this function is also called prior to moving the train to its new location.</p>
-<p>Arguments:</p>
+<p>Argumentos:</p>
 <div class="overflow-container">
 <table class='type1'>
 <thead>
@@ -695,7 +695,7 @@ Ve la sección en <a href="#sound">playing sounds</a>.</p>
 <hr>
 <p><strong>void Elapse(ElapseData data)</strong></p>
 <p>This function is called every frame. It informs the plugin about the current state of the train and allows to set the virtual handles.</p>
-<p>Arguments:</p>
+<p>Argumentos:</p>
 <div class="overflow-container">
 <table class='type1'>
 <thead>
@@ -894,7 +894,7 @@ Ve la sección en <a href="#sound">playing sounds</a>.</p>
 <hr>
 <p><strong>void SetReverser(int reverser)</strong></p>
 <p>This function is called when the driver changes the reverser position.</p>
-<p>Arguments:</p>
+<p>Argumentos:</p>
 <div class="overflow-container">
 <table class='type1'>
 <thead>
@@ -914,7 +914,7 @@ Ve la sección en <a href="#sound">playing sounds</a>.</p>
 <hr>
 <p><strong>void SetPower(int powerNotch)</strong></p>
 <p>This function is called when the driver changes the power notch.</p>
-<p>Arguments:</p>
+<p>Argumentos:</p>
 <div class="overflow-container">
 <table class='type1'>
 <thead>
@@ -934,7 +934,7 @@ Ve la sección en <a href="#sound">playing sounds</a>.</p>
 <hr>
 <p><strong>void SetBrake(int brakeNotch)</strong></p>
 <p>This function is called when the driver changes the brake notch.</p>
-<p>Arguments:</p>
+<p>Argumentos:</p>
 <div class="overflow-container">
 <table class='type1'>
 <thead>
@@ -1066,7 +1066,7 @@ Ve la sección en <a href="#sound">playing sounds</a>.</p>
 <hr>
 <p><strong>void KeyUp(VirtualKeys key)</strong></p>
 <p>This function is called when a plugin-specific key is released.</p>
-<p>Arguments:</p>
+<p>Argumentos:</p>
 <div class="overflow-container">
 <table class='type1'>
 <thead>
@@ -1175,7 +1175,7 @@ Ve la sección en <a href="#sound">playing sounds</a>.</p>
 <hr>
 <p><strong>void HornBlow(HornTypes type)</strong></p>
 <p>This function is called when a horn starts playing. In case of the musical horn, this function is also called when the horn stops playing.</p>
-<p>Arguments:</p>
+<p>Argumentos:</p>
 <div class="overflow-container">
 <table class='type1'>
 <thead>
@@ -1218,7 +1218,7 @@ Ve la sección en <a href="#sound">playing sounds</a>.</p>
 <hr>
 <p><strong>void DoorChange(DoorStates oldState, DoorStates newState)</strong></p>
 <p>This function is called when the state of the doors change.</p>
-<p>Arguments:</p>
+<p>Argumentos:</p>
 <div class="overflow-container">
 <table class='type1'>
 <thead>
@@ -1269,7 +1269,7 @@ Ve la sección en <a href="#sound">playing sounds</a>.</p>
 <hr>
 <p><strong>void SetSignal(SignalData[] data)</strong></p>
 <p>This function is called when the aspect in the current or in any of the upcoming section changes, or when passing section boundaries. For the current section, it is assumed that no train is currently inside. Only sections until the first red section are reported.</p>
-<p>Arguments:</p>
+<p>Argumentos:</p>
 <div class="overflow-container">
 <table class='type1'>
 <thead>
@@ -1311,7 +1311,7 @@ Ve la sección en <a href="#sound">playing sounds</a>.</p>
 <hr>
 <p><strong>void SetBeacon(BeaconData data)</strong></p>
 <p>This function is called when a beacon is passed by the front of the train.</p>
-<p>Arguments:</p>
+<p>Argumentos:</p>
 <div class="overflow-container">
 <table class='type1'>
 <thead>
@@ -1375,7 +1375,7 @@ Ve la sección en <a href="#sound">playing sounds</a>.</p>
 <hr>
 <p><strong>void PerformAI(AIData data)</strong></p>
 <p>This function is called when the AI is performed.</p>
-<p>Arguments:</p>
+<p>Argumentos:</p>
 <div class="overflow-container">
 <table class='type1'>
 <thead>
@@ -1414,7 +1414,7 @@ Ve la sección en <a href="#sound">playing sounds</a>.</p>
 <h2 id="a-namesounda-playing-sounds"><a name="sound"></a>■ Playing sounds</h2>
 <p>You can play custom sounds from within your plugin. Custom sounds need to be configured inside the <em>sound.cfg</em> file before they can be used by the plugin. In order to play such sounds, keep a reference to the <em>PlaySound</em> function that is passed in the Load call. You can then start playing sounds at any time by calling this function:</p>
 <p><strong>SoundHandle PlaySound(int index, double volume, double pitch, bool looped)</strong></p>
-<p>Arguments:</p>
+<p>Argumentos:</p>
 <div class="overflow-container">
 <table class='type1'>
 <thead>
@@ -1443,7 +1443,7 @@ Ve la sección en <a href="#sound">playing sounds</a>.</p>
 </tbody>
 </table>
 </div>
-<p>Return value:</p>
+<p>Valor de retorno:</p>
 <div class="overflow-container">
 <table class='type1'>
 <thead>
@@ -1500,7 +1500,7 @@ Ve la sección en <a href="#sound">playing sounds</a>.</p>
 <p>If you want to support the AI, first set <em>data.AISupport</em> inside the Load call to <em>AISupport.Basic</em>. Whenever the host application performs an AI round, a call to PerformAI will then be made inside the plugin. The plugin can then decide to let the AI perform an action, or to pass and let the host application perform an action. Different kinds of actions can take different amounts of time, so whenever the plugin lets the AI perform an action, it will also set the time it takes before the next action can be performed.</p>
 <p>It is important to understand that unless your plugin also simulates a full ATO with automatic stopping at stations, you must let the host application perform the AI for most of the time and only intervene if absolutely necessary, for example in order to start the engine, to acknowledge a vigilance device, etc. Whenever this is the case, react to the PerformAI call appropriately:</p>
 <p><strong>void PerformAI(AIData data)</strong></p>
-<p>Arguments:</p>
+<p>Argumentos:</p>
 <div class="overflow-container">
 <table class='type1'>
 <thead>
