@@ -326,7 +326,7 @@
           
         </li>
         
-        <li><a href="../../zh_cn/information/numberformats.html">Number formats</a>
+        <li><a href="../../zh_cn/information/numberformats.html">數字格式</a>
           
         </li>
         
@@ -411,7 +411,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>Number formats</h1>
+          <h1>數字格式</h1>
         </div>
 
         
@@ -420,8 +420,8 @@
 
 
 <div id="content">
-  <p><font color="Gray">This page describes which number formats are encountered in the various route and train files and how to adhere to them.</font></p>
-<h2 id="-contents">■ Contents</h2>
+  <p><font color="Gray">此頁面講解了各種路線和列車文件中遇到的數字格式，以及如何正確地使用。</font></p>
+<h2 id="-目录">■ 目录</h2>
 <ul class='contents'>
 <li><a href="#overview">1. Overview</a></li>
 <li><a href="#integers">2. Integers</a></li>
@@ -429,11 +429,11 @@
 <li><a href="#times">4. Times</a></li>
 <li><a href="#colors">5. Color values</a></li>
 </ul>
-<h2 id="a-nameoverviewa-1-overview"><a name="overview"></a>■ 1. Overview</h2>
-<p>Within the route and train files, you will encounter numbers like integers or floating-point numbers all the time, occasionally also others. These numbers are required to adhere to a certain format, which is described in the following sections.</p>
-<p>There are two parsing methods for numbers: <strong>Strict</strong> and <strong>Loose</strong>. The Strict method is a very tight specification which does not leave space for making typographic mistakes. This method is used in all new file formats. The Loose method is a legacy parsing model required for compatibility with older material. The different files as presented on the <em>Developing for openBVE</em> pages indicate which model is being used. Note that whenever a <em>Loose</em> model is permitted, you can also use the <em>Strict</em> formats as <em>Strict</em> forms a subset of <em>Loose</em>.</p>
-<h2 id="a-nameintegersa-2-integers"><a name="integers"></a>■ 2. Integers</h2>
-<p><strong>Strict:</strong> Permitted is any sequence of at least one decimal digit in the range from 0 to 9 (U+0030 - U+0039), optionally prepended by a negative sign (U+002D). The resulting character sequence may include leading or trailing white spaces.</p>
+<h2 id="a-nameoverviewa-1-概述"><a name="overview"></a>■ 1. 概述</h2>
+<p>在路線和列車文件中，您經常會遇到整數或浮點數之類的數字，有時還會遇到其他數字。這些編號必須遵循某種格式，以下將對此進行介紹。</p>
+<p>數字有兩種解析方法：<strong>嚴格</strong> 和 <strong>寬鬆</strong> 。嚴格方法不會留有犯印刷錯誤的空間。所有新文件格式均使用此方法。寬鬆方法是與舊方式兼容所必需的傳統解析模型。在 <em>為OpenBVE進行開發</em> 頁面上顯示的不同文件表示正在使用哪種模型。請注意，只要允許 <em>寬鬆</em> 模型，您也可以使用 <em>嚴格</em> 格式，因為 <em>嚴格</em> 構成 <em>寬鬆</em> 的子集。</p>
+<h2 id="a-nameintegersa-2-整數"><a name="integers"></a>■ 2. 整數</h2>
+<p><strong>嚴格:</strong> 允許的任何序列至少為一個小數點，範圍為0到9(U+0030 - U+0039)，並可以帶一個負號(U+002D)。結果字符序列可能包含前導或尾隨空白。</p>
 <div class="overflow-container">
 <table style="border: none;">
 <tbody>
@@ -456,7 +456,7 @@
 </tbody>
 </table>
 </div>
-<p><strong>Loose:</strong> All white spaces are removed from the character sequence first. Then, the remaining character sequence (<em>abcde</em>) is interpreted according to the <em>Strict</em> model. If this fails to create a valid number, the last character is dropped from the sequence (<em>abcd</em>) and then, the sequence is tested again. This continues until a valid number is produced or until no character remains, after which the character sequence is determined to be an invalid number.</p>
+<p><strong>寬鬆:</strong> 首先從字符序列中刪除所有空格。然後，根據 <em>嚴格</em> 模型解釋其餘字符序列(<em>abcde</em>)。如果此操作無法創建有效數字，則從序列(<em>abcd</em>)中刪除最後一個字符，然後再次測試該序列。這一直持續到產生有效數字或直到沒有剩餘字符為止，此後字符序列被確定為無效數字。</p>
 <div class="overflow-container">
 <table style="border: none;">
 <tbody>
@@ -501,7 +501,7 @@
 </tbody>
 </table>
 </div>
-<h2 id="a-namefloatinga-3-floating-point-numbers"><a name="floating"></a>■ 3. Floating-point numbers</h2>
+<h2 id="a-namefloatinga-3-浮點數"><a name="floating"></a>■ 3. 浮點數</h2>
 <p><strong>Strict:</strong> Permitted is any sequence of at least one decimal digit in the range from 0 to 9 (U+0030 - U+0039), optionally interleaved by exactly one decimal separator in form of the period (U+002E), optionally prepended by a negative sign (U+002D). The resulting character sequence may include leading or trailing white spaces.</p>
 <div class="overflow-container">
 <table style="border: none;">
@@ -529,7 +529,7 @@
 </tbody>
 </table>
 </div> 
-<p><strong>Loose:</strong> All white spaces are removed from the character sequence first. Then, the remaining character sequence (<em>abcde</em>) is interpreted according to the <em>Strict</em> model. If this fails to create a valid number, the last character is dropped from the sequence (<em>abcd</em>) and then, the sequence is tested again. This continues until a valid number is produced or until no character remains, after which the character sequence is determined to be an invalid number.</p>
+<p><strong>寬鬆:</strong> 首先從字符序列中刪除所有空格。然後，根據 <em>嚴格</em> 模型解釋其餘字符序列(<em>abcde</em>)。如果此操作無法創建有效數字，則從序列(<em>abcd</em>)中刪除最後一個字符，然後再次測試該序列。這一直持續到產生有效數字或直到沒有剩餘字符為止，此後字符序列被確定為無效數字。</p>
 <div class="overflow-container">
 <table style="border: none;">
 <tbody>
