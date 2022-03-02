@@ -652,7 +652,7 @@ If a state is to have no sound effect, the list entry should be left blank.</p>
 <tr>
 <th align="left">Infix</th>
 <th align="left">Functional</th>
-<th align="left">Description</th>
+<th align="left">Descripció</th>
 </tr>
 </thead>
 <tbody>
@@ -684,7 +684,7 @@ If a state is to have no sound effect, the list entry should be left blank.</p>
 </tbody>
 </table>
 </div>
-<h5 id="-comparisons">● Comparisons</h5>
+<h5 id="-comparacions">● Comparacions</h5>
 <p>All comparisons return 1 for true and 0 for false.</p>
 <div class="overflow-container">
 <table class='type0'>
@@ -692,7 +692,7 @@ If a state is to have no sound effect, the list entry should be left blank.</p>
 <tr>
 <th align="left">Infix</th>
 <th>Functional</th>
-<th>Description</th>
+<th>Descripció</th>
 </tr>
 </thead>
 <tbody>
@@ -729,7 +729,7 @@ If a state is to have no sound effect, the list entry should be left blank.</p>
 </tbody>
 </table>
 </div>
-<h5 id="-logical-operations">● Logical operations</h5>
+<h5 id="-operacions-lògiques">● Operacions lògiques</h5>
 <p>All operations treat 0 as false and any other value as true, and return 1 for true and 0 for false.</p>
 <div class="overflow-container">
 <table class='type0'>
@@ -737,7 +737,7 @@ If a state is to have no sound effect, the list entry should be left blank.</p>
 <tr>
 <th align="left">Infix</th>
 <th>Functional</th>
-<th>Description</th>
+<th>Descripció</th>
 </tr>
 </thead>
 <tbody>
@@ -845,14 +845,14 @@ If a state is to have no sound effect, the list entry should be left blank.</p>
 <span>⚠</span><p>The logical not and multiplication operator are not at the same precedence level as a lot of other languages. For example <code>!a + !b</code> is <code>!(!a + !(b))</code> <strong>not</strong> <code>(!a) + (!b)</code> as expected, similarly <code>1 * 2 / 3</code> is <code>1 * (2 / 3)</code> <strong>not</strong> <code>(1 * 2) / 3</code><br>
 Please also note that some combinations of prefix and infix operators are not recognised. For example <code>a*-b</code> is not accepted. Use <code>a*(-b)</code> or <code>-a*b</code> instead.</p>
 </div>
-<h2 id="a-namefunctionsa-4-list-of-functions"><a name="functions"></a>■ 4. List of functions</h2>
+<h2 id="a-namefunctionsa-4-llista-de-funcions"><a name="functions"></a>■ 4. Llista de funcions</h2>
 <h5 id="-basic-arithmetics-1">● Basic arithmetics</h5>
 <div class="overflow-container">
 <table class='type0 responsive-table-2col'>
 <thead>
 <tr>
-<th>Function</th>
-<th>Description</th>
+<th>Funció</th>
+<th>Descripció</th>
 </tr>
 </thead>
 <tbody>
@@ -872,8 +872,8 @@ Please also note that some combinations of prefix and infix operators are not re
 <table class='type0 responsive-table-2col'>
 <thead>
 <tr>
-<th>Function</th>
-<th>Description</th>
+<th>Funció</th>
+<th>Descripció</th>
 </tr>
 </thead>
 <tbody>
@@ -929,8 +929,8 @@ Please also note that some combinations of prefix and infix operators are not re
 <table class='type0 responsive-table-2col'>
 <thead>
 <tr>
-<th>Function</th>
-<th>Description</th>
+<th>Funció</th>
+<th>Descripció</th>
 </tr>
 </thead>
 <tbody>
@@ -974,8 +974,8 @@ Please also note that some combinations of prefix and infix operators are not re
 <table class='type0 responsive-table-2col'>
 <thead>
 <tr>
-<th>Function</th>
-<th>Description</th>
+<th>Funció</th>
+<th>Descripció</th>
 </tr>
 </thead>
 <tbody>
@@ -986,14 +986,14 @@ Please also note that some combinations of prefix and infix operators are not re
 </tbody>
 </table>
 </div>
-<h2 id="a-namevariablesa-5-list-of-variables"><a name="variables"></a>■ 5. List of variables</h2>
+<h2 id="a-namevariablesa-5-llista-de-variables"><a name="variables"></a>■ 5. Llista de variables</h2>
 <h5 id="-primitives">● Primitives</h5>
 <div class="overflow-container">
 <table class='type0 responsive-table-2col'>
 <thead>
 <tr>
 <th>Variable</th>
-<th>Description</th>
+<th>Descripció</th>
 </tr>
 </thead>
 <tbody>
@@ -1012,13 +1012,13 @@ Please also note that some combinations of prefix and infix operators are not re
 </tbody>
 </table>
 </div>
-<h5 id="-time-and-camera">● Time and camera</h5>
+<h5 id="-temps-i-càmera">● Temps i càmera</h5>
 <div class="overflow-container">
 <table class='type0 responsive-table-2col'>
 <thead>
 <tr>
 <th>Variable</th>
-<th>Description</th>
+<th>Descripció</th>
 </tr>
 </thead>
 <tbody>
@@ -1061,16 +1061,16 @@ Please also note that some combinations of prefix and infix operators are not re
 </tbody>
 </table>
 </div>
-<h5 id="-trains">● Trains</h5>
+<h5 id="-trens">● Trens</h5>
 <p>Generally, objects attached to a particular train and car return values for that train and car, unless stated otherwise. For scenery objects, the reference is the driver&rsquo;s car of the nearest train (not necessarily the player&rsquo;s train).</p>
 <p>In some of the following variables, <em>carIndex</em> has the following meaning: 0 is the 1<sup>st</sup> car from the front, 1 is the 2<sup>nd</sup> car from the front, etc., while -1 is the 1<sup>st</sup> car from the rear, -2 is the 2<sup>nd</sup> car from the rear, etc. In general, car indices from -<em>cars</em> to <em>cars</em>-1 represent existing cars, where <em>cars</em> is the number of cars the train has, while values outside of this range represent non-existing cars. As all trains have at least 1 car, indices -1 and 0 are guaranteed to exist for any train.</p>
-<h5 id="-trains-general">● Trains (general)</h5>
+<h5 id="-trens-general">● Trens (general)</h5>
 <div class="overflow-container">
 <table class='type0 responsive-table-2col'>
 <thead>
 <tr>
 <th>Variable</th>
-<th>Description</th>
+<th>Descripció</th>
 </tr>
 </thead>
 <tbody>
@@ -1187,7 +1187,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <thead>
 <tr>
 <th>Variable</th>
-<th>Description</th>
+<th>Descripció</th>
 </tr>
 </thead>
 <tbody>
@@ -1234,13 +1234,13 @@ Please also note that some combinations of prefix and infix operators are not re
 </tbody>
 </table>
 </div>
-<h5 id="-trains-doors">● Trains (doors)</h5>
+<h5 id="-trens-portes">● Trens (portes)</h5>
 <div class="overflow-container">
 <table class='type0 responsive-table-2col'>
 <thead>
 <tr>
 <th>Variable</th>
-<th>Description</th>
+<th>Descripció</th>
 </tr>
 </thead>
 <tbody>
@@ -1305,7 +1305,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <thead>
 <tr>
 <th>Variable</th>
-<th>Description</th>
+<th>Descripció</th>
 </tr>
 </thead>
 <tbody>
@@ -1439,7 +1439,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <th>Return values</th>
 <th></th>
 <th>pluginState[271]</th>
-<th>Meaning</th>
+<th>Significat</th>
 </tr>
 </thead>
 <tbody>
@@ -1597,7 +1597,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <thead>
 <tr>
 <th>Variable</th>
-<th>Description</th>
+<th>Descripció</th>
 </tr>
 </thead>
 <tbody>
@@ -1614,7 +1614,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <table class='type0'>
 <thead>
 <tr>
-<th>Animation</th>
+<th>Animacions</th>
 <th>Object</th>
 <th>Performance</th>
 </tr>
