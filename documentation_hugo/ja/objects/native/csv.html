@@ -447,19 +447,19 @@
 </ul>
 </li>
 </ul>
-<h2 id="a-nameoverviewa-1-overview"><a name="overview"></a>■ 1. Overview</h2>
+<h2 id="a-nameoverviewa-1-概要"><a name="overview"></a>■ 1. 概要</h2>
 <p>A CSV object allows to create a single object by using textual instructions. The object can be used in routes or in trains. The object described by the file can contain any number of individual polygons. The file format allows to group multiple polygons in CreateMeshBuilder sections in which attributes like color or texture information is assigned to all polygons created in each section. This allows for the creation of many polygons in the same CreateMeshBuilder section which share common attributes. A polygon is called a face in this file format.</p>
 <p>The file is a plain text file encoded in any arbitrary <a href="../../../ja/information/encodings.html">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../../ja/information/numberformats.html">parsing model</a> for numbers is <strong>Loose</strong>, however, you are encouraged to produce <em>Strict</em> output nonetheless. The file name is arbitrary, but must have the extension <strong>.csv</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
 <p>➟ <a href="../../../ja/objects/native/b3d_quick.html">See also the quick reference for the CSV format&hellip;</a></p>
-<h2 id="a-namesyntaxa-2-syntax"><a name="syntax"></a>■ 2. Syntax</h2>
-<p>Each line in the file is split into the name of a command and its arguments. The syntax for all commands is the same:</p>
+<h2 id="a-namesyntaxa-2-文法"><a name="syntax"></a>■ 2. 文法</h2>
+<p>ファイル内のそれぞれの行はコマンド名とその引数に分けられています。全てのコマンドの文法は同様です。</p>
 <div id="command">
 <strong>NameOfTheCommand</strong>, <em>Argument<sub>1</sub></em>, <em>Argument<sub>2</sub></em>, <em>Argument<sub>3</sub></em>, &hellip;, <em>Argument<sub>n</sub></em>
 </div>
 <p><em>NameOfTheCommand</em> is case-insensitive. If there are arguments, <em>NameOfTheCommand</em> and <em>Argument1</em> are separated by a comma (U+002C). Likewise, arguments are also separated by a comma (U+002C). <a href="../../../ja/information/whitespaces.html">White spaces</a> around the arguments and around the <em>NameOfTheCommand</em>, and well as at the beginning and the end of the line, are ignored. Empty lines or lines solely consisting of white spaces are also ignored.</p>
 <p>Arguments may also be omitted by leaving the text at each of the <em>Argumenti</em> blank. A default value will usually apply in this case, which is specific to the command used. All default values are specified in the section of available commands.</p>
-<p>You can use comments anywhere at the end of a line. A comment is started by a semicolon (U+003B). Comments, if present, are stripped away from all lines before these are processed.</p>
-<h2 id="a-namecommandsa-3-available-commands"><a name="commands"></a>■ 3. Available commands</h2>
+<p>コメントは行末のどこでも使用可能です。 コメントはセミコロン (U+003B)で始まります。 コメントは存在する場合、処理される前に全ての行から削除されます。</p>
+<h2 id="a-namecommandsa-3-使用可能なコマンド"><a name="commands"></a>■ 3. 使用可能なコマンド</h2>
 <p><a name="createmeshbuilder"></a></p>
 <div id="command">
 <strong>CreateMeshBuilder</strong>
@@ -479,7 +479,7 @@
 <em><strong>nZ</strong></em>: The z-coordinate for the normal of this vertex. The default value is 0.
 </div>
 <p>This command creates a new vertex which can then be used to create faces via the AddFace or AddFace2 commands. There can be as many AddVertex commands as desired within a CreateMeshBuilder section. However, the order of the vertices given is important for other commands. The first vertex given has index 0, and subsequent vertices have indices 1, 2, 3 and so on.</p>
-<p>The normal is the direction perpendicular to the face at a particular point. If all vertices in a face have the same normal, the face will look flat. If used appropriately, you can give the illusion of a curved face by specifying different normals per vertex, but using the same normal on all vertices that share the same spatial coordinate - across multiple faces. If left all zero, the normal will be calculated automatically.</p>
+<p>法線の方向は面の特定の場所において垂直方向です。 もしすべての頂点の面が全く同じ法線である場合、 法線はフラットに見えます。 もし適切に用いられているならば、 頂点ごとに異なる法線を設定することで、まるで曲がった面をしているかのような錯覚を与えることができます。 しかし複数の面にわたって - 同一の空間座標上の全ての頂点で同一の法線を用いると、 もしすべて0が設定されていた場合は、法線は自動的に計算されます。</p>
 <hr>
 <p><a name="addface"></a></p>
 <div id="command">
@@ -497,7 +497,7 @@
 <div id="command-arguments">
 <em><strong>v<sub>i</sub></strong></em>: The vertex index to include in this face. Allowed values are 0 through <em>n</em>-1, where <em>n</em> is the number of AddVertex commands used.
 </div>
-<p>This command creates a face given an arbitrary long list of vertex indices. The index corresponds to the order in which the vertices have been created by the Vertex command, thus the Face command needs to be stated after the corresponding Vertex commands. The first Vertex command used creates index 0, and subsequent Vertex commands create indices 1, 2, 3 and so on. The order in which the vertex indices appear is important. They need to be given in clockwise order when looking at the front of the face. The back of the face will also be visible, however, lighting on the back face might be the same as on the front face. Only convex polygons are supported.</p>
+<p>このコマンドは任意の長い頂点のリストで面を生成します。 インデックス番号は、先にVertexコマンドにより生々された純序に従い生成されます。 したがって、 Face コマンドは Vertexコマンドの後に記述する必要があります。 最初の Vertex コマンドはインデックス番号0で生成され、 そしてそれ以降の Vertex コマンドは 1, 2, 3 などとインデックス番号を生成します。 頂点のインデックス番号の記述順序は重要で、面に正対して時計回りに記述する必要があります。  後ろ側の面も同様に見えますが、 後側の面に対する光の当たり方は表側の面と同一になります。 凸面の頂点ポリゴンのみサポートされます。</p>
 <hr>
 <p><a name="cube"></a></p>
 <div id="command">
@@ -508,9 +508,9 @@
 <em><strong>HalfHeight</strong></em>: A floating-point number representing half the height of the cube in <strong>meters</strong>.<br>
 <em><strong>HalfDepth</strong></em>: A floating-point number representing half the depth of the cube in <strong>meters</strong>.
 </div>
-<p>This command creates a cube having dimensions as specified by <em>HalfWidth</em>, <em>HalfHeight</em> and <em>HalfDepth</em>. The cube will be centered on the origin (0,0,0). Thus, on the x-axis, the cube extends from -<em>HalfWidth</em> to <em>HalfWidth</em>, on the y-axis from -<em>HalfHeight</em> to <em>HalfHeight</em> and on the z-axis from -<em>HalfDepth</em> to <em>HalfDepth</em>. The cube always has 8 vertices and 6 faces.</p>
+<p>このコマンドは <em>HalfWidth</em> 、 <em>HalfHeight</em> 、 <em>HalfDepth</em> で指定された大きさの三次元の立方体を生成します。 生成される立方体の中心は原点 (0,0,0) です。 したがって、 X軸上では -<em>HalfWidth</em> から <em>HalfWidth</em> に拡張し、 Y軸上は -<em>HalfHeight</em> から <em>HalfHeight</em> に、そしてZ軸上は -<em>HalfDepth</em> to <em>HalfDepth</em>に拡張します。 生成される立方体は常に8つの頂点と6つの面を持ちます。</p>
 <div id="notice">
-<h4 id="cube-representation">Cube representation</h4>
+<h4 id="cube-の表記方法について">Cube の表記方法について</h4>
 <p>The Cube command is equivalent to a series of AddVertex and AddFace commands, which you need to account for when using other commands in the same CreateMeshBuilder section. The details on what the Cube command does are available <a href="../../../ja/objects/native/cubecylinder.html">here</a>.
 </div>
 <hr>
@@ -534,7 +534,7 @@
 <div id="command">
 <font color=#555555>GenerateNormals</font>
 </div>
-<p><em><font color=#555555>This command is ignored by openBVE.</font></em></p>
+<p><em><font color=#555555>このコマンドは、 openBVE によって無視されます。</font></em></p>
 <hr>
 <p><a name="translate"></a></p>
 <div id="command">
