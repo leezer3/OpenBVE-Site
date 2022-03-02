@@ -420,9 +420,9 @@
 
 
 <div id="content">
-  <h2 id="-contents">■ Contents</h2>
+  <h2 id="目次">■目次</h2>
 <ul class='contents'>
-<li><a href="#overview">1. Overview</a></li>
+<li><a href="#overview">1. 概要</a></li>
 <li><a href="#syntax">2. Syntax</a></li>
 <li><a href="#panel">3. The Panel section</a></li>
 <li><a href="#view">4. The View section</a></li>
@@ -433,7 +433,7 @@
 <li><a href="#watch">9. The Watch section</a></li>
 <li><a href="#brakeindicator">10. The BrakeIndicator section</a></li>
 </ul>
-<h2 id="a-nameoverviewa-1-overview"><a name="overview"></a>■ 1. Overview</h2>
+<h2 id="a-nameoverviewa-1-概要"><a name="overview"></a>■ 1. 概要</h2>
 <p>The panel.cfg file allows to create 2D panels by defining which elements to use, like speedometers, pressure gauges etc., and where they are to be placed.</p>
 <p>The panel.cfg file is a plain text file encoded in any arbitrary <a href="../../ja/information/encodings.html">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../ja/information/numberformats.html">parsing model</a> for numbers is <strong>Loose</strong>, however, you are encouraged to produce <em>Strict</em> output nonetheless. The file is required to be located inside the train folder and is expected to be named <strong>panel.cfg</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
 <div id="notice">
@@ -442,28 +442,28 @@
 </div>
 <p>➟ <a href="../../ja/trains/panel_cfg_quick.html">See also the quick reference for the panel.cfg&hellip;</a></p>
 <div id="notice">
-<h4 id="overlay-and-lighting">Overlay and Lighting</h4>
-<p>The cab is rendered as an overlay. This means that the cab will always appear in front of scenery objects. This is intentional, because this way, rain, walls and other obstructing objects cannot be accidentally rendered inside the cab. Furthermore, lighting in the cab is different than in the scenery. While the ambient brightness is reflected in the cab, the ambient color is not, and the cab always appears as if reflecting white light.
+<h4 id="重なりとライティング">重なりとライティング</h4>
+<p>運転台パネルのデータはオーバーレイとしてレンダリングされます。これは、運転台画像が常に風景のオブジェクトの手前に表示されることを意味します。この方法では、雨、壁、その他の遮るオブジェクト運転台画像内で誤ってレンダリングされることはありません。 周囲の明るさは運転台に反映されますが、運転台は常に白色光を反射しているように見えます。
 </div>
-<h2 id="a-namesyntaxa-2-syntax"><a name="syntax"></a>■ 2. Syntax</h2>
-<p>Each line in the file can be empty (or solely consist of white spaces) and will be ignored, can mark the beginning of a new section or contain key-value pairs inside a section. All key-value pairs relate to the last section opened.</p>
-<p>A new section is opened by starting the line with an opening bracket (U+005B) and ending it with a closing bracket (U+005D). The text in-between the brackets indicates the name of the section and is case-insensitive. White spaces at the beginning and the end of the line are ignored, as well as at the beginning and the end of the name of the section. Thus, the beginning of the section has the following form:</p>
+<h2 id="a-namesyntaxa-2-文法"><a name="syntax"></a>■ 2. 文法</h2>
+<p>ファイル内の各行は空(または空白)飲みにすることが出来、またその行は無視され、新しいセクションの開始をマークするか、セクション内にキーと値のペアを含めることが出来ます。全てのキーと値のペアは、最後に開かれたセクションと関連付けされます。</p>
+<p>新しいセクションを開くには、行を開始ブラケット (U+005B) で開始し、終了ブラケット (U+005D)で終了します。 カッコ内のテキストはセクション名を示し、大文字と小文字を区別しません。 行の最初と最後の空白、及びセクション名の最初と最後の空白は無視されます。従って、セクションの先頭は次の形式になります:</p>
 <div id="command">
 [NameOfTheSection]
 </div>
-<p>A key-value pair is indicated by giving the key, an equals sign (U+003D) and then the value. The key is case-insensitive. White spaces at the beginning and the end of the line are ignored, as well as in front and after the equals sign. Alternatively, white spaces surrounding the key and the value are ignored. Thus, a key-value pair as the following form:</p>
+<p>キーと値のペアは、キー、等号 (U+003D)、そして値を与えることで示されます。 キーは大文字と小文字を区別しません。 行頭と末尾、及び等号の前後の空白は無視され、または、キーと値を囲む空白は無視されます。 従って、キーと値のペアは次のような書式をとります:</p>
 <div id="command">
 NameOfTheKey = Value
 </div>
 <p>Some values are further split into multiple parts, separated by commas (U+002C). Instead of a comma, a colon (U+003A) can be used interchangeably.</p>
-<p>You can use comments anywhere at the end of a line. A comment is started by a semicolon (U+003B). Comments, if present, are stripped away from all lines before these are processed.</p>
+<p>コメントは行末のどこでも使用可能です。 コメントはセミコロン (U+003B)で始まります。 コメントは存在する場合、処理される前に全ての行から削除されます。</p>
 <h2 id="a-namepanela-3-the-panel-section"><a name="panel"></a>■ 3. The Panel section</h2>
 <p>The Panel section defines which background image to use. Only one Panel section is expected in a panel.cfg file.</p>
 <hr>
 <div id="command">
 [Panel]
 </div>
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 <hr>
 <div id="command">
 Background = <em>FileName</em>
@@ -478,7 +478,7 @@ Background = <em>FileName</em>
 <div id="command">
 [View]
 </div>
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 <hr>
 <div id="command">
 Yaw = <em>ValueInDegrees</em>
@@ -499,7 +499,7 @@ Pitch = <em>ValueInDegrees</em>
 <div id="command">
 [PressureIndicator]
 </div>
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 <div id="note">
 <h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
 <p>PressureIndicator, PressureGauge, PressureMeter, 圧力計
@@ -676,7 +676,7 @@ Angle = <em>ValueInDegrees</em>
 <div id="command">
 [SpeedIndicator]
 </div>
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 <div id="note">
 <h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
 <p>SpeedIndicator, Speedometer, 速度計
@@ -826,7 +826,7 @@ AtcRadius = <em>ValueInPixels</em>
 <div id="command">
 [DigitalIndicator]
 </div>
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 <hr>
 <div id="command">
 Number = <em>FileName</em>
@@ -871,7 +871,7 @@ Unit = <em>Value</em>
 <div id="command">
 [PilotLamp]
 </div>
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 <div id="note">
 <h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
 <p>PilotLamp, 知らせ灯
@@ -916,7 +916,7 @@ Corner = <em>Left</em>, <em>Top</em>
 <div id="command">
 [Watch]
 </div>
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 <div id="note">
 <h4 id="the-following-spelling-variations-can-be-used"><em>The following spelling variations can be used:</em></h4>
 <p>Watch, 時計
@@ -976,7 +976,7 @@ Needle = <em>RedValue</em>, <em>GreenValue</em>, <em>BlueValue</em>
 <div id="command">
 [BrakeIndicator]
 </div>
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 <hr>
 <div id="command">
 Image = <em>FileName</em>

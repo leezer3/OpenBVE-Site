@@ -420,9 +420,9 @@
 
 
 <div id="content">
-  <h2 id="-contents">■ Contents</h2>
+  <h2 id="-contenidos">■ Contenidos</h2>
 <ul class='contents'>
-<li><a href="#overview">1. Overview</a></li>
+<li><a href="#overview">1. Vista general</a></li>
 <li><a href="#syntax">2. Syntax</a></li>
 <li><a href="#panel">3. The Panel section</a></li>
 <li><a href="#view">4. The View section</a></li>
@@ -442,10 +442,10 @@
 </div>
 <p>➟ <a href="../../es_mx/trains/panel_cfg_quick.html">See also the quick reference for the panel.cfg&hellip;</a></p>
 <div id="notice">
-<h4 id="overlay-and-lighting">Overlay and Lighting</h4>
+<h4 id="sobreposición-e-iluminación">Sobreposición e Iluminación</h4>
 <p>The cab is rendered as an overlay. This means that the cab will always appear in front of scenery objects. This is intentional, because this way, rain, walls and other obstructing objects cannot be accidentally rendered inside the cab. Furthermore, lighting in the cab is different than in the scenery. While the ambient brightness is reflected in the cab, the ambient color is not, and the cab always appears as if reflecting white light.
 </div>
-<h2 id="a-namesyntaxa-2-syntax"><a name="syntax"></a>■ 2. Syntax</h2>
+<h2 id="a-namesyntaxa-2-sintaxis"><a name="syntax"></a>■ 2. Sintaxis</h2>
 <p>Each line in the file can be empty (or solely consist of white spaces) and will be ignored, can mark the beginning of a new section or contain key-value pairs inside a section. All key-value pairs relate to the last section opened.</p>
 <p>A new section is opened by starting the line with an opening bracket (U+005B) and ending it with a closing bracket (U+005D). The text in-between the brackets indicates the name of the section and is case-insensitive. White spaces at the beginning and the end of the line are ignored, as well as at the beginning and the end of the name of the section. Thus, the beginning of the section has the following form:</p>
 <div id="command">
@@ -456,7 +456,7 @@
 NameOfTheKey = Value
 </div>
 <p>Some values are further split into multiple parts, separated by commas (U+002C). Instead of a comma, a colon (U+003A) can be used interchangeably.</p>
-<p>You can use comments anywhere at the end of a line. A comment is started by a semicolon (U+003B). Comments, if present, are stripped away from all lines before these are processed.</p>
+<p>Puedes usar comentarios en cualquier lado al final de una línea. Un comentario comienza por punto y coma (U+003B). Si los comentarios estan presentes, son quitados de las líneas después de ser procesados.</p>
 <h2 id="a-namepanela-3-the-panel-section"><a name="panel"></a>■ 3. The Panel section</h2>
 <p>The Panel section defines which background image to use. Only one Panel section is expected in a panel.cfg file.</p>
 <hr>
