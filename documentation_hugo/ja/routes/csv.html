@@ -423,7 +423,7 @@
   <p>➟ <a href="../../ja/routes/csv_quick.html">クイックリファレンス&hellip;</a></p>
 <h2 id="-概要">■ 概要</h2>
 <ul class='contents'>
-<li><a href="#overview">1. Overview</a></li>
+<li><a href="#overview">1. 概要</a></li>
 <li><a href="#syntax">2. Syntax</a></li>
 <li><a href="#preprocessing">3. Preprocessing</a></li>
 <li><a href="#options">4. The Options namespace</a></li>
@@ -1475,24 +1475,24 @@ Train.File <em>FolderName</em>
 </tbody>
 </table>
 </div>
-<p>Generally, supported objects are B3D, CSV, X and ANIMATED. However, the FormCL, FormCR, RoofCL, RoofCR, CrackL and CrackR commands only accept B3D, CSV and X objects.</p>
-<p>➟ <a href="../../ja/routes/formroofcrack.html">More information about forms, roofs and cracks&hellip;</a></p>
-<p>Additionally, there is the Structure.Pole command, which has a slightly different syntax:</p>
+<p>通常、サポートされているオブジェクトの種類は B3D、 CSV、X及びANIMATEDです。 しかし、FormCL、FormCR、RoofCL、RoofCR、CrackL及びCrackRについては B3D、CSV及びXのみ受けいれます。</p>
+<p>➟ <a href="../../ja/routes/formroofcrack.html">form、roof 及び crackについての詳細情報はこちらを参照して下さい&hellip;</a></p>
+<p>付け加えると、少々異なる構文を持った Structure.Pole コマンドもあります:</p>
 <div id="command">
 <strong>Structure.Pole</strong>(<em>NumberOfAdditionalRails</em>; <em>PoleStructureIndex</em>)<font color="gray">.Load</font> <em>FileName</em>
 </div>
 <div id="command-arguments">
-<em><strong>NumberOfAdditionalRails</strong></em>: An non-negative integer representing the number of additional rails covered by the pole. 0 creates a pole for one rail, 1 for two rails, etc.<br>
-<em><strong>PoleStructureIndex</strong></em>: A non-negative integer representing the pole structure index.<br>
-<em><strong>FileName</strong></em>: The object file to load, relative to the <strong>Object</strong> folder.
+<em><strong>NumberOfAdditionalRails</strong></em>: ポールで覆われる追加のレールを表す負でない整数。 例えば 0 は単線、 1 は複線用等です。<br>
+<em><strong>PoleStructureIndex</strong></em>: ポールのストラクチャのインデックス番号を表す負でない整数。<br>
+<em><strong>FileName</strong></em>: <strong>Object</strong> フォルダからの相対パスの、読み込ませるファイル名。
 </div>
-<p>Please note that all objects but the FreeObj are inserted at the beginning of a block and should thus extend from 0 to <em>BlockLength</em> (by default 25m) on the z-axis. For further information on usage, see the respective commands from the Track namespace.</p>
-<h2 id="a-nametexturea-8-the-texture-namespace"><a name="texture"></a>■ 8. The Texture namespace</h2>
-<p>Commands from this namespace define which background images to use and how they are aligned.</p>
+<p>FreeObjを除くすべてのオブジェクトはブロックの先頭に挿入されるため、z軸上で0から <em>ブロック長</em> (デフォルトは25m) まで拡張する必要がある事に注意して下さい。 使用法の詳細については Track 名前空間の其々のコマンドを参照して下さい。</p>
+<h2 id="a-nametexturea-8-texture-名前空間"><a name="texture"></a>■ 8. Texture 名前空間</h2>
+<p>この名前空間のコマンドは使用する背景画像と、それらの配置方法を定義します。</p>
 <p><img src="../../images/illustration_background.png" alt="illustration_background"></p>
-<p>The background image is displayed as a cylindric wall around the camera whose start (viewed from above) is 60 degrees to the left of the initial forward direction (at the 10 o&rsquo;clock position). From there, the background image wraps clock-wise around the cylinder with a repetition count specified via Texture.Background(<em>BackgroundTextureIndex</em>).X, which by default creates 6 repetitions in a full circle.</p>
-<p>The upper 3/4 of the image is displayed above the horizon, while the lower 1/4 is displayed below the horizon. Via Texture.Background(<em>BackgroundTextureIndex</em>).Aspect, you can choose whether to have a fixed cylinder height or to preserve the aspect ratio of the texture. If the image should have a fixed height, the cylinder has a height of 1/2 its radius, which corresponds to about 20 degree inclination to the top of the image, and about -7 degrees to the bottom of the image. If the aspect ratio of the image is preserved, this takes not only the width and height of the image into account, but also the repetition count.</p>
-<p>Regardless of the repetition count you chose, you should make sure that the left and right edges of the textures fit seamlessly together. Please also take into account that top and bottom caps are created which sample from the top and bottom 10% of the image. You should avoid mountain peaks and similar extremes in the top 10% of the image in order for such extremes to not leak into the top cap.</p>
+<p>背景画像は、カメラの周囲の円柱状の壁として表示され、この壁の開始点 (上から見た場合) は最初の前方方向から60度 ( 10 時の方向)です。 そこから、背景画像は Texture.Background(<em>BackgroundTextureIndex</em>).X を用いて覆うように時計回りに円筒状に繰り返し、デフォルトでは真円の中に6回繰り返されます。</p>
+<p>画像の上部4分の3は地平線の上に表示され、下部4分の1は地平線の下に表示されます。 Texture.Background(<em>BackgroundTextureIndex</em>).Aspectを通じて、 円柱の高さを固定するか、テクスチャのアスペクト比を維持するかを選択できます。 画像の高さが固定されている必要がある場合、円柱の高さは半径の2分の1になります。これは、画像の上部に対して約20度、画像の下部に対して約-7度の傾斜に相当します。もし画像のアスペクト比が維持されている場合、これには画像の幅と高さだけでなく、繰り返しの回数も考慮されます。</p>
+<p>選択した繰り返しの回数に関係なく、テクスチャの左端と右端がシームレスにフィットする事を確認する必要があります。 また、画像の上部と下部の10%からサンプリングする上部と下部の蓋が作成されることも考慮に入れて下さい。 山の頂上のような極端なものが上部の蓋に入り込まないようにするため、画像の上部10%の中に入り込まないように注意する必要があります。</p>
 <p>The image loaded into Texture.Background(0) is displayed at the beginning of the route, unless a Track.Back command at the beginning of the route requests a different image.</p>
 <p>As an alternative <em><strong>Dynamic or Object</strong></em> based backgrounds may be used. The implementation of these is described upon this page:</p>
 <p><a href="../../ja/routes/xml/dynamicbackground.html">Dynamic &amp; Object Based Backgrounds</a></p>
@@ -2721,17 +2721,17 @@ With Track<br>
 <div id="command-arguments">
 <em><strong>DynamicLightIndex</strong></em>: A non-negative integer, representing the Dynamic Lighting set to be used from this point onwards, as defined by Structure.DynamicLight
 </div>
-<p>This command may be used as an alternative to the <em>Route.AmbientLight</em> , <em>Route.DirectionalLight</em> and <em>Route.LightDirection</em> commands.</p>
-<p>It allows the lighting to be varied using a time-based model, and is described fully on the following page:</p>
+<p>このコマンドは、 <em>Route.AmbientLight</em> 、 <em>Route.DirectionalLight</em> および <em>Route.LightDirection</em> コマンドの代わりとして使用できます。</p>
+<p>これを用いることで、時間ベースのモデルを使用して照明を変化させることが出来ます。次のページで詳しく説明しています。</p>
 <p><a href="../../ja/routes/xml/dynamiclight.html">Dynamic Lighting</a></p>
 <hr>
 <div id="command">
 <strong>Track.AmbientLight</strong> <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em>
 </div>
 <div id="command-arguments">
-<em><strong>RedValue</strong></em>: An integer ranging from 0 to 255 representing the red component of the ambient light. The default value is 160.<br>
-<em><strong>GreenValue</strong></em>: An integer ranging from 0 to 255 representing the green component of the ambient light. The default value is 160.<br>
-<em><strong>BlueValue</strong></em>: An integer ranging from 0 to 255 representing the blue component of the ambient light. The default value is 160.
+<em><strong>RedValue</strong></em>: 環境光の赤の要素を表す0から255までの範囲の整数。 デフォルト値は 160 です。<br>
+<em><strong>GreenValue</strong></em>: 環境光の緑の要素を表す0から255までの範囲の整数。 デフォルト値は 160 です。<br>
+<em><strong>BlueValue</strong></em>: 環境光の青の要素を表す0から255までの範囲の整数。 デフォルト値は 160 です。
 </div>
 <p>This command defines the ambient light color to be used from this point onwards. All polygons in the scene are illuminated by the ambient light regardless of the light direction.</p>
 <hr>
@@ -2739,9 +2739,9 @@ With Track<br>
 <strong>Track.DirectionalLight</strong> <em>RedValue</em>; <em>GreenValue</em>; <em>BlueValue</em>
 </div>
 <div id="command-arguments">
-<em><strong>RedValue</strong></em>: An integer ranging from 0 to 255 representing the red component of the directional light. The default value is 160.<br>
-<em><strong>GreenValue</strong></em>: An integer ranging from 0 to 255 representing the green component of the directional light. The default value is 160.<br>
-<em><strong>BlueValue</strong></em>: An integer ranging from 0 to 255 representing the blue component of the directional light. The default value is 160.
+<em><strong>RedValue</strong></em>: 指向性ライトの赤の要素を表す0から255までの範囲の整数。 デフォルト値は160です。<br>
+<em><strong>GreenValue</strong></em>: 指向性ライトの緑の要素を表す0から255までの範囲の整数。 デフォルト値は160です。<br>
+<em><strong>BlueValue</strong></em>: 指向性ライトの緑の要素を表す0から255までの範囲の整数。 デフォルト値は160です。
 </div>
 <p>This command defines the directional light to be used from this point onwards. The polygons in the scene are only fully illuminated by the directional light if the light direction points at the front faces. If pointing at back faces, no light is contributed. <em>Route.LightDirection</em> should be set to specify the light direction.</p>
 <hr>
@@ -2749,8 +2749,8 @@ With Track<br>
 <strong>Track.LightDirection</strong> <em>Theta</em>; <em>Phi</em>
 </div>
 <div id="command-arguments">
-<em><strong>Theta</strong></em>: A floating-point number representing the angle in <strong>degrees</strong> which controls the pitch of the light direction. The default value is 60.<br>
-<em><strong>Phi</strong></em>: A floating-point number representing the angle in <strong>degrees</strong> which controls the planar rotation of the light direction. The default value is about -26.57.
+<em><strong>Theta</strong></em>: ライトの方向のピッチを制御する <strong>度</strong> の角度を表す浮動小数点数。 デフォルト値は 60 です。<br>
+<em><strong>Phi</strong></em>: ライトの方向の回転の面の <strong>度</strong> の角度を表す浮動小数点数。 デフォルト値は -26.57 です。
 </div>
 <p>This command defines the light direction from this point onwards. This is the direction the light shines at, meaning the opposite direction the sun is located at. First, <em>Theta</em> determines the pitch. A value of 90 represents a downward direction, while a value of -90 represents an upward direction. With those extremes, the value of <em>Phi</em> is irrelevant. A value of 0 for <em>Theta</em> represents a forward direction originating at the horizon behind. Once the pitch is defined by <em>Theta</em>, <em>Phi</em> determines the rotation in the plane. A value of 0 does not rotate, a value of 90 rotates the direction to the right and a value of -90 rotates to the left. A backward direction can be both obtained by setting <em>Theta</em> and <em>Phi</em> to 180 and 0 or to 0 and 180, respectively. Values in-between allow for more precise control of the exact light direction.</p>
 <div id="warning-nontitle">
@@ -2815,7 +2815,7 @@ phi = 0
 </tr>
 </tbody>
 </table>
-<p>In the formulas above, <a href="http://functions.wolfram.com/ElementaryFunctions/Cos/02"><em>cos(x)</em></a> represents the cosine, <a href="http://functions.wolfram.com/ElementaryFunctions/Sin/02"><em>sin(x)</em></a> the sine, <a href="http://functions.wolfram.com/ElementaryFunctions/ArcTan/02"><em>arctan(x)</em></a> the inverse tangent, <a href="http://functions.wolfram.com/ElementaryFunctions/ArcTan2/02"><em>arctan(x,y)</em></a> the two-argument inverse tangent and <a href="http://functions.wolfram.com/ElementaryFunctions/Sqrt/02"><em>sqrt(x)</em></a> the square root. The formulas can be used to convert between spherical and cartesian coordinates if working with either one seems more intuitive than working with the other one. The formulas also serve as the official documentation on how the light direction is mathematically defined (using radians for the trigonometric functions).</p>
+<p>上記の数式では、 <a href="http://functions.wolfram.com/ElementaryFunctions/Cos/02"><em>cos(x)</em></a> はコサインを表し、 <a href="http://functions.wolfram.com/ElementaryFunctions/Sin/02"><em>sin(x)</em></a> は正弦、 <a href="http://functions.wolfram.com/ElementaryFunctions/ArcTan/02"><em>arctan(x)</em></a> は逆正接、 <a href="http://functions.wolfram.com/ElementaryFunctions/ArcTan2/02"><em>arctan(x,y)</em></a> は2つの引数の逆正接、 <a href="http://functions.wolfram.com/ElementaryFunctions/Sqrt/02"><em>sqrt(x)</em></a> は平方根を表します。 どちらか一方を使用するほうが、もう一方を使用するよりも直感的に見える場合、数式を用いると、球座標とデカルト座標を変換することが出来ます。数式は、光の方向が数学的に定義される公式文書として機能します (ラジアンを三角関数として用いる場合)。</p>
 <hr>
 
 </div>
