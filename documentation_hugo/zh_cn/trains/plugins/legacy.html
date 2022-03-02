@@ -306,7 +306,7 @@
       
       <ul class="second">
         
-        <li><a href="../../../zh_cn/plugins/overview.html">概述</a>
+        <li><a href="../../../zh_cn/plugins/overview.html">Overview</a>
           
         </li>
         
@@ -411,7 +411,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>Win32列車插件</h1>
+          <h1>Win32 train plugins</h1>
         </div>
 
         
@@ -462,7 +462,7 @@
 </tbody>
 </table>
 </div>
-<h2 id="-概述">■ 概述</h2>
+<h2 id="-overview">■ Overview</h2>
 <p>The following functions are called in this order when the plugin is loaded:</p>
 <ul>
 <li>Load</li>
@@ -574,7 +574,7 @@
 </tr>
 </tbody>
 </table>
-</div>
+</div>  
 <hr>
 <p><strong>ATS_API ATS_HANDLES WINAPI Elapse(ATS_VEHICLESTATE vehicleState, int[] panel, int[] sound)</strong></p>
 <p>This function is called every frame, informs the plugin about the current state of the train, and expects the handles as overwritten by the safety system in return. The state of plugin-specific panel elements can also be set, as well as instructions to play plugin-specific sounds.</p>
@@ -622,7 +622,7 @@
 </tr>
 </tbody>
 </table>
-</div>
+</div>  
 <p><em>int[] panel:</em><br>
 An array with 256 elements (0 through 255) which can be set to any value. The values in the array are preserved between successive Elapse() calls. At the beginning of the simulation, all elements are initialized to 0. Panel developers can query values of this array via the ats<em>i</em> subject, while developers of animated objects can query values via the pluginstate[<em>i</em>] variable. You should coordinate your efforts with panel/object developers and release a specification that tells which element in the array has what purpose.</p>
 <p><em>int[] sound:</em><br>
@@ -658,7 +658,7 @@ An array with 256 elements (0 through 255) which can be set to any sound instruc
 </tr>
 </tbody>
 </table>
-</div>
+</div>  
 <p><em>Return value struct ATS_HANDLES:</em></p>
 <div class="overflow-container">
 <table class='type1'>
@@ -732,7 +732,7 @@ An array with 256 elements (0 through 255) which can be set to any sound instruc
 </tr>
 </tbody>
 </table>
-</div>
+</div> 
 <hr>
 <p><strong>ATS_API void WINAPI DoorOpen()</strong></p>
 <p>This function is called when the doors start opening.</p>
@@ -772,7 +772,7 @@ An array with 256 elements (0 through 255) which can be set to any sound instruc
 </tr>
 </tbody>
 </table>
-</div>
+</div> 
 <p><em>Type</em> can be in the range from 0 to 2147483647, while <em>Data</em> can be in the range from 2147483648 to 2147483647. Please see the page about <a href="../../../zh_cn/information/standards.html">standards</a> to learn more about assigning beacon types.</p>
 
 </div>

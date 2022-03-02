@@ -422,7 +422,7 @@
 <div id="content">
   <h2 id="-contenidos">■ Contenidos</h2>
 <ul class='contents'>
-<li><a href="#overview">1. Vista general</a></li>
+<li><a href="#overview">1. Overview</a></li>
 <li><a href="#syntax">2. Syntax</a></li>
 <li><a href="#commands">3. Available commands</a>
 <ul class='contents'>
@@ -447,19 +447,19 @@
 </ul>
 </li>
 </ul>
-<h2 id="a-nameoverviewa-1-vista-general"><a name="overview"></a>■ 1. Vista general</h2>
+<h2 id="a-nameoverviewa-1-overview"><a name="overview"></a>■ 1. Overview</h2>
 <p>A CSV object allows to create a single object by using textual instructions. The object can be used in routes or in trains. The object described by the file can contain any number of individual polygons. The file format allows to group multiple polygons in CreateMeshBuilder sections in which attributes like color or texture information is assigned to all polygons created in each section. This allows for the creation of many polygons in the same CreateMeshBuilder section which share common attributes. A polygon is called a face in this file format.</p>
 <p>The file is a plain text file encoded in any arbitrary <a href="../../../es_mx/information/encodings.html">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../../es_mx/information/numberformats.html">parsing model</a> for numbers is <strong>Loose</strong>, however, you are encouraged to produce <em>Strict</em> output nonetheless. The file name is arbitrary, but must have the extension <strong>.csv</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
 <p>➟ <a href="../../../es_mx/objects/native/b3d_quick.html">See also the quick reference for the CSV format&hellip;</a></p>
-<h2 id="a-namesyntaxa-2-sintaxis"><a name="syntax"></a>■ 2. Sintaxis</h2>
-<p>Cada linea en el archivo se divide en el nombre del comando y en su argumento. La sintaxis para todos los comandos es la misma que a continuación:</p>
+<h2 id="a-namesyntaxa-2-syntax"><a name="syntax"></a>■ 2. Syntax</h2>
+<p>Each line in the file is split into the name of a command and its arguments. The syntax for all commands is the same:</p>
 <div id="command">
 <strong>NameOfTheCommand</strong>, <em>Argument<sub>1</sub></em>, <em>Argument<sub>2</sub></em>, <em>Argument<sub>3</sub></em>, &hellip;, <em>Argument<sub>n</sub></em>
 </div>
 <p><em>NameOfTheCommand</em> is case-insensitive. If there are arguments, <em>NameOfTheCommand</em> and <em>Argument1</em> are separated by a comma (U+002C). Likewise, arguments are also separated by a comma (U+002C). <a href="../../../es_mx/information/whitespaces.html">White spaces</a> around the arguments and around the <em>NameOfTheCommand</em>, and well as at the beginning and the end of the line, are ignored. Empty lines or lines solely consisting of white spaces are also ignored.</p>
 <p>Arguments may also be omitted by leaving the text at each of the <em>Argumenti</em> blank. A default value will usually apply in this case, which is specific to the command used. All default values are specified in the section of available commands.</p>
-<p>Puedes usar comentarios en cualquier lado al final de una línea. Un comentario comienza por punto y coma (U+003B). Si los comentarios estan presentes, son quitados de las líneas después de ser procesados.</p>
-<h2 id="a-namecommandsa-3-comandos-disponibles"><a name="commands"></a>■ 3. Comandos disponibles</h2>
+<p>You can use comments anywhere at the end of a line. A comment is started by a semicolon (U+003B). Comments, if present, are stripped away from all lines before these are processed.</p>
+<h2 id="a-namecommandsa-3-available-commands"><a name="commands"></a>■ 3. Available commands</h2>
 <p><a name="createmeshbuilder"></a></p>
 <div id="command">
 <strong>CreateMeshBuilder</strong>
@@ -479,11 +479,11 @@
 <em><strong>nZ</strong></em>: The z-coordinate for the normal of this vertex. The default value is 0.
 </div>
 <p>This command creates a new vertex which can then be used to create faces via the AddFace or AddFace2 commands. There can be as many AddVertex commands as desired within a CreateMeshBuilder section. However, the order of the vertices given is important for other commands. The first vertex given has index 0, and subsequent vertices have indices 1, 2, 3 and so on.</p>
-<p>El normal es la dirección perpendicular a la cara en un punto en específico. Si todos los vértices en la cara tienen el mismo normal, la cara se verá plana. Si es usado apropiadamente, podrás dar la ilusión de una cara curva a través de especificar diferentes normal por cada vértice, pero usando el mismo normal en todos los vértices que comparten la misma coordenada espacial - a través de múltiples caras. Si todo el lado izquierdo es igual a cero, el normal será calculado automáticamente.</p>
+<p>The normal is the direction perpendicular to the face at a particular point. If all vertices in a face have the same normal, the face will look flat. If used appropriately, you can give the illusion of a curved face by specifying different normals per vertex, but using the same normal on all vertices that share the same spatial coordinate - across multiple faces. If left all zero, the normal will be calculated automatically.</p>
 <hr>
 <p><a name="addface"></a></p>
 <div id="command">
-<strong>AddFace</strong>, <em>v<sub>1</sub></em>, <em>v<sub>2</sub></em>, <em>v<sub>3</sub></em>, &hellip;, <em>v<sub>máximo</sub></em>
+<strong>AddFace</strong>, <em>v<sub>1</sub></em>, <em>v<sub>2</sub></em>, <em>v<sub>3</sub></em>, &hellip;, <em>v<sub>max</sub></em>
 </div>
 <div id="command-arguments">
 <em><strong>v<sub>i</sub></strong></em>: The vertex index to include in this face. Allowed values are 0 through <em>n</em>-1, where <em>n</em> is the number of AddVertex commands used.
@@ -492,12 +492,12 @@
 <hr>
 <p><a name="addface2"></a></p>
 <div id="command">
-<strong>AddFace2</strong>, <em>v<sub>1</sub></em>, <em>v<sub>2</sub></em>, <em>v<sub>3</sub></em>, &hellip;, <em>v<sub>máximo</sub></em>
+<strong>AddFace2</strong>, <em>v<sub>1</sub></em>, <em>v<sub>2</sub></em>, <em>v<sub>3</sub></em>, &hellip;, <em>v<sub>max</sub></em>
 </div>
 <div id="command-arguments">
 <em><strong>v<sub>i</sub></strong></em>: The vertex index to include in this face. Allowed values are 0 through <em>n</em>-1, where <em>n</em> is the number of AddVertex commands used.
 </div>
-<p>Este comando crea una cara dada en una lista arbitraría larga de índices de vértices. El índice corresponde al orden en el cual los vértices han sido creados por el comando Vertex, por consiguiente el comando Face necesitará iniciar después del comando Vertex correspondiente. El primer comando Vertex usado crea un índice 0, y los comandos Vertex siguientes crearán indice 1,2,3 en adelante. El orden en el cual el índice del vértice aparece es importante. Estos necesitan ser dados en orden hacia las agujas del reloj cuando se vean hacia al frente de la cara. La cara posterior también será visible, sin embargo, la iluminación de la cara posterior será del mismo resultado que la cara frontal. Solo polígonos convexos están soportados.</p>
+<p>This command creates a face given an arbitrary long list of vertex indices. The index corresponds to the order in which the vertices have been created by the Vertex command, thus the Face command needs to be stated after the corresponding Vertex commands. The first Vertex command used creates index 0, and subsequent Vertex commands create indices 1, 2, 3 and so on. The order in which the vertex indices appear is important. They need to be given in clockwise order when looking at the front of the face. The back of the face will also be visible, however, lighting on the back face might be the same as on the front face. Only convex polygons are supported.</p>
 <hr>
 <p><a name="cube"></a></p>
 <div id="command">
@@ -508,9 +508,9 @@
 <em><strong>HalfHeight</strong></em>: A floating-point number representing half the height of the cube in <strong>meters</strong>.<br>
 <em><strong>HalfDepth</strong></em>: A floating-point number representing half the depth of the cube in <strong>meters</strong>.
 </div>
-<p>Este comando crea un cubo teniendo dimensiones especificadas por <em>MitadAncho</em>, <em>MitadAlto</em> y <em>MitadLongitud</em>. El cubo será centrado al origen (0,0,0). Por consiguiente, en el eje-x, el cubo extenderá desde -<em>MitadAncho</em> hasta <em>MitadAncho</em>, en el eje-y desde -<em>MitadAlto</em> hasta <em>MitadAlto</em> y en el eje-z desde -<em>MitadLongitud</em> hasta <em>MitadLongitud</em>. El cubo siempre tendrá 8 vértices y 6 caras.</p>
+<p>This command creates a cube having dimensions as specified by <em>HalfWidth</em>, <em>HalfHeight</em> and <em>HalfDepth</em>. The cube will be centered on the origin (0,0,0). Thus, on the x-axis, the cube extends from -<em>HalfWidth</em> to <em>HalfWidth</em>, on the y-axis from -<em>HalfHeight</em> to <em>HalfHeight</em> and on the z-axis from -<em>HalfDepth</em> to <em>HalfDepth</em>. The cube always has 8 vertices and 6 faces.</p>
 <div id="notice">
-<h4 id="representación-del-cubo">Representación del cubo</h4>
+<h4 id="cube-representation">Cube representation</h4>
 <p>The Cube command is equivalent to a series of AddVertex and AddFace commands, which you need to account for when using other commands in the same CreateMeshBuilder section. The details on what the Cube command does are available <a href="../../../es_mx/objects/native/cubecylinder.html">here</a>.
 </div>
 <hr>
@@ -525,16 +525,16 @@
 <em><strong>Height</strong></em>: A floating-point number representing the height of the prism in <strong>meters</strong>. Can be negative, which will flip the frustum vertically and display it inside-out.
 </div>
 <p>This command creates a <a href="http://en.wikipedia.org/wiki/Frustum">frustum</a>. If <em>LowerRadius</em> and <em>UpperRadius</em> are equal, the object generated will reduce to a <a href="http://en.wikipedia.org/wiki/Prism_(geometry)">prism</a>, which can be used as an approximation to the cylinder. If either <em>LowerRadius</em> or <em>UpperRadius</em> are zero, the object generated will reduce to a <a href="http://en.wikipedia.org/wiki/Pyramid_(geometry)">pyramid</a>. The frustum will be centered on the origin (0,0,0). On the x- and z-axes, the frustum extends from -<em>LowerRadius</em> to <em>LowerRadius</em> for the lower base and from -<em>UpperRadius</em> to <em>UpperRadius</em> for the upper base. On the y-axis, the frustum extends from -½*<em>Height</em> to ½*<em>Height</em>.</p>
-<p>El número de vértices <em>n</em> que satisfacen cuando es un radio pequeño es de 6 o 8 , por ejemplo para crear un poste. Independientemente de los valores de <em>RadioSuperior</em>,<em>RadioInferior</em> y <em>n</em>, el tronco siempre tendrá 2*<em>n</em> vértices, y usualmente <em>n</em>+2 caras, a menos que algunos de los extremos sea omitido. Si <em>RadioSuperior</em> o <em>RadioInferior</em> son negativos, el valor absoluto será tomado, pero los extremos respectivos no serán creados. Sí <em>Height</em> es negativo, los roles de arriba y abajo serán revertidos y las caras serán visibles desde adentro, mientras que de caso contrario, estos serán visibles desde afuera.</p>
+<p>The number of vertices <em>n</em> will usually suffice to be 6 or 8 when only small radii are used, for example to create a pole. Regardless of the values of <em>UpperRadius</em>, <em>LowerRadius</em> and <em>n</em>, the frustum will always have 2*<em>n</em> vertices, and usually <em>n</em>+2 faces unless any of the caps are omitted. If <em>UpperRadius</em> or <em>LowerRadius</em> are negative, the absolute value is being taken, but the respective caps are not created. If <em>Height</em> is negative, the roles of top and bottom are reversed and the faces will be visible from the inside, while otherwise, they will be visible from the outside.</p>
 <div id="notice">
-<h4 id="representación-del-cilindro">Representación del cilindro</h4>
+<h4 id="cylinder-representation">Cylinder representation</h4>
 <p>The Cylinder command is equivalent to a series of AddVertex and AddFace commands, which you need to account for when using other commands in the same CreateMeshBuilder section. The details on what the Cylinder command does are available <a href="../../../es_mx/objects/native/cubecylinder.html">here</a>.
 </div>
 <hr>
 <div id="command">
 <font color=#555555>GenerateNormals</font>
 </div>
-<p><em><font color=#555555>Este comando es ignorado por openBVE.</font></em></p>
+<p><em><font color=#555555>This command is ignored by openBVE.</font></em></p>
 <hr>
 <p><a name="translate"></a></p>
 <div id="command">
@@ -562,8 +562,8 @@
 <hr>
 <p><a name="rotate"></a></p>
 <div id="command">
-<strong>Rotate</strong>, <em>X</em>, <em>Y</em>, <em>Z</em>, <em>Ángulo</em><br>
-<strong>RotateAll</strong>, <em>X</em>, <em>Y</em>, <em>Z</em>, <em>Ángulo</em>
+<strong>Rotate</strong>, <em>X</em>, <em>Y</em>, <em>Z</em>, <em>Angle</em><br>
+<strong>RotateAll</strong>, <em>X</em>, <em>Y</em>, <em>Z</em>, <em>Angle</em>
 </div>
 <div id="command-arguments">
 <em><strong>X</strong></em>: The x-direction of the rotational axis. Negative values point to the left, positive ones to the right. The default value is 0.<br>
@@ -587,9 +587,9 @@
 <em><strong>sZ</strong></em>: The z-coordinate of the vector S. The default value is 0.<br>
 <em><strong>r</strong></em>: The ratio that indicates how much to displace vectors. The default value is 0.
 </div>
-<p>El comando <strong>Shear</strong> logra un [cambio de mapeo] (<a href="http://en.wikipedia.org/wiki/Shear_mapping">http://en.wikipedia.org/wiki/Shear_mapping</a>) para todos los vértices que han sido creados hasta ahora en la actual sección [MeshBuilder]. El comando <strong>ShearAll</strong> no solo afecta a los vértices generados en la sección actual [MeshBuilder], sino también a aquellos que han sido creados anteriormente en las secciones [MeshBuilder]. Esto es útil al instertar al final del archivo en orden de cambiar todo el objeto.</p>
+<p>The <strong>Shear</strong> command performs a <a href="http://en.wikipedia.org/wiki/Shear_mapping">shear mapping</a> for all vertices that have been created so far in the current CreateMeshBuilder section. The <strong>ShearAll</strong> command not only affects the vertices generated in the current CreateMeshBuilder section, but also those created in previous CreateMeshBuilder sections. This is useful to insert at the end of the file in order to shear the whole object.</p>
 <p><img src="../../../images/illustration_shear.png" alt="illustration_shear"></p>
-<p>El mapeado de cambio es hecho sobre el origen. Pobremente hablando, el objeto es cortado en planos sobre la dirección D y después desplazada a lo largo de la dirección S. Típicamente, D y S son perpendicular. D y S siempre són normalizados. Si la <em>Cantidad</em> es 0, ninguna transformación es aplicada. Si D y S son perpendicular, y una <em>Cantidad</em> de 1 corresponde a una pendiente de 45 grados.</p>
+<p>The shear mapping is performed around the origin. Loosely speaking, the object is sliced into planes along the direction D and then displaced along the direction S. Typically, D and S are perpendicular. D and S are always normalized. If <em>Ratio</em> is 0, no transformation is performed. If D and S are perpendicular, a <em>Ratio</em> of 1 corresponds to a slope of 45 degrees.</p>
 <hr>
 <p><a name="mirror"></a></p>
 <div id="command">
@@ -640,12 +640,12 @@
 <em><strong>GlowHalfDistance</strong></em>: The distance at which the glow is at 50% of its intensity, measured in meters. The value must be an integer in the range from 1 to 4095, or 0 to disable glow attenuation. The default value is 0.<br>
 <em><strong>GlowAttenuationMode</strong></em>: The glow attenuation mode to use. The default is DivideExponent4.
 </div>
-<p>▸ Opciones disponibles para <em>ModoCombinar</em>:</p>
+<p>▸ Available options for <em>BlendMode</em>:</p>
 <div id="command-arguments">
 <strong>Normal</strong>: The faces are rendered normally.<br>
 <strong>Additive</strong>: The faces are rendered additively.
 </div>
-<p>▸ Opciones disponibles para <em>ModoAtenuaciónBrillo</em>:</p>
+<p>▸ Available options for <em>GlowAttenuationMode</em>:</p>
 <div id="command-arguments">
 <strong>DivideExponent2</strong>: The glow intensity is determined via the function <em>x</em>2 / (<em>x</em>2 + <em>GlowHalfDistance</em>2), where <em>x</em> is the distance from the camera to the object in meters.<br>
 <strong>DivideExponent4</strong>: The glow intensity is determined via the function <em>x</em>4 / (<em>x</em>4 + <em>GlowHalfDistance</em>4), where <em>x</em> is the distance from the camera to the object in meters.
@@ -680,7 +680,7 @@
 <hr>
 <p><a name="setdecaltransparentcolor"></a></p>
 <div id="command">
-<strong>SetDecalTransparentColor</strong>, <em>Rojo</em>, <em>Verde</em>, <em>Azul</em>
+<strong>SetDecalTransparentColor</strong>, <em>Red</em>, <em>Green</em>, <em>Blue</em>
 </div>
 <div id="command-arguments">
 <em><strong>Red</strong></em>: The red component of the color. Measured from 0 (black) to 255 (red). The default value is 0.<br>
