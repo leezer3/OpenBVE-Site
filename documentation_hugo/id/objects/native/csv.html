@@ -420,7 +420,7 @@
 
 
 <div id="content">
-  <h2 id="-contents">■ Contents</h2>
+  <h2 id="-isi">■ Isi</h2>
 <ul class='contents'>
 <li><a href="#overview">1. Overview</a></li>
 <li><a href="#syntax">2. Syntax</a></li>
@@ -447,19 +447,19 @@
 </ul>
 </li>
 </ul>
-<h2 id="a-nameoverviewa-1-overview"><a name="overview"></a>■ 1. Overview</h2>
+<h2 id="a-nameoverviewa-1-penjelasan"><a name="overview"></a>■ 1. Penjelasan</h2>
 <p>A CSV object allows to create a single object by using textual instructions. The object can be used in routes or in trains. The object described by the file can contain any number of individual polygons. The file format allows to group multiple polygons in CreateMeshBuilder sections in which attributes like color or texture information is assigned to all polygons created in each section. This allows for the creation of many polygons in the same CreateMeshBuilder section which share common attributes. A polygon is called a face in this file format.</p>
 <p>The file is a plain text file encoded in any arbitrary <a href="../../../id/information/encodings.html">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../../id/information/numberformats.html">parsing model</a> for numbers is <strong>Loose</strong>, however, you are encouraged to produce <em>Strict</em> output nonetheless. The file name is arbitrary, but must have the extension <strong>.csv</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
 <p>➟ <a href="../../../id/objects/native/b3d_quick.html">See also the quick reference for the CSV format&hellip;</a></p>
-<h2 id="a-namesyntaxa-2-syntax"><a name="syntax"></a>■ 2. Syntax</h2>
-<p>Each line in the file is split into the name of a command and its arguments. The syntax for all commands is the same:</p>
+<h2 id="a-namesyntaxa-2-format-penulisan"><a name="syntax"></a>■ 2. Format penulisan</h2>
+<p>Setiap baris dalam file ini adalah satu perintah beserta nilai argumennya. Semua sistem penulisan di file ini sama, sebagai berikut:</p>
 <div id="command">
 <strong>NameOfTheCommand</strong>, <em>Argument<sub>1</sub></em>, <em>Argument<sub>2</sub></em>, <em>Argument<sub>3</sub></em>, &hellip;, <em>Argument<sub>n</sub></em>
 </div>
 <p><em>NameOfTheCommand</em> is case-insensitive. If there are arguments, <em>NameOfTheCommand</em> and <em>Argument1</em> are separated by a comma (U+002C). Likewise, arguments are also separated by a comma (U+002C). <a href="../../../id/information/whitespaces.html">White spaces</a> around the arguments and around the <em>NameOfTheCommand</em>, and well as at the beginning and the end of the line, are ignored. Empty lines or lines solely consisting of white spaces are also ignored.</p>
 <p>Arguments may also be omitted by leaving the text at each of the <em>Argumenti</em> blank. A default value will usually apply in this case, which is specific to the command used. All default values are specified in the section of available commands.</p>
-<p>You can use comments anywhere at the end of a line. A comment is started by a semicolon (U+003B). Comments, if present, are stripped away from all lines before these are processed.</p>
-<h2 id="a-namecommandsa-3-available-commands"><a name="commands"></a>■ 3. Available commands</h2>
+<p>Komentar bisa ditambahkan di mana saja di akhir teks. Tambahkan titik koma &quot; ; &quot; lalu tulis komentar atau catatan yang diinginkan.</p>
+<h2 id="a-namecommandsa-3-daftar-perintah"><a name="commands"></a>■ 3. Daftar perintah</h2>
 <p><a name="createmeshbuilder"></a></p>
 <div id="command">
 <strong>CreateMeshBuilder</strong>
@@ -479,7 +479,7 @@
 <em><strong>nZ</strong></em>: The z-coordinate for the normal of this vertex. The default value is 0.
 </div>
 <p>This command creates a new vertex which can then be used to create faces via the AddFace or AddFace2 commands. There can be as many AddVertex commands as desired within a CreateMeshBuilder section. However, the order of the vertices given is important for other commands. The first vertex given has index 0, and subsequent vertices have indices 1, 2, 3 and so on.</p>
-<p>The normal is the direction perpendicular to the face at a particular point. If all vertices in a face have the same normal, the face will look flat. If used appropriately, you can give the illusion of a curved face by specifying different normals per vertex, but using the same normal on all vertices that share the same spatial coordinate - across multiple faces. If left all zero, the normal will be calculated automatically.</p>
+<p>Normals, atau pencahayaan, berfungsi untuk menentukan arah datangnya cahaya ke mesh ini. Jika semuanya diabaikan atau ditulis 0, maka pengaturan cahaya akan dibuat otomatis. Jika anda menggunakan Normals ini, anda dapat mengatur cahaya yang datang di setiap titik sudut.</p>
 <hr>
 <p><a name="addface"></a></p>
 <div id="command">
@@ -497,7 +497,7 @@
 <div id="command-arguments">
 <em><strong>v<sub>i</sub></strong></em>: The vertex index to include in this face. Allowed values are 0 through <em>n</em>-1, where <em>n</em> is the number of AddVertex commands used.
 </div>
-<p>This command creates a face given an arbitrary long list of vertex indices. The index corresponds to the order in which the vertices have been created by the Vertex command, thus the Face command needs to be stated after the corresponding Vertex commands. The first Vertex command used creates index 0, and subsequent Vertex commands create indices 1, 2, 3 and so on. The order in which the vertex indices appear is important. They need to be given in clockwise order when looking at the front of the face. The back of the face will also be visible, however, lighting on the back face might be the same as on the front face. Only convex polygons are supported.</p>
+<p>Perintah ini membuat sebuah bangun datar yang terbentuk dari semua Vertex yang telah dimasukan. Urutan penulisan nomor vertex harus berurut sehingga bisa menjadi satu bangun datar. urutan penulisan nomor vertex sesuai arah jarum jam (misalnya kiri bawah, kiri atas, kanan atas, kanan bawah) akan menghasilkan bangun datar menghadap ke depan. bagian belakang bangun datar juga akan terlihat. Namun pada bagian belakang tidak akan terpengaruh oleh pencahayaan.</p>
 <hr>
 <p><a name="cube"></a></p>
 <div id="command">
@@ -510,7 +510,7 @@
 </div>
 <p>This command creates a cube having dimensions as specified by <em>HalfWidth</em>, <em>HalfHeight</em> and <em>HalfDepth</em>. The cube will be centered on the origin (0,0,0). Thus, on the x-axis, the cube extends from -<em>HalfWidth</em> to <em>HalfWidth</em>, on the y-axis from -<em>HalfHeight</em> to <em>HalfHeight</em> and on the z-axis from -<em>HalfDepth</em> to <em>HalfDepth</em>. The cube always has 8 vertices and 6 faces.</p>
 <div id="notice">
-<h4 id="cube-representation">Cube representation</h4>
+<h4 id="penggambaran-perintah-cube">Penggambaran perintah Cube</h4>
 <p>The Cube command is equivalent to a series of AddVertex and AddFace commands, which you need to account for when using other commands in the same CreateMeshBuilder section. The details on what the Cube command does are available <a href="../../../id/objects/native/cubecylinder.html">here</a>.
 </div>
 <hr>
@@ -527,14 +527,14 @@
 <p>This command creates a <a href="http://en.wikipedia.org/wiki/Frustum">frustum</a>. If <em>LowerRadius</em> and <em>UpperRadius</em> are equal, the object generated will reduce to a <a href="http://en.wikipedia.org/wiki/Prism_(geometry)">prism</a>, which can be used as an approximation to the cylinder. If either <em>LowerRadius</em> or <em>UpperRadius</em> are zero, the object generated will reduce to a <a href="http://en.wikipedia.org/wiki/Pyramid_(geometry)">pyramid</a>. The frustum will be centered on the origin (0,0,0). On the x- and z-axes, the frustum extends from -<em>LowerRadius</em> to <em>LowerRadius</em> for the lower base and from -<em>UpperRadius</em> to <em>UpperRadius</em> for the upper base. On the y-axis, the frustum extends from -½*<em>Height</em> to ½*<em>Height</em>.</p>
 <p>The number of vertices <em>n</em> will usually suffice to be 6 or 8 when only small radii are used, for example to create a pole. Regardless of the values of <em>UpperRadius</em>, <em>LowerRadius</em> and <em>n</em>, the frustum will always have 2*<em>n</em> vertices, and usually <em>n</em>+2 faces unless any of the caps are omitted. If <em>UpperRadius</em> or <em>LowerRadius</em> are negative, the absolute value is being taken, but the respective caps are not created. If <em>Height</em> is negative, the roles of top and bottom are reversed and the faces will be visible from the inside, while otherwise, they will be visible from the outside.</p>
 <div id="notice">
-<h4 id="cylinder-representation">Cylinder representation</h4>
+<h4 id="representasi-tabung">Representasi tabung</h4>
 <p>The Cylinder command is equivalent to a series of AddVertex and AddFace commands, which you need to account for when using other commands in the same CreateMeshBuilder section. The details on what the Cylinder command does are available <a href="../../../id/objects/native/cubecylinder.html">here</a>.
 </div>
 <hr>
 <div id="command">
 <font color=#555555>GenerateNormals</font>
 </div>
-<p><em><font color=#555555>This command is ignored by openBVE.</font></em></p>
+<p><em><font color=#555555>Perintah ini tidak dipakai di openBVE.</font></em></p>
 <hr>
 <p><a name="translate"></a></p>
 <div id="command">
@@ -640,12 +640,12 @@
 <em><strong>GlowHalfDistance</strong></em>: The distance at which the glow is at 50% of its intensity, measured in meters. The value must be an integer in the range from 1 to 4095, or 0 to disable glow attenuation. The default value is 0.<br>
 <em><strong>GlowAttenuationMode</strong></em>: The glow attenuation mode to use. The default is DivideExponent4.
 </div>
-<p>▸ Available options for <em>BlendMode</em>:</p>
+<p>▸ Pilihan tersedia untuk <em>BlendMode</em>:</p>
 <div id="command-arguments">
 <strong>Normal</strong>: The faces are rendered normally.<br>
 <strong>Additive</strong>: The faces are rendered additively.
 </div>
-<p>▸ Available options for <em>GlowAttenuationMode</em>:</p>
+<p>▸ Pilihan yang bisa dipakai pada <em>GlowAttenuationMode</em>:</p>
 <div id="command-arguments">
 <strong>DivideExponent2</strong>: The glow intensity is determined via the function <em>x</em>2 / (<em>x</em>2 + <em>GlowHalfDistance</em>2), where <em>x</em> is the distance from the camera to the object in meters.<br>
 <strong>DivideExponent4</strong>: The glow intensity is determined via the function <em>x</em>4 / (<em>x</em>4 + <em>GlowHalfDistance</em>4), where <em>x</em> is the distance from the camera to the object in meters.
