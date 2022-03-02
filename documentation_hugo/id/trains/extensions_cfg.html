@@ -429,18 +429,18 @@
 <li><a href="#bogie">5. The Bogie<em>i</em> section</a></li>
 <li><a href="#exterior">6. The Exterior section (outdated)</a></li>
 </ul>
-<h2 id="a-nameoverviewa-1-penjelasan"><a name="overview"></a>■ 1. Penjelasan</h2>
-<p>File Extensions.cfg berisi teks yang memuat info kereta seperti panjang kereta, posisi bogie, dan objek kereta.</p>
-<p>Isi file ini bisa menggunakan semua tipe <a href="../../id/information/encodings.html">encoding</a>, Biasanya untuk penulisan biasa dengan UTF-8.  <a href="../../id/information/numberformats.html">Cara penulisan</a> angka <strong>Strict</strong>. File ini harus berada di dalam folder kereta dan harus diberi nama  <strong>extensions.cfg</strong>. File akan dibaca oleh sistem dari atas ke bawah, dari kiri ke kanan.</p>
-<h5 id="-bagian-car">● Bagian Car</h5>
-<p>Semua kereta di extensions.cfg diberi nomor mulai dari 0 (kereta paling depan) sampai <em>n</em>-1 (kereta paling belakang), <em>n</em> adalah jumlah total semua kereta dalam satu rangkaian, berdasarkan apa yang ada di  <a href="../../id/trains/train_dat.html">train.dat</a> . Contohnya, pada rangkaian dengan total 10 kereta, kereta paling depan mempunyai nomor 0 dan paling belakangnya 9.</p>
-<h5 id="-bagian-coupler">● Bagian Coupler</h5>
-<p>Bagian Coupler dalam file ini menentukan jarak antar kereta. Semua perangkai di extensions.cfg diberi nomor dari 0 (perangkai paling depan) sampai dengan <em>n</em>-2 (perangkai paling belakang), <em>n</em> adalah total kereta dalam rangkaian yg ditentukan dari  <a href="../../id/trains/train_dat.html">train.dat</a>. Nomor perangkai <em>i</em> adalah perangkai yang ada di antara kereta <em>i</em> dan <em>i+1</em> , jadi perangkai yang ada di 2 kereta pertama (antara car0 dan car1) adalah coupler0. Misalnya, jika pada rangkaian 10 kereta, coupler yang ada di antara 2 kereta terakhir (car8 dan car9) adalah coupler 8.</p>
-<h2 id="a-namesyntaxa-2-format-penulisan"><a name="syntax"></a>■ 2. Format penulisan</h2>
-<p>Setiap baris dalam file ini bisa dikosongkan (atau dikasih spasi) dan tidak akan dibaca oleh sistem. Dengan begitu anda bisa memisahkan bagian satu dengan bagian lainnya.</p>
-<p>Membuat bagian baru dimulai dengan menambahkan nama bagian dan memakai kurung tegak ( &quot; [ &quot; dan &quot; ] &quot; ). Spasi tidak akan terbaca di sistem. Contoh cara penulisannya:</p>
+<h2 id="a-nameoverviewa-1-overview"><a name="overview"></a>■ 1. Overview</h2>
+<p>The extensions.cfg file allows to define properties for individual cars, like length, axle positions and exterior objects.</p>
+<p>The file is a plain text file encoded in any arbitrary <a href="../../id/information/encodings.html">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../id/information/numberformats.html">parsing model</a> for numbers is <strong>Strict</strong>. The file is required to be located inside the train folder and is expected to be named <strong>extensions.cfg</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
+<h5 id="-car-indices">● Car indices</h5>
+<p>All cars in the extensions.cfg are enumerated from 0 (front car) to <em>n</em>-1 (rear car), where <em>n</em> is the number of cars the train has in total, according to the <a href="../../id/trains/train_dat.html">train.dat</a> file. For example, on a train with 10 cars, the front car has index 0 and the rear car index 9.</p>
+<h5 id="-coupler-indices">● Coupler indices</h5>
+<p>A coupler in this document refers to the space between neighboring cars. All couplers in the extensions.cfg are enumerated from 0 (front-most coupler) to <em>n</em>-2 (rear-most coupler), where <em>n</em> is the number of cars the train has in total, according to the <a href="../../id/trains/train_dat.html">train.dat</a> file. Coupler index <em>i</em> corresponds to the coupler between the cars with indices <em>i</em> and <em>i+1</em>, so the coupler between the first two cars (0 and 1) in the train has index 0. Likewise, if a train has 10 cars, the coupler between the last two cars (8 and 9) would have index 8.</p>
+<h2 id="a-namesyntaxa-2-syntax"><a name="syntax"></a>■ 2. Syntax</h2>
+<p>Each line in the file can be empty (or solely consist of white spaces) and will be ignored, can mark the beginning of a new section or contain key-value pairs inside a section. All key-value pairs relate to the last section opened.</p>
+<p>A new section is opened by starting the line with an opening bracket (U+005B) and ending it with a closing bracket (U+005D). The text in-between the brackets indicates the name of the section and is case-insensitive. White spaces at the beginning and the end of the line are ignored, as well as at the beginning and the end of the name of the section. Thus, the beginning of the section has the following form:</p>
 <div id="command">
-[NamaBagian]
+[NameOfTheSection]
 </div>
 <div class="overflow-container">
 <table style="border: none;">
@@ -462,9 +462,9 @@
 </tbody>
 </table>
 </div>
-<p>Cara menulis isi bagian ini yaitu dengan menambahkan kata kunci perintah, lalu sama dengan, kemudian masukkan angka atau teks yang dibutuhkan. Perhatian besar kecil huruf dan spasi. Contohnya seperti ini:</p>
+<p>A key-value pair is indicated by giving the key, an equals sign (U+003D) and then the value. The key is case-insensitive. White spaces at the beginning and the end of the line are ignored, as well as in front and after the equals sign. Alternatively phrased, white spaces surrounding the key and the value are ignored. Thus, a key-value pair as the following form:</p>
 <div id="command">
-Perintah = Nilai
+NameOfTheKey = Value
 </div>
 <div class="overflow-container">
 <table style="border: none;">
@@ -486,9 +486,9 @@ Perintah = Nilai
 </tbody>
 </table>
 </div>
-<p>Komentar bisa ditambahkan di mana saja di akhir teks. Tambahkan titik koma &quot; ; &quot; lalu tulis komentar atau catatan yang diinginkan.</p>
-<h2 id="a-namecara-3-bagian-cari"><a name="car"></a>■ 3. Bagian Car<em>i</em></h2>
-<p>Bagian Car<em>i</em> menentukan keterangan 1 kereta dalam rangkaian.</p>
+<p>You can use comments anywhere at the end of a line. A comment is started by a semicolon (U+003B). Comments, if present, are stripped away from all lines before these are processed.</p>
+<h2 id="a-namecara-3-the-cari-section"><a name="car"></a>■ 3. The Car<em>i</em> section</h2>
+<p>The Car<em>i</em> section allows to define properties specific to a certain car.</p>
 <hr>
 <div id="command">
 <strong>[Cari]</strong>
@@ -498,37 +498,43 @@ Perintah = Nilai
 <div id="command">
 <strong>Object</strong> = <em>File</em>
 </div>
-<p><em><strong>File</strong></em>: Lokasi objek file kereta.</p>
+<div id="command-arguments">
+<em><strong>file</strong></em>: The relative file name of the exterior object to use for this car, relative to the train folder.
+</div>
 <p>This key-value pair defines the exterior object for this car. Within the object file, the coordinate (0,0,0) (<em>x</em>, <em>y</em>, <em>z</em>) corresponds to the center of the car, both horizontally (<em>x</em>) and forward/backward (<em>z</em>), while <em>y</em>=0 corresponds to the top of the rails.</p>
 <hr>
 <div id="command">
 <strong>Length</strong> = <em>Value</em>
 </div>
-<p><em><strong>Value</strong></em>: Panjang kereta dalam meter.</p>
-<p>Perintah ini menentukan panjang satu gerbong dalam satu rangkaian. Bagian ini akan mengganti nilai panjang kereta yang ditulis di train.dat. Jika tidak ada perintah ini, maka nilai yang ditulis di train.dat akan dipakai.</p>
+<div id="command-arguments">
+<em><strong>Value</strong></em>: A positive floating-point number representing the length of the car.
+</div>
+<p>This key-value pair defines the length for this car. This overrides the length as defined in the train.dat for this particular car. If not used, this car will have the default length as defined in the train.dat.</p>
 <hr>
 <div id="command">
 <strong>Axles</strong> = <em>Rear</em>, <em>Front</em>
 </div>
-<p><em><strong>Rear</strong></em>: Jarak antara titik pusat dengan bogie belakang. biasanya angkanya negatif.
-<em><strong>Front</strong></em>: Jarak antara titik pusat dengan bogie depan. Biasanya angka positif.</p>
+<div id="command-arguments">
+<em><strong>Rear</strong></em>: A floating-point number indicating the z-position of the rear axle measured from the center of the car. Usually a negative value.<br>
+<em><strong>Front</strong></em>: A floating-point number indicating the z-position of the front axle measured from the center of the car. Usually a positive value.
+</div>
 <p>This key-value pair defines the positions of the axles. While <em>Rear</em> and <em>Front</em> can take any values, the condition <em>Rear</em> &lt; <em>Front</em> must hold.</p>
 <hr>
 <div id="command">
 <strong>Reversed</strong> = <em>Value</em>
 </div>
 <div id="command-arguments">
-<em><strong>Value</strong></em>: <strong>True</strong> atau <strong>False</strong>
+<em><strong>Value</strong></em>: Either <strong>True</strong> or <strong>False</strong> to indicate whether to reverse the car.
 </div>
-<p>Dengan perintah ini, gerbong bisa dibalik pada rangkaian. Catatan, posisi bogie pada perintah sebelumnya menentukan posisi saat kereta tidak dibalik.</p>
+<p>With this setting, you can reverse the car in the consist. Please note that axle positions are given as if the car was not reversed.</p>
 <hr>
 <div id="command">
 <strong>LoadingSway</strong> = <em>Value</em>
 </div>
 <div id="command-arguments">
-<em><strong>Value</strong></em>: <strong>True</strong> atau <strong>False</strong>
+<em><strong>Value</strong></em>: Either <strong>True</strong> or <strong>False</strong> to indicate whether to reverse the car.
 </div>
-<p>Dengan pengaturan ini, kereta bisa diatur apakah akan bergoyang saat naik turun penumpang atau tidak.</p>
+<p>With this setting, you can enable or disable loading sway for a specific car in the consist.</p>
 <hr>
 <div id="command">
 <strong>VisibleFromInterior</strong> = <em>Value</em>
@@ -563,8 +569,8 @@ Reversed = False
 </tbody>
 </table>
 </div>
-<h2 id="a-namecouplera-4-bagian-coupleri"><a name="coupler"></a>■ 4. Bagian Coupler<em>i</em></h2>
-<p>Bagian Coupler<em>i</em> menentukan info sambungan kereta di posisi yang ditentukan.</p>
+<h2 id="a-namecouplera-4-the-coupleri-section"><a name="coupler"></a>■ 4. The Coupler<em>i</em> section</h2>
+<p>The Coupler<em>i</em> section allows to define properties specific to a certain coupler.</p>
 <hr>
 <div id="command">
 <strong>[Coupleri]</strong>
@@ -575,8 +581,8 @@ Reversed = False
 <strong>Distances</strong> = <em>Minimum</em>, <em>Maximum</em>
 </div>
 <div id="command-arguments">
-<em><strong>Minimum</strong></em>: Jarak minimum antar gerbong.<br>
-<em><strong>Maximum</strong></em>: Jarak maksimum antar gerbong.
+<em><strong>Minimum</strong></em>: A floating-point number indicating the minimum allowed distance between the cars.<br>
+<em><strong>Maximum</strong></em>: A floating-point number indicating the maximum allowed distance between the cars.
 </div>
 <p>This key-value pair defines the lowest and highest allowed distances between the cars, resembling a buffer and chain coupler. The condition <em>Minimum</em> ≤ <em>Maximum</em> must hold.</p>
 <hr>
@@ -640,7 +646,7 @@ Distances = 0.30, 0.35
 <div id="command">
 <strong>[Exterior]</strong>
 </div>
-<p>Perintah ini memulai bagian exterior</p>
+<p>This starts the Exterior section.</p>
 <hr>
 <div id="command">
 <strong>i</strong> = <em>File</em>
