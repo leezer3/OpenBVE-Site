@@ -421,7 +421,7 @@
 
 <div id="content">
   <p>➟ <a href="../../hu/routes/csv_quick.html">Quick reference&hellip;</a></p>
-<h2 id="-tartalom">■ Tartalom</h2>
+<h2 id="-contents">■ Contents</h2>
 <ul class='contents'>
 <li><a href="#overview">1. Overview</a></li>
 <li><a href="#syntax">2. Syntax</a></li>
@@ -445,7 +445,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="a-nameoverviewa-1-áttekintés"><a name="overview"></a>■ 1. Áttekintés</h2>
+<h2 id="a-nameoverviewa-1-overview"><a name="overview"></a>■ 1. Overview</h2>
 <p>A CSV route allows to create a route in a text file.</p>
 <p>The file is a plain text file encoded in any arbitrary <a href="../../hu/information/encodings.html">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../hu/information/numberformats.html">parsing model</a> for numbers is <strong>Loose</strong> (unless otherwise stated), however, you are encouraged to produce <em>Strict</em> output nonetheless. The file is required to be located inside any folder whose current or parent folder includes the <em>Railway</em> and <em>Train</em> folders. The file name is arbitrary, but must have the extension <strong>.csv</strong>. The file is interpreted on a per-line basis, from top to bottom, where each line is split into expressions, which are interpreted from left to right.</p>
 <p>The route file consists of a series of commands to define the objects which are used throughout the route (Structure namespace). Additional properties for the route, for the default train to be used and for the background images to be used can also be defined. At last, the route file will contain instructions from the Track namespace. Here, track positions (usually in meters) are used to define when the track should curve, when stations are to be placed, when a wall should start and end, and so on. Generally speaking, instructions from the Track namespace should be used after using instructions from any of the other namespaces.</p>
