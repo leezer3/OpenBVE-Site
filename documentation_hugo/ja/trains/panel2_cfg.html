@@ -422,7 +422,7 @@
 <div id="content">
   <h2 id="-内容">■ 内容</h2>
 <ul class='contents'>
-<li><a href="#overview">1. Overview</a></li>
+<li><a href="#overview">1. 概要</a></li>
 <li><a href="#syntax">2. Syntax</a></li>
 <li><a href="#this">3. The This section</a></li>
 <li><a href="#pilotlamp">4. The PilotLamp section</a></li>
@@ -657,7 +657,7 @@ Color = <em>HexColor</em>
 TransparentColor = <em>HexColor</em>
 </div>
 <div id="command-arguments">
-<em><strong>HexColor</strong></em>: A <a href="../../ja/information/numberformats.html#colors">hexcolor</a> representing the exact color in both the <em>DaytimeImage</em> and <em>NighttimeImage</em> files which corresponds to a transparent pixel. The default value is #0000FF.
+<em><strong>HexColor</strong></em>: <a href="../../ja/information/numberformats.html#colors">hexcolor</a>  <em>DaytimeImage</em> と <em>NighttimeImage</em> ファイルの双方で、透明ピクセルに対応する正確な色を表します。デフォルト値は #0000FF です。
 </div>
 <hr>
 <div id="command">
@@ -717,7 +717,7 @@ DampingRatio = <em>Value</em>
 Layer = <em>LayerIndex</em>
 </div>
 <div id="command-arguments">
-<em><strong>LayerIndex</strong></em>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.
+<em><strong>LayerIndex</strong></em>: 重なり合うレイヤー要素の中で、個々の要素を一意に定義する整数。 小さい数字は背景側を示し、大きい数字は前景側を示します。 各要素は重なり合わない限り同じ <em>LayerIndex</em> を使用できます。 デフォルト値は0です。
 </div>
 <h2 id="a-namedigitalnumbera-6-the-digitalnumber-section"><a name="digitalnumber"></a>■ 6. The DigitalNumber section</h2>
 <p>The DigitalNumber section creates an indicator that can switch between multiple states, useful to build up a display of decimal digits. You can use as many of these sections as required.</p>
@@ -726,21 +726,21 @@ Layer = <em>LayerIndex</em>
 <div id="command">
 [DigitalNumber]
 </div>
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 <hr>
 <div id="command">
 Subject = <em>Subject</em>
 </div>
 <div id="command-arguments">
-<em><strong>Subject</strong></em>: One of the <a href="#subjects">available subjects</a>. The default subject is <strong>true</strong>.
+<em><strong>Subject</strong></em>: <a href="#subjects">available subjects</a> で定義されているものの一つを指定します。デフォルトのサブジェクトは <strong>true</strong> です。
 </div>
 <hr>
 <div id="command">
 Location = <em>Left</em>, <em>Top</em>
 </div>
 <div id="command-arguments">
-<em><strong>Left</strong></em>: A floating-point number representing the x-coordinate at which the left of the image is inserted. The default value is 0.<br>
-<em><strong>Top</strong></em>: A floating-point number representing the y-coordinate at which the top of the image is inserted. The default value is 0.
+<em><strong>Left</strong></em>: 画面の左端が挿入されるX座標を示す浮動小数点数。デフォルトは値は0です。<br>
+<em><strong>Top</strong></em>: 画面の上端が挿入されるY座標を示す浮動小数点数。デフォルトは値は0です。
 </div>
 <hr>
 <div id="command">
@@ -761,7 +761,7 @@ NighttimeImage = <em>FileName</em>
 TransparentColor = <em>HexColor</em>
 </div>
 <div id="command-arguments">
-<em><strong>HexColor</strong></em>: A <a href="../../ja/information/numberformats.html#colors">hexcolor</a> representing the exact color in both the <em>DaytimeImage</em> and <em>NighttimeImage</em> files which corresponds to a transparent pixel. The default value is #0000FF.
+<em><strong>HexColor</strong></em>: <a href="../../ja/information/numberformats.html#colors">hexcolor</a>  <em>DaytimeImage</em> と <em>NighttimeImage</em> ファイルの双方で、透明ピクセルに対応する正確な色を表します。デフォルト値は #0000FF です。
 </div>
 <hr>
 <div id="command">
@@ -775,7 +775,7 @@ Interval = <em>Height</em>
 Layer = <em>LayerIndex</em>
 </div>
 <div id="command-arguments">
-<em><strong>LayerIndex</strong></em>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.
+<em><strong>LayerIndex</strong></em>: 重なり合うレイヤー要素の中で、個々の要素を一意に定義する整数。 小さい数字は背景側を示し、大きい数字は前景側を示します。 各要素は重なり合わない限り同じ <em>LayerIndex</em> を使用できます。 デフォルト値は0です。
 </div>
 <h2 id="a-namedigitalgaugea-7-the-digitalgauge-section"><a name="digitalgauge"></a>■ 7. The DigitalGauge section</h2>
 <p>The DigitalGauge section creates a solid-color square of which only a radial section is shown at a time. You can use as many of these sections as required.</p>
@@ -787,13 +787,13 @@ Layer = <em>LayerIndex</em>
 <div id="command">
 [DigitalGauge]
 </div>
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 <hr>
 <div id="command">
 Subject = <em>Subject</em>
 </div>
 <div id="command-arguments">
-<em><strong>Subject</strong></em>: One of the <a href="#subjects">available subjects</a>. The default subject is <strong>true</strong>.
+<em><strong>Subject</strong></em>: <a href="#subjects">available subjects</a> で定義されているものの一つを指定します。デフォルトのサブジェクトは <strong>true</strong> です。
 </div>
 <hr>
 <div id="command">
@@ -864,7 +864,7 @@ Step = <em>Value</em>
 Layer = <em>LayerIndex</em>
 </div>
 <div id="command-arguments">
-<em><strong>LayerIndex</strong></em>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.
+<em><strong>LayerIndex</strong></em>: 重なり合うレイヤー要素の中で、個々の要素を一意に定義する整数。 小さい数字は背景側を示し、大きい数字は前景側を示します。 各要素は重なり合わない限り同じ <em>LayerIndex</em> を使用できます。 デフォルト値は0です。
 </div>
 <h2 id="a-namelineargaugea-8-the-lineargauge-section"><a name="lineargauge"></a>■ 8. The LinearGauge section</h2>
 <p>The LinearGauge section creates a panel layer, which uses texture shifting to create a sliding linear gauge. You can use as many of these sections as required.</p>
@@ -875,13 +875,13 @@ Layer = <em>LayerIndex</em>
 <div id="command">
 [LinearGauge]
 </div>
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 <hr>
 <div id="command">
 Subject = <em>Subject</em>
 </div>
 <div id="command-arguments">
-<em><strong>Subject</strong></em>: One of the <a href="#subjects">available subjects</a>. The default subject is <strong>true</strong>.
+<em><strong>Subject</strong></em>: <a href="#subjects">available subjects</a> で定義されているものの一つを指定します。デフォルトのサブジェクトは <strong>true</strong> です。
 </div>
 <hr>
 <div id="command">
@@ -925,7 +925,7 @@ Width = <em>NeedleWidth</em>
 Layer = <em>LayerIndex</em>
 </div>
 <div id="command-arguments">
-<em><strong>LayerIndex</strong></em>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.
+<em><strong>LayerIndex</strong></em>: 重なり合うレイヤー要素の中で、個々の要素を一意に定義する整数。 小さい数字は背景側を示し、大きい数字は前景側を示します。 各要素は重なり合わない限り同じ <em>LayerIndex</em> を使用できます。 デフォルト値は0です。
 </div>
 <h2 id="a-nametimetablea-9-the-timetable-section"><a name="timetable"></a>■ 9. The Timetable section</h2>
 <p>The Timetable section defines where to place custom timetables. The actual images are loaded via the route file. Only one Timetable section may be used within the file.</p>
@@ -933,14 +933,14 @@ Layer = <em>LayerIndex</em>
 <div id="command">
 [Timetable]
 </div>
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 <hr>
 <div id="command">
 Location = <em>Left</em>, <em>Top</em>
 </div>
 <div id="command-arguments">
-<em><strong>Left</strong></em>: A floating-point number representing the x-coordinate at which the left of the image is inserted. The default value is 0.<br>
-<em><strong>Top</strong></em>: A floating-point number representing the y-coordinate at which the top of the image is inserted. The default value is 0.
+<em><strong>Left</strong></em>: 画面の左端が挿入されるX座標を示す浮動小数点数。デフォルトは値は0です。<br>
+<em><strong>Top</strong></em>: 画面の上端が挿入されるY座標を示す浮動小数点数。デフォルトは値は0です。
 </div>
 <hr>
 <div id="command">
@@ -968,7 +968,7 @@ TransparentColor = <em>HexColor</em>
 Layer = <em>LayerIndex</em>
 </div>
 <div id="command-arguments">
-<em><strong>LayerIndex</strong></em>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.
+<em><strong>LayerIndex</strong></em>: 重なり合うレイヤー要素の中で、個々の要素を一意に定義する整数。 小さい数字は背景側を示し、大きい数字は前景側を示します。 各要素は重なり合わない限り同じ <em>LayerIndex</em> を使用できます。 デフォルト値は0です。
 </div>
 <h2 id="a-namewindscreena-10-the-windscreen-section"><a name="windscreen"></a>■ 10. The Windscreen section</h2>
 <p>The Windscreen section defines a set of animated raindrops / snowflakes and windscreen wipers.</p>
@@ -976,7 +976,7 @@ Layer = <em>LayerIndex</em>
 <div id="command">
 [Windscreen]
 </div>
-<p>This starts the section.</p>
+<p>これをを定義することにより、セクションを開始します。</p>
 <hr>
 <div id="command">
 TopLeft = <em>X</em>, <em>Y</em>
@@ -1068,7 +1068,7 @@ NightTimeFlakes = <em>Flakes</em>
 Layer = <em>LayerIndex</em>
 </div>
 <div id="command-arguments">
-<em><strong>LayerIndex</strong></em>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.
+<em><strong>LayerIndex</strong></em>: 重なり合うレイヤー要素の中で、個々の要素を一意に定義する整数。 小さい数字は背景側を示し、大きい数字は前景側を示します。 各要素は重なり合わない限り同じ <em>LayerIndex</em> を使用できます。 デフォルト値は0です。
 </div>
 <h2 id="a-namesubjectsa-11-available-subjects"><a name="subjects"></a>■ 11. Available subjects</h2>
 <p>A subject is composed of a base subject and an optional subject suffix. The subject controls what information is fed to the element that uses the subject. For example, a <em>Needle</em> can use the subject <em>kmph</em> to be fed with the current speed of the train in kilometers per hour, or with the <em>mr</em> subject to show the main reservoir pressure.</p>
@@ -1240,7 +1240,7 @@ Layer = <em>LayerIndex</em>
 <th>Return values</th>
 <th></th>
 <th>ats271</th>
-<th>Meaning</th>
+<th>意味</th>
 </tr>
 </thead>
 <tbody>
