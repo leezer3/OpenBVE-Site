@@ -420,9 +420,9 @@
 
 
 <div id="content">
-  <h2 id="-contents">■ Contents</h2>
+  <h2 id="-contenidos">■ Contenidos</h2>
 <ul class='contents'>
-<li><a href="#overview">1. Overview</a></li>
+<li><a href="#overview">1. Vista general</a></li>
 <li><a href="#syntax">2. Syntax</a></li>
 <li><a href="#this">3. The This section</a></li>
 <li><a href="#pilotlamp">4. The PilotLamp section</a></li>
@@ -447,10 +447,10 @@
 </div>
 <p>➟ <a href="../../es_mx/trains/panel2_cfg_quick.html">See also the quick reference for the panel2.cfg&hellip;</a></p>
 <div id="notice">
-<h4 id="overlay-and-lighting">Overlay and Lighting</h4>
+<h4 id="sobreposición-e-iluminación">Sobreposición e Iluminación</h4>
 <p>The cab is rendered as an overlay. This means that the cab will always appear in front of scenery objects. This is intentional, because this way, rain, walls and other obstructing objects cannot be accidentally rendered inside the cab. Furthermore, lighting in the cab is different than in the scenery. While the ambient brightness is reflected in the cab, the ambient color is not, and the cab always appears as if reflecting white light.
 </div>
-<h2 id="a-namesyntaxa-2-syntax"><a name="syntax"></a>■ 2. Syntax</h2>
+<h2 id="a-namesyntaxa-2-sintaxis"><a name="syntax"></a>■ 2. Sintaxis</h2>
 <p>Each line in the file can be empty (or solely consist of white spaces) and will be ignored, can mark the beginning of a new section or contain key-value pairs inside a section. All key-value pairs relate to the last section opened.</p>
 <p>A new section is opened by starting the line with an opening bracket (U+005B) and ending it with a closing bracket (U+005D). The text in-between the brackets indicates the name of the section and is case-insensitive. White spaces at the beginning and the end of the line are ignored, as well as at the beginning and the end of the name of the section. Thus, the beginning of the section has the following form:</p>
 <div id="command">
@@ -461,7 +461,7 @@
 NameOfTheKey = Value
 </div>
 <p>Some values are further split into multiple parts, separated by commas (U+002C).</p>
-<p>You can use comments anywhere at the end of a line. A comment is started by a semicolon (U+003B). Comments, if present, are stripped away from all lines before these are processed.</p>
+<p>Puedes usar comentarios en cualquier lado al final de una línea. Un comentario comienza por punto y coma (U+003B). Si los comentarios estan presentes, son quitados de las líneas después de ser procesados.</p>
 <h2 id="a-namethisa-3-the-this-section"><a name="this"></a>■ 3. The This section</h2>
 <p>The This section defines the background image to use for the panel and which resolution the panel has. Only one This section may be used within the file.</p>
 <hr>
@@ -1196,31 +1196,31 @@ Layer = <em>LayerIndex</em>
 </tr>
 <tr>
 <td>Klaxon</td>
-<td>Returns the currently playing horn (if any) as follows: (0) No horns are playing (1) The primary horn is playing (2) The secondary horn is playing (3) The music horn is playing. <em>Note</em> If multiple horns are playing, the lowest value will be returned.</td>
+<td>Retorna la bocina actual que esta reproduciendo (cualquiera) de las siguientes: (0) Ninguna bocina se esta reproduciendo (1) La bocina principal esta reproduciéndose (2) La bocina secundaria esta reproduciéndose (3) La bocina musical esta reproduciéndose. <em>Nota</em>: Si múltiples bocinas se encuentran reproduciéndose, el valor mas bajo será retornado.</td>
 </tr>
 <tr>
 <td>PrimaryKlaxon</td>
-<td>Returns 1 if the primary horn is currently playing, 0 otherwise.</td>
+<td>Retorna 1 si la bocina primaria esta reproduciéndose, 0 en caso contrario.</td>
 </tr>
 <tr>
 <td>SecondaryKlaxon</td>
-<td>Returns 1 if the secondary horn is currently playing, 0 otherwise.</td>
+<td>Retorna 1 si la bocina secundaria esta reproduciéndose, 0 en caso contrario.</td>
 </tr>
 <tr>
 <td>MusicKlaxon</td>
-<td>Returns 1 if the music horn is currently playing, 0 otherwise.</td>
+<td>Retorna 1 si la bocina musical esta reproduciéndose, 0 en caso contrario.</td>
 </tr>
 <tr>
 <td>passAlarm</td>
-<td>Whether the station pass alarm has been activated. Returns either 0 (inactive) or 1 (active).</td>
+<td>Cuando la alarma de rebase de estación ha sido activada. Retorna 0 (inactivo) o 1 (activo).</td>
 </tr>
 <tr>
 <td>pilotLamp</td>
-<td>The state of the pilot lamp (Doors closed &amp; ready to start). Returns either 0 (unlit) or 1 (lit).</td>
+<td>El estado de la lampara piloto (Puertas cerradas y listo para iniciar). Retorna cualquiera 0 (apagado) o 1 (encendido).</td>
 </tr>
 <tr>
 <td>stationAdjustAlarm</td>
-<td>Whether the station adjust alarm has been activated. Returns either 0 (inactive) or 1 (active).</td>
+<td>Cuando la alarma de ajuste de estación ha sido activada. Retorna 0 (inactivo) o 1 (activo).</td>
 </tr>
 <tr>
 <td>wiperPosition</td>
@@ -1235,12 +1235,12 @@ Layer = <em>LayerIndex</em>
 <thead>
 <tr>
 <th><em>i</em></th>
-<th>English</th>
-<th>日本語</th>
-<th>Return values</th>
+<th>Español</th>
+<th>日本語 - Japonés</th>
+<th>Valores de retorno</th>
 <th></th>
 <th>ats271</th>
-<th>Meaning</th>
+<th>Significado</th>
 </tr>
 </thead>
 <tbody>
@@ -1248,16 +1248,16 @@ Layer = <em>LayerIndex</em>
 <td>256</td>
 <td>ATS</td>
 <td>ATS</td>
-<td>0 (unlit) or 1 (lit)</td>
+<td>0 (apagado) o 1 (encendido)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>0</td>
-<td>ATC not available</td>
+<td>ATC no disponible</td>
 </tr>
 <tr>
 <td>257</td>
 <td>ATS RUN</td>
 <td>ATS 作動</td>
-<td>0 (unlit), 1 (lit) or 2 (flashing)</td>
+<td>0 (apagado), 1 (encendido) o 2 (parpadeando)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>1</td>
 <td>0 km/h</td>
@@ -1266,7 +1266,7 @@ Layer = <em>LayerIndex</em>
 <td>258</td>
 <td>ATS RUN</td>
 <td>ATS 作動</td>
-<td>0 (unlit / non-flashing), 1 (lit / flashing)</td>
+<td>0 (apagado / sin parpadear), 1 (encendido / parpadeando)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>2</td>
 <td>15 km/h</td>
@@ -1275,7 +1275,7 @@ Layer = <em>LayerIndex</em>
 <td>259</td>
 <td>P POWER</td>
 <td>P 電源</td>
-<td>0 (unlit) or 1 (lit)</td>
+<td>0 (apagado) o 1 (encendido)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>3</td>
 <td>25 km/h</td>
@@ -1284,25 +1284,25 @@ Layer = <em>LayerIndex</em>
 <td>260</td>
 <td>PTN APPROACH</td>
 <td>パターン接近</td>
-<td>0 (unlit) or 1 (lit)</td>
+<td>0 (apagado) o 1 (encendido)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>4</td>
 <td>45 km/h</td>
 </tr>
 <tr>
 <td>261</td>
-<td>BRAKE RELEASE</td>
+<td>FRENO LIBERADO</td>
 <td>ブレーキ開放</td>
-<td>0 (unlit) or 1 (lit)</td>
+<td>0 (apagado) o 1 (encendido)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>5</td>
 <td>55 km/h</td>
 </tr>
 <tr>
 <td>262</td>
-<td>BRAKE APPLY</td>
+<td>FRENO APLICADO</td>
 <td>ブレーキ動作</td>
-<td>0 (unlit) or 1 (lit)</td>
+<td>0 (apagado) o 1 (encendido)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>6</td>
 <td>65 km/h</td>
@@ -1311,16 +1311,16 @@ Layer = <em>LayerIndex</em>
 <td>263</td>
 <td>ATS P</td>
 <td>ATS-P</td>
-<td>0 (unlit) or 1 (lit)</td>
+<td>0 (apagado) o 1 (encendido)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>7</td>
 <td>75 km/h</td>
 </tr>
 <tr>
 <td>264</td>
-<td>FAILURE</td>
+<td>FALLA</td>
 <td>故障</td>
-<td>0 (unlit) or 1 (lit)</td>
+<td>0 (apagado) o 1 (encendido)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>8</td>
 <td>90 km/h</td>
@@ -1329,43 +1329,43 @@ Layer = <em>LayerIndex</em>
 <td>265</td>
 <td>ATC</td>
 <td>ATC</td>
-<td>0 (unlit) or 1 (lit)</td>
+<td>0 (apagado) o 1 (encendido)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>9</td>
 <td>100 km/h</td>
 </tr>
 <tr>
 <td>266</td>
-<td>ATC POWER</td>
+<td>ATC ENCENDIDO</td>
 <td>ATC 電源</td>
-<td>0 (unlit) or 1 (lit)</td>
+<td>0 (apagado) o 1 (encendido)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>10</td>
 <td>110 km/h</td>
 </tr>
 <tr>
 <td>267</td>
-<td>ATC SRV</td>
+<td>ATC SERVICIO</td>
 <td>ATC 常用</td>
-<td>0 (unlit) or 1 (lit)</td>
+<td>0 (apagado) o 1 (encendido)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>11</td>
 <td>120 km/h</td>
 </tr>
 <tr>
 <td>268</td>
-<td>ATC EMG</td>
+<td>ATC EMERGENCIA</td>
 <td>ATC 非常</td>
-<td>0 (unlit) or 1 (lit)</td>
+<td>0 (apagado) o 1 (encendido)</td>
 <td bgcolor='#D0D0D0'></td>
 <td>12</td>
-<td>ATS is active</td>
+<td>ATS esta activo</td>
 </tr>
 <tr>
 <td>269</td>
-<td>CONST SPEED</td>
+<td>VELOCIDAD CONSTANTE</td>
 <td>定速</td>
-<td>0 (unlit) or 1 (lit)</td>
+<td>0 (apagado) o 1 (encendido)</td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
@@ -1374,16 +1374,16 @@ Layer = <em>LayerIndex</em>
 <td>270</td>
 <td>EB</td>
 <td>EB</td>
-<td>0 (unlit) or 1 (lit)</td>
+<td>0 (apagado) o 1 (encendido)</td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
 <tr>
 <td>271</td>
-<td>ATC speed indicator</td>
+<td>Indicador de velocidad del ATC</td>
 <td bgcolor='#D0D0D0'></td>
-<td>0 - 12, see table on the right</td>
+<td>0 - 12, ver tabla a la derecha</td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
@@ -1397,7 +1397,7 @@ Layer = <em>LayerIndex</em>
 <thead>
 <tr>
 <th>Subject suffix</th>
-<th>Description</th>
+<th>Descripción</th>
 </tr>
 </thead>
 <tbody>

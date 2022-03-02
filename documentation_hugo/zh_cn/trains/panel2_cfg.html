@@ -306,7 +306,7 @@
       
       <ul class="second">
         
-        <li><a href="../../zh_cn/plugins/overview.html">Overview</a>
+        <li><a href="../../zh_cn/plugins/overview.html">概述</a>
           
         </li>
         
@@ -420,7 +420,7 @@
 
 
 <div id="content">
-  <h2 id="-contents">■ Contents</h2>
+  <h2 id="-目录">■ 目录</h2>
 <ul class='contents'>
 <li><a href="#overview">1. Overview</a></li>
 <li><a href="#syntax">2. Syntax</a></li>
@@ -433,7 +433,7 @@
 <li><a href="#timetable">9. The Timetable section</a></li>
 <li><a href="#subjects">10. Available subjects</a></li>
 </ul>
-<h2 id="a-nameoverviewa-1-overview"><a name="overview"></a>■ 1. Overview</h2>
+<h2 id="a-nameoverviewa-1-概述"><a name="overview"></a>■ 1. 概述</h2>
 <p>The panel2.cfg file allows to create 2D panels by defining which elements to use, like lamps, needles, etc., what they are intended to display and where they are to be placed.</p>
 <p>The panel2.cfg file is a plain text file encoded in any arbitrary <a href="../../zh_cn/information/encodings.html">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../zh_cn/information/numberformats.html">parsing model</a> for numbers is <strong>Loose</strong>, however, you are encouraged to produce <em>Strict</em> output nonetheless. The file is required to be located inside the train folder and is expected to be named <strong>panel2.cfg</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
 <div id="notice">
@@ -447,10 +447,10 @@
 </div>
 <p>➟ <a href="../../zh_cn/trains/panel2_cfg_quick.html">See also the quick reference for the panel2.cfg&hellip;</a></p>
 <div id="notice">
-<h4 id="overlay-and-lighting">Overlay and Lighting</h4>
+<h4 id="覆蓋和光暗">覆蓋和光暗</h4>
 <p>The cab is rendered as an overlay. This means that the cab will always appear in front of scenery objects. This is intentional, because this way, rain, walls and other obstructing objects cannot be accidentally rendered inside the cab. Furthermore, lighting in the cab is different than in the scenery. While the ambient brightness is reflected in the cab, the ambient color is not, and the cab always appears as if reflecting white light.
 </div>
-<h2 id="a-namesyntaxa-2-syntax"><a name="syntax"></a>■ 2. Syntax</h2>
+<h2 id="a-namesyntaxa-2-语法"><a name="syntax"></a>■ 2. 语法</h2>
 <p>Each line in the file can be empty (or solely consist of white spaces) and will be ignored, can mark the beginning of a new section or contain key-value pairs inside a section. All key-value pairs relate to the last section opened.</p>
 <p>A new section is opened by starting the line with an opening bracket (U+005B) and ending it with a closing bracket (U+005D). The text in-between the brackets indicates the name of the section and is case-insensitive. White spaces at the beginning and the end of the line are ignored, as well as at the beginning and the end of the name of the section. Thus, the beginning of the section has the following form:</p>
 <div id="command">
@@ -461,7 +461,7 @@
 NameOfTheKey = Value
 </div>
 <p>Some values are further split into multiple parts, separated by commas (U+002C).</p>
-<p>You can use comments anywhere at the end of a line. A comment is started by a semicolon (U+003B). Comments, if present, are stripped away from all lines before these are processed.</p>
+<p>您可以在一行的末尾添加注释。注释由分号（U+003B，英文半角）开始。所有注释在开始解析文件之前就将被自动排除。</p>
 <h2 id="a-namethisa-3-the-this-section"><a name="this"></a>■ 3. The This section</h2>
 <p>The This section defines the background image to use for the panel and which resolution the panel has. Only one This section may be used within the file.</p>
 <hr>
@@ -1240,7 +1240,7 @@ Layer = <em>LayerIndex</em>
 <th>Return values</th>
 <th></th>
 <th>ats271</th>
-<th>Meaning</th>
+<th>含义</th>
 </tr>
 </thead>
 <tbody>
@@ -1397,7 +1397,7 @@ Layer = <em>LayerIndex</em>
 <thead>
 <tr>
 <th>Subject suffix</th>
-<th>Description</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
