@@ -518,6 +518,15 @@
 <strong>&lt;DriverPosition&gt;</strong> <em>Position</em> <strong>&lt;/DriverPosition&gt;</strong>
 </div>
 <p><strong>Position</strong> should contain a comma-separated 3D vector, defining the position of the driver&rsquo;s eyes within the car, relative to <em>0,0,0</em></p>
+<div id="command">
+<strong>&lt;Cargo&gt;</strong> <em>CargoType</em> <strong>&lt;/Cargo&gt;</strong>
+</div>
+<p><strong>CargoType</strong> defines the type of cargo which this car carries. The following load types are available:</p>
+<div id="command-arguments">
+<strong>Passenger</strong>: This car carries passengers. Its overall weight is affected by the loading given at stations, and passenger discomfort is scored.
+<strong>Freight</strong>: This car carries freight. Its overall weight is affected by the loading given at stations.<br>
+<strong>None</strong>: This car carries no load (e.g. a locomotive, brake van or similar). It&rsquo;s weight is not affected by the loading given at stations.
+</div>
 <h2 id="a-namecouplera-4-the-coupler-section"><a name="coupler"></a>■ 4. The Coupler section</h2>
 <p>Car nodes (or child file references) may optionally be separated by a <strong>&lt;Coupler&gt;</strong> node.</p>
 <p>This defines the coupler between the two cars, and supports the following properties:</p>
