@@ -427,6 +427,7 @@
 <li><a href="#train">2. The Train section</a></li>
 <li><a href="#car">3. The Car section</a></li>
 <li><a href="#coupler">4. The Coupler section</a></li>
+<li><a href="#misc">5. Miscellaneous Properties</a></li>
 </ul>
 <h2 id="a-nameoverviewa-1-概要"><a name="overview"></a>■ 1. 概要</h2>
 <p>The <strong>train.xml</strong> format is the native format for newer versions of OpenBVE, and is intended to replace the older train.dat format. It allows setting of many more properties, and is extensible.</p>
@@ -546,6 +547,15 @@
 <span><font color="#C00000">☀</font> Note</span>
 <p>The coupler object is not deformed when the coupler stretches / compresses.</p>
 </div>
+<h2 id="a-namemisca-5-miscellaneous-properties"><a name="misc"></a>■ 5. Miscellaneous Properties</h2>
+<div id="command">
+<strong>&lt;Plugin&gt;</strong> <em>PluginFile</em> <strong>&lt;/Plugin&gt;</strong>
+</div>
+<p><strong>PluginFile</strong> should contain the relative path to the security plugin DLL to load.</p>
+<div id="command">
+<strong>&lt;Description&gt;</strong> <em>Text</em> <strong>&lt;/Description&gt;</strong>
+</div>
+<p><strong>Text</strong> should contain the textual description for the train to display in the main menu.</p>
 
 </div>
 
