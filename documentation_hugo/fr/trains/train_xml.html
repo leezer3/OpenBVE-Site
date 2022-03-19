@@ -426,7 +426,10 @@
 <li><a href="#overview">1. Overview</a></li>
 <li><a href="#train">2. The Train section</a></li>
 <li><a href="#car">3. The Car section</a></li>
+<li><a href="#power">3.1. The Power section</a></li>
+<li><a href="#brake">3.2. The Brake section</a></li>
 <li><a href="#coupler">4. The Coupler section</a></li>
+<li><a href="#misc">5. Miscellaneous Properties</a></li>
 </ul>
 <h2 id="a-nameoverviewa-1-présentation"><a name="overview"></a>■ 1. Présentation</h2>
 <p>The <strong>train.xml</strong> format is the native format for newer versions of OpenBVE, and is intended to replace the older train.dat format. It allows setting of many more properties, and is extensible.</p>
@@ -440,6 +443,10 @@
 <p>This defines a car within the train.</p>
 <p><strong>CarProperties</strong> may either be a set of child nodes (if using the single file format) or a relative on-disk path to a child car file.</p>
 <div id="command">
+<strong>&lt;DriverCar&gt;</strong> <em>Car</em> <strong>&lt;/DriverCar&gt;</strong>
+</div>
+<p><strong>Car</strong> must be a positive integer less than or equal to the number of cars in the train, setting the driver car.</p>
+<div id="command">
 <strong>&lt;NotchDescriptions&gt;</strong> <em>Notch</em> <strong>&lt;/NotchDescriptions&gt;</strong>
 </div>
 <p>This overrides the in-game UI notch descriptions displayed.</p>
@@ -452,7 +459,7 @@
 <h2 id="a-namecara-3-the-car-section"><a name="car"></a>■ 3. The Car section</h2>
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
-<p>When using child car files, the <strong><Car></strong> node should be the first node in the file. All other details remain the same.</p>
+<p>When using child car files, the <strong>&lt;Car&gt;</strong> node should be the first node in the file. All other details remain the same.</p>
 </div>
 <p>The <strong><Car></strong> node contains the properties for each induvidual train car.</p>
 <p>This supports the following properties:</p>
@@ -527,6 +534,218 @@
 <strong>Freight</strong>: This car carries freight. Its overall weight is affected by the loading given at stations.<br>
 <strong>None</strong>: This car carries no load (e.g. a locomotive, brake van or similar). It&rsquo;s weight is not affected by the loading given at stations.
 </div>
+<h2 id="a-namepowera-31-the-power-section"><a name="power"></a>■ 3.1. The Power section</h2>
+<p>Motor cars may specifiy a <strong>&lt;Power&gt;</strong> node.</p>
+<p>This defines the acceleration curves and the power handle fitted to the car, and supports the following child nodes:</p>
+<h3 id="311-acceleration-curves">3.1.1. Acceleration Curves</h3>
+<p>The <strong>&lt;AccelerationCurves&gt;</strong> child node should contain a list of acceleration curve nodes. These must be in ascending order, and should correspond to the number of power notches the train has.</p>
+<p>Currently, the only supported acceleration curve node is the <strong>&lt;OpenBVE&gt;</strong> node, supporting the following properties (as per a <strong>train.dat</strong> acceleration curve):</p>
+<div id="command">
+<strong>&lt;StageZeroAcceleration&gt;</strong> <em>Acceleration</em> <strong>&lt;/StageZeroAcceleration&gt;</strong>
+</div>
+<p><strong>Acceleration</strong> should be a positive floating-point number representing the acceleration at a speed of 0 km/h expressed in km/h/s.</p>
+<div id="command">
+<strong>&lt;StageOneAcceleration&gt;</strong> <em>Acceleration</em> <strong>&lt;/StageOneAcceleration&gt;</strong>
+</div>
+<p><strong>Acceleration</strong> should be a positive floating-point number representing the acceleration at a speed of <em>n</em> km/h expressed in km/h/s.</p>
+<div id="command">
+<strong>&lt;StageOneSpeed&gt;</strong> <em>Speed</em> <strong>&lt;/StageOneSpeed&gt;</strong>
+</div>
+<p><strong>Speed</strong> should be a positive floating-point number representing the reference speed for <em>StageOneAcceleration</em></p>
+<div id="command">
+<strong>&lt;StageTwoExponent&gt;</strong> <em>Exponent</em> <strong>&lt;/StageTwoExponent&gt;</strong>
+</div>
+<p><strong>Exponent</strong> should be a positive floating-point number representing the exponent used in the stage two speed calculation.</p>
+<div id="command">
+<strong>&lt;StageTwoSpeed&gt;</strong> <em>Speed</em> <strong>&lt;/StageTwoSpeed&gt;</strong>
+</div>
+<p><strong>Speed</strong> should be a positive floating-point number representing the reference speed for <em>StageTwoExponent</em></p>
+<p>Thus:</p>
+<p>If the speed of the train is 0 km/h, <em>a<sub>0</sub></em> indicates the acceleration output.</p>
+<p>If the speed of the train is between 0 km/h and <em>v<sub>1</sub></em>, the acceleration output is determined via the following formula:</p>
+<table style="border: none;">
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Acceleration between 0 km/h and v<sub>1</sub>, where x is the current speed of the train in km/h:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">ƒ</td>
+<td bgcolor="#FFD8C0" style="border: 1px dotted;">
+<font style="font-family: monospace;">
+a<sub>0</sub> + (a<sub>1</sub> - a<sub>0</sub>) * x / v<sub>1</sub>
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+<p>If the speed of the train is <em>v<sub>1</sub></em>, the acceleration output is indicated by <em>a<sub>1</sub></em>.</p>
+<p>If the speed of the train is between <em>v<sub>1</sub></em> and <em>v<sub>2</sub></em>, the acceleration output is determined via the following formula:</p>
+<table style="border: none;">
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Acceleration between v<sub>1</sub> and v<sub>2</sub>, where x is the current speed of the train in km/h:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">ƒ</td>
+<td bgcolor="#FFD8C0" style="border: 1px dotted;">
+<font style="font-family: monospace;">
+v<sub>1</sub> * a<sub>1</sub> / x
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+<p>If the speed of the train is greater than <em>v<sub>2</sub></em>, the acceleration output is determined via the following formula (for version 2.0 exponents):</p>
+<table style="border: none;">
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Acceleration above v<sub>2</sub>, where x is the current speed of the train in km/h:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">ƒ</td>
+<td bgcolor="#FFD8C0" style="border: 1px dotted;">
+<font style="font-family: monospace;">
+v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="312-power-handles">3.1.2. Power Handles</h3>
+<div id="note">
+<h4 id="driver-and-non-driver-cars"><em>Driver and non-driver cars:</em></h4>
+<p>The properties within this node will only be interpreted if the car is specified as the driver car.
+</div>
+<p>The <strong>&lt;Handle&gt;</strong> node specifies properties for the power handle, and supports the folowing properties:</p>
+<div id="command">
+<strong>&lt;Notches&gt;</strong> <em>NumberOfNotches</em> <strong>&lt;/Notches&gt;</strong>
+</div>
+<p><strong>NumberOfNotches</strong> should be a positive integer, setting the number of power notches.</p>
+<div id="command">
+<strong>SpringType</strong> <em>Type</em>
+</div>
+<div id="command-arguments">
+<em><strong>Type</strong></em>: The type of spring return fitted to this handle (if any).
+</div>
+<p>▸ Available options for <em>Type</em>:</p>
+<div id="command-arguments">
+<strong>None</strong>: No spring return mechanism is fitted.<br>
+<strong>Single</strong>: The spring return mechanism is reset when this handle is operated.<br>
+<strong>AnyHandle</strong>: The spring return mechanism is reset when any power or brake handle is operated.
+<strong>AnyKey</strong>: The spring return mechanism is reset when any keyboard key or joystick control is operated.
+</div>
+<h2 id="a-namebrakea-32-the-brake-section"><a name="brake"></a>■ 3.2. The Brake section</h2>
+<p>The <strong>&lt;Brake&gt;</strong> section specifies properties for the braking system of the car, and consists of the following child nodes, each corresponding the a component of the twin-pipe standard air-brake system:</p>
+<h3 id="air-compressor">Air compressor</h3>
+<p>An optional <strong>&lt;Compressor&gt;</strong> node, supporting the following properties:</p>
+<div id="command">
+<strong>&lt;Rate&gt;</strong> <em>CompressionRate</em> <strong>&lt;/Rate&gt;</strong>
+</div>
+<p><strong>CompressionRate</strong> should be a positive number, representing the compression rate in Pa/s.</p>
+<h3 id="main-reservoir">Main Reservoir</h3>
+<p>The <strong>&lt;MainReservoir&gt;</strong> node, supporting the following properties:</p>
+<div id="command">
+<strong>&lt;MinimumPressure&gt;</strong> <em>Pressure</em> <strong>&lt;/MinimumPressure&gt;</strong>
+</div>
+<p><strong>Pressure</strong> should be a positive number, representing the minimum pressure in the main reservoir in Pa.</p>
+<div id="command">
+<strong>&lt;MaximumPressure&gt;</strong> <em>Pressure</em> <strong>&lt;/MaximumPressure&gt;</strong>
+</div>
+<p><strong>Pressure</strong> should be a positive number, representing the maximum achievable pressure in the main reservoir in Pa.</p>
+<h3 id="auxiliary-reservoir">Auxiliary Reservoir</h3>
+<p>The <strong>&lt;AuxiliaryReservoir&gt;</strong> node, supporting the following properties:</p>
+<div id="command">
+<strong>&lt;ChargeRate&gt;</strong> <em>Rate</em> <strong>&lt;/ChargeRate&gt;</strong>
+</div>
+<p><strong>Rate</strong> should be a positive number, representing the charge rate of the auxiliary reservoir from the main reservoir in Pa/s.</p>
+<h3 id="equalizing-reservoir">Equalizing Reservoir</h3>
+<p>The <strong>&lt;EqualizingReservoir&gt;</strong> node, supporting the following properties:</p>
+<div id="command">
+<strong>&lt;NormalPressure&gt;</strong> <em>Pressure</em> <strong>&lt;/NormalPressure&gt;</strong>
+</div>
+<p><strong>Pressure</strong> should be a positive number, representing the normal pressure of this reservoir in Pa.</p>
+<h3 id="brake-pipe">Brake Pipe</h3>
+<p>The <strong>&lt;BrakePipe&gt;</strong> node, supporting the following properties:</p>
+<div id="command">
+<strong>&lt;NormalPressure&gt;</strong> <em>Pressure</em> <strong>&lt;/NormalPressure&gt;</strong>
+</div>
+<p><strong>Pressure</strong> should be a positive number, representing the normal nominal pressure of the brake pipe in Pa.</p>
+<div id="command">
+<strong>&lt;ChargeRate&gt;</strong> <em>Rate</em> <strong>&lt;/ChargeRate&gt;</strong>
+</div>
+<p><strong>Rate</strong> should be a positive number, representing the normal charge rate in Pa/s.</p>
+<div id="command">
+<strong>&lt;ServiceRate&gt;</strong> <em>Rate</em> <strong>&lt;/ServiceRate&gt;</strong>
+</div>
+<p><strong>Rate</strong> should be a positive number, representing the charge rate in Pa/s when making a service brake application.</p>
+<div id="command">
+<strong>&lt;EmergencyRate&gt;</strong> <em>Rate</em> <strong>&lt;/EmergencyRate&gt;</strong>
+</div>
+<p><strong>Rate</strong> should be a positive number, representing the charge rate in Pa/s when making an emergency brake application.</p>
+<h3 id="straight-air-pipe">Straight Air Pipe</h3>
+<p>The <strong>&lt;StraightAirPipe&gt;</strong> node, supporting the following properties:</p>
+<div id="command">
+<strong>&lt;ServiceRate&gt;</strong> <em>Rate</em> <strong>&lt;/ServiceRate&gt;</strong>
+</div>
+<p><strong>Rate</strong> should be a positive number, representing the charge rate in Pa/s when making a service brake application.</p>
+<div id="command">
+<strong>&lt;EmergencyRate&gt;</strong> <em>Rate</em> <strong>&lt;/EmergencyRate&gt;</strong>
+</div>
+<p><strong>Rate</strong> should be a positive number, representing the charge rate in Pa/s when making an emergency brake application.</p>
+<div id="command">
+<strong>&lt;ReleaseRate&gt;</strong> <em>Rate</em> <strong>&lt;/ReleaseRate&gt;</strong>
+</div>
+<p><strong>Rate</strong> should be a positive number, representing the charge rate in Pa/s when releasing a brake application.</p>
+<h3 id="brake-cylinder">Brake Cylinder</h3>
+<p>The <strong>&lt;BrakeCylinder&gt;</strong> node, supporting the following properties:</p>
+<div id="command">
+<strong>&lt;ServiceMaximumPressure&gt;</strong> <em>Pressure</em> <strong>&lt;/ServiceMaximumPressure&gt;</strong>
+</div>
+<p><strong>Pressure</strong> should be a positive number, representing the maximum pressure in Pa when making a full service brake application.</p>
+<div id="command">
+<strong>&lt;EmergencyMaximumPressure&gt;</strong> <em>Pressure</em> <strong>&lt;/EmergencyMaximumPressure&gt;</strong>
+</div>
+<p><strong>Pressure</strong> should be a positive number, representing the maximum pressure in Pa when making a full emergency brake application.</p>
+<div id="command">
+<strong>&lt;EmergencyRate&gt;</strong> <em>Rate</em> <strong>&lt;/EmergencyRate&gt;</strong>
+</div>
+<p><strong>Rate</strong> should be a positive number, representing the release rate in Pa/s during a full emergency brake application.</p>
+<div id="command">
+<strong>&lt;ReleaseRate&gt;</strong> <em>Rate</em> <strong>&lt;/ReleaseRate&gt;</strong>
+</div>
+<p><strong>Rate</strong> should be a positive number, representing the charge rate in Pa/s when releasing the brakes.</p>
+<h3 id="322-brake-handles">3.2.2. Brake Handles</h3>
+<div id="note">
+<h4 id="driver-and-non-driver-cars"><em>Driver and non-driver cars:</em></h4>
+<p>The properties within this node will only be interpreted if the car is specified as the driver car.
+</div>
+<p>The <strong>&lt;Handle&gt;</strong> node specifies properties for the brake handle, and supports the folowing properties:</p>
+<div id="command">
+<strong>&lt;Notches&gt;</strong> <em>NumberOfNotches</em> <strong>&lt;/Notches&gt;</strong>
+</div>
+<p><strong>NumberOfNotches</strong> should be a positive integer, setting the number of power notches.</p>
+<div id="command">
+<strong>SpringType</strong> <em>Type</em>
+</div>
+<div id="command-arguments">
+<em><strong>Type</strong></em>: The type of spring return fitted to this handle (if any).
+</div>
+<p>▸ Available options for <em>Type</em>:</p>
+<div id="command-arguments">
+<strong>None</strong>: No spring return mechanism is fitted.<br>
+<strong>Single</strong>: The spring return mechanism is reset when this handle is operated.<br>
+<strong>AnyHandle</strong>: The spring return mechanism is reset when any power or brake handle is operated.
+<strong>AnyKey</strong>: The spring return mechanism is reset when any keyboard key or joystick control is operated.
+</div>
 <h2 id="a-namecouplera-4-the-coupler-section"><a name="coupler"></a>■ 4. The Coupler section</h2>
 <p>Car nodes (or child file references) may optionally be separated by a <strong>&lt;Coupler&gt;</strong> node.</p>
 <p>This defines the coupler between the two cars, and supports the following properties:</p>
@@ -546,6 +765,15 @@
 <span><font color="#C00000">☀</font> Note</span>
 <p>The coupler object is not deformed when the coupler stretches / compresses.</p>
 </div>
+<h2 id="a-namemisca-5-miscellaneous-properties"><a name="misc"></a>■ 5. Miscellaneous Properties</h2>
+<div id="command">
+<strong>&lt;Plugin&gt;</strong> <em>PluginFile</em> <strong>&lt;/Plugin&gt;</strong>
+</div>
+<p><strong>PluginFile</strong> should contain the relative path to the security plugin DLL to load.</p>
+<div id="command">
+<strong>&lt;Description&gt;</strong> <em>Text</em> <strong>&lt;/Description&gt;</strong>
+</div>
+<p><strong>Text</strong> should contain the textual description for the train to display in the main menu.</p>
 
 </div>
 
