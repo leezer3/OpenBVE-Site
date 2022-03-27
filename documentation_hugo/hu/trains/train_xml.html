@@ -428,6 +428,7 @@
 <li><a href="#car">3. The Car section</a></li>
 <li><a href="#power">3.1. The Power section</a></li>
 <li><a href="#brake">3.2. The Brake section</a></li>
+<li><a href="#doors">3.3. The Doors section</a></li>
 <li><a href="#coupler">4. The Coupler section</a></li>
 <li><a href="#misc">5. Miscellaneous Properties</a></li>
 </ul>
@@ -746,6 +747,30 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <strong>AnyHandle</strong>: The spring return mechanism is reset when any power or brake handle is operated.
 <strong>AnyKey</strong>: The spring return mechanism is reset when any keyboard key or joystick control is operated.
 </div>
+<h2 id="a-namedoorsa-33-the-doors-section"><a name="doors"></a>■ 3.3. The Doors section</h2>
+<p>The <strong>&lt;Doors&gt;</strong> section specifies the properties of the passenger doors fitted to this car, and supports the following properties:</p>
+<div id="command">
+<strong>&lt;OpenSpeed&gt;</strong> <em>Speed</em> <strong>&lt;/OpenSpeed&gt;</strong>
+</div>
+<p><strong>Speed</strong> should be a positive number, setting the time taken for the doors to open in seconds.</p>
+<div id="command">
+<strong>&lt;CloseSpeed&gt;</strong> <em>Speed</em> <strong>&lt;/CloseSpeed&gt;</strong>
+</div>
+<p><strong>Speed</strong> should be a positive number, setting the time taken for the doors to close in seconds.</p>
+<div id="note">
+<span><font color="#C00000">☀</font> Note</span>
+<p><p>If the opening or closing speed is not set, this will be calculated using the duration of the open / close sounds.</p>
+<p>See the <strong>sound.cfg</strong> documentation for further details.</p>
+</p>
+</div>
+<div id="command">
+<strong>&lt;Width&gt;</strong> <em>DoorWidth</em> <strong>&lt;/Width&gt;</strong>
+</div>
+<p><strong>DoorWidth</strong> should be a positive number, setting the width of the door opening in meters.</p>
+<div id="command">
+<strong>&lt;Tolerance&gt;</strong> <em>DoorTolerance</em> <strong>&lt;/Tolerance&gt;</strong>
+</div>
+<p><strong>DoorTolerance</strong> should be a positive number, setting a tolerance in meters before the door is considered to be closed.</p>
 <h2 id="a-namecouplera-4-the-coupler-section"><a name="coupler"></a>■ 4. The Coupler section</h2>
 <p>Car nodes (or child file references) may optionally be separated by a <strong>&lt;Coupler&gt;</strong> node.</p>
 <p>This defines the coupler between the two cars, and supports the following properties:</p>
