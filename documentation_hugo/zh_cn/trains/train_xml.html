@@ -435,6 +435,11 @@
 <h2 id="a-nameoverviewa-1-概述"><a name="overview"></a>■ 1. 概述</h2>
 <p>The <strong>train.xml</strong> format is the native format for newer versions of OpenBVE, and is intended to replace the older train.dat format. It allows setting of many more properties, and is extensible.</p>
 <p>It may either be constructed as a single file containing the properties of the entire train, or as a single consist definition, along with child car files.</p>
+<div id="information">
+<h4 id="positions-within-cars">Positions Within Cars:</h4>
+<p>In the <strong>train.xml</strong> format, all positions are measured relative to the center of the car, which is assumed to be at 0,0,0
+Whilst this is a change for some parameters from the legacy BVE formats, it means that all positions should be consistant.
+</div>
 <h2 id="a-nametraina-2-the-train-section"><a name="train"></a>■ 2. The Train section</h2>
 <p>Whether using child car files, or a single file, the first node in each <strong>train.xml</strong> file must be the <strong><Train></strong> node.</p>
 <p>This supports the following properties:</p>
