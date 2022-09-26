@@ -78,7 +78,7 @@
           
           <ul class="third">
             
-            <li><a href="../../hu/objects/native/b3d.html">The B3D object</a>
+            <li><a href="../../hu/objects/native/b3d.html">A B3D objektum</a>
               
             </li>
             
@@ -210,11 +210,11 @@
       
       <ul class="second">
         
-        <li><a href="../../hu/trains/overview.html">Overview</a>
+        <li><a href="../../hu/trains/overview.html">Áttekintés</a>
           
         </li>
         
-        <li><a href="../../hu/trains/train_dat.html">The train.dat file</a>
+        <li><a href="../../hu/trains/train_dat.html">A train.dat fájl</a>
           
         </li>
         
@@ -306,7 +306,7 @@
       
       <ul class="second">
         
-        <li><a href="../../hu/plugins/overview.html">Overview</a>
+        <li><a href="../../hu/plugins/overview.html">Áttekintés</a>
           
         </li>
         
@@ -463,6 +463,16 @@
 <td>4</td>
 <td><em>SwitchSystem</em></td>
 <td>Immediate stop transponder for ATS-P. Placed about 25m/30m in front of a signal. Informs the train about the distance to the referenced signal and whether it is red or not. The train brakes immediately if the signal is red.<br /><br />Values for <em>SwitchSystem</em>:<br />-1: The train should not switch the safety system.<br />0: The train should automatically switch from ATS-SN to ATS-P when passing this beacon.</td>
+</tr>
+<tr>
+<td>-16777214</td>
+<td><em>SpeedLimit</em></td>
+<td>Generated automatically by the CSV / RW route parser for track sections with ATC. <em>SpeedLimit</em> passes the applicable speed limit in this case.</td>
+</tr>
+<tr>
+<td>-16777215</td>
+<td><em>TrackState</em></td>
+<td>Generated automaticall by the CSV / RW route parser. <em>TrackState</em> is set to <strong>1</strong> when the track is compatible with ATC, <strong>0</strong> otherwise.</td>
 </tr>
 </tbody>
 </table>

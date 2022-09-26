@@ -1128,7 +1128,7 @@ Track.FreeObj 1; 42 <br>
 <strong>Route.AccelerationDueToGravity</strong> <em>数值</em>
 </div>
 <div id="command-arguments">
-<strong>数值</strong>：一个正浮点数，表示以<strong>米每秒平方</strong>(m/s²)为单位的重力加速度。默认值是9.80665。
+<strong>Value</strong>: A positive floating-point number representing the acceleration due to gravity in <strong>meters per second squared</strong> (m/s2). The default value is 9.80665.
 </div>
 <hr>
 <div id="command">
@@ -1241,40 +1241,38 @@ z = cos(theta) * cos(phi)
 </tr>
 </tbody>
 </table>
-<p>将直角坐标(x,y,z)换算为球面坐标(θ,φ)的公式（y²≠1）：</p>
 <table style="border: none;">
 <tbody>
 <tr>
 <td width="16" valign="top"></td>
 <td>
-<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y²≠1:</em>
+<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y2≠1:</em>
 </td>
 </tr>
 <tr>
 <td width="16" valign="top">ƒ</td>
 <td bgcolor="#FFD8C0" style="border: 1px dotted;">
 <font style="font-family: monospace;">
-theta = -arctan(y/sqrt(x<sup>2</sup>+z<sup>2</sup>)) <br>
+theta = -arctan(y/sqrt(x<sup>2</sup>+z<sup>2</sup>))<br>
 phi = arctan(z,x)
 </font>
 </td>
 </tr>
 </tbody>
 </table>
-<p>将直角坐标(x,y,z)换算为球面坐标(θ,φ)的公式（y²=1）：</p>
 <table style="border: none;">
 <tbody>
 <tr>
 <td width="16" valign="top"></td>
 <td>
-<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y²=1:</em>
+<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y2=1:</em>
 </td>
 </tr>
 <tr>
 <td width="16" valign="top">ƒ</td>
 <td bgcolor="#FFD8C0" style="border: 1px dotted;">
 <font style="font-family: monospace;">
-theta = -y * pi/2 <br>
+theta = -y * pi/2<br>
 phi = 0
 </font>
 </td>
@@ -2239,7 +2237,14 @@ Of this, there is a 40% chance that this will be a snowflake.</p>
 <strong>0</strong>：不放置默认指示牌。<br>
 <strong>1</strong>：在右侧放置指示牌。
 </div>
-<p>该指令为上一个创建的车站添加停车点。如果有多个停车点，列车会停在设定的<em>编组数量</em>大于等于它的实际编组数量的第一个停车点。一个<em>编组数量</em>为0，代表允许所有编组列车停靠的停车点，在配合其他停车点放置时一般被放在最后。</p>
+<p>This command places a stop point for the last created station. If there is more than one stop defined for a station, the following rules are evaluated in order:</p>
+<ol>
+<li>If a stop point is defined with the exact number of cars in the train, this will be used.</li>
+<li>If an all cars stop is defined, this will be used.</li>
+<li>If no stop points are defined with a matching number of cars, the stop point with the closest greater number of cars will be used.</li>
+<li>If no stop points have a greater number of cars, the first stop point will be used.</li>
+</ol>
+<br>
 <div class="overflow-container">
 <table style="border: none;">
 <tbody>
@@ -2795,40 +2800,38 @@ z = cos(theta) * cos(phi)
 </tr>
 </tbody>
 </table>
-<p>将直角坐标(x,y,z)换算为球面坐标(θ,φ)的公式（y²≠1）：</p>
 <table style="border: none;">
 <tbody>
 <tr>
 <td width="16" valign="top"></td>
 <td>
-<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y²≠1:</em>
+<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y2≠1:</em>
 </td>
 </tr>
 <tr>
 <td width="16" valign="top">ƒ</td>
 <td bgcolor="#FFD8C0" style="border: 1px dotted;">
 <font style="font-family: monospace;">
-theta = -arctan(y/sqrt(x<sup>2</sup>+z<sup>2</sup>)) <br>
+theta = -arctan(y/sqrt(x<sup>2</sup>+z<sup>2</sup>))<br>
 phi = arctan(z,x)
 </font>
 </td>
 </tr>
 </tbody>
 </table>
-<p>将直角坐标(x,y,z)换算为球面坐标(θ,φ)的公式（y²=1）：</p>
 <table style="border: none;">
 <tbody>
 <tr>
 <td width="16" valign="top"></td>
 <td>
-<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y²=1:</em>
+<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y2=1:</em>
 </td>
 </tr>
 <tr>
 <td width="16" valign="top">ƒ</td>
 <td bgcolor="#FFD8C0" style="border: 1px dotted;">
 <font style="font-family: monospace;">
-theta = -y * pi/2 <br>
+theta = -y * pi/2<br>
 phi = 0
 </font>
 </td>

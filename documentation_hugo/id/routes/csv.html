@@ -1121,7 +1121,7 @@ Track.FreeObj 1; 42<br>
 <strong>Route.AccelerationDueToGravity</strong> <em>Value</em>
 </div>
 <div id="command-arguments">
-<strong>Value</strong>: A positive floating-point number representing the acceleration due to gravity in <strong>meters per second squared</strong> (m/s²). The default value is 9.80665.
+<strong>Value</strong>: A positive floating-point number representing the acceleration due to gravity in <strong>meters per second squared</strong> (m/s2). The default value is 9.80665.
 </div>
 <hr>
 <div id="command">
@@ -1237,7 +1237,7 @@ z = cos(theta) * cos(phi)
 <tr>
 <td width="16" valign="top"></td>
 <td>
-<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y²≠1:</em>
+<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y2≠1:</em>
 </td>
 </tr>
 <tr>
@@ -1256,7 +1256,7 @@ phi = arctan(z,x)
 <tr>
 <td width="16" valign="top"></td>
 <td>
-<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y²=1:</em>
+<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y2=1:</em>
 </td>
 </tr>
 <tr>
@@ -2222,7 +2222,14 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 <strong>0</strong>: No stop post is created.<br>
 <strong>1</strong>: A stop post is created on the right side.
 </div>
-<p>This command places a stop point for the last created station. If there is more than one stop defined for a station, a train is expected to stop at the first Track.Stop command for which <em>Cars</em> is greater than or equal to the number of cars the train has, where a value for <em>Cars</em> of 0 indicates a stop point regardless of the amount of cars to be used as the last stop point for a station.</p>
+<p>This command places a stop point for the last created station. If there is more than one stop defined for a station, the following rules are evaluated in order:</p>
+<ol>
+<li>If a stop point is defined with the exact number of cars in the train, this will be used.</li>
+<li>If an all cars stop is defined, this will be used.</li>
+<li>If no stop points are defined with a matching number of cars, the stop point with the closest greater number of cars will be used.</li>
+<li>If no stop points have a greater number of cars, the first stop point will be used.</li>
+</ol>
+<br>
 <div class="overflow-container">
 <table style="border: none;">
 <tbody>
@@ -2782,7 +2789,7 @@ z = cos(theta) * cos(phi)
 <tr>
 <td width="16" valign="top"></td>
 <td>
-<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y²≠1:</em>
+<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y2≠1:</em>
 </td>
 </tr>
 <tr>
@@ -2801,7 +2808,7 @@ phi = arctan(z,x)
 <tr>
 <td width="16" valign="top"></td>
 <td>
-<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y²=1:</em>
+<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y2=1:</em>
 </td>
 </tr>
 <tr>

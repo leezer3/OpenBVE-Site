@@ -504,6 +504,26 @@
 <td>Gets the callback function for playing sounds.</td>
 </tr>
 <tr>
+<td>PlayCarSoundDelegate</td>
+<td>PlaySound</td>
+<td>Gets the callback function for playing car-based sounds.</td>
+</tr>
+<tr>
+<td>AddInterfaceMessageDelegate</td>
+<td>N/A</td>
+<td>Gets the callback function for adding messages to the in-game UI.</td>
+</tr>
+<tr>
+<td>OpenDoorsDelegate</td>
+<td>N/A</td>
+<td>Gets the callback function for opening the train doors from the plugin.</td>
+</tr>
+<tr>
+<td>CloseDoorsDelegate</td>
+<td>N/A</td>
+<td>Gets the callback function for closing the train doors from the plugin.</td>
+</tr>
+<tr>
 <td>AISupport</td>
 <td>AISupport</td>
 <td>The extent to which the plugin supports the AI.</td>
@@ -620,6 +640,11 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 <td>Cars</td>
 <td>Gets the number of cars the train has.</td>
 </tr>
+<tr>
+<td>int</td>
+<td>HeadlightStates</td>
+<td>Gets the number of headlight states the train has.</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -728,9 +753,29 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 <td>Gets the state of the preceding train, or a null reference if there is no preceding train.</td>
 </tr>
 <tr>
+<td>List<Station></td>
+<td>Stations</td>
+<td>Gets the list of stations in the route.</td>
+</tr>
+<tr>
 <td>Handles</td>
 <td>Handles</td>
 <td>Gets or sets the virtual handles.</td>
+</tr>
+<tr>
+<td>DoorInterlockStates</td>
+<td>DoorInterlockState</td>
+<td>Gets or sets the door interlock state.</td>
+</tr>
+<tr>
+<td>int</td>
+<td>HeadlightsState</td>
+<td>Gets or sets the headlights state.</td>
+</tr>
+<tr>
+<td>int</td>
+<td>Destination</td>
+<td>Gets the current destination.</td>
 </tr>
 <tr>
 <td>Time</td>
@@ -744,8 +789,23 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 <tr>
 <td>string</td>
+<td>CurrentLanguageCode</td>
+<td>Gets the language code used by the host application.</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>DisableTimeAcceleration</td>
+<td>Enables or disables time acceleration in the host application.</td>
+</tr>
+<tr>
+<td>string</td>
 <td>DebugMessage</td>
 <td>Gets or sets the debug message the plugin wants the host application to display.</td>
+</tr>
+<tr>
+<td>CameraViewModes</td>
+<td>CameraViewMode</td>
+<td>Gets the current camera view mode in the host application.</td>
 </tr>
 </tbody>
 </table>

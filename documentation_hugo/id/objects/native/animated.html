@@ -1182,10 +1182,22 @@ Please also note that some combinations of prefix and infix operators are not re
 <td><code>routeLimit</code></td>
 <td>Returns the current route speed limit applying to this train in km/h.</td>
 </tr>
+<tr>
+<td><code>headlights</code></td>
+<td>Gets the current state of the train&rsquo;s headlights.</td>
+</tr>
+<tr>
+<td><code>wheelSlip</code></td>
+<td>Returns 1 if the train is experincing wheelslip in the current car, 0 otherwise.</td>
+</tr>
+<tr>
+<td><code>wheelSlip[carIndex]</code></td>
+<td>Returns 1 if the train is experinging wheelslip in the specified car, 0 otherwise.</td>
+</tr>
 </tbody>
 </table>
 </div>
-<h5 id="-kereta-rem">● Kereta (rem)</h5>
+<h5 id="-trains-brake">● Trains (brake)</h5>
 <div class="overflow-container">
 <table class='type0 responsive-table-2col'>
 <thead>
@@ -1238,7 +1250,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tbody>
 </table>
 </div>
-<h5 id="-kereta-pintu">● Kereta (pintu)</h5>
+<h5 id="-trains-doors">● Trains (doors)</h5>
 <div class="overflow-container">
 <table class='type0 responsive-table-2col'>
 <thead>
@@ -1443,7 +1455,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <th>Return values</th>
 <th></th>
 <th>pluginState[271]</th>
-<th>Arti</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
@@ -1618,7 +1630,7 @@ Please also note that some combinations of prefix and infix operators are not re
 <table class='type0'>
 <thead>
 <tr>
-<th>Animasi</th>
+<th>Animation</th>
 <th>Object</th>
 <th>Performance</th>
 </tr>
@@ -1652,17 +1664,17 @@ Please also note that some combinations of prefix and infix operators are not re
 <tr>
 <td>Rotation</td>
 <td>Has partially transparent faces</td>
-<td>Buruk</td>
+<td>Bad</td>
 </tr>
 <tr>
-<td>Pergeseran tekstur</td>
+<td>Texture shifts</td>
 <td>Has only opaque faces</td>
-<td>Buruk</td>
+<td>Bad</td>
 </tr>
 <tr>
-<td>Pergeseran tekstur</td>
+<td>Texture shifts</td>
 <td>Has partially transparent faces</td>
-<td>Buruk</td>
+<td>Bad</td>
 </tr>
 </tbody>
 </table>

@@ -210,7 +210,7 @@
       
       <ul class="second">
         
-        <li><a href="../../ja/trains/overview.html">Overview</a>
+        <li><a href="../../ja/trains/overview.html">概要</a>
           
         </li>
         
@@ -306,7 +306,7 @@
       
       <ul class="second">
         
-        <li><a href="../../ja/plugins/overview.html">Overview</a>
+        <li><a href="../../ja/plugins/overview.html">概要</a>
           
         </li>
         
@@ -346,7 +346,7 @@
           
         </li>
         
-        <li><a href="../../ja/information/distribution.html">Distributing add-ons</a>
+        <li><a href="../../ja/information/distribution.html">アドオンの配布</a>
           
         </li>
         
@@ -431,7 +431,7 @@
 <li><a href="#train">6. The Train namespace</a></li>
 <li><a href="#structure">7. The Structure namespace</a></li>
 <li><a href="#texture">8. The Texture namespace</a></li>
-<li><a href="#cycle">9. The Cycle namespace</a></li>
+<li><a href="#cycle">9. Cycle 名前空間</a></li>
 <li><a href="#signal">10. The Signal namespace</a></li>
 <li><a href="#track">11. The Track namespace</a>
 <ul class='contents'>
@@ -445,7 +445,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="a-nameoverviewa-1-概観"><a name="overview"></a>■ 1. 概観</h2>
+<h2 id="a-nameoverviewa-1-概要"><a name="overview"></a>■ 1. 概要</h2>
 <p>CSVルートは、テキストファイルに記述することで路線データを作成できます。</p>
 <p>ファイルは任意のエンコードで記述されたプレーンテキストですが <a href="../../ja/information/encodings.html">encoding</a>、好ましい選択としてはバイトオーダー付きのUTF-8です。 <a href="../../ja/information/numberformats.html">parsing model</a> に用いる数字は <strong>ルーズ</strong>（特に明記しない限りは）ですが、 それでも出力にあたっては <em>厳密な</em> 出力をすることが望ましいです。  ファイルは任意のフォルダに格納できますが、カレントフォルダもしくは相対パスは <em>Railway</em> と <em>Train</em> フォルダ 以下に存在しなければなりません。 ファイル名は任意ですが、 拡張子は必ず <strong>.csv</strong> を用います。 ファイルは基本的に上から下に向かって解釈されていき、各行は式ごとに分割され、左から右に向かって解釈されていきます。</p>
 <p>ルートファイルは、(Structure 名前空間)で定義された一連の命令セットにより、ルートデータ内で一貫して共通で利用されます 。 路線データ向けの追加のプロパティ、路線側が定義した既定の列車、沿線の背景のイメージファイルも同様に定義することができます。 最後に、ルートファイルは Track 名前空間でのコマンドにより指示します。 ここでは、 線路の座標 (殆どの場合、単位はメートル) を指定することにより、線路をカーブさせるタイミングや駅を設置したり、 壁や土手などを開始したり終わらせたりします。一般的には、 Track 名前空間はその他の名前空間を予め記述し、定義した後に記述する必要があります。</p>
@@ -1121,7 +1121,7 @@ Track.FreeObj 1; 42<br>
 <strong>Route.AccelerationDueToGravity</strong> <em>Value</em>
 </div>
 <div id="command-arguments">
-<strong>Value</strong>: <strong>メートル毎秒の二乗</strong> (m/s²) で重力による加速度を表す正の浮動小数点数。 デフォルト値は 9.80665 です。
+<strong>Value</strong>: A positive floating-point number representing the acceleration due to gravity in <strong>meters per second squared</strong> (m/s2). The default value is 9.80665.
 </div>
 <hr>
 <div id="command">
@@ -1237,7 +1237,7 @@ z = cos(theta) * cos(phi)
 <tr>
 <td width="16" valign="top"></td>
 <td>
-<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y²≠1:</em>
+<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y2≠1:</em>
 </td>
 </tr>
 <tr>
@@ -1256,7 +1256,7 @@ phi = arctan(z,x)
 <tr>
 <td width="16" valign="top"></td>
 <td>
-<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y²=1:</em>
+<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y2=1:</em>
 </td>
 </tr>
 <tr>
@@ -1470,7 +1470,7 @@ Train.File <em>FolderName</em>
 </tr>
 <tr>
 <td>DynamicLight</td>
-<td>Defines dynamic lighting sets.</td>
+<td>ダイナミックライティングを定義します。</td>
 </tr>
 </tbody>
 </table>
@@ -1495,7 +1495,7 @@ Train.File <em>FolderName</em>
 <p>選択した繰り返しの回数に関係なく、テクスチャの左端と右端がシームレスにフィットする事を確認する必要があります。 また、画像の上部と下部の10%からサンプリングする上部と下部の蓋が作成されることも考慮に入れて下さい。 山の頂上のような極端なものが上部の蓋に入り込まないようにするため、画像の上部10%の中に入り込まないように注意する必要があります。</p>
 <p>The image loaded into Texture.Background(0) is displayed at the beginning of the route, unless a Track.Back command at the beginning of the route requests a different image.</p>
 <p>As an alternative <em><strong>Dynamic or Object</strong></em> based backgrounds may be used. The implementation of these is described upon this page:</p>
-<p><a href="../../ja/routes/xml/dynamicbackground.html">Dynamic &amp; Object Based Backgrounds</a></p>
+<p><a href="../../ja/routes/xml/dynamicbackground.html">「動的な」 &amp; オブジェクトベースの背景</a></p>
 <hr>
 <div id="command">
 <strong>Texture.Background</strong>(<em>BackgroundTextureIndex</em>)<font color="gray">.Load</font> <em>FileName</em>
@@ -1513,7 +1513,7 @@ Train.File <em>FolderName</em>
 <strong>Texture.Background</strong>(<em>BackgroundTextureIndex</em>)<strong>.X</strong> <em>RepetitionCount</em>
 </div>
 <div id="command-arguments">
-<em><strong>RepetitionCount</strong></em>: The number of times the background image is repeated in a full circle. The default value is 6.
+<em><strong>RepetitionCount</strong></em>: 背景の画像で周囲を完全な円で満たすために繰り返す回数。デフォルト値は6です。
 </div>
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
@@ -1521,7 +1521,7 @@ Train.File <em>FolderName</em>
 </div>
 <hr>
 <div id="command">
-<strong>Texture.Background</strong>(<em>BackgroundTextureIndex</em>)<strong>.Aspect</strong> <em>Mode</em>
+<strong>Texture.Background</strong>(<em>背景テクスチャのインデックス番号</em>)<strong>.Aspect</strong> <em>Mode</em>
 </div>
 <div id="command-arguments">
 <em><strong>Mode</strong></em>: The mode of aspect ratio handling to use. The default value is 0 (fixed).
@@ -1667,10 +1667,10 @@ With Track<br>
 </tbody>
 </table>
 </div>
-<p>The texture you start with should have a sharp shape, usually oval. The shape should be fully saturated in the core and blend into pure white at its outer rim. The surroundings of the shape can be either pure black (A) or pure white (B).</p>
+<p>最初のテクスチャは、通常は楕円形のシャープな形状である必要があります。 形状は中心から完全に満たされ、外側の縁で真っ白に溶け込ませる必要があります。形状の周囲は完全な黒 (A) または完全な白 (B) の何れかです。</p>
 <p>When openBVE loads the glow texture, it will replace all purely black pixels with purely white pixels, thus arriving at (B). From there, the image is inverted (C), then hue-shifted by 180 degrees (D). Compared to (B), this has the overall effect of inverting the lightness of the image, i.e. fully saturated pixels will be left unchanged (e.g. the core), while bright pixels (such as the outer rim of the shape) will become dark, and vice versa. Then, the image is gamma-corrected to further darken the dark parts (E), and finally, the image is blurred slightly (F).</p>
 <p>The resulting texture is always additively blended. This means that instead of directly drawing the texture onto the screen, the pixels of the texture are added to the screen pixels. Here, adding black (0) does not change the screen pixels, while adding a fully satured color channel (1) will result in a fully satured color channel, e.g. adding white produces white. Keep in mind that when designing the textures, you will have to follow the inverse rules, e.g. design the image as depicted in (A) or (B), while having in mind how it will be processed afterward.</p>
-<h2 id="a-nametracka-11-the-track-namespace"><a name="track"></a>■ 11. The Track namespace</h2>
+<h2 id="a-nametracka-11-track-名前空間"><a name="track"></a>■ 11. Track 名前空間</h2>
 <p>Commands from this namespace define the track layout. Commands from this namespace should appear after commands from any of the other namespaces, and they usually form the largest part of the route file.</p>
 <div id="notice">
 <h4 id="use-of-track-positions">Use of track positions</h4>
@@ -2121,7 +2121,7 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 <strong>ATS</strong> or <strong>0</strong>: ATS should be used from this station on. The following track is not be equipped with ATC.<br>
 <strong>ATC</strong> or <strong>1</strong>: ATC should be used from this station on. The following track is equipped with ATC.
 </div>
-<p>This command initializes a new station. It should be placed at the beginning of the station platform. In order to finalize the creation of a station, use the Track.Stop command to place stop points following this command. All following Track.Stop commands will be associated to this station. At least one Track.Stop command must follow if trains are expected to stop at this station.</p>
+<p>このコマンドは、新しい駅を作成し、初期化します。 このコマンドは駅の一番進行方向手前に設置しなければなりません。 駅の作成を完了させるには、Track.Stopコマンドを使用し、このコマンドの後に停止位置目標を設置します。これ以降の全てのTrack.Stopコマンドは、この設置される駅に関連付けられます。 列車をこの駅に停車させる場合は、少なくとも一つ、Track.Stopを設置しなければなりません。</p>
 <p><strong>Special Features:</strong></p>
 <p>Stations can be marked as &ldquo;changing ends&rdquo; in the departure time. At such stations, when the departure time has been reached, the train will automatically jump to the next station. This feature is intended to fake a reverse of traveling direction without the need to jump to stations manually from the menu.</p>
 <p>Similarly, stations can be marked as a &ldquo;jump point&rdquo; in the departure time. At such stations, when the departure time has been reached, the train will automatically jump to the specified station index.</p>
@@ -2201,7 +2201,7 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 </tbody>
 </table>
 </div>
-<p>The command should be placed at the beginning of the station platform. In order to finalize the creation of a station, use the Track.Stop command to place stop points following this command. All following Track.Stop commands will be associated to this station. At least one Track.Stop command must follow if trains are expected to stop at this station.</p>
+<p>コマンドは、駅のホームの先頭の位置に配置する必要があります。 駅の作成を完了させるには、Track.Stopコマンドを使用し、このコマンドの後に個別の両数の停止位置目標を設置する必要があります。 これ以降のTrack.Stopコマンドは、この設置された駅に関連付けられて個別の車両数に合わせた停止位置目標が設定されます。 列車をこの駅に停車させる場合は、少なくとも一つのTrack.Stopコマンドで停止位置目標を設置しなければなりません。</p>
 <p>Stations can be marked as &ldquo;changing ends&rdquo; in the departure time. At such stations, when the departure time has been reached, the train will automatically jump to the next station. This feature is intended to fake a reverse of traveling direction without the need to jump to stations manually from the menu.</p>
 <div id="warning-nontitle">
 <span>⚠</span><p>The first occuring station in a route may not be of the Terminal type.</p>
@@ -2222,7 +2222,14 @@ Otherwise, the objects defined in Structure.CrackR will be used.</p>
 <strong>0</strong>: No stop post is created.<br>
 <strong>1</strong>: A stop post is created on the right side.
 </div>
-<p>This command places a stop point for the last created station. If there is more than one stop defined for a station, a train is expected to stop at the first Track.Stop command for which <em>Cars</em> is greater than or equal to the number of cars the train has, where a value for <em>Cars</em> of 0 indicates a stop point regardless of the amount of cars to be used as the last stop point for a station.</p>
+<p>このコマンドは、作成された駅の停止位置目標を配置します。 もし駅に複数の車両の両数に合わせた個別の、または共通の停止位置目標を定義する場合、次のルールが適用されます:</p>
+<ol>
+<li>もし、編成の車両数が明確に設定されている場合は、その停止位置位置目標が使用されます。</li>
+<li>If an all cars stop is defined, this will be used.</li>
+<li>車両数が一致する停止位置目標が設定されていない場合は、車両数が最も多く定義されている停止位置目標が使用されます。</li>
+<li>もし運転する車両数より多い両数に対応する停止位置目標が見つからなかった場合は、進行方向に向かって一番手前に設置された停止位置目標に停車します。</li>
+</ol>
+<br>
 <div class="overflow-container">
 <table style="border: none;">
 <tbody>
@@ -2782,7 +2789,7 @@ z = cos(theta) * cos(phi)
 <tr>
 <td width="16" valign="top"></td>
 <td>
-<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y²≠1:</em>
+<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y2≠1:</em>
 </td>
 </tr>
 <tr>
@@ -2801,7 +2808,7 @@ phi = arctan(z,x)
 <tr>
 <td width="16" valign="top"></td>
 <td>
-<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y²=1:</em>
+<em>Converting a cartesian direction (x,y,z) into a spherical direction (theta,phi) for y2=1:</em>
 </td>
 </tr>
 <tr>

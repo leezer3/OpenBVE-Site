@@ -78,7 +78,7 @@
           
           <ul class="third">
             
-            <li><a href="../../hu/objects/native/b3d.html">The B3D object</a>
+            <li><a href="../../hu/objects/native/b3d.html">A B3D objektum</a>
               
             </li>
             
@@ -210,11 +210,11 @@
       
       <ul class="second">
         
-        <li><a href="../../hu/trains/overview.html">Overview</a>
+        <li><a href="../../hu/trains/overview.html">Áttekintés</a>
           
         </li>
         
-        <li><a href="../../hu/trains/train_dat.html">The train.dat file</a>
+        <li><a href="../../hu/trains/train_dat.html">A train.dat fájl</a>
           
         </li>
         
@@ -306,7 +306,7 @@
       
       <ul class="second">
         
-        <li><a href="../../hu/plugins/overview.html">Overview</a>
+        <li><a href="../../hu/plugins/overview.html">Áttekintés</a>
           
         </li>
         
@@ -640,6 +640,11 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 <td>Cars</td>
 <td>Gets the number of cars the train has.</td>
 </tr>
+<tr>
+<td>int</td>
+<td>HeadlightStates</td>
+<td>Gets the number of headlight states the train has.</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -748,9 +753,29 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 <td>Gets the state of the preceding train, or a null reference if there is no preceding train.</td>
 </tr>
 <tr>
+<td>List<Station></td>
+<td>Stations</td>
+<td>Gets the list of stations in the route.</td>
+</tr>
+<tr>
 <td>Handles</td>
 <td>Handles</td>
 <td>Gets or sets the virtual handles.</td>
+</tr>
+<tr>
+<td>DoorInterlockStates</td>
+<td>DoorInterlockState</td>
+<td>Gets or sets the door interlock state.</td>
+</tr>
+<tr>
+<td>int</td>
+<td>HeadlightsState</td>
+<td>Gets or sets the headlights state.</td>
+</tr>
+<tr>
+<td>int</td>
+<td>Destination</td>
+<td>Gets the current destination.</td>
 </tr>
 <tr>
 <td>Time</td>
@@ -764,8 +789,23 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 <tr>
 <td>string</td>
+<td>CurrentLanguageCode</td>
+<td>Gets the language code used by the host application.</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>DisableTimeAcceleration</td>
+<td>Enables or disables time acceleration in the host application.</td>
+</tr>
+<tr>
+<td>string</td>
 <td>DebugMessage</td>
 <td>Gets or sets the debug message the plugin wants the host application to display.</td>
+</tr>
+<tr>
+<td>CameraViewModes</td>
+<td>CameraViewMode</td>
+<td>Gets the current camera view mode in the host application.</td>
 </tr>
 </tbody>
 </table>
