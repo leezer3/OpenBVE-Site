@@ -443,6 +443,9 @@
 <li>Rotation - rotating objects around three independent axes</li>
 <li>Texture shifts - allowing to shift the texture coordinates of objects in two independent directions</li>
 </ul>
+<div id="warning-nontitle">
+<span>⚠</span><p>If an animated object is used within a group, any distance based functions such as <strong>CameraDistance</strong> refer to the relative transformed center of the child object, not that of the parent object.</p>
+</div>
 <h5 id="-a-little-formality">● A little formality</h5>
 <p>The file is a plain text file encoded in any arbitrary <a href="../../../fr/information/encodings.html">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../../fr/information/numberformats.html">parsing model</a> for numbers is <strong>Strict</strong>. The file name is arbitrary, but must have the extension <strong>.animated</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
 <h2 id="a-namedescriptiona-2-sections"><a name="description"></a>■ 2. Sections</h2>
