@@ -528,100 +528,29 @@
 </div>
 <h2 id="-sonidos-reproducidos-en-todos-los-carros-cuando-aplique">■ Sonidos reproducidos en todos los carros (cuando aplique)</h2>
 <div class="overflow-container">
-<table class='type0'>
-<thead>
-<tr>
-<th>File</th>
-<th>Effect</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>air.wav</td>
-<td>Played occasionally when the pressure in the brake cylinder is decreased from a non-high value to a non-zero value.</td>
-</tr>
-<tr>
-<td>airhigh.wav</td>
-<td>Played occasionally when the pressure in the brake cylinder is decreased from a high value.</td>
-</tr>
-<tr>
-<td>airzero.wav</td>
-<td>Played occasionally when the pressure in the brake cylinder is decreased to zero value.</td>
-</tr>
-<tr>
-<td>cpstart.wav</td>
-<td>Played once when the air compressor is activated.</td>
-</tr>
-<tr>
-<td>cploop.wav</td>
-<td>Played in a loop for the duration the air compressor is active.</td>
-</tr>
-<tr>
-<td>cpend.wav</td>
-<td>Played once when the air compressor is deactivated.</td>
-</tr>
-<tr>
-<td>doorcls.wav</td>
-<td>Played once when the doors close.</td>
-</tr>
-<tr>
-<td>doorclsl.wav</td>
-<td>Played once when the left doors close. Has precedence over doorscls.wav.</td>
-</tr>
-<tr>
-<td>doorclsr.wav</td>
-<td>Played once when the right doors close. Has precedence over doorscls.wav.</td>
-</tr>
-<tr>
-<td>dooropn.wav</td>
-<td>Played once when the doors open.</td>
-</tr>
-<tr>
-<td>dooropnl.wav</td>
-<td>Played once when the left doors open. Has precedence over doorscls.wav.</td>
-</tr>
-<tr>
-<td>dooropnr.wav</td>
-<td>Played once when the right doors open. Has precedence over doorscls.wav.</td>
-</tr>
-<tr>
-<td>emrbrake.wav</td>
-<td>Played once when the emergency brakes are activated.</td>
-</tr>
-<tr>
-<td>flangei.wav</td>
-<td>Defines a set of sounds played in a loop when the flange of the wheels rub against the rails. The sounds are played at a pitch proportional to the speed. The recordings should correspond to a speed of 45 km/h. The non-negative integer i corresponds to the Train.Flange command in CSV routes where route developers can select which of the flangei.wav sounds to play for a certain type of rail.</td>
-</tr>
-<tr>
-<td>loop.wav</td>
-<td>Played in a loop all the time for the duration of the simulation.</td>
-</tr>
-<tr>
-<td>point.wav</td>
-<td>Played once per axle when the train crosses a pointwork.</td>
-</tr>
-<tr>
-<td>rub.wav</td>
-<td>Played in a loop when the brake shoe rubs against the wheels. The sound is played at a pitch inversely proportional to the speed, and the volume of the sound decreases with increasing speeds.</td>
-</tr>
-<tr>
-<td>runi.wav</td>
-<td>Defines a set of sounds played in a loop for the duration the train moves. The sounds are played at a pitch proportional to the speed. The recordings should correspond to a speed of 90 km/h. The non-negative integer i corresponds to the Train.Run command in CSV routes where route developers can select which of the runi.wav sounds to play for a certain type of rail.</td>
-</tr>
-<tr>
-<td>springl.wav</td>
-<td>Played once when the train sways to the left side.</td>
-</tr>
-<tr>
-<td>springr.wav</td>
-<td>Played once when the train sways to the right side.</td>
-</tr>
-<tr>
-<td>motori.wav</td>
-<td>Defines a set of sounds played in a loop as instructed by the train.dat. The pitch, volume and index i are defined in the #MOTOR_Xn sections in the train.dat, and the sounds should be developed in conjunction with the train.dat.</td>
-</tr>
-</tbody>
-</table>
+<p>| File | Effect | Position | Sound Radius |
+| — | — | — |
+| air.wav | Played occasionally when the pressure in the brake cylinder is decreased from a non-high value to a non-zero value. | Center | 5.0m |
+| airhigh.wav | Played occasionally when the pressure in the brake cylinder is decreased from a high value. | Center | 5.0m |
+| airzero.wav | Played occasionally when the pressure in the brake cylinder is decreased to zero value. | Center | 5.0m |
+| cpstart.wav | Played once when the air compressor is activated. | Center | 10.0m |
+| cploop.wav | Played in a loop for the duration the air compressor is active. | Center | 10.0m |
+| cpend.wav | Played once when the air compressor is deactivated. | Center | 10.0m |
+| doorcls.wav | Played once when the doors close. | Left / Right | 5.0m |
+| doorclsl.wav | Played once when the left doors close. Has precedence over doorscls.wav. | Left | 5.0m |
+| doorclsr.wav | Played once when the right doors close. Has precedence over doorscls.wav. | Right | 5.0m |
+| dooropn.wav | Played once when the doors open. | Left / Right | 5.0m |
+| dooropnl.wav | Played once when the left doors open. Has precedence over doorscls.wav. | Left | 5.0m |
+| dooropnr.wav | Played once when the right doors open. Has precedence over doorscls.wav. | Right | 5.0m |
+| emrbrake.wav | Played once when the emergency brakes are activated. | Center | 10.0m |
+| flangei.wav | Defines a set of sounds played in a loop when the flange of the wheels rub against the rails. The sounds are played at a pitch proportional to the speed. The recordings should correspond to a speed of 45 km/h. The non-negative integer i corresponds to the Train.Flange command in CSV routes where route developers can select which of the flangei.wav sounds to play for a certain type of rail. | Center | 10.0m |
+| loop.wav | Played in a loop all the time for the duration of the simulation. | Center | 10.0m |
+| point.wav | Played once per axle when the train crosses a pointwork. | FrontAxle / RearAxle | 5.0m |
+| rub.wav | Played in a loop when the brake shoe rubs against the wheels. The sound is played at a pitch inversely proportional to the speed, and the volume of the sound decreases with increasing speeds. | Center | 10.0m |
+| runi.wav | Defines a set of sounds played in a loop for the duration the train moves. The sounds are played at a pitch proportional to the speed. The recordings should correspond to a speed of 90 km/h. The non-negative integer i corresponds to the Train.Run command in CSV routes where route developers can select which of the runi.wav sounds to play for a certain type of rail. | Center | 10.0m |
+| springl.wav | Played once when the train sways to the left side. | Left | 5.0m |
+| springr.wav | Played once when the train sways to the right side. | Right | 5.0m |
+| motori.wav | Defines a set of sounds played in a loop as instructed by the train.dat. The pitch, volume and index i are defined in the #MOTOR_Xn sections in the train.dat, and the sounds should be developed in conjunction with the train.dat. | Center | 10.0m |</p>
 </div>
 
 </div>
