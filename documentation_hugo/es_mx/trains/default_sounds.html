@@ -421,18 +421,6 @@
 
 <div id="content">
   <p>Without using a sound.cfg file, openBVE looks for a series of optional sound files within the train folder.</p>
-<p>The following positions are used:</p>
-<ul>
-<li><strong>Panel</strong> - The sound origin is centered 1m forward of the driver&rsquo;s eye position.</li>
-<li><strong>Cab</strong> - The sound origin is centered 0.5m behind the driver&rsquo;s eye position.</li>
-<li><strong>Left</strong> - The sound origin is centered 1.3m to the left of the center of the car.</li>
-<li><strong>Right</strong> - The sound origin is centered 1.3m to the right of the center of the car.</li>
-<li><strong>Front</strong> - The sound origin is centered on the front of the car.</li>
-<li><strong>Rear</strong> - The sound origin is centered on the rear of the car.</li>
-<li><strong>Center</strong> - The sound origin is at the absolute center of the car.</li>
-<li><strong>FrontAxle</strong> - The sound origin is at the front axle of the car.</li>
-<li><strong>RearAxle</strong> - The sound origin is at the rear axle of the car.</li>
-</ul>
 <h2 id="-sounds-played-whilst-only-in-the-cab">■ Sounds played whilst only in the cab</h2>
 <div class="overflow-container">
 <table class='type0'>
@@ -440,88 +428,60 @@
 <tr>
 <th>File</th>
 <th>Effect</th>
-<th>Position</th>
-<th>Sound Radius</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>adjust.wav</td>
 <td>Played once when the train stops at a station, but needs to correct its stop position.</td>
-<td>Panel</td>
-<td>2.0m</td>
 </tr>
 <tr>
 <td>ats.wav</td>
 <td>Played in a loop when the built-in security system ATS rings its bell. This happens when passing certain transponders or when the security system is deactivated but power is applied.</td>
-<td>Center</td>
-<td>5.0m</td>
 </tr>
 <tr>
 <td>atscnt.wav</td>
 <td>Played in a loop when the built-in security system ATS rings its chime. This happens after acknowledging the bell when passing S-type transponders.</td>
-<td>Panel</td>
-<td>2.0m</td>
 </tr>
 <tr>
 <td>brake.wav</td>
 <td>For trains with automatic air brake, is played when the handle is moved into the SRV or EMG position. For other trains, is played when the brake notch is decreased.</td>
-<td>Center</td>
-<td>5.0m</td>
 </tr>
 <tr>
 <td>ding.wav</td>
 <td>Played once when the built-in security systems ATS-P or ATC change some states, e.g. when ATS-P activates the PTN APPROACH lamp, or when ATC changes the current speed restriction.</td>
-<td>Panel</td>
-<td>2.0m</td>
 </tr>
 <tr>
 <td>eb.wav</td>
 <td>Played in a loop when the built-in EB system rings.</td>
-<td>Panel</td>
-<td>2.0m</td>
 </tr>
 <tr>
 <td>halt.wav</td>
 <td>Played once or in a loop (depending on the train.dat setting) when the pass alarm system warns about an approaching station stop.</td>
-<td>Cab</td>
-<td>2.0m</td>
 </tr>
 <tr>
 <td>klaxon.wav</td>
 <td>Played once when the primary horn is applied.</td>
-<td>Front</td>
-<td>5.0m</td>
 </tr>
 <tr>
 <td>klaxon0.wav</td>
 <td>Played once when the primary horn is applied. Has precedence over klaxon.wav.</td>
-<td>Front</td>
-<td>5.0m</td>
 </tr>
 <tr>
 <td>klaxon1.wav</td>
 <td>Played once when the secondary horn is applied.</td>
-<td>Front</td>
-<td>5.0m</td>
 </tr>
 <tr>
 <td>klaxon2.wav</td>
 <td>Played in a loop when the music horn is applied.</td>
-<td>Front</td>
-<td>5.0m</td>
 </tr>
 <tr>
 <td>toats.wav</td>
 <td>Played once when the built-in security system is switched from ATC to ATS.</td>
-<td>Panel</td>
-<td>2.0m</td>
 </tr>
 <tr>
 <td>toatc.wav</td>
 <td>Played once when the built-in security system is switched from ATS to ATC.</td>
-<td>Panel</td>
-<td>2.0m</td>
 </tr>
 </tbody>
 </table>
