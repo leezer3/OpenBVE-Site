@@ -454,6 +454,8 @@ Version 1.0
 </div>
 <p>Assigns a run sound. The non-negative integer <em>Index</em> represents the type of run sound to use. Route developers can choose which run sound to play for a given piece of track. Please see the page about <a href="../../es_mx/information/standards.html">standards</a> for further information.</p>
 <p>The sound is played at a pitch proportional to the speed. The recording should correspond to a speed of 90 km/h.</p>
+<p><strong>Position:</strong> Center</p>
+<p><strong>Radius:</strong> 10.0m</p>
 <hr>
 <h5 id="-flange">● [Flange]</h5>
 <div id="command">
@@ -461,40 +463,62 @@ Index = <em>FileName</em>
 </div>
 <p>Assigns a flange sound. The non-negative integer <em>Index</em> represents the type of flange sound to use. Route developers can choose which flange sound to play for a given piece of track. Please see the page about <a href="../../es_mx/information/standards.html">standards</a> for further information.</p>
 <p>The sound is played at a pitch proportional to the speed. The recording should correspond to a speed of 45 km/h.</p>
+<p><strong>Position:</strong> Center</p>
+<p><strong>Radius:</strong> 10.0m</p>
 <hr>
 <h5 id="-motor">● [Motor]</h5>
 <div id="command">
 Index = <em>FileName</em>
 </div>
 <p>Assigns a motor sound. The non-negative integer <em>Index</em> represents the index of the motor sound that can be referenced in the #MOTOR_<em>Xn</em> sections of the train.dat. Please see the documentation for the <a href="../../es_mx/trains/train_dat.html">train.dat</a>  for more information.</p>
+<p><strong>Position:</strong> Center</p>
+<p><strong>Radius:</strong> 10.0m</p>
 <hr>
 <h5 id="-switch">● [Switch]</h5>
 <div id="command">
 Index = <em>FileName</em>
 </div>
 <p>Assigns a switch sound- These are played once per axle when the train crosses a block containing pointwork. The non-negative integer <em>Index</em> represents the type of switch sound to use. Route developers can choose which flange sound to play for a given piece of track. Please see the page about <a href="../../es_mx/information/standards.html">standards</a> for further information.</p>
+<p><strong>Position:</strong> FrontAxle / RearAxle</p>
+<p><strong>Radius:</strong> 5.0m</p>
 <hr>
 <h5 id="-brake">● [Brake]</h5>
 <div id="command">
 BC Release High = <em>FileName</em>
 </div>
 <p>Played occasionally when the pressure in the brake cylinder is decreased from a high value.</p>
+<p><strong>Position:</strong> Center</p>
+<p><strong>Radius:</strong> 5.0m</p>
 <div id="command">
 BC Release = <em>FileName</em>
 </div>
 <p>Played occasionally when the pressure in the brake cylinder is decreased from a non-high value to a non-zero value.</p>
+<p><strong>Position:</strong> Center</p>
+<p><strong>Radius:</strong> 5.0m</p>
 <div id="command">
 BC Release Full = <em>FileName</em>
 </div>
 <p>Played occasionally when the pressure in the brake cylinder is decreased to zero value.</p>
+<p><strong>Position:</strong> Center</p>
+<p><strong>Radius:</strong> 5.0m</p>
 <div id="command">
 Emergency = <em>FileName</em>
 </div>
 <p>Played once when the emergency brakes are activated.</p>
+<p><strong>Position:</strong> Center</p>
+<p><strong>Radius:</strong> 10.0m</p>
+<div id="command">
+EmergencyRelease = <em>FileName</em>
+</div>
+<p>Played once when the emergency brakes are released.</p>
+<p><strong>Position:</strong> Center</p>
+<p><strong>Radius:</strong> 10.0m</p>
 <div id="command">
 BP Decomp = <em>FileName</em>
 </div>
 <p>For trains with automatic air brake, is played when the handle is moved into the SRV or EMG position. For other trains, is played when the brake notch is decreased.</p>
+<p><strong>Position:</strong> Center</p>
+<p><strong>Radius:</strong> 5.0m</p>
 <hr>
 <h5 id="-compressor">● [Compressor]</h5>
 <div id="command">
@@ -509,6 +533,8 @@ Loop = <em>FileName</em>
 Release = <em>FileName</em>
 </div>
 <p>Played once when the air compressor is deactivated.</p>
+<p><strong>Position:</strong> Center</p>
+<p><strong>Radius:</strong> 10.0m</p>
 <hr>
 <h5 id="-suspension">● [Suspension]</h5>
 <div id="command">
@@ -519,6 +545,8 @@ Left = <em>FileName</em>
 Right = <em>FileName</em>
 </div>
 <p>Played occasionally when the train sways to the right side.</p>
+<p><strong>Position:</strong> Left / Right</p>
+<p><strong>Radius:</strong> 5.0m</p>
 <hr>
 <h5 id="-horn">● [Horn]</h5>
 <p>There are two possible types of horn which may be defined via a <em>[Horn]</em> section- &lsquo;Looped Horns&rsquo; and &lsquo;Legacy Horns&rsquo;</p>
@@ -558,6 +586,8 @@ Secondary = <em>FileName</em>
 Music = <em>FileName</em>
 </div>
 <p>Played in a continuous loop whilst the music horn is active.</p>
+<p><strong>Position:</strong> Front</p>
+<p><strong>Radius:</strong> 10.0m for Music Horns, 30.0m for all other Horns</p>
 <hr>
 <h5 id="-door">● [Door]</h5>
 <div id="command">
@@ -576,6 +606,8 @@ Close Left = <em>FileName</em>
 Close Right = <em>FileName</em>
 </div>
 <p>Played once when the right doors close.</p>
+<p><strong>Position:</strong> Left / Right</p>
+<p><strong>Radius:</strong> 5.0m</p>
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
 <p>The duration of these sound files is used to determine the opening and closing speed of the doors.<br><br>
@@ -588,12 +620,16 @@ If a single sound is present, then both sets of doors will open / close in the d
 <em>Index</em> = <em>FileName</em>
 </div>
 <p>Assigns a plugin sound. The non-negative integer <em>Index</em> represents the sound index. Train plugin developers can choose which sound to play. The assignment of sounds needs to be coordinated with the plugin developer.</p>
+<p><strong>Position:</strong> Panel</p>
+<p><strong>Radius:</strong> 2.0m</p>
 <hr>
 <h5 id="-buzzer">● [Buzzer]</h5>
 <div id="command">
 Correct = <em>FileName</em>
 </div>
 <p>Played once when the train stops at a station, but needs to correct its stop position.</p>
+<p><strong>Position:</strong> Panel</p>
+<p><strong>Radius:</strong> 2.0m</p>
 <hr>
 <h5 id="-pilot-lamp">● [Pilot Lamp]</h5>
 <div id="command">
@@ -604,6 +640,8 @@ On = <em>FileName</em>
 Off = <em>FileName</em>
 </div>
 <p>Played once as soon as the doors start to open.</p>
+<p><strong>Position:</strong> Panel</p>
+<p><strong>Radius:</strong> 2.0m</p>
 <hr>
 <h5 id="-brake-handle">● [Brake Handle]</h5>
 <div id="command">
@@ -630,6 +668,8 @@ Min = <em>FileName</em>
 Max = <em>FileName</em>
 </div>
 <p>Played once when the emergency brakes are applied.</p>
+<p><strong>Position:</strong> Panel</p>
+<p><strong>Radius:</strong> 2.0m</p>
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
 <p>If the <strong>ApplyFast</strong> sound is not present, then the <strong>Apply</strong> sound will be played instead.
@@ -661,6 +701,8 @@ Min = <em>FileName</em>
 Max = <em>FileName</em>
 </div>
 <p>Played once when the power notch is increased to the maximum power notch.</p>
+<p><strong>Position:</strong> Panel</p>
+<p><strong>Radius:</strong> 2.0m</p>
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
 <p>If the <strong>UpFast</strong> sound is not present, then the <strong>Up</strong> sound will be played instead.
@@ -676,6 +718,8 @@ On = <em>FileName</em>
 Off = <em>FileName</em>
 </div>
 <p>Played once when the reverser is moved into the neutral position.</p>
+<p><strong>Position:</strong> Panel</p>
+<p><strong>Radius:</strong> 2.0m</p>
 <hr>
 <h5 id="-breaker">● [Breaker]</h5>
 <div id="command">
@@ -686,6 +730,8 @@ On = <em>FileName</em>
 Off = <em>FileName</em>
 </div>
 <p>Played once when power is interrupted or resumed. There is a series of circumstances when that can happen, for example when moving from power notch zero to power notch one, or vice versa, assuming the reverser is non-neutral and the brakes are released. The safety systems can also interrupt power.</p>
+<p><strong>Position:</strong> Panel</p>
+<p><strong>Radius:</strong> 5.0m</p>
 <h5 id="-windscreen">● [Windscreen]</h5>
 <div id="command">
 RainDrop = <em>FileName</em>
@@ -703,20 +749,28 @@ DryWipe = <em>FileName</em>
 Switch = <em>FileName</em>
 </div>
 <p>Played when the wiper switch is moved.</p>
+<p><strong>Position:</strong> Panel</p>
+<p><strong>Radius:</strong> 2.0m</p>
 <hr>
 <h5 id="-others">● [Others]</h5>
 <div id="command">
 Noise = <em>FileName</em>
 </div>
 <p>Played in a loop all the time for the duration of the simulation.</p>
+<p><strong>Position:</strong> Center</p>
+<p><strong>Radius:</strong> 10.0m</p>
 <div id="command">
 Shoe = <em>FileName</em>
 </div>
 <p>Played in a loop when the brake shoe rubs against the wheels. The sound is played at a pitch inversely proportional to the speed, and the volume of the sound decreases with increasing speeds.</p>
+<p><strong>Position:</strong> Center</p>
+<p><strong>Radius:</strong> 10.0m</p>
 <div id="command">
 Halt = <em>FileName</em>
 </div>
 <p>Played once or in a loop (depending on the train.dat setting) when the pass alarm system warns about an approaching station stop.</p>
+<p><strong>Position:</strong> Panel</p>
+<p><strong>Radius:</strong> 2.0m</p>
 
 </div>
 
