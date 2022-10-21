@@ -443,6 +443,9 @@
 <li>Rotación - rotando objetos sobre los tres ejes independientes</li>
 <li>Saltos de textura - habilitando el salto de coordenadas de textura en objetos en dos direcciones independientes</li>
 </ul>
+<div id="warning-nontitle">
+<span>⚠</span><p>If an animated object is used within a group, any distance based functions such as <strong>CameraDistance</strong> refer to the relative transformed center of the child object, not that of the parent object.</p>
+</div>
 <h5 id="-una-pequeña-formalidad">● Una pequeña formalidad</h5>
 <p>El archivo es un texto plano codificado en cualquier arbitrario [codificación] (/es_mx/information/encodings.html), Sin embargo, UTF-8 con un byte de orden marca es la opción preferida. El <a href="../../../es_mx/information/numberformats.html">modelo de análisis</a> para números es <strong>Strict</strong>. El nombre de archivo es arbitrario, pero debe tener la extensión <strong>.animated</strong>. El archivo es interpretado por cada linea, desde arriba hasta abajo.</p>
 <h2 id="a-namedescriptiona-2-secciones"><a name="description"></a>■ 2. Secciones</h2>
@@ -558,7 +561,7 @@
 </div>
 <p>Esto añade el efecto de sonido a ser reproducido.</p>
 <div id="command">
-<strong>Posición = X, Y, Z</strong>
+<strong>Position = X, Y, Z</strong>
 </div>
 <p>Esto define la posición del sonido, relativo al centro del archivo animated.</p>
 <div id="command">
