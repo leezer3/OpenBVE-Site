@@ -36,7 +36,9 @@ OpenBVE is part of the main package repositories, and may be installed using the
 
 
 ### Arch Linux
-OpenBVE is part of the 'City' unofficial repository.
+OpenBVE is part of the official 'Community' repository, and may be installed using the following *pacman* command with root privileges:
+```pacman -S openbve```
+
 
 ### Other Distributions:
 If you have not already done so, download the latest stable version of OpenBVE and extract it to a folder of your choice. This folder will be called your OpenBVE folder from here on. 
