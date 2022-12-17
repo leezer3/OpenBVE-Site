@@ -462,6 +462,45 @@ Whilst this is a change for some parameters from the legacy BVE formats, it mean
 <strong>&lt;Subject&gt;</strong> <em>Descriptions</em> <strong>&lt;/Subject&gt;</strong>
 </div>
 <p><strong>Descriptions</strong> should be a comma-separated list, equal to the number of notches the train has for the subject.</p>
+<p>The entries for this list must be placed in order from low to high.</p>
+<p>For an example brake handle with EB, hold brake and 8 notches, the following would be used:</p>
+<table style="border: none;">
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Example Brake Handle NotchDescriptions:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">ƒ</td>
+<td bgcolor="#FFD8C0" style="border: 1px dotted;">
+<font style="font-family: monospace;">
+&lt;NotchDescriptions&gt;EB,8,7,6,5,4,3,1,HLD,N&lt;/NotchDescriptions&gt;
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+<p>For an example power handle with 8 notches, the following would be used:</p>
+<table style="border: none;">
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Example Power Handle NotchDescriptions:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">ƒ</td>
+<td bgcolor="#FFD8C0" style="border: 1px dotted;">
+<font style="font-family: monospace;">
+&lt;NotchDescriptions&gt;N,1,2,3,4,5,6,7,8&lt;/NotchDescriptions&gt;
+</font>
+</td>
+</tr>
+</tbody>
+</table>
 <h2 id="a-namecara-3-the-car-section"><a name="car"></a>■ 3. The Car section</h2>
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
