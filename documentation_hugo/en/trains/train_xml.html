@@ -461,9 +461,9 @@ Whilst this is a change for some parameters from the legacy BVE formats, it mean
 <div id="command">
 <strong>&lt;Subject&gt;</strong> <em>Descriptions</em> <strong>&lt;/Subject&gt;</strong>
 </div>
-<p><strong>Descriptions</strong> should be a comma-separated list, equal to the number of notches the train has for the subject.</p>
+<p><strong>Descriptions</strong> should be a comma or semi-colon separated list, equal to the number of notches the train has for the subject.</p>
 <p>The entries for this list must be placed in order from low to high.</p>
-<p>For an example brake handle with EB, hold brake and 8 notches, the following would be used:</p>
+<p>For an example brake or locomotive brake handle with EB, hold brake and 8 notches, the following would be used:</p>
 <table style="border: none;">
 <tbody>
 <tr>
@@ -476,7 +476,26 @@ Whilst this is a change for some parameters from the legacy BVE formats, it mean
 <td width="16" valign="top">ƒ</td>
 <td bgcolor="#FFD8C0" style="border: 1px dotted;">
 <font style="font-family: monospace;">
-&lt;NotchDescriptions&gt;EB,8,7,6,5,4,3,1,HLD,N&lt;/NotchDescriptions&gt;
+&lt;NotchDescriptions&gt;EB,HLD,N,1,2,3,4,5,6,7,8&lt;/NotchDescriptions&gt;
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+<p>A train using the automatic air-brake has a total of three notches, e.g:</p>
+<table style="border: none;">
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Example Brake Handle NotchDescriptions:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">ƒ</td>
+<td bgcolor="#FFD8C0" style="border: 1px dotted;">
+<font style="font-family: monospace;">
+&lt;NotchDescriptions&gt;EB,REL,LAP,SRV&lt;/NotchDescriptions&gt;
 </font>
 </td>
 </tr>
@@ -496,6 +515,25 @@ Whilst this is a change for some parameters from the legacy BVE formats, it mean
 <td bgcolor="#FFD8C0" style="border: 1px dotted;">
 <font style="font-family: monospace;">
 &lt;NotchDescriptions&gt;N,1,2,3,4,5,6,7,8&lt;/NotchDescriptions&gt;
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The reverser must be in the order Neutral, Forwards, Reverse:</p>
+<table style="border: none;">
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Example Reverser Handle NotchDescriptions:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">ƒ</td>
+<td bgcolor="#FFD8C0" style="border: 1px dotted;">
+<font style="font-family: monospace;">
+&lt;NotchDescriptions&gt;N,F,R&lt;/NotchDescriptions&gt;
 </font>
 </td>
 </tr>
