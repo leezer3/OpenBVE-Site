@@ -429,6 +429,7 @@
 <li><a href="#power">3.1. The Power section</a></li>
 <li><a href="#brake">3.2. The Brake section</a></li>
 <li><a href="#doors">3.3. The Doors section</a></li>
+<li><a href="#sanders">3.4. The Sanders section</a></li>
 <li><a href="#coupler">4. The Coupler section</a></li>
 <li><a href="#misc">5. Miscellaneous Properties</a></li>
 </ul>
@@ -853,6 +854,52 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <strong>&lt;Tolerance&gt;</strong> <em>DoorTolerance</em> <strong>&lt;/Tolerance&gt;</strong>
 </div>
 <p><strong>DoorTolerance</strong> should be a positive number, setting a tolerance in meters before the door is considered to be closed.</p>
+<h2 id="a-namesandersa-34-the-sanders-section"><a name="sanders"></a>■ 3.4. The Sanders section</h2>
+<p>The <strong>&lt;Sanders&gt;</strong> section specifies the properties of the sanders fitted to this car, and supports the following properties:</p>
+<div id="command">
+<strong>Type</strong> <em>Type</em>
+</div>
+<div id="command-arguments">
+<em><strong>Type</strong></em>: The type of sanders fitted to this car (if any).
+</div>
+<p>▸ Available options for <em>Type</em>:</p>
+<div id="command-arguments">
+<strong>NotFitted</strong>: No sanding mechanism is fitted.<br>
+<strong>PressAndHold</strong>: The sanders are applied whilst the <strong>Sanders</strong> key is held and sufficient sand is available.<br>
+<strong>Toggle</strong>: The <strong>Sanders</strong> key toggles the sanders on and off.
+<strong>NumberOfShots</strong>: N shots of sand are available, which are applied when the <strong>Sanders</strong> key is pressed.
+<strong>Automatic</strong>: The sanders are automatically activated when wheelslip is detected and sufficient sand is present.
+</div>
+<div id="command">
+<strong>Rate</strong> <em>SandingRate</em>
+</div>
+<div id="command-arguments">
+<em><strong>SandingRate</strong></em>: The rate at which sand is applied per second.
+</div>
+<div id="command">
+<strong>SandLevel</strong> <em>Level</em>
+</div>
+<div id="command-arguments">
+<em><strong>Level</strong></em>: The initial starting level of sand, if not in shot mode.
+</div>
+<div id="command">
+<strong>NumberOfShots</strong> <em>Shots</em>
+</div>
+<div id="command-arguments">
+<em><strong>Shots</strong></em>: The number of sand shots available.
+</div>
+<div id="command">
+<strong>ApplicationTime</strong> <em>Time</em>
+</div>
+<div id="command-arguments">
+<em><strong>Time</strong></em>: When in shots mode, sets the duration of a sand shot in seconds.
+</div>
+<div id="command">
+<strong>ActivationTime</strong> <em>Time</em>
+</div>
+<div id="command-arguments">
+<em><strong>Time</strong></em>: When in automatic mode, the amount of time before the system reacts and applies sand.
+</div>
 <h2 id="a-namecouplera-4-the-coupler-section"><a name="coupler"></a>■ 4. The Coupler section</h2>
 <p>Car nodes (or child file references) may optionally be separated by a <strong>&lt;Coupler&gt;</strong> node.</p>
 <p>This defines the coupler between the two cars, and supports the following properties:</p>
