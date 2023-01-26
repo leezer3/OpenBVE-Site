@@ -937,7 +937,8 @@ Track.FreeObj 1; 42<br>
 <p>▸ Available options for <em>Mode</em>:</p>
 <div id="command-arguments">
 <strong>0</strong>: Legacy: An object is made invisible as soon as the end of the block which it resides in has been passed by the camera. This does not work well when turning the camera around. Self-intersecting track (e.g. loops) is not possible.<br>
-<strong>1</strong>: Track-based: An object is made invisible as soon as its end has been passed by the camera. This is measured in track positions. Self-intersecting track (e.g. loops) is not possible.
+<strong>1</strong>: Track-based: An object is made invisible as soon as its end has been passed by the camera. This is measured in track positions. Self-intersecting track (e.g. loops) is not possible.<br>
+<strong>2</strong>: Quad-Tree: A tile based quad teee is used to determine visibility. Self-intersecting track (e.g. loops) are possible, but care should be taken when using track-distance based animations.
 </div>
 <hr>
 <div id="command">
