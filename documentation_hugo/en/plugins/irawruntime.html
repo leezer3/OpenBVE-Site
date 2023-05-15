@@ -405,6 +405,7 @@
 <ul class='contents'>
 <li><a href="#overview">1. Overview</a></li>
 <li><a href="#functions">2. Function calls</a></li>
+<li><a href="#elapse">3. Additional ElapseData Members</a></li>
 </ul>
 <h2 id="a-nameoverviewa-overview"><a name="overview"></a>■ Overview</h2>
 <p>The IRawRuntime plugin interface is a separate interface, which extends the IRuntime interface to allow train plugins to accept raw keyboard / touch input from the simulation window.</p>
@@ -465,6 +466,24 @@
 <td>commandIndex</td>
 <td>The associated command index for the touch group.</td>
 </tr>
+<tr>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="a-nameelapsea-additional-elapsedata-members"><a name="elapse"></a>■ Additional ElapseData Members</h2>
+<p>IRawInput also adds the following useful <strong>ElapseData</strong> members:</p>
+<p>Arguments:</p>
+<div class="overflow-container">
+<table class='type1'>
+<thead>
+<tr>
+<th>BlockingInput</th>
+<th>boolean</th>
+<th>Whether the plugin is blocking input- This should be set when taking custom keyboard input to avoid triggering controls.</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 </tr>
 </tbody>
