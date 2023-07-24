@@ -626,6 +626,11 @@ Whilst this is a change for some parameters from the legacy BVE formats, it mean
 <p>Motor cars may specifiy a <strong>&lt;Power&gt;</strong> node.</p>
 <p>This defines the acceleration curves and the power handle fitted to the car, and supports the following child nodes:</p>
 <h3 id="311-acceleration-curves">3.1.1. Acceleration Curves</h3>
+<div id="warning-nontitle">
+<span>⚠</span><p>In the <strong>train.dat</strong> acceleration curve figures are given for the train as a whole, and an internal calculation is performed to produce the per-car acceleration figures.
+<br><br>
+However, in <strong>train.xml</strong> acceleration curve figures apply to the current car only.</p>
+</div>
 <p>The <strong>&lt;AccelerationCurves&gt;</strong> child node should contain a list of acceleration curve nodes. These must be in ascending order, and should correspond to the number of power notches the train has.</p>
 <p>Currently, the only supported acceleration curve node is the <strong>&lt;OpenBVE&gt;</strong> node, supporting the following properties (as per a <strong>train.dat</strong> acceleration curve):</p>
 <div id="command">
