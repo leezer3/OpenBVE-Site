@@ -31,18 +31,49 @@ share: true
 
 ## Version 1.7
 
-Version 1.7 is currently under development. 
-As the object parsers have now been converted to a plugin interface, the next step is to similarly convert the Route and Train parsers.
-This will eventually hopefully allow the loading of a much larger range of content from other simulators.
-
-### Planned Features:
+### Implemented Features:
 
 * Further extend the XML configuration of trains, to allow the creation of custom 'consists'
 * Route parser converted to a shared plugin. 
 * Train parsers converted to a shared plugin.
-
-### Work In Progress Features:
-
-* Improve the simulation options available to train developers.
 * Re-write the main simulation renderer to move away from using openGL intermediate mode.
+
+
+## Version 1.8
+
+### Implemented Features:
+
 * 64-bit builds, with a proxy to load existing train plugins.
+* Add a parser for Mechanik routes.
+* OpenGL main menu for systems not supporting WinForms.
+* Scratch written BMP decoder.
+
+## Version 1.9
+
+Version 1.9 is currently under development. 
+
+The current focus is on improving and implementing basic operations other than a simple linear world.
+
+### Implemented Features:
+
+* Add Quad-Tree visibility to allow for intersecting routefiles.
+* Allow existing routefiles to be driven in the reverse direction.
+* Implement basic uncoupling of cars from the player train.
+* Scratch written PNG decoder.
+
+### Planned Features:
+
+* Basic coupling of trains.
+
+## Version 1.10
+
+### Planned Features:
+
+* Allow running on other rails.
+* Parser for MSTS trains.
+* Keyframe based animation. 
+
+## Version 2.0
+
+### Planned Features:
+* BVE5 routefile parser.
