@@ -434,6 +434,7 @@
 <li><a href="#brake">3.2. The Brake section</a></li>
 <li><a href="#doors">3.3. The Doors section</a></li>
 <li><a href="#sanders">3.4. The Sanders section</a></li>
+<li><a href="#windscreen">3.4. The Windscreen section</a></li>
 <li><a href="#coupler">4. The Coupler section</a></li>
 <li><a href="#misc">5. Miscellaneous Properties</a></li>
 </ul>
@@ -908,6 +909,54 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 </div>
 <div id="command-arguments">
 <em><strong>Time</strong></em>: When in automatic mode, the amount of time before the system reacts and applies sand.
+</div>
+<h2 id="a-namewindscreena-35-the-windscreen-section"><a name="windscreen"></a>■ 3.5. The Windscreen section</h2>
+<p>The <strong>&lt;Windscreen&gt;</strong> section specifies the properties of the windscreen, and should be used if you wish to animated a windscreen on a 3D cab using the inbuilt functionality. It supports the following properties:</p>
+<div id="command">
+*<em>NumberOfDrops</em> <em>Drops</em>
+</div>
+<div id="command-arguments">
+<em><strong>Drops</strong></em>: The total number of drops on the windscreen.
+</div>
+<div id="command">
+*<em>WipeSpeed</em> <em>Speed</em>
+</div>
+<div id="command-arguments">
+<em><strong>Speed</strong></em>: The time in seconds for the wipers to make a single sweep of the windscreen.
+</div>
+<div id="command">
+*<em>HoldTime</em> <em>Time</em>
+</div>
+<div id="command-arguments">
+<em><strong>Time</strong></em>: The time in seconds for the wipers to hold at the hold position during a sweep.
+</div>
+<div id="command">
+*<em>DropLife</em> <em>Life</em>
+</div>
+<div id="command-arguments">
+<em><strong>Life</strong></em>: The life in seconds before a drop is eligible to be recycled when all drops are visible.
+</div>
+<div id="command">
+*<em>RestPosition</em> <em>Position</em>
+</div>
+<div id="command-arguments">
+<strong>Position</strong>: The rest position for the wipers.
+</div>
+<p>▸ Available options for <em>Position</em>:</p>
+<div id="command-arguments">
+<strong>Left</strong>: The wipers rest at the left of the screen when off.<br>
+<strong>Right</strong>: The wipers rest at the right of the screen when off.
+</div>
+<div id="command">
+*<em>HoldPosition</em> <em>Position</em>
+</div>
+<div id="command-arguments">
+<strong>Position</strong>: The hold position for the wipers.
+</div>
+<p>▸ Available options for <em>Position</em>:</p>
+<div id="command-arguments">
+<strong>Left</strong>: The wipers hold on the left of the screen for <em>HoldTime</em> during their sweep.<br>
+<strong>Right</strong>: The wipers hold on the right of the screen for <em>HoldTime</em> during their sweep.
 </div>
 <h2 id="a-namecouplera-4-the-coupler-section"><a name="coupler"></a>■ 4. The Coupler section</h2>
 <p>Car nodes (or child file references) may optionally be separated by a <strong>&lt;Coupler&gt;</strong> node.</p>
