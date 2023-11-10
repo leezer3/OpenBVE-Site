@@ -9,7 +9,7 @@ share: true
 
 ---
 
-As far as possible, we'd like OpenBVE to be accessible for all players. Recent nightly builds (as of 07/06/2021) include various accessibility helpers to help support this, which are described below:
+As far as possible, we'd like OpenBVE to be accessible for all players. We include various accessibility helpers to help support this, which are described below:
 
 ## Screen Reader Support
 
@@ -37,4 +37,6 @@ They are as follows:
 * A message is shown / announced when 500m from the next signal.
 
 * The stop position overlay is supplemented by an audible tone.
+
+* When the player handle position is changed, the current position is shown / announced.
 
