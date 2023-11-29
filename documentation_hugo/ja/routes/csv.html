@@ -314,6 +314,10 @@
           
         </li>
         
+        
+          
+        </li>
+        
       </ul>
       
     </li>
@@ -447,10 +451,10 @@
 </ul>
 <h2 id="a-nameoverviewa-1-概要"><a name="overview"></a>■ 1. 概要</h2>
 <p>CSVルートは、テキストファイルに記述することで路線データを作成できます。</p>
-<p>ファイルは任意のエンコードで記述されたプレーンテキストですが <a href="../../ja/information/encodings.html">encoding</a>、好ましい選択としてはバイトオーダー付きのUTF-8です。 <a href="../../ja/information/numberformats.html">parsing model</a> に用いる数字は <strong>ルーズ</strong>（特に明記しない限りは）ですが、 それでも出力にあたっては <em>厳密な</em> 出力をすることが望ましいです。  ファイルは任意のフォルダに格納できますが、カレントフォルダもしくは相対パスは <em>Railway</em> と <em>Train</em> フォルダ 以下に存在しなければなりません。 ファイル名は任意ですが、 拡張子は必ず <strong>.csv</strong> を用います。 ファイルは基本的に上から下に向かって解釈されていき、各行は式ごとに分割され、左から右に向かって解釈されていきます。</p>
+<p>ファイルは任意のエンコードで記述されたプレーンテキストですが <a href="../../ja/information/encodings.html">encoding</a>、好ましい選択としてはバイトオーダー付きのUTF-8です。 <a href="../../ja/information/numberformats.html">parsing model</a> に用いる数字は <strong>ルーズ</strong>(特に明記しない限りは)ですが、 それでも出力にあたっては <em>厳密な</em> 出力をすることが望ましいです。  ファイルは任意のフォルダに格納できますが、カレントフォルダもしくは相対パスは <em>Railway</em> と <em>Train</em> フォルダ 以下に存在しなければなりません。 ファイル名は任意ですが、 拡張子は必ず <strong>.csv</strong> を用います。 ファイルは基本的に上から下に向かって解釈されていき、各行は式ごとに分割され、左から右に向かって解釈されていきます。</p>
 <p>ルートファイルは、(Structure 名前空間)で定義された一連の命令セットにより、ルートデータ内で一貫して共通で利用されます 。 路線データ向けの追加のプロパティ、路線側が定義した既定の列車、沿線の背景のイメージファイルも同様に定義することができます。 最後に、ルートファイルは Track 名前空間でのコマンドにより指示します。 ここでは、 線路の座標 (殆どの場合、単位はメートル) を指定することにより、線路をカーブさせるタイミングや駅を設置したり、 壁や土手などを開始したり終わらせたりします。一般的には、 Track 名前空間はその他の名前空間を予め記述し、定義した後に記述する必要があります。</p>
 <p>このフォーマットには、暗黙の規定として明示的に開始、または終了することが出来ない rail 0 があり、 それは路線の始端から終端まで常に存在します。 そしてそれはプレイヤーが走行するレールを示します。 rail 0 とその他の レールは 視覚的表示に用いられるだけでなく、 同様に <a href="../../ja/routes/xml/trackfollowingobject.html">Track Following Object</a> にも用いられます。</p>
-<p>幾何学的に、カーブや勾配は暗黙の ｒａｉｌ ０ に対して作用しますが、 その他のすべてのレールは rail 0 に相対的に連動して定義され、 rail 0 のカーブや勾配に従って追従します。 オーバーライドされない限りファイルフォーマットではブロック長は25mの固定長で構築され、 特定のコマンドは25mのブロック単位でしか用いることができません。 オブジェクトの配置は、常に直線的に接続する非曲線座標系を想定しています。</p>
+<p>幾何学的に、カーブや勾配は暗黙の rail 0 に対して作用しますが、 その他のすべてのレールは rail 0 に相対的に連動して定義され、 rail 0 のカーブや勾配に従って追従します。 オーバーライドされない限りファイルフォーマットではブロック長は25mの固定長で構築され、 特定のコマンドは25mのブロック単位でしか用いることができません。 オブジェクトの配置は、常に直線的に接続する非曲線座標系を想定しています。</p>
 <p>➟ <a href="../../ja/routes/csv_quick.html">CSV ルートフォーマットのクイックリファレンスも参照して下さい&hellip;</a></p>
 <h2 id="a-namesyntaxa-2-文法"><a name="syntax"></a>■ 2. 文法</h2>
 <p>ファイルの各行の <a href="../../ja/information/whitespaces.html">ホワイトスペース</a> は、各行の行頭と行末では無視されます。 この時、各行はコンマ(U+002C)で区切られた個々の式に分割されます。 従って、各行は次のような形式をとります。</p>
@@ -2274,8 +2278,8 @@ With Track<br>
 <p><strong>Note:</strong>
 If <em>RailIndex<sub>1</sub></em> is to the <strong>left</strong> of <em>RailIndex<sub>2</sub></em> (e.g. it&rsquo;s X-cordinate is smaller), then the objects defined in Structure.FormL, Structure.FormCL and Structure.RoofL will be used.<br>
 Otherwise, the objects defined in Structure.FormR, Structure.FormCL and Structure.RoofR will be used.</p>
-<h5 id="a-nametrack_signallinga-115-signalling-and-speed-limits"><a name="track_signalling"></a>● 11.5. Signalling and speed limits</h5>
-<hr>
+<p><a name="track_signalling"></a>● 11.5. Signalling and speed limits</p>
+<h5 id="------">&mdash;&mdash;</h5>
 <div id="command">
 <strong>Track.Limit</strong> <em><font color="blue">Speed</font></em>; <em>Post</em>; <em>Cource</em>
 </div>
@@ -2307,8 +2311,8 @@ Otherwise, the objects defined in Structure.FormR, Structure.FormCL and Structur
 </div>
 <p>This command starts a section, the functional part of signalling, to be used in conjunction with Track.SigF, which creates a visual representation of a section (a signal). The <em>a<sub>i</sub></em> parameters specify the aspects the section can bear. An aspect of 0 corresponds to a red section which must not be passed by a train. The <em>a<sub>0</sub></em> term is mandatory.</p>
 <div id="notice">
-<h4 id="default-versus-simplified-section-behavior">Default versus simplified section behavior</h4>
-<p>There are two different modes of behavior on how to interpret the <em>a<sub>i</sub></em> parameters. The mode can be set via Options.SectionBehavior. The following are separate descriptions for default and simplified behavior.
+Default versus simplified section behavior</p>
+<h4 id="there-are-two-different-modes-of-behavior-on-how-to-interpret-the-asubisub-parameters-the-mode-can-be-set-via-optionssectionbehavior-the-following-are-separate-descriptions-for-default-and-simplified-behavior">There are two different modes of behavior on how to interpret the <em>a<sub>i</sub></em> parameters. The mode can be set via Options.SectionBehavior. The following are separate descriptions for default and simplified behavior.</h4>
 </div>
 <p><strong>Default behavior:</strong><br>
 The <em>a<sub>i</sub></em> terms specify the aspect the section should bear depending on how many sections ahead are clear until a red one is encountered. The order of the terms is relevant. The same aspect may occur multiple times.</p>
@@ -2445,8 +2449,8 @@ With Track<br>
 <em><strong>Roll</strong></em>: The angle in degrees by which the object is rotated in the XY-plane in clock-wise order when viewed from behind. The default value is 0.
 </div>
 <p>This commands creates a default Japanese repeating signal. The repeating signal repeats the state of the upcoming signal. Setting <em>X</em> to zero does not create a repeating signal, but forces the command to be ignored. Setting <em>X</em> to a non-zero number and <em>Y</em> to a negative number resets the y-coordinate to 4.8 and attaches a default signal post.</p>
-<h5 id="a-nametrack_safetya-116-safety-systems"><a name="track_safety"></a>● 11.6. Safety systems</h5>
-<hr>
+<p><a name="track_safety"></a>● 11.6. Safety systems</p>
+<h5 id="-------1">&mdash;&mdash;</h5>
 <div id="command">
 <strong>Track.Beacon</strong> <em>Type</em>; <em>BeaconStructureIndex</em>; <em>Section</em>; <em>Data</em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>
 </div>
@@ -2536,8 +2540,8 @@ With Track<br>
 <em><strong><font color="blue">Speed</font></strong></em>: A positive floating-point number representing the permanent speed restriction for ATS-P, <strong>by default</strong> measured in <strong>km/h</strong>.
 </div>
 <p>This command is equivalent to <strong>Track.Pattern 1;<em>Speed</em></strong>. See there for more information.</p>
-<h5 id="a-nametrack_misca-117-miscellaneous"><a name="track_misc"></a>● 11.7. Miscellaneous</h5>
-<hr>
+<p><a name="track_misc"></a>● 11.7. Miscellaneous</p>
+<h5 id="-------2">&mdash;&mdash;</h5>
 <div id="command">
 <strong>Track.Back</strong> <em>BackgroundTextureIndex</em>
 </div>
@@ -2823,6 +2827,7 @@ phi = 0
 </tbody>
 </table>
 <p>上記の数式では、 <a href="http://functions.wolfram.com/ElementaryFunctions/Cos/02"><em>cos(x)</em></a> はコサインを表し、 <a href="http://functions.wolfram.com/ElementaryFunctions/Sin/02"><em>sin(x)</em></a> は正弦、 <a href="http://functions.wolfram.com/ElementaryFunctions/ArcTan/02"><em>arctan(x)</em></a> は逆正接、 <a href="http://functions.wolfram.com/ElementaryFunctions/ArcTan2/02"><em>arctan(x,y)</em></a> は2つの引数の逆正接、 <a href="http://functions.wolfram.com/ElementaryFunctions/Sqrt/02"><em>sqrt(x)</em></a> は平方根を表します。 どちらか一方を使用するほうが、もう一方を使用するよりも直感的に見える場合、数式を用いると、球座標とデカルト座標を変換することが出来ます。数式は、光の方向が数学的に定義される公式文書として機能します (ラジアンを三角関数として用いる場合)。</p>
+<hr>
 <hr>
 
 </div>

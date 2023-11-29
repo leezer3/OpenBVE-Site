@@ -314,6 +314,10 @@
           
         </li>
         
+        
+          
+        </li>
+        
       </ul>
       
     </li>
@@ -540,6 +544,12 @@
 <strong>TrackFollowerFunction = Formula</strong>
 </div>
 <p>This defines the function which moves an object along the path of <strong>Rail 0</strong>. <em>Formula</em> must return a distance in meters, for which the object is then moved, respecting the curves and height changes of <strong>Rail 0</strong>.</p>
+<div id="command">
+<strong>ScaleXFunction = Formula</strong>
+<strong>ScaleYFunction = Formula</strong>
+<strong>ScaleZFunction = Formula</strong>
+</div>
+<p>These define the functions to scale the object in the respective axis. The original size of the object is represented by a nomimal <strong>1.0</strong> in each axis.</p>
 <div id="command">
 <strong>TextureOverride = Value</strong>
 </div>
@@ -917,12 +927,12 @@ Please also note that some combinations of prefix and infix operators are not re
 <td>Rounds to the nearest integer. Numbers ending in .5 are rounded to the nearest even integer.</td>
 </tr>
 <tr>
-<td><code>random[Minimum, Maximum]</code></td>
-<td>Returns a new random floating-point number between <em>Minimum</em> and <em>Maximum</em>.</td>
+<td><code>random[Minimum, Maximum, Mode]</code></td>
+<td>Returns a new random floating-point number between <em>Minimum</em> and <em>Maximum</em>. <em>Mode</em> is an optional parameter which may be set to <strong>1</strong> to generate a fixed value at the start of the simulation.</td>
 </tr>
 <tr>
-<td><code>randomInt[Minimum, Maximum]</code></td>
-<td>Returns a new random integer between <em>Minimum</em> and <em>Maximum</em>.</td>
+<td><code>randomInt[Minimum, Maximum, Mode]</code></td>
+<td>Returns a new random integer between <em>Minimum</em> and <em>Maximum</em>. <em>Mode</em> is an optional parameter which may be set to <strong>1</strong> to generate a fixed value at the start of the simulation.</td>
 </tr>
 </tbody>
 </table>
@@ -1015,7 +1025,7 @@ Please also note that some combinations of prefix and infix operators are not re
 </tbody>
 </table>
 </div>
-<h5 id="-time-and-camera">● Time and camera</h5>
+<h5 id="-time-weather-and-camera">● Time, weather and camera</h5>
 <div class="overflow-container">
 <table class='type0 responsive-table-2col'>
 <thead>
@@ -1061,6 +1071,10 @@ Please also note that some combinations of prefix and infix operators are not re
 <td><code>cameraMode</code></td>
 <td>Returns 0 if the camera is currently in a 2D or 3D cab, 1 otherwise.</td>
 </tr>
+<tr>
+<td><code>ambientTemperature</code></td>
+<td>Returns the ambient temperature in degrees Kelvin.</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -1088,6 +1102,10 @@ Please also note that some combinations of prefix and infix operators are not re
 <tr>
 <td><code>carNumber</code></td>
 <td>Returns the index of the current car.</td>
+</tr>
+<tr>
+<td><code>length</code></td>
+<td>The length of the train in m.</td>
 </tr>
 <tr>
 <td><code>speed</code></td>
