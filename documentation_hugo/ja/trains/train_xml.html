@@ -314,10 +314,6 @@
           
         </li>
         
-        
-          
-        </li>
-        
       </ul>
       
     </li>
@@ -433,8 +429,6 @@
 <li><a href="#power">3.1. The Power section</a></li>
 <li><a href="#brake">3.2. The Brake section</a></li>
 <li><a href="#doors">3.3. The Doors section</a></li>
-<li><a href="#sanders">3.4. The Sanders section</a></li>
-<li><a href="#windscreen">3.4. The Windscreen section</a></li>
 <li><a href="#coupler">4. The Coupler section</a></li>
 <li><a href="#misc">5. Miscellaneous Properties</a></li>
 </ul>
@@ -467,84 +461,7 @@ Whilst this is a change for some parameters from the legacy BVE formats, it mean
 <div id="command">
 <strong>&lt;Subject&gt;</strong> <em>Descriptions</em> <strong>&lt;/Subject&gt;</strong>
 </div>
-<p><strong>Descriptions</strong> should be a comma or semi-colon separated list, equal to the number of notches the train has for the subject.</p>
-<p>The entries for this list must be placed in order from low to high.</p>
-<p>For an example brake or locomotive brake handle with EB, hold brake and 8 notches, the following would be used:</p>
-<table style="border: none;">
-<tbody>
-<tr>
-<td width="16" valign="top"></td>
-<td>
-<em>Example Brake Handle NotchDescriptions:</em>
-</td>
-</tr>
-<tr>
-<td width="16" valign="top">ƒ</td>
-<td bgcolor="#FFD8C0" style="border: 1px dotted;">
-<font style="font-family: monospace;">
-&lt;NotchDescriptions&gt;EB,HLD,N,1,2,3,4,5,6,7,8&lt;/NotchDescriptions&gt;
-</font>
-</td>
-</tr>
-</tbody>
-</table>
-<p>A train using the automatic air-brake has a total of three notches, e.g:</p>
-<table style="border: none;">
-<tbody>
-<tr>
-<td width="16" valign="top"></td>
-<td>
-<em>Example Brake Handle NotchDescriptions:</em>
-</td>
-</tr>
-<tr>
-<td width="16" valign="top">ƒ</td>
-<td bgcolor="#FFD8C0" style="border: 1px dotted;">
-<font style="font-family: monospace;">
-&lt;NotchDescriptions&gt;EB,REL,LAP,SRV&lt;/NotchDescriptions&gt;
-</font>
-</td>
-</tr>
-</tbody>
-</table>
-<p>For an example power handle with 8 notches, the following would be used:</p>
-<table style="border: none;">
-<tbody>
-<tr>
-<td width="16" valign="top"></td>
-<td>
-<em>Example Power Handle NotchDescriptions:</em>
-</td>
-</tr>
-<tr>
-<td width="16" valign="top">ƒ</td>
-<td bgcolor="#FFD8C0" style="border: 1px dotted;">
-<font style="font-family: monospace;">
-&lt;NotchDescriptions&gt;N,1,2,3,4,5,6,7,8&lt;/NotchDescriptions&gt;
-</font>
-</td>
-</tr>
-</tbody>
-</table>
-<p>The reverser must be in the order Neutral, Forwards, Reverse:</p>
-<table style="border: none;">
-<tbody>
-<tr>
-<td width="16" valign="top"></td>
-<td>
-<em>Example Reverser Handle NotchDescriptions:</em>
-</td>
-</tr>
-<tr>
-<td width="16" valign="top">ƒ</td>
-<td bgcolor="#FFD8C0" style="border: 1px dotted;">
-<font style="font-family: monospace;">
-&lt;NotchDescriptions&gt;N,F,R&lt;/NotchDescriptions&gt;
-</font>
-</td>
-</tr>
-</tbody>
-</table>
+<p><strong>Descriptions</strong> should be a comma-separated list, equal to the number of notches the train has for the subject.</p>
 <h2 id="a-namecara-3-the-car-section"><a name="car"></a>■ 3. The Car section</h2>
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
@@ -574,18 +491,6 @@ Whilst this is a change for some parameters from the legacy BVE formats, it mean
 <strong>&lt;Height&gt;</strong> <em>HeightInMeters</em> <strong>&lt;/Height&gt;</strong>
 </div>
 <p><strong>HeightInMeters</strong> should be the length of the car in meters.</p>
-<div id="command">
-<strong>&lt;CenterOfGravityHeight&gt;</strong> <em>CenterOfGravityInMeters</em> <strong>&lt;/CenterOfGravityHeight&gt;</strong>
-</div>
-<p><strong>CenterOfGravityInMeters</strong> should be the height above the rails in meters at which the center of mass is located.</p>
-<div id="command">
-<strong>&lt;ExposedFrontalArea&gt;</strong> <em>Area</em> <strong>&lt;/ExposedFrontalArea&gt;</strong>
-</div>
-<p><strong>Area</strong> should be a positive floating-point number measured in square meters (m2) indicating the frontal area of a car when it is fully exposed to resisting air, for example when the car is the front car in the current nominal direction of travel.</p>
-<div id="command">
-<strong>&lt;UnexposedFrontalArea&gt;</strong> <em>Area</em> <strong>&lt;/UnexposedFrontalArea&gt;</strong>
-</div>
-<p><strong>Area</strong> should be a positive floating-point number measured in square meters (m2) indicating the frontal area of a car when it is fully not exposed to resisting air, namely any car in the train other than the front car.</p>
 <div id="command">
 <strong>&lt;Mass&gt;</strong> <em>EmptyMass</em> <strong>&lt;/EmptyMass&gt;</strong>
 </div>
@@ -639,11 +544,6 @@ Whilst this is a change for some parameters from the legacy BVE formats, it mean
 <p>Motor cars may specifiy a <strong>&lt;Power&gt;</strong> node.</p>
 <p>This defines the acceleration curves and the power handle fitted to the car, and supports the following child nodes:</p>
 <h3 id="311-acceleration-curves">3.1.1. Acceleration Curves</h3>
-<div id="warning-nontitle">
-<span>⚠</span><p>In the <strong>train.dat</strong> acceleration curve figures are given for the train as a whole, and an internal calculation is performed to produce the per-car acceleration figures.
-<br><br>
-However, in <strong>train.xml</strong> acceleration curve figures apply to the current car only.</p>
-</div>
 <p>The <strong>&lt;AccelerationCurves&gt;</strong> child node should contain a list of acceleration curve nodes. These must be in ascending order, and should correspond to the number of power notches the train has.</p>
 <p>Currently, the only supported acceleration curve node is the <strong>&lt;OpenBVE&gt;</strong> node, supporting the following properties (as per a <strong>train.dat</strong> acceleration curve):</p>
 <div id="command">
@@ -876,100 +776,6 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <strong>&lt;Tolerance&gt;</strong> <em>DoorTolerance</em> <strong>&lt;/Tolerance&gt;</strong>
 </div>
 <p><strong>DoorTolerance</strong> should be a positive number, setting a tolerance in meters before the door is considered to be closed.</p>
-<h2 id="a-namesandersa-34-the-sanders-section"><a name="sanders"></a>■ 3.4. The Sanders section</h2>
-<p>The <strong>&lt;Sanders&gt;</strong> section specifies the properties of the sanders fitted to this car, and supports the following properties:</p>
-<div id="command">
-<strong>Type</strong> <em>Type</em>
-</div>
-<div id="command-arguments">
-<em><strong>Type</strong></em>: The type of sanders fitted to this car (if any).
-</div>
-<p>▸ Available options for <em>Type</em>:</p>
-<div id="command-arguments">
-<strong>NotFitted</strong>: No sanding mechanism is fitted.<br>
-<strong>PressAndHold</strong>: The sanders are applied whilst the <strong>Sanders</strong> key is held and sufficient sand is available.<br>
-<strong>Toggle</strong>: The <strong>Sanders</strong> key toggles the sanders on and off.
-<strong>NumberOfShots</strong>: N shots of sand are available, which are applied when the <strong>Sanders</strong> key is pressed.
-<strong>Automatic</strong>: The sanders are automatically activated when wheelslip is detected and sufficient sand is present.
-</div>
-<div id="command">
-<strong>Rate</strong> <em>SandingRate</em>
-</div>
-<div id="command-arguments">
-<em><strong>SandingRate</strong></em>: The rate at which sand is applied per second.
-</div>
-<div id="command">
-<strong>SandLevel</strong> <em>Level</em>
-</div>
-<div id="command-arguments">
-<em><strong>Level</strong></em>: The initial starting level of sand, if not in shot mode.
-</div>
-<div id="command">
-<strong>NumberOfShots</strong> <em>Shots</em>
-</div>
-<div id="command-arguments">
-<em><strong>Shots</strong></em>: The number of sand shots available.
-</div>
-<div id="command">
-<strong>ApplicationTime</strong> <em>Time</em>
-</div>
-<div id="command-arguments">
-<em><strong>Time</strong></em>: When in shots mode, sets the duration of a sand shot in seconds.
-</div>
-<div id="command">
-<strong>ActivationTime</strong> <em>Time</em>
-</div>
-<div id="command-arguments">
-<em><strong>Time</strong></em>: When in automatic mode, the amount of time before the system reacts and applies sand.
-</div>
-<h2 id="a-namewindscreena-35-the-windscreen-section"><a name="windscreen"></a>■ 3.5. The Windscreen section</h2>
-<p>The <strong>&lt;Windscreen&gt;</strong> section specifies the properties of the windscreen, and should be used if you wish to animated a windscreen on a 3D cab using the inbuilt functionality. It supports the following properties:</p>
-<div id="command">
-*<em>NumberOfDrops</em> <em>Drops</em>
-</div>
-<div id="command-arguments">
-<em><strong>Drops</strong></em>: The total number of drops on the windscreen.
-</div>
-<div id="command">
-*<em>WipeSpeed</em> <em>Speed</em>
-</div>
-<div id="command-arguments">
-<em><strong>Speed</strong></em>: The time in seconds for the wipers to make a single sweep of the windscreen.
-</div>
-<div id="command">
-*<em>HoldTime</em> <em>Time</em>
-</div>
-<div id="command-arguments">
-<em><strong>Time</strong></em>: The time in seconds for the wipers to hold at the hold position during a sweep.
-</div>
-<div id="command">
-*<em>DropLife</em> <em>Life</em>
-</div>
-<div id="command-arguments">
-<em><strong>Life</strong></em>: The life in seconds before a drop is eligible to be recycled when all drops are visible.
-</div>
-<div id="command">
-*<em>RestPosition</em> <em>Position</em>
-</div>
-<div id="command-arguments">
-<strong>Position</strong>: The rest position for the wipers.
-</div>
-<p>▸ Available options for <em>Position</em>:</p>
-<div id="command-arguments">
-<strong>Left</strong>: The wipers rest at the left of the screen when off.<br>
-<strong>Right</strong>: The wipers rest at the right of the screen when off.
-</div>
-<div id="command">
-*<em>HoldPosition</em> <em>Position</em>
-</div>
-<div id="command-arguments">
-<strong>Position</strong>: The hold position for the wipers.
-</div>
-<p>▸ Available options for <em>Position</em>:</p>
-<div id="command-arguments">
-<strong>Left</strong>: The wipers hold on the left of the screen for <em>HoldTime</em> during their sweep.<br>
-<strong>Right</strong>: The wipers hold on the right of the screen for <em>HoldTime</em> during their sweep.
-</div>
 <h2 id="a-namecouplera-4-the-coupler-section"><a name="coupler"></a>■ 4. The Coupler section</h2>
 <p>Car nodes (or child file references) may optionally be separated by a <strong>&lt;Coupler&gt;</strong> node.</p>
 <p>This defines the coupler between the two cars, and supports the following properties:</p>
@@ -989,10 +795,6 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <span><font color="#C00000">☀</font> Note</span>
 <p>The coupler object is not deformed when the coupler stretches / compresses.</p>
 </div>
-<div id="command">
-<strong>&lt;CanUncouple&gt;</strong> <em>Boolean</em> <strong>&lt;/CanUncouple&gt;</strong>
-</div>
-<p><strong>Boolean</strong> should be a boolean true / false value, determining whether this coupler may be uncoupled by the player.</p>
 <h2 id="a-namemisca-5-miscellaneous-properties"><a name="misc"></a>■ 5. Miscellaneous Properties</h2>
 <div id="command">
 <strong>&lt;Plugin&gt;</strong> <em>PluginFile</em> <strong>&lt;/Plugin&gt;</strong>

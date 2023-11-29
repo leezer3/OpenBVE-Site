@@ -314,10 +314,6 @@
           
         </li>
         
-        
-          
-        </li>
-        
       </ul>
       
     </li>
@@ -1559,9 +1555,6 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </div>
 <p>Please note that depending on the implementation by the host application, sounds that are not in audible range may not be played at all.</p>
 <p>Please also note that the handle returned might be a null reference in the case the host application could not play the sound, for example because the file could not be found.</p>
-<div id="warning-nontitle">
-<span>⚠</span><p>Only one distinct copy of any given sound index may be playing at any given time. If you require two copies of a sound playing (for example on different cars), then two sound indicies must be used.</p>
-</div>
 <h2 id="a-nameaia-supporting-the-ai"><a name="ai"></a>■ Supporting the AI</h2>
 <p>Usually, the host application performs the AI. However, your plugin might require special operation precedures which the built-in AI cannot know of. For this reason, you can complement the built-in AI by performing operation procedures specific to your plugin. Before considering to support the AI, however, you should understand what the AI is intended to represent: a human being standing or sitting in the cab, operating levers and pressing buttons, just like the player. This means that the AI must not operate 6 levers and 12 buttons simultaneously, but only do one thing at a time.</p>
 <p>If you want to support the AI, first set <em>data.AISupport</em> inside the Load call to <em>AISupport.Basic</em>. Whenever the host application performs an AI round, a call to PerformAI will then be made inside the plugin. The plugin can then decide to let the AI perform an action, or to pass and let the host application perform an action. Different kinds of actions can take different amounts of time, so whenever the plugin lets the AI perform an action, it will also set the time it takes before the next action can be performed.</p>
