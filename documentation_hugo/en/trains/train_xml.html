@@ -447,7 +447,7 @@
 Whilst this is a change for some parameters from the legacy BVE formats, it means that all positions should be consistant.
 </div>
 <h2 id="a-nametraina-2-the-train-section"><a name="train"></a>■ 2. The Train section</h2>
-<p>Whether using child car files, or a single file, the first node in each <strong>train.xml</strong> file must be the <strong><Train></strong> node.</p>
+<p>Whether using child car files, or a single file, the first node in each <strong>train.xml</strong> file must be the <strong>&lt;Train&gt;</strong> node.</p>
 <p>This supports the following properties:</p>
 <div id="command">
 <strong>&lt;Car&gt;</strong> <em>CarProperties</em> <strong>&lt;/Car&gt;</strong>
@@ -574,6 +574,18 @@ Whilst this is a change for some parameters from the legacy BVE formats, it mean
 <strong>&lt;Height&gt;</strong> <em>HeightInMeters</em> <strong>&lt;/Height&gt;</strong>
 </div>
 <p><strong>HeightInMeters</strong> should be the length of the car in meters.</p>
+<div id="command">
+<strong>&lt;CenterOfGravityHeight&gt;</strong> <em>CenterOfGravityInMeters</em> <strong>&lt;/CenterOfGravityHeight&gt;</strong>
+</div>
+<p><strong>CenterOfGravityInMeters</strong> should be the height above the rails in meters at which the center of mass is located.</p>
+<div id="command">
+<strong>&lt;ExposedFrontalArea&gt;</strong> <em>Area</em> <strong>&lt;/ExposedFrontalArea&gt;</strong>
+</div>
+<p><strong>Area</strong> should be a positive floating-point number measured in square meters (m²) indicating the frontal area of a car when it is fully exposed to resisting air, for example when the car is the front car in the current nominal direction of travel.</p>
+<div id="command">
+<strong>&lt;UnexposedFrontalArea&gt;</strong> <em>Area</em> <strong>&lt;/UnexposedFrontalArea&gt;</strong>
+</div>
+<p><strong>Area</strong> should be a positive floating-point number measured in square meters (m²) indicating the frontal area of a car when it is fully not exposed to resisting air, namely any car in the train other than the front car.</p>
 <div id="command">
 <strong>&lt;Mass&gt;</strong> <em>EmptyMass</em> <strong>&lt;/EmptyMass&gt;</strong>
 </div>
@@ -725,7 +737,7 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 </div>
 <p><strong>NumberOfNotches</strong> should be a positive integer, setting the number of power notches.</p>
 <div id="command">
-<strong>SpringType</strong> <em>Type</em>
+<strong>&lt;SpringType&gt;</strong> <em>Type</em> <strong>&lt;/SpringType&gt;</strong>
 </div>
 <div id="command-arguments">
 <em><strong>Type</strong></em>: The type of spring return fitted to this handle (if any).
@@ -828,7 +840,7 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 </div>
 <p><strong>NumberOfNotches</strong> should be a positive integer, setting the number of power notches.</p>
 <div id="command">
-<strong>SpringType</strong> <em>Type</em>
+<strong>&lt;SpringType&gt;</strong> <em>Type</em> <strong>&lt;/SpringType&gt;</strong>
 </div>
 <div id="command-arguments">
 <em><strong>Type</strong></em>: The type of spring return fitted to this handle (if any).
