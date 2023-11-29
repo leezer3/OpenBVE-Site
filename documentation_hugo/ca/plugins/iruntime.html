@@ -314,6 +314,10 @@
           
         </li>
         
+        
+          
+        </li>
+        
       </ul>
       
     </li>
@@ -1555,19 +1559,24 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </div>
 <p>Please note that depending on the implementation by the host application, sounds that are not in audible range may not be played at all.</p>
 <p>Please also note that the handle returned might be a null reference in the case the host application could not play the sound, for example because the file could not be found.</p>
-<h2 id="a-nameaia-supporting-the-ai"><a name="ai"></a>■ Supporting the AI</h2>
+<p><a name="ai"></a>■ Supporting the AI</p>
 <p>Usually, the host application performs the AI. However, your plugin might require special operation precedures which the built-in AI cannot know of. For this reason, you can complement the built-in AI by performing operation procedures specific to your plugin. Before considering to support the AI, however, you should understand what the AI is intended to represent: a human being standing or sitting in the cab, operating levers and pressing buttons, just like the player. This means that the AI must not operate 6 levers and 12 buttons simultaneously, but only do one thing at a time.</p>
 <p>If you want to support the AI, first set <em>data.AISupport</em> inside the Load call to <em>AISupport.Basic</em>. Whenever the host application performs an AI round, a call to PerformAI will then be made inside the plugin. The plugin can then decide to let the AI perform an action, or to pass and let the host application perform an action. Different kinds of actions can take different amounts of time, so whenever the plugin lets the AI perform an action, it will also set the time it takes before the next action can be performed.</p>
-<p>It is important to understand that unless your plugin also simulates a full ATO with automatic stopping at stations, you must let the host application perform the AI for most of the time and only intervene if absolutely necessary, for example in order to start the engine, to acknowledge a vigilance device, etc. Whenever this is the case, react to the PerformAI call appropriately:</p>
+<h2 id="it-is-important-to-understand-that-unless-your-plugin-also-simulates-a-full-ato-with-automatic-stopping-at-stations-you-must-let-the-host-application-perform-the-ai-for-most-of-the-time-and-only-intervene-if-absolutely-necessary-for-example-in-order-to-start-the-engine-to-acknowledge-a-vigilance-device-etc-whenever-this-is-the-case-react-to-the-performai-call-appropriately">It is important to understand that unless your plugin also simulates a full ATO with automatic stopping at stations, you must let the host application perform the AI for most of the time and only intervene if absolutely necessary, for example in order to start the engine, to acknowledge a vigilance device, etc. Whenever this is the case, react to the PerformAI call appropriately:</h2>
 <p><strong>void PerformAI(AIData data)</strong></p>
 <p>Arguments:</p>
 <div class="overflow-container">
+<p>AIData</p>
+<p>data</p>
+<p>The AI data.</p>
+<p>|</p>
+</div> | AIData (class): | <div class="overflow-container">
 <table class='type1'>
 <thead>
 <tr>
-<th>AIData</th>
-<th>data</th>
-<th>The AI data.</th>
+<th></th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
@@ -1575,42 +1584,37 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 </tr>
 </tbody>
 </table>
-</div>
-<p>AIData (class):</p>
-<div class="overflow-container">
+<p>Handles</p>
+<p>Handles</p>
+<p>Gets or sets the driver handles.</p>
 <table class='type1'>
 <thead>
 <tr>
-<th>Handles</th>
-<th>Handles</th>
-<th>Gets or sets the driver handles.</th>
+<th>AIResponse</th>
+<th>Response</th>
+<th>Gets or sets the AI response.</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>AIResponse</td>
-<td>Response</td>
-<td>Gets or sets the AI response.</td>
 </tr>
 </tbody>
 </table>
-</div>
-<p>Handles (class):</p>
-<div class="overflow-container">
+</div> | Handles (class): | <div class="overflow-container">
+<pre><code>|
+</code></pre>
+<p>int</p>
+<p>Reverser</p>
+<p>Gets or sets the reverser position.</p>
 <table class='type1'>
 <thead>
 <tr>
 <th>int</th>
-<th>Reverser</th>
-<th>Gets or sets the reverser position.</th>
+<th>PowerNotch</th>
+<th>Gets or sets the power notch.</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>int</td>
-<td>PowerNotch</td>
-<td>Gets or sets the power notch.</td>
-</tr>
 <tr>
 <td>int</td>
 <td>BrakeNotch</td>
@@ -1621,38 +1625,74 @@ See the section on <a href="#sound">playing sounds</a>.</p>
 <td>ConstSpeed</td>
 <td>Gets or sets whether the const speed system is enabled.</td>
 </tr>
+<tr>
+</tr>
 </tbody>
 </table>
-</div>
-<p>The meanings of the notches are explained in the sections on SetReverser, SetPower and SetBrake.</p>
-<p>AIResponse (enumeration):</p>
+</div> | The meanings of the notches are explained in the sections on SetReverser, SetPower and SetBrake. | AIResponse (enumeration): |
 <div class="overflow-container">
+<p>AIResponse.None</p>
+<p>No action was performed by the plugin.</p>
+<p>AIResponse.Short</p>
 <table class='type1'>
 <thead>
 <tr>
-<th>AIResponse.None</th>
-<th>No action was performed by the plugin.</th>
+<th>The action performed took a short time.</th>
+<th>AIResponse.Medium</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>AIResponse.Short</td>
-<td>The action performed took a short time.</td>
-</tr>
-<tr>
-<td>AIResponse.Medium</td>
 <td>The action performed took an average amount of time.</td>
+<td>AIResponse.Long</td>
 </tr>
 <tr>
-<td>AIResponse.Long</td>
 <td>The action performed took a long time.</td>
 </tr>
 </tbody>
 </table>
-</div>
-<p>You can directly control the driver handles with the <em>data.Handles</em> member, for example if you want to cut power or apply a certain brake notch. For plugin-specific actions, you should only simulate key presses, for example by calling KeyDown or KeyUp. This will prevent you from letting the AI cheat in any way. If you let the AI operate the handles, you should only change by one notch at a time with a short response time.</p>
-<p>If you decide to let the AI do something, you must set the <em>data.Response</em> member to a meaningful value. For operating the handles, best use a short response time, while for other actions like turning a switch not directly accessible, use a long response time. Note that the actual timings are at the whim of the host application.</p>
+</div> |
+| You can directly control the driver handles with the *data.Handles* member, for example if you want to cut power or apply a certain brake notch. For plugin-specific actions, you should only simulate key presses, for example by calling KeyDown or KeyUp. This will prevent you from letting the AI cheat in any way. If you let the AI operate the handles, you should only change by one notch at a time with a short response time.   | If you decide to let the AI do something, you must set the *data.Response* member to a meaningful value. For operating the handles, best use a short response time, while for other actions like turning a switch not directly accessible, use a long response time. Note that the actual timings are at the whim of the host application.               |
 <p>Exemple:</p>
+<div class="overflow-container">
+<table style="border: none;">
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+<pre><code>if (AtsAlarm) {  
+  /* The driver needs to cut power and apply the brakes,  
+  * then press the virtual S key.*/  
+  if (data.Handles.PowerNotch &gt; 0) {  
+    /* We change only by one notch at a time. */  
+    data.Handles.PowerNotch -= 1;  
+    data.Response = AIResponse.Short;  
+  } else if (data.Handles.BrakeNotch &lt; 2) {  
+    /* We change only by one notch at a time. */  
+    data.Handles.BrakeNotch += 1;  
+    data.Response = AIResponse.Short;  
+} else {  
+    /* We simulate a key press here. */  
+    KeyDown(VirtualKeys.S);  
+    data.Response = AIResponse.Medium;  
+  }  
+} else if (AtoActive) {  
+  /* Our ATO does not require driver interaction, so  
+  * let's prevent the built-in AI from doing anything. */  
+  data.Response = AIResponse.Long;  
+} else {  
+  /* Let the host application perform a default action  
+  * such as braking for signals or stations. */  
+  data.Response = AIResponse.None;  
+}
+</code></pre>
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="overflow-container">
 <table style="border: none;">
 <tbody>

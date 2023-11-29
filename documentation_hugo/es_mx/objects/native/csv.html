@@ -314,6 +314,10 @@
           
         </li>
         
+        
+          
+        </li>
+        
       </ul>
       
     </li>
@@ -437,13 +441,14 @@
 <li><a href="#rotate">Rotate, RotateAll</a></li>
 <li><a href="#shear">Shear, ShearAll</a></li>
 <li><a href="#mirror">Mirror, MirrorAll</a></li>
-<li><a href="#setcolor">SetColor</a></li>
-<li><a href="#setemissivecolor">SetEmissiveColor</a></li>
+<li><a href="#setcolor">SetColor, SetColorAll</a></li>
+<li><a href="#setemissivecolor">SetEmissiveColor, SetEmissiveColorAll</a></li>
 <li><a href="#setblendmode">SetBlendMode</a></li>
 <li><a href="#setwrapmode">SetWrapMode</a></li>
 <li><a href="#loadtexture">LoadTexture</a></li>
 <li><a href="#setdecaltransparentcolor">SetDecalTransparentColor</a></li>
-<li><a href="#settexturecoordinates">SetCoordinates</a></li>
+<li><a href="#enablecrossfading">EnableCrossfading</a></li>
+<li><a href="#settexturecoordinates">SetTextureCoordinates</a></li>
 </ul>
 </li>
 </ul>
@@ -524,7 +529,7 @@
 <em><strong>LowerRadius</strong></em>: A floating-point number representing the radius for the lower base of the frustum in <strong>meters</strong>. Can be negative to indicate that the bottom cap is to be omitted.<br>
 <em><strong>Height</strong></em>: A floating-point number representing the height of the prism in <strong>meters</strong>. Can be negative, which will flip the frustum vertically and display it inside-out.
 </div>
-<p>This command creates a <a href="http://en.wikipedia.org/wiki/Frustum">frustum</a>. If <em>LowerRadius</em> and <em>UpperRadius</em> are equal, the object generated will reduce to a <a href="http://en.wikipedia.org/wiki/Prism_(geometry)">prism</a>, which can be used as an approximation to the cylinder. If either <em>LowerRadius</em> or <em>UpperRadius</em> are zero, the object generated will reduce to a <a href="http://en.wikipedia.org/wiki/Pyramid_(geometry)">pyramid</a>. The frustum will be centered on the origin (0,0,0). On the x- and z-axes, the frustum extends from -<em>LowerRadius</em> to <em>LowerRadius</em> for the lower base and from -<em>UpperRadius</em> to <em>UpperRadius</em> for the upper base. On the y-axis, the frustum extends from -½*<em>Height</em> to ½*<em>Height</em>.</p>
+<p>This command creates a <a href="http://en.wikipedia.org/wiki/Frustum">frustum</a>. If <em>LowerRadius</em> and <em>UpperRadius</em> are equal, the object generated will reduce to a <a href="http://en.wikipedia.org/wiki/Prism_(geometry)">prism</a>, which can be used as an approximation to the cylinder. If either <em>LowerRadius</em> or <em>UpperRadius</em> are zero, the object generated will reduce to a <a href="http://en.wikipedia.org/wiki/Pyramid_(geometry)">pyramid</a>. The frustum will be centered on the origin (0,0,0). On the x- and z-axes, the frustum extends from -<em>LowerRadius</em> to <em>LowerRadius</em> for the lower base and from -<em>UpperRadius</em> to <em>UpperRadius</em> for the upper base. On the y-axis, the frustum extends from -1⁄2*<em>Height</em> to 1⁄2*<em>Height</em>.</p>
 <p>El número de vértices <em>n</em> que satisfacen cuando es un radio pequeño es de 6 o 8 , por ejemplo para crear un poste. Independientemente de los valores de <em>RadioSuperior</em>,<em>RadioInferior</em> y <em>n</em>, el tronco siempre tendrá 2*<em>n</em> vértices, y usualmente <em>n</em>+2 caras, a menos que algunos de los extremos sea omitido. Si <em>RadioSuperior</em> o <em>RadioInferior</em> son negativos, el valor absoluto será tomado, pero los extremos respectivos no serán creados. Sí <em>Height</em> es negativo, los roles de arriba y abajo serán revertidos y las caras serán visibles desde adentro, mientras que de caso contrario, estos serán visibles desde afuera.</p>
 <div id="notice">
 <h4 id="representación-del-cilindro">Representación del cilindro</h4>

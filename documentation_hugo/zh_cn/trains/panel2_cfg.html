@@ -314,6 +314,10 @@
           
         </li>
         
+        
+          
+        </li>
+        
       </ul>
       
     </li>
@@ -432,26 +436,27 @@
 <li><a href="#lineargauge">8. The LinearGauge section</a></li>
 <li><a href="#timetable">9. The Timetable section</a></li>
 <li><a href="#subjects">10. Available subjects</a></li>
+<li></li>
 </ul>
-<h2 id="a-nameoverviewa-1-概述"><a name="overview"></a>■ 1. 概述</h2>
-<p>The panel2.cfg file allows to create 2D panels by defining which elements to use, like lamps, needles, etc., what they are intended to display and where they are to be placed.</p>
+<p><a name="overview"></a>■ 1. 總概</p>
+<h2 id="the-panel2cfg-file-allows-to-create-2d-panels-by-defining-which-elements-to-use-like-lamps-needles-etc-what-they-are-intended-to-display-and-where-they-are-to-be-placed">The panel2.cfg file allows to create 2D panels by defining which elements to use, like lamps, needles, etc., what they are intended to display and where they are to be placed.</h2>
 <p>The panel2.cfg file is a plain text file encoded in any arbitrary <a href="../../zh_cn/information/encodings.html">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../zh_cn/information/numberformats.html">parsing model</a> for numbers is <strong>Loose</strong>, however, you are encouraged to produce <em>Strict</em> output nonetheless. The file is required to be located inside the train folder and is expected to be named <strong>panel2.cfg</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
 <div id="notice">
-<h4 id="layers">Layers</h4>
-<p>All elements in the panel are associated layers. The layer is described as an integer, where small values represent the background and high numbers the foreground. When placing elements, you should make sure that no overlapping elements share the same layer number. The background image of the panel is always associated layer number 0, so elements on top of it should start with layer number 1 or higher. If you want to place elements behind the panel background image, you can likewise use negative numbers to represent these layers.
+Layers</p>
+<h4 id="all-elements-in-the-panel-are-associated-layers-the-layer-is-described-as-an-integer-where-small-values-represent-the-background-and-high-numbers-the-foreground-when-placing-elements-you-should-make-sure-that-no-overlapping-elements-share-the-same-layer-number-the-background-image-of-the-panel-is-always-associated-layer-number-0-so-elements-on-top-of-it-should-start-with-layer-number-1-or-higher-if-you-want-to-place-elements-behind-the-panel-background-image-you-can-likewise-use-negative-numbers-to-represent-these-layers">All elements in the panel are associated layers. The layer is described as an integer, where small values represent the background and high numbers the foreground. When placing elements, you should make sure that no overlapping elements share the same layer number. The background image of the panel is always associated layer number 0, so elements on top of it should start with layer number 1 or higher. If you want to place elements behind the panel background image, you can likewise use negative numbers to represent these layers.</h4>
 </div>
 <br/>
 <div id="notice">
-<h4 id="daytime-and-nighttime-images">Daytime and nighttime images</h4>
-<p>For all elements that take a texture, you can specify distinct daytime and nighttime textures. Depending on the lighting conditions and additional route instructions, openBVE will display any intermediate blend between the daytime and nighttime textures. If no nighttime textures are used, the daytime images will be darkened to simulate corresponding nighttime images.
+Daytime and nighttime images</p>
+<h4 id="for-all-elements-that-take-a-texture-you-can-specify-distinct-daytime-and-nighttime-textures-depending-on-the-lighting-conditions-and-additional-route-instructions-openbve-will-display-any-intermediate-blend-between-the-daytime-and-nighttime-textures-if-no-nighttime-textures-are-used-the-daytime-images-will-be-darkened-to-simulate-corresponding-nighttime-images">For all elements that take a texture, you can specify distinct daytime and nighttime textures. Depending on the lighting conditions and additional route instructions, openBVE will display any intermediate blend between the daytime and nighttime textures. If no nighttime textures are used, the daytime images will be darkened to simulate corresponding nighttime images.</h4>
 </div>
 <p>➟ <a href="../../zh_cn/trains/panel2_cfg_quick.html">See also the quick reference for the panel2.cfg&hellip;</a></p>
 <div id="notice">
-<h4 id="覆蓋和光暗">覆蓋和光暗</h4>
-<p>The cab is rendered as an overlay. This means that the cab will always appear in front of scenery objects. This is intentional, because this way, rain, walls and other obstructing objects cannot be accidentally rendered inside the cab. Furthermore, lighting in the cab is different than in the scenery. While the ambient brightness is reflected in the cab, the ambient color is not, and the cab always appears as if reflecting white light.
+覆蓋和光暗</p>
+<h4 id="the-cab-is-rendered-as-an-overlay-this-means-that-the-cab-will-always-appear-in-front-of-scenery-objects-this-is-intentional-because-this-way-rain-walls-and-other-obstructing-objects-cannot-be-accidentally-rendered-inside-the-cab-furthermore-lighting-in-the-cab-is-different-than-in-the-scenery-while-the-ambient-brightness-is-reflected-in-the-cab-the-ambient-color-is-not-and-the-cab-always-appears-as-if-reflecting-white-light">The cab is rendered as an overlay. This means that the cab will always appear in front of scenery objects. This is intentional, because this way, rain, walls and other obstructing objects cannot be accidentally rendered inside the cab. Furthermore, lighting in the cab is different than in the scenery. While the ambient brightness is reflected in the cab, the ambient color is not, and the cab always appears as if reflecting white light.</h4>
 </div>
-<h2 id="a-namesyntaxa-2-语法"><a name="syntax"></a>■ 2. 语法</h2>
-<p>Each line in the file can be empty (or solely consist of white spaces) and will be ignored, can mark the beginning of a new section or contain key-value pairs inside a section. All key-value pairs relate to the last section opened.</p>
+<p><a name="syntax"></a>■ 2. 句法</p>
+<h2 id="each-line-in-the-file-can-be-empty-or-solely-consist-of-white-spaces-and-will-be-ignored-can-mark-the-beginning-of-a-new-section-or-contain-key-value-pairs-inside-a-section-all-key-value-pairs-relate-to-the-last-section-opened">Each line in the file can be empty (or solely consist of white spaces) and will be ignored, can mark the beginning of a new section or contain key-value pairs inside a section. All key-value pairs relate to the last section opened.</h2>
 <p>A new section is opened by starting the line with an opening bracket (U+005B) and ending it with a closing bracket (U+005D). The text in-between the brackets indicates the name of the section and is case-insensitive. White spaces at the beginning and the end of the line are ignored, as well as at the beginning and the end of the name of the section. Thus, the beginning of the section has the following form:</p>
 <div id="command">
 [NameOfTheSection]
@@ -461,9 +466,9 @@
 NameOfTheKey = Value
 </div>
 <p>Some values are further split into multiple parts, separated by commas (U+002C).</p>
-<p>您可以在一行的末尾添加注释。注释由分号（U+003B，英文半角）开始。所有注释在开始解析文件之前就将被自动排除。</p>
-<h2 id="a-namethisa-3-the-this-section"><a name="this"></a>■ 3. The This section</h2>
-<p>The This section defines the background image to use for the panel and which resolution the panel has. Only one This section may be used within the file.</p>
+<p>您可以在一行的末尾添加注释。注释由分号(U+003B,英文半角)开始。所有注释在开始解析文件之前就将被自动排除。</p>
+<p><a name="this"></a>■ 3. The This section</p>
+<h2 id="the-this-section-defines-the-background-image-to-use-for-the-panel-and-which-resolution-the-panel-has-only-one-this-section-may-be-used-within-the-file">The This section defines the background image to use for the panel and which resolution the panel has. Only one This section may be used within the file.</h2>
 <hr>
 <div id="command">
 [This]
@@ -545,11 +550,11 @@ Origin = <em>X</em>, <em>Y</em>
 <p>Defines which pixel in the background image corresponds to the vanishing point for the default camera position. This is the point to which the two rails converge at the horizon on a straight piece of track. The relation between <em>Center</em> and <em>Origin</em> influences the yaw and pitch of the cab alignment.</p>
 <p><img src="../../images/illustration_center_origin.png" alt="illustration_center_origin"></p>
 <div id="notice">
-<h4 id="when-camera-restriction-affects-the-default-camera-setup">When camera restriction affects the default camera setup</h4>
-<p>Camera restriction is the built-in functionality to limit the camera view inside cabs created by the panel2.cfg to the rectangle as specified via <em>Left</em>, <em>Right</em>, <em>Top</em> and <em>Bottom</em>. If your setup of <em>Center</em>and <em>Resolution</em> would force the camera to show parts that are outside of that specified region even with the default camera settings, the camera position will be altered to guarantee that the view stays inside the cab region. In order to verify that your <em>Center</em> and <em>Origin</em> setup is unaffected by this, disable camera restriction by hitting the CAMERA_RESTRICTION key (default: CTRL+R) and then reset the camera by hitting the CAMERA_RESET key (default: num 5). The <em>Center</em> and <em>Origin</em> values will now be exactly as scripted, thereby revealing possible problems in the relations of <em>Resolution</em>, <em>Left</em>, <em>Right</em>, <em>Top</em>, <em>Bottom</em>, <em>Center</em> and <em>Origin</em>.
+When camera restriction affects the default camera setup</p>
+<h4 id="camera-restriction-is-the-built-in-functionality-to-limit-the-camera-view-inside-cabs-created-by-the-panel2cfg-to-the-rectangle-as-specified-via-left-right-top-and-bottom-if-your-setup-of-centerand-resolution-would-force-the-camera-to-show-parts-that-are-outside-of-that-specified-region-even-with-the-default-camera-settings-the-camera-position-will-be-altered-to-guarantee-that-the-view-stays-inside-the-cab-region-in-order-to-verify-that-your-center-and-origin-setup-is-unaffected-by-this-disable-camera-restriction-by-hitting-the-camera_restriction-key-default-ctrlr-and-then-reset-the-camera-by-hitting-the-camera_reset-key-default-num-5-the-center-and-origin-values-will-now-be-exactly-as-scripted-thereby-revealing-possible-problems-in-the-relations-of-resolution-left-right-top-bottom-center-and-origin">Camera restriction is the built-in functionality to limit the camera view inside cabs created by the panel2.cfg to the rectangle as specified via <em>Left</em>, <em>Right</em>, <em>Top</em> and <em>Bottom</em>. If your setup of <em>Center</em>and <em>Resolution</em> would force the camera to show parts that are outside of that specified region even with the default camera settings, the camera position will be altered to guarantee that the view stays inside the cab region. In order to verify that your <em>Center</em> and <em>Origin</em> setup is unaffected by this, disable camera restriction by hitting the CAMERA_RESTRICTION key (default: CTRL+R) and then reset the camera by hitting the CAMERA_RESET key (default: num 5). The <em>Center</em> and <em>Origin</em> values will now be exactly as scripted, thereby revealing possible problems in the relations of <em>Resolution</em>, <em>Left</em>, <em>Right</em>, <em>Top</em>, <em>Bottom</em>, <em>Center</em> and <em>Origin</em>.</h4>
 </div>
-<h2 id="a-namepilotlampa-4-the-pilotlamp-section"><a name="pilotlamp"></a>■ 4. The PilotLamp section</h2>
-<p>The PilotLamp section creates an indicator that can be made visible or invisible. You can use as many of these sections as required.</p>
+<p><a name="pilotlamp"></a>■ 4. The PilotLamp section</p>
+<h2 id="the-pilotlamp-section-creates-an-indicator-that-can-be-made-visible-or-invisible-you-can-use-as-many-of-these-sections-as-required">The PilotLamp section creates an indicator that can be made visible or invisible. You can use as many of these sections as required.</h2>
 <p>The <em>DaytimeImage</em> is required to be specified if you make use of the PilotLamp section. The <em>Subject</em> used needs to return 1 if the PilotLamp is to be made visible, otherwise it will be invisible.</p>
 <hr>
 <div id="command">
@@ -599,8 +604,8 @@ Layer = <em>LayerIndex</em>
 <div id="command-arguments">
 <em><strong>LayerIndex</strong></em>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.
 </div>
-<h2 id="a-nameneedlea-5-the-needle-section"><a name="needle"></a>■ 5. The Needle section</h2>
-<p>The Needle section creates a rotating element, or needle. You can use as many of these sections as required.</p>
+<p><a name="needle"></a>■ 5. The Needle section</p>
+<h2 id="the-needle-section-creates-a-rotating-element-or-needle-you-can-use-as-many-of-these-sections-as-required">The Needle section creates a rotating element, or needle. You can use as many of these sections as required.</h2>
 <p>The image used for the Needle, defined by <em>DaytimeImage</em> (required) or <em>NighttimeImage</em> (optional), will be rotated around a defined <em>Origin</em> and optionally scaled if <em>Radius</em> is used. The needle depicted in the image should be pointing up.</p>
 <hr>
 <div id="command">
@@ -719,8 +724,8 @@ Layer = <em>LayerIndex</em>
 <div id="command-arguments">
 <em><strong>LayerIndex</strong></em>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.
 </div>
-<h2 id="a-namedigitalnumbera-6-the-digitalnumber-section"><a name="digitalnumber"></a>■ 6. The DigitalNumber section</h2>
-<p>The DigitalNumber section creates an indicator that can switch between multiple states, useful to build up a display of decimal digits. You can use as many of these sections as required.</p>
+<p><a name="digitalnumber"></a>■ 6. The DigitalNumber section</p>
+<h2 id="the-digitalnumber-section-creates-an-indicator-that-can-switch-between-multiple-states-useful-to-build-up-a-display-of-decimal-digits-you-can-use-as-many-of-these-sections-as-required">The DigitalNumber section creates an indicator that can switch between multiple states, useful to build up a display of decimal digits. You can use as many of these sections as required.</h2>
 <p>The image used for the DigitalNumber, defined by <em>DaytimeImage</em> (required) and <em>NighttimeImage</em> (optional), is comprised of the individual states, which are stacked vertically, anchored at the top of the image. The width of a single state is equal to the width of the image, while the height of a single state is defined by <em>Interval</em> (required). The <em>Subject</em> used needs to return an integer from 0 (first element) to <em>n</em>-1 (last element), where <em>n</em> is the number of elements. If a value outside of that range is returned by <em>Subject</em>, the DigitalNumber will be made invisible.</p>
 <hr>
 <div id="command">
@@ -777,8 +782,8 @@ Layer = <em>LayerIndex</em>
 <div id="command-arguments">
 <em><strong>LayerIndex</strong></em>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.
 </div>
-<h2 id="a-namedigitalgaugea-7-the-digitalgauge-section"><a name="digitalgauge"></a>■ 7. The DigitalGauge section</h2>
-<p>The DigitalGauge section creates a solid-color square of which only a radial section is shown at a time. You can use as many of these sections as required.</p>
+<p><a name="digitalgauge"></a>■ 7. The DigitalGauge section</p>
+<h2 id="the-digitalgauge-section-creates-a-solid-color-square-of-which-only-a-radial-section-is-shown-at-a-time-you-can-use-as-many-of-these-sections-as-required">The DigitalGauge section creates a solid-color square of which only a radial section is shown at a time. You can use as many of these sections as required.</h2>
 <p>There are three important angles to consider. The <em>InitialAngle</em> defines which angle corresponds to the <em>Minimum</em> value, while <em>LastAngle</em> defines which angle corresponds to the <em>Maximum</em> value. The current value at a given time corresponds to the current angle. The solid-color square will only show the part that is between the current angle and the <em>LastAngle</em>. If <em>InitialAngle</em> is less than <em>LastAngle</em>, the solid-color square will wind clockwise. If <em>InitialAngle</em> is greater than <em>LastAngle</em>, the solid-color square will wind counter-clockwise.</p>
 <p>The subject needs to return a value that meaningfully works together with the <em>Minimum</em> and <em>Maximum</em> settings.</p>
 <p><img src="../../images/illustration_digitalgauge_1.png" alt="illustration_digitalgauge_1"></p>
@@ -866,8 +871,8 @@ Layer = <em>LayerIndex</em>
 <div id="command-arguments">
 <em><strong>LayerIndex</strong></em>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.
 </div>
-<h2 id="a-namelineargaugea-8-the-lineargauge-section"><a name="lineargauge"></a>■ 8. The LinearGauge section</h2>
-<p>The LinearGauge section creates a panel layer, which uses texture shifting to create a sliding linear gauge. You can use as many of these sections as required.</p>
+<p><a name="lineargauge"></a>■ 8. The LinearGauge section</p>
+<h2 id="the-lineargauge-section-creates-a-panel-layer-which-uses-texture-shifting-to-create-a-sliding-linear-gauge-you-can-use-as-many-of-these-sections-as-required">The LinearGauge section creates a panel layer, which uses texture shifting to create a sliding linear gauge. You can use as many of these sections as required.</h2>
 <p>Consider a standard openBVE face:</p>
 <p>As you can see, the horizontal texture-coordinates upon this face are 0 at the <strong>right</strong> and 1 at the <strong>left</strong>. Thus, the value given by <em>Minimum</em> represents 0 <em>Maximum</em>, represents 1, and the current value may then be calculated as a simple percentage.</p>
 <p>Further, the direction of the texture shift may be changed from horizontal to vertical (or both) by using the <strong>Direction</strong> parameter.</p>
@@ -927,8 +932,8 @@ Layer = <em>LayerIndex</em>
 <div id="command-arguments">
 <em><strong>LayerIndex</strong></em>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.
 </div>
-<h2 id="a-nametimetablea-9-the-timetable-section"><a name="timetable"></a>■ 9. The Timetable section</h2>
-<p>The Timetable section defines where to place custom timetables. The actual images are loaded via the route file. Only one Timetable section may be used within the file.</p>
+<p><a name="timetable"></a>■ 9. The Timetable section</p>
+<h2 id="the-timetable-section-defines-where-to-place-custom-timetables-the-actual-images-are-loaded-via-the-route-file-only-one-timetable-section-may-be-used-within-the-file">The Timetable section defines where to place custom timetables. The actual images are loaded via the route file. Only one Timetable section may be used within the file.</h2>
 <hr>
 <div id="command">
 [Timetable]
@@ -970,8 +975,8 @@ Layer = <em>LayerIndex</em>
 <div id="command-arguments">
 <em><strong>LayerIndex</strong></em>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.
 </div>
-<h2 id="a-namewindscreena-10-the-windscreen-section"><a name="windscreen"></a>■ 10. The Windscreen section</h2>
-<p>The Windscreen section defines a set of animated raindrops / snowflakes and windscreen wipers.</p>
+<p><a name="windscreen"></a>■ 10. The Windscreen section</p>
+<h2 id="the-windscreen-section-defines-a-set-of-animated-raindrops--snowflakes-and-windscreen-wipers">The Windscreen section defines a set of animated raindrops / snowflakes and windscreen wipers.</h2>
 <hr>
 <div id="command">
 [Windscreen]
@@ -1070,8 +1075,8 @@ Layer = <em>LayerIndex</em>
 <div id="command-arguments">
 <em><strong>LayerIndex</strong></em>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.
 </div>
-<h2 id="a-namesubjectsa-11-available-subjects"><a name="subjects"></a>■ 11. Available subjects</h2>
-<p>A subject is composed of a base subject and an optional subject suffix. The subject controls what information is fed to the element that uses the subject. For example, a <em>Needle</em> can use the subject <em>kmph</em> to be fed with the current speed of the train in kilometers per hour, or with the <em>mr</em> subject to show the main reservoir pressure.</p>
+<p><a name="subjects"></a>■ 11. Available subjects</p>
+<h2 id="a-subject-is-composed-of-a-base-subject-and-an-optional-subject-suffix-the-subject-controls-what-information-is-fed-to-the-element-that-uses-the-subject-for-example-a-needle-can-use-the-subject-kmph-to-be-fed-with-the-current-speed-of-the-train-in-kilometers-per-hour-or-with-the-mr-subject-to-show-the-main-reservoir-pressure">A subject is composed of a base subject and an optional subject suffix. The subject controls what information is fed to the element that uses the subject. For example, a <em>Needle</em> can use the subject <em>kmph</em> to be fed with the current speed of the train in kilometers per hour, or with the <em>mr</em> subject to show the main reservoir pressure.</h2>
 <h5 id="-base-subjects">● Base subjects</h5>
 <div class="overflow-container">
 <table class='type0'>
@@ -1196,31 +1201,31 @@ Layer = <em>LayerIndex</em>
 </tr>
 <tr>
 <td>Klaxon</td>
-<td>Returns the currently playing horn (if any) as follows: (0) No horns are playing (1) The primary horn is playing (2) The secondary horn is playing (3) The music horn is playing. <em>Note</em> If multiple horns are playing, the lowest value will be returned.</td>
+<td><code>MusicKlaxon</code></td>
 </tr>
 <tr>
 <td>PrimaryKlaxon</td>
-<td>Returns 1 if the primary horn is currently playing, 0 otherwise.</td>
+<td><code>passAlarm</code></td>
 </tr>
 <tr>
 <td>SecondaryKlaxon</td>
-<td>Returns 1 if the secondary horn is currently playing, 0 otherwise.</td>
+<td><code>stationAdjustAlarm</code></td>
 </tr>
 <tr>
 <td>MusicKlaxon</td>
-<td>Returns 1 if the music horn is currently playing, 0 otherwise.</td>
+<td bgcolor='#D0D0D0'></td>
 </tr>
 <tr>
 <td>passAlarm</td>
-<td>Whether the station pass alarm has been activated. Returns either 0 (inactive) or 1 (active).</td>
+<td bgcolor='#D0D0D0'></td>
 </tr>
 <tr>
 <td>pilotLamp</td>
-<td>The state of the pilot lamp (Doors closed &amp; ready to start). Returns either 0 (unlit) or 1 (lit).</td>
+<td>Description</td>
 </tr>
 <tr>
 <td>stationAdjustAlarm</td>
-<td>Whether the station adjust alarm has been activated. Returns either 0 (inactive) or 1 (active).</td>
+<td>English</td>
 </tr>
 <tr>
 <td>wiperPosition</td>
@@ -1246,156 +1251,156 @@ Layer = <em>LayerIndex</em>
 <table class='type0'>
 <thead>
 <tr>
-<th><em>i</em></th>
-<th>English</th>
-<th>日本語</th>
-<th>Return values</th>
+<th>Arti</th>
+<th>ATS</th>
+<th>ATS</th>
+<th>0 (unlit) or 1 (lit)</th>
 <th></th>
 <th>ats271</th>
-<th>含义</th>
+<th>Arti</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>256</td>
-<td>ATS</td>
-<td>ATS</td>
-<td>0 (unlit) or 1 (lit)</td>
+<td>ATS 作動</td>
+<td>ATS 作動</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>0</td>
 <td>ATC not available</td>
 </tr>
 <tr>
 <td>257</td>
-<td>ATS RUN</td>
 <td>ATS 作動</td>
-<td>0 (unlit), 1 (lit) or 2 (flashing)</td>
+<td>0 (unlit) or 1 (lit)</td>
+<td>15 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>1</td>
 <td>0 km/h</td>
 </tr>
 <tr>
 <td>258</td>
-<td>ATS RUN</td>
 <td>ATS 作動</td>
-<td>0 (unlit / non-flashing), 1 (lit / flashing)</td>
+<td>0 (unlit) or 1 (lit)</td>
+<td>25 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>2</td>
 <td>15 km/h</td>
 </tr>
 <tr>
 <td>259</td>
-<td>P POWER</td>
-<td>P 電源</td>
+<td>パターン接近</td>
 <td>0 (unlit) or 1 (lit)</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>3</td>
 <td>25 km/h</td>
 </tr>
 <tr>
 <td>260</td>
-<td>PTN APPROACH</td>
-<td>パターン接近</td>
+<td>ブレーキ開放</td>
 <td>0 (unlit) or 1 (lit)</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>4</td>
 <td>45 km/h</td>
 </tr>
 <tr>
 <td>261</td>
-<td>BRAKE RELEASE</td>
-<td>ブレーキ開放</td>
+<td>ブレーキ動作</td>
 <td>0 (unlit) or 1 (lit)</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>5</td>
 <td>55 km/h</td>
 </tr>
 <tr>
 <td>262</td>
-<td>BRAKE APPLY</td>
-<td>ブレーキ動作</td>
+<td>ATS-P</td>
 <td>0 (unlit) or 1 (lit)</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>6</td>
 <td>65 km/h</td>
 </tr>
 <tr>
 <td>263</td>
-<td>ATS P</td>
+<td>故障</td>
 <td>ATS-P</td>
-<td>0 (unlit) or 1 (lit)</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>7</td>
 <td>75 km/h</td>
 </tr>
 <tr>
 <td>264</td>
-<td>FAILURE</td>
-<td>故障</td>
+<td>ATC</td>
 <td>0 (unlit) or 1 (lit)</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>8</td>
 <td>90 km/h</td>
 </tr>
 <tr>
 <td>265</td>
-<td>ATC</td>
-<td>ATC</td>
-<td>0 (unlit) or 1 (lit)</td>
+<td>ATC 電源</td>
+<td>ATC 電源</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>9</td>
 <td>100 km/h</td>
 </tr>
 <tr>
 <td>266</td>
-<td>ATC POWER</td>
-<td>ATC 電源</td>
+<td>ATC 常用</td>
 <td>0 (unlit) or 1 (lit)</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>10</td>
 <td>110 km/h</td>
 </tr>
 <tr>
 <td>267</td>
-<td>ATC SRV</td>
-<td>ATC 常用</td>
+<td>ATC 非常</td>
 <td>0 (unlit) or 1 (lit)</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>11</td>
 <td>120 km/h</td>
 </tr>
 <tr>
 <td>268</td>
-<td>ATC EMG</td>
-<td>ATC 非常</td>
+<td>定速</td>
 <td>0 (unlit) or 1 (lit)</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>12</td>
 <td>ATS is active</td>
 </tr>
 <tr>
 <td>269</td>
-<td>CONST SPEED</td>
-<td>定速</td>
 <td>0 (unlit) or 1 (lit)</td>
+<td>ATC speed indicator</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
 <tr>
 <td>270</td>
-<td>EB</td>
-<td>EB</td>
-<td>0 (unlit) or 1 (lit)</td>
+<td>● Sections (signalling)</td>
+<td>● Sections (signalling)</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
 <tr>
 <td>271</td>
-<td>ATC speed indicator</td>
 <td bgcolor='#D0D0D0'></td>
-<td>0 - 12, see table on the right</td>
+<td bgcolor='#D0D0D0'></td>
+<td>Variable</td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
@@ -1409,7 +1414,7 @@ Layer = <em>LayerIndex</em>
 <thead>
 <tr>
 <th>Subject suffix</th>
-<th>描述</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>

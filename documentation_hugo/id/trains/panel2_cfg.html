@@ -314,6 +314,10 @@
           
         </li>
         
+        
+          
+        </li>
+        
       </ul>
       
     </li>
@@ -431,7 +435,8 @@
 <li><a href="#digitalgauge">7. The DigitalGauge section</a></li>
 <li><a href="#lineargauge">8. The LinearGauge section</a></li>
 <li><a href="#timetable">9. The Timetable section</a></li>
-<li><a href="#subjects">10. Available subjects</a></li>
+<li><a href="#windscreen">10. The Windscreen section</a></li>
+<li><a href="#subjects">11. Available subjects</a></li>
 </ul>
 <h2 id="a-nameoverviewa-1-penjelasan"><a name="overview"></a>■ 1. Penjelasan</h2>
 <p>The panel2.cfg file allows to create 2D panels by defining which elements to use, like lamps, needles, etc., what they are intended to display and where they are to be placed.</p>
@@ -544,9 +549,10 @@ Origin = <em>X</em>, <em>Y</em>
 </div>
 <p>Defines which pixel in the background image corresponds to the vanishing point for the default camera position. This is the point to which the two rails converge at the horizon on a straight piece of track. The relation between <em>Center</em> and <em>Origin</em> influences the yaw and pitch of the cab alignment.</p>
 <p><img src="../../images/illustration_center_origin.png" alt="illustration_center_origin"></p>
-<div id="notice">
+<p>Default versus simplified section behavior</p>
 <h4 id="when-camera-restriction-affects-the-default-camera-setup">When camera restriction affects the default camera setup</h4>
-<p>Camera restriction is the built-in functionality to limit the camera view inside cabs created by the panel2.cfg to the rectangle as specified via <em>Left</em>, <em>Right</em>, <em>Top</em> and <em>Bottom</em>. If your setup of <em>Center</em>and <em>Resolution</em> would force the camera to show parts that are outside of that specified region even with the default camera settings, the camera position will be altered to guarantee that the view stays inside the cab region. In order to verify that your <em>Center</em> and <em>Origin</em> setup is unaffected by this, disable camera restriction by hitting the CAMERA_RESTRICTION key (default: CTRL+R) and then reset the camera by hitting the CAMERA_RESET key (default: num 5). The <em>Center</em> and <em>Origin</em> values will now be exactly as scripted, thereby revealing possible problems in the relations of <em>Resolution</em>, <em>Left</em>, <em>Right</em>, <em>Top</em>, <em>Bottom</em>, <em>Center</em> and <em>Origin</em>.
+<div id="notice">
+Camera restriction is the built-in functionality to limit the camera view inside cabs created by the panel2.cfg to the rectangle as specified via <em>Left</em>, <em>Right</em>, <em>Top</em> and <em>Bottom</em>. If your setup of <em>Center</em>and <em>Resolution</em> would force the camera to show parts that are outside of that specified region even with the default camera settings, the camera position will be altered to guarantee that the view stays inside the cab region. In order to verify that your <em>Center</em> and <em>Origin</em> setup is unaffected by this, disable camera restriction by hitting the CAMERA_RESTRICTION key (default: CTRL+R) and then reset the camera by hitting the CAMERA_RESET key (default: num 5). The <em>Center</em> and <em>Origin</em> values will now be exactly as scripted, thereby revealing possible problems in the relations of <em>Resolution</em>, <em>Left</em>, <em>Right</em>, <em>Top</em>, <em>Bottom</em>, <em>Center</em> and <em>Origin</em>.
 </div>
 <h2 id="a-namepilotlampa-4-the-pilotlamp-section"><a name="pilotlamp"></a>■ 4. The PilotLamp section</h2>
 <p>The PilotLamp section creates an indicator that can be made visible or invisible. You can use as many of these sections as required.</p>
@@ -1196,31 +1202,31 @@ Layer = <em>LayerIndex</em>
 </tr>
 <tr>
 <td>Klaxon</td>
-<td>Returns the currently playing horn (if any) as follows: (0) No horns are playing (1) The primary horn is playing (2) The secondary horn is playing (3) The music horn is playing. <em>Note</em> If multiple horns are playing, the lowest value will be returned.</td>
+<td><code>MusicKlaxon</code></td>
 </tr>
 <tr>
 <td>PrimaryKlaxon</td>
-<td>Returns 1 if the primary horn is currently playing, 0 otherwise.</td>
+<td><code>passAlarm</code></td>
 </tr>
 <tr>
 <td>SecondaryKlaxon</td>
-<td>Returns 1 if the secondary horn is currently playing, 0 otherwise.</td>
+<td><code>stationAdjustAlarm</code></td>
 </tr>
 <tr>
 <td>MusicKlaxon</td>
-<td>Returns 1 if the music horn is currently playing, 0 otherwise.</td>
+<td bgcolor='#D0D0D0'></td>
 </tr>
 <tr>
 <td>passAlarm</td>
-<td>Whether the station pass alarm has been activated. Returns either 0 (inactive) or 1 (active).</td>
+<td bgcolor='#D0D0D0'></td>
 </tr>
 <tr>
 <td>pilotLamp</td>
-<td>The state of the pilot lamp (Doors closed &amp; ready to start). Returns either 0 (unlit) or 1 (lit).</td>
+<td>Description</td>
 </tr>
 <tr>
 <td>stationAdjustAlarm</td>
-<td>Whether the station adjust alarm has been activated. Returns either 0 (inactive) or 1 (active).</td>
+<td>English</td>
 </tr>
 <tr>
 <td>wiperPosition</td>
@@ -1246,10 +1252,10 @@ Layer = <em>LayerIndex</em>
 <table class='type0'>
 <thead>
 <tr>
-<th><em>i</em></th>
-<th>English</th>
-<th>日本語</th>
-<th>Return values</th>
+<th>Arti</th>
+<th>ATS</th>
+<th>ATS</th>
+<th>0 (unlit) or 1 (lit)</th>
 <th></th>
 <th>ats271</th>
 <th>Arti</th>
@@ -1258,144 +1264,144 @@ Layer = <em>LayerIndex</em>
 <tbody>
 <tr>
 <td>256</td>
-<td>ATS</td>
-<td>ATS</td>
-<td>0 (unlit) or 1 (lit)</td>
+<td>ATS 作動</td>
+<td>ATS 作動</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>0</td>
 <td>ATC not available</td>
 </tr>
 <tr>
 <td>257</td>
-<td>ATS RUN</td>
 <td>ATS 作動</td>
-<td>0 (unlit), 1 (lit) or 2 (flashing)</td>
+<td>0 (unlit) or 1 (lit)</td>
+<td>15 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>1</td>
 <td>0 km/h</td>
 </tr>
 <tr>
 <td>258</td>
-<td>ATS RUN</td>
 <td>ATS 作動</td>
-<td>0 (unlit / non-flashing), 1 (lit / flashing)</td>
+<td>0 (unlit) or 1 (lit)</td>
+<td>25 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>2</td>
 <td>15 km/h</td>
 </tr>
 <tr>
 <td>259</td>
-<td>P POWER</td>
-<td>P 電源</td>
+<td>パターン接近</td>
 <td>0 (unlit) or 1 (lit)</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>3</td>
 <td>25 km/h</td>
 </tr>
 <tr>
 <td>260</td>
-<td>PTN APPROACH</td>
-<td>パターン接近</td>
+<td>ブレーキ開放</td>
 <td>0 (unlit) or 1 (lit)</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>4</td>
 <td>45 km/h</td>
 </tr>
 <tr>
 <td>261</td>
-<td>BRAKE RELEASE</td>
-<td>ブレーキ開放</td>
+<td>ブレーキ動作</td>
 <td>0 (unlit) or 1 (lit)</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>5</td>
 <td>55 km/h</td>
 </tr>
 <tr>
 <td>262</td>
-<td>BRAKE APPLY</td>
-<td>ブレーキ動作</td>
+<td>ATS-P</td>
 <td>0 (unlit) or 1 (lit)</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>6</td>
 <td>65 km/h</td>
 </tr>
 <tr>
 <td>263</td>
-<td>ATS P</td>
+<td>故障</td>
 <td>ATS-P</td>
-<td>0 (unlit) or 1 (lit)</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>7</td>
 <td>75 km/h</td>
 </tr>
 <tr>
 <td>264</td>
-<td>FAILURE</td>
-<td>故障</td>
+<td>ATC</td>
 <td>0 (unlit) or 1 (lit)</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>8</td>
 <td>90 km/h</td>
 </tr>
 <tr>
 <td>265</td>
-<td>ATC</td>
-<td>ATC</td>
-<td>0 (unlit) or 1 (lit)</td>
+<td>ATC 電源</td>
+<td>ATC 電源</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>9</td>
 <td>100 km/h</td>
 </tr>
 <tr>
 <td>266</td>
-<td>ATC POWER</td>
-<td>ATC 電源</td>
+<td>ATC 常用</td>
 <td>0 (unlit) or 1 (lit)</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>10</td>
 <td>110 km/h</td>
 </tr>
 <tr>
 <td>267</td>
-<td>ATC SRV</td>
-<td>ATC 常用</td>
+<td>ATC 非常</td>
 <td>0 (unlit) or 1 (lit)</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>11</td>
 <td>120 km/h</td>
 </tr>
 <tr>
 <td>268</td>
-<td>ATC EMG</td>
-<td>ATC 非常</td>
+<td>定速</td>
 <td>0 (unlit) or 1 (lit)</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>12</td>
 <td>ATS is active</td>
 </tr>
 <tr>
 <td>269</td>
-<td>CONST SPEED</td>
-<td>定速</td>
 <td>0 (unlit) or 1 (lit)</td>
+<td>ATC speed indicator</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
 <tr>
 <td>270</td>
-<td>EB</td>
-<td>EB</td>
-<td>0 (unlit) or 1 (lit)</td>
+<td>● Sections (signalling)</td>
+<td>● Sections (signalling)</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
 <tr>
 <td>271</td>
-<td>ATC speed indicator</td>
 <td bgcolor='#D0D0D0'></td>
-<td>0 - 12, see table on the right</td>
+<td bgcolor='#D0D0D0'></td>
+<td>Variable</td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>

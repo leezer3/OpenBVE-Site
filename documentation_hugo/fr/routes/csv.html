@@ -314,6 +314,10 @@
           
         </li>
         
+        
+          
+        </li>
+        
       </ul>
       
     </li>
@@ -2274,8 +2278,8 @@ With Track<br>
 <p><strong>Note:</strong>
 If <em>RailIndex<sub>1</sub></em> is to the <strong>left</strong> of <em>RailIndex<sub>2</sub></em> (e.g. it&rsquo;s X-cordinate is smaller), then the objects defined in Structure.FormL, Structure.FormCL and Structure.RoofL will be used.<br>
 Otherwise, the objects defined in Structure.FormR, Structure.FormCL and Structure.RoofR will be used.</p>
-<h5 id="a-nametrack_signallinga-115-signalling-and-speed-limits"><a name="track_signalling"></a>● 11.5. Signalling and speed limits</h5>
-<hr>
+<p><a name="track_signalling"></a>● 11.5. Signalling and speed limits</p>
+<h5 id="------">&mdash;&mdash;</h5>
 <div id="command">
 <strong>Track.Limit</strong> <em><font color="blue">Speed</font></em>; <em>Post</em>; <em>Cource</em>
 </div>
@@ -2307,8 +2311,8 @@ Otherwise, the objects defined in Structure.FormR, Structure.FormCL and Structur
 </div>
 <p>This command starts a section, the functional part of signalling, to be used in conjunction with Track.SigF, which creates a visual representation of a section (a signal). The <em>a<sub>i</sub></em> parameters specify the aspects the section can bear. An aspect of 0 corresponds to a red section which must not be passed by a train. The <em>a<sub>0</sub></em> term is mandatory.</p>
 <div id="notice">
-<h4 id="default-versus-simplified-section-behavior">Default versus simplified section behavior</h4>
-<p>There are two different modes of behavior on how to interpret the <em>a<sub>i</sub></em> parameters. The mode can be set via Options.SectionBehavior. The following are separate descriptions for default and simplified behavior.
+Default versus simplified section behavior</p>
+<h4 id="there-are-two-different-modes-of-behavior-on-how-to-interpret-the-asubisub-parameters-the-mode-can-be-set-via-optionssectionbehavior-the-following-are-separate-descriptions-for-default-and-simplified-behavior">There are two different modes of behavior on how to interpret the <em>a<sub>i</sub></em> parameters. The mode can be set via Options.SectionBehavior. The following are separate descriptions for default and simplified behavior.</h4>
 </div>
 <p><strong>Default behavior:</strong><br>
 The <em>a<sub>i</sub></em> terms specify the aspect the section should bear depending on how many sections ahead are clear until a red one is encountered. The order of the terms is relevant. The same aspect may occur multiple times.</p>
@@ -2445,8 +2449,8 @@ With Track<br>
 <em><strong>Roll</strong></em>: The angle in degrees by which the object is rotated in the XY-plane in clock-wise order when viewed from behind. The default value is 0.
 </div>
 <p>This commands creates a default Japanese repeating signal. The repeating signal repeats the state of the upcoming signal. Setting <em>X</em> to zero does not create a repeating signal, but forces the command to be ignored. Setting <em>X</em> to a non-zero number and <em>Y</em> to a negative number resets the y-coordinate to 4.8 and attaches a default signal post.</p>
-<h5 id="a-nametrack_safetya-116-safety-systems"><a name="track_safety"></a>● 11.6. Safety systems</h5>
-<hr>
+<p><a name="track_safety"></a>● 11.6. Safety systems</p>
+<h5 id="-------1">&mdash;&mdash;</h5>
 <div id="command">
 <strong>Track.Beacon</strong> <em>Type</em>; <em>BeaconStructureIndex</em>; <em>Section</em>; <em>Data</em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em>; <em>Yaw</em>; <em>Pitch</em>; <em>Roll</em>
 </div>
@@ -2536,8 +2540,8 @@ With Track<br>
 <em><strong><font color="blue">Speed</font></strong></em>: A positive floating-point number representing the permanent speed restriction for ATS-P, <strong>by default</strong> measured in <strong>km/h</strong>.
 </div>
 <p>This command is equivalent to <strong>Track.Pattern 1;<em>Speed</em></strong>. See there for more information.</p>
-<h5 id="a-nametrack_misca-117-miscellaneous"><a name="track_misc"></a>● 11.7. Miscellaneous</h5>
-<hr>
+<p><a name="track_misc"></a>● 11.7. Miscellaneous</p>
+<h5 id="-------2">&mdash;&mdash;</h5>
 <div id="command">
 <strong>Track.Back</strong> <em>BackgroundTextureIndex</em>
 </div>
@@ -2823,6 +2827,7 @@ phi = 0
 </tbody>
 </table>
 <p>In the formulas above, <a href="http://functions.wolfram.com/ElementaryFunctions/Cos/02"><em>cos(x)</em></a> represents the cosine, <a href="http://functions.wolfram.com/ElementaryFunctions/Sin/02"><em>sin(x)</em></a> the sine, <a href="http://functions.wolfram.com/ElementaryFunctions/ArcTan/02"><em>arctan(x)</em></a> the inverse tangent, <a href="http://functions.wolfram.com/ElementaryFunctions/ArcTan2/02"><em>arctan(x,y)</em></a> the two-argument inverse tangent and <a href="http://functions.wolfram.com/ElementaryFunctions/Sqrt/02"><em>sqrt(x)</em></a> the square root. The formulas can be used to convert between spherical and cartesian coordinates if working with either one seems more intuitive than working with the other one. The formulas also serve as the official documentation on how the light direction is mathematically defined (using radians for the trigonometric functions).</p>
+<hr>
 <hr>
 
 </div>

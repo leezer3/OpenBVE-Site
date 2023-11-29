@@ -314,6 +314,10 @@
           
         </li>
         
+        
+          
+        </li>
+        
       </ul>
       
     </li>
@@ -431,9 +435,10 @@
 <li><a href="#digitalgauge">7. The DigitalGauge section</a></li>
 <li><a href="#lineargauge">8. The LinearGauge section</a></li>
 <li><a href="#timetable">9. The Timetable section</a></li>
-<li><a href="#subjects">10. Available subjects</a></li>
+<li><a href="#windscreen">10. The Windscreen section</a></li>
+<li><a href="#subjects">11. Available subjects</a></li>
 </ul>
-<h2 id="a-nameoverviewa-1-présentation"><a name="overview"></a>■ 1. Présentation</h2>
+<h2 id="a-nameoverviewa-1-overview"><a name="overview"></a>■ 1. Overview</h2>
 <p>The panel2.cfg file allows to create 2D panels by defining which elements to use, like lamps, needles, etc., what they are intended to display and where they are to be placed.</p>
 <p>The panel2.cfg file is a plain text file encoded in any arbitrary <a href="../../fr/information/encodings.html">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../fr/information/numberformats.html">parsing model</a> for numbers is <strong>Loose</strong>, however, you are encouraged to produce <em>Strict</em> output nonetheless. The file is required to be located inside the train folder and is expected to be named <strong>panel2.cfg</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
 <div id="notice">
@@ -450,7 +455,7 @@
 <h4 id="overlay-and-lighting">Overlay and Lighting</h4>
 <p>The cab is rendered as an overlay. This means that the cab will always appear in front of scenery objects. This is intentional, because this way, rain, walls and other obstructing objects cannot be accidentally rendered inside the cab. Furthermore, lighting in the cab is different than in the scenery. While the ambient brightness is reflected in the cab, the ambient color is not, and the cab always appears as if reflecting white light.
 </div>
-<h2 id="a-namesyntaxa-2-syntaxe"><a name="syntax"></a>■ 2. Syntaxe</h2>
+<h2 id="a-namesyntaxa-2-syntax"><a name="syntax"></a>■ 2. Syntax</h2>
 <p>Each line in the file can be empty (or solely consist of white spaces) and will be ignored, can mark the beginning of a new section or contain key-value pairs inside a section. All key-value pairs relate to the last section opened.</p>
 <p>A new section is opened by starting the line with an opening bracket (U+005B) and ending it with a closing bracket (U+005D). The text in-between the brackets indicates the name of the section and is case-insensitive. White spaces at the beginning and the end of the line are ignored, as well as at the beginning and the end of the name of the section. Thus, the beginning of the section has the following form:</p>
 <div id="command">
@@ -1084,7 +1089,7 @@ Layer = <em>LayerIndex</em>
 <tbody>
 <tr>
 <td>acc</td>
-<td>Returns the (signed) acceleration of the train in meters per second squared (m/s2).</td>
+<td>Returns the (signed) acceleration of the train in meters per second squared (m/s²).</td>
 </tr>
 <tr>
 <td>atc</td>
@@ -1160,7 +1165,7 @@ Layer = <em>LayerIndex</em>
 </tr>
 <tr>
 <td>motor</td>
-<td>Returns the acceleration which the motor of the first motor car currently generates in m/s2.</td>
+<td>Returns the acceleration which the motor of the first motor car currently generates in m/s².</td>
 </tr>
 <tr>
 <td>mph</td>
@@ -1229,6 +1234,14 @@ Layer = <em>LayerIndex</em>
 <tr>
 <td>wheelSlip</td>
 <td>Whether the train is currently experiencing wheelsip. Returns 1 if true, 0 otherwise.</td>
+</tr>
+<tr>
+<td>sanders</td>
+<td>Whether the sanders are currently active. Returns 1 if true, 0 otherwise.</td>
+</tr>
+<tr>
+<td>sandLevel</td>
+<td>Returns the current sand level.</td>
 </tr>
 </tbody>
 </table>

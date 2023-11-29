@@ -314,6 +314,10 @@
           
         </li>
         
+        
+          
+        </li>
+        
       </ul>
       
     </li>
@@ -523,7 +527,7 @@ OPENBVE1530
 #NameOfTheSection
 </div>
 <p>The order in which sections appear within the file is irrelevant. Each line following the opening of a new section is interpreted as a data entry. These data entries are not named, thus their order is important. When a data entry is expected but omitted because a new section was started, a default value will apply. The exact interpretation of each data entry is explained in the following sections, along with default values.</p>
-<p>您可以在一行的末尾添加注释。注释由分号（U+003B，英文半角）开始。所有注释在开始解析文件之前就将被自动排除。</p>
+<p>您可以在一行的末尾添加注释。注释由分号(U+003B,英文半角)开始。所有注释在开始解析文件之前就将被自动排除。</p>
 <h2 id="a-nameaccelerationa-4-the-acceleration-section"><a name="acceleration"></a>■ 4. The Acceleration section</h2>
 <p>The Acceleration section defines the acceleration characteristics of the train for each individual power notch. The number of notches available in the train can be set inside the Handle section. For each notch, one data entry is expected, starting with the first notch.</p>
 <hr>
@@ -778,22 +782,22 @@ e<sub>2.0</sub> = min(1 - v<sub>2</sub> * log(e<sub>1.22</sub>) / log(9/4), 4)
 <div id="command">
 <em>JerkPowerUp</em>
 </div>
-<p>A non-negative floating point number representing the jerk in <strong>1/100 meters per second cubed</strong> (1/100 m/s³) when the acceleration produced by the engine is increased. The default value is 1000.</p>
+<p>A non-negative floating point number representing the jerk in <strong>1/100 meters per second cubed</strong> (1/100 m/s3) when the acceleration produced by the engine is increased. The default value is 1000.</p>
 <hr>
 <div id="command">
 <em>JerkPowerDown</em>
 </div>
-<p>A non-negative floating point number representing the jerk in <strong>1/100 meters per second cubed</strong> (1/100 m/s³) when the acceleration produced by the engine is decreased. The default value is 1000.</p>
+<p>A non-negative floating point number representing the jerk in <strong>1/100 meters per second cubed</strong> (1/100 m/s3) when the acceleration produced by the engine is decreased. The default value is 1000.</p>
 <hr>
 <div id="command">
 <em>JerkBrakeUp</em>
 </div>
-<p>A non-negative floating point number representing the jerk in <strong>1/100 meters per second cubed</strong> (1/100 m/s³) when the deceleration produced by the electric brake is increased. Applies only to trains that use the electric brake. The default value is 1000.</p>
+<p>A non-negative floating point number representing the jerk in <strong>1/100 meters per second cubed</strong> (1/100 m/s3) when the deceleration produced by the electric brake is increased. Applies only to trains that use the electric brake. The default value is 1000.</p>
 <hr>
 <div id="command">
 <em>JerkBrakeDown</em>
 </div>
-<p>A non-negative floating point number representing the jerk in <strong>1/100 meters per second cubed</strong> (1/100 m/s³) when the deceleration produced by the electric brake is decreased. Applies only to trains that use the electric brake. The default value is 1000.</p>
+<p>A non-negative floating point number representing the jerk in <strong>1/100 meters per second cubed</strong> (1/100 m/s3) when the deceleration produced by the electric brake is decreased. Applies only to trains that use the electric brake. The default value is 1000.</p>
 <hr>
 <div id="command">
 <em>BrakeCylinderUp</em>
@@ -1090,6 +1094,16 @@ e<sub>2.0</sub> = min(1 - v<sub>2</sub> * log(e<sub>1.22</sub>) / log(9/4), 4)
 <strong>2</strong>: Blocking- The locomotive brakes block the release of the train brakes.
 </div>
 <hr>
+<div id="command">
+<em>DriverPowerNotches</em>
+</div>
+<p>A non-negative integer indicating how many power notches are available to the driver.</p>
+<hr>
+<div id="command">
+<em>DriverBrakeNotches</em>
+</div>
+<p>A non-negative integer indicating how many brake notches are available to the driver.</p>
+<hr>
 <div class="overflow-container">
 <table style="border: none;">
 <tbody>
@@ -1284,12 +1298,12 @@ Z
 <div id="command">
 <em>ExposedFrontalArea</em>
 </div>
-<p>A positive floating-point number measured in <strong>square meters</strong> (m²) indicating the frontal area of a car when it is fully exposed to resisting air. This is the case when the car is the front car and the train is driving forward, or the rear car when the train is driving backward. The number is applied to all the cars in the train. The value is primarily used in the calculation of air resistance. Trains usually have a lower frontal area than <em>WidthOfACar</em> * <em>HeightOfACar</em> due to the front being rounded. This is especially true for aerodynamically enhanced trains like Shinkansen. The default value is 0.6 * <em>WidthOfACar</em> * <em>HeightOfACar</em>.</p>
+<p>A positive floating-point number measured in <strong>square meters</strong> (m2) indicating the frontal area of a car when it is fully exposed to resisting air. This is the case when the car is the front car and the train is driving forward, or the rear car when the train is driving backward. The number is applied to all the cars in the train. The value is primarily used in the calculation of air resistance. Trains usually have a lower frontal area than <em>WidthOfACar</em> * <em>HeightOfACar</em> due to the front being rounded. This is especially true for aerodynamically enhanced trains like Shinkansen. The default value is 0.6 * <em>WidthOfACar</em> * <em>HeightOfACar</em>.</p>
 <hr>
 <div id="command">
 <em>UnexposedFrontalArea</em>
 </div>
-<p>A positive floating-point number measured in <strong>square meters</strong> (m²) indicating the frontal area of a car when it is not fully exposed to resisting air. This is the case when the car is in the middle of the train and thus surrounded by other cars. The number is applied to all the cars in the train. The value is primarily used in the calculation of air resistance. The default value is 0.2 * <em>WidthOfACar</em> * <em>HeightOfACar</em>.</p>
+<p>A positive floating-point number measured in <strong>square meters</strong> (m2) indicating the frontal area of a car when it is not fully exposed to resisting air. This is the case when the car is in the middle of the train and thus surrounded by other cars. The number is applied to all the cars in the train. The value is primarily used in the calculation of air resistance. The default value is 0.2 * <em>WidthOfACar</em> * <em>HeightOfACar</em>.</p>
 <hr>
 <div class="overflow-container">
 <table style="border: none;">

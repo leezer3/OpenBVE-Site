@@ -314,6 +314,10 @@
           
         </li>
         
+        
+          
+        </li>
+        
       </ul>
       
     </li>
@@ -431,18 +435,22 @@
 <li><a href="#doors">3.3. The Doors section</a></li>
 <li><a href="#coupler">4. The Coupler section</a></li>
 <li><a href="#misc">5. Miscellaneous Properties</a></li>
+<li></li>
 </ul>
-<h2 id="a-nameoverviewa-1-descripció"><a name="overview"></a>■ 1. Descripció</h2>
+<ul>
+<li><a name="overview"></a>■ 1. Descripció</li>
+</ul>
 <p>The <strong>train.xml</strong> format is the native format for newer versions of OpenBVE, and is intended to replace the older train.dat format. It allows setting of many more properties, and is extensible.</p>
-<p>It may either be constructed as a single file containing the properties of the entire train, or as a single consist definition, along with child car files.</p>
+<h2 id="it-may-either-be-constructed-as-a-single-file-containing-the-properties-of-the-entire-train-or-as-a-single-consist-definition-along-with-child-car-files">It may either be constructed as a single file containing the properties of the entire train, or as a single consist definition, along with child car files.</h2>
 <div id="information">
-<h4 id="positions-within-cars">Positions Within Cars:</h4>
+<p>Positions Within Cars:</p>
 <p>In the <strong>train.xml</strong> format, all positions are measured relative to the center of the car, which is assumed to be at 0,0,0
-Whilst this is a change for some parameters from the legacy BVE formats, it means that all positions should be consistant.
+Whilst this is a change for some parameters from the legacy BVE formats, it means that all positions should be consistant.</p>
+<h4 id="heading"></h4>
 </div>
-<h2 id="a-nametraina-2-the-train-section"><a name="train"></a>■ 2. The Train section</h2>
+<p><a name="train"></a>■ 2. The Train section</p>
 <p>Whether using child car files, or a single file, the first node in each <strong>train.xml</strong> file must be the <strong>&lt;Train&gt;</strong> node.</p>
-<p>This supports the following properties:</p>
+<h2 id="this-supports-the-following-properties">This supports the following properties:</h2>
 <div id="command">
 <strong>&lt;Car&gt;</strong> <em>CarProperties</em> <strong>&lt;/Car&gt;</strong>
 </div>
@@ -462,7 +470,7 @@ Whilst this is a change for some parameters from the legacy BVE formats, it mean
 <strong>&lt;Subject&gt;</strong> <em>Descriptions</em> <strong>&lt;/Subject&gt;</strong>
 </div>
 <p><strong>Descriptions</strong> should be a comma-separated list, equal to the number of notches the train has for the subject.</p>
-<h2 id="a-namecara-3-the-car-section"><a name="car"></a>■ 3. The Car section</h2>
+<p><a name="car"></a>■ 3. The Car section</p>
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
 <p>When using child car files, the <strong>&lt;Car&gt;</strong> node should be the first node in the file. All other details remain the same.</p>
@@ -478,7 +486,7 @@ Whilst this is a change for some parameters from the legacy BVE formats, it mean
 <div id="command">
 <strong>&lt;Subject&gt;</strong> <em>Distance</em> <strong>&lt;/Subject&gt;</strong>
 </div>
-<p><strong>Distance</strong> should be a distance in meters from the origin point <em>0,0,0</em> at the center of the cab object.</p>
+<h2 id="distance-should-be-a-distance-in-meters-from-the-origin-point-000-at-the-center-of-the-cab-object"><strong>Distance</strong> should be a distance in meters from the origin point <em>0,0,0</em> at the center of the cab object.</h2>
 <div id="command">
 <strong>&lt;Length&gt;</strong> <em>LengthInMeters</em> <strong>&lt;/Length&gt;</strong>
 </div>
@@ -540,10 +548,10 @@ Whilst this is a change for some parameters from the legacy BVE formats, it mean
 <strong>Freight</strong>: This car carries freight. Its overall weight is affected by the loading given at stations.<br>
 <strong>None</strong>: This car carries no load (e.g. a locomotive, brake van or similar). It&rsquo;s weight is not affected by the loading given at stations.
 </div>
-<h2 id="a-namepowera-31-the-power-section"><a name="power"></a>■ 3.1. The Power section</h2>
+<p><a name="power"></a>■ 3.1. The Power section</p>
 <p>Motor cars may specifiy a <strong>&lt;Power&gt;</strong> node.</p>
 <p>This defines the acceleration curves and the power handle fitted to the car, and supports the following child nodes:</p>
-<h3 id="311-acceleration-curves">3.1.1. Acceleration Curves</h3>
+<p>3.1.1. Acceleration Curves</p>
 <p>The <strong>&lt;AccelerationCurves&gt;</strong> child node should contain a list of acceleration curve nodes. These must be in ascending order, and should correspond to the number of power notches the train has.</p>
 <p>Currently, the only supported acceleration curve node is the <strong>&lt;OpenBVE&gt;</strong> node, supporting the following properties (as per a <strong>train.dat</strong> acceleration curve):</p>
 <div id="command">
@@ -567,7 +575,7 @@ Whilst this is a change for some parameters from the legacy BVE formats, it mean
 </div>
 <p><strong>Speed</strong> should be a positive floating-point number representing the reference speed for <em>StageTwoExponent</em></p>
 <p>Thus:</p>
-<p>If the speed of the train is 0 km/h, <em>a<sub>0</sub></em> indicates the acceleration output.</p>
+<h2 id="if-the-speed-of-the-train-is-0-kmh-asub0sub-indicates-the-acceleration-output">If the speed of the train is 0 km/h, <em>a<sub>0</sub></em> indicates the acceleration output.</h2>
 <p>If the speed of the train is between 0 km/h and <em>v<sub>1</sub></em>, the acceleration output is determined via the following formula:</p>
 <table style="border: none;">
 <tbody>
@@ -587,7 +595,7 @@ a<sub>0</sub> + (a<sub>1</sub> - a<sub>0</sub>) * x / v<sub>1</sub>
 </tr>
 </tbody>
 </table>
-<p>If the speed of the train is <em>v<sub>1</sub></em>, the acceleration output is indicated by <em>a<sub>1</sub></em>.</p>
+<h3 id="if-the-speed-of-the-train-is-vsub1sub-the-acceleration-output-is-indicated-by-asub1sub">If the speed of the train is <em>v<sub>1</sub></em>, the acceleration output is indicated by <em>a<sub>1</sub></em>.</h3>
 <p>If the speed of the train is between <em>v<sub>1</sub></em> and <em>v<sub>2</sub></em>, the acceleration output is determined via the following formula:</p>
 <table style="border: none;">
 <tbody>
@@ -626,10 +634,10 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 </tr>
 </tbody>
 </table>
-<h3 id="312-power-handles">3.1.2. Power Handles</h3>
+<p>3.1.2. Power Handles</p>
 <div id="note">
-<h4 id="driver-and-non-driver-cars"><em>Driver and non-driver cars:</em></h4>
-<p>The properties within this node will only be interpreted if the car is specified as the driver car.
+<p><em>Driver and non-driver cars:</em></p>
+<p>The properties within this node will only be interpreted if the car is specified as the driver car.</p>
 </div>
 <p>The <strong>&lt;Handle&gt;</strong> node specifies properties for the power handle, and supports the folowing properties:</p>
 <div id="command">
@@ -649,72 +657,72 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <strong>AnyHandle</strong>: The spring return mechanism is reset when any power or brake handle is operated.
 <strong>AnyKey</strong>: The spring return mechanism is reset when any keyboard key or joystick control is operated.
 </div>
-<h2 id="a-namebrakea-32-the-brake-section"><a name="brake"></a>■ 3.2. The Brake section</h2>
+<p><a name="brake"></a>■ 3.2. The Brake section</p>
 <p>The <strong>&lt;Brake&gt;</strong> section specifies properties for the braking system of the car, and consists of the following child nodes, each corresponding the a component of the twin-pipe standard air-brake system:</p>
-<h3 id="air-compressor">Air compressor</h3>
+<p>Air compressor</p>
 <p>An optional <strong>&lt;Compressor&gt;</strong> node, supporting the following properties:</p>
 <div id="command">
 <strong>&lt;Rate&gt;</strong> <em>CompressionRate</em> <strong>&lt;/Rate&gt;</strong>
 </div>
 <p><strong>CompressionRate</strong> should be a positive number, representing the compression rate in Pa/s.</p>
-<h3 id="main-reservoir">Main Reservoir</h3>
+<p>Main Reservoir</p>
 <p>The <strong>&lt;MainReservoir&gt;</strong> node, supporting the following properties:</p>
-<div id="command">
-<strong>&lt;MinimumPressure&gt;</strong> <em>Pressure</em> <strong>&lt;/MinimumPressure&gt;</strong>
+<h3 id="div-idcommand"><div id="command"></h3>
+<p><strong>&lt;MinimumPressure&gt;</strong> <em>Pressure</em> <strong>&lt;/MinimumPressure&gt;</strong></p>
 </div>
 <p><strong>Pressure</strong> should be a positive number, representing the minimum pressure in the main reservoir in Pa.</p>
-<div id="command">
-<strong>&lt;MaximumPressure&gt;</strong> <em>Pressure</em> <strong>&lt;/MaximumPressure&gt;</strong>
+<h4 id="div-idcommand-1"><div id="command"></h4>
+<p><strong>&lt;MaximumPressure&gt;</strong> <em>Pressure</em> <strong>&lt;/MaximumPressure&gt;</strong></p>
 </div>
 <p><strong>Pressure</strong> should be a positive number, representing the maximum achievable pressure in the main reservoir in Pa.</p>
-<h3 id="auxiliary-reservoir">Auxiliary Reservoir</h3>
+<p>Auxiliary Reservoir</p>
 <p>The <strong>&lt;AuxiliaryReservoir&gt;</strong> node, supporting the following properties:</p>
 <div id="command">
 <strong>&lt;ChargeRate&gt;</strong> <em>Rate</em> <strong>&lt;/ChargeRate&gt;</strong>
 </div>
 <p><strong>Rate</strong> should be a positive number, representing the charge rate of the auxiliary reservoir from the main reservoir in Pa/s.</p>
-<h3 id="equalizing-reservoir">Equalizing Reservoir</h3>
+<p>Equalizing Reservoir</p>
 <p>The <strong>&lt;EqualizingReservoir&gt;</strong> node, supporting the following properties:</p>
 <div id="command">
 <strong>&lt;NormalPressure&gt;</strong> <em>Pressure</em> <strong>&lt;/NormalPressure&gt;</strong>
 </div>
 <p><strong>Pressure</strong> should be a positive number, representing the normal pressure of this reservoir in Pa.</p>
-<h3 id="brake-pipe">Brake Pipe</h3>
+<h2 id="brake-pipe">Brake Pipe</h2>
 <p>The <strong>&lt;BrakePipe&gt;</strong> node, supporting the following properties:</p>
-<div id="command">
-<strong>&lt;NormalPressure&gt;</strong> <em>Pressure</em> <strong>&lt;/NormalPressure&gt;</strong>
+<h3 id="div-idcommand-2"><div id="command"></h3>
+<p><strong>&lt;NormalPressure&gt;</strong> <em>Pressure</em> <strong>&lt;/NormalPressure&gt;</strong></p>
 </div>
 <p><strong>Pressure</strong> should be a positive number, representing the normal nominal pressure of the brake pipe in Pa.</p>
 <div id="command">
 <strong>&lt;ChargeRate&gt;</strong> <em>Rate</em> <strong>&lt;/ChargeRate&gt;</strong>
 </div>
 <p><strong>Rate</strong> should be a positive number, representing the normal charge rate in Pa/s.</p>
-<div id="command">
-<strong>&lt;ServiceRate&gt;</strong> <em>Rate</em> <strong>&lt;/ServiceRate&gt;</strong>
+<h3 id="div-idcommand-3"><div id="command"></h3>
+<p><strong>&lt;ServiceRate&gt;</strong> <em>Rate</em> <strong>&lt;/ServiceRate&gt;</strong></p>
 </div>
 <p><strong>Rate</strong> should be a positive number, representing the charge rate in Pa/s when making a service brake application.</p>
 <div id="command">
 <strong>&lt;EmergencyRate&gt;</strong> <em>Rate</em> <strong>&lt;/EmergencyRate&gt;</strong>
 </div>
 <p><strong>Rate</strong> should be a positive number, representing the charge rate in Pa/s when making an emergency brake application.</p>
-<h3 id="straight-air-pipe">Straight Air Pipe</h3>
+<p>Straight Air Pipe</p>
 <p>The <strong>&lt;StraightAirPipe&gt;</strong> node, supporting the following properties:</p>
-<div id="command">
-<strong>&lt;ServiceRate&gt;</strong> <em>Rate</em> <strong>&lt;/ServiceRate&gt;</strong>
+<h3 id="div-idcommand-4"><div id="command"></h3>
+<p><strong>&lt;ServiceRate&gt;</strong> <em>Rate</em> <strong>&lt;/ServiceRate&gt;</strong></p>
 </div>
 <p><strong>Rate</strong> should be a positive number, representing the charge rate in Pa/s when making a service brake application.</p>
 <div id="command">
 <strong>&lt;EmergencyRate&gt;</strong> <em>Rate</em> <strong>&lt;/EmergencyRate&gt;</strong>
 </div>
 <p><strong>Rate</strong> should be a positive number, representing the charge rate in Pa/s when making an emergency brake application.</p>
-<div id="command">
-<strong>&lt;ReleaseRate&gt;</strong> <em>Rate</em> <strong>&lt;/ReleaseRate&gt;</strong>
+<h3 id="div-idcommand-5"><div id="command"></h3>
+<p><strong>&lt;ReleaseRate&gt;</strong> <em>Rate</em> <strong>&lt;/ReleaseRate&gt;</strong></p>
 </div>
 <p><strong>Rate</strong> should be a positive number, representing the charge rate in Pa/s when releasing a brake application.</p>
-<h3 id="brake-cylinder">Brake Cylinder</h3>
+<p>Brake Cylinder</p>
 <p>The <strong>&lt;BrakeCylinder&gt;</strong> node, supporting the following properties:</p>
-<div id="command">
-<strong>&lt;ServiceMaximumPressure&gt;</strong> <em>Pressure</em> <strong>&lt;/ServiceMaximumPressure&gt;</strong>
+<h3 id="div-idcommand-6"><div id="command"></h3>
+<p><strong>&lt;ServiceMaximumPressure&gt;</strong> <em>Pressure</em> <strong>&lt;/ServiceMaximumPressure&gt;</strong></p>
 </div>
 <p><strong>Pressure</strong> should be a positive number, representing the maximum pressure in Pa when making a full service brake application.</p>
 <div id="command">
@@ -729,9 +737,9 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <strong>&lt;ReleaseRate&gt;</strong> <em>Rate</em> <strong>&lt;/ReleaseRate&gt;</strong>
 </div>
 <p><strong>Rate</strong> should be a positive number, representing the charge rate in Pa/s when releasing the brakes.</p>
-<h3 id="322-brake-handles">3.2.2. Brake Handles</h3>
+<p>3.2.2. Brake Handles</p>
 <div id="note">
-<h4 id="driver-and-non-driver-cars"><em>Driver and non-driver cars:</em></h4>
+<h3 id="driver-and-non-driver-cars"><em>Driver and non-driver cars:</em></h3>
 <p>The properties within this node will only be interpreted if the car is specified as the driver car.
 </div>
 <p>The <strong>&lt;Handle&gt;</strong> node specifies properties for the brake handle, and supports the folowing properties:</p>
@@ -745,14 +753,14 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <div id="command-arguments">
 <em><strong>Type</strong></em>: The type of spring return fitted to this handle (if any).
 </div>
-<p>▸ Available options for <em>Type</em>:</p>
+<h3 id="-available-options-for-type">▸ Available options for <em>Type</em>:</h3>
 <div id="command-arguments">
 <strong>None</strong>: No spring return mechanism is fitted.<br>
 <strong>Single</strong>: The spring return mechanism is reset when this handle is operated.<br>
 <strong>AnyHandle</strong>: The spring return mechanism is reset when any power or brake handle is operated.
 <strong>AnyKey</strong>: The spring return mechanism is reset when any keyboard key or joystick control is operated.
 </div>
-<h2 id="a-namedoorsa-33-the-doors-section"><a name="doors"></a>■ 3.3. The Doors section</h2>
+<p><a name="doors"></a>■ 3.3. The Doors section</p>
 <p>The <strong>&lt;Doors&gt;</strong> section specifies the properties of the passenger doors fitted to this car, and supports the following properties:</p>
 <div id="command">
 <strong>&lt;OpenSpeed&gt;</strong> <em>Speed</em> <strong>&lt;/OpenSpeed&gt;</strong>
@@ -764,18 +772,146 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <p><strong>Speed</strong> should be a positive number, setting the time taken for the doors to close in seconds.</p>
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
-<p><p>If the opening or closing speed is not set, this will be calculated using the duration of the open / close sounds.</p>
-<p>See the <strong>sound.cfg</strong> documentation for further details.</p>
-</p>
+<p>If the opening or closing speed is not set, this will be calculated using the duration of the open / close sounds.</p>
+<h3 id="see-the-soundcfg-documentation-for-further-details">See the <strong>sound.cfg</strong> documentation for further details.</h3></p>
 </div>
-<div id="command">
-<strong>&lt;Width&gt;</strong> <em>DoorWidth</em> <strong>&lt;/Width&gt;</strong>
+<h4 id="div-idcommand-7"><div id="command"></h4>
+<p><strong>&lt;Width&gt;</strong> <em>DoorWidth</em> <strong>&lt;/Width&gt;</strong></p>
 </div>
 <p><strong>DoorWidth</strong> should be a positive number, setting the width of the door opening in meters.</p>
 <div id="command">
 <strong>&lt;Tolerance&gt;</strong> <em>DoorTolerance</em> <strong>&lt;/Tolerance&gt;</strong>
 </div>
 <p><strong>DoorTolerance</strong> should be a positive number, setting a tolerance in meters before the door is considered to be closed.</p>
+<p><a name="coupler"></a>■ 4. The Coupler section</p>
+<p>Car nodes (or child file references) may optionally be separated by a <strong>&lt;Coupler&gt;</strong> node.</p>
+<p>This defines the coupler between the two cars, and supports the following properties:</p>
+<div id="command">
+<strong>&lt;Minimum&gt;</strong> <em>Distance</em> <strong>&lt;/Distance&gt;</strong>
+</div>
+<p><strong>Distance</strong> sets the minimum distance between the two cars.</p>
+<div id="command">
+<strong>&lt;Maximum&gt;</strong> <em>Distance</em> <strong>&lt;/Maximum&gt;</strong>
+</div>
+<h2 id="distance-sets-the-maximum-distance-between-the-two-cars"><strong>Distance</strong> sets the maximum distance between the two cars.</h2>
+<div id="command">
+<strong>&lt;Object&gt;</strong> <em>ObjectFile</em> <strong>&lt;/Object&gt;</strong>
+</div>
+<p><strong>ObjectFile</strong> should be a relative on-disk path to the exterior 3D object to use.</p>
+<div id="note">
+<span><font color="#C00000">☀</font> Note</span>
+<p>The coupler object is not deformed when the coupler stretches / compresses.</p>
+</div>
+<p><a name="misc"></a>■ 5. Miscellaneous Properties</p>
+<div id="command">
+<strong>&lt;Plugin&gt;</strong> <em>PluginFile</em> <strong>&lt;/Plugin&gt;</strong>
+</div>
+<p><strong>PluginFile</strong> should contain the relative path to the security plugin DLL to load.</p>
+<div id="command">
+<strong>&lt;Description&gt;</strong> <em>Text</em> <strong>&lt;/Description&gt;</strong>
+</div>
+<p><strong>Text</strong> should contain the textual description for the train to display in the main menu.</p>
+<div id="command">
+<strong>&lt;HeadlightStates&gt;</strong> <em>NumberOfStates</em> <strong>&lt;/HeadlightStates&gt;</strong>
+</div>
+<p><strong>NumberOfStates</strong> should be the total number of states that the train headlight posesses.</p>
+<p><em>Note:</em> Headlight effects must be implemented by the train developer, using animation / panel properties.</p>
+<h2 id="a-namesandersa-34-the-sanders-section"><a name="sanders"></a>■ 3.4. The Sanders section</h2>
+<p>The <strong>&lt;Sanders&gt;</strong> section specifies the properties of the sanders fitted to this car, and supports the following properties:</p>
+<div id="command">
+<strong>Type</strong> <em>Type</em>
+</div>
+<div id="command-arguments">
+<em><strong>Type</strong></em>: The type of sanders fitted to this car (if any).
+</div>
+<div id="command">
+<strong>&lt;NormalPressure&gt;</strong> <em>Pressure</em> <strong>&lt;/NormalPressure&gt;</strong>
+</div>
+<div id="command-arguments">
+<strong>NotFitted</strong>: No sanding mechanism is fitted.<br>
+<strong>PressAndHold</strong>: The sanders are applied whilst the <strong>Sanders</strong> key is held and sufficient sand is available.<br>
+<strong>Toggle</strong>: The <strong>Sanders</strong> key toggles the sanders on and off.
+<strong>NumberOfShots</strong>: N shots of sand are available, which are applied when the <strong>Sanders</strong> key is pressed.
+<strong>Automatic</strong>: The sanders are automatically activated when wheelslip is detected and sufficient sand is present.
+</div>
+<div id="command">
+<strong>Rate</strong> <em>SandingRate</em>
+</div>
+<div id="command-arguments">
+<em><strong>SandingRate</strong></em>: The rate at which sand is applied per second.
+</div>
+<div id="command">
+<strong>SandLevel</strong> <em>Level</em>
+</div>
+<div id="command-arguments">
+<em><strong>Level</strong></em>: The initial starting level of sand, if not in shot mode.
+</div>
+<div id="command">
+<strong>NumberOfShots</strong> <em>Shots</em>
+</div>
+<div id="command-arguments">
+<em><strong>Shots</strong></em>: The number of sand shots available.
+</div>
+<div id="command">
+<strong>ApplicationTime</strong> <em>Time</em>
+</div>
+<div id="command-arguments">
+<em><strong>Time</strong></em>: When in shots mode, sets the duration of a sand shot in seconds.
+</div>
+<div id="command">
+<strong>ActivationTime</strong> <em>Time</em>
+</div>
+<div id="command-arguments">
+<em><strong>Time</strong></em>: When in automatic mode, the amount of time before the system reacts and applies sand.
+</div>
+<h2 id="a-namewindscreena-35-the-windscreen-section"><a name="windscreen"></a>■ 3.5. The Windscreen section</h2>
+<p>The <strong>&lt;Windscreen&gt;</strong> section specifies the properties of the windscreen, and should be used if you wish to animated a windscreen on a 3D cab using the inbuilt functionality. It supports the following properties:</p>
+<div id="command">
+*<em>NumberOfDrops</em> <em>Drops</em>
+</div>
+<div id="command-arguments">
+<em><strong>Drops</strong></em>: The total number of drops on the windscreen.
+</div>
+<div id="command">
+*<em>WipeSpeed</em> <em>Speed</em>
+</div>
+<div id="command-arguments">
+<em><strong>Speed</strong></em>: The time in seconds for the wipers to make a single sweep of the windscreen.
+</div>
+<div id="command">
+*<em>HoldTime</em> <em>Time</em>
+</div>
+<div id="command-arguments">
+<em><strong>Time</strong></em>: The time in seconds for the wipers to hold at the hold position during a sweep.
+</div>
+<div id="command">
+*<em>DropLife</em> <em>Life</em>
+</div>
+<div id="command-arguments">
+<em><strong>Life</strong></em>: The life in seconds before a drop is eligible to be recycled when all drops are visible.
+</div>
+<div id="command">
+*<em>RestPosition</em> <em>Position</em>
+</div>
+<div id="command-arguments">
+<strong>Position</strong>: The rest position for the wipers.
+</div>
+<p>▸ Available options for <em>Position</em>:</p>
+<div id="command-arguments">
+<strong>Left</strong>: The wipers rest at the left of the screen when off.<br>
+<strong>Right</strong>: The wipers rest at the right of the screen when off.
+</div>
+<div id="command">
+*<em>HoldPosition</em> <em>Position</em>
+</div>
+<div id="command-arguments">
+<strong>Position</strong>: The hold position for the wipers.
+</div>
+<p>▸ Available options for <em>Position</em>:</p>
+<div id="command-arguments">
+<strong>Left</strong>: The wipers hold on the left of the screen for <em>HoldTime</em> during their sweep.<br>
+<strong>Right</strong>: The wipers hold on the right of the screen for <em>HoldTime</em> during their sweep.
+</div>
 <h2 id="a-namecouplera-4-the-coupler-section"><a name="coupler"></a>■ 4. The Coupler section</h2>
 <p>Car nodes (or child file references) may optionally be separated by a <strong>&lt;Coupler&gt;</strong> node.</p>
 <p>This defines the coupler between the two cars, and supports the following properties:</p>
@@ -787,14 +923,16 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <strong>&lt;Maximum&gt;</strong> <em>Distance</em> <strong>&lt;/Maximum&gt;</strong>
 </div>
 <p><strong>Distance</strong> sets the maximum distance between the two cars.</p>
-<div id="command">
-<strong>&lt;Object&gt;</strong> <em>ObjectFile</em> <strong>&lt;/Object&gt;</strong>
-</div>
-<p><strong>ObjectFile</strong> should be a relative on-disk path to the exterior 3D object to use.</p>
+<p>This defines the acceleration curves and the power handle fitted to the car, and supports the following child nodes:</p>
+<p>3.1.1. Acceleration Curves</p>
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
 <p>The coupler object is not deformed when the coupler stretches / compresses.</p>
 </div>
+<div id="command">
+<strong>&lt;CanUncouple&gt;</strong> <em>Boolean</em> <strong>&lt;/CanUncouple&gt;</strong>
+</div>
+<p><strong>Boolean</strong> should be a boolean true / false value, determining whether this coupler may be uncoupled by the player.</p>
 <h2 id="a-namemisca-5-miscellaneous-properties"><a name="misc"></a>■ 5. Miscellaneous Properties</h2>
 <div id="command">
 <strong>&lt;Plugin&gt;</strong> <em>PluginFile</em> <strong>&lt;/Plugin&gt;</strong>

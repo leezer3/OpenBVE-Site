@@ -314,6 +314,10 @@
           
         </li>
         
+        
+          
+        </li>
+        
       </ul>
       
     </li>
@@ -550,8 +554,8 @@
 </div>
 <p>Esto defina la mínima cantidad de tiempo que necesita transcurrir para que la función sea actualizada. Un valor de 0 obliga a la función a ser actualizada cada cuadro por segundo. Por favor tenga en cuenta que los objetos fuera del rango visual puedan ser actualizados menos frecuentemente sin importar este parámetro. Usa RefreshRate cuando no necesites una animación suave (en orden de optimizar los recursos), o cuando deliberadamente quieras que el objeto este actualizado con un intervalo personalizado.</p>
 <hr>
-<h5 id="-la-sección-sound">● La sección [Sound]</h5>
-<p>Puedes usar la sección [Sound] para agregar efectos de sonidos independientes a objetos animados.</p>
+<p>● La sección [Sound]</p>
+<h5 id="puedes-usar-la-sección-sound-para-agregar-efectos-de-sonidos-independientes-a-objetos-animados">Puedes usar la sección [Sound] para agregar efectos de sonidos independientes a objetos animados.</h5>
 <div id="command">
 [Sound]
 </div>
@@ -589,8 +593,8 @@
 </div>
 <p>Esto defina la función el cual mueve el origen del sonido a lo largo de la vía de <strong>Rail 0</strong>. La <em>Formula</em> debe retornar la distancia en metros, para así el objeto sea movido, respetando las curvas y los cambios de altura de <strong>Rail 0</strong>.</p>
 <hr>
-<h5 id="-la-sección-statechangesound">● La sección [StateChangeSound]</h5>
-<p>Puedes usar la sección [StateChangeSound] para adjuntar efectos de sonidos a la sección de [Object] precedente.</p>
+<p>● La sección [StateChangeSound]</p>
+<h5 id="puedes-usar-la-sección-statechangesound-para-adjuntar-efectos-de-sonidos-a-la-sección-de-object-precedente">Puedes usar la sección [StateChangeSound] para adjuntar efectos de sonidos a la sección de [Object] precedente.</h5>
 <div id="command">
 [StateChangeSound]
 </div>
@@ -638,970 +642,975 @@ Si un estado no tiene efecto de sonido, el ítem de la lista debe dejarse en bla
 </div>
 <hr>
 <div id="warning">
-<h4 id="nota-de-compatibilidad-con-openbve-2">Nota de compatibilidad con openBVE 2</h4>
-<p>Durante el desarrollo de openBVE (v0.9) y durante el desarrollo del formato de objeto animado, hay algunos comandos en existencia que terminan en <em>RPN</em>, así como <em>TranslateXFunctionRPN</em>. Estos comandos nunca se han hecho en cualquier lanzamiento oficial (v1.0) y nunca fueron pensados en ser usados fuera del entorno de desarrollo. Mientras estos siguen aún disponibles sin documentación, serán quitados en openBVE 2. Si estas usando algunos de estos comandos, por favor deshágase de ellos lo mas posible.
+Nota de compatibilidad con openBVE 2</p>
+<h4 id="durante-el-desarrollo-de-openbve-v09-y-durante-el-desarrollo-del-formato-de-objeto-animado-hay-algunos-comandos-en-existencia-que-terminan-en-rpn-así-como-translatexfunctionrpn-estos-comandos-nunca-se-han-hecho-en-cualquier-lanzamiento-oficial-v10-y-nunca-fueron-pensados-en-ser-usados-fuera-del-entorno-de-desarrollo-mientras-estos-siguen-aún-disponibles-sin-documentación-serán-quitados-en-openbve-2-si-estas-usando-algunos-de-estos-comandos-por-favor-deshágase-de-ellos-lo-mas-posible">Durante el desarrollo de openBVE (v0.9) y durante el desarrollo del formato de objeto animado, hay algunos comandos en existencia que terminan en <em>RPN</em>, así como <em>TranslateXFunctionRPN</em>. Estos comandos nunca se han hecho en cualquier lanzamiento oficial (v1.0) y nunca fueron pensados en ser usados fuera del entorno de desarrollo. Mientras estos siguen aún disponibles sin documentación, serán quitados en openBVE 2. Si estas usando algunos de estos comandos, por favor deshágase de ellos lo mas posible.</h4>
 </div>
 <hr>
-<h5 id="-sobre-las-formulas">● Sobre las formulas</h5>
-<p>Primero que todo, la notación aritmética, lo que puedes teclear dentro del parámetro <em>Formula</em>, es convertido en una notación funcional. Por cada notación aritmética, hay una notación funcional correspondiente. Algunas funciones no tienen un operador aritmético y solo pueden ser teclados en notación funcional. Para los operadores, la precedencia juega un rol importante. Puedes usar paréntesis para sobreponer el orden de precedencia así como generalmente en una fórmula matemática. Los nombres de las funciones no distinguen entre mayúsculas y minúsculas.</p>
+<p>● Sobre las formulas</p>
+<h5 id="primero-que-todo-la-notación-aritmética-lo-que-puedes-teclear-dentro-del-parámetro-formula-es-convertido-en-una-notación-funcional-por-cada-notación-aritmética-hay-una-notación-funcional-correspondiente-algunas-funciones-no-tienen-un-operador-aritmético-y-solo-pueden-ser-teclados-en-notación-funcional-para-los-operadores-la-precedencia-juega-un-rol-importante-puedes-usar-paréntesis-para-sobreponer-el-orden-de-precedencia-así-como-generalmente-en-una-fórmula-matemática-los-nombres-de-las-funciones-no-distinguen-entre-mayúsculas-y-minúsculas">Primero que todo, la notación aritmética, lo que puedes teclear dentro del parámetro <em>Formula</em>, es convertido en una notación funcional. Por cada notación aritmética, hay una notación funcional correspondiente. Algunas funciones no tienen un operador aritmético y solo pueden ser teclados en notación funcional. Para los operadores, la precedencia juega un rol importante. Puedes usar paréntesis para sobreponer el orden de precedencia así como generalmente en una fórmula matemática. Los nombres de las funciones no distinguen entre mayúsculas y minúsculas.</h5>
 <div id="warning-nontitle">
 <span>⚠</span><p>Por favor tenga en cuenta que el resultado de cualquier operación matemática o función pudiera ser infinito, intermediado o no real, 0 es retornado. Un error de desborde no puede ser prevenido, Así que debes tomar en cuenta esto.</p>
 </div>
-<h2 id="a-nameoperatorsa-3-lista-de-operadores-aritméticos-de-notación"><a name="operators"></a>■ 3. Lista de operadores aritméticos de notación</h2>
-<h5 id="-aritmética-básica">● Aritmética básica</h5>
-<div class="overflow-container">
+<p><a name="operators"></a>■ 3. Lista de operadores aritméticos de notación</p>
+<h2 id="-aritmética-básica">● Aritmética básica</h2>
+<h5 id="div-classoverflow-container"><div class="overflow-container"></h5>
+<p>Aritmética</p></p>
 <table class='type0'>
 <thead>
 <tr>
-<th align="left">Aritmética</th>
 <th align="left">Funcionalidad</th>
 <th align="left">Descripción</th>
+<th align="left"><code>a + b</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>a + b</code></td>
 <td align="left"><code>Suma[a,b, ...]</code></td>
 <td align="left">Representa adición</td>
+<td align="left"><code>a - b</code></td>
 </tr>
 <tr>
-<td align="left"><code>a - b</code></td>
 <td align="left"><code>Sustraer[a,b]</code></td>
 <td align="left">Representa sustracción</td>
+<td align="left"><code>-a</code></td>
 </tr>
 <tr>
-<td align="left"><code>-a</code></td>
 <td align="left"><code>Menos[a]</code></td>
 <td align="left">Convierte a negativo el número</td>
+<td align="left"><code>a * b</code></td>
 </tr>
 <tr>
-<td align="left"><code>a * b</code></td>
 <td align="left"><code>Por[a,b,...]</code></td>
 <td align="left">Representa multiplicación</td>
+<td align="left"><code>a / b</code></td>
 </tr>
 <tr>
-<td align="left"><code>a / b</code></td>
 <td align="left"><code>Dividir[a,b]</code></td>
 <td align="left">Representa división</td>
+<td bgcolor='#D0D0D0'></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h5 id="-comparaciones">● Comparaciones</h5>
-<p>Todas las comparaciones devuelven 1 para verdadero y 0 para falso.</p>
+       |
+<p>● Comparaciones</p>
+<h5 id="todas-las-comparaciones-devuelven-1-para-verdadero-y-0-para-falso">Todas las comparaciones devuelven 1 para verdadero y 0 para falso.</h5>
 <div class="overflow-container">
+<p>Aritmética</p></p>
 <table class='type0'>
 <thead>
 <tr>
-<th align="left">Aritmética</th>
-<th>Funcionalidad</th>
+<th align="left">Funcionalidad</th>
 <th>Descripción</th>
+<th><code>a == b</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>a == b</code></td>
-<td><code>Equal[a,b]</code></td>
+<td align="left"><code>Equal[a,b]</code></td>
 <td>Verdadero (1) si <em>a</em> es igual a <em>b</em></td>
+<td><code>a != b</code></td>
 </tr>
 <tr>
-<td align="left"><code>a != b</code></td>
-<td><code>Noigual[a,b]</code></td>
+<td align="left"><code>Noigual[a,b]</code></td>
 <td>Verdadero (1) si <em>a</em> no es igual a <em>b</em></td>
+<td><code>a &lt; b</code></td>
 </tr>
 <tr>
-<td align="left"><code>a &lt; b</code></td>
-<td><code>Menor[a,b]</code></td>
+<td align="left"><code>Menor[a,b]</code></td>
 <td>Verdadero (1) si <em>a</em> es menor que <em>b</em></td>
+<td><code>a &gt; b</code></td>
 </tr>
 <tr>
-<td align="left"><code>a &gt; b</code></td>
-<td><code>Mayor[a,b]</code></td>
+<td align="left"><code>Mayor[a,b]</code></td>
 <td>Verdadero (1) si <em>a</em> es mayor que <em>b</em></td>
+<td><code>a &lt;= b</code></td>
 </tr>
 <tr>
-<td align="left"><code>a &lt;= b</code></td>
-<td><code>MenorIgual[a,b]</code></td>
+<td align="left"><code>MenorIgual[a,b]</code></td>
 <td>Verdadero (1) si <em>a</em> es menor o igual que <em>b</em></td>
+<td><code>a &gt;= b</code></td>
 </tr>
 <tr>
-<td align="left"><code>a &gt;= b</code></td>
-<td><code>MayorIgual[a,b]</code></td>
+<td align="left"><code>MayorIgual[a,b]</code></td>
 <td>Verdadero (1) si <em>a</em> es mayor o igual que <em>b</em></td>
+<td bgcolor='#D0D0D0'></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h5 id="-operadores-lógicos">● Operadores lógicos</h5>
-<p>Todos los operadores tratan 0 como falso y cualquier otro valor como verdadero, y retornan 1 por verdadero y 0 por falso.</p>
+ |
+<p>● Operadores lógicos</p>
+<h5 id="todos-los-operadores-tratan-0-como-falso-y-cualquier-otro-valor-como-verdadero-y-retornan-1-por-verdadero-y-0-por-falso">Todos los operadores tratan 0 como falso y cualquier otro valor como verdadero, y retornan 1 por verdadero y 0 por falso.</h5>
 <div class="overflow-container">
+<p>Aritmética</p></p>
 <table class='type0'>
 <thead>
 <tr>
-<th align="left">Aritmética</th>
-<th>Funcionalidad</th>
+<th align="left">Funcionalidad</th>
 <th>Descripción</th>
+<th><code>!a</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>!a</code></td>
-<td><code>No[a]</code></td>
+<td align="left"><code>No[a]</code></td>
 <td>Verdadero (1) si <em>a</em> es falso</td>
+<td><code>a &amp; b</code></td>
 </tr>
 <tr>
-<td align="left"><code>a &amp; b</code></td>
-<td><code>Y[a,b]</code></td>
+<td align="left"><code>Y[a,b]</code></td>
 <td>Verdadero (1) si ambos <em>a</em> y <em>b</em> son verdad</td>
+<td><code>a</code> | <code>b</code></td>
 </tr>
 <tr>
-<td align="left"><code>a</code> | <code>b</code></td>
-<td><code>O[a,b]</code></td>
+<td align="left"><code>O[a,b]</code></td>
 <td>Verdadero (1) si cualquiera de <em>a</em> o <em>b</em> es verdad</td>
+<td><code>a ^ b</code></td>
 </tr>
 <tr>
-<td align="left"><code>a ^ b</code></td>
-<td><code>Oexclusivo[a,b]</code></td>
+<td align="left"><code>Oexclusivo[a,b]</code></td>
 <td>True (1) si cualquiera <em>a</em> o <em>b</em> es verdad</td>
+<td bgcolor='#D0D0D0'></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h5 id="-operador-de-precedencia">● Operador de precedencia</h5>
-<p>From highest precedence to lowest. Operators of same precedence are evaluated either left to right or right to left, depending on if they share a precedence with another operator.</p>
+  |
+<p>● Operador de precedencia</p>
+<h5 id="from-highest-precedence-to-lowest-operators-of-same-precedence-are-evaluated-either-left-to-right-or-right-to-left-depending-on-if-they-share-a-precedence-with-another-operator">From highest precedence to lowest. Operators of same precedence are evaluated either left to right or right to left, depending on if they share a precedence with another operator.</h5>
 <div class="overflow-container">
+<p>Operator</p></p>
 <table class='type0'>
 <thead>
 <tr>
-<th>Operator</th>
 <th>Associativity</th>
 <th>Sin paréntesis.</th>
 <th>Equivilant</th>
+<th><code>a[...]</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>a[...]</code></td>
 <td>unary</td>
 <td> </td>
 <td> </td>
-</tr>
-<tr>
 <td><code>-</code> (Menos)</td>
+</tr>
+<tr>
 <td>unary</td>
 <td> </td>
 <td> </td>
+<td><code>/</code></td>
 </tr>
 <tr>
-<td><code>/</code></td>
 <td>derecha-a-izquierda</td>
 <td>1 / 2 / 3</td>
 <td>(1 / (2 / 3))</td>
+<td><code>*</code></td>
 </tr>
 <tr>
-<td><code>*</code></td>
 <td>derecha-a-izquierda</td>
 <td>1 * 2 * 3</td>
 <td>(1 * (2 * 3))</td>
+<td><code>+</code>, <code>-</code> (Sustracción)</td>
 </tr>
 <tr>
-<td><code>+</code>, <code>-</code> (Sustracción)</td>
 <td>left-to-right</td>
 <td>1 + 2 + 3</td>
 <td>((1 + 2) + 3)</td>
+<td><code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></td>
 </tr>
 <tr>
-<td><code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></td>
 <td>left-to-right</td>
 <td>1 &lt;= 2 &lt;= 3</td>
 <td>((1 &lt;= 2) &lt;= 3)</td>
+<td><code>!</code></td>
 </tr>
 <tr>
-<td><code>!</code></td>
 <td>unary</td>
 <td> </td>
 <td> </td>
+<td><code>&amp;</code></td>
 </tr>
 <tr>
-<td><code>&amp;</code></td>
 <td>derecha-a-izquierda</td>
 <td>1 &amp; 2 &amp; 3</td>
 <td>(1 &amp; (2 &amp; 3))</td>
+<td><code>^</code></td>
 </tr>
 <tr>
-<td><code>^</code></td>
 <td>derecha-a-izquierda</td>
 <td>1 ^ 2 ^ 3</td>
 <td>(1 ^ (2 ^ 3))</td>
+<td>|</td>
 </tr>
 <tr>
-<td>|</td>
 <td>derecha-a-izquierda</td>
 <td>1 | 2 | 3</td>
 <td>(1 | (2 | 3))</td>
+<td bgcolor='#D0D0D0'></td>
 </tr>
 </tbody>
 </table>
 </div>
+   |
 <br>
 <div id="warning-nontitle">
 <span>⚠</span><p>The logical not and multiplication operator are not at the same precedence level as a lot of other languages. For example <code>!a + !b</code> is <code>!(!a + !(b))</code> <strong>not</strong> <code>(!a) + (!b)</code> as expected, similarly <code>1 * 2 / 3</code> is <code>1 * (2 / 3)</code> <strong>not</strong> <code>(1 * 2) / 3</code><br>
 Please also note that some combinations of prefix and infix operators are not recognised. For example <code>a*-b</code> is not accepted. Use <code>a*(-b)</code> or <code>-a*b</code> instead.</p>
 </div>
-<h2 id="a-namefunctionsa-4-lista-de-funciones"><a name="functions"></a>■ 4. Lista de funciones</h2>
-<h5 id="-aritmética-básica-1">● Aritmética básica</h5>
-<div class="overflow-container">
+<p><a name="functions"></a>■ 4. Lista de funciones</p>
+<h2 id="-aritmética-básica-1">● Aritmética básica</h2>
+<h5 id="div-classoverflow-container-1"><div class="overflow-container"></h5>
+<p>Función</p></p>
 <table class='type0 responsive-table-2col'>
 <thead>
 <tr>
-<th>Función</th>
 <th>Descripción</th>
+<th><code>Reciprocal[x]</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>Reciprocal[x]</code></td>
 <td>Retorna la reciprocidad, igual a 1/<em>x</em></td>
-</tr>
-<tr>
 <td><code>Power[a,b,...]</code></td>
+</tr>
+<tr>
 <td>Retorna <em>a</em> elevado a la <em>b</em> <sup>ava </sup>potencia. <em>b</em> debe ser un número no negativo. Para consistencia,  Power[0,<em>b</em>] siempre reotrna 1, incluso en el caso degenerado de Power[0,0], y <em>a</em> comenzando en negativo siempre retorna 0. Agregar más argumentos creará una cadena. Power[a,b,c] retornará <em>a</em> <sup><em>b</em><sup><em>c</em></sup></sup>.</td>
+<td bgcolor='#D0D0D0'></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h5 id="-funciones-numéricas">● Funciones numéricas</h5>
-<div class="overflow-container">
+ |
+<p>● Funciones numéricas</p>
+<h5 id="div-classoverflow-container-2"><div class="overflow-container"></h5>
+<p>Función</p></p>
 <table class='type0 responsive-table-2col'>
 <thead>
 <tr>
-<th>Función</th>
 <th>Descripción</th>
+<th><code>Quotient[a,b]</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>Quotient[a,b]</code></td>
 <td>Divide <em>a</em> entre <em>b</em> y redondea el resultado hacia abajo, igual a <code>Floor[a/b]</code>.</td>
-</tr>
-<tr>
 <td><code>Mod[a,b]</code></td>
+</tr>
+<tr>
 <td>Retorna el residuo al dividir <em>a</em> entre <em>b</em>, igual a <code>a-b*Floor[a/b]</code>.</td>
-</tr>
-<tr>
 <td><code>Min[a,b,...]</code></td>
+</tr>
+<tr>
 <td>Retorna el menor de los términos.</td>
-</tr>
-<tr>
 <td><code>Max[a,b,...]</code></td>
+</tr>
+<tr>
 <td>Retorna el mayor de los términos.</td>
-</tr>
-<tr>
 <td><code>Abs[x]</code></td>
+</tr>
+<tr>
 <td>Retorna el valor absoluto.</td>
-</tr>
-<tr>
 <td><code>Sign[x]</code></td>
+</tr>
+<tr>
 <td>Retorna el signo de <em>x</em>, el cual puede ser -1, 0 or 1.</td>
-</tr>
-<tr>
 <td><code>Floor[x]</code></td>
+</tr>
+<tr>
 <td>Redondea hacia abajo al entero más cercano.</td>
-</tr>
-<tr>
 <td><code>Ceiling[x]</code></td>
+</tr>
+<tr>
 <td>Redondea hacia arriba al entero más cercano.</td>
-</tr>
-<tr>
 <td><code>Round[x]</code></td>
+</tr>
+<tr>
 <td>Redondea al entero mas cercano. Números terminando en decimal .5 son redondeados hacia el entero más cercano.</td>
-</tr>
-<tr>
 <td><code>random[Minimum, Maximum]</code></td>
+</tr>
+<tr>
 <td>Retorna un nuevo número de coma flotante entre <em>Mínimo</em> y <em>Máximo</em>.</td>
-</tr>
-<tr>
 <td><code>randomInt[Minimum, Maximum]</code></td>
+</tr>
+<tr>
 <td>Retorna un nuevo número entero entre <em>Mínimo</em> y <em>Máximo</em>.</td>
+<td bgcolor='#D0D0D0'></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h5 id="-funciones-elementales">● Funciones elementales</h5>
-<div class="overflow-container">
+ |
+<p>● Funciones elementales</p>
+<h5 id="div-classoverflow-container-3"><div class="overflow-container"></h5>
+<p>Función</p></p>
 <table class='type0 responsive-table-2col'>
 <thead>
 <tr>
-<th>Función</th>
 <th>Descripción</th>
+<th><code>Exp[x]</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>Exp[x]</code></td>
 <td>La función exponencial, o <em>e</em> de la <em>x</em><sup>ava</sup>potencia.</td>
-</tr>
-<tr>
 <td><code>Log[x]</code></td>
+</tr>
+<tr>
 <td>La función logarítmica, con base <em>e</em>.</td>
-</tr>
-<tr>
 <td><code>Sqrt[x]</code></td>
+</tr>
+<tr>
 <td>La raíz cuadrada.</td>
-</tr>
-<tr>
 <td><code>Sin[x]</code></td>
+</tr>
+<tr>
 <td>Seno (en radianes).</td>
-</tr>
-<tr>
 <td><code>Cos[x]</code></td>
+</tr>
+<tr>
 <td>Coseno (en radianes)</td>
-</tr>
-<tr>
 <td><code>Tan[x]</code></td>
+</tr>
+<tr>
 <td>La tangente (en radianes).</td>
-</tr>
-<tr>
 <td><code>ArcTan[x]</code></td>
+</tr>
+<tr>
 <td>La tangente inversa - Cotangente (en radianes)</td>
-</tr>
-<tr>
 <td><code>Pi</code></td>
+</tr>
+<tr>
 <td>Returns the value of <em>Pi</em>.</td>
+<td bgcolor='#D0D0D0'></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h5 id="-condicionales">● Condicionales</h5>
-<div class="overflow-container">
+ |
+<p>● Condicionales</p>
+<h5 id="div-classoverflow-container-4"><div class="overflow-container"></h5>
+<p>Función</p></p>
 <table class='type0 responsive-table-2col'>
 <thead>
 <tr>
-<th>Función</th>
 <th>Descripción</th>
+<th><code>If[cond,truevalue,falsevalue]</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>If[cond,truevalue,falsevalue]</code></td>
 <td>Si <em>condición</em> es != 0, retorna <em>valorverdadero</em>, en caso contrario <em>valorfalso</em></td>
+<td bgcolor='#D0D0D0'></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h2 id="a-namevariablesa-5-lista-de-variables"><a name="variables"></a>■ 5. Lista de variables</h2>
-<h5 id="-primitivas">● Primitivas</h5>
-<div class="overflow-container">
+ |
+<p><a name="variables"></a>■ 5. Lista de variables</p>
+<h2 id="-primitivas">● Primitivas</h2>
+<h5 id="div-classoverflow-container-5"><div class="overflow-container"></h5>
+<p>Variable</p></p>
 <table class='type0 responsive-table-2col'>
 <thead>
 <tr>
-<th>Variable</th>
 <th>Descripción</th>
+<th><code>value</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>value</code></td>
 <td>El valor retornado por la función en su ultima evaluación. Al comienzo de la simulación, esto es 0.</td>
-</tr>
-<tr>
 <td><code>delta</code></td>
-<td>La diferencia de tiempo desde la última evaluación de la función en segundos. Por favor ten en cuenta que no hay tiempo garantizado desde que transcurre entre los llamados de función sucesivos.</td>
 </tr>
 <tr>
+<td>La diferencia de tiempo desde la última evaluación de la función en segundos. Por favor ten en cuenta que no hay tiempo garantizado desde que transcurre entre los llamados de función sucesivos.</td>
 <td><code>currentState</code></td>
+</tr>
+<tr>
 <td>Retorna el estado actual numérico del objeto.</td>
+<td bgcolor='#D0D0D0'></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h5 id="-tiempo-y-camara">● Tiempo y camara</h5>
-<div class="overflow-container">
+           |
+<p>● Tiempo y camara</p>
+<h5 id="div-classoverflow-container-6"><div class="overflow-container"></h5>
+<p>Variable</p></p>
 <table class='type0 responsive-table-2col'>
 <thead>
 <tr>
-<th>Variable</th>
 <th>Descripción</th>
+<th><code>time</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>time</code></td>
 <td>El tiempo actual del juego medido en segundos desde la media noche del primer día.</td>
-</tr>
-<tr>
 <td><code>hora</code></td>
+</tr>
+<tr>
 <td>The integer part of the current hour.</td>
-</tr>
-<tr>
 <td><code>minute</code></td>
+</tr>
+<tr>
 <td>The integer part of the current minute.</td>
-</tr>
-<tr>
 <td><code>second</code></td>
+</tr>
+<tr>
 <td>The integer part of the current second.</td>
-</tr>
-<tr>
 <td><code>DistanciaCamara</code></td>
+</tr>
+<tr>
 <td>Una distancia cartesiana no negativa medida desde el objeto a la cámara en metros.</td>
-</tr>
-<tr>
 <td><code>cameraXDistance</code></td>
+</tr>
+<tr>
 <td>The non-negative cartesian distance measured on the X axis from the object to the camera in meters</td>
-</tr>
-<tr>
 <td><code>cameraYDistance</code></td>
+</tr>
+<tr>
 <td>Una distancia cartesiana no negativa medida desde el eje Y al objeto a la cámara en metros.</td>
-</tr>
-<tr>
 <td><code>cameraZDistance</code></td>
-<td>The non-negative cartesian distance measured on the Z axis from the object to the camera in meters</td>
 </tr>
 <tr>
+<td>The non-negative cartesian distance measured on the Z axis from the object to the camera in meters</td>
 <td><code>cameraMode</code></td>
+</tr>
+<tr>
 <td>Retorna 0 si la cámara es actualmente en cabina 2D o 3D, 1 en caso contrario.</td>
+<td bgcolor='#D0D0D0'></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h5 id="-trenes">● Trenes</h5>
-<p>Generalmente, objetos adjuntados a un tren particular o coche retorna valores para los trenes y cobhes, a menos que sean estados. Para objetos de escenario, la referencia es el coche del conductor del tren más cercano ( no necesariamente el tren del jugador).</p>
+ |
+| ● Trenes | Generalmente, objetos adjuntados a un tren particular o coche retorna valores para los trenes y cobhes, a menos que sean estados. Para objetos de escenario, la referencia es el coche del conductor del tren más cercano ( no necesariamente el tren del jugador). |
 <p>En algunos casos de las siguientes variables , <em>IndiceCarro</em> tiene el siguiente significado: 0 es el 1<sup>er</sup> carro  del frente, 1 es el 2<sup>do</sup> carro del frente, etc., mientras que -1 es el 1<sup>er</sup> carro desde la parte posterior, -2 es el 2<sup>do</sup> carro desde la parte posterior, etc. En general los indices de los carros desde -<em>cars</em> hasta <em>cars</em>-1 representan carros existentes, donde <em>cars</em> es el numero de carros que el tren posee, mientras que valores que estén fuera de este rango representan carros que no existen. Todos los trenes tienen al menos 1 carro, indices -1 y 0 están garantizados que existan para cualquier tren.</p>
 <h5 id="-trenes-generalidades">● Trenes (generalidades)</h5>
 <div class="overflow-container">
+<p>Variable</p>
+<h5 id="descripción">Descripción</h5>
+<p><code>TrenJugador</code></p>
 <table class='type0 responsive-table-2col'>
 <thead>
 <tr>
-<th>Variable</th>
-<th>Descripción</th>
+<th>Returns 1 if the train is the player train, 0 otherwise.</th>
+<th><code>carros</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>TrenJugador</code></td>
-<td>Returns 1 if the train is the player train, 0 otherwise.</td>
-</tr>
-<tr>
-<td><code>carros</code></td>
 <td>El número de carros que el tren tiene.</td>
-</tr>
-<tr>
 <td><code>carNumber</code></td>
+</tr>
+<tr>
 <td>Returns the index of the current car.</td>
-</tr>
-<tr>
 <td><code>speed</code></td>
+</tr>
+<tr>
 <td>La velocidad actual del coche en m/s. Es positivo cuando el tren viaja hacia adelante, y negativa cuando el tren viaja hacia atrás.</td>
-</tr>
-<tr>
 <td><code>speed[carIndex]</code></td>
+</tr>
+<tr>
 <td>La velocidad actual del coche número <em>carIndex</em> en m/s. Es positivo cuando el tren viaja hacia adelante, y negativa cuando el tren viaja hacia atrás.</td>
-</tr>
-<tr>
 <td><code>speedometer</code></td>
+</tr>
+<tr>
 <td>La velocidad percibida del actual coche en m/s así como esto pudiera aparecer un velocímetro en patinaje de ruedas y bloqueo de ruedas.</td>
-</tr>
-<tr>
 <td><code>speedometer[carIndex]</code></td>
+</tr>
+<tr>
 <td>La velocidad percibida del coche de indice <em>carIndex</em> en m/s así como esto pudiera aparecer un velocímetro en patinaje de ruedas y bloqueo de ruedas.</td>
-</tr>
-<tr>
 <td><code>aceleración</code></td>
+</tr>
+<tr>
 <td>The actual acceleration of the current car in m/s2.</td>
-</tr>
-<tr>
 <td><code>acceleration[carIndex]</code></td>
+</tr>
+<tr>
 <td>The actual acceleration of the car <em>carIndex</em> in m/s2.</td>
-</tr>
-<tr>
 <td><code>accelerationMotor</code></td>
+</tr>
+<tr>
 <td>The acceleration which the motor of the first motor car currently generates in m/s2.</td>
-</tr>
-<tr>
 <td><code>accelerationMotor[carIndex]</code></td>
+</tr>
+<tr>
 <td>The acceleration which the motor of the car <em>carIndex</em> currently generates in m/s2.</td>
-</tr>
-<tr>
 <td><code>distance</code></td>
+</tr>
+<tr>
 <td>Una distancia cartesiana no negativa medida desde el objeto al coche más cercano en metros. Solamente es usado por objetos de escenario.</td>
-</tr>
-<tr>
 <td><code>distance[carIndex]</code></td>
+</tr>
+<tr>
 <td>La distancia cartesiana no negativa medida desde el objeto al coche número <em>carIndex</em> en metros, ó 0 si el coche no existe. Solamente es usado por objetos de escenario.</td>
-</tr>
-<tr>
 <td><code>trackDistance</code></td>
+</tr>
+<tr>
 <td>La distancia de la vía desde el objeto al extremo más cercano del tren mas próximo en metros. Es positivo cuando el tren esta en frente del objeto, y negativo cuando esta por detrás, y cero cuando el objeto esta entre los extremos del tren.</td>
-</tr>
-<tr>
 <td><code>trackDistance[carIndex]</code></td>
+</tr>
+<tr>
 <td>La distancia de la vía desde el objeto al carro número <em>IndiceCarro</em> del tren mas próximo en metros. Es positivo cuando el centro del coche esté en frente del objeto, y negativo cuando esta por detrás, Retorna 0 si el coche no existe. Solamente es usado por objetos de escenario.</td>
-</tr>
-<tr>
 <td><code>destination</code></td>
+</tr>
+<tr>
 <td>La configuración actual del destino del tren (Es configurado por <em>Track.Destination</em> ó la interfaz del plugin)</td>
-</tr>
-<tr>
 <td><code>distanceNextStation</code></td>
+</tr>
+<tr>
 <td>La distancia en metros a la siguiente estación.</td>
-</tr>
-<tr>
 <td><code>distanceLastStation</code></td>
+</tr>
+<tr>
 <td>The distance in m to the previous station.</td>
-</tr>
-<tr>
 <td><code>distanceStation[stationIndex]</code></td>
+</tr>
+<tr>
 <td>La distancia en metros a la estación con indice <em>stationIndex</em></td>
-</tr>
-<tr>
 <td><code>stopsNextStation</code></td>
+</tr>
+<tr>
 <td>Indica si el tren hace parada en la próxima estación.</td>
-</tr>
-<tr>
 <td><code>stopsStation[stationIndex]</code></td>
+</tr>
+<tr>
 <td>Indica que el tren se detiene en la estación con indice <em>stationIndex</em></td>
-</tr>
-<tr>
 <td><code>siguienteEstación</code></td>
+</tr>
+<tr>
 <td>El indice de la siguiente estación.</td>
-</tr>
-<tr>
 <td><code>nextStationStop</code></td>
+</tr>
+<tr>
 <td>El indice de la siguiente estación donde el tren debe hacer parada.</td>
-</tr>
-<tr>
 <td><code>terminalStation</code></td>
+</tr>
+<tr>
 <td>The index of the terminal station for this train.</td>
-</tr>
-<tr>
 <td><code>timeTable</code></td>
+</tr>
+<tr>
 <td>Returns 1 if the timetable is currently set as visible, 0 otherwise.</td>
-</tr>
-<tr>
 <td><code>brightness[carIndex]</code></td>
+</tr>
+<tr>
 <td>Returns the interpolated brightness value applying to this car.</td>
-</tr>
-<tr>
 <td><code>routeLimit</code></td>
+</tr>
+<tr>
 <td>Returns the current route speed limit applying to this train in km/h.</td>
-</tr>
-<tr>
 <td><code>headlights</code></td>
+</tr>
+<tr>
 <td>Gets the current state of the train&rsquo;s headlights.</td>
-</tr>
-<tr>
 <td><code>wheelSlip</code></td>
+</tr>
+<tr>
 <td>Returns 1 if the train is experincing wheelslip in the current car, 0 otherwise.</td>
-</tr>
-<tr>
 <td><code>wheelSlip[carIndex]</code></td>
+</tr>
+<tr>
 <td>Returns 1 if the train is experinging wheelslip in the specified car, 0 otherwise.</td>
+<td bgcolor='#D0D0D0'></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h5 id="-trenes-freno">● Trenes (freno)</h5>
-<div class="overflow-container">
+ |
+| ● Trenes (freno)                   | <div class="overflow-container">
+<p>|
+| Variable         | Descripción |</p>
+<p><code>mainReservoir</code></p>
+<h5 id="la-presión-actual-de-la-reserva-principal-del-coche-medido-en-pascal">La presión actual de la reserva principal del coche, medido en Pascal.</h5>
+<p><code>mainReservoir[carIndex]</code></p>
 <table class='type0 responsive-table-2col'>
 <thead>
 <tr>
-<th>Variable</th>
-<th>Descripción</th>
+<th>La presión actual de la reserva principal del coche de indice numero <em>carIndex</em>, medido en Pascal.</th>
+<th><code>equalizingReservoir</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>mainReservoir</code></td>
-<td>La presión actual de la reserva principal del coche, medido en Pascal.</td>
-</tr>
-<tr>
-<td><code>mainReservoir[carIndex]</code></td>
-<td>La presión actual de la reserva principal del coche de indice numero <em>carIndex</em>, medido en Pascal.</td>
-</tr>
-<tr>
-<td><code>equalizingReservoir</code></td>
 <td>La presión actual del depósito de compensación en este carro, medido en Pascal.</td>
-</tr>
-<tr>
 <td><code>equalizingReservoir[carIndex]</code></td>
+</tr>
+<tr>
 <td>The current pressure in the equalizing reservoir in car <em>carIndex</em>, measured in Pa.</td>
-</tr>
-<tr>
 <td><code>brakePipe</code></td>
+</tr>
+<tr>
 <td>La presión actual de la tubería de freno en este coche, medido en Pascal.</td>
-</tr>
-<tr>
 <td><code>brakePipe[carIndex]</code></td>
+</tr>
+<tr>
 <td>La presión actual de la tubería de freno en este coche de indice número <em>carIndex</em>, medido en Pascal.</td>
-</tr>
-<tr>
 <td><code>brakeCylinder</code></td>
+</tr>
+<tr>
 <td>La presión actual del cilindro de freno en este coche, medido en Pascal.</td>
-</tr>
-<tr>
 <td><code>brakeCylinder[carIndex]</code></td>
+</tr>
+<tr>
 <td>La presión actual del cilindro de freno en este coche de indice número <em>carIndex</em>, medido en Pascal.</td>
-</tr>
-<tr>
 <td><code>straightAirPipe</code></td>
+</tr>
+<tr>
 <td>La presión actual de la tubería de aire recto en este coche, medido en Pascal.</td>
-</tr>
-<tr>
 <td><code>straightAirPipe[carIndex]</code></td>
+</tr>
+<tr>
 <td>La presión actual de la valvula directa de aire en el carro <em>carIndex</em>, medido en Pa.</td>
+<td bgcolor='#D0D0D0'></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h5 id="-trenes-puertas">● Trenes (puertas)</h5>
-<div class="overflow-container">
+ |
+| ● Trenes (puertas)              | <div class="overflow-container">
+<p>|
+| Variable    | Descripción |</p>
+<p><code>doors</code></p>
+<h5 id="el-estado-de-las-puertas-retorna-0-si-esta-totalmente-cerrada-1-si-esta-totalmente-abierta-o-cualquier-otro-estado-intermedio-las-puertas-están-parciales-en-un-estado-abierto">El estado de las puertas. Retorna 0 si esta totalmente cerrada, 1 si esta totalmente abierta, o cualquier otro estado intermedio, las puertas están parciales en un estado abierto.</h5>
+<p><code>doors[carIndex]</code></p>
 <table class='type0 responsive-table-2col'>
 <thead>
 <tr>
-<th>Variable</th>
-<th>Descripción</th>
+<th>El estado de las puertas del coche de indice número <em>carIndex</em>. Retorna 0 si esta totalmente cerrada, 1 si esta totalmente abierta, o cualquier otro estado intermedio, las puertas están parciales en un estado abierto.</th>
+<th><code>leftDoors</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>doors</code></td>
-<td>El estado de las puertas. Retorna 0 si esta totalmente cerrada, 1 si esta totalmente abierta, o cualquier otro estado intermedio, las puertas están parciales en un estado abierto.</td>
-</tr>
-<tr>
-<td><code>doors[carIndex]</code></td>
-<td>El estado de las puertas del coche de indice número <em>carIndex</em>. Retorna 0 si esta totalmente cerrada, 1 si esta totalmente abierta, o cualquier otro estado intermedio, las puertas están parciales en un estado abierto.</td>
-</tr>
-<tr>
-<td><code>leftDoors</code></td>
 <td>El estado de las puertas del lado izquierdo. Retorna 0 si esta totalmente cerrada, 1 si esta totalmente abierta, o cualquier otro estado intermedio, las puertas están parciales en un estado abierto.</td>
-</tr>
-<tr>
 <td><code>leftDoors[carIndex]</code></td>
+</tr>
+<tr>
 <td>El estado de las puertas del lado izquierdo del coche de indice número <em>carIndex</em>. Retorna un valor entre 0 y 1, en un estado parcial de puertas que están en un estado de apertura, o -1 si el coche no existe.</td>
-</tr>
-<tr>
 <td><code>rightDoors</code></td>
+</tr>
+<tr>
 <td>El estado de las puertas del lado derecho. Retorna 0 si esta totalmente cerrada, 1 si esta totalmente abierta, o cualquier otro estado intermedio, las puertas están parciales en un estado abierto.</td>
-</tr>
-<tr>
 <td><code>rightDoors[IndiceCarro]</code></td>
+</tr>
+<tr>
 <td>El estado de las puertas del lado derecho del carro <em>IndiceCarro</em>. Retorna un valor entre 0 y 1, en un estado parcial de puertas que están en un estado de apertura, o -1 si el carro no existe.</td>
-</tr>
-<tr>
 <td><code>leftDoorsTarget</code></td>
+</tr>
+<tr>
 <td>El estado de destino anticipado de las puertas izquierdas. Retorna cualquiera 0 (cerrado) ó 1 (abierto).</td>
-</tr>
-<tr>
 <td><code>leftDoorsTarget[carIndex]</code></td>
+</tr>
+<tr>
 <td>El estado de la trayectoria anticipada de las puertas izquierdas del carro <em>IndiceCarro</em>. Retorna 0 (cerrada) o 1 (abierta).</td>
-</tr>
-<tr>
 <td><code>rightDoorsTarget</code></td>
+</tr>
+<tr>
 <td>El estado de destino anticipado de las puertas derechas. Retorna cualquiera 0 (cerrado) ó 1 (abierto).</td>
-</tr>
-<tr>
 <td><code>rightDoorsTarget[carIndex]</code></td>
+</tr>
+<tr>
 <td>El estado de destino anticipado de las puertas derechas del carro <em>IndiceCarro</em>. Retorna cualquiera 0 (cerrado) ó 1 (abierto).</td>
-</tr>
-<tr>
 <td><code>leftDoorButton</code></td>
+</tr>
+<tr>
 <td>El estado del botón de la puerta izquierda. Retorna cualquiera 0 (liberado) o 1 (presionado).</td>
-</tr>
-<tr>
 <td><code>rightDoorButton</code></td>
-<td>El estado del botón de la puerta derecha. Retorna cualquiera 0 (liberado) o 1 (presionado).</td>
 </tr>
 <tr>
+<td>El estado del botón de la puerta derecha. Retorna cualquiera 0 (liberado) o 1 (presionado).</td>
 <td><code>pilotLamp</code></td>
+</tr>
+<tr>
 <td>El estado de la lampara piloto (Puertas cerradas y listo para iniciar). Retorna cualquiera 0 (apagado) o 1 (encendido).</td>
+<td bgcolor='#D0D0D0'></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h5 id="-trenes-otros">● Trenes (otros)</h5>
-<div class="overflow-container">
+ |
+| ● Trenes (otros)           | <div class="overflow-container">
+<p>|
+| Variable                  | Descripción |</p>
+<p><code>reverserNotch</code></p>
+<h5 id="el-estado-de-inversor-de-marcha-el-cual-puede-ser--1-hacia-atrás-0-neutro-o-adelante-1">El estado de inversor de marcha, el cual puede ser -1 (hacia atrás), 0 (neutro), o adelante (1).</h5>
+<p><code>powerNotch</code></p>
 <table class='type0 responsive-table-2col'>
 <thead>
 <tr>
-<th>Variable</th>
-<th>Descripción</th>
+<th>El la posición de la palanca de tracción, por ejemplo, 0 para N, 1 para P1, 2 para P2, 3 para P3, etc.</th>
+<th><code>powerNotches</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>reverserNotch</code></td>
-<td>El estado de inversor de marcha, el cual puede ser -1 (hacia atrás), 0 (neutro), o adelante (1).</td>
-</tr>
-<tr>
-<td><code>powerNotch</code></td>
-<td>El la posición de la palanca de tracción, por ejemplo, 0 para N, 1 para P1, 2 para P2, 3 para P3, etc.</td>
-</tr>
-<tr>
-<td><code>powerNotches</code></td>
 <td>La cantidad de posiciones de palanca de tracción que el tren tiene.</td>
-</tr>
-<tr>
 <td><code>brakeNotch</code></td>
+</tr>
+<tr>
 <td>La posición actual de la posición de la palanca de freno. <br />● Para trenes sin freno de aire automático: 0 para N, 1 para B1, 2 para B2, 3 para B3, etc.<br />● Para trenes con freno de aire automático: 0  para REL, 1 para LAP y 2 para SRV.</td>
-</tr>
-<tr>
 <td><code>brakeNotches</code></td>
+</tr>
+<tr>
 <td>La cantidad de posiciones de palanca de freno que el tren posee. Para trenes con freno automático de aire, esto retorna 2.</td>
-</tr>
-<tr>
 <td><code>brakeNotchLinear</code></td>
+</tr>
+<tr>
 <td>La combinación de la palanca de freno, freno presionado y freno de emergencia.<br />● Para trenes sin freno de aire automático y sin freno presionado: 0 para N, 1 para B1, 2 para B2, 3 para B3, etc., hasta <em>BrakeNotches</em>+1 para EMG.<br />● Para trenes sin freno de aire automático pero con freno presionado: 0 for N, 1 para HLD, 2 para B1, 3 para B2, 4 para B3, etc., hasta <em>BrakeNotches</em>+2 para EMG.<br />● Para trenes con freno de aire automático: 0 para REL, 1 para LAP, 2 para SRV o 3 para EMG.</td>
-</tr>
-<tr>
 <td><code>brakeNotchesLinear</code></td>
+</tr>
+<tr>
 <td>El valor mas alto retornado por <em>brakeNotchesLinear</em>.<br />● Para trenes sin freno de aire automático y sin freno presionado, esto es <em>BrakeNotches</em>+1.<br />● Para trenes sin freno de aire automático pero con freno presionado, esto es <em>BrakeNotches</em>+2.<br />● Para trenes con freno de aire automático, esto retorna 3.</td>
-</tr>
-<tr>
 <td><code>locoBrakeNotch</code></td>
+</tr>
+<tr>
 <td>La posición actual del freno de locomotora.</td>
-</tr>
-<tr>
 <td><code>locoBrakeNotches</code></td>
+</tr>
+<tr>
 <td>La cantidad de posiciones de freno de locomotora que el tren tiene.</td>
-</tr>
-<tr>
 <td><code>emergencyBrake</code></td>
+</tr>
+<tr>
 <td>Cuando el freno de emergencia es activado (1) o no (0).</td>
-</tr>
-<tr>
 <td><code>hasAirBrake</code></td>
+</tr>
+<tr>
 <td>Cuando el tren tiene freno de aire automático (1) o no (0).</td>
-</tr>
-<tr>
 <td><code>holdBrake</code></td>
+</tr>
+<tr>
 <td>Cuando el freno presionado este activo (1) o no (0).</td>
-</tr>
-<tr>
 <td><code>hasHoldBrake</code></td>
+</tr>
+<tr>
 <td>Cuando el tren posee freno presionado (1) o no (0).</td>
-</tr>
-<tr>
 <td><code>constSpeed</code></td>
+</tr>
+<tr>
 <td>Cuando el sistema de velocidad constante esta activo (1) o no (0).</td>
-</tr>
-<tr>
 <td><code>tieneVelocidadConstante</code></td>
+</tr>
+<tr>
 <td>Cuando el tren posee sistema de velocidad constante (1) o no (0).</td>
-</tr>
-<tr>
 <td><code>hasPlugin</code></td>
+</tr>
+<tr>
 <td>Cuando el tren usa plugin (1) o no (0).</td>
-</tr>
-<tr>
 <td><code>pluginState[i]</code></td>
+</tr>
+<tr>
 <td>El estado de la i<sup>ava</sup> variable del plugin, retornando un entero dependiendo del plugin. Es lo mismo para ats<em>i</em> en el panel2.cfg.</td>
-</tr>
-<tr>
 <td><code>FrontAxleCurveRadius[carIndex]</code></td>
+</tr>
+<tr>
 <td>Retorna el radio de curva del eje frontal del coche de indice número <em>carIndex</em>.</td>
-</tr>
-<tr>
 <td><code>RearAxleCurveRadius[carIndex]</code></td>
+</tr>
+<tr>
 <td>Retorna el radio de curva del eje posterior del coche de indice número <em>carIndex</em>.</td>
-</tr>
-<tr>
 <td><code>CurveCant[carIndex]</code></td>
+</tr>
+<tr>
 <td>Retorna el valor del peralte del coche de indice número <em>carIndex</em>.</td>
-</tr>
-<tr>
 <td><code>Pitch[carIndex]</code></td>
+</tr>
+<tr>
 <td>Retorna el valor de la diferencia de elevación para el coche de indice número <em>carIndex</em>..</td>
-</tr>
-<tr>
 <td><code>Odometer</code></td>
+</tr>
+<tr>
 <td>Retorna un numero representando la distancia en metros viajadas por el carro actual.</td>
-</tr>
-<tr>
 <td><code>Odometer[carIndex]</code></td>
+</tr>
+<tr>
 <td>Retorna un numero representando la distancia en metros viajadas por el coche de indice número <em>carIndex</em>.</td>
-</tr>
-<tr>
 <td><code>Klaxon</code></td>
+</tr>
+<tr>
 <td>Retorna la bocina actual que esta reproduciendo (cualquiera) de las siguientes: (0) Ninguna bocina se esta reproduciendo (1) La bocina principal esta reproduciéndose (2) La bocina secundaria esta reproduciéndose (3) La bocina musical esta reproduciéndose. <em>Nota</em>: Si múltiples bocinas se encuentran reproduciéndose, el valor mas bajo será retornado.</td>
-</tr>
-<tr>
 <td><code>PrimaryKlaxon</code></td>
+</tr>
+<tr>
 <td>Retorna 1 si la bocina primaria esta reproduciéndose, 0 en caso contrario.</td>
-</tr>
-<tr>
 <td><code>KlaxonSecundario</code></td>
+</tr>
+<tr>
 <td>Retorna 1 si la bocina secundaria esta reproduciéndose, 0 en caso contrario.</td>
-</tr>
-<tr>
 <td><code>KlaxonMusical</code></td>
+</tr>
+<tr>
 <td>Retorna 1 si la bocina musical esta reproduciéndose, 0 en caso contrario.</td>
-</tr>
-<tr>
 <td><code>passAlarm</code></td>
-<td>Cuando la alarma de rebase de estación ha sido activada. Retorna 0 (inactivo) o 1 (activo).</td>
 </tr>
 <tr>
+<td>Cuando la alarma de rebase de estación ha sido activada. Retorna 0 (inactivo) o 1 (activo).</td>
 <td><code>stationAdjustAlarm</code></td>
+</tr>
+<tr>
 <td>Cuando la alarma de ajuste de estación ha sido activada. Retorna 0 (inactivo) o 1 (activo).</td>
+<td bgcolor='#D0D0D0'></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>Si <em>pluginState[i]</em> es usado con el sistema de seguridad ATS y ATC, el siguiente mapa de opciones para <em>i</em> puede ser aplicado:</p>
-<div class="overflow-container">
+ |
+| Si *pluginState[i]* es usado con el sistema de seguridad ATS y ATC, el siguiente mapa de opciones para *i* puede ser aplicado:                      | <div class="overflow-container">
+<p>|
+| <em>i</em>             | Español |</p>
+<p>日本語 - Japonés</p>
+<p>Valores de retorno</p>
+<p>pluginState[271]</p>
 <table class='type0'>
 <thead>
 <tr>
-<th><em>i</em></th>
-<th>Español</th>
-<th>日本語 - Japonés</th>
-<th>Valores de retorno</th>
-<th></th>
-<th>pluginState[271]</th>
 <th>Significado</th>
+<th>ATS</th>
+<th>ATS</th>
+<th>0 (apagado) o 1 (encendido)</th>
+<th></th>
+<th>ATC no disponible</th>
+<th>ATS RUN</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>256</td>
-<td>ATS</td>
-<td>ATS</td>
-<td>0 (apagado) o 1 (encendido)</td>
+<td>ATS 作動</td>
+<td>0 (apagado), 1 (encendido) o 2 (parpadeando)</td>
+<td>0 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>0</td>
-<td>ATC no disponible</td>
+<td>ATS RUN</td>
 </tr>
 <tr>
 <td>257</td>
-<td>ATS RUN</td>
 <td>ATS 作動</td>
-<td>0 (apagado), 1 (encendido) o 2 (parpadeando)</td>
+<td>0 (apagado / sin parpadear), 1 (encendido / parpadeando)</td>
+<td>15 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>1</td>
-<td>0 km/h</td>
+<td>P POWER</td>
 </tr>
 <tr>
 <td>258</td>
-<td>ATS RUN</td>
-<td>ATS 作動</td>
-<td>0 (apagado / sin parpadear), 1 (encendido / parpadeando)</td>
+<td>P 電源</td>
+<td>0 (apagado) o 1 (encendido)</td>
+<td>25 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>2</td>
-<td>15 km/h</td>
+<td>PTN APPROACH</td>
 </tr>
 <tr>
 <td>259</td>
-<td>P POWER</td>
-<td>P 電源</td>
+<td>パターン接近</td>
 <td>0 (apagado) o 1 (encendido)</td>
+<td>45 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>3</td>
-<td>25 km/h</td>
+<td>FRENO LIBERADO</td>
 </tr>
 <tr>
 <td>260</td>
-<td>PTN APPROACH</td>
-<td>パターン接近</td>
+<td>ブレーキ開放</td>
 <td>0 (apagado) o 1 (encendido)</td>
+<td>55 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>4</td>
-<td>45 km/h</td>
+<td>FRENO APLICADO</td>
 </tr>
 <tr>
 <td>261</td>
-<td>FRENO LIBERADO</td>
-<td>ブレーキ開放</td>
+<td>ブレーキ動作</td>
 <td>0 (apagado) o 1 (encendido)</td>
+<td>65 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>5</td>
-<td>55 km/h</td>
+<td>ATS P</td>
 </tr>
 <tr>
 <td>262</td>
-<td>FRENO APLICADO</td>
-<td>ブレーキ動作</td>
+<td>ATS-P</td>
 <td>0 (apagado) o 1 (encendido)</td>
+<td>75 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>6</td>
-<td>65 km/h</td>
+<td>FALLA</td>
 </tr>
 <tr>
 <td>263</td>
-<td>ATS P</td>
-<td>ATS-P</td>
+<td>故障</td>
 <td>0 (apagado) o 1 (encendido)</td>
+<td>90 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>7</td>
-<td>75 km/h</td>
+<td>ATC</td>
 </tr>
 <tr>
 <td>264</td>
-<td>FALLA</td>
-<td>故障</td>
+<td>ATC</td>
 <td>0 (apagado) o 1 (encendido)</td>
+<td>100 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>8</td>
-<td>90 km/h</td>
+<td>ATC ENCENDIDO</td>
 </tr>
 <tr>
 <td>265</td>
-<td>ATC</td>
-<td>ATC</td>
+<td>ATC 電源</td>
 <td>0 (apagado) o 1 (encendido)</td>
+<td>110 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>9</td>
-<td>100 km/h</td>
+<td>ATC SERVICIO</td>
 </tr>
 <tr>
 <td>266</td>
-<td>ATC ENCENDIDO</td>
-<td>ATC 電源</td>
+<td>ATC 常用</td>
 <td>0 (apagado) o 1 (encendido)</td>
+<td>120 km/h</td>
 <td bgcolor='#D0D0D0'></td>
 <td>10</td>
-<td>110 km/h</td>
+<td>ATC EMERGENCIA</td>
 </tr>
 <tr>
 <td>267</td>
-<td>ATC SERVICIO</td>
-<td>ATC 常用</td>
+<td>ATC 非常</td>
 <td>0 (apagado) o 1 (encendido)</td>
+<td>ATS esta activo</td>
 <td bgcolor='#D0D0D0'></td>
 <td>11</td>
-<td>120 km/h</td>
+<td>VELOCIDAD CONSTANTE</td>
 </tr>
 <tr>
 <td>268</td>
-<td>ATC EMERGENCIA</td>
-<td>ATC 非常</td>
+<td>定速</td>
 <td>0 (apagado) o 1 (encendido)</td>
+<td>EB</td>
 <td bgcolor='#D0D0D0'></td>
 <td>12</td>
-<td>ATS esta activo</td>
+<td>EB</td>
 </tr>
 <tr>
 <td>269</td>
-<td>VELOCIDAD CONSTANTE</td>
-<td>定速</td>
 <td>0 (apagado) o 1 (encendido)</td>
+<td>Indicador de velocidad del ATC</td>
+<td>0 - 12, ver tabla a la derecha</td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
 </tr>
 <tr>
 <td>270</td>
-<td>EB</td>
-<td>EB</td>
-<td>0 (apagado) o 1 (encendido)</td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
-</tr>
-<tr>
-<td>271</td>
-<td>Indicador de velocidad del ATC</td>
-<td bgcolor='#D0D0D0'></td>
-<td>0 - 12, ver tabla a la derecha</td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
 <td bgcolor='#D0D0D0'></td>
@@ -1609,94 +1618,94 @@ Please also note that some combinations of prefix and infix operators are not re
 </tbody>
 </table>
 </div>
-<h5 id="-secciones-señalización">● Secciones (señalización)</h5>
-<p>El contexto sección es definido cuando el objeto es posicionado usando Track.SigF.</p>
-<div class="overflow-container">
-<table class='type0 responsive-table-2col'>
+                  | ● Secciones (señalización)           | El contexto sección es definido cuando el objeto es posicionado usando Track.SigF.                         |      |                  |                   |
+| 271  | <div class="overflow-container">
+<p>|              | Variable               |      |                  |                   |</p>
+<p>Descripción</p>
+<h5 id="section"><code>section</code></h5>
+<p>El valor de la sección aspecto que se nuestra.<br /><em>si esta variable es usada fuera de un contexto de Track.Sifg, la conducta actual es indefinida y sujeto a cambios.</em></p>
+</div>
+<table>
 <thead>
 <tr>
-<th>Variable</th>
-<th>Descripción</th>
+<th><a name="performance"></a>■ 6. Rendimiento</th>
+<th>Existen ciertos tipos de animaciones los cuales son menos costosos, y otros que son mas. También, los objetos adyacentes juegan un papel importante . Si quieres diseñar objetos animados con un mejor rendimiento posible <strong>para versiones futuras de openBVE</strong>, échale un vistazo a la siguiente tabla de rendimiento:</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>section</code></td>
-<td>El valor de la sección aspecto que se nuestra.<br /><em>si esta variable es usada fuera de un contexto de Track.Sifg, la conducta actual es indefinida y sujeto a cambios.</em></td>
+<td><div class="overflow-container"></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="a-nameperformancea-6-rendimiento"><a name="performance"></a>■ 6. Rendimiento</h2>
-<p>Existen ciertos tipos de animaciones los cuales son menos costosos, y otros que son mas. También, los objetos adyacentes juegan un papel importante . Si quieres diseñar objetos animados con un mejor rendimiento posible <strong>para versiones futuras de openBVE</strong>, échale un vistazo a la siguiente tabla de rendimiento:</p>
-<div class="overflow-container">
+<p>| Animación |</p>
+<p>Objeto</p>
+<h2 id="rendimiento">Rendimiento</h2>
+<p>Cambios de estado</p>
+<p>Solo tiene caras opacas</p>
 <table class='type0'>
 <thead>
 <tr>
-<th>Animación</th>
-<th>Objeto</th>
-<th>Rendimiento</th>
+<th>Bien</th>
+<th>Cambios de estado</th>
+<th>Tiene parcialmente caras transparentes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Cambios de estado</td>
-<td>Solo tiene caras opacas</td>
-<td>Bien</td>
-</tr>
-<tr>
-<td>Cambios de estado</td>
-<td>Tiene parcialmente caras transparentes</td>
 <td>Moderado</td>
-</tr>
-<tr>
 <td>Traslación</td>
 <td>Solo tiene caras opacas</td>
-<td>Bien</td>
 </tr>
 <tr>
+<td>Bien</td>
 <td>Traslación</td>
 <td>Tiene parcialmente caras transparentes</td>
+</tr>
+<tr>
 <td>Moderado</td>
-</tr>
-<tr>
 <td>Rotación</td>
 <td>Solo tiene caras opacas</td>
+</tr>
+<tr>
 <td>Bien</td>
-</tr>
-<tr>
 <td>Rotación</td>
 <td>Tiene parcialmente caras transparentes</td>
-<td>Mal</td>
 </tr>
 <tr>
+<td>Mal</td>
 <td>Saltos de textura</td>
 <td>Solo tiene caras opacas</td>
-<td>Mal</td>
 </tr>
 <tr>
+<td>Mal</td>
 <td>Saltos de textura</td>
 <td>Tiene parcialmente caras transparentes</td>
+</tr>
+<tr>
 <td>Mal</td>
+<td bgcolor='#D0D0D0'></td>
+<td bgcolor='#D0D0D0'></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>El rendimiento por lo general es mejor si el resultado de la función cambia sin frecuencia. Así que, incluso si habilitas el parámetro <em>RefreshRate</em> a cero, el rendimiento por lo general mejorará si el resultado de su formula es constante sobre largos periodos de tiempo. De otra manera, si cambia cada cuadro por segundo, el rendimiento por lo general empeorará.</p>
-<p>Generalmente, debes evitar usar animaciones con caras parcialmente transparentes y enfocarte en caras opacas cuando sea posible. Tambien, intenta evitar los saltos de textura, y considera usar el cambio de estado o traslación donde sea posible.</p>
-<h2 id="a-nametipsa-7-sugerencias"><a name="tips"></a>■ 7. Sugerencias</h2>
+           | El rendimiento por lo general es mejor si el resultado de la función cambia sin frecuencia. Así que, incluso si habilitas el parámetro *RefreshRate* a cero, el rendimiento por lo general mejorará si el resultado de su formula es constante sobre largos periodos de tiempo. De otra manera, si cambia cada cuadro por segundo, el rendimiento por lo general empeorará.         |
+| Generalmente, debes evitar usar animaciones con caras parcialmente transparentes y enfocarte en caras opacas cuando sea posible. Tambien, intenta evitar los saltos de textura, y considera usar el cambio de estado o traslación donde sea posible. | <a name="tips"></a>■ 7. Sugerencias | Generalmente hablando, trata de mantener la complejidad de las funciones lo mas bajo posible. Esto no es el aspecto más critico, aunque, la mayoría del impacto del rendimiento resultará cuando se aplique resultados a una función, por ejemplo. rotar el objeto, y no evaluando la función.         |
+<p>Usa el parámetro RefreshRate cuando sea posible para así optimizar el rendimiento. Usualmente, puedes usar este parámetro cuando no necesites una animación suave, o cuando deliberadamente necesites que estas funciones solo se actualicen en intervalos.</p>
+<p>No uses estas funciones cuando siempre evalúas la misma constante. Por ejemplo, no uses RotateXFunction = 3.14159, gira el objeto adyacente en el CSV/B3D/X directamente.</p>
+<p>Cambios de estado son un método muy barato cuando el estado no cambia entre dos ejecuciones por el StateFunction. Si un cambio ocurre, esto es una operación relativamente costosa.</p>
+<h2 id="trata-de-optimizar-las-operaciones-condicionales-if--especialmente-trata-de-evitar-la-anidación-de-funciones-if-de-vez-en-cuando-hay-una-solución-matemática-elegante">Trata de optimizar las operaciones condicionales <em>if</em> . Especialmente trata de evitar la anidación de funciones <em>if</em>. De vez en cuando, hay una solución matemática elegante.</h2>
 <ul>
-<li>Generalmente hablando, trata de mantener la complejidad de las funciones lo mas bajo posible. Esto no es el aspecto más critico, aunque, la mayoría del impacto del rendimiento resultará cuando se aplique resultados a una función, por ejemplo. rotar el objeto, y no evaluando la función.</li>
-<li>Usa el parámetro RefreshRate cuando sea posible para así optimizar el rendimiento. Usualmente, puedes usar este parámetro cuando no necesites una animación suave, o cuando deliberadamente necesites que estas funciones solo se actualicen en intervalos.</li>
-<li>No uses estas funciones cuando siempre evalúas la misma constante. Por ejemplo, no uses RotateXFunction = 3.14159, gira el objeto adyacente en el CSV/B3D/X directamente.</li>
-<li>Cambios de estado son un método muy barato cuando el estado no cambia entre dos ejecuciones por el StateFunction. Si un cambio ocurre, esto es una operación relativamente costosa.</li>
-<li>Trata de optimizar las operaciones condicionales <em>if</em> . Especialmente trata de evitar la anidación de funciones <em>if</em>. De vez en cuando, hay una solución matemática elegante.</li>
 <li>Ciertas funciones, por ejemplo. Exp, Sin, Cos, etc. son relativamente costosas. Úsalas solo cuando sean absolutamente necesarias para un efecto. No incluyas operaciones innecesarias. Por ejemplo, el resultado de StateFunction es automáticamente redondeado hacia el entero más cercano, así que no apliques una función Round adicional explícito.</li>
 <li>Cuando trabajas con objetos del coche, ten en mente que algunas variables tienen un indice de coche opcional (CarIndex). Debes usar este indice si necesitas consultar el estado de un coche en particular ( es decir, no necesariamente el único objeto que puede ser adjuntado).  Si, necesitas hacer una consulta el valor de un coche en particular del objeto que se plantea adjuntar, usa la variable sin el indice. Para objetos de escenario, por lo general no debes usar los indices del coche ya sea porque no puedes estar seguros de cuantos coches posee el tren consultado.</li>
-</ul>
-<h2 id="a-nameexamplesa-8-funciones-de-ejemplo"><a name="examples"></a>■ 8. Funciones de ejemplo</h2>
-<h5 id="-luz-parpadeante">● Luz parpadeante</h5>
+<li><a name="examples"></a>■ 8. Funciones de ejemplo</li>
+<li>● Luz parpadeante</li>
+<li>
 <div class="overflow-container">
+</li>
+</ul>
 <table style="border: none;">
 <tbody>
 <tr>
@@ -1718,8 +1727,8 @@ RefreshRate = SEGUNDOS
 </tbody>
 </table>
 </div>
-<h5 id="-rotación-de-rueda">● Rotación de rueda</h5>
-<div class="overflow-container">
+- ● Rotación de rueda
+- <div class="overflow-container">
 <table style="border: none;">
 <tbody>
 <tr>
@@ -1740,8 +1749,8 @@ RotateXFunction = value + delta * speedometer / RADIO_DE_LA_RUEDA
 </tbody>
 </table>
 </div>
-<h5 id="-ciclo-a-través-de-una-lista-de-objetos">● Ciclo a través de una lista de objetos</h5>
-<div class="overflow-container">
+<h2 id="-ciclo-a-través-de-una-lista-de-objetos">● Ciclo a través de una lista de objetos</h2>
+<h5 id="div-classoverflow-container-7"><div class="overflow-container"></h5>
 <table style="border: none;">
 <tbody>
 <tr>
@@ -1763,8 +1772,8 @@ RefreshRate = TIEMPO_POR_OBJETO
 </tbody>
 </table>
 </div>
-<h5 id="-señal-3-aspectos-para-tracksection0-2-4">● Señal (3-aspectos) para Track.Section(0; 2; 4)</h5>
-<div class="overflow-container">
+<p>● Señal (3-aspectos) para Track.Section(0; 2; 4)</p>
+<h5 id="div-classoverflow-container-8"><div class="overflow-container"></h5>
 <table style="border: none;">
 <tbody>
 <tr>
@@ -1779,8 +1788,8 @@ StateFunction = section / 2
 </tbody>
 </table>
 </div>
-<h5 id="-emplear-un-retardo-en-señales-de-aproximación-controlada">● Emplear un retardo en señales de aproximación controlada.</h5>
-<p>If you want to create a signal that keeps being red until the train approaches it to some distance, then counts down a timer before it changes aspect to green, please refer to <a href="http://web.archive.org/web/20100902041536/http://openbve.freeforums.org/delay-in-approach-controlled-signals-t1195.html#p5378">this post</a> on the forum for a detailed explanation. Once you understand the concepts, you can use this code template:</p>
+<p>● Emplear un retardo en señales de aproximación controlada.</p>
+<h5 id="if-you-want-to-create-a-signal-that-keeps-being-red-until-the-train-approaches-it-to-some-distance-then-counts-down-a-timer-before-it-changes-aspect-to-green-please-refer-to-this-posthttpwebarchiveorgweb20100902041536httpopenbvefreeforumsorgdelay-in-approach-controlled-signals-t1195htmlp5378-on-the-forum-for-a-detailed-explanation-once-you-understand-the-concepts-you-can-use-this-code-template">If you want to create a signal that keeps being red until the train approaches it to some distance, then counts down a timer before it changes aspect to green, please refer to <a href="http://web.archive.org/web/20100902041536/http://openbve.freeforums.org/delay-in-approach-controlled-signals-t1195.html#p5378">this post</a> on the forum for a detailed explanation. Once you understand the concepts, you can use this code template:</h5>
 <div class="overflow-container">
 <table style="border: none;">
 <tbody>
@@ -1802,7 +1811,7 @@ StateFunction = if[trackDistance&gt;DISTANCIA | section==0, 0, min[value + 0.5*d
 </tbody>
 </table>
 </div>
-<div class="overflow-container">
+<h5 id="div-classoverflow-container-9"><div class="overflow-container"></h5>
 <table style="border: none;">
 <tbody>
 <tr>
@@ -1817,6 +1826,65 @@ StateFunction = if[trackDistance&gt;DISTANCIA | section==0, 0, min[value + 0.5*d
 <font style="font-family: monospace">
 States = OBJETO_ROJO, &hellip;, OBJETO_VERDE
 StateFunction = if[trackDistance&gt;DISTANCIA | section==0, 0, if[value&lt;0.5, value + 0.5*value/RETRASO, section]]
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Using an approach controlled delay with a semaphore signal requires a slight variant on this technique.
+As the result of the StateFunction is rounded, whereas that of the RotateFunction is not, a combination of both is required to achieve the desired effect.</p>
+<h5 id="div-classoverflow-container-10"><div class="overflow-container"></h5>
+<table style="border: none;">
+<tbody>
+<tr>
+<td width="16" valign="top"></td>
+<td>
+<em>Template for an approach-controlled delay in a semaphore signal:</em>
+</td>
+</tr>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+States = SIGNAL_ARM, SIGNAL_ARM<br>
+StateFunction = if[trackDistance&gt;DISTANCE | section==0, 0, min[value + 0.5*delta/DELAY, 1]]
+RotateYFunction = if[currentState == 0, 0, -0.7]
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a name="grammar"></a>■ 9. Gramática formal</p>
+<p>La gramática formal del lenguaje puede no coincidir perfectamente con la implementación incluida en openBVE. Un ejemplo es a*-b el cual es válido bajo la gramática pero el analizador lo rechaza.</p>
+<div class="overflow-container">
+<table style="border: none;">
+<tbody>
+<tr>
+<td width="16" valign="top">▶</td>
+<td bgcolor="#D4D8FF" style="border: 1px dashed;">
+<font style="font-family: monospace">
+&lt;expression&gt;        ::=  &lt;xor_expression&gt; &ldquo;&amp;&rdquo; &lt;expression&gt;     | &lt;xor_expression&gt;<br>
+&lt;xor_expression&gt;    ::= &lt;or_expression&gt;  &ldquo;^&rdquo; &lt;xor_expression&gt; | &lt;or_expression&gt;<br>
+&lt;or_expression&gt;     ::= &lt;not_expression&gt; &ldquo;|&rdquo; &lt;or_expression&gt;  | &lt;not_expression&gt;<br>
+<br/>&lt;not_expression&gt;    ::= &ldquo;!&rdquo; &lt;equal_expression&gt; | &lt;equal_expression&gt;<br>
+<br/>&lt;equal_expression&gt;  ::= &lt;plus_expression&gt; (&ldquo;==&rdquo; &lt;plus_expression&gt;)* | &lt;plus_expression&gt; (&quot;!=&rdquo; &lt;plus_expression&gt;)<code>*</code></br>
+                        &lt;plus_expression&gt; (&ldquo;&gt;&rdquo;  &lt;plus_expression&gt;)<code>*</code> | &lt;plus_expression&gt; (&quot;&lt;&quot;  &lt;plus_expression&gt;)<code>*</code> | <br/>
+                        &lt;plus_expression&gt; (&quot;&lt;=&rdquo; &lt;plus_expression&gt;)<code>*</code> | &lt;plus_expression&gt; (&quot;&lt;=&rdquo; &lt;plus_expression&gt;)<code>*</code> | &lt;plus_expression&gt;<br/>
+<br/>&lt;plus_expression&gt;   ::= &lt;times_expression&gt; (&ldquo;+&rdquo; &lt;times_expression&gt;)<code>*</code>  | &lt;times_expression&gt; (&quot;-&rdquo; &lt;times_expression&gt;)<code>*</code> | &lt;times_expression&gt;<br/>
+<br/>&lt;times_expression&gt;  ::= &lt;divide_expression&gt; &ldquo;*&rdquo; &lt;times_expression&gt;  | &lt;divide_expression&gt;<br>
+&lt;divide_expression&gt; ::= &lt;minus_expression&gt;  &ldquo;/&rdquo; &lt;divide_expression&gt; | &lt;minus_expression&gt;<br>
+<br/>&lt;minus_expression&gt;  ::= &ldquo;-&rdquo; &lt;function_call&gt; | &lt;function_call&gt;<br>
+&lt;function_call&gt;     ::= &lt;name&gt; &ldquo;[&rdquo; &lt;expression&gt; (&quot;,&rdquo; &lt;expression&gt;)* &ldquo;]&rdquo; | &lt;term&gt;<br>
+<br/>&lt;term&gt;   ::= &ldquo;(&rdquo; &lt;expression&gt; &ldquo;)&rdquo; | &lt;name&gt; | &lt;number&gt;<br>
+&lt;number&gt; ::= &lt;digit&gt;*<br>
+&lt;name&gt;   ::= &lt;letter&gt; (&lt;letter&gt; | &lt;digit&gt;)*<br>
+<br/>&lt;letter&gt; ::= &ldquo;A&rdquo; | &ldquo;B&rdquo; | &ldquo;C&rdquo; | &ldquo;D&rdquo; | &ldquo;E&rdquo; | &ldquo;F&rdquo; | &ldquo;G&rdquo; | &ldquo;H&rdquo; | &ldquo;I&rdquo; | &ldquo;J&rdquo; | &ldquo;K&rdquo; | &ldquo;L&rdquo; | &ldquo;M&rdquo; |<br>
+             &ldquo;N&rdquo; | &ldquo;O&rdquo; | &ldquo;P&rdquo; | &ldquo;Q&rdquo; | &ldquo;R&rdquo; | &ldquo;S&rdquo; | &ldquo;T&rdquo; | &ldquo;U&rdquo; | &ldquo;V&rdquo; | &ldquo;W&rdquo; | &ldquo;X&rdquo; | &ldquo;Y&rdquo; | &ldquo;Z&rdquo; |<br>
+             &ldquo;a&rdquo; | &ldquo;b&rdquo; | &ldquo;c&rdquo; | &ldquo;d&rdquo; | &ldquo;e&rdquo; | &ldquo;f&rdquo; | &ldquo;g&rdquo; | &ldquo;h&rdquo; | &ldquo;i&rdquo; | &ldquo;j&rdquo; | &ldquo;k&rdquo; | &ldquo;l&rdquo; | &ldquo;m&rdquo; |<br>
+             &ldquo;n&rdquo; | &ldquo;o&rdquo; | &ldquo;p&rdquo; | &ldquo;q&rdquo; | &ldquo;r&rdquo; | &ldquo;s&rdquo; | &ldquo;t&rdquo; | &ldquo;u&rdquo; | &ldquo;v&rdquo; | &ldquo;w&rdquo; | &ldquo;x&rdquo; | &ldquo;y&rdquo; | &ldquo;z&rdquo;<br>
+&lt;digit&gt;  ::= &ldquo;0&rdquo; | &ldquo;1&rdquo; | &ldquo;2&rdquo; | &ldquo;3&rdquo; | &ldquo;4&rdquo; | &ldquo;5&rdquo; | &ldquo;6&rdquo; | &ldquo;7&rdquo; | &ldquo;8&rdquo; | &ldquo;9&rdquo;
 </font>
 </td>
 </tr>

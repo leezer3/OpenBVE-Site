@@ -314,6 +314,10 @@
           
         </li>
         
+        
+          
+        </li>
+        
       </ul>
       
     </li>
@@ -437,12 +441,13 @@
 <li><a href="#rotate">Rotate, RotateAll</a></li>
 <li><a href="#shear">Shear, ShearAll</a></li>
 <li><a href="#mirror">Mirror, MirrorAll</a></li>
-<li><a href="#setcolor">Color</a></li>
-<li><a href="#setemissivecolor">EmissiveColor</a></li>
+<li><a href="#setcolor">Color, ColorAll</a></li>
+<li><a href="#setemissivecolor">EmissiveColor, EmissiveColorAll</a></li>
 <li><a href="#setblendmode">BlendMode</a></li>
 <li><a href="#setwrapmode">WrapMode</a></li>
 <li><a href="#loadtexture">Load</a></li>
 <li><a href="#setdecaltransparentcolor">Transparent</a></li>
+<li><a href="#enablecrossfading">Crossfading</a></li>
 <li><a href="#settexturecoordinates">Coordinates</a></li>
 </ul>
 </li>
@@ -524,7 +529,7 @@
 <em><strong>LowerRadius</strong></em>: A floating-point number representing the radius for the lower base of the frustum in <strong>meters</strong>. Can be negative to indicate that the bottom cap is to be omitted.<br>
 <em><strong>Height</strong></em>: A floating-point number representing the height of the prism in <strong>meters</strong>. Can be negative, which will flip the frustum vertically and display it inside-out.
 </div>
-<p>This command creates a <a href="http://en.wikipedia.org/wiki/Frustrum">frustrum</a>. If <em>LowerRadius</em> and <em>UpperRadius</em> are equal, the object generated will reduce to a <a href="http://en.wikipedia.org/wiki/Prism_(geometry)">prism</a>, which can be used as an approximation to the cylinder. If either <em>LowerRadius</em> or <em>UpperRadius</em> are zero, the object generated will reduce to a <a href="http://en.wikipedia.org/wiki/Pyramid_(geometry)">pyramid</a>. The frustum will be centered on the origin (0,0,0). On the x- and z-axes, the frustum extends from -<em>LowerRadius</em> to <em>LowerRadius</em> for the lower base and from -<em>UpperRadius</em> to <em>UpperRadius</em> for the upper base. On the y-axis, the frustum extends from -½*<em>Height</em> to ½*<em>Height</em>.</p>
+<p>This command creates a <a href="http://en.wikipedia.org/wiki/Frustrum">frustrum</a>. If <em>LowerRadius</em> and <em>UpperRadius</em> are equal, the object generated will reduce to a <a href="http://en.wikipedia.org/wiki/Prism_(geometry)">prism</a>, which can be used as an approximation to the cylinder. If either <em>LowerRadius</em> or <em>UpperRadius</em> are zero, the object generated will reduce to a <a href="http://en.wikipedia.org/wiki/Pyramid_(geometry)">pyramid</a>. The frustum will be centered on the origin (0,0,0). On the x- and z-axes, the frustum extends from -<em>LowerRadius</em> to <em>LowerRadius</em> for the lower base and from -<em>UpperRadius</em> to <em>UpperRadius</em> for the upper base. On the y-axis, the frustum extends from -1⁄2*<em>Height</em> to 1⁄2*<em>Height</em>.</p>
 <p>当半径的值较小时， 如线杆或扶手，顶点数 <em>n</em> 为6或8就足够了。无论 <em>上底半径</em> ， <em>下底半径</em> 和 <em>n</em> 的值如何，该多面体将始终有 2*<em>n</em> 个顶点和 <em>n</em> +2个面，除非省略上下底面。若 <em>上底半径</em> 或 <em>下底半径</em> 为负数，则采用其绝对值，同时不创建相应的底面（没有盖儿）。若 <em>高</em> 为负数，则上下底面会倒转（上底在下，下底在上），同时所有面都会变为内部可见（默认情况是外部可见） 。</p>
 <div id="notice">
 <h4 id="截锥体命令表示">截锥体命令表示</h4>
@@ -605,7 +610,7 @@
 <hr>
 <p><a name="setcolor"></a></p>
 <div id="command">
-<strong>Color</strong> <em>Red</em>, <em>Green</em>, <em>Blue</em>, <em>Alpha</em>
+<strong>Color</strong> <em>Red</em>, <em>Green</em>, <em>Blue</em>, <em>Alpha</em><br>
 <strong>ColorAll</strong> <em>Red</em>, <em>Green</em>, <em>Blue</em>, <em>Alpha</em>
 </div>
 <div id="command-arguments">
@@ -619,7 +624,7 @@
 <hr>
 <p><a name="setemissivecolor"></a></p>
 <div id="command">
-<strong>EmissiveColor</strong> <em>Red</em>, <em>Green</em>, <em>Blue</em>
+<strong>EmissiveColor</strong> <em>Red</em>, <em>Green</em>, <em>Blue</em><br>
 <strong>EmissiveColorAll</strong> <em>Red</em>, <em>Green</em>, <em>Blue</em>
 </div>
 <div id="command-arguments">
@@ -688,6 +693,23 @@
 <em><strong>Blue</strong></em>: The blue component of the color. Measured from 0 (black) to 255 (blue). The default value is 0.
 </div>
 <p>这条指令为已经创建的所有面指定一个蒙版式的透明色（例如屏蔽门和车窗）。刚刚加载的材质中与指定的 <em>红</em>、<em>绿</em>、<em>蓝</em> 颜色完全相同的像素都会变为透明的。这种蒙版式的透明色比起使用含透明部分的PNG性能高，所以最好绘制全不透明的材质，然后将材质中要透明的部分填为固定颜色，再使用此指令将这些部分“挖空”，而不是使用半透明的PNG。必须使用SetTextureCoordinates指令设定好材质与各顶点的关系，材质才能被正常显示。</p>
+<hr>
+<p><a name="enablecrossfading"></a></p>
+<div id="command">
+<strong>Crossfading</strong> <em>value</em>
+</div>
+<div id="command-arguments">
+<strong>值</strong>: true 啟用交叉漸變，或為false（默認）禁用。
+</div>
+<p>This command controls the blending mode when both a daytime and a nighttime texture are specified.</p>
+<p>When this is set to <strong>false</strong> the behavior is as follows:</p>
+<ol>
+<li>The daytime texture is drawn.</li>
+<li>The opacity level for the nighttime texture is calculated from the <strong>Track.Brightness</strong> value, where a value of <strong>255</strong> produces a fully opaque texture, and a value of <strong>0</strong> produces a fully transparent texture.</li>
+<li>The nighttime texture is drawn.</li>
+</ol>
+<p>When this is set to <strong>true</strong> the behaviour is as follows:</p>
+<p>The opacity level for each texture is blended proportionately, so that for example, a <strong>Track.Brightness</strong> value of <strong>128</strong> would produce an (approximately) 50% blend of each texture and so-on.</p>
 <hr>
 <p><a name="settexturecoordinates"></a></p>
 <div id="command">
