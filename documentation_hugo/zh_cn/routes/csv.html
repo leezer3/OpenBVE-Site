@@ -2080,7 +2080,7 @@ Of this, there is a 40% chance that this will be a snowflake.</p>
 <strong>Track.Sta</strong> <em>站名</em>; <em>到达时间</em>; <em>发车时间</em>; <em>停车铃</em>; <em>开门方向</em>; <em>强制红灯</em>; <em>信号系统</em>; <em>到达广播</em>; <em>停车时间</em>; <em>乘车率</em>; <em>发车广播</em>; <em>时刻表编号</em>
 </div>
 <div id="command-arguments">
-<p><em><strong>站名</strong></em>：该车站的站名。将会在时刻表和提示信息中显示，所以不应留空。<br>
+<em><strong>站名</strong></em>：该车站的站名。将会在时刻表和提示信息中显示，所以不应留空。<br>
 <em><strong>到达时间</strong></em>：玩家驾驶的列车应当到达此站的<a href="../../zh_cn/information/numberformats.html#times">时间</a>。可以使用特殊值表示额外信息——见下。<br>
 <em><strong>发车时间</strong></em>：玩家驾驶的列车应当从此站发车的<a href="../../zh_cn/information/numberformats.html#times">时间</a>。可以使用特殊值表示额外信息——见下。<br>
 <em><strong>停车铃</strong></em>：指示停车警铃设备（如果列车有安装）是否应该鸣响以提示列车驾驶在这站停车。默认值是0。<br>
@@ -2091,7 +2091,8 @@ Of this, there is a 40% chance that this will be a snowflake.</p>
 <em><strong>停车时间</strong></em>：一个正浮点数表示列车在车站的最小停车时间（包括开关门时间）。默认值是15。<br>
 <em><strong>乘车率</strong></em>：一个非负浮点数表示在该站列车上乘客的相对数量。作为参考，100差不多是正常载客量，而250则表示超载列车。输入值应当在0~250之间。默认值是100。<br>
 <em><strong>发车广播</strong></em>：一个相对于<strong>Sound</strong>文件夹的路径，指向在发车前（发车时间-关门时间-音频时长）要播放的音频。<br>
-<em><strong>时刻表编号</strong></em>：一个非负整数，指示一个由Train.Timetable(<em>时刻表编号</em>)指定的，从此站开始要显示的时刻表。默认保持上站设定。</p>
+<em><strong>时刻表编号</strong></em>：一个非负整数，指示一个由Train.Timetable(<em>时刻表编号</em>)指定的，从此站开始要显示的时刻表。默认保持上站设定。
+</div>
 <p>▸ <em>到达时间</em>的可选项：</p>
 <div id="command-arguments">
 <em>time</em>: The train is expected to arrive at this particular time.<br>
@@ -2846,7 +2847,6 @@ phi = 0
 如果更喜欢使用直角坐标的话，可以使用这些公式来进行转换。<br>
 这几条公式也作为定向光功能的数学证明（三角函数使用弧度制）。</p>
 <hr>
-</div>
 
 </div>
 
