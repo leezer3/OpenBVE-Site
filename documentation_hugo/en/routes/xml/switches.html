@@ -8,15 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <meta name="langmeta-current" content="en" />
     
-    <meta name="langmeta-translation" content="ca" />
-    <meta name="langmeta-translation" content="es_mx" />
-    <meta name="langmeta-translation" content="fr" />
-    <meta name="langmeta-translation" content="hu" />
-    <meta name="langmeta-translation" content="id" />
-    <meta name="langmeta-translation" content="ja" />
-    <meta name="langmeta-translation" content="ko" />
-    <meta name="langmeta-translation" content="zh_cn" />
-    <meta name="langmeta-translation" content="zh_hk" />
     <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
     <script src="../../../script/script.js"></script>
     <script defer src="https://cdn.staticfile.org/font-awesome/5.3.1/js/all.js"></script>
@@ -38,26 +29,8 @@
             <i class="fas fa-angle-down" aria-hidden="true"></i>
           </span>Language</li>
         <ul class="third" style="padding-top:0" id="sidebar-language-menu">
-          <li><a href="../../../en/objects/other/msts.html">English</a></li>
+          <li><a href="../../../en/routes/xml/switches.html">English</a></li>
           <hr style="margin:0.2em 0" />
-          
-          <li><a href="../../../ca/objects/other/msts.html">Català</a></li>
-          
-          <li><a href="../../../es_mx/objects/other/msts.html">Español (México)</a></li>
-          
-          <li><a href="../../../fr/objects/other/msts.html">Français</a></li>
-          
-          <li><a href="../../../hu/objects/other/msts.html">Magyar</a></li>
-          
-          <li><a href="../../../id/objects/other/msts.html">Bahasa Indonesia</a></li>
-          
-          <li><a href="../../../ja/objects/other/msts.html">日本語</a></li>
-          
-          <li><a href="../../../ko/objects/other/msts.html">한국어</a></li>
-          
-          <li><a href="../../../zh_cn/objects/other/msts.html">中文 (大陆简体)</a></li>
-          
-          <li><a href="../../../zh_hk/objects/other/msts.html">中文 (港澳繁體)</a></li>
           
         </ul>
         </ul>
@@ -419,7 +392,7 @@
     <div id="container">
 
         <div id="page-title">
-          <h1>The Microsoft Train Simulator <strong>.s</strong> object format</h1>
+          <h1>Switches and Running on Alternate Tracks</h1>
         </div>
 
         
@@ -428,16 +401,44 @@
 
 
 <div id="content">
-  <p><img src="../../../images/construction_64.png" alt="construction_64"></p>
-<p>openBVE supports a subset of the Microsoft Train Simulator .s object format.</p>
-<p>Both the compressed binary, and the uncompressed textual variants are supported.</p>
-<p>The following is a non-exhaustive list of unsupported functions:</p>
-<ul>
-<li>Animation</li>
-<li>Lighting</li>
-<li>Custom shaders</li>
-<li>Reflection / luminosity</li>
-</ul>
+  <p>This page describes the principles of switches, and running the player train on alternate tracks within the game world.</p>
+<p>At present, this is a basic implementation, and has many flaws which are centered around the routefile format, and the need to retain backwards compatability.</p>
+<p>Please note that further development is ongoing.</p>
+<h2 id="-basic-principles">■ Basic Principles</h2>
+<p>The CSV route format is a linear format, centered around <strong>Rail 0</strong> , which defines the world path of the player.</p>
+<p>Alternate rails may be added, but these are positioned relative to the player rail.</p>
+<p>Two types of switch are available- The standard switch and a trailing switch.</p>
+<p>The current implementation (as of <strong>v1.10.0</strong>) is basic, and is only intended as an initial working experiment.
+As such, signalling, speed limits etc. are poorly or not supported when running on secondary tracks.</p>
+<h2 id="-commands">■ Commands</h2>
+<div id="command">
+<strong>Track.Switch</strong> <em>FirstRail</em>; <em>SecondRail</em>; <em>InitialSetting</em>; <em>SwitchName</em>; <em>FirstTrackName</em>; <em>SecondTrackName</em>
+</div>
+<div id="command-arguments">
+<em><strong>FirstRail</strong></em>: A non-negative integer representing the first of the two switch rail indicies.<br>
+<em><strong>SecondRail</strong></em>: A non-negative integer representing the second of the two switch rail indicies.<br>
+<em><strong>InitialSetting</strong></em>: The initial setting for the switch.<br>
+<em><strong>SwitchName</strong></em>: The name for the switch displayed on the map.<br>
+<em><strong>FirstTrackName</strong></em>: The name for the first track when displayed on the map.<br>
+<em><strong>SecondTrackName</strong></em>: The name for the second track when displayed on the map.
+</div>
+<p>This creates a standard switch.</p>
+<p>If the player train is running in the forwards direction on the rail index defined by <strong>FirstRail</strong>, it will be switched to the current setting of the switch.</p>
+<p>If the player train is running in the reverse direction on the rail index defined by <strong>SecondRail</strong>, and the current setting of the switch is also <strong>SecondRail</strong> it will be switched to <strong>FirstRail</strong>.</p>
+<div id="command">
+<strong>Track.SwitchT</strong> <em>FirstRail</em>; <em>SecondRail</em>; <em>InitialSetting</em>; <em>SwitchName</em>; <em>FirstTrackName</em>; <em>SecondTrackName</em>
+</div>
+<div id="command-arguments">
+<em><strong>FirstRail</strong></em>: A non-negative integer representing the first of the two switch rail indicies.<br>
+<em><strong>SecondRail</strong></em>: A non-negative integer representing the second of the two switch rail indicies.<br>
+<em><strong>InitialSetting</strong></em>: The initial setting for the switch.<br>
+<em><strong>SwitchName</strong></em>: The name for the switch displayed on the map.<br>
+<em><strong>FirstTrackName</strong></em>: The name for the first track when displayed on the map.<br>
+<em><strong>SecondTrackName</strong></em>: The name for the second track when displayed on the map.
+</div>
+<p>This creates a trailing (reverse) switch.</p>
+<p>If the player train is running in the reverse direction on the rail index defined by <strong>FirstRail</strong>, it will be switched to the current setting of the switch.</p>
+<p>If the player train is running in the forwards direction on the rail index defined by <strong>SecondRail</strong>, and the current setting of the switch is also <strong>SecondRail</strong> it will be switched to <strong>FirstRail</strong>.</p>
 
 </div>
 
