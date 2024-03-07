@@ -412,12 +412,13 @@
 As such, signalling, speed limits etc. are poorly or not supported when running on secondary tracks.</p>
 <h2 id="-commands">■ Commands</h2>
 <div id="command">
-<strong>Track.Switch</strong> <em>FirstRail</em>; <em>SecondRail</em>; <em>InitialSetting</em>; <em>SwitchName</em>; <em>FirstTrackName</em>; <em>SecondTrackName</em>
+<strong>Track.Switch</strong> <em>FirstRail</em>; <em>SecondRail</em>; <em>InitialSetting</em>; <em>Reserved</em>; <em>SwitchName</em>; <em>FirstTrackName</em>; <em>SecondTrackName</em>
 </div>
 <div id="command-arguments">
 <em><strong>FirstRail</strong></em>: A non-negative integer representing the first of the two switch rail indicies.<br>
 <em><strong>SecondRail</strong></em>: A non-negative integer representing the second of the two switch rail indicies.<br>
 <em><strong>InitialSetting</strong></em>: The initial setting for the switch.<br>
+<em><strong>Reserved</strong></em>: Not currently used, reserved for future use.<br>
 <em><strong>SwitchName</strong></em>: The name for the switch displayed on the map.<br>
 <em><strong>FirstTrackName</strong></em>: The name for the first track when displayed on the map.<br>
 <em><strong>SecondTrackName</strong></em>: The name for the second track when displayed on the map.
@@ -426,12 +427,13 @@ As such, signalling, speed limits etc. are poorly or not supported when running 
 <p>If the player train is running in the forwards direction on the rail index defined by <strong>FirstRail</strong>, it will be switched to the current setting of the switch.</p>
 <p>If the player train is running in the reverse direction on the rail index defined by <strong>SecondRail</strong>, and the current setting of the switch is also <strong>SecondRail</strong> it will be switched to <strong>FirstRail</strong>.</p>
 <div id="command">
-<strong>Track.SwitchT</strong> <em>FirstRail</em>; <em>SecondRail</em>; <em>InitialSetting</em>; <em>SwitchName</em>; <em>FirstTrackName</em>; <em>SecondTrackName</em>
+<strong>Track.SwitchT</strong> <em>FirstRail</em>; <em>SecondRail</em>; <em>InitialSetting</em>; <em>Reserved</em>; <em>SwitchName</em>; <em>FirstTrackName</em>; <em>SecondTrackName</em>
 </div>
 <div id="command-arguments">
 <em><strong>FirstRail</strong></em>: A non-negative integer representing the first of the two switch rail indicies.<br>
 <em><strong>SecondRail</strong></em>: A non-negative integer representing the second of the two switch rail indicies.<br>
 <em><strong>InitialSetting</strong></em>: The initial setting for the switch.<br>
+<em><strong>Reserved</strong></em>: Not currently used, reserved for future use.<br>
 <em><strong>SwitchName</strong></em>: The name for the switch displayed on the map.<br>
 <em><strong>FirstTrackName</strong></em>: The name for the first track when displayed on the map.<br>
 <em><strong>SecondTrackName</strong></em>: The name for the second track when displayed on the map.
