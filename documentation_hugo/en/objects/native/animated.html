@@ -431,7 +431,14 @@
   <h2 id="-contents">■ Contents</h2>
 <ul class='contents'>
 <li><a href="#overview">1. Overview</a></li>
-<li><a href="#description">2. Sections</a></li>
+<li><a href="#description">2. Sections</a>
+<ul class='contents'>
+<li><a href="#include">[Include]</a></li>
+<li><a href="#object">[Object]</a></li>
+<li><a href="#sound">[Sound]</a></li>
+<li><a href="#statechangesound">[StateChangeSound]</a></li>
+</ul>
+</li>
 <li><a href="#operators">3. List of infix notation operators</a></li>
 <li><a href="#functions">4. List of functions</a></li>
 <li><a href="#variables">5. List of variables</a></li>
@@ -457,7 +464,7 @@
 <h5 id="-a-little-formality">● A little formality</h5>
 <p>The file is a plain text file encoded in any arbitrary <a href="../../../en/information/encodings.html">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../../en/information/numberformats.html">parsing model</a> for numbers is <strong>Strict</strong>. The file name is arbitrary, but must have the extension <strong>.animated</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
 <h2 id="a-namedescriptiona-2-sections"><a name="description"></a>■ 2. Sections</h2>
-<h5 id="-the-include-section">● The [Include] section</h5>
+<h5 id="a-nameincludea-the-include-section"><a name="include"></a>● The [Include] section</h5>
 <p>You can use the [Include] section to just include other objects, but without animating them. This allows you to use the ANIMATED object file as a container to group other objects. There can be any number of [Include] sections within the file.</p>
 <div id="command">
 [Include]
@@ -475,7 +482,7 @@
 </div>
 <p>This defines the position of the objects, basically allowing you to offset them with respect to the rest of the ANIMATED object file.</p>
 <hr>
-<h5 id="-the-object-section">● The [Object] section</h5>
+<h5 id="a-nameobjecta-the-object-section"><a name="object"></a>● The [Object] section</h5>
 <p>You can use the [Object] section to create a single animation. This requires to set up at least one state via the <em>States</em> parameter, and to use any combination of functions you want, which provide control over the animation. There can be any number of [Object] sections within the file.</p>
 <div id="command">
 [Object]
@@ -564,7 +571,7 @@
 </div>
 <p>This defines the minimum amount of time that needs to pass before the functions are updated. A value of 0 forces the functions to be updated every frame. Please note that objects outside of the visual range might be updated less frequently regardless of this parameter. Use RefreshRate when you don&rsquo;t need a perfectly smooth animation (in order to optimize performance), or when you deliberately want the object to be only updated in fixed intervals.</p>
 <hr>
-<h5 id="-the-sound-section">● The [Sound] section</h5>
+<h5 id="a-namesounda-the-sound-section"><a name="sound"></a>● The [Sound] section</h5>
 <p>You can use the [Sound] section to add standalone sound effects to animated objects.</p>
 <div id="command">
 [Sound]
@@ -603,7 +610,7 @@
 </div>
 <p>This defines the function which moves the source of the sound along the path of <strong>Rail 0</strong>. <em>Formula</em> must return a distance in meters, for which the object is then moved, respecting the curves and height changes of <strong>Rail 0</strong>.</p>
 <hr>
-<h5 id="-the-statechangesound-section">● The [StateChangeSound] section</h5>
+<h5 id="a-namestatechangesounda-the-statechangesound-section"><a name="statechangesound"></a>● The [StateChangeSound] section</h5>
 <p>You can use the [StateChangeSound] section to attach sound effects to the preceeding [Object] section.</p>
 <div id="command">
 [StateChangeSound]
