@@ -404,11 +404,14 @@
   <p>This page describes the principles of switches, and running the player train on alternate tracks within the game world.</p>
 <p>At present, this is a basic implementation, and has many flaws which are centered around the routefile format, and the need to retain backwards compatability.</p>
 <p>Please note that further development is ongoing.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>The <strong>.Turn</strong> command may not be used in routes containing switches. Please use the <strong>.Curve</strong> command instead.</p>
+</div>
 <h2 id="-basic-principles">■ Basic Principles</h2>
 <p>The CSV route format is a linear format, centered around <strong>Rail 0</strong> , which defines the world path of the player.</p>
 <p>Alternate rails may be added, but these are positioned relative to the player rail.</p>
 <p>Two types of switch are available- The standard switch and a trailing switch.</p>
-<p>The current implementation (as of <strong>v1.10.0</strong>) is basic, and is only intended as an initial working experiment.
+<p>The current implementation (as of <strong>v1.10.0</strong>) is basic, and is only intended as an initial working experiment. 
 As such, signalling, speed limits etc. are poorly or not supported when running on secondary tracks.</p>
 <h2 id="-commands">■ Commands</h2>
 <div id="command">
