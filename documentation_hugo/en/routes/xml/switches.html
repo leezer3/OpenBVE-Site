@@ -444,6 +444,40 @@ As such, signalling, speed limits etc. are poorly or not supported when running 
 <p>This creates a trailing (reverse) switch.</p>
 <p>If the player train is running in the reverse direction on the rail index defined by <strong>FirstRail</strong>, it will be switched to the current setting of the switch.</p>
 <p>If the player train is running in the forwards direction on the rail index defined by <strong>SecondRail</strong>, and the current setting of the switch is also <strong>SecondRail</strong> it will be switched to <strong>FirstRail</strong>.</p>
+<div id="command">
+<strong>Track.RailLimit</strong> <em>RailIndex</em>; <em><font color="blue">Speed</font></em>; <em>Post</em>; <em>Cource</em>
+</div>
+<p>This creates a limit for a rail other than Rail 0.</p>
+<div id="command-arguments">
+<em><strong>RailIndex</strong></em>: The rail index for which the speed limit applies.<br>
+<em><strong><font color="blue">Speed</font></strong></em>: A positive floating-point number representing the speed, <strong>by default</strong> measured in <strong>km/h</strong>, or 0 to indicate no speed restriction. The default value is 0.<br>
+<em><strong>Post</strong></em>: The side on which to place a default Japanese-style speed limit post. The default value is 0.<br>
+<em><strong>Cource</strong></em>: The directional indication. The default value is 0.
+</div>
+<p><img src="../../../images/illustration_limit.png" alt="illustration_limit"></p>
+<p>▸ Options for <em>Post</em>:</p>
+<div id="command-arguments">
+<strong>-1</strong>: The post is placed on the left side of the track.<br>
+<strong>0</strong>: No post will be placed.<br>
+<strong>1</strong>: The post is placed on the right side of the track.
+</div>
+<p>▸ Options for <em>Cource</em>:</p>
+<div id="command-arguments">
+<strong>-1</strong>: The post applies for a left-bound track.<br>
+<strong>0</strong>: The post does not indicate a particular direction.<br>
+<strong>1</strong>: The post applies for a right-bound track.
+</div>
+<p>This command defines the new speed limit from this point on. If the new speed limit is lower than the current speed limit, the new speed limit will take effect immediately. If the speed limit is higher than the current speed limit, the new speed limit will take effect only once the whole train has passed this point. By setting <em>Speed</em> to <code>0</code>, the speed restriction is released. By setting <em>Post</em> to either <code>-1</code> or <code>1</code>, a default Japanese-style speed post is placed at the respective side of the track. Setting <em>Course</em> to either <code>-1</code> or <code>1</code> includes a directional indication, which is usually used at railroad switches to indicate that the speed limit only applies if the respective direction is being taken. If <em>Speed</em> is set to <code>0</code>, the setting of <em>Course</em> has no effect.</p>
+<div id="notice">
+The <em>Cource</em> option is used solely when creating the limit post. Please use a separate <strong>Track.RailLimit</strong> for each track, omitting the post if required.
+</div>
+<div id="command">
+<strong>Track.RailBuffer</strong>  <em>RailIndex</em>
+</div>
+<p>This command places a bumper. The train can collide with the bumper in both the forward and backward directions. Place this command at the beginning and the end of the route. An object is not automatically created, so use Track.FreeObj to create a visual representation of the bumper if necessary.</p>
+<div id="command-arguments">
+<em><strong>RailIndex</strong></em>: The rail index on which the bumper is placed.
+</div>
 
 </div>
 

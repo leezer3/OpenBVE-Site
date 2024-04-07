@@ -2336,6 +2336,9 @@ Otherwise, the objects defined in Structure.FormR, Structure.FormCL and Structur
 <strong>1</strong>: The post applies for a right-bound track.
 </div>
 <p>This command defines the new speed limit from this point on. If the new speed limit is lower than the current speed limit, the new speed limit will take effect immediately. If the speed limit is higher than the current speed limit, the new speed limit will take effect only once the whole train has passed this point. By setting <em>Speed</em> to <code>0</code>, the speed restriction is released. By setting <em>Post</em> to either <code>-1</code> or <code>1</code>, a default Japanese-style speed post is placed at the respective side of the track. Setting <em>Course</em> to either <code>-1</code> or <code>1</code> includes a directional indication, which is usually used at railroad switches to indicate that the speed limit only applies if the respective direction is being taken. If <em>Speed</em> is set to <code>0</code>, the setting of <em>Course</em> has no effect.</p>
+<div id="notice">
+The <em>Cource</em> option is used solely when creating the limit post object. Please use <strong>Track.RailLimit</strong> if you wish to create limits on diverging tracks.
+</div>
 <hr>
 <div id="command">
 <strong>Track.Section</strong> <em>a<sub>0</sub></em>; <em>a<sub>1</sub></em>; <em>a<sub>2</sub></em>; &hellip;; <em>a<sub>n</sub></em>
