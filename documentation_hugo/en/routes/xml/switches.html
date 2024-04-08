@@ -445,6 +445,16 @@ As such, signalling, speed limits etc. are poorly or not supported when running 
 <p>If the player train is running in the reverse direction on the rail index defined by <strong>FirstRail</strong>, it will be switched to the current setting of the switch.</p>
 <p>If the player train is running in the forwards direction on the rail index defined by <strong>SecondRail</strong>, and the current setting of the switch is also <strong>SecondRail</strong> it will be switched to <strong>FirstRail</strong>.</p>
 <div id="command">
+<strong>Track.PlayerPath</strong> <em>FirstRail</em>; <em>SecondRail</em>
+</div>
+<div id="command-arguments">
+<em><strong>FirstRail</strong></em>: A non-negative integer representing the first rail indicies.<br>
+<em><strong>SecondRail</strong></em>: A non-negative integer representing the second rail indicies.
+</div>
+<p>This switches the path (rail) that the player train is running on.</p>
+<p>If the player train is running in the forwards direction on the rail index defined by <strong>FirstRail</strong>, it will be switched to <strong>SecondRail</strong>.</p>
+<p>If the player train is running in the reverse direction on the rail index defined by <strong>SecondRail</strong>, it will be switched to <strong>FirstRail</strong>.</p>
+<div id="command">
 <strong>Track.RailLimit</strong> <em>RailIndex</em>; <em><font color="blue">Speed</font></em>; <em>Post</em>; <em>Cource</em>
 </div>
 <p>This creates a limit for a rail other than Rail 0.</p>
