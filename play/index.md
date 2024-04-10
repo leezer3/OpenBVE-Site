@@ -113,3 +113,11 @@ There are two indicators: L (left doors) and R (right doors). The indicators are
 If the doors close automatically, the indicator displays <font color="blue">blue</font>, otherwise it will display <font color="green">green</font>, and you will have to close them manually.
 
 If manual operation is possible, open or close the doors by pressing **DOORS_LEFT (F5)** for the left doors, or **DOORS_RIGHT (F6)** for the right doors. 
+
+---
+
+## 4. Changing Switches
+
+On some routes, you may encounter changable switches (points), which allow the player train to be routed to a different track.
+
+Press the **SWITCH_CHANGE (CTRL + F9)** key to pop up a map showing available switches within a 500m radius.
