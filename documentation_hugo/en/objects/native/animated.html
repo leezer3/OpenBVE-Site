@@ -1159,12 +1159,20 @@ Please also note that some combinations of prefix and infix operators are not re
 <td>The acceleration which the motor of the car <em>carIndex</em> currently generates in m/s².</td>
 </tr>
 <tr>
+<td><code>playerDistance</code></td>
+<td>The non-negative cartesian distance measured from the object to the closest car of the player train in meters. Only meaningful for scenery objects.</td>
+</tr>
+<tr>
 <td><code>distance</code></td>
 <td>The non-negative cartesian distance measured from the object to the closest car in meters. Only meaningful for scenery objects.</td>
 </tr>
 <tr>
 <td><code>distance[carIndex]</code></td>
 <td>The non-negative cartesian distance measured from the object to the car <em>carIndex</em> in meters, or 0 if the car does not exist. Only meaningful for scenery objects.</td>
+</tr>
+<tr>
+<td><code>playerTrackDistance</code></td>
+<td>The signed track distance measured from the object to the closest end of the player train in meters. Is positive when the train is in front of the object, negative when behind, and zero when the object lies between the ends of the train.</td>
 </tr>
 <tr>
 <td><code>trackDistance</code></td>
