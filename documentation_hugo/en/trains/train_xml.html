@@ -670,6 +670,13 @@ However, in <strong>train.xml</strong> acceleration curve figures apply to the c
 <strong>&lt;StageTwoSpeed&gt;</strong> <em>Speed</em> <strong>&lt;/StageTwoSpeed&gt;</strong>
 </div>
 <p><strong>Speed</strong> should be a positive floating-point number representing the reference speed for <em>StageTwoExponent</em></p>
+<div id="command">
+<strong>&lt;Multiplier&gt;</strong> <em>Number</em> <strong>&lt;/Multiplier&gt;</strong>
+</div>
+<p><strong>Number</strong> should be a positive floating-point number representing the blended output of the motor car to the train&rsquo;s acceleration. The default value is <strong>1.0</strong></p>
+<div id="warning-nontitle">
+<span>⚠</span><p>This figure is only meaningful for trains using BVE acceleration numbers converted via <em>CarXMLConvertor</em>, and should be omitted if setting acceleration outputs on a per-car basis.</p>
+</div>
 <p>Thus:</p>
 <p>If the speed of the train is 0 km/h, <em>a<sub>0</sub></em> indicates the acceleration output.</p>
 <p>If the speed of the train is between 0 km/h and <em>v<sub>1</sub></em>, the acceleration output is determined via the following formula:</p>
