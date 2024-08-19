@@ -43,6 +43,8 @@ menu:
         url: '/play-cabcontrollers/'
       - title: 'Mechanik Routes'
         url: '/play-mechanik/'
+      - title: 'BVE5 Information'
+        url: '/bve5/compatability/'
       - title: 'Accessibility'
         url: '/play-accessibility/'
   - title: 'Developing Addons'
