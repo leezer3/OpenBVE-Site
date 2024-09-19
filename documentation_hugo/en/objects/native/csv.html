@@ -459,7 +459,10 @@
 <h2 id="a-nameoverviewa-1-overview"><a name="overview"></a>■ 1. Overview</h2>
 <p>A CSV object allows to create a single object by using textual instructions. The object can be used in routes or in trains. The object described by the file can contain any number of individual polygons. The file format allows to group multiple polygons in CreateMeshBuilder sections in which attributes like color or texture information is assigned to all polygons created in each section. This allows for the creation of many polygons in the same CreateMeshBuilder section which share common attributes. A polygon is called a face in this file format.</p>
 <p>The file is a plain text file encoded in any arbitrary <a href="../../../en/information/encodings.html">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../../en/information/numberformats.html">parsing model</a> for numbers is <strong>Loose</strong>, however, you are encouraged to produce <em>Strict</em> output nonetheless. The file name is arbitrary, but must have the extension <strong>.csv</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
-<p>➟ <a href="../../../en/objects/native/b3d_quick.html">See also the quick reference for the CSV format&hellip;</a></p>
+<p>➟ <a href="../../../en/objects/native/csv_quick.html">See also the quick reference for the CSV format&hellip;</a></p>
+<div id="warning-nontitle">
+<span>⚠</span><p>Any single <strong>CSV</strong> object may contain a maximum of 65,534 vertices. The <strong>OBJ</strong> and <strong>X</strong> formats support greater numbers of vertices, but you should consider carefully the overall load on the renderer when using extremely complex objects.</p>
+</div>
 <h2 id="a-namesyntaxa-2-syntax"><a name="syntax"></a>■ 2. Syntax</h2>
 <p>Each line in the file is split into the name of a command and its arguments. The syntax for all commands is the same:</p>
 <div id="command">
