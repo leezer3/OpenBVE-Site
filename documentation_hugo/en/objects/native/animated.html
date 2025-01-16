@@ -434,7 +434,11 @@
 <li><a href="#description">2. Sections</a>
 <ul class='contents'>
 <li><a href="#include">[Include]</a></li>
-<li><a href="#object">[Object]</a></li>
+<li><a href="#object">[Object]</a>
+<ul class='contents'>
+<li>Advanced Scripting(#advancedscript)</li>
+</ul>
+</li>
 <li><a href="#sound">[Sound]</a></li>
 <li><a href="#statechangesound">[StateChangeSound]</a></li>
 </ul>
@@ -571,6 +575,34 @@
 </div>
 <p>This defines the minimum amount of time that needs to pass before the functions are updated. A value of 0 forces the functions to be updated every frame. Please note that objects outside of the visual range might be updated less frequently regardless of this parameter. Use RefreshRate when you don&rsquo;t need a perfectly smooth animation (in order to optimize performance), or when you deliberately want the object to be only updated in fixed intervals.</p>
 <hr>
+<h5 id="a-nameadvancedscripta-advanced-scripting"><a name="advancedscript"></a>? Advanced Scripting</h5>
+<p>OpenBVE supports the use of scripts written in the C# language, via the <strong>CSScript</strong> interface.</p>
+<p>Scripts must be of the following format:</p>
+<div id="command">
+<p>using System;
+using System.Collections.Generic;
+using OpenBveApi.Hosts;
+using OpenBveApi.Interface;
+using OpenBveApi.Math;
+using OpenBveApi.Trains;</p>
+<p>public class OpenBVEScript {</p>
+<pre><code>public OpenBVEScript(Dictionary&lt;string, string&gt; args) 
+{
+<p>}</p>
+<p>public double ExecuteScript(AbstractTrain Train, int CarIndex, Vector3 Position, double TrackPosition, int SectionIndex, bool IsPartOfTrain, double TimeElapsed, int CurrentState)
+{
+return val;
+}
+</code></pre></p>
+<p>}</p>
+</div>
+<p>The <em>ExecuteScript</em> function is called by the main simulation according to the <strong>RefreshRate</strong> of your object, and the return value is passed to the appropriate animated object as per any other function.</p>
+<p>Scripts may be declared in the following manner:</p>
+<div id="command">
+<strong>RotateXScript = Path\To\ScriptFile.cs?Argument1,Argument..,Argument3</strong>
+</div>
+<p>Arguments to a script file should be declared as a comma-separated array.</p>
+<hr>
 <h5 id="a-namesounda-the-sound-section"><a name="sound"></a>● The [Sound] section</h5>
 <p>You can use the [Sound] section to add standalone sound effects to animated objects.</p>
 <div id="command">
@@ -656,11 +688,6 @@ If a state is to have no sound effect, the list entry should be left blank.</p>
 <div id="note">
 <span><font color="#C00000">☀</font> Note</span>
 <p><strong>PlayOnShow</strong> and <strong>PlayOnHide</strong> will be ignored when using multiple state sounds.</p>
-</div>
-<hr>
-<div id="warning">
-<h4 id="openbve-2-compatibility-note">openBVE 2 compatibility note</h4>
-<p>During the development of openBVE (v0.9) and during the development of the animated object format, there were certain commands in existance ending in <em>RPN</em>, such as <em>TranslateXFunctionRPN</em>. These commands never made it into any official release (v1.0) and were thus never meant to be used outside of development environments. While they are still available undocumentedly, they will be removed for openBVE 2. If you are using these commands, please get rid of them as soon as possible.
 </div>
 <hr>
 <h5 id="-about-the-formulas">● About the formulas</h5>
