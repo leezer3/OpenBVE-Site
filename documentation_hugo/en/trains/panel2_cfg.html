@@ -729,6 +729,20 @@ Layer = <em>LayerIndex</em>
 <div id="command-arguments">
 <em><strong>LayerIndex</strong></em>: An integer which uniquely defines this element among overlapping elements. Lower numbers represent the background and higher numbers the foreground. Elements may use the same <em>LayerIndex</em> as long as they do not overlap. The default value is 0.
 </div>
+<hr>
+<div id="command">
+Backstop = <em>Boolean</em>
+</div>
+<div id="command-arguments">
+<em><strong>Boolean</strong></em>: If set to <strong>true</strong> or <strong>1</strong>, the needle&rsquo;s range of motion will be limited to that possible between <em>Minimum</em> and <em>Maximum</em>.
+</div>
+<hr>
+<div id="command">
+Smoothed = <em>Boolean</em>
+</div>
+<div id="command-arguments">
+<em><strong>Boolean</strong></em>: If set to <strong>true</strong> or <strong>1</strong>, and the subject is <em>Time</em> related, the needle will use smooth motion. Otherwise, the needle will act as a mechanical watch.
+</div>
 <h2 id="a-namedigitalnumbera-6-the-digitalnumber-section"><a name="digitalnumber"></a>■ 6. The DigitalNumber section</h2>
 <p>The DigitalNumber section creates an indicator that can switch between multiple states, useful to build up a display of decimal digits. You can use as many of these sections as required.</p>
 <p>The image used for the DigitalNumber, defined by <em>DaytimeImage</em> (required) and <em>NighttimeImage</em> (optional), is comprised of the individual states, which are stacked vertically, anchored at the top of the image. The width of a single state is equal to the width of the image, while the height of a single state is defined by <em>Interval</em> (required). The <em>Subject</em> used needs to return an integer from 0 (first element) to <em>n</em>-1 (last element), where <em>n</em> is the number of elements. If a value outside of that range is returned by <em>Subject</em>, the DigitalNumber will be made invisible.</p>
