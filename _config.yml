@@ -30,6 +30,8 @@ menu:
         url: '/install/'
       - title: 'Installing Addons'
         url: '/install-addons/'
+      - title: 'System Requirements'
+        url: '/install-requirements/'
   - title: 'Play'
     url: '#'
     submenu:
