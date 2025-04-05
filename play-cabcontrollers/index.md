@@ -25,6 +25,12 @@ Homepage:
 This will be recognised as a standard Joystick, but may require calibration for all axis to work correctly.
 Calibration may be performed under the Options menu.
 
+
+**Troubleshooting:**
+
+If the game unexpectedly crashes when a RailDriver is connected, please try connecting the RailDriver directly to the computer, as opposed to using a USB hub.
+
+
 ## OHC-PC01 from SanYing Heavy Industries
 
 <img src="/images/OHC-PC01.jpg" alt="The OH-PC01">
