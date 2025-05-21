@@ -2751,6 +2751,15 @@ With Track<br>
 <p>This command plays an announcement or other kind of sound in the cab once the player&rsquo;s train crosses the point where this command is used. If <em>Speed</em> is set to 0 (default), the sound is played as-is. If a <em>Speed</em> is given though, the sound plays at is original pitch at the specified speed, and is pitch-modulated proportionally for other speeds, useful for custom flange sounds, pointwork sounds, etc.</p>
 <hr>
 <div id="command">
+<strong>Track.AnnounceAll</strong> <em>FileName</em>; <em><font color="blue">Speed</font></em>
+</div>
+<div id="command-arguments">
+<em><strong>FileName</strong></em>: The file name for the sound to play, relative to the <strong>Sound</strong> folder.<br>
+<em><strong><font color="blue">Speed</font></strong></em>: The reference speed in km/h for speed-dependant sounds, or 0 to play the sound speed-independently. The default value is 0.
+</div>
+<p>This command plays an announcement or other kind of sound in each car once the player&rsquo;s train crosses the point where this command is used. If <em>Speed</em> is set to 0 (default), the sound is played as-is. If a <em>Speed</em> is given though, the sound plays at is original pitch at the specified speed, and is pitch-modulated proportionally for other speeds, useful for custom flange sounds, pointwork sounds, etc.</p>
+<hr>
+<div id="command">
 <strong>Track.Doppler</strong> <em>FileName</em>; <em><font color="green">X</font></em>; <em><font color="green">Y</font></em>
 </div>
 <div id="command-arguments">
