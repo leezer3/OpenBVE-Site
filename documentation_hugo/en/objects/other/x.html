@@ -435,6 +435,7 @@
 If a texture contains this color, then these pixels will be rendered as transparent.
 </div>
 <p>Full support &amp; documentation of the X object format is not available from this site, but the following is an overview of the supported templates, unstructured.</p>
+<p><strong>Supported:</strong></p>
 <ul>
 <li>Frame</li>
 <li>FrameRoot</li>
@@ -449,7 +450,11 @@ If a texture contains this color, then these pixels will be rendered as transpar
 <li>MeshTextureCoords</li>
 <li>Coords2d</li>
 <li>MeshNormals</li>
-<li>MeshVertexColors</li>
+<li>MeshVertexColors
+<strong>Partially Supported:</strong></li>
+<li>DeclData: Only Normal and TexCoord objects are currently supported in this template.
+<strong>Unsupported:</strong></li>
+<li>MeshFaceWraps: OpenBVE only supports wrapping on a per-texture, not per-face basis. These are skipped.</li>
 </ul>
 <p>Please see <a href="https://paulbourke.net/dataformats/directx/"><a href="https://paulbourke.net/dataformats/directx/">https://paulbourke.net/dataformats/directx/</a></a> for a good overall reference to the file format.</p>
 
