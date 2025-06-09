@@ -438,7 +438,8 @@
 <li><a href="#brake">3.2. The Brake section</a></li>
 <li><a href="#doors">3.3. The Doors section</a></li>
 <li><a href="#sanders">3.4. The Sanders section</a></li>
-<li><a href="#windscreen">3.4. The Windscreen section</a></li>
+<li><a href="#windscreen">3.5. The Windscreen section</a></li>
+<li><a href="#particles">3.6. Particle Sources</a></li>
 <li><a href="#coupler">4. The Coupler section</a></li>
 <li><a href="#misc">5. Miscellaneous Properties</a></li>
 </ul>
@@ -980,6 +981,41 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <div id="command-arguments">
 <strong>Left</strong>: The wipers hold on the left of the screen for <em>HoldTime</em> during their sweep.<br>
 <strong>Right</strong>: The wipers hold on the right of the screen for <em>HoldTime</em> during their sweep.
+</div>
+<h2 id="a-nameparticlesa-35-particle-sources"><a name="particles"></a>■ 3.5. Particle Sources</h2>
+<p>The <strong>&lt;ParticleSource&gt;</strong> section attaches a particle source, such as a diesel exhaust to the car.</p>
+<p>Currently, the size of particles is <strong>only</strong> controlled by the engine power level, but the aim is to add additional controllers at a later date.</p>
+<p>When a particle is generated, it&rsquo;s maximum final size will be determined by linearly interpolating between <strong>MaximumSize</strong> and <strong>MaximumGrown</strong> size using the engine power level. This number is fixed for the life of the particle.</p>
+<p>It supports the following properties:</p>
+<div id="command">
+*<em>Location</em> <em>SourceLocation</em>
+</div>
+<div id="command-arguments">
+<em><strong>SourceLocation</strong></em>: A comma-separated 3D vector, describing the location of the particle emitter, relative to the center of the car.
+</div>
+<div id="command">
+*<em>MaximumSize</em> <em>Size</em>
+</div>
+<div id="command-arguments">
+<em><strong>Size</strong></em>: The maximum initial size of emitted particles. This should normally be set to the diameter of the apeature through which particles are emitted.
+</div>
+<div id="command">
+*<em>MaximumGrownSize</em> <em>Size</em>
+</div>
+<div id="command-arguments">
+<em><strong>Size</strong></em>: The maximum size a particle will spread to, at maximum power level.
+</div>
+<div id="command">
+*<em>InitialDirection</em> <em>Direction</em>
+</div>
+<div id="command-arguments">
+<em><strong>Direction</strong></em>: A comma-separated 3D vector, describing the initial direction of motion of the particles when emitted.
+</div>
+<div id="command">
+*<em>Texture</em> <em>FileName</em>
+</div>
+<div id="command-arguments">
+<em><strong>FileName</strong></em>: A relative path to 4x4 texture atlas containing particle textures to be used by this emitter.
 </div>
 <h2 id="a-namecouplera-4-the-coupler-section"><a name="coupler"></a>■ 4. The Coupler section</h2>
 <p>Car nodes (or child file references) may optionally be separated by a <strong>&lt;Coupler&gt;</strong> node.</p>
