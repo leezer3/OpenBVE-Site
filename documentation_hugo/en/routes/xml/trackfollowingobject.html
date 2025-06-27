@@ -429,8 +429,8 @@
 
 <div id="content">
   <p>This page explains the principle and implementation of the XML-based Track Following Object, which is supported in openBVE v1.6.0 or later.</p>
-<h2 id="-basic-principles">■ Basic Principles</h2>
-<p>openBVE can freely run a Track Following Object on other tracks.</p>
+<h2 id="-1-basic-principles">■ 1. Basic Principles</h2>
+<p>A Track Following Object can run on any other rail index which has been defined in the simulation. They do not affect the signalling system.</p>
 <p>In order to do this, it is necessary to setup each object that you want to run using Track Following Object XML files. An example is shown below.</p>
 <p>In this example the object runs as follows.</p>
 <ol start="0">
@@ -517,7 +517,7 @@
 
 </textarea>
 <p>As you can see, the file consists of one <strong>&lt;Definition&gt;</strong> section, one <strong>&lt;Car&gt;</strong> section and one <strong>&lt;Stops&gt;</strong> section. The <strong>&lt;Stops&gt;</strong> section consists of two or more <strong>&lt;Stop&gt;</strong> sections.</p>
-<h2 id="-definition-attribute">■ Definition attribute</h2>
+<h2 id="-11-the-definition-attribute">■ 1.1 The Definition attribute</h2>
 <div id="command">
 <strong>&lt;AppearanceTime&gt;</strong> <em>Time</em> <strong>&lt;/AppearanceTime&gt;</strong>
 </div>
@@ -541,7 +541,7 @@
 </div>
 <p><strong>Time</strong> sets the duration from when the object appears in the game until it disappears. The object will not be visible after this time. This value is not an in-game time.</p>
 <p><em>Note:</em> If this parameter is omitted, the object will remain visible until the end of the game, or until it is hidden by <strong>&lt;AppearanceEndPosition&gt;</strong></p>
-<h2 id="-train-attribute">■ Train attribute</h2>
+<h2 id="-12-the-train-attribute">■ 1.2 The Train attribute</h2>
 <div id="command">
 <strong>&lt;Directory&gt;</strong> <em>Path</em> <strong>&lt;/Directory&gt;</strong>
 </div>
@@ -551,7 +551,7 @@
 <strong>&lt;Reversed&gt;</strong> <em>true</em> <strong>&lt;/Reversed&gt;</strong>
 </div>
 <p>If this attribute is set to <strong>true</strong>  then the consist of the train will be reversed.</p>
-<h2 id="-stop-attribute">■ Stop attribute</h2>
+<h2 id="-13-the-stop-attribute">■ 1.3 The Stop attribute</h2>
 <div id="command">
 <strong>&lt;Decelerate&gt;</strong> <em>Value</em> <strong>&lt;/Decelerate&gt;</strong>
 </div>
@@ -601,6 +601,43 @@
 <strong>&lt;Rail&gt;</strong> <em>RailIndex</em> <strong>&lt;/Rail&gt;</strong>
 </div>
 <p><strong>RailIndex</strong> sets the trajectory on which the object will run. It is necessary to define the trajectory by the <strong>Track.Rail</strong> command of the route file.</p>
+<h2 id="-2-other-trains">■ 2. Other Trains</h2>
+<p>The Track Following Object format also supports adding other trains within the simulation. These other trains are visible and fully operational, and affect the signalling system.</p>
+<p>Via the Track.Sta command, you can also define stations where only the player or only the other trains should stop.</p>
+<p>Follow-up trains only appear once the section they are placed in has been cleared by other trains, but the player’s train is introduced regardless of the current signalling section’s state.</p>
+<textarea rows="17" cols="110" style="border:2;">
+  
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
+&lt;openBVE xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xsd=&#34;http://www.w3.org/2001/XMLSchema&#34;&gt;
+  &lt;TrackFollowingObject&gt;
+    &lt;RunInterval&gt;
+      120
+    &lt;/RunInterval&gt;
+    &lt;Train&gt;
+      &lt;!--Relative path of Train folder--&gt;
+      &lt;Directory&gt;TrainDirectory&lt;/Directory&gt;
+    &lt;/Train&gt;
+  &lt;/TrackFollowingObject&gt;
+&lt;/openBVE&gt;
+
+</textarea>
+<h2 id="-21-the-runinterval--pretrain-attribute">■ 2.1 The RunInterval / PreTrain attribute</h2>
+<p>The <strong>RunInterval</strong> and <strong>PreTrain</strong> may attributes be used interchangeably.</p>
+<div id="command">
+<strong>&lt;RunInterval&gt;</strong> <em>Interval</em> <strong>&lt;/RunInterval&gt;</strong><br>
+<strong>&lt;PreTrain&gt;</strong> <em>Interval</em> <strong>&lt;/PreTrain&gt;</strong>
+</div>
+<p><strong>Interval</strong> A floating-point number representing the time interval between the player’s train’s timetable and that of another train to be created, measured in seconds. Positive values indicate an earlier train, negative numbers a later train.</p>
+<h2 id="-22-the-train-attribute">■ 2.2 The Train attribute</h2>
+<div id="command">
+<strong>&lt;Directory&gt;</strong> <em>Path</em> <strong>&lt;/Directory&gt;</strong>
+</div>
+<p><strong>Path</strong> sets the relative path to the directory containing the object&rsquo;s train.dat, sound.cfg and extensions.cfg.</p>
+<p><em>Note:</em> If a train folder is intended solely for AI use, then the <strong>train.dat</strong> file may be renamed <strong>train.ai</strong></p>
+<div id="command">
+<strong>&lt;Reversed&gt;</strong> <em>true</em> <strong>&lt;/Reversed&gt;</strong>
+</div>
+<p>If this attribute is set to <strong>true</strong>  then the consist of the train will be reversed.</p>
 
 </div>
 
