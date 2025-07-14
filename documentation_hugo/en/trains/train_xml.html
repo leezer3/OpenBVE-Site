@@ -618,7 +618,16 @@ Whilst this is a change for some parameters from the legacy BVE formats, it mean
 <div id="command">
 <strong>&lt;InteriorView&gt;</strong> <em>ObjectFile</em> <strong>&lt;/InteriorView&gt;</strong>
 </div>
-<p><strong>ObjectFile</strong> should be a relative on-disk path to the interior 3D object to use.</p>
+<p><strong>ObjectFile</strong> should be a relative on-disk path to the interior view to use. This may be a 3D object, or a <strong>panel2.cfg</strong> file.</p>
+<div id="command">
+<strong>&lt;InteriorDirection&gt;</strong> <em>DirectionX</em>, <em>DirectionY</em>, <em>DirectionZ</em> <strong>&lt;/InteriorDirection&gt;</strong>
+</div>
+<p>This command allows you to rotate the interior camera, allowing for views which do not align with the forwards track direction.</p>
+<div id="command-arguments">
+<strong>DirectionX</strong> The number of degrees that the initial interior camera is rotated in the X-axis.
+<strong>DirectionY</strong> The number of degrees that the initial interior camera is rotated in the Y-axis.
+<strong>DirectionZ</strong> The number of degrees that the initial interior camera is rotated in the Z-axis.
+</div>
 <div id="command">
 <strong>&lt;VisibleFromInterior&gt;</strong> <em>IsVisible</em> <strong>&lt;/VisibleFromInterior&gt;</strong>
 </div>
