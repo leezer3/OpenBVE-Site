@@ -82,4 +82,12 @@ If this is the case, please let us know by posting on the forum or opening an is
 
 Previous stable versions of OpenBVE may be found here:
 
-<a href="https://vps.bvecornwall.co.uk/OpenBVE/Stable/" class="btn btn-info">Previous Stable Versions</a>
+<a href="https://github.com/leezer3/OpenBVE/releases" class="btn btn-info">Previous Stable Versions</a>
+
+---
+
+# Signature Verification
+
+OpenBVE is a small open-source project, and does not currently have the resources to produce code-signed binaries. 
+
+If you wish to verify the SHA-256 sum for any of our downloads, these are available on the Github releases page: <https://github.com/leezer3/OpenBVE/releases>
