@@ -1053,7 +1053,16 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <div id="command">
 <strong>&lt;Plugin&gt;</strong> <em>PluginFile</em> <strong>&lt;/Plugin&gt;</strong>
 </div>
-<p><strong>PluginFile</strong> should contain the relative path to the security plugin DLL to load.</p>
+<p><strong>PluginFile</strong> should contain the relative path to the security plugin DLL to load- This applies to the player train only.</p>
+<p>When using a .Net plugin which supports multiple running instances, the following alternative format may be used:</p>
+<div id="command">
+<strong>&lt;Plugin&gt;</strong> <br>
+ <strong>&lt;File&gt;</strong> <em>PluginFile</em> <strong>&lt;/File&gt;</strong> <br>
+ <strong>&lt;SupportsAI&gt;</strong> <em>Boolean</em> <strong>&lt;/SupportsAI&gt;</strong> <br>
+<strong>&lt;/Plugin&gt;</strong>
+</div>
+<p><strong>PluginFile</strong> should contain the relative path to a .Net based security plugin DLL to load.</p>
+<p><strong>Boolean</strong> should be a boolean true / false value, determining whether this plugin supports additional AI instances.</p>
 <div id="command">
 <strong>&lt;Description&gt;</strong> <em>Text</em> <strong>&lt;/Description&gt;</strong>
 </div>
