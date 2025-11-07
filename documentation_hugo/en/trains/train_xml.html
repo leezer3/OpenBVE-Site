@@ -440,6 +440,8 @@
 <li><a href="#sanders">3.4. The Sanders section</a></li>
 <li><a href="#windscreen">3.5. The Windscreen section</a></li>
 <li><a href="#particles">3.6. Particle Sources</a></li>
+<li><a href="#safetysystems">3.7. Safety Systems</a></li>
+<li><a href="#dsd">3.7.1. Driver Supervision Device</a></li>
 <li><a href="#coupler">4. The Coupler section</a></li>
 <li><a href="#misc">5. Miscellaneous Properties</a></li>
 </ul>
@@ -900,7 +902,7 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <h2 id="a-namesandersa-34-the-sanders-section"><a name="sanders"></a>■ 3.4. The Sanders section</h2>
 <p>The <strong>&lt;Sanders&gt;</strong> section specifies the properties of the sanders fitted to this car, and supports the following properties:</p>
 <div id="command">
-<strong>Type</strong> <em>Type</em>
+<strong>&lt;Type&gt;</strong> <em>Type</em>  <strong>&lt;/Type&gt;</strong>
 </div>
 <div id="command-arguments">
 <em><strong>Type</strong></em>: The type of sanders fitted to this car (if any).
@@ -914,31 +916,31 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <strong>Automatic</strong>: The sanders are automatically activated when wheelslip is detected and sufficient sand is present.
 </div>
 <div id="command">
-<strong>Rate</strong> <em>SandingRate</em>
+<strong>&lt;Rate&gt;</strong> <em>SandingRate</em>  <strong>&lt;/Rate&gt;</strong>
 </div>
 <div id="command-arguments">
 <em><strong>SandingRate</strong></em>: The rate at which sand is applied per second.
 </div>
 <div id="command">
-<strong>SandLevel</strong> <em>Level</em>
+<strong>&lt;SandLevel&gt;</strong> <em>Level</em>  <strong>&lt;/SandLevel&gt;</strong>
 </div>
 <div id="command-arguments">
 <em><strong>Level</strong></em>: The initial starting level of sand, if not in shot mode.
 </div>
 <div id="command">
-<strong>NumberOfShots</strong> <em>Shots</em>
+<strong>&lt;NumberOfShots&gt;</strong> <em>Shots</em>  <strong>&lt;/NumberOfShots&gt;</strong>
 </div>
 <div id="command-arguments">
 <em><strong>Shots</strong></em>: The number of sand shots available.
 </div>
 <div id="command">
-<strong>ApplicationTime</strong> <em>Time</em>
+<strong>&lt;ApplicationTime&gt;</strong> <em>Time</em>  <strong>&lt;/ApplicationTime&gt;</strong>
 </div>
 <div id="command-arguments">
 <em><strong>Time</strong></em>: When in shots mode, sets the duration of a sand shot in seconds.
 </div>
 <div id="command">
-<strong>ActivationTime</strong> <em>Time</em>
+<strong>&lt;ActivationTime&gt;</strong> <em>Time</em>  <strong>&lt;/ActivationTime&gt;</strong>
 </div>
 <div id="command-arguments">
 <em><strong>Time</strong></em>: When in automatic mode, the amount of time before the system reacts and applies sand.
@@ -946,31 +948,31 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <h2 id="a-namewindscreena-35-the-windscreen-section"><a name="windscreen"></a>■ 3.5. The Windscreen section</h2>
 <p>The <strong>&lt;Windscreen&gt;</strong> section specifies the properties of the windscreen, and should be used if you wish to animated a windscreen on a 3D cab using the inbuilt functionality. It supports the following properties:</p>
 <div id="command">
-*<em>NumberOfDrops</em> <em>Drops</em>
+<strong>&lt;NumberOfDrops&gt;</strong> <em>Drops</em>  <strong>&lt;/NumberOfDrops&gt;</strong>
 </div>
 <div id="command-arguments">
 <em><strong>Drops</strong></em>: The total number of drops on the windscreen.
 </div>
 <div id="command">
-*<em>WipeSpeed</em> <em>Speed</em>
+<strong>&lt;WipeSpeed&gt;</strong> <em>Speed</em>  <strong>&lt;/WipeSpeed&gt;</strong>
 </div>
 <div id="command-arguments">
 <em><strong>Speed</strong></em>: The time in seconds for the wipers to make a single sweep of the windscreen.
 </div>
 <div id="command">
-*<em>HoldTime</em> <em>Time</em>
+<strong>&lt;HoldTime&gt;</strong> <em>Time</em>  <strong>&lt;/HoldTime&gt;</strong>
 </div>
 <div id="command-arguments">
 <em><strong>Time</strong></em>: The time in seconds for the wipers to hold at the hold position during a sweep.
 </div>
 <div id="command">
-*<em>DropLife</em> <em>Life</em>
+<strong>&lt;DropLife&gt;</strong> <em>Life</em>  <strong>&lt;/DropLife&gt;</strong>
 </div>
 <div id="command-arguments">
 <em><strong>Life</strong></em>: The life in seconds before a drop is eligible to be recycled when all drops are visible.
 </div>
 <div id="command">
-*<em>RestPosition</em> <em>Position</em>
+<strong>&lt;RestPosition&gt;</strong> <em>Position</em>  <strong>&lt;/RestPosition&gt;</strong>
 </div>
 <div id="command-arguments">
 <strong>Position</strong>: The rest position for the wipers.
@@ -981,7 +983,7 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <strong>Right</strong>: The wipers rest at the right of the screen when off.
 </div>
 <div id="command">
-*<em>HoldPosition</em> <em>Position</em>
+<strong>&lt;HoldPosition&gt;</strong> <em>Position</em>  <strong>&lt;/HoldPosition&gt;</strong>
 </div>
 <div id="command-arguments">
 <strong>Position</strong>: The hold position for the wipers.
@@ -991,40 +993,95 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <strong>Left</strong>: The wipers hold on the left of the screen for <em>HoldTime</em> during their sweep.<br>
 <strong>Right</strong>: The wipers hold on the right of the screen for <em>HoldTime</em> during their sweep.
 </div>
-<h2 id="a-nameparticlesa-35-particle-sources"><a name="particles"></a>■ 3.5. Particle Sources</h2>
+<h2 id="a-nameparticlesa-36-particle-sources"><a name="particles"></a>■ 3.6. Particle Sources</h2>
 <p>The <strong>&lt;ParticleSource&gt;</strong> section attaches a particle source, such as a diesel exhaust to the car.</p>
 <p>Currently, the size of particles is <strong>only</strong> controlled by the engine power level, but the aim is to add additional controllers at a later date.</p>
 <p>When a particle is generated, it&rsquo;s maximum final size will be determined by linearly interpolating between <strong>MaximumSize</strong> and <strong>MaximumGrown</strong> size using the engine power level. This number is fixed for the life of the particle.</p>
 <p>It supports the following properties:</p>
 <div id="command">
-*<em>Location</em> <em>SourceLocation</em>
+<strong>&lt;Location&gt;</strong> <em>SourceLocation</em>  <strong>&lt;/Location&gt;</strong>
 </div>
 <div id="command-arguments">
 <em><strong>SourceLocation</strong></em>: A comma-separated 3D vector, describing the location of the particle emitter, relative to the center of the car.
 </div>
 <div id="command">
-*<em>MaximumSize</em> <em>Size</em>
+<strong>&lt;MaximumSize&gt;</strong> <em>Size</em>  <strong>&lt;/MaximumSize&gt;</strong>
 </div>
 <div id="command-arguments">
-<em><strong>Size</strong></em>: The maximum initial size of emitted particles. This should normally be set to the diameter of the apeature through which particles are emitted.
+<strong>&lt;Size</strong>*: The maximum initial size of emitted particles. This should normally be set to the diameter of the apeature through which particles are emitted.
 </div>
 <div id="command">
-*<em>MaximumGrownSize</em> <em>Size</em>
+<strong>&lt;MaximumGrownSize&gt;</strong> <em>Size</em>  <strong>&lt;/MaximumGrownSize&gt;</strong>
 </div>
 <div id="command-arguments">
 <em><strong>Size</strong></em>: The maximum size a particle will spread to, at maximum power level.
 </div>
 <div id="command">
-*<em>InitialDirection</em> <em>Direction</em>
+<strong>&lt;InitialDirection&gt;</strong> <em>Direction</em>  <strong>&lt;/InitialDirection&gt;</strong>
 </div>
 <div id="command-arguments">
 <em><strong>Direction</strong></em>: A comma-separated 3D vector, describing the initial direction of motion of the particles when emitted.
 </div>
 <div id="command">
-*<em>Texture</em> <em>FileName</em>
+<strong>&lt;Texture&gt;</strong> <em>FileName</em>  <strong>&lt;/Texture&gt;</strong>
 </div>
 <div id="command-arguments">
-<em><strong>FileName</strong></em>: A relative path to 4x4 texture atlas containing particle textures to be used by this emitter.
+<em><strong>FileName&gt;</strong></em>: A relative path to 4x4 texture atlas containing particle textures to be used by this emitter.
+</div>
+<h2 id="a-namesafetysystemsa-37-safety-systems"><a name="safetysystems"></a>■ 3.7. Safety Systems</h2>
+<h3 id="a-namedsda-371-driver-supervision-device"><a name="dsd"></a>■ 3.7.1. Driver Supervision Device</h3>
+<p>The <strong>&lt;DriverSupervisionDevice&gt;</strong> section creates a driver supervision device, which may intervene if the driver fails to cancel it in time.</p>
+<p>It supports the following properties:</p>
+<div id="command">
+<strong>&lt;Type&gt;</strong> <em>DeviceType</em>  <strong>&lt;/Type&gt;</strong>
+</div>
+<p>▸ Available options for <em>DeviceType</em>:</p>
+<div id="command-arguments">
+<strong>None</strong>: No driver supervision device is fitted.<br>
+<strong>CutsPower</strong>: The device cuts the train&rsquo;s power when activated.
+<strong>ApplyBrake</strong>: The device applies service brakes when activated.
+<strong>ApplyEmergencyBrake</strong>: The device applies the emergency brake when activated.
+</div>
+<div id="command">
+<strong>&lt;Mode&gt;</strong> <em>DeviceMode</em>  <strong>&lt;/Mode&gt;</strong>
+</div>
+<p>▸ Available options for <em>DeviceType</em>:</p>
+<div id="command-arguments">
+<strong>Power</strong>: The device timer is reset when the power handle is moved.<br>
+<strong>Brake</strong>: The device timer is reset when the brake handle is moved.<br>
+<strong>AnyHandle</strong>: The device timer is reset when any handle is moved.<br>
+<strong>Independant</strong>: The device timer is reset when DSD key is pressed.<br>
+<strong>HeldKey</strong>: The DSD key must remain pressed.
+</div>
+<div id="command">
+<strong>&lt;AlarmTime&gt;</strong> <em>Time</em>  <strong>&lt;/AlarmTime&gt;</strong>
+</div>
+<div id="command-arguments">
+<em><strong>Time</strong></em>: The time in seconds before the device enters alarm state. No intervention is performed until <strong>InterventionTime</strong> is passed.
+</div>
+<div id="command">
+<strong>&lt;InterventionTime&gt;</strong> <em>Time</em>  <strong>&lt;/InterventionTime&gt;</strong>
+</div>
+<div id="command-arguments">
+<em><strong>Time</strong></em>: The time in seconds from when the device enters alarm state, until it intervenes.
+</div>
+<div id="command">
+<strong>&lt;RequiredStopTime&gt;</strong> <em>Time</em>  <strong>&lt;/RequiredStopTime&gt;</strong>
+</div>
+<div id="command-arguments">
+<em><strong>Time</strong></em>: The time in seconds the train must be stopped following an intervention, until the device may be reset.
+</div>
+<div id="command">
+<strong>&lt;LoopingAlert&gt;</strong> <em>boolean</em>  <strong>&lt;/LoopingAlert&gt;</strong>
+</div>
+<div id="command-arguments">
+<strong>Boolean</strong> should be a boolean true / false value, determining whether the alert tone is played once, or continuously until the device intervenes.
+</div>
+<div id="command">
+<strong>&lt;LoopingAlarm&gt;</strong> <em>boolean</em>  <strong>&lt;/LoopingAlarm&gt;</strong>
+</div>
+<div id="command-arguments">
+<strong>Boolean</strong> should be a boolean true / false value, determining whether the alarm tone is played once, or continuously until the device is reset.
 </div>
 <h2 id="a-namecouplera-4-the-coupler-section"><a name="coupler"></a>■ 4. The Coupler section</h2>
 <p>Car nodes (or child file references) may optionally be separated by a <strong>&lt;Coupler&gt;</strong> node.</p>
