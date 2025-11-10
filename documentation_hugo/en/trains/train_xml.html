@@ -436,12 +436,13 @@
 <li><a href="#car">3. The Car section</a></li>
 <li><a href="#power">3.1. The Power section</a></li>
 <li><a href="#brake">3.2. The Brake section</a></li>
-<li><a href="#doors">3.3. The Doors section</a></li>
-<li><a href="#sanders">3.4. The Sanders section</a></li>
-<li><a href="#windscreen">3.5. The Windscreen section</a></li>
-<li><a href="#particles">3.6. Particle Sources</a></li>
-<li><a href="#safetysystems">3.7. Safety Systems</a></li>
-<li><a href="#dsd">3.7.1. Driver Supervision Device</a></li>
+<li><a href="#traction">3.3. Traction Models</a></li>
+<li><a href="#doors">3.4. The Doors section</a></li>
+<li><a href="#sanders">3.5. The Sanders section</a></li>
+<li><a href="#windscreen">3.6. The Windscreen section</a></li>
+<li><a href="#particles">3.7. Particle Sources</a></li>
+<li><a href="#safetysystems">3.8. Safety Systems</a></li>
+<li><a href="#dsd">3.8.1. Driver Supervision Device</a></li>
 <li><a href="#coupler">4. The Coupler section</a></li>
 <li><a href="#misc">5. Miscellaneous Properties</a></li>
 </ul>
@@ -875,7 +876,18 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <strong>AnyHandle</strong>: The spring return mechanism is reset when any power or brake handle is operated.
 <strong>AnyKey</strong>: The spring return mechanism is reset when any keyboard key or joystick control is operated.
 </div>
-<h2 id="a-namedoorsa-33-the-doors-section"><a name="doors"></a>■ 3.3. The Doors section</h2>
+<h2 id="a-nametractiona-33-traction-modelling"><a name="traction"></a>■ 3.3. Traction Modelling</h2>
+<h3 id="331-electric-engine">3.3.1. Electric Engine</h3>
+<p>The <strong>&lt;ElectricEngine&gt;</strong> node models a simplistic electric engine, using a pantograph to collect current from an overhead wire.</p>
+<p>With this traction model in use, one car in the train must possess a pantograph, which must be raised for the train to be moved.</p>
+<p>It supports the following properties:</p>
+<div id="command">
+<strong>&lt;Pantograph&gt;</strong> <em>boolean</em>  <strong>&lt;/Pantograph&gt;</strong>
+</div>
+<div id="command-arguments">
+<strong>Boolean</strong> should be a boolean true / false value, determining whether this vehicle has a pantograph.
+</div>
+<h2 id="a-namedoorsa-34-the-doors-section"><a name="doors"></a>■ 3.4. The Doors section</h2>
 <p>The <strong>&lt;Doors&gt;</strong> section specifies the properties of the passenger doors fitted to this car, and supports the following properties:</p>
 <div id="command">
 <strong>&lt;OpenSpeed&gt;</strong> <em>Speed</em> <strong>&lt;/OpenSpeed&gt;</strong>
@@ -899,7 +911,7 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <strong>&lt;Tolerance&gt;</strong> <em>DoorTolerance</em> <strong>&lt;/Tolerance&gt;</strong>
 </div>
 <p><strong>DoorTolerance</strong> should be a positive number, setting a tolerance in meters before the door is considered to be closed.</p>
-<h2 id="a-namesandersa-34-the-sanders-section"><a name="sanders"></a>■ 3.4. The Sanders section</h2>
+<h2 id="a-namesandersa-35-the-sanders-section"><a name="sanders"></a>■ 3.5. The Sanders section</h2>
 <p>The <strong>&lt;Sanders&gt;</strong> section specifies the properties of the sanders fitted to this car, and supports the following properties:</p>
 <div id="command">
 <strong>&lt;Type&gt;</strong> <em>Type</em>  <strong>&lt;/Type&gt;</strong>
@@ -945,7 +957,7 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <div id="command-arguments">
 <em><strong>Time</strong></em>: When in automatic mode, the amount of time before the system reacts and applies sand.
 </div>
-<h2 id="a-namewindscreena-35-the-windscreen-section"><a name="windscreen"></a>■ 3.5. The Windscreen section</h2>
+<h2 id="a-namewindscreena-36-the-windscreen-section"><a name="windscreen"></a>■ 3.6. The Windscreen section</h2>
 <p>The <strong>&lt;Windscreen&gt;</strong> section specifies the properties of the windscreen, and should be used if you wish to animated a windscreen on a 3D cab using the inbuilt functionality. It supports the following properties:</p>
 <div id="command">
 <strong>&lt;NumberOfDrops&gt;</strong> <em>Drops</em>  <strong>&lt;/NumberOfDrops&gt;</strong>
@@ -993,7 +1005,7 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <strong>Left</strong>: The wipers hold on the left of the screen for <em>HoldTime</em> during their sweep.<br>
 <strong>Right</strong>: The wipers hold on the right of the screen for <em>HoldTime</em> during their sweep.
 </div>
-<h2 id="a-nameparticlesa-36-particle-sources"><a name="particles"></a>■ 3.6. Particle Sources</h2>
+<h2 id="a-nameparticlesa-37-particle-sources"><a name="particles"></a>■ 3.7. Particle Sources</h2>
 <p>The <strong>&lt;ParticleSource&gt;</strong> section attaches a particle source, such as a diesel exhaust to the car.</p>
 <p>Currently, the size of particles is <strong>only</strong> controlled by the engine power level, but the aim is to add additional controllers at a later date.</p>
 <p>When a particle is generated, it&rsquo;s maximum final size will be determined by linearly interpolating between <strong>MaximumSize</strong> and <strong>MaximumGrown</strong> size using the engine power level. This number is fixed for the life of the particle.</p>
@@ -1028,8 +1040,8 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <div id="command-arguments">
 <em><strong>FileName&gt;</strong></em>: A relative path to 4x4 texture atlas containing particle textures to be used by this emitter.
 </div>
-<h2 id="a-namesafetysystemsa-37-safety-systems"><a name="safetysystems"></a>■ 3.7. Safety Systems</h2>
-<h3 id="a-namedsda-371-driver-supervision-device"><a name="dsd"></a>■ 3.7.1. Driver Supervision Device</h3>
+<h2 id="a-namesafetysystemsa-38-safety-systems"><a name="safetysystems"></a>■ 3.8. Safety Systems</h2>
+<h3 id="a-namedsda-381-driver-supervision-device"><a name="dsd"></a>■ 3.8.1. Driver Supervision Device</h3>
 <p>The <strong>&lt;DriverSupervisionDevice&gt;</strong> section creates a driver supervision device, which may intervene if the driver fails to cancel it in time.</p>
 <p>It supports the following properties:</p>
 <div id="command">
