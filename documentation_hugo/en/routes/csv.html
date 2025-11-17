@@ -1855,6 +1855,44 @@ The snowfall intensity is then used as the probability that this is a snowflake.
 For example, with rainfall at 50 and snowfall at 40, there is a 50% chance for a drop to be added to the windscreen on each tick. <br>
 Of this, there is a 40% chance that this will be a snowflake.</p>
 </div>
+<hr>
+<div id="command">
+<strong>Track.PowerSupply</strong> <em>RailIndex</em>; <em>PowerSupplyType</em>; <em>VoltageType</em>; <em>Voltage</em>; <em>Amperage</em>; <em>ContactHeight</em>
+</div>
+<div id="command-arguments">
+<em><strong>RailIndex</strong></em>: The rail index on which to start the power supply.<br>
+<em><strong>PowerSupplyType</strong></em>: The type of power supply.
+<strong>VoltageType</strong>: The type of voltage.
+<strong>Voltage</strong>: The voltage supplied by the power supply.
+<strong>Amperage</strong>: The maximum amperage supplied by the power supply.
+<strong>ContactHeight</strong>: The contact height in meters.
+</div>
+<p>This command starts a new power supply type on the given RailIndex, or modifies the properties of an existing power supply.</p>
+<p>▸ Available options for <em>PowerSupplyType</em>:</p>
+<div id="command-arguments">
+<strong>0</strong> or <strong>OHLE</strong>: Overhead line.<br>
+<strong>1</strong> or <strong>ThirdRail</strong>: Third rail.
+<strong>2</strong> or <strong>FourthRail</strong>: Fourth rail.
+</div>
+<p>▸ Available options for <em>VoltageType</em>:</p>
+<div id="command-arguments">
+<strong>0</strong> or <strong>AC</strong>: Alternating current.<br>
+<strong>1</strong> or <strong>DC</strong>: Direct current.
+</div>
+<div id="command">
+<strong>Track.PowerSupplyEnd</strong> <em>RailIndex</em>; <em>PowerSupplyType</em>
+</div>
+<div id="command-arguments">
+<em><strong>RailIndex</strong></em>: The rail index on which to start the power supply.<br>
+<em><strong>PowerSupplyType</strong></em>: The type of power supply.
+</div>
+<p>This command ends the given power supply type on the given RailIndex.</p>
+<p>▸ Available options for <em>PowerSupplyType</em>:</p>
+<div id="command-arguments">
+<strong>0</strong> or <strong>OHLE</strong>: Overhead line.<br>
+<strong>1</strong> or <strong>ThirdRail</strong>: Third rail.
+<strong>2</strong> or <strong>FourthRail</strong>: Fourth rail.
+</div>
 <h5 id="a-nametrack_geometrya-112-geometry"><a name="track_geometry"></a>● 11.2. Geometry</h5>
 <hr>
 <div id="command">
