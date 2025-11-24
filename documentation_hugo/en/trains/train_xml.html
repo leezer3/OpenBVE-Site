@@ -883,9 +883,24 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <p>It supports the following properties:</p>
 <div id="command">
 <strong>&lt;Pantograph&gt;</strong> <em>boolean</em>  <strong>&lt;/Pantograph&gt;</strong>
+<strong>&lt;CollectorShoe&gt;</strong> <em>boolean</em>  <strong>&lt;/CollectorShoe&gt;</strong>
 </div>
 <div id="command-arguments">
-<strong>Boolean</strong> should be a boolean true / false value, determining whether this vehicle has a pantograph.
+<strong>Boolean</strong> should be a boolean true / false value, determining whether this vehicle has a pantograph  / third rail collector shoe.
+</div>
+<p>Traction motors may be added via the <strong>&lt;TractionMotor&gt;</strong> or <strong>&lt;RegenerativeTractionMotor&gt;</strong> child nodes.</p>
+<p>These support the following properties:</p>
+<div id="command">
+<strong>&lt;MaxAmps&gt;</strong> <em>Amps</em>  <strong>&lt;/MaxAmps&gt;</strong>
+</div>
+<div id="command-arguments">
+<strong>Amps</strong> represents the number of amps drawn by the traction motor when the train is accelerating at maximum.
+</div>
+<div id="command">
+<strong>&lt;MaxRegenerativeAmps&gt;</strong> <em>Amps</em>  <strong>&lt;/MaxRegenerativeAmps&gt;</strong>
+</div>
+<div id="command-arguments">
+<strong>Amps</strong> represents the number of amps drawn by the traction motor when the train is braking at maximum, when this traction motor is a regenerative traction motor.
 </div>
 <h2 id="a-namedoorsa-34-the-doors-section"><a name="doors"></a>■ 3.4. The Doors section</h2>
 <p>The <strong>&lt;Doors&gt;</strong> section specifies the properties of the passenger doors fitted to this car, and supports the following properties:</p>
