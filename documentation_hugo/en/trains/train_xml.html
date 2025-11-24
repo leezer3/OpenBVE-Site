@@ -1156,6 +1156,16 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 </div>
 <p><strong>NumberOfStates</strong> should be the total number of states that the train headlight posesses.</p>
 <p><em>Note:</em> Headlight effects must be implemented by the train developer, using animation / panel properties.</p>
+<p>The <strong>&lt;DriverBody&gt;</strong> node contains properties pertaining to the driver&rsquo;s body. This is used to calculate the head-bounce cased by the <strong>Track.Accuracy</strong> command.</p>
+<p>This supports the following properties:</p>
+<div id="command">
+<strong>&lt;ShoulderHeight&gt;</strong> <em>Height</em> <strong>&lt;/ShoulderHeight&gt;</strong>
+</div>
+<p><strong>Height</strong> should be the height in meters of the driver&rsquo;s shoulders above the pivot point- If the driver is seated, this should be the distance from the seat base to the shoulders, and if standing it should be the height from floor to shoulders.</p>
+<div id="command">
+<strong>&lt;HeadHeight&gt;</strong> <em>Height</em> <strong>&lt;/HeadHeight&gt;</strong>
+</div>
+<p><strong>Height</strong> should be the height in meters from the driver&rsquo;s shoulders to the center point of the head.</p>
 
 </div>
 
