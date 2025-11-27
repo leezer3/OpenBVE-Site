@@ -1290,14 +1290,6 @@ Please also note that some combinations of prefix and infix operators are not re
 <td><code>wiperState</code></td>
 <td>Returns the current state of the wipers. 0 - Off, 1 - Intermittant, 2 - Constant</td>
 </tr>
-<tr>
-<td><code>pantographState</code></td>
-<td>Returns the current state of the pantograph for the train. 0 - Lowered, 1 - Raised, 2 - Dewired</td>
-</tr>
-<tr>
-<td><code>pantographState[carIndex]</code></td>
-<td>Returns the current state of the pantograph of the car <em>carIndex</em>. 0 - Lowered, 1 - Raised, 2 - Dewired</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -1415,6 +1407,131 @@ Please also note that some combinations of prefix and infix operators are not re
 <tr>
 <td><code>pilotLamp</code></td>
 <td>The state of the pilot lamp (Doors closed &amp; ready to start). Returns either 0 (unlit) or 1 (lit).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h5 id="-trains-traction-modelling">● Trains (traction modelling)</h5>
+<div class="overflow-container">
+<table class='type0 responsive-table-2col'>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pantographState</code></td>
+<td>Returns the current state of the pantograph for the train. 0 - Lowered, 1 - Raised, 2 - Dewired</td>
+</tr>
+<tr>
+<td><code>pantographState[carIndex]</code></td>
+<td>Returns the current state of the pantograph of the car <em>carIndex</em>. 0 - Lowered, 1 - Raised, 2 - Dewired</td>
+</tr>
+<tr>
+<td><code>amps</code></td>
+<td>Returns the total current draw of the train&rsquo;s traction motors</td>
+</tr>
+<tr>
+<td><code>amps[carIndex]</code></td>
+<td>Returns the current draw of the traction motors in the car <em>carIndex</em>.</td>
+</tr>
+<tr>
+<td bgcolor='#D0D0D0'></td>
+<td bgcolor='#D0D0D0'></td>
+</tr>
+<tr>
+<td><code>overheadAC</code></td>
+<td>Returns 1 if an overhead line is available to the train, 0 otherwise.</td>
+</tr>
+<tr>
+<td><code>overheadAC[carIndex]</code></td>
+<td>Returns 1 if an overhead line is available to the car <em>carIndex</em>, 0 otherwise.</td>
+</tr>
+<tr>
+<td><code>overheadHeight</code></td>
+<td>Returns the height of the overhead line.</td>
+</tr>
+<tr>
+<td><code>overheadHeight[carIndex]</code></td>
+<td>Returns the height of the overhead line at the position of the car <em>carIndex</em>.</td>
+</tr>
+<tr>
+<td><code>overheadVolts</code></td>
+<td>Returns the voltage on the overhead line available to the train.</td>
+</tr>
+<tr>
+<td><code>overheadVolts[carIndex]</code></td>
+<td>Returns the voltage on the overhead line available in the car <em>carIndex</em>.</td>
+</tr>
+<tr>
+<td><code>overheadAmps</code></td>
+<td>Returns the ampage on the overhead line available to the train.</td>
+</tr>
+<tr>
+<td><code>overheadAmps[carIndex]</code></td>
+<td>Returns the ampage available on the overhead line available in the car <em>carIndex</em>.</td>
+</tr>
+<tr>
+<td bgcolor='#D0D0D0'></td>
+<td bgcolor='#D0D0D0'></td>
+</tr>
+<tr>
+<td><code>thirdRailAC</code></td>
+<td>Returns 1 if a third rail is available to the train, 0 otherwise.</td>
+</tr>
+<tr>
+<td><code>thirdRailAC[carIndex]</code></td>
+<td>Returns 1 if an third rail is available to the car <em>carIndex</em>, 0 otherwise.</td>
+</tr>
+<tr>
+<td><code>thirdRailHeight</code></td>
+<td>Returns the height of the third rail.</td>
+</tr>
+<tr>
+<td><code>thirdRailHeight[carIndex]</code></td>
+<td>Returns the height of the third rail at the position of the car <em>carIndex</em>.</td>
+</tr>
+<tr>
+<td><code>thirdRailVolts</code></td>
+<td>Returns the voltage on the third rail available to the train.</td>
+</tr>
+<tr>
+<td><code>thirdRailVolts[carIndex]</code></td>
+<td>Returns the voltage on the third rail available in the car <em>carIndex</em>.</td>
+</tr>
+<tr>
+<td bgcolor='#D0D0D0'></td>
+<td bgcolor='#D0D0D0'></td>
+</tr>
+<tr>
+<td><code>fourthRailAC</code></td>
+<td>Returns 1 if a fourth rail is available to the train, 0 otherwise.</td>
+</tr>
+<tr>
+<td><code>fourthRailAC[carIndex]</code></td>
+<td>Returns 1 if an fourth rail is available to the car <em>carIndex</em>, 0 otherwise.</td>
+</tr>
+<tr>
+<td><code>fourthRailHeight</code></td>
+<td>Returns the height of the fourth rail.</td>
+</tr>
+<tr>
+<td><code>fourthRailHeight[carIndex]</code></td>
+<td>Returns the height of the fourth rail at the position of the car <em>carIndex</em>.</td>
+</tr>
+<tr>
+<td><code>fourthRailVolts</code></td>
+<td>Returns the voltage on the fourth rail available to the train.</td>
+</tr>
+<tr>
+<td><code>fourthRailVolts[carIndex]</code></td>
+<td>Returns the voltage on the fourth rail available in the car <em>carIndex</em>.</td>
+</tr>
+<tr>
+<td bgcolor='#D0D0D0'></td>
+<td bgcolor='#D0D0D0'></td>
 </tr>
 </tbody>
 </table>
