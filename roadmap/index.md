@@ -38,6 +38,7 @@ share: true
 * Train parsers converted to a shared plugin.
 * Re-write the main simulation renderer to move away from using openGL intermediate mode.
 
+---
 
 ## Version 1.8
 
@@ -48,32 +49,40 @@ share: true
 * OpenGL main menu for systems not supporting WinForms.
 * Scratch written BMP decoder.
 
+---
+
 ## Version 1.9
 
-Version 1.9 is currently under development. 
-
-The current focus is on improving and implementing basic operations other than a simple linear world.
-
 ### Implemented Features:
-
 * Add Quad-Tree visibility to allow for intersecting routefiles.
 * Allow existing routefiles to be driven in the reverse direction.
 * Implement basic uncoupling of cars from the player train.
 * Scratch written PNG decoder.
-
-### Planned Features:
-
 * Basic coupling of trains.
 
-## Version 1.10
+---
 
-### Planned Features:
+## Version 1.11
+
+### Implemented Features:
 
 * Allow running on other rails.
+* BVE5 route parser.
 * Parser for MSTS trains.
 * Keyframe based animation. 
+* Particle (smoke) trails.
+* Initial diesel + electric traction modelling for XML trains.
+* Re-written parsers for CFG based formats.
 
-## Version 2.0
+---
+
+## Version 1.12
+
+Version 1.12 is currently under development.
+
+### Work In Progress:
+* MSTS train parser.
 
 ### Planned Features:
-* BVE5 routefile parser.
+* Steam traction modelling.
+* Re-write CSV / B3D object parser. 
