@@ -1035,7 +1035,7 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <strong>&lt;MaximumSize&gt;</strong> <em>Size</em>  <strong>&lt;/MaximumSize&gt;</strong>
 </div>
 <div id="command-arguments">
-<strong>&lt;Size</strong>*: The maximum initial size of emitted particles. This should normally be set to the diameter of the apeature through which particles are emitted.
+<strong>Size</strong>*: The maximum initial size of emitted particles. This should normally be set to the diameter of the apeature through which particles are emitted.
 </div>
 <div id="command">
 <strong>&lt;MaximumGrownSize&gt;</strong> <em>Size</em>  <strong>&lt;/MaximumGrownSize&gt;</strong>
@@ -1059,7 +1059,18 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <strong>&lt;Texture&gt;</strong> <em>FileName</em>  <strong>&lt;/Texture&gt;</strong>
 </div>
 <div id="command-arguments">
-<em><strong>FileName&gt;</strong></em>: A relative path to 4x4 texture atlas containing particle textures to be used by this emitter.
+<em><strong>FileName</strong></em>: A relative path to 4x4 texture atlas containing particle textures to be used by this emitter.
+</div>
+<div id="command">
+<strong>&lt;Function&gt;</strong> <em>FunctionScript</em>  <strong>&lt;/Function&gt;</strong>
+</div>
+<div id="command-arguments">
+<em><strong>FunctionScript</strong></em>: A function script returning a value on execution between <strong>0 (Size)</strong> and <strong>1 (MaximumGrownSize)</strong>, controlling the maximum size of emitted particles.
+</div>
+<div id="information">
+<h4 id="escaping-special-characters-in-xml">Escaping Special Characters in XML:</h4>
+<p>The <strong>&gt;</strong> (greater than sign) , <strong>&lt;</strong> (less than sign) and <strong>&amp;</strong> (ampersand) are reseved characters in XML, and must be escaped for the file to be readable.</p>
+<p>Please see the <a href="https://learn.microsoft.com/en-us/dotnet/desktop/xaml-services/xml-character-entities">Microsoft documentation</a></p>
 </div>
 <h2 id="a-namesafetysystemsa-38-safety-systems"><a name="safetysystems"></a>■ 3.8. Safety Systems</h2>
 <h3 id="a-namedsda-381-driver-supervision-device"><a name="dsd"></a>■ 3.8.1. Driver Supervision Device</h3>
