@@ -1023,7 +1023,8 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <h2 id="a-nameparticlesa-37-particle-sources"><a name="particles"></a>■ 3.7. Particle Sources</h2>
 <p>The <strong>&lt;ParticleSource&gt;</strong> section attaches a particle source, such as a diesel exhaust to the car.</p>
 <p>Currently, the size of particles is <strong>only</strong> controlled by the engine power level, but the aim is to add additional controllers at a later date.</p>
-<p>When a particle is generated, it&rsquo;s maximum final size will be determined by linearly interpolating between <strong>MaximumSize</strong> and <strong>MaximumGrown</strong> size using the engine power level. This number is fixed for the life of the particle.</p>
+<p>When a particle is generated, it&rsquo;s maximum final size will be determined by linearly interpolating between <strong>MaximumSize</strong> and <strong>MaximumGrown</strong> size. This number is fixed for the life of the particle.</p>
+<p>If no <strong>Function</strong> is specified, the interpolated size of the particle will be controlled by the power level of the engine, otherwise the result of <strong>Function</strong> will be used.</p>
 <p>It supports the following properties:</p>
 <div id="command">
 <strong>&lt;Location&gt;</strong> <em>SourceLocation</em>  <strong>&lt;/Location&gt;</strong>
@@ -1060,6 +1061,12 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 </div>
 <div id="command-arguments">
 <em><strong>FileName</strong></em>: A relative path to 4x4 texture atlas containing particle textures to be used by this emitter.
+</div>
+<div id="command">
+<strong>&lt;EmitsAtIdle&gt;</strong> <em>Boolean</em>  <strong>&lt;/EmitsAtIdle&gt;</strong>
+</div>
+<div id="command-arguments">
+<em><strong>Boolean</strong></em>: <strong>True</strong> or <strong>1</strong> if particles should be emitted at idle, <strong>False</strong> or <strong>0</strong> otherwise.
 </div>
 <div id="command">
 <strong>&lt;Function&gt;</strong> <em>FunctionScript</em>  <strong>&lt;/Function&gt;</strong>
