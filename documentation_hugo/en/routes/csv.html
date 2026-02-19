@@ -539,7 +539,7 @@ Route.Timetable 1157_M
 </table>
 </div>
 <h2 id="a-namepreprocessinga-3-preprocessing"><a name="preprocessing"></a>■ 3. Preprocessing</h2>
-<p>Before any of the commands in the route file are actually interpreted, the expressions are preprocessed. The first thing done is to replace any occurrences of the $-directives within an expression from right to left. The $Chr, $Rnd and $Sub directives may be nested in any way, while $Include, $If, $Else and $EndIf must not appear inside another directive.</p>
+<p>Before any of the commands in the route file are actually interpreted, the expressions are preprocessed. The first thing done is to replace any occurrences of the $-directives within an expression from right to left. The $Chr, $Rnd and $Sub directives may be nested in any way, while $Include, $If, $ElseIf, $Else and $EndIf must not appear inside another directive.</p>
 <div id="warning-nontitle">
 <span>⚠</span><p>The syntax for the $-directives cannot be freely chosen, but must adhere to the forms presented below.</p>
 </div>
@@ -556,9 +556,6 @@ $Include(<em>File<sub>1</sub></em>; <em>Weight<sub>1</sub></em>; <em>File<sub>2<
 <p>This directive chooses randomly from the specified files based on their associated probabilities and includes the content from one selected file into the main file. The content is copied into the place of the $Include directive, meaning that you need to take care of track positions and the last used With statement, for example. If the last weight in the argument sequence is omitted, it is treated as 1.</p>
 <p>The $Include directive is useful for splitting up a large file into smaller files, for sharing common sections of code between multiple routes, and for choosing randomly from a larger block of code. Please note that the included files may themselves include other files, but you need to make sure that there are no circular dependencies, e.g. file A including file B, and file B including file A, etc. You should use a file extension different from .csv for included files so that users cannot accidentally select them in the main menu (except where this is desired).</p>
 <p>If any of the <em>File<sub>i</sub></em> is followed by :<em>TrackPositionOffset</em>, then all expressions in the included file are offset by the specified track position <strong>in meters</strong>. For example, $Include(stations.include:2000) shifts all track positions in the part.include file by 2000 meters before including them. It is important to understand that &ldquo;track positions&rdquo; are not actually understood until after the $-directives have been processed, so all expressions in the included file are simply flagged to be offset later should they form track positions then. This means that if the included file contains expressions such as 1$Rnd(2;8)00, these are offset, too, even though at this stage, they do not form track positions yet.</p>
-<div id="warning-nontitle">
-<span>⚠</span><p>The track position offset feature is only available in the development release 1.2.11 and above.</p>
-</div>
 <hr>
 <div id="command">
 $Chr(<em>Ascii</em>)
@@ -719,7 +716,15 @@ $If(<em>Condition</em>)
 <div id="command-arguments">
 <em><strong>Condition</strong></em>: A number that represents <strong>false</strong> if zero, and <strong>true</strong> otherwise.
 </div>
-<p>The $If directive allows to only process subsequent expressions if the specified condition evaluates to true (any non-zero number). $If must be followed by $EndIf in any subsequent expression. Optionally, an $Else directive may appear between $If and $EndIf.</p>
+<p>The $If directive allows to only process subsequent expressions if the specified condition evaluates to true (any non-zero number). $If must be followed by $EndIf in any subsequent expression. Optionally, an $ElseIf or an $Else directive may appear between $If and $EndIf.</p>
+<hr>
+<div id="command">
+$ElseIf(<em>Condition</em>)
+</div>
+<div id="command-arguments">
+<em><strong>Condition</strong></em>: A number that represents <strong>false</strong> if zero, and <strong>true</strong> otherwise.
+</div>
+<p>The $ElseIf directive allows a new condition to be specified if the preceeding $If is false. Subsequent expressions are only processed if the specified condition evaluates to true (any non-zero number). The $Else and $ElseIf must be followed by $EndIf in any subsequent expression. Optionally, an $Else directive may appear between $ElseIf and $EndIf.</p>
 <hr>
 <div id="command">
 $Else()
