@@ -59,3 +59,9 @@ OpenBVE supports various controllers from the Densha De Go! series:
 * Multi-Train Controller with P5/B8 Cassette (Sony PlayStation 2)
 
 These are handled by the Densha De Go! input plugin, which must be activated and configured under the Options menu.
+
+## Kato ECS-1 Cab Controller
+
+<img src="/images/kato.png" alt="Kato ECS-1 Cab Controller">
+
+OpenBVE supports the Kato ECS-1 cab controller, using the Kato controller plugin, which must be activated and configured under the Options menu.
