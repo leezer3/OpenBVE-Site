@@ -429,6 +429,11 @@
 
 <div id="content">
   <p>This page presents information developers need to be aware of and general tips for object creation.</p>
+<h2 id="-mathematical-assumptions">■ Mathematical Assumptions</h2>
+<ul>
+<li>OpenBVE expects matricies in row-major (DirectX) format.</li>
+<li>OpenBVE uses the left-handed (DirectX) coordinate system, where the positive Z coordinate extends into the screen, away from the viewer.</li>
+</ul>
 <h2 id="-commands">■ Commands</h2>
 <ul>
 <li>In Face (B3D) or AddFace (CSV) commands, vertices need to be given in order of adjacency. Complex polygons, meaning self-intersecting polygons, will lead to erratic results.</li>
