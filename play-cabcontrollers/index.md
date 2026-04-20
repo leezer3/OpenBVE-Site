@@ -40,28 +40,46 @@ Homepage:
 
 This is a custom joystick, and requires the SanYingInput plugin to be activated and configured under the Options menu to work correctly.
 
-## Densha De Go! Cab Controllers (Various)
+## Densha De GO! Cab Controllers (Various)
 
-<img src="/images/Densha.jpg" alt="Densha De Go! Cab Controller">
+<img src="/images/Densha.jpg" alt="Densha De GO! Cab Controller">
 
-OpenBVE supports various controllers from the Densha De Go! series:
+OpenBVE supports various controllers from the Densha De GO! series:
 
-* Classic controllers - Sony PlayStation, Nintendo 64, Sega Saturn, Sega Dreamcast (connected via PC USB adaptor)
+* Console controllers - Sony PlayStation, Nintendo 64, Sega Saturn, Sega Dreamcast (connected via PC USB adaptor)
 
 * Unbalance one handle USB controller
 
 * Unbalance two handle USB controller
 
-* Type II Controller (Sony PlayStation 2)
+* Unbalance Ryojōhen USB controller
 
-* Shinkansen Controller (Sony PlayStation 2)
+* Type II controller (Sony PlayStation 2)
 
-* Multi-Train Controller with P5/B8 Cassette (Sony PlayStation 2)
+* Shinkansen controller (Sony PlayStation 2)
 
-These are handled by the Densha De Go! input plugin, which must be activated and configured under the Options menu.
+* Ryojōhen controller (Sony PlayStation 2)
 
-## Kato ECS-1 Cab Controller
+* Train Mascon (Sony PlayStation 2)
 
-<img src="/images/kato.png" alt="Kato ECS-1 Cab Controller">
+* Multi-Train Controller (Sony PlayStation 2)
 
-OpenBVE supports the Kato ECS-1 cab controller, using the Kato controller plugin, which must be activated and configured under the Options menu.
+These are handled by the Densha De GO! input plugin, which must be activated and configured under the Options menu.
+
+## KATO EC-1 Cab Controller
+
+<img src="/images/kato-ec1.jpg" alt="KATO EC-1 Cab Controller">
+
+OpenBVE supports the KATO EC-1 cab controller, using the KATO controller plugin, which must be activated and configured under the Options menu.
+
+## ZUIKI Cab Controllers
+
+<img src="/images/zuiki-mascon-pro.jpg" alt="ZUIKI Mascon Pro Cab Controller">
+
+OpenBVE supports various controllers by ZUIKI:
+
+* ZUIKI Mascon / One Handle Mascon for Nintendo Switch
+
+* ZUIKI Mascon Pro
+
+These are handled by the ZUIKI controller plugin, which must be activated and configured under the Options menu.
