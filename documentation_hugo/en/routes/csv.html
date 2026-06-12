@@ -1028,6 +1028,17 @@ Track.FreeObj 1; 42<br>
 </div>
 <p>This experimental command allows for routefiles to be driven by the player in the reverse direction to that of construction.</p>
 <p>Please note that it is a work in progress, and many features, including signalling may not work correctly.</p>
+<hr>
+<div id="command">
+<strong>Options.StartingDirection</strong> <em>DirectionX; DirectionZ</em>
+</div>
+<div id="command-arguments">
+<em><strong>DirectionX</strong></em>: The X component of the direction vector.<br>
+<em><strong>DirectionZ</strong></em>: The Z component of the direction vector.
+</div>
+<p>This command takes a 2D (X, Z) vector, allows for the starting direction of the initial track element to be changed.
+The Y element of direction is handled via the <strong>Track.Pitch</strong> command.</p>
+<p>When this option is not set, the inital track element will always point due North (e.g. 0,1)</p>
 <h2 id="a-nameroutea-5-the-route-namespace"><a name="route"></a>■ 5. The Route namespace</h2>
 <p>Commands from this namespace define general properties of the route.</p>
 <hr>
