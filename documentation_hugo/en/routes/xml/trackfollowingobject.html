@@ -601,6 +601,38 @@
 <strong>&lt;Rail&gt;</strong> <em>RailIndex</em> <strong>&lt;/Rail&gt;</strong>
 </div>
 <p><strong>RailIndex</strong> sets the trajectory on which the object will run. It is necessary to define the trajectory by the <strong>Track.Rail</strong> command of the route file.</p>
+<h2 id="-13-the-point-attribute">■ 1.3 The Point attribute</h2>
+<p>The Point section allows you to change the speed of a moving object without stopping it, or to change the track it&rsquo;s moving on.</p>
+<div id="command">
+<strong>&lt;Position&gt;</strong> <em>Value</em> <strong>&lt;/Position&gt;</strong>
+</div>
+<p><strong>Value</strong> sets the in-game distance for this point. The unit is <strong>meter</strong>.</p>
+<hr>
+<div id="command">
+<strong>&lt;Decelerate&gt;</strong> <em>Value</em> <strong>&lt;/Decelerate&gt;</strong>
+</div>
+<p><strong>Value</strong> sets the deceleration of the object used to reach this position. The unit is <strong>km/h/s</strong>.</p>
+<hr>
+<div id="command">
+<strong>&lt;Accelerate&gt;</strong> <em>Value</em> <strong>&lt;/Accelerate&gt;</strong>
+</div>
+<p><strong>Value</strong> sets the acceleration of the object after it reaches this position. The unit is <strong>km/h/s</strong>.</p>
+<hr>
+<div id="command">
+<strong>&lt;PassingSpeed&gt;</strong> <em>Value</em> <strong>&lt;/PassingSpeed&gt;</strong>
+</div>
+<p><strong>Value</strong> sets the speed of the object at this position. The unit is <strong>km/h</strong>.</p>
+<hr>
+<div id="command">
+<strong>&lt;TargetSpeed&gt;</strong> <em>Value</em> <strong>&lt;/TargetSpeed&gt;</strong>
+</div>
+<p><strong>Value</strong> sets the target speed of the object after this position. The unit is *<em>km/h</em>.</p>
+<hr>
+<div id="command">
+<strong>&lt;Rail&gt;</strong> <em>RailIndex</em> <strong>&lt;/Rail&gt;</strong>
+</div>
+<p><strong>RailIndex</strong> sets the index of the route rail on which the object runs.</p>
+<p><strong>NOTE:</strong> To ensure smooth transitions beetween rails, the old and new rails should follow the same path for at least one block prior to and following the distance specified by this point.</p>
 <h2 id="-2-other-trains">■ 2. Other Trains</h2>
 <p>The Track Following Object format also supports adding other trains within the simulation. These other trains are visible and fully operational, and affect the signalling system.</p>
 <p>Via the Track.Sta command, you can also define stations where only the player or only the other trains should stop.</p>
