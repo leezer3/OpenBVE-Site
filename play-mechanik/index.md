@@ -21,6 +21,26 @@ Whilst this has perhaps taken somewhat longer than was planned, adding Mechanik 
 
 ---
 
+# Getting Started
+
+---
+
+Mechanik routes are very similar to BVE format routes. 
+
+First, download your route, and extract it to it's own directory, in a place you can easily find. For this example we'll use **Terra Australis**
+
+Extract our route to **C:\Mechanik\Australis**
+
+All you should now need to do is to browse to this directory in the OpenBVE route selector- The game will automatically filter out the non-route files, and display the actual routefile, which is **Trasa.dat**
+
+Select an appropriate train from the train browser and enjoy!
+
+
+If you'd prefer to experience the 'real' thing, instructions for that are available here: <a href="https://www.bvecornwall.co.uk/wordpress/mechanik/">https://www.bvecornwall.co.uk/wordpress/mechanik/</a>
+
+
+---
+
 # Known Flaws
 
 Much like many original BVE2 routes, those created for Mechanik were not designed to be viewed from the exterior of the train.
