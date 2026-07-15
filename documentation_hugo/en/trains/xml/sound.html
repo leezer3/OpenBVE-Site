@@ -449,7 +449,9 @@
 <li><a href="#coupler">18. Coupler Related Sounds</a></li>
 <li><a href="#headlights">19. Headlights Related Sounds</a></li>
 <li><a href="#pantograph">20. Pantograph Related Sounds</a></li>
-<li><a href="#misc">21. Miscellaneous Sounds</a></li>
+<li><a href="#requeststop">20. Request Stop Sounds</a></li>
+<li><a href="#misc">22. Miscellaneous Sounds</a></li>
+<li><a href="#touch">22. Touch Sounds</a></li>
 </ul>
 <h2 id="a-nameoverviewa-1-overview"><a name="overview"></a>■ 1. Overview</h2>
 <p>The <strong>sound.xml</strong> format is the native train sound format for newer versions of OpenBVE.</p>
@@ -575,10 +577,22 @@
 <p>This node supports the following child nodes:</p>
 <p>The <strong>&lt;Raise&gt;</strong> child-node, containing the sound played when the panograph is raised.</p>
 <p>The <strong>&lt;Lower&gt;</strong> child-node, containing the sound played when the panograph is lowered.</p>
-<h2 id="a-namemisca-21-miscellaneous-sounds"><a name="misc"></a>■ 21. Miscellaneous Sounds</h2>
+<h2 id="a-nameresueststopa-21-request-stop-related-sounds"><a name="resueststop"></a>■ 21. Request Stop Related Sounds</h2>
+<p>The <strong>&lt;RequestStop&gt;</strong> node defines the sounds played when a request stop is triggered.</p>
+<p>This node supports the following child nodes:</p>
+<p>The <strong>&lt;Stop&gt;</strong> child-node, containing the sound played when the request stop triggers and the train should stop.</p>
+<p>The <strong>&lt;Pass&gt;</strong> child-node, containing the sound played when the request stop triggers and the train should pass.</p>
+<p>The <strong>&lt;Ignored&gt;</strong> child-node, containing the sound played when the request stop triggers, but the train does not meet the conditions to stop. (e.g. length is too long).</p>
+<h2 id="a-namemisca-22-miscellaneous-sounds"><a name="misc"></a>■ 22. Miscellaneous Sounds</h2>
 <p>The <strong>&lt;Loop&gt;</strong> node defines a sound to be played in a continuous loop throughout the simulation.</p>
 <p>The <strong>&lt;Rub&gt;</strong> node defines the sound to be played in a loop when the brake shoe rubs against the wheels. The sound is played at a pitch inversely proportional to the speed, and the volume of the sound decreases with increasing speeds.</p>
 <p>The <strong>&lt;Halt&gt;</strong> node defines the sound to be played once or in a loop (depending on the train.dat setting) when the pass alarm system warns about an approaching station stop.</p>
+<h2 id="a-nametoucha-23-touch-sounds"><a name="touch"></a>■ 23. Touch Sounds</h2>
+<p>The <strong>&lt;Touch&gt;</strong> node defines sounds to be played by when a touch control defined via <strong>Panel.xml</strong> is pressed, and must contain a minimum of one <strong>&lt;Sound&gt;</strong> child-node, with the following additional unique properties:</p>
+<div id="command">
+<strong>&lt;Index&gt;</strong> <em>SoundIndex</em> <strong>&lt;/Index&gt;</strong>
+</div>
+<p><strong>SoundIndex</strong> must be a non-negative integer, defining the touch sound index to be assigned.</p>
 
 </div>
 
