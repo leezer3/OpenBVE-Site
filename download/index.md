@@ -15,7 +15,7 @@ OpenBVE is provided as a standard Windows Installer.
 
 The most recent stable version of OpenBVE is:
 
-<a href="https://github.com/leezer3/OpenBVE/releases/download/1.13.0.8/OpenBVE-1.13.0.8-setup.exe" class="btn btn-info">1.13.0.8 (2026-07-09)</a>
+<a href="https://github.com/leezer3/OpenBVE/releases/download/1.14.0.2/OpenBVE-1.14.0.2-setup.exe" class="btn btn-info">1.14.0.2 (2026-08-03)</a>
 
 ---
 
@@ -31,7 +31,7 @@ This is available by default in the current Debian stable (Buster), or alternati
 
 The most recent stable version of OpenBVE is:
 
-<a href="https://github.com/leezer3/OpenBVE/releases/download/1.13.0.8/OpenBVE-1.13.0.8.deb" class="btn btn-info">1.13.0.8 (2026-07-09)</a>
+<a href="https://github.com/leezer3/OpenBVE/releases/download/1.14.0.2/OpenBVE-1.14.0.2.deb" class="btn btn-info">1.14.0.2 (2026-08-03)</a>
 
 ---
 
@@ -44,7 +44,7 @@ OpenBVE is provided as a standard compressed archive.
 
 The most recent stable version of OpenBVE is:
 
-<a href="https://github.com/leezer3/OpenBVE/releases/download/1.13.0.8/OpenBVE-1.13.0.8.zip" class="btn btn-info">1.13.0.8 (2026-07-09)</a>
+<a href="https://github.com/leezer3/OpenBVE/releases/download/1.14.0.2/OpenBVE-1.14.0.2.zip" class="btn btn-info">1.14.0.2 (2026-08-03)</a>
 
 ---
 
@@ -60,7 +60,7 @@ OpenBVE is provided as an installable .DMG file.
 
 The most recent stable version of OpenBVE is:
 
-<a href="https://github.com/leezer3/OpenBVE/releases/download/1.13.0.8/OpenBVE-1.13.0.8.dmg" class="btn btn-info">1.13.0.8 (2026-07-09)</a>
+<a href="https://github.com/leezer3/OpenBVE/releases/download/1.14.0.2/OpenBVE-1.14.0.2.dmg" class="btn btn-info">1.14.0.2 (2026-08-03)</a>
 
 
 ---
@@ -83,6 +83,12 @@ If this is the case, please let us know by posting on the forum or opening an is
 Previous stable versions of OpenBVE may be found here:
 
 <a href="https://github.com/leezer3/OpenBVE/releases" class="btn btn-info">Previous Stable Versions</a>
+
+# Legacy OpenGL
+
+The final build of OpenBVE supporting GL1.2 is v1.13.0.8
+
+<a href="https://github.com/leezer3/OpenBVE/releases/tag/1.13.0.8" class="btn btn-info">https://github.com/leezer3/OpenBVE/releases/tag/1.13.0.8</a>
 
 ---
 
