@@ -15,7 +15,7 @@ OpenBVE is provided as a standard Windows Installer.
 
 The most recent stable version of OpenBVE is:
 
-<a href="https://github.com/leezer3/OpenBVE/releases/download/1.14.0.2/OpenBVE-1.14.0.2-setup.exe" class="btn btn-info">1.14.0.2 (2026-08-03)</a>
+<a href="https://github.com/leezer3/OpenBVE/releases/download/1.14.0.3/OpenBVE-1.14.0.3-setup.exe" class="btn btn-info">1.14.0.3 (2026-08-10)</a>
 
 ---
 
@@ -31,7 +31,7 @@ This is available by default in the current Debian stable (Buster), or alternati
 
 The most recent stable version of OpenBVE is:
 
-<a href="https://github.com/leezer3/OpenBVE/releases/download/1.14.0.2/OpenBVE-1.14.0.2.deb" class="btn btn-info">1.14.0.2 (2026-08-03)</a>
+<a href="https://github.com/leezer3/OpenBVE/releases/download/1.14.0.3/OpenBVE-1.14.0.3.deb" class="btn btn-info">1.14.0.3 (2026-08-10)</a>
 
 ---
 
@@ -44,7 +44,7 @@ OpenBVE is provided as a standard compressed archive.
 
 The most recent stable version of OpenBVE is:
 
-<a href="https://github.com/leezer3/OpenBVE/releases/download/1.14.0.2/OpenBVE-1.14.0.2.zip" class="btn btn-info">1.14.0.2 (2026-08-03)</a>
+<a href="https://github.com/leezer3/OpenBVE/releases/download/1.14.0.3/OpenBVE-1.14.0.3.zip" class="btn btn-info">1.14.0.3 (2026-08-10)</a>
 
 ---
 
@@ -60,7 +60,7 @@ OpenBVE is provided as an installable .DMG file.
 
 The most recent stable version of OpenBVE is:
 
-<a href="https://github.com/leezer3/OpenBVE/releases/download/1.14.0.2/OpenBVE-1.14.0.2.dmg" class="btn btn-info">1.14.0.2 (2026-08-03)</a>
+<a href="https://github.com/leezer3/OpenBVE/releases/download/1.14.0.3/OpenBVE-1.14.0.3.dmg" class="btn btn-info">1.14.0.3 (2026-08-10)</a>
 
 
 ---
