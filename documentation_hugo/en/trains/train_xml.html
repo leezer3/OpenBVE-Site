@@ -785,6 +785,11 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <strong>&lt;Rate&gt;</strong> <em>CompressionRate</em> <strong>&lt;/Rate&gt;</strong>
 </div>
 <p><strong>CompressionRate</strong> should be a positive number, representing the compression rate in Pa/s.</p>
+<div id="command">
+<strong>&lt;RestartPressure&gt;</strong> <em>CompressionRate</em> <strong>&lt;/RestartPressure&gt;</strong>
+</div>
+<p><strong>Pressure</strong> should be a positive number, representing pressure in Pa in the main reservoir, at which the compressor restarts.</p>
+<p><strong>Note:</strong> When not set, the compressor restarts when the pressure in the main reservoir reaches minimum.</p>
 <h3 id="main-reservoir">Main Reservoir</h3>
 <p>The <strong>&lt;MainReservoir&gt;</strong> node, supporting the following properties:</p>
 <div id="command">
