@@ -633,6 +633,10 @@
 </div>
 <p>The <strong>SetColor</strong> command sets the color for all faces that were already created in the current CreateMeshBuilder section. If no texture is used, the faces will be colored using the color data as specified by <em>Red</em>, <em>Green</em>and <em>Blue</em>. If a texture is used, the pixels in the texture will be multiplied by the color, where multiplying with black results in black and multiplying with white does not change the color of the texture pixels. Values in-between make the texture pixels darker. When lighting is used in the route, the actual color can change depending on the lighting conditions, but will usually become darker.</p>
 <p>The <strong>SetColorAll</strong> command sets the color for all faces that were already created in the current CreateMeshBuilder section, and all those created in the previous CreateMeshBuilder sections.</p>
+<div id="notice">
+<h4 id="faces-after-a-color-statement">Faces After A Color Statement</h4>
+<p>Please note that the color for any faces created after a Color statement, but before the end of the MeshBuilder will be reset to pure white.
+</div>
 <hr>
 <p><a name="setemissivecolor"></a></p>
 <div id="command">
