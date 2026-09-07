@@ -21,7 +21,7 @@ BVE Station hosts a large American & NYCTA community OpenBVE community, includin
 
 Home of the well-known Anthony Bowden's work. Contains highly realistic and detailed stuff for OpenBVE, formulas for animations and much more. 
 
-<a href="https://celtictrainsim.com"><img src="banners/Celtictrainsim.png" alt="Celtictrainsim"></a>
+<a href="https://web.archive.org/web/20220521182445/http://www.celtictrainsim.com"><img src="banners/Celtictrainsim.png" alt="Celtictrainsim"></a>
 
 Graymac's website with beautiful Irish and Welsh routes and also Irish rolling stock.
 
