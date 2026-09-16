@@ -1069,6 +1069,10 @@ Please also note that some combinations of prefix and infix operators are not re
 <td><code>currentState</code></td>
 <td>Returns the current numerical state of the object.</td>
 </tr>
+<tr>
+<td><code>totalStates</code></td>
+<td>Returns the total number of states- In functions other than the <em>StateFunction</em> this returns 1.</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -1669,6 +1673,14 @@ Please also note that some combinations of prefix and infix operators are not re
 <tr>
 <td><code>stationAdjustAlarm</code></td>
 <td>Whether the station adjust alarm has been activated. Returns either 0 (inactive) or 1 (active).</td>
+</tr>
+<tr>
+<td><code>railIndex</code></td>
+<td>Returns the rail index for the front car of the train.</td>
+</tr>
+<tr>
+<td><code>railIndex[carIndex]</code></td>
+<td>Returns the rail index for the car specified by <em>carIndex</em>.</td>
 </tr>
 </tbody>
 </table>
