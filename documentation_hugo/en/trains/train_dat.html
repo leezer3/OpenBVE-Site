@@ -461,16 +461,10 @@
 </div>
 <p>The file is a plain text file encoded in any arbitrary <a href="../../en/information/encodings.html">encoding</a>, however, UTF-8 with a byte order mark is the preferred choice. The <a href="../../en/information/numberformats.html">parsing model</a> for numbers is <strong>Loose</strong>, however, you are encouraged to produce <em>Strict</em> output nonetheless. The file is required to be located inside the train folder and is expected to be named <strong>train.dat</strong>. The file is interpreted on a per-line basis, from top to bottom.</p>
 <h2 id="a-nameidentifiera-2-the-file-identifier"><a name="identifier"></a>■ 2. The file identifier</h2>
-<p>The first line in the train.dat is expected to be an identifier indicating the version of the file format. Allowed values are:</p>
+<p>The first line in the train.dat is expected to be an identifier indicating the version of the file format. The known values are:</p>
 <div class="overflow-container">
 <table style="border: none;">
 <tbody>
-<tr>
-<td width="16" valign="top"></td>
-<td>
-<em>Version 1.22 is being used:</em>
-</td>
-</tr>
 <tr>
 <td width="16" valign="top">▶</td>
 <td bgcolor="#D4D8FF" style="border: 1px dashed;">
@@ -478,25 +472,6 @@
 BVE1200000<br>
 BVE1210000<br>
 BVE1220000
-</font>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="overflow-container">
-<table style="border: none;">
-<tbody>
-<tr>
-<td width="16" valign="top"></td>
-<td>
-<em>Version 2.0 is being used (choose either one):</em>
-</td>
-</tr>
-<tr>
-<td width="16" valign="top">▶</td>
-<td bgcolor="#D4D8FF" style="border: 1px dashed;">
-<font style="font-family: monospace">
 BVE2000000<br>
 OPENBVE
 </font>
@@ -504,6 +479,19 @@ OPENBVE
 </tr>
 </tbody>
 </table>
+</div>
+<div id="note">
+<h4 id="bve1200000-and-bve1210000-format-files"><em>BVE1200000 and BVE1210000 Format Files:</em></h4>
+<p>These file versions do not support setting the vehicle width or height. The default values will be assumed.</p>
+<p>Version 1.22 is used when parsing the #ACCELERATION section.</p>
+</div>
+<div id="note">
+<h4 id="bve1220000-format-files"><em>BVE1220000 Format Files:</em></h4>
+<p>Version 1.22 is used when parsing the #ACCELERATION section.
+</div>
+<div id="note">
+<h4 id="all-other-file-formats"><em>All Other File Formats:</em></h4>
+<p>Version 2.0 is used when parsing the #ACCELERATION section.
 </div>
 <p>From Version <strong>1.5.3.3</strong> onwards, the <em>OPENBVE</em> identifier may optionally be followed by the minimum version number of openBVE required, e.g.</p>
 <div class="overflow-container">
@@ -526,7 +514,6 @@ OPENBVE1530
 </tbody>
 </table>
 </div>
-<p>Any other value will be reported as being non-supported and version 2.0 will be assumed. The selected version number affects the parsing of the #ACCELERATION section, which is explained later on.</p>
 <h2 id="a-namesyntaxa-3-syntax"><a name="syntax"></a>■ 3. Syntax</h2>
 <p>For each line in the file, <a href="../../en/information/whitespaces.html">white spaces</a> at the beginning and the end of that line are ignored.</p>
 <p>Each line in the file after the identifier can mark the beginning of a new section or contain data entries for the last opened section. Empty lines or lines solely consisting of white spaces are <strong>not</strong> ignored.</p>
