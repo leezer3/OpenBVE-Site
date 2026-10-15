@@ -514,6 +514,9 @@
 <p>The Map format allows for an unlimited number of other tracks. Each track must be defined using a unique textual key, referred to here as <em>trackKey</em></p>
 <p>Please see the <strong>Key</strong> documentation for further details on validity rules for keys.</p>
 <p>A track is implicitly started when a unique key is first used- If no position is defined, it will start at <strong>0,0</strong> relative to the player&rsquo;s rail.</p>
+<div id="warning-nontitle">
+<span>⚠</span><p>Where two co-ordinates exist for a track at the same position, the first will be used, and the second ignored.</p>
+</div>
 <div id="command">
 <strong>Track[<em>trackKey</em>].Cant.SetGauge</strong> (<em>ValueInMeters</em>)
 <strong>Track[<em>trackKey</em>].Gauge</strong> (<em>ValueInMeters</em>)
