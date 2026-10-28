@@ -445,12 +445,15 @@
 <li><a href="#power">3.1. The Power section</a></li>
 <li><a href="#brake">3.2. The Brake section</a></li>
 <li><a href="#traction">3.3. Traction Models</a></li>
+<li><a href="#electric">3.3.1. Electric Engine</a></li>
+<li><a href="#diesel">3.3.2. Diesel Engine</a></li>
 <li><a href="#doors">3.4. The Doors section</a></li>
 <li><a href="#sanders">3.5. The Sanders section</a></li>
 <li><a href="#windscreen">3.6. The Windscreen section</a></li>
 <li><a href="#particles">3.7. Particle Sources</a></li>
 <li><a href="#safetysystems">3.8. Safety Systems</a></li>
 <li><a href="#dsd">3.8.1. Driver Supervision Device</a></li>
+<li><a href="#soundtable">3.9. Motor Sound Tables</a></li>
 <li><a href="#coupler">4. The Coupler section</a></li>
 <li><a href="#misc">5. Miscellaneous Properties</a></li>
 </ul>
@@ -626,10 +629,36 @@ Whilst this is a change for some parameters from the legacy BVE formats, it mean
 <strong>&lt;Reversed&gt;</strong> <em>IsReversed</em> <strong>&lt;/IsReversed&gt;</strong>
 </div>
 <p><strong>IsReversed</strong> sets whether the 3D exterior object is reversed. If <em>true</em>, the object is reversed.</p>
+<h3 id="the-bogie-sections">The Bogie sections</h3>
+<p>The front and rear bogies fitted to the car may be defined via the optional <strong>&lt;FrontBogie&gt;</strong> and <strong>&lt;RearBogie&gt;</strong> child nodes.</p>
+<p>If these are not defined, each bogie defaults to a pair of axles located one meter either side of the position of the car&rsquo;s corresponding outer axle.</p>
+<div id="command">
+<strong>&lt;FrontBogie&gt;</strong> <em>BogieProperties</em> <strong>&lt;/FrontBogie&gt;</strong>
+</div>
+<div id="command">
+<strong>&lt;RearBogie&gt;</strong> <em>BogieProperties</em> <strong>&lt;/RearBogie&gt;</strong>
+</div>
+<p><strong>BogieProperties</strong> is a set of child nodes, supporting the following properties:</p>
+<div id="command">
+<strong>&lt;FrontAxle&gt;</strong> <em>Position</em> <strong>&lt;/FrontAxle&gt;</strong>
+</div>
+<p><strong>Position</strong> should be the position in meters of the bogie&rsquo;s front axle, measured relative to the position of the car&rsquo;s corresponding outer axle.</p>
+<div id="command">
+<strong>&lt;RearAxle&gt;</strong> <em>Position</em> <strong>&lt;/RearAxle&gt;</strong>
+</div>
+<p><strong>Position</strong> should be the position in meters of the bogie&rsquo;s rear axle, measured relative to the position of the car&rsquo;s corresponding outer axle.</p>
+<div id="command">
+<strong>&lt;Object&gt;</strong> <em>ObjectFile</em> <strong>&lt;/Object&gt;</strong>
+</div>
+<p><strong>ObjectFile</strong> should be a relative on-disk path to the 3D object to use for this bogie.</p>
+<div id="command">
+<strong>&lt;Reversed&gt;</strong> <em>IsReversed</em> <strong>&lt;/Reversed&gt;</strong>
+</div>
+<p><strong>IsReversed</strong> sets whether the bogie&rsquo;s 3D object is reversed. If <em>true</em>, the object is reversed.</p>
 <div id="command">
 <strong>&lt;InteriorView&gt;</strong> <em>ObjectFile</em> <strong>&lt;/InteriorView&gt;</strong>
 </div>
-<p><strong>ObjectFile</strong> should be a relative on-disk path to the interior view to use. This may be a 3D object, or a <strong>panel2.cfg</strong> file.</p>
+<p><strong>ObjectFile</strong> should be a relative on-disk path to the interior view to use. This may be a 3D object (e.g. <strong>b3d</strong> / <strong>csv</strong> / <strong>animated</strong>), a <strong>panel2.cfg</strong> file, or an XML file using the <strong>panel.xml</strong> or <strong>panel.animated</strong> XML formats.</p>
 <div id="command">
 <strong>&lt;InteriorDirection&gt;</strong> <em>DirectionX</em>, <em>DirectionY</em>, <em>DirectionZ</em> <strong>&lt;/InteriorDirection&gt;</strong>
 </div>
@@ -670,6 +699,10 @@ Whilst this is a change for some parameters from the legacy BVE formats, it mean
 However, in <strong>train.xml</strong> acceleration curve figures apply to the current car only.</p>
 </div>
 <p>The <strong>&lt;AccelerationCurves&gt;</strong> child node should contain a list of acceleration curve nodes. These must be in ascending order, and should correspond to the number of power notches the train has.</p>
+<div id="note">
+<span><font color="#C00000">☀</font> Note</span>
+<p>For backwards compatibility, the <strong>&lt;AccelerationCurves&gt;</strong> node may also be placed directly under the <strong>&lt;Car&gt;</strong> node, instead of the <strong>&lt;Power&gt;</strong> node.</p>
+</div>
 <p>Currently, the only supported acceleration curve node is the <strong>&lt;OpenBVE&gt;</strong> node, supporting the following properties (as per a <strong>train.dat</strong> acceleration curve):</p>
 <div id="command">
 <strong>&lt;StageZeroAcceleration&gt;</strong> <em>Acceleration</em> <strong>&lt;/StageZeroAcceleration&gt;</strong>
@@ -694,7 +727,7 @@ However, in <strong>train.xml</strong> acceleration curve figures apply to the c
 <div id="command">
 <strong>&lt;Multiplier&gt;</strong> <em>Number</em> <strong>&lt;/Multiplier&gt;</strong>
 </div>
-<p><strong>Number</strong> should be a positive floating-point number representing the blended output of the motor car to the train&rsquo;s acceleration. The default value is <strong>1.0</strong></p>
+<p><strong>Number</strong> should be a positive floating-point number representing the blended output of the motor car to the train&rsquo;s acceleration. The default value is <strong>1.0</strong> Values of zero or less, or greater than 50, are invalid.</p>
 <div id="warning-nontitle">
 <span>⚠</span><p>This figure is only meaningful for trains using BVE acceleration numbers converted via <em>CarXMLConvertor</em>, and should be omitted if setting acceleration outputs on a per-car basis.</p>
 </div>
@@ -763,11 +796,15 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <h4 id="driver-and-non-driver-cars"><em>Driver and non-driver cars:</em></h4>
 <p>The properties within this node will only be interpreted if the car is specified as the driver car.
 </div>
-<p>The <strong>&lt;Handle&gt;</strong> node specifies properties for the power handle, and supports the folowing properties:</p>
+<p>The <strong>&lt;Handle&gt;</strong> node specifies properties for the power handle, and supports the following properties:</p>
 <div id="command">
 <strong>&lt;Notches&gt;</strong> <em>NumberOfNotches</em> <strong>&lt;/Notches&gt;</strong>
 </div>
 <p><strong>NumberOfNotches</strong> should be a positive integer, setting the number of power notches.</p>
+<div id="note">
+<span><font color="#C00000">☀</font> Note</span>
+<p>For a simple handle, the <strong>&lt;Notches&gt;</strong> node may also be specified directly under the <strong>&lt;Power&gt;</strong> node, without an enclosing <strong>&lt;Handle&gt;</strong> node.</p>
+</div>
 <div id="command">
 <strong>&lt;SpringType&gt;</strong> <em>Type</em> <strong>&lt;/SpringType&gt;</strong>
 </div>
@@ -776,11 +813,23 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 </div>
 <p>▸ Available options for <em>Type</em>:</p>
 <div id="command-arguments">
-<strong>None</strong>: No spring return mechanism is fitted.<br>
+<strong>Unsprung</strong>: No spring return mechanism is fitted.<br>
 <strong>Single</strong>: The spring return mechanism is reset when this handle is operated.<br>
 <strong>AnyHandle</strong>: The spring return mechanism is reset when any power or brake handle is operated.
 <strong>AnyKey</strong>: The spring return mechanism is reset when any keyboard key or joystick control is operated.
 </div>
+<div id="command">
+<strong>&lt;SpringTime&gt;</strong> <em>Time</em> <strong>&lt;/SpringTime&gt;</strong>
+</div>
+<p><strong>Time</strong> should be a positive number, setting the time in seconds taken for the handle to return to its rest position when released.</p>
+<div id="note">
+<span><font color="#C00000">☀</font> Note</span>
+<p>The <strong>&lt;SpringTime&gt;</strong> node must be set for a spring return mechanism to be fitted - If this is not set, the handle is treated as unsprung, regardless of the value of <strong>&lt;SpringType&gt;</strong>.</p>
+</div>
+<div id="command">
+<strong>&lt;MaxSprungNotch&gt;</strong> <em>Notch</em> <strong>&lt;/MaxSprungNotch&gt;</strong>
+</div>
+<p><strong>Notch</strong> should be a positive integer, defining the highest notch at which the spring return mechanism may hold the handle.</p>
 <h2 id="a-namebrakea-32-the-brake-section"><a name="brake"></a>■ 3.2. The Brake section</h2>
 <p>The <strong>&lt;Brake&gt;</strong> section specifies properties for the braking system of the car, and consists of the following child nodes, each corresponding the a component of the twin-pipe standard air-brake system:</p>
 <h3 id="air-compressor">Air compressor</h3>
@@ -804,18 +853,46 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <strong>&lt;MaximumPressure&gt;</strong> <em>Pressure</em> <strong>&lt;/MaximumPressure&gt;</strong>
 </div>
 <p><strong>Pressure</strong> should be a positive number, representing the maximum achievable pressure in the main reservoir in Pa.</p>
+<div id="command">
+<strong>&lt;Volume&gt;</strong> <em>Volume</em> <strong>&lt;/Volume&gt;</strong>
+</div>
+<p><strong>Volume</strong> should be a positive number, representing the volume of the main reservoir in cubic meters (m³).</p>
 <h3 id="auxiliary-reservoir">Auxiliary Reservoir</h3>
 <p>The <strong>&lt;AuxiliaryReservoir&gt;</strong> node, supporting the following properties:</p>
 <div id="command">
 <strong>&lt;ChargeRate&gt;</strong> <em>Rate</em> <strong>&lt;/ChargeRate&gt;</strong>
 </div>
 <p><strong>Rate</strong> should be a positive number, representing the charge rate of the auxiliary reservoir from the main reservoir in Pa/s.</p>
+<div id="command">
+<strong>&lt;Volume&gt;</strong> <em>Volume</em> <strong>&lt;/Volume&gt;</strong>
+</div>
+<p><strong>Volume</strong> should be a positive number, representing the volume of the auxiliary reservoir in cubic meters (m³).</p>
 <h3 id="equalizing-reservoir">Equalizing Reservoir</h3>
 <p>The <strong>&lt;EqualizingReservoir&gt;</strong> node, supporting the following properties:</p>
 <div id="command">
 <strong>&lt;NormalPressure&gt;</strong> <em>Pressure</em> <strong>&lt;/NormalPressure&gt;</strong>
 </div>
 <p><strong>Pressure</strong> should be a positive number, representing the normal pressure of this reservoir in Pa.</p>
+<div id="note">
+<span><font color="#C00000">☀</font> Note</span>
+<p>The normal pressure of the equalizing reservoir is not directly settable - It is derived from the brake pipe normal pressure (1.005 × the <em>NormalPressure</em> of the <strong>&lt;BrakePipe&gt;</strong>).</p>
+</div>
+<div id="command">
+<strong>&lt;ChargeRate&gt;</strong> <em>Rate</em> <strong>&lt;/ChargeRate&gt;</strong>
+</div>
+<p><strong>Rate</strong> should be a positive number, representing the charge rate of the equalizing reservoir in Pa/s.</p>
+<div id="command">
+<strong>&lt;ServiceRate&gt;</strong> <em>Rate</em> <strong>&lt;/ServiceRate&gt;</strong>
+</div>
+<p><strong>Rate</strong> should be a positive number, representing the charge rate in Pa/s when making a service brake application.</p>
+<div id="command">
+<strong>&lt;EmergencyRate&gt;</strong> <em>Rate</em> <strong>&lt;/EmergencyRate&gt;</strong>
+</div>
+<p><strong>Rate</strong> should be a positive number, representing the charge rate in Pa/s when making an emergency brake application.</p>
+<div id="command">
+<strong>&lt;Volume&gt;</strong> <em>Volume</em> <strong>&lt;/Volume&gt;</strong>
+</div>
+<p><strong>Volume</strong> should be a positive number, representing the volume of the equalizing reservoir in cubic meters (m³).</p>
 <h3 id="brake-pipe">Brake Pipe</h3>
 <p>The <strong>&lt;BrakePipe&gt;</strong> node, supporting the following properties:</p>
 <div id="command">
@@ -834,6 +911,10 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <strong>&lt;EmergencyRate&gt;</strong> <em>Rate</em> <strong>&lt;/EmergencyRate&gt;</strong>
 </div>
 <p><strong>Rate</strong> should be a positive number, representing the charge rate in Pa/s when making an emergency brake application.</p>
+<div id="command">
+<strong>&lt;Volume&gt;</strong> <em>Volume</em> <strong>&lt;/Volume&gt;</strong>
+</div>
+<p><strong>Volume</strong> should be a positive number, representing the volume of the brake pipe in cubic meters (m³).</p>
 <h3 id="straight-air-pipe">Straight Air Pipe</h3>
 <p>The <strong>&lt;StraightAirPipe&gt;</strong> node, supporting the following properties:</p>
 <div id="command">
@@ -866,16 +947,28 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <strong>&lt;ReleaseRate&gt;</strong> <em>Rate</em> <strong>&lt;/ReleaseRate&gt;</strong>
 </div>
 <p><strong>Rate</strong> should be a positive number, representing the charge rate in Pa/s when releasing the brakes.</p>
-<h3 id="322-brake-handles">3.2.2. Brake Handles</h3>
+<div id="command">
+<strong>&lt;Volume&gt;</strong> <em>Volume</em> <strong>&lt;/Volume&gt;</strong>
+</div>
+<p><strong>Volume</strong> should be a positive number, representing the volume of the brake cylinder in cubic meters (m³).</p>
+<div id="command">
+<strong>&lt;LegacyPressureDistribution&gt;</strong> <em>Boolean</em> <strong>&lt;/LegacyPressureDistribution&gt;</strong>
+</div>
+<p><strong>Boolean</strong> should be a boolean true / false value, determining whether the legacy train.dat brake pipe model is used - If <em>true</em>, the brake pipe pressure distribution is averaged across the train, rather than being simulated on a per-car basis.</p>
+<h3 id="brake-handles">Brake Handles</h3>
 <div id="note">
 <h4 id="driver-and-non-driver-cars"><em>Driver and non-driver cars:</em></h4>
 <p>The properties within this node will only be interpreted if the car is specified as the driver car.
 </div>
-<p>The <strong>&lt;Handle&gt;</strong> node specifies properties for the brake handle, and supports the folowing properties:</p>
+<p>The <strong>&lt;Handle&gt;</strong> node specifies properties for the brake handle, and supports the following properties:</p>
 <div id="command">
 <strong>&lt;Notches&gt;</strong> <em>NumberOfNotches</em> <strong>&lt;/Notches&gt;</strong>
 </div>
-<p><strong>NumberOfNotches</strong> should be a positive integer, setting the number of power notches.</p>
+<p><strong>NumberOfNotches</strong> should be a positive integer, setting the number of brake notches.</p>
+<div id="note">
+<span><font color="#C00000">☀</font> Note</span>
+<p>For a simple handle, the <strong>&lt;Notches&gt;</strong> node may also be specified directly under the <strong>&lt;Brake&gt;</strong> node, without an enclosing <strong>&lt;Handle&gt;</strong> node.</p>
+</div>
 <div id="command">
 <strong>&lt;SpringType&gt;</strong> <em>Type</em> <strong>&lt;/SpringType&gt;</strong>
 </div>
@@ -884,17 +977,30 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 </div>
 <p>▸ Available options for <em>Type</em>:</p>
 <div id="command-arguments">
-<strong>None</strong>: No spring return mechanism is fitted.<br>
+<strong>Unsprung</strong>: No spring return mechanism is fitted.<br>
 <strong>Single</strong>: The spring return mechanism is reset when this handle is operated.<br>
 <strong>AnyHandle</strong>: The spring return mechanism is reset when any power or brake handle is operated.
 <strong>AnyKey</strong>: The spring return mechanism is reset when any keyboard key or joystick control is operated.
 </div>
 <div id="command">
+<strong>&lt;SpringTime&gt;</strong> <em>Time</em> <strong>&lt;/SpringTime&gt;</strong>
+</div>
+<p><strong>Time</strong> should be a positive number, setting the time in seconds taken for the handle to return to its rest position when released.</p>
+<div id="note">
+<span><font color="#C00000">☀</font> Note</span>
+<p>The <strong>&lt;SpringTime&gt;</strong> node must be set for a spring return mechanism to be fitted - If this is not set, the handle is treated as unsprung, regardless of the value of <strong>&lt;SpringType&gt;</strong>.</p>
+</div>
+<div id="command">
+<strong>&lt;MaxSprungNotch&gt;</strong> <em>Notch</em> <strong>&lt;/MaxSprungNotch&gt;</strong>
+</div>
+<p><strong>Notch</strong> should be a positive integer, defining the highest notch at which the spring return mechanism may hold the handle.</p>
+<div id="command">
 <strong>&lt;MotorBrakeNotch&gt;</strong> <em>Notch</em> <strong>&lt;/MotorBrakeNotch&gt;</strong>
 </div>
 <p><strong>Notch</strong> should be a positive integer, defining the maximum notch in which motor assisted braking is available.</p>
 <h2 id="a-nametractiona-33-traction-modelling"><a name="traction"></a>■ 3.3. Traction Modelling</h2>
-<h3 id="331-electric-engine">3.3.1. Electric Engine</h3>
+<p>Two traction models are supported: The electric engine and the diesel engine. In addition, a standard motor car using BVE style acceleration curves may be defined via the <strong>&lt;MotorCar&gt;</strong> node.</p>
+<h3 id="a-nameelectrica331-electric-engine"><a name="electric"></a>3.3.1. Electric Engine</h3>
 <p>The <strong>&lt;ElectricEngine&gt;</strong> node models a simplistic electric engine, using a pantograph to collect current from an overhead wire.</p>
 <p>With this traction model in use, one car in the train must possess a pantograph, which must be raised for the train to be moved.</p>
 <p>It supports the following properties:</p>
@@ -914,11 +1020,44 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <strong>Amps</strong> represents the number of amps drawn by the traction motor when the train is accelerating at maximum.
 </div>
 <div id="command">
-<strong>&lt;MaxRegenerativeAmps&gt;</strong> <em>Amps</em>  <strong>&lt;/MaxRegenerativeAmps&gt;</strong>
+<strong>&lt;MaxRegenAmps&gt;</strong> <em>Amps</em>  <strong>&lt;/MaxRegenAmps&gt;</strong>
 </div>
 <div id="command-arguments">
 <strong>Amps</strong> represents the number of amps drawn by the traction motor when the train is braking at maximum, when this traction motor is a regenerative traction motor.
 </div>
+<h3 id="a-namediesela332-diesel-engine"><a name="diesel"></a>3.3.2. Diesel Engine</h3>
+<p>The <strong>&lt;DieselEngine&gt;</strong> node models a diesel engine. Cars fitted with a diesel engine are treated as motor cars.</p>
+<p>It supports the following properties:</p>
+<div id="command">
+<strong>&lt;IdleRPM&gt;</strong> <em>RPM</em>  <strong>&lt;/IdleRPM&gt;</strong><br>
+<strong>&lt;MinRPM&gt;</strong> <em>RPM</em>  <strong>&lt;/MinRPM&gt;</strong><br>
+<strong>&lt;MaxRPM&gt;</strong> <em>RPM</em>  <strong>&lt;/MaxRPM&gt;</strong>
+</div>
+<div id="command-arguments">
+<strong>RPM</strong>: The engine speed in revolutions per minute (RPM) when idling (<strong>IdleRPM</strong>), at minimum power (<strong>MinRPM</strong>), and at maximum power (<strong>MaxRPM</strong>). At idle, the engine runs at <strong>IdleRPM</strong>; the engine speed then rises linearly from <strong>MinRPM</strong> to <strong>MaxRPM</strong> across the power notches.
+</div>
+<div id="command">
+<strong>&lt;RPMChangeRate&gt;</strong> <em>Rate</em>  <strong>&lt;/RPMChangeRate&gt;</strong><br>
+<strong>&lt;RPMChangeUpRate&gt;</strong> <em>Rate</em>  <strong>&lt;/RPMChangeUpRate&gt;</strong><br>
+<strong>&lt;RPMChangeDownRate&gt;</strong> <em>Rate</em>  <strong>&lt;/RPMChangeDownRate&gt;</strong>
+</div>
+<div id="command-arguments">
+<strong>Rate</strong>: The rate at which the engine speed changes, in RPM per second. <strong>RPMChangeRate</strong> sets both rates, which may be overridden individually via <strong>RPMChangeUpRate</strong> and <strong>RPMChangeDownRate</strong>. If set to zero, the engine speed changes instantly.
+</div>
+<div id="command">
+<strong>&lt;IdleFuelUse&gt;</strong> <em>Rate</em>  <strong>&lt;/IdleFuelUse&gt;</strong><br>
+<strong>&lt;MaxPowerFuelUse&gt;</strong> <em>Rate</em>  <strong>&lt;/MaxPowerFuelUse&gt;</strong>
+</div>
+<div id="command-arguments">
+<strong>Rate</strong>: The fuel consumption when idling (<strong>IdleFuelUse</strong>) and at maximum power (<strong>MaxPowerFuelUse</strong>), in units of fuel per second. Fuel consumption at intermediate power notches is interpolated between these two figures.
+</div>
+<div id="command">
+<strong>&lt;FuelCapacity&gt;</strong> <em>Capacity</em>  <strong>&lt;/FuelCapacity&gt;</strong>
+</div>
+<div id="command-arguments">
+<strong>Capacity</strong>: The capacity of the fuel tank. The tank is filled at the start of the route.
+</div>
+<p>Traction motors may be added via the <strong>&lt;TractionMotor&gt;</strong> or <strong>&lt;RegenerativeTractionMotor&gt;</strong> child nodes, which support the same properties as for the electric engine.</p>
 <h2 id="a-namedoorsa-34-the-doors-section"><a name="doors"></a>■ 3.4. The Doors section</h2>
 <p>The <strong>&lt;Doors&gt;</strong> section specifies the properties of the passenger doors fitted to this car, and supports the following properties:</p>
 <div id="command">
@@ -945,6 +1084,10 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <p><strong>DoorTolerance</strong> should be a positive number, setting a tolerance in meters before the door is considered to be closed.</p>
 <h2 id="a-namesandersa-35-the-sanders-section"><a name="sanders"></a>■ 3.5. The Sanders section</h2>
 <p>The <strong>&lt;Sanders&gt;</strong> section specifies the properties of the sanders fitted to this car, and supports the following properties:</p>
+<div id="note">
+<span><font color="#C00000">☀</font> Note</span>
+<p>If not set, the following defaults apply: The sanding rate is unlimited, the sand level starts empty, the application time is 10 seconds, the activation time is 5 seconds, and the number of shots is unlimited.</p>
+</div>
 <div id="command">
 <strong>&lt;Type&gt;</strong> <em>Type</em>  <strong>&lt;/Type&gt;</strong>
 </div>
@@ -989,8 +1132,30 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <div id="command-arguments">
 <em><strong>Time</strong></em>: When in automatic mode, the amount of time before the system reacts and applies sand.
 </div>
+<div id="note">
+<span><font color="#C00000">☀</font> Note</span>
+<p>If the <strong>&lt;Sanders&gt;</strong> node is not used, the legacy <strong>&lt;ReadhesionDevice&gt;</strong> node may instead be used to define a simple anti-slip device, matching the <em>ReAdhesionDevice</em> entry in the <strong>train.dat</strong> format:</p>
+</div>
+<div id="command">
+<strong>&lt;ReadhesionDevice&gt;</strong> <em>DeviceType</em>  <strong>&lt;/ReadhesionDevice&gt;</strong>
+</div>
+<p>▸ Available options for <em>DeviceType</em>:</p>
+<div id="command-arguments">
+<strong>NotFitted</strong>: No readhesion device is fitted.<br>
+<strong>TypeA</strong> / <strong>A</strong>: Cuts off power instantly and rebuilds it up fast in steps.<br>
+<strong>TypeB</strong> / <strong>B</strong>: Updates not so often and adapts slowly. Wheel slip can persist longer and power is regained slower. The behavior is smoother.<br>
+<strong>TypeC</strong> / <strong>C</strong>: The behavior is somewhere in-between type B and type D.<br>
+<strong>TypeD</strong> / <strong>D</strong>: Updates fast and adapts fast. Wheel slip only occurs briefly and power is regained fast. The behavior is more abrupt.
+</div>
+<p>If neither node is present, a type A readhesion device is fitted by default, matching the <strong>train.dat</strong> behaviour.</p>
 <h2 id="a-namewindscreena-36-the-windscreen-section"><a name="windscreen"></a>■ 3.6. The Windscreen section</h2>
-<p>The <strong>&lt;Windscreen&gt;</strong> section specifies the properties of the windscreen, and should be used if you wish to animated a windscreen on a 3D cab using the inbuilt functionality. It supports the following properties:</p>
+<p>The <strong>&lt;Windscreen&gt;</strong> section specifies the properties of the windscreen, and should be used if you wish to animate a windscreen on a 3D cab using the inbuilt functionality. It supports the following properties:</p>
+<div id="note">
+<span><font color="#C00000">☀</font> Note</span>
+<p><p>The windscreen is only created for the player train.</p>
+<p>If <strong>&lt;NumberOfDrops&gt;</strong> is not set, no windscreen is created. The remaining properties default to a wipe speed of 1 second, a hold time of 1 second, and a drop life of 10 seconds.</p>
+</p>
+</div>
 <div id="command">
 <strong>&lt;NumberOfDrops&gt;</strong> <em>Drops</em>  <strong>&lt;/NumberOfDrops&gt;</strong>
 </div>
@@ -1122,10 +1287,23 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <strong>HeldKey</strong>: The DSD key must remain pressed.
 </div>
 <div id="command">
+<strong>&lt;TriggerMode&gt;</strong> <em>TriggerMode</em>  <strong>&lt;/TriggerMode&gt;</strong>
+</div>
+<p>▸ Available options for <em>TriggerMode</em>:</p>
+<div id="command-arguments">
+<strong>Always</strong>: The device is always active.<br>
+<strong>TrainMoving</strong>: The device is only active when the train is moving.<br>
+<strong>DirectionSet</strong>: The device is only active when a direction is set on the reverser.
+</div>
+<div id="command">
 <strong>&lt;AlarmTime&gt;</strong> <em>Time</em>  <strong>&lt;/AlarmTime&gt;</strong>
 </div>
 <div id="command-arguments">
 <em><strong>Time</strong></em>: The time in seconds before the device enters alarm state. No intervention is performed until <strong>InterventionTime</strong> is passed.
+</div>
+<div id="note">
+<span><font color="#C00000">☀</font> Note</span>
+<p>If not set, the alarm time defaults to the value of <strong>&lt;InterventionTime&gt;</strong>.</p>
 </div>
 <div id="command">
 <strong>&lt;InterventionTime&gt;</strong> <em>Time</em>  <strong>&lt;/InterventionTime&gt;</strong>
@@ -1151,6 +1329,22 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <div id="command-arguments">
 <strong>Boolean</strong> should be a boolean true / false value, determining whether the alarm tone is played once, or continuously until the device is reset.
 </div>
+<h2 id="a-namesoundtablea-39-motor-sound-tables"><a name="soundtable"></a>■ 3.9. Motor Sound Tables</h2>
+<p>The optional <strong>&lt;SoundTable&gt;</strong> node allows a motor sound table to be attached to the car&rsquo;s traction model.</p>
+<p>Currently, the only supported child node is <strong>&lt;BVE5&gt;</strong>, which loads a BVE5 format motor sound table:</p>
+<div id="command">
+<strong>&lt;BVE5&gt;</strong> <em>TableProperties</em> <strong>&lt;/BVE5&gt;</strong>
+</div>
+<p><strong>TableProperties</strong> is a set of child nodes, each containing a relative on-disk path to the relevant sound table file:</p>
+<div id="command">
+<strong>&lt;PowerFreq&gt;</strong> <em>FileName</em>  <strong>&lt;/PowerFreq&gt;</strong><br>
+<strong>&lt;PowerVol&gt;</strong> <em>FileName</em>  <strong>&lt;/PowerVol&gt;</strong><br>
+<strong>&lt;BrakeFreq&gt;</strong> <em>FileName</em>  <strong>&lt;/BrakeFreq&gt;</strong><br>
+<strong>&lt;BrakeVol&gt;</strong> <em>FileName</em>  <strong>&lt;/BrakeVol&gt;</strong>
+</div>
+<div id="command-arguments">
+<strong>FileName</strong>: The relative path to the BVE5 motor sound table file holding the frequency (<strong>Freq</strong>) or volume (<strong>Vol</strong>) table for power (<strong>Power</strong>) or brake (<strong>Brake</strong>) applications.
+</div>
 <h2 id="a-namecouplera-4-the-coupler-section"><a name="coupler"></a>■ 4. The Coupler section</h2>
 <p>Car nodes (or child file references) may optionally be separated by a <strong>&lt;Coupler&gt;</strong> node.</p>
 <p>This defines the coupler between the two cars, and supports the following properties:</p>
@@ -1162,7 +1356,7 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <strong>&lt;Maximum&gt;</strong> <em>Distance</em> <strong>&lt;/Maximum&gt;</strong>
 </div>
 <p><strong>Distance</strong> sets the maximum distance between the two cars.</p>
-<p>Note that the condition <em>Minimum</em> &lt; <em>Maximum</em> must hold.</p>
+<p>Note that <em>Maximum</em> must be greater than or equal to <em>Minimum</em>.</p>
 <div id="command">
 <strong>&lt;Object&gt;</strong> <em>ObjectFile</em> <strong>&lt;/Object&gt;</strong>
 </div>
@@ -1175,6 +1369,18 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <strong>&lt;CanUncouple&gt;</strong> <em>Boolean</em> <strong>&lt;/CanUncouple&gt;</strong>
 </div>
 <p><strong>Boolean</strong> should be a boolean true / false value, determining whether this coupler may be uncoupled by the player.</p>
+<div id="command">
+<strong>&lt;UncouplingBehaviour&gt;</strong> <em>Behaviour</em> <strong>&lt;/UncouplingBehaviour&gt;</strong>
+</div>
+<p><strong>Behaviour</strong> sets the behaviour of the brake systems when this coupler is uncoupled.</p>
+<p>▸ Available options for <em>Behaviour</em>:</p>
+<div id="command-arguments">
+<strong>Emergency</strong>: The emergency brake is applied to both consists.<br>
+<strong>EmergencyPlayer</strong>: The emergency brake is applied to the player consist; the uncoupled consist retains the previous brake setting.<br>
+<strong>EmergencyUncoupledConsist</strong>: The emergency brake is applied to the uncoupled consist; the player consist retains the previous brake setting.<br>
+<strong>ReleasedUncoupledConsist</strong>: The brakes are released on the uncoupled consist; the player consist retains the previous brake setting.<br>
+<strong>Released</strong>: The brakes are released on both consists.
+</div>
 <h2 id="a-namemisca-5-miscellaneous-properties"><a name="misc"></a>■ 5. Miscellaneous Properties</h2>
 <div id="command">
 <strong>&lt;Plugin&gt;</strong> <em>PluginFile</em> <strong>&lt;/Plugin&gt;</strong>
@@ -1184,11 +1390,11 @@ v<sub>1</sub> * a<sub>1</sub> * v<sub>2</sub><sup>e-1</sup> / x<sup>e</sup>
 <div id="command">
 <strong>&lt;Plugin&gt;</strong> <br>
  <strong>&lt;File&gt;</strong> <em>PluginFile</em> <strong>&lt;/File&gt;</strong> <br>
- <strong>&lt;SupportsAI&gt;</strong> <em>Boolean</em> <strong>&lt;/SupportsAI&gt;</strong> <br>
+ <strong>&lt;LoadForAI&gt;</strong> <em>Boolean</em> <strong>&lt;/LoadForAI&gt;</strong> <br>
 <strong>&lt;/Plugin&gt;</strong>
 </div>
 <p><strong>PluginFile</strong> should contain the relative path to a .Net based security plugin DLL to load.</p>
-<p><strong>Boolean</strong> should be a boolean true / false value, determining whether this plugin supports additional AI instances.</p>
+<p><strong>Boolean</strong> should be a boolean true / false value, determining whether this plugin should also be loaded for any additional AI instances.</p>
 <div id="command">
 <strong>&lt;Description&gt;</strong> <em>Text</em> <strong>&lt;/Description&gt;</strong>
 </div>
